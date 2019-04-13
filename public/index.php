@@ -1,5 +1,4 @@
 <?php
-exit('this exit from public/index.php file');
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
