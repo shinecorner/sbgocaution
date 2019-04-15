@@ -1,5 +1,6 @@
 <?php
-exit('this exit from public/index.php file');
+
+die('this is initation of laravel test');
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
