@@ -1,6 +1,6 @@
 <?php
 
-die('this is initation of laravel');
+die('this is initation of laravel test');
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
