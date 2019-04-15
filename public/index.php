@@ -1,4 +1,6 @@
 <?php
+
+die('this is initation of laravel');
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
