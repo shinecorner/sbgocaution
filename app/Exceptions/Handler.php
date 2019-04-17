@@ -4,7 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Request;
 use Illuminate\Auth\AuthenticationException;
 use Response;
@@ -50,18 +50,17 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        // if ($exception instanceof NotFoundHttpException) {
-        //     if ($request->is('api/*')) {
-        //         return response()->json(['response' =>[
-        //                                        'api_status'=>0,
-        //                                        'code'=>404,
-        //                                        'message'=> 'Not Found'
-        //                                        ]
-        //                                 ],404);
-        //     }
-        //     return response()->view('404', [], 404);
-        //     //return response()->json(['err'=>'fsjklfjkl']);
-        // }
+        if ($exception instanceof ModelNotFoundException) {
+            if ($request->is('api/*')) {
+                return response()->json(['response' =>[
+                                               'api_status'=> 0,
+                                               'code'=> 404,
+                                               'message'=> 'Not Found'
+                                               ]
+                                        ], 404);
+            }
+            return response()->view('404', [], 404);
+        }
         return parent::render($request, $exception);
     }
     
@@ -69,8 +68,8 @@ class Handler extends ExceptionHandler
     {
         return $request->expectsJson()
                     ? redirect()->guest(route('login'))
-                    : response()->json(['Status'=>[
-                                                'api_status'=>0,
+                    : response()->json(['response'=>[
+                                                'api_status'=> 0,
                                                 'Code'=>401,
                                                 'Message' => 'Unauthenticated'                           
                                                 ]
