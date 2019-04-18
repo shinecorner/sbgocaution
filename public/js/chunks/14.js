@@ -1,14 +1,14 @@
 webpackJsonp([14],{
 
-/***/ 127:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1999)
+var __vue_script__ = __webpack_require__(2094)
 /* template */
-var __vue_template__ = __webpack_require__(2010)
+var __vue_template__ = __webpack_require__(2105)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,17 +48,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1999:
+/***/ 2094:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ChatArea__ = __webpack_require__(2000);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ChatArea__ = __webpack_require__(2095);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ChatArea___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ChatArea__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ChatSidebar__ = __webpack_require__(2005);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ChatSidebar__ = __webpack_require__(2100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ChatSidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_ChatSidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ChatModuleLoader__ = __webpack_require__(2008);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ChatModuleLoader__ = __webpack_require__(2103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ChatModuleLoader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_ChatModuleLoader__);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
@@ -158,15 +158,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ 2000:
+/***/ 2095:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(2001)
+var __vue_script__ = __webpack_require__(2096)
 /* template */
-var __vue_template__ = __webpack_require__(2004)
+var __vue_template__ = __webpack_require__(2099)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -206,15 +206,15 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2001:
+/***/ 2096:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SingleChatLoader__ = __webpack_require__(2002);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SingleChatLoader__ = __webpack_require__(2097);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SingleChatLoader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__SingleChatLoader__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Helpers_helpers__ = __webpack_require__(54);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -403,7 +403,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ 2002:
+/***/ 2097:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -411,7 +411,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(2003)
+var __vue_template__ = __webpack_require__(2098)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -451,7 +451,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2003:
+/***/ 2098:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -474,7 +474,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 2004:
+/***/ 2099:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -934,15 +934,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 2005:
+/***/ 2100:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(2006)
+var __vue_script__ = __webpack_require__(2101)
 /* template */
-var __vue_template__ = __webpack_require__(2007)
+var __vue_template__ = __webpack_require__(2102)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -982,13 +982,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2006:
+/***/ 2101:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(54);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1065,7 +1065,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ 2007:
+/***/ 2102:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1168,7 +1168,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 2008:
+/***/ 2103:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -1176,7 +1176,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(2009)
+var __vue_template__ = __webpack_require__(2104)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1216,7 +1216,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2009:
+/***/ 2104:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1239,7 +1239,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 2010:
+/***/ 2105:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

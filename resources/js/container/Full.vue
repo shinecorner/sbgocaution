@@ -15,7 +15,7 @@
 				</transition>
 			</v-content>
 			<!-- app customizer -->
-			<app-customizer></app-customizer>
+			<!-- <app-customizer></app-customizer> -->
 			<!-- User Tour -->
 			<tour></tour>
 		</template>

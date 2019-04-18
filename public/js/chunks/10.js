@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 126:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1980)
+var __vue_script__ = __webpack_require__(2075)
 /* template */
-var __vue_template__ = __webpack_require__(1998)
+var __vue_template__ = __webpack_require__(2093)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,21 +48,21 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1980:
+/***/ 2075:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EmailListing__ = __webpack_require__(1981);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EmailListing__ = __webpack_require__(2076);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EmailListing___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__EmailListing__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sidebar__ = __webpack_require__(1984);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sidebar__ = __webpack_require__(2079);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sidebar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Sidebar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__EmailDetail__ = __webpack_require__(1992);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__EmailDetail__ = __webpack_require__(2087);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__EmailDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__EmailDetail__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__SearchEmails__ = __webpack_require__(1995);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__SearchEmails__ = __webpack_require__(2090);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__SearchEmails___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__SearchEmails__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_Helpers_helpers__ = __webpack_require__(54);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -199,15 +199,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ 1981:
+/***/ 2076:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1982)
+var __vue_script__ = __webpack_require__(2077)
 /* template */
-var __vue_template__ = __webpack_require__(1983)
+var __vue_template__ = __webpack_require__(2078)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -247,13 +247,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1982:
+/***/ 2077:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(54);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -348,7 +348,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ 1983:
+/***/ 2078:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -532,15 +532,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1984:
+/***/ 2079:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1985)
+var __vue_script__ = __webpack_require__(2080)
 /* template */
-var __vue_template__ = __webpack_require__(1991)
+var __vue_template__ = __webpack_require__(2086)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -580,17 +580,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1985:
+/***/ 2080:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EmailBox__ = __webpack_require__(1986);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EmailBox__ = __webpack_require__(2081);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EmailBox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__EmailBox__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__UserBlock__ = __webpack_require__(1989);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__UserBlock__ = __webpack_require__(2084);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__UserBlock___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__UserBlock__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Helpers_helpers__ = __webpack_require__(54);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -726,11 +726,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       folder_items: [{
         action: "zmdi zmdi-folder",
         title: "message.work",
-        class: "primary--text"
+        "class": "primary--text"
       }, {
         action: "zmdi zmdi-folder-person",
         title: "message.personal",
-        class: "error--text"
+        "class": "error--text"
       }],
       settings_items: [{
         action: "zmdi zmdi-folder",
@@ -752,15 +752,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ 1986:
+/***/ 2081:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1987)
+var __vue_script__ = __webpack_require__(2082)
 /* template */
-var __vue_template__ = __webpack_require__(1988)
+var __vue_template__ = __webpack_require__(2083)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -800,7 +800,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1987:
+/***/ 2082:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -858,7 +858,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1988:
+/***/ 2083:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -913,7 +913,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1989:
+/***/ 2084:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -921,7 +921,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(1990)
+var __vue_template__ = __webpack_require__(2085)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -961,7 +961,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1990:
+/***/ 2085:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1010,7 +1010,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1991:
+/***/ 2086:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1287,15 +1287,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1992:
+/***/ 2087:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1993)
+var __vue_script__ = __webpack_require__(2088)
 /* template */
-var __vue_template__ = __webpack_require__(1994)
+var __vue_template__ = __webpack_require__(2089)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1335,13 +1335,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1993:
+/***/ 2088:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(54);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1516,7 +1516,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ 1994:
+/***/ 2089:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1886,15 +1886,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1995:
+/***/ 2090:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1996)
+var __vue_script__ = __webpack_require__(2091)
 /* template */
-var __vue_template__ = __webpack_require__(1997)
+var __vue_template__ = __webpack_require__(2092)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1934,7 +1934,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1996:
+/***/ 2091:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1961,7 +1961,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1997:
+/***/ 2092:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1997,7 +1997,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1998:
+/***/ 2093:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

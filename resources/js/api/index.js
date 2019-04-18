@@ -2,5 +2,8 @@ import axios from 'axios';
 
 export default
     axios.create({
-        baseURL: 'http://reactify.theironnetwork.org/data/'
+        baseURL: process.env.APP_URL,
+        headers: {
+            'Authorization': 'Bearer '+localStorage.getItem('accessToken')
+        }
     });
