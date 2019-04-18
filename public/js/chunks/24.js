@@ -1,54 +1,6 @@
 webpackJsonp([24],{
 
-/***/ 118:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(1911)
-/* template */
-var __vue_template__ = __webpack_require__(1912)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/views/courses/SignIn.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5a7b0858", Component.options)
-  } else {
-    hotAPI.reload("data-v-5a7b0858", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 1511:
+/***/ 1603:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -56,7 +8,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(1512)
+var __vue_template__ = __webpack_require__(1604)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1512:
+/***/ 1604:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -199,14 +151,103 @@ if (false) {
 
 /***/ }),
 
-/***/ 1911:
+/***/ 184:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(2008)
+/* template */
+var __vue_template__ = __webpack_require__(2009)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/courses/Payment.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-65c33660", Component.options)
+  } else {
+    hotAPI.reload("data-v-65c33660", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 2008:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CourseWidgets_CourseBanner__ = __webpack_require__(1511);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CourseWidgets_CourseBanner__ = __webpack_require__(1603);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CourseWidgets_CourseBanner___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__CourseWidgets_CourseBanner__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(17);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -272,16 +313,52 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   components: {
     CourseBanner: __WEBPACK_IMPORTED_MODULE_0__CourseWidgets_CourseBanner___default.a
   },
+  data: function data() {
+    return {
+      activePayment: null,
+      valid: false,
+      inputRules: {
+        basictextRules: [function (v) {
+          return !!v || 'This field should not be empty.';
+        }]
+      },
+      val: '',
+      currentSelectedBank: 'bank-1',
+      netbankingsMerchants: [{
+        value: 'bank-1',
+        img: '/static/img/client-logo-1.png'
+      }, {
+        value: 'bank-2',
+        img: '/static/img/client-logo-2.png'
+      }, {
+        value: 'bank-3',
+        img: '/static/img/client-logo-3.png'
+      }, {
+        value: 'bank-4',
+        img: '/static/img/client-logo-4.png'
+      }, {
+        value: 'bank-5',
+        img: '/static/img/client-logo-5	.png'
+      }],
+      bankListing: ['ABC', 'DEF', 'GHI', 'JKL']
+    };
+  },
   methods: {
-    getCurrentAppLayoutHandler: function getCurrentAppLayoutHandler() {
-      return Object(__WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__["a" /* getCurrentAppLayout */])(this.$router);
+    /**
+     * This Function is to make Payment
+    */
+    makePayment: function makePayment() {
+      this.$refs.form.validate();
+    },
+    clear: function clear() {
+      this.$refs.form.reset();
     }
   }
 });
 
 /***/ }),
 
-/***/ 1912:
+/***/ 2009:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -290,7 +367,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "courses-signin" },
+    { staticClass: "courses-payment" },
     [
       _c("page-title-bar"),
       _vm._v(" "),
@@ -308,140 +385,341 @@ var render = function() {
                 wrap: "",
                 "align-center": "",
                 "justify-center": "",
-                "signIn-wrap": ""
+                "fill-height": "",
+                "payment-wrap": ""
               }
             },
             [
               _c(
                 "v-flex",
-                { attrs: { xs12: "", sm12: "", md10: "", lg10: "", xl9: "" } },
+                { attrs: { xs12: "", sm12: "", md9: "", lg9: "", xl9: "" } },
                 [
                   _c(
-                    "div",
-                    { staticClass: "shop-by-category section-gap pad-y-lg" },
+                    "app-card",
+                    {
+                      attrs: {
+                        heading: _vm.$t("message.paymentOptions"),
+                        customClasses: "shop-by-category tab-wrap",
+                        contentCustomClass: "pt-0"
+                      }
+                    },
                     [
                       _c(
-                        "v-layout",
-                        { attrs: { row: "", wrap: "", "justify-center": "" } },
-                        [
-                          _c(
-                            "v-flex",
-                            {
-                              attrs: {
-                                xs11: "",
-                                sm8: "",
-                                md6: "",
-                                lg6: "",
-                                xl6: ""
-                              }
+                        "v-tabs",
+                        {
+                          attrs: { light: "", "slider-color": "primary" },
+                          model: {
+                            value: _vm.activePayment,
+                            callback: function($$v) {
+                              _vm.activePayment = $$v
                             },
+                            expression: "activePayment"
+                          }
+                        },
+                        [
+                          _c("v-tab", [_vm._v("Debit/Credit Card")]),
+                          _vm._v(" "),
+                          _c("v-tab", [_vm._v("NetBanking")]),
+                          _vm._v(" "),
+                          _c(
+                            "v-tab-item",
                             [
                               _c(
-                                "app-card",
-                                {
-                                  attrs: {
-                                    contentCustomClass: "pt-0",
-                                    heading: _vm.$t("message.userSignIn")
-                                  }
-                                },
+                                "v-card",
+                                { attrs: { flat: "" } },
                                 [
                                   _c(
-                                    "v-form",
+                                    "v-card-text",
+                                    { staticClass: "pa-0" },
                                     [
                                       _c(
                                         "div",
-                                        { staticClass: "mrgn-b-md" },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              placeholder: "Email*",
-                                              type: "email",
-                                              required: ""
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "mrgn-b-md" },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              placeholder: "Password*",
-                                              type: "password",
-                                              required: ""
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-layout",
                                         {
-                                          attrs: {
-                                            row: "",
-                                            wrap: "",
-                                            "align-start": "",
-                                            "justify-center": "",
-                                            "mx-0": ""
-                                          }
+                                          staticClass:
+                                            "header text-xs-center bg-grey pt-5 pb-3"
                                         },
                                         [
-                                          _c("v-checkbox", {
-                                            attrs: { label: "Remember Me" }
-                                          }),
+                                          _c("div", { staticClass: "mb-4" }, [
+                                            _c("img", {
+                                              attrs: {
+                                                alt: "discount",
+                                                src: "/static/img/card.png"
+                                              }
+                                            })
+                                          ]),
                                           _vm._v(" "),
                                           _c(
-                                            "router-link",
+                                            "h4",
                                             {
-                                              staticClass: "mt-3",
-                                              attrs: {
-                                                to: "/session/forgot-password"
-                                              }
+                                              staticClass:
+                                                "mb-5 font-weight-medium"
                                             },
                                             [
                                               _vm._v(
-                                                "\n                                 Forgot Password ?\n                              "
+                                                _vm._s(
+                                                  _vm.$t(
+                                                    "message.enterCardDetails"
+                                                  )
+                                                )
                                               )
                                             ]
-                                          )
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-btn",
-                                        {
-                                          staticClass: "danger mx-0 mb-4",
-                                          attrs: {
-                                            color: "error",
-                                            to: "/session/login"
-                                          }
-                                        },
-                                        [
-                                          _vm._v(
-                                            _vm._s(_vm.$t("message.signIn"))
                                           )
                                         ]
                                       ),
                                       _vm._v(" "),
                                       _c(
-                                        "p",
-                                        [
-                                          _vm._v("Don't have an account? "),
-                                          _c(
-                                            "router-link",
-                                            {
-                                              staticClass: "primary-text",
-                                              attrs: { to: "/session/sign-up" }
+                                        "v-form",
+                                        {
+                                          ref: "form",
+                                          staticClass: "form-wrapper pt-4 py-5",
+                                          model: {
+                                            value: _vm.valid,
+                                            callback: function($$v) {
+                                              _vm.valid = $$v
                                             },
-                                            [_vm._v("Click here to create one")]
+                                            expression: "valid"
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "div",
+                                            { staticClass: "layout row wrap" },
+                                            [
+                                              _c(
+                                                "v-flex",
+                                                {
+                                                  attrs: {
+                                                    xs12: "",
+                                                    sm12: "",
+                                                    md12: "",
+                                                    lg8: "",
+                                                    xl8: ""
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "layout row wrap"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "v-flex",
+                                                        {
+                                                          attrs: {
+                                                            xs12: "",
+                                                            sm12: "",
+                                                            md6: "",
+                                                            lg10: "",
+                                                            xl10: ""
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-text-field", {
+                                                            staticClass:
+                                                              "mt-0 pt-0",
+                                                            attrs: {
+                                                              rules:
+                                                                _vm.inputRules
+                                                                  .basictextRules,
+                                                              light: "",
+                                                              label:
+                                                                "Card Number",
+                                                              required: ""
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-flex",
+                                                        {
+                                                          attrs: {
+                                                            xs12: "",
+                                                            sm12: "",
+                                                            md6: "",
+                                                            lg10: "",
+                                                            xl10: ""
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-text-field", {
+                                                            staticClass:
+                                                              "mt-0 pt-0",
+                                                            attrs: {
+                                                              rules:
+                                                                _vm.inputRules
+                                                                  .basictextRules,
+                                                              light: "",
+                                                              label: "Name",
+                                                              required: ""
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-flex",
+                                                        {
+                                                          attrs: {
+                                                            xs12: "",
+                                                            sm6: "",
+                                                            md6: "",
+                                                            lg4: "",
+                                                            xl4: ""
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-text-field", {
+                                                            staticClass:
+                                                              "mt-0 pt-0",
+                                                            attrs: {
+                                                              rules:
+                                                                _vm.inputRules
+                                                                  .basictextRules,
+                                                              light: "",
+                                                              label: "CVV",
+                                                              required: ""
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-flex",
+                                                        {
+                                                          attrs: {
+                                                            xs12: "",
+                                                            sm6: "",
+                                                            md6: "",
+                                                            lg4: "",
+                                                            xl4: ""
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("v-text-field", {
+                                                            staticClass:
+                                                              "mt-0 pt-0",
+                                                            attrs: {
+                                                              rules:
+                                                                _vm.inputRules
+                                                                  .basictextRules,
+                                                              light: "",
+                                                              label:
+                                                                "Expiry Date(01/10)",
+                                                              required: ""
+                                                            }
+                                                          })
+                                                        ],
+                                                        1
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "v-flex",
+                                                        {
+                                                          attrs: {
+                                                            xs12: "",
+                                                            sm12: "",
+                                                            md12: "",
+                                                            lg12: "",
+                                                            xl12: ""
+                                                          }
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "btn-wrap text-xl-left"
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "v-btn",
+                                                                {
+                                                                  staticClass:
+                                                                    "error",
+                                                                  on: {
+                                                                    click:
+                                                                      _vm.makePayment
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    _vm._s(
+                                                                      _vm.$t(
+                                                                        "message.submit"
+                                                                      )
+                                                                    )
+                                                                  )
+                                                                ]
+                                                              ),
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "v-btn",
+                                                                {
+                                                                  on: {
+                                                                    click:
+                                                                      _vm.clear
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    _vm._s(
+                                                                      _vm.$t(
+                                                                        "message.clear"
+                                                                      )
+                                                                    )
+                                                                  )
+                                                                ]
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        ]
+                                                      )
+                                                    ],
+                                                    1
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-flex",
+                                                {
+                                                  attrs: {
+                                                    xs12: "",
+                                                    sm12: "",
+                                                    md12: "",
+                                                    lg3: "",
+                                                    xl2: "",
+                                                    "hidden-md-and-down": "",
+                                                    "d-flex": "",
+                                                    "justify-center": "",
+                                                    "align-center": "",
+                                                    "card-visibility": ""
+                                                  }
+                                                },
+                                                [
+                                                  _c("img", {
+                                                    staticClass: "atm-img",
+                                                    attrs: {
+                                                      src:
+                                                        "/static/img/credit-card.png",
+                                                      alt: "Credit card",
+                                                      width: "128",
+                                                      height: "128"
+                                                    }
+                                                  })
+                                                ]
+                                              )
+                                            ],
+                                            1
                                           )
-                                        ],
-                                        1
+                                        ]
                                       )
                                     ],
                                     1
@@ -454,50 +732,198 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           _c(
-                            "v-flex",
-                            {
-                              attrs: {
-                                xs11: "",
-                                sm8: "",
-                                md6: "",
-                                lg6: "",
-                                xl6: ""
-                              }
-                            },
+                            "v-tab-item",
                             [
                               _c(
-                                "app-card",
-                                {
-                                  attrs: {
-                                    heading: _vm.$t("message.guestCheckout"),
-                                    contentCustomClass: "pt-0"
-                                  }
-                                },
+                                "v-card",
+                                { attrs: { flat: "" } },
                                 [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Proceed to checkout and create an account later."
-                                    )
-                                  ]),
-                                  _vm._v(" "),
                                   _c(
-                                    "v-btn",
-                                    {
-                                      staticClass: "error mx-0",
-                                      attrs: {
-                                        to:
-                                          "/" +
-                                          (_vm.getCurrentAppLayoutHandler() +
-                                            "/courses/payment")
-                                      }
-                                    },
+                                    "v-card-text",
+                                    { staticClass: "pa-0" },
                                     [
-                                      _vm._v(
-                                        _vm._s(
-                                          _vm.$t("message.continueAsGuest")
-                                        )
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "header text-xs-center bg-grey pt-5 pb-3"
+                                        },
+                                        [
+                                          _c("div", { staticClass: "mb-4" }, [
+                                            _c("img", {
+                                              attrs: {
+                                                alt: "Bank",
+                                                src:
+                                                  "/static/img/online-shop.png"
+                                              }
+                                            })
+                                          ]),
+                                          _vm._v(" "),
+                                          _c(
+                                            "h4",
+                                            {
+                                              staticClass:
+                                                "mb-5 font-weight-medium"
+                                            },
+                                            [
+                                              _vm._v(
+                                                "Select Bank For Net Banking"
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("v-divider", {
+                                        staticClass: "mt-5 mb-2"
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "text-xs-center" },
+                                        [
+                                          _c(
+                                            "v-container",
+                                            { attrs: { "grid-list-lg": "" } },
+                                            [
+                                              _c(
+                                                "v-layout",
+                                                {
+                                                  attrs: { row: "", wrap: "" }
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-radio-group",
+                                                    {
+                                                      attrs: {
+                                                        mandatory: false,
+                                                        row: "",
+                                                        "text-xs-center": ""
+                                                      },
+                                                      model: {
+                                                        value:
+                                                          _vm.currentSelectedBank,
+                                                        callback: function(
+                                                          $$v
+                                                        ) {
+                                                          _vm.currentSelectedBank = $$v
+                                                        },
+                                                        expression:
+                                                          "currentSelectedBank"
+                                                      }
+                                                    },
+                                                    _vm._l(
+                                                      _vm.netbankingsMerchants,
+                                                      function(bank) {
+                                                        return _c(
+                                                          "v-radio",
+                                                          {
+                                                            key: bank.value,
+                                                            staticClass:
+                                                              "radio-img",
+                                                            attrs: {
+                                                              value: bank.value
+                                                            }
+                                                          },
+                                                          [
+                                                            _c(
+                                                              "template",
+                                                              { slot: "label" },
+                                                              [
+                                                                _c("img", {
+                                                                  attrs: {
+                                                                    src:
+                                                                      bank.img,
+                                                                    width:
+                                                                      "150",
+                                                                    height: "30"
+                                                                  }
+                                                                })
+                                                              ]
+                                                            )
+                                                          ],
+                                                          2
+                                                        )
+                                                      }
+                                                    ),
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "h6",
+                                                {
+                                                  staticClass:
+                                                    "text-xs-left mb-0"
+                                                },
+                                                [_vm._v("All Banks")]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "layout " },
+                                                [
+                                                  _c(
+                                                    "v-flex",
+                                                    {
+                                                      attrs: {
+                                                        xs9: "",
+                                                        sm7: "",
+                                                        md5: "",
+                                                        lg5: "",
+                                                        xl5: ""
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("v-select", {
+                                                        staticClass:
+                                                          "mt-0 pt-0",
+                                                        attrs: {
+                                                          items: _vm.bankListing
+                                                        }
+                                                      })
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                { staticClass: "text-xs-left" },
+                                                [
+                                                  _c(
+                                                    "v-btn",
+                                                    {
+                                                      staticClass: "error mx-0",
+                                                      on: {
+                                                        click: _vm.makePayment
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.$t(
+                                                            "message.makePayment"
+                                                          )
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
                                       )
-                                    ]
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -511,7 +937,8 @@ var render = function() {
                     ],
                     1
                   )
-                ]
+                ],
+                1
               )
             ],
             1
@@ -529,7 +956,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5a7b0858", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-65c33660", module.exports)
   }
 }
 

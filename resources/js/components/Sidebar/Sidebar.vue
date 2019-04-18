@@ -7,10 +7,7 @@
 				<app-logo></app-logo>
             <user-block></user-block>
 				<template v-for="(category, key) in menus">
-					<div :key="key">
-						<div class="sidebar-title px-3">
-							<span>{{$t(key)}}</span>
-						</div>
+					<div :key="key">						
 						<template v-for="item in category">
 							<template v-if="item.items != null">
 								<v-list-group

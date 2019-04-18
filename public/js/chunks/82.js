@@ -1,14 +1,14 @@
 webpackJsonp([82],{
 
-/***/ 1462:
+/***/ 1553:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(2214)
+var __vue_script__ = __webpack_require__(2308)
 /* template */
-var __vue_template__ = __webpack_require__(2215)
+var __vue_template__ = __webpack_require__(2309)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,24 +48,27 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1469:
+/***/ 1560:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-  baseURL: 'http://reactify.theironnetwork.org/data/'
+  baseURL: Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).APP_URL,
+  headers: {
+    'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
+  }
 }));
 
 /***/ }),
 
-/***/ 1476:
+/***/ 1567:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 
 
@@ -3300,15 +3303,15 @@ var slick$1 = /*#__PURE__*/Object.freeze({
 
 /***/ }),
 
-/***/ 1538:
+/***/ 1631:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1539)
+var __vue_script__ = __webpack_require__(1632)
 /* template */
-var __vue_template__ = __webpack_require__(1540)
+var __vue_template__ = __webpack_require__(1633)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -3348,13 +3351,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1539:
+/***/ 1632:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slick__ = __webpack_require__(1476);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Api__ = __webpack_require__(1469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slick__ = __webpack_require__(1567);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Api__ = __webpack_require__(1560);
 //
 //
 //
@@ -3412,7 +3415,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       __WEBPACK_IMPORTED_MODULE_1_Api__["a" /* default */].get("testimonials.js").then(function (response) {
         _this.loader = false;
         _this.testimonials = response.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         console.log(error);
       });
     }
@@ -3421,7 +3424,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1540:
+/***/ 1633:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -3494,18 +3497,18 @@ if (false) {
 
 /***/ }),
 
-/***/ 2214:
+/***/ 2308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase_app__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_SessionSlider__ = __webpack_require__(1538);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_SessionSlider__ = __webpack_require__(1631);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_SessionSlider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_Components_Widgets_SessionSlider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Constants_AppConfig__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_AuthService__ = __webpack_require__(561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Constants_AppConfig__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_AuthService__ = __webpack_require__(604);
 //
 //
 //
@@ -3660,7 +3663,7 @@ var login = auth.login,
 
 /***/ }),
 
-/***/ 2215:
+/***/ 2309:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

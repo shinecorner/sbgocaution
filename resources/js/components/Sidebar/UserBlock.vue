@@ -54,19 +54,7 @@ export default {
 					title: 'message.userProfile',
 					icon: 'ti-user mr-3 primary--text',
 					path: '/users/user-profile'
-				},
-				{
-					id: 2,
-					title: 'message.inbox',
-					icon: 'ti-email mr-3 success--text',
-					path: '/inbox'
-				},
-				{
-					id: 3,
-					title: 'message.usersList',
-					icon: 'ti-bell mr-3 info--text',
-					path: '/users/users-list'
-				},
+				},				
 				{
 					id: 4,
 					title: 'message.logOut',
