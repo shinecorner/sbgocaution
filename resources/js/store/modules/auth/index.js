@@ -3,6 +3,7 @@
  */
 import Vue from 'vue'
 import webServices from 'WebServices'
+import api from '../../../api';
 import firebase from 'firebase/app';
 import Nprogress from 'nprogress';
 import router from '../../../router';
@@ -55,7 +56,7 @@ const actions = {
         webServices.post('/login', JSON.stringify(user), { headers: {'Content-Type':'application/json'}})
             .then(response => {
                 if(response.data.response.api_status){                    
-                    const access_token = response.data.response.access_token;                    
+                    const access_token = response.data.response.access_token;
                     Nprogress.done();
                     setTimeout(() => {                        
                         context.commit('loginUserSuccess', {user, access_token});
@@ -185,8 +186,8 @@ const mutations = {
         state.user = user;
         localStorage.setItem('user',JSON.stringify(user));
         localStorage.setItem('accessToken', access_token);
-        if(access_token){
-            axios.defaults.headers.common['Authorization'] = access_token;
+        if(access_token){            
+            api.defaults.headers.common['Authorization'] = 'Bearer '+ access_token;            
         }
         state.isUserSigninWithAuth0 = false
         router.push("/contacts");

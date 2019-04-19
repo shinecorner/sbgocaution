@@ -1,21 +1,5 @@
 webpackJsonp([32],{
 
-/***/ 1560:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-  baseURL: Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).APP_URL,
-  headers: {
-    'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
-  }
-}));
-
-/***/ }),
-
 /***/ 2275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
