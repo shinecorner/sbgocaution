@@ -122,7 +122,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 delete __WEBPACK_IMPORTED_MODULE_1_leaflet___default.a.Icon.Default.prototype._getIconUrl;
 __WEBPACK_IMPORTED_MODULE_1_leaflet___default.a.Icon.Default.mergeOptions({
   iconRetinaUrl: __webpack_require__(2225),
-  iconUrl: __webpack_require__(605),
+  iconUrl: __webpack_require__(606),
   shadowUrl: __webpack_require__(2226)
 });
 /* harmony default export */ __webpack_exports__["default"] = ({

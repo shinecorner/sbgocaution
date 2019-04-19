@@ -18,12 +18,12 @@
 						select-all
 					>                                        
 					<template slot="headerCell" slot-scope="props">
-						<v-tooltip bottom>
+						<v-tooltip top>
 							<span slot="activator">
-								{{ props.header.text }}
+								{{ $t(props.header.text) }}
 							</span>
 							<span>
-								{{ props.header.text }}
+								{{ $t(props.header.text) }}
 							</span>
 						</v-tooltip>
 					</template>
@@ -37,7 +37,8 @@
 						</td>
 						<td>
                                                     {{ props.item.contact_formate }}
-                                                    <br />                                                    
+                                                    <br />   
+                                                    <span class="grey--text fs-12 fw-normal mb-2 d-block">{{ props.item.date }}</span>
                                                     <v-tooltip top v-if="props.item.is_duplicate">
                                                         <i class="ti-layout-accordion-merged" slot="activator"></i>
                                                         <span>{{props.item.is_duplicate}}</span>
@@ -60,7 +61,9 @@
                                                     </v-tooltip>
                                                 </td>
 						<td>
-                                                    {{ props.item.nachname }} {{ props.item.vorname }}                                                    
+                                                    {{ props.item.nachname }} {{ props.item.vorname }}
+                                                    <span v-if="props.item.company_name" class="grey--text fs-12 fw-normal d-block">{{ props.item.company_name }}</span>
+                                                    <span v-if="props.item.anrede" class="grey--text fs-12 fw-normal d-block">{{ props.item.anrede }}</span>
                                                 </td>
                                                 <td>
                                                     <span class="grey--text fs-12 fw-normal">{{ props.item.address }}</span>
@@ -85,9 +88,9 @@ export default {
       search: "",
       selected: [],
       headers: [        
-        { text: this.$t('message.crm.CONTACT_ID'), value: "id", sortable: false },
-        { text: this.$t('message.crm.NAME'), value: "vorname", sortable: false },
-        { text: this.$t('message.crm.ADDRESS'), value: "address", sortable: false },
+        { text: 'message.crm.CONTACT_ID', value: "id", sortable: false },
+        { text: 'message.crm.NAME', value: "vorname", sortable: false },
+        { text: 'message.crm.ADDRESS', value: "address", sortable: false },
       ],
       items: []
     };
@@ -99,8 +102,7 @@ export default {
     getTablesData() {
       api
         .get("api/contacts")
-        .then(response => {
-            console.log(response.data.data);
+        .then(response => {         
           this.loader = false;
           this.items = response.data.data;
         })

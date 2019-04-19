@@ -17,7 +17,7 @@ const state = {
 	backgroundImage: false,                                // enable sidebar background image
 	horizontalLayoutSidebar: false,                        // horizontal layout sidebar
 	languages,                                             // languages
-	selectedLocale: languages[0],                          // selected locale
+	selectedLocale: (localStorage.getItem('selectedLocale') ? JSON.parse(localStorage.getItem('selectedLocale')) : languages[0]),                          // selected locale
 	sidebarBackgroundImages,                               // sidebar backgorund images
 	selectedSidebarBgImage: sidebarBackgroundImages[0],    // selected sidebar background image
 	sidebarFilters,                                        // sidebar filters
@@ -157,6 +157,7 @@ const mutations = {
 	},
 	changeLanguageHandler(state, language) {
 		state.selectedLocale = language;
+                localStorage.setItem('selectedLocale', JSON.stringify(language));
 		if (language.locale === 'he' || language.locale === 'ar') {
 			state.rtlLayout = true;
 		} else {

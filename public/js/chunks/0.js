@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 1558:
+/***/ 1559:
 /***/ (function(module, exports) {
 
 /**
@@ -740,7 +740,7 @@ exports.noop = noop;
 
 /***/ }),
 
-/***/ 1559:
+/***/ 1560:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -832,7 +832,7 @@ var VueCharts = {
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var env = __webpack_require__(1570);
 
@@ -1367,7 +1367,7 @@ exports.groupData = groupData;
 
 var Displayable = __webpack_require__(1597);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var PathProxy = __webpack_require__(1598);
 
@@ -1765,7 +1765,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -6137,7 +6137,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var pathTool = __webpack_require__(1657);
 
@@ -22517,7 +22517,7 @@ var __DEV__ = _config.__DEV__;
 
 var zrender = __webpack_require__(1644);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var colorTool = __webpack_require__(1594);
 
@@ -24752,7 +24752,7 @@ var _config = __webpack_require__(1565);
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -25035,7 +25035,7 @@ exports.setReadOnly = setReadOnly;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var env = __webpack_require__(1570);
 
@@ -25279,7 +25279,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Model = __webpack_require__(1577);
 
@@ -25529,7 +25529,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var textContain = __webpack_require__(1581);
 
@@ -25810,7 +25810,7 @@ exports.getTextRect = getTextRect;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return profitShare; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return devicesShare; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return subscribers; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Constants_chart_config__ = __webpack_require__(1560);
  // New clients
 
 var newClients = {
@@ -25961,7 +25961,7 @@ var BoundingRect = __webpack_require__(1568);
 
 var imageHelper = __webpack_require__(1615);
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var getContext = _util.getContext;
 var extend = _util.extend;
@@ -27400,7 +27400,7 @@ exports.clone = clone;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var BoundingRect = __webpack_require__(1568);
 
@@ -27933,7 +27933,7 @@ var _config = __webpack_require__(1565);
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var isTypedArray = _util.isTypedArray;
 var extend = _util.extend;
@@ -28668,7 +28668,7 @@ module.exports = _default;
 /***/ 1587:
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Element = __webpack_require__(1646);
 
@@ -29006,7 +29006,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var createHashMap = _util.createHashMap;
 var isTypedArray = _util.isTypedArray;
@@ -29246,7 +29246,7 @@ exports.SERIES_LAYOUT_BY_ROW = SERIES_LAYOUT_BY_ROW;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var each = _util.each;
 var isString = _util.isString;
@@ -29416,7 +29416,7 @@ exports.getStackedDimension = getStackedDimension;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1561);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Helpers_helpers__ = __webpack_require__(54);
 
 
@@ -30399,7 +30399,7 @@ exports.WILL_BE_RESTORED = WILL_BE_RESTORED;
 /***/ 1597:
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Style = __webpack_require__(1613);
 
@@ -31454,7 +31454,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var _clazz = __webpack_require__(1576);
 
@@ -31692,7 +31692,7 @@ var _referHelper = __webpack_require__(1671);
 
 var getCoordSysDefineBySeries = _referHelper.getCoordSysDefineBySeries;
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var createHashMap = _util.createHashMap;
 var each = _util.each;
@@ -32461,7 +32461,7 @@ module.exports = _default;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return trafficChannel; });
 /* unused harmony export spaceUsed */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return activeUser; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants_chart_config__ = __webpack_require__(1560);
  // Daily Sales
 
 var dailySales = {
@@ -32556,7 +32556,7 @@ var activeUser = [{
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -33955,7 +33955,7 @@ var Displayable = __webpack_require__(1597);
 
 var BoundingRect = __webpack_require__(1568);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var imageHelper = __webpack_require__(1615);
 
@@ -34187,7 +34187,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var assert = _util.assert;
 var isArray = _util.isArray;
@@ -34538,7 +34538,7 @@ exports.createTask = createTask;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var each = _util.each;
 
@@ -34829,7 +34829,7 @@ var _config = __webpack_require__(1565);
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Model = __webpack_require__(1577);
 
@@ -36881,7 +36881,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var each = _util.each;
 var createHashMap = _util.createHashMap;
@@ -37124,7 +37124,7 @@ var _config = __webpack_require__(1565);
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var OrdinalScale = __webpack_require__(1772);
 
@@ -38277,7 +38277,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slick__ = __webpack_require__(1567);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Api__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -38450,7 +38450,7 @@ if (false) {
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -38732,7 +38732,7 @@ var guid = __webpack_require__(1645);
 
 var env = __webpack_require__(1570);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Handler = __webpack_require__(1720);
 
@@ -39215,7 +39215,7 @@ var Transformable = __webpack_require__(1647);
 
 var Animatable = __webpack_require__(1724);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /**
  * @alias module:zrender/Element
@@ -39816,7 +39816,7 @@ var Clip = __webpack_require__(1725);
 
 var color = __webpack_require__(1594);
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var isArrayLike = _util.isArrayLike;
 
@@ -40758,7 +40758,7 @@ module.exports = _default;
 /***/ 1654:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var retrieve2 = _util.retrieve2;
 var retrieve3 = _util.retrieve3;
@@ -41427,7 +41427,7 @@ var _config = __webpack_require__(1565);
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var each = _util.each;
 var filter = _util.filter;
@@ -42857,7 +42857,7 @@ module.exports = windingLine;
 
 var Displayable = __webpack_require__(1597);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var textContain = __webpack_require__(1581);
 
@@ -43333,7 +43333,7 @@ module.exports = _default;
 /***/ 1669:
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Gradient = __webpack_require__(1616);
 
@@ -43504,7 +43504,7 @@ var _config = __webpack_require__(1565);
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var createHashMap = _util.createHashMap;
 var retrieve = _util.retrieve;
@@ -43668,7 +43668,7 @@ exports.getCoordSysDefineBySeries = getCoordSysDefineBySeries;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -43728,7 +43728,7 @@ var _config = __webpack_require__(1565);
 
 var __DEV__ = _config.__DEV__;
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var env = __webpack_require__(1570);
 
@@ -44631,7 +44631,7 @@ exports.clear = clear;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var List = __webpack_require__(1619);
 
@@ -44803,7 +44803,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var createHashMap = _util.createHashMap;
 var each = _util.each;
@@ -45274,7 +45274,7 @@ exports.intervalScaleGetTicks = intervalScaleGetTicks;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var graphic = __webpack_require__(1569);
 
@@ -45601,7 +45601,7 @@ exports.createSymbol = createSymbol;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1561);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 // News Letter Campaign Widget
 
 
@@ -45782,7 +45782,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(603);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -46535,7 +46535,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slick__ = __webpack_require__(1567);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Api__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -46867,7 +46867,7 @@ if (false) {
 
 var echarts = __webpack_require__(1574);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 __webpack_require__(1779);
 
@@ -47003,7 +47003,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var createHashMap = _util.createHashMap;
 var isObject = _util.isObject;
@@ -47176,7 +47176,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var _number = __webpack_require__(1564);
 
@@ -47638,7 +47638,7 @@ exports.largeLayout = largeLayout;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -47748,7 +47748,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var each = _util.each;
 var map = _util.map;
@@ -48121,7 +48121,7 @@ var createDimensions = __webpack_require__(1621);
 
 var List = __webpack_require__(1619);
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var extend = _util.extend;
 var isArray = _util.isArray;
@@ -48199,7 +48199,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var createHashMap = _util.createHashMap;
 
@@ -48676,7 +48676,7 @@ if (false) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1561);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 // Line Chart Widget
 
 
@@ -48791,7 +48791,7 @@ if (false) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1561);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 // Sales Widget
 
 
@@ -48861,7 +48861,7 @@ if (false) {
 /***/ 1720:
 /***/ (function(module, exports, __webpack_require__) {
 
-var util = __webpack_require__(1558);
+var util = __webpack_require__(1559);
 
 var vec2 = __webpack_require__(1566);
 
@@ -49415,7 +49415,7 @@ module.exports = _default;
 /***/ 1723:
 /***/ (function(module, exports, __webpack_require__) {
 
-var util = __webpack_require__(1558);
+var util = __webpack_require__(1559);
 
 var env = __webpack_require__(1570);
 
@@ -49657,7 +49657,7 @@ var Animator = __webpack_require__(1648);
 
 var log = __webpack_require__(1650);
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var isString = _util.isString;
 var isFunction = _util.isFunction;
@@ -50429,7 +50429,7 @@ var _config = __webpack_require__(1595);
 
 var devicePixelRatio = _config.devicePixelRatio;
 
-var util = __webpack_require__(1558);
+var util = __webpack_require__(1559);
 
 var log = __webpack_require__(1650);
 
@@ -51440,7 +51440,7 @@ module.exports = _default;
 /***/ 1728:
 /***/ (function(module, exports, __webpack_require__) {
 
-var util = __webpack_require__(1558);
+var util = __webpack_require__(1559);
 
 var _config = __webpack_require__(1595);
 
@@ -51747,7 +51747,7 @@ module.exports = _default;
 /***/ 1730:
 /***/ (function(module, exports, __webpack_require__) {
 
-var util = __webpack_require__(1558);
+var util = __webpack_require__(1559);
 
 var _event = __webpack_require__(1593);
 
@@ -52006,7 +52006,7 @@ var addEventListener = _event.addEventListener;
 var removeEventListener = _event.removeEventListener;
 var normalizeEvent = _event.normalizeEvent;
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Eventful = __webpack_require__(1586);
 
@@ -53698,7 +53698,7 @@ module.exports = _default;
 /***/ 1748:
 /***/ (function(module, exports, __webpack_require__) {
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Gradient = __webpack_require__(1616);
 
@@ -53736,7 +53736,7 @@ module.exports = _default;
 /***/ 1749:
 /***/ (function(module, exports, __webpack_require__) {
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var inherits = _util.inherits;
 
@@ -54121,7 +54121,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var modelUtil = __webpack_require__(1562);
 
@@ -54580,7 +54580,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var each = _util.each;
 var isArray = _util.isArray;
@@ -54728,7 +54728,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var modelUtil = __webpack_require__(1562);
 
@@ -55053,7 +55053,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var createHashMap = _util.createHashMap;
 var each = _util.each;
@@ -55442,7 +55442,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var lang = __webpack_require__(1760);
 
@@ -55811,7 +55811,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var graphic = __webpack_require__(1569);
 
@@ -55948,7 +55948,7 @@ module.exports = _default;
 * under the License.
 */
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var each = _util.each;
 var map = _util.map;
@@ -56837,7 +56837,7 @@ var _config = __webpack_require__(1565);
 
 var __DEV__ = _config.__DEV__;
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var createHashMap = _util.createHashMap;
 var isString = _util.isString;
@@ -56962,7 +56962,7 @@ var _path = __webpack_require__(1657);
 
 var createFromString = _path.createFromString;
 
-var _util = __webpack_require__(1558);
+var _util = __webpack_require__(1559);
 
 var isString = _util.isString;
 var extend = _util.extend;
@@ -57703,7 +57703,7 @@ var vector = __webpack_require__(1566);
 
 exports.vector = vector;
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var colorTool = __webpack_require__(1594);
 
@@ -57808,7 +57808,7 @@ exports.graphic = graphic;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var createListFromArray = __webpack_require__(1676);
 
@@ -58126,7 +58126,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Scale = __webpack_require__(1601);
 
@@ -58281,7 +58281,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var numberUtil = __webpack_require__(1564);
 
@@ -58530,7 +58530,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Scale = __webpack_require__(1601);
 
@@ -58741,7 +58741,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var Region = __webpack_require__(1776);
 
@@ -59156,7 +59156,7 @@ exports.contain = contain;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var textContain = __webpack_require__(1581);
 
@@ -59530,7 +59530,7 @@ var echarts = __webpack_require__(1574);
 
 var createListSimply = __webpack_require__(1696);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var modelUtil = __webpack_require__(1562);
 
@@ -59710,7 +59710,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -59840,7 +59840,7 @@ module.exports = _default;
 * under the License.
 */
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 var graphic = __webpack_require__(1569);
 
@@ -60203,7 +60203,7 @@ module.exports = _default;
 
 var echarts = __webpack_require__(1574);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -60292,7 +60292,7 @@ var linearMap = _number.linearMap;
 
 var labelLayout = __webpack_require__(1784);
 
-var zrUtil = __webpack_require__(1558);
+var zrUtil = __webpack_require__(1559);
 
 /*
 * Licensed to the Apache Software Foundation (ASF) under one
@@ -60754,7 +60754,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -61007,7 +61007,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -61417,7 +61417,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_Components_Widgets_RecentComments___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_Components_Widgets_RecentComments__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_Components_Widgets_NotificationsV2__ = __webpack_require__(1788);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_Components_Widgets_NotificationsV2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_Components_Widgets_NotificationsV2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_Constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_Constants_chart_config__ = __webpack_require__(1560);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__data__ = __webpack_require__(1580);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_Views_widgets_data__ = __webpack_require__(1602);
 //
@@ -62045,7 +62045,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_pie___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_echarts_lib_chart_pie__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_title__ = __webpack_require__(1624);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_echarts_lib_component_title__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Constants_chart_config__ = __webpack_require__(1560);
 //
 //
 //
@@ -62759,7 +62759,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -63015,7 +63015,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -63320,7 +63320,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_LineChartWithArea__ = __webpack_require__(1592);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 //
 //
 //

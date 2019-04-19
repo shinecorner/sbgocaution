@@ -1,10 +1,11 @@
 webpackJsonp([57],{
 
-/***/ 2283:
+/***/ 2279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(603);
 //
 //
 //
@@ -48,29 +49,103 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      items: [{
-        color: 'red lighten-2',
-        icon: 'mdi-star'
+      loader: true,
+      max25chars: function max25chars(v) {
+        return v.length <= 25 || "Input too long!";
+      },
+      tmp: "",
+      search: "",
+      pagination: {},
+      headers: [{
+        text: "Dessert (100g serving)",
+        align: "left",
+        sortable: false,
+        value: "name"
       }, {
-        color: 'purple darken-1',
-        icon: 'mdi-book-variant'
+        text: "Calories",
+        value: "calories"
       }, {
-        color: 'green lighten-1',
-        icon: 'mdi-airballoon'
+        text: "Fat (g)",
+        value: "fat"
       }, {
-        color: 'indigo',
-        icon: 'mdi-buffer'
-      }]
+        text: "Carbs (g)",
+        value: "carbs"
+      }, {
+        text: "Protein (g)",
+        value: "protein"
+      }, {
+        text: "Sodium (mg)",
+        value: "sodium"
+      }, {
+        text: "Calcium (%)",
+        value: "calcium"
+      }, {
+        text: "Iron (%)",
+        value: "iron"
+      }],
+      items: []
     };
+  },
+  mounted: function mounted() {
+    this.getTablesData();
+  },
+  methods: {
+    getTablesData: function getTablesData() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].get("vuely/tablesData.js").then(function (response) {
+        _this.loader = false;
+        _this.items = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
 /***/ }),
 
-/***/ 2284:
+/***/ 2280:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -79,13 +154,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "hover-wrapper" },
     [
       _c("page-title-bar"),
       _vm._v(" "),
+      _c("app-section-loader", { attrs: { status: _vm.loader } }),
+      _vm._v(" "),
       _c(
         "v-container",
-        { attrs: { "grid-list-xl": "", "pt-0": "" } },
+        { attrs: { fluid: "", "grid-list-xl": "", "py-0": "" } },
         [
           _c(
             "v-layout",
@@ -93,76 +169,175 @@ var render = function() {
             [
               _c(
                 "app-card",
-                { attrs: { colClasses: "xl12 lg12 md12 sm12 xs12" } },
+                {
+                  attrs: {
+                    heading: _vm.$t("message.searchRow"),
+                    fullBlock: true,
+                    colClasses: "xl12 lg12 md12 sm12 xs12"
+                  }
+                },
                 [
-                  _c("div", { staticClass: "mb-4" }, [
-                    _c("p", [
-                      _vm._v("Conditionally use icons within the "),
-                      _c("code", [_vm._v("v-timeline-item")]),
-                      _vm._v(" 's dot to provide additional context.")
-                    ])
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "v-timeline",
-                    { attrs: { "align-top": "" } },
-                    _vm._l(_vm.items, function(item, i) {
-                      return _c(
-                        "v-timeline-item",
-                        {
-                          key: i,
-                          staticClass: "white--text ",
-                          attrs: {
-                            color: item.color,
-                            icon: item.icon,
-                            "fill-dot": ""
-                          }
+                    "v-card-title",
+                    [
+                      _vm._v("Nutrition\n\t\t\t\t\t\t"),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          "append-icon": "search",
+                          label: "Search",
+                          "single-line": "",
+                          "hide-details": ""
                         },
-                        [
-                          _c(
-                            "v-card",
-                            { attrs: { color: item.color } },
-                            [
-                              _c(
-                                "v-card-title",
-                                { staticClass: "title white--text" },
-                                [_vm._v("Lorem Ipsum Dolor")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-card-text",
-                                { staticClass: "white text--primary" },
-                                [
-                                  _c("p", [
-                                    _vm._v(
-                                      "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae."
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-btn",
-                                    {
-                                      staticClass: "mx-0",
-                                      attrs: { color: item.color, outline: "" }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                              Button\n                           "
-                                      )
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    }),
+                        model: {
+                          value: _vm.search,
+                          callback: function($$v) {
+                            _vm.search = $$v
+                          },
+                          expression: "search"
+                        }
+                      })
+                    ],
                     1
-                  )
+                  ),
+                  _vm._v(" "),
+                  _c("v-data-table", {
+                    attrs: {
+                      headers: _vm.headers,
+                      items: _vm.items,
+                      search: _vm.search
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "items",
+                        fn: function(props) {
+                          return [
+                            _c(
+                              "td",
+                              [
+                                _c(
+                                  "v-edit-dialog",
+                                  { attrs: { lazy: "" } },
+                                  [
+                                    _vm._v(
+                                      "\n\t\t\t\t\t\t\t\t\t" +
+                                        _vm._s(props.item.name) +
+                                        "\n\t\t\t\t\t\t\t\t\t"
+                                    ),
+                                    _c("v-text-field", {
+                                      attrs: {
+                                        slot: "input",
+                                        label: "Edit",
+                                        "single-line": "",
+                                        counter: "",
+                                        rules: [_vm.max25chars]
+                                      },
+                                      slot: "input",
+                                      model: {
+                                        value: props.item.name,
+                                        callback: function($$v) {
+                                          _vm.$set(props.item, "name", $$v)
+                                        },
+                                        expression: "props.item.name"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.calories))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.fat))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.carbs))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.protein))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.sodium))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.calcium))]),
+                            _vm._v(" "),
+                            _c(
+                              "td",
+                              [
+                                _c(
+                                  "v-edit-dialog",
+                                  {
+                                    attrs: { large: "", lazy: "" },
+                                    on: {
+                                      open: function($event) {
+                                        _vm.tmp = props.item.iron
+                                      },
+                                      save: function($event) {
+                                        props.item.iron =
+                                          _vm.tmp || props.item.iron
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _c("div", [
+                                      _vm._v(_vm._s(props.item.iron))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "mt-3 title",
+                                        attrs: { slot: "input" },
+                                        slot: "input"
+                                      },
+                                      [_vm._v("Update Iron")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("v-text-field", {
+                                      attrs: {
+                                        slot: "input",
+                                        label: "Edit",
+                                        "single-line": "",
+                                        counter: "",
+                                        autofocus: "",
+                                        rules: [_vm.max25chars]
+                                      },
+                                      slot: "input",
+                                      model: {
+                                        value: _vm.tmp,
+                                        callback: function($$v) {
+                                          _vm.tmp = $$v
+                                        },
+                                        expression: "tmp"
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ]
+                        }
+                      },
+                      {
+                        key: "pageText",
+                        fn: function(ref) {
+                          var pageStart = ref.pageStart
+                          var pageStop = ref.pageStop
+                          return [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\tFrom " +
+                                _vm._s(pageStart) +
+                                " to " +
+                                _vm._s(pageStop) +
+                                "\n\t\t\t\t\t\t"
+                            )
+                          ]
+                        }
+                      }
+                    ])
+                  })
                 ],
                 1
               )
@@ -182,21 +357,21 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-20bf48df", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-a60ce814", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 245:
+/***/ 242:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(2283)
+var __vue_script__ = __webpack_require__(2279)
 /* template */
-var __vue_template__ = __webpack_require__(2284)
+var __vue_template__ = __webpack_require__(2280)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -213,7 +388,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/views/timelines/IconDots.vue"
+Component.options.__file = "resources/js/views/tables/SearchWithText.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -222,9 +397,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-20bf48df", Component.options)
+    hotAPI.createRecord("data-v-a60ce814", Component.options)
   } else {
-    hotAPI.reload("data-v-20bf48df", Component.options)
+    hotAPI.reload("data-v-a60ce814", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
