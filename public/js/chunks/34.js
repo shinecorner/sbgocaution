@@ -1,27 +1,58 @@
 webpackJsonp([34],{
 
-/***/ 1560:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 204:
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(2133)
+/* template */
+var __vue_template__ = __webpack_require__(2134)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/ui-elements/Snackbar.vue"
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-  baseURL: Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).APP_URL,
-  headers: {
-    'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-70be207a", Component.options)
+  } else {
+    hotAPI.reload("data-v-70be207a", Component.options)
   }
-}));
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 
-/***/ 2279:
+/***/ 2133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(1560);
 //
 //
 //
@@ -101,67 +132,41 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      loader: true,
-      max25chars: function max25chars(v) {
-        return v.length <= 25 || "Input too long!";
-      },
-      tmp: "",
-      search: "",
-      pagination: {},
-      headers: [{
-        text: "Dessert (100g serving)",
-        align: "left",
-        sortable: false,
-        value: "name"
-      }, {
-        text: "Calories",
-        value: "calories"
-      }, {
-        text: "Fat (g)",
-        value: "fat"
-      }, {
-        text: "Carbs (g)",
-        value: "carbs"
-      }, {
-        text: "Protein (g)",
-        value: "protein"
-      }, {
-        text: "Sodium (mg)",
-        value: "sodium"
-      }, {
-        text: "Calcium (%)",
-        value: "calcium"
-      }, {
-        text: "Iron (%)",
-        value: "iron"
-      }],
-      items: []
+      snackbar: false,
+      snackbar2: false,
+      y: "top",
+      x: null,
+      mode: "",
+      mode2: "",
+      timeout: 6000,
+      text: "Hello, I'm a snackbar",
+      color: ""
     };
-  },
-  mounted: function mounted() {
-    this.getTablesData();
-  },
-  methods: {
-    getTablesData: function getTablesData() {
-      var _this = this;
-
-      __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].get("vuely/tablesData.js").then(function (response) {
-        _this.loader = false;
-        _this.items = response.data;
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    }
   }
 });
 
 /***/ }),
 
-/***/ 2280:
+/***/ 2134:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -170,190 +175,410 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "custom-flex" },
     [
       _c("page-title-bar"),
       _vm._v(" "),
-      _c("app-section-loader", { attrs: { status: _vm.loader } }),
-      _vm._v(" "),
       _c(
         "v-container",
-        { attrs: { fluid: "", "grid-list-xl": "", "py-0": "" } },
+        { attrs: { fluid: "", "grid-list-xl": "", "pt-0": "" } },
         [
           _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
+            "app-card",
+            { attrs: { heading: _vm.$t("message.snackbar") } },
             [
+              _c("div", { staticClass: "mb-3" }, [
+                _c("p", [
+                  _vm._v(
+                    "The standard snackbar is useful for calling attention to some function that has just happened."
+                  )
+                ])
+              ]),
+              _vm._v(" "),
               _c(
-                "app-card",
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c("v-flex", { attrs: { xs12: "", md6: "" } }, [
+                    _c("ul", { staticClass: "list-unstyled" }, [
+                      _c(
+                        "li",
+                        [
+                          _c("v-checkbox", {
+                            attrs: {
+                              color: "primary",
+                              value: "left",
+                              label: "Left"
+                            },
+                            model: {
+                              value: _vm.x,
+                              callback: function($$v) {
+                                _vm.x = $$v
+                              },
+                              expression: "x"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c("v-checkbox", {
+                            attrs: {
+                              color: "primary",
+                              value: "right",
+                              label: "Right"
+                            },
+                            model: {
+                              value: _vm.x,
+                              callback: function($$v) {
+                                _vm.x = $$v
+                              },
+                              expression: "x"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c("v-checkbox", {
+                            attrs: {
+                              color: "primary",
+                              value: "top",
+                              label: "Top"
+                            },
+                            model: {
+                              value: _vm.y,
+                              callback: function($$v) {
+                                _vm.y = $$v
+                              },
+                              expression: "y"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c("v-checkbox", {
+                            attrs: {
+                              color: "primary",
+                              value: "bottom",
+                              label: "Bottom"
+                            },
+                            model: {
+                              value: _vm.y,
+                              callback: function($$v) {
+                                _vm.y = $$v
+                              },
+                              expression: "y"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c("v-checkbox", {
+                            attrs: {
+                              color: "primary",
+                              value: "multi-line",
+                              label: "Multi-line (mobile)"
+                            },
+                            model: {
+                              value: _vm.mode,
+                              callback: function($$v) {
+                                _vm.mode = $$v
+                              },
+                              expression: "mode"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c("v-checkbox", {
+                            attrs: {
+                              color: "primary",
+                              value: "vertical",
+                              label: "Vertical (mobile)"
+                            },
+                            model: {
+                              value: _vm.mode,
+                              callback: function($$v) {
+                                _vm.mode = $$v
+                              },
+                              expression: "mode"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", md6: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: { type: "text", label: "Text" },
+                        model: {
+                          value: _vm.text,
+                          callback: function($$v) {
+                            _vm.text = $$v
+                          },
+                          expression: "text"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: { type: "number", label: "Timeout" },
+                        model: {
+                          value: _vm.timeout,
+                          callback: function($$v) {
+                            _vm.timeout = _vm._n($$v)
+                          },
+                          expression: "timeout"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { block: "", color: "primary", large: "" },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.snackbar = true
+                            }
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.$t("message.showSnackbar")))]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-snackbar",
                 {
                   attrs: {
-                    heading: _vm.$t("message.searchRow"),
-                    fullBlock: true,
-                    colClasses: "xl12 lg12 md12 sm12 xs12"
+                    timeout: _vm.timeout,
+                    top: _vm.y === "top",
+                    bottom: _vm.y === "bottom",
+                    right: _vm.x === "right",
+                    left: _vm.x === "left",
+                    "multi-line": _vm.mode === "multi-line",
+                    vertical: _vm.mode === "vertical"
+                  },
+                  model: {
+                    value: _vm.snackbar,
+                    callback: function($$v) {
+                      _vm.snackbar = $$v
+                    },
+                    expression: "snackbar"
                   }
                 },
                 [
+                  _c("p", { staticClass: "ma-0" }, [_vm._v(_vm._s(_vm.text))]),
+                  _vm._v(" "),
                   _c(
-                    "v-card-title",
+                    "v-btn",
+                    {
+                      attrs: { color: "error" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.snackbar = false
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(_vm.$t("message.close")))]
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "app-card",
+            { attrs: { heading: _vm.$t("message.contextualSnackbar") } },
+            [
+              _c("div", { staticClass: "mb-3" }, [
+                _c("p", { staticClass: "mb-0" }, [
+                  _vm._v(
+                    "You can also apply a color to the snackbar to better fit your implementation."
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-layout",
+                { attrs: { row: "", wrap: "" } },
+                [
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", md6: "" } },
                     [
-                      _vm._v("Nutrition\n\t\t\t\t\t\t"),
-                      _c("v-spacer"),
+                      _c(
+                        "v-radio-group",
+                        {
+                          attrs: { row: "" },
+                          model: {
+                            value: _vm.color,
+                            callback: function($$v) {
+                              _vm.color = $$v
+                            },
+                            expression: "color"
+                          }
+                        },
+                        _vm._l(
+                          ["success", "info", "error", "cyan darken-2"],
+                          function(colorValue, i) {
+                            return _c("v-radio", {
+                              key: i,
+                              attrs: {
+                                light: "",
+                                value: colorValue,
+                                label: colorValue,
+                                color: colorValue
+                              }
+                            })
+                          }
+                        ),
+                        1
+                      ),
                       _vm._v(" "),
-                      _c("v-text-field", {
+                      _c("v-checkbox", {
                         attrs: {
-                          "append-icon": "search",
-                          label: "Search",
-                          "single-line": "",
-                          "hide-details": ""
+                          color: "primary",
+                          value: "multi-line",
+                          label: "Multi-line (mobile)"
                         },
                         model: {
-                          value: _vm.search,
+                          value: _vm.mode2,
                           callback: function($$v) {
-                            _vm.search = $$v
+                            _vm.mode2 = $$v
                           },
-                          expression: "search"
+                          expression: "mode2"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-checkbox", {
+                        attrs: {
+                          color: "primary",
+                          value: "vertical",
+                          label: "Vertical (mobile)"
+                        },
+                        model: {
+                          value: _vm.mode2,
+                          callback: function($$v) {
+                            _vm.mode2 = $$v
+                          },
+                          expression: "mode2"
                         }
                       })
                     ],
                     1
                   ),
                   _vm._v(" "),
-                  _c("v-data-table", {
-                    attrs: {
-                      headers: _vm.headers,
-                      items: _vm.items,
-                      search: _vm.search
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "items",
-                        fn: function(props) {
-                          return [
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "v-edit-dialog",
-                                  { attrs: { lazy: "" } },
-                                  [
-                                    _vm._v(
-                                      "\n\t\t\t\t\t\t\t\t\t" +
-                                        _vm._s(props.item.name) +
-                                        "\n\t\t\t\t\t\t\t\t\t"
-                                    ),
-                                    _c("v-text-field", {
-                                      attrs: {
-                                        slot: "input",
-                                        label: "Edit",
-                                        "single-line": "",
-                                        counter: "",
-                                        rules: [_vm.max25chars]
-                                      },
-                                      slot: "input",
-                                      model: {
-                                        value: props.item.name,
-                                        callback: function($$v) {
-                                          _vm.$set(props.item, "name", $$v)
-                                        },
-                                        expression: "props.item.name"
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.calories))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.fat))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.carbs))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.protein))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.sodium))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.calcium))]),
-                            _vm._v(" "),
-                            _c(
-                              "td",
-                              [
-                                _c(
-                                  "v-edit-dialog",
-                                  {
-                                    attrs: { large: "", lazy: "" },
-                                    on: {
-                                      open: function($event) {
-                                        _vm.tmp = props.item.iron
-                                      },
-                                      save: function($event) {
-                                        props.item.iron =
-                                          _vm.tmp || props.item.iron
-                                      }
-                                    }
-                                  },
-                                  [
-                                    _c("div", [
-                                      _vm._v(_vm._s(props.item.iron))
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "mt-3 title",
-                                        attrs: { slot: "input" },
-                                        slot: "input"
-                                      },
-                                      [_vm._v("Update Iron")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("v-text-field", {
-                                      attrs: {
-                                        slot: "input",
-                                        label: "Edit",
-                                        "single-line": "",
-                                        counter: "",
-                                        autofocus: "",
-                                        rules: [_vm.max25chars]
-                                      },
-                                      slot: "input",
-                                      model: {
-                                        value: _vm.tmp,
-                                        callback: function($$v) {
-                                          _vm.tmp = $$v
-                                        },
-                                        expression: "tmp"
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            )
-                          ]
+                  _c(
+                    "v-flex",
+                    { attrs: { xs12: "", md6: "" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: { type: "text", label: "Text" },
+                        model: {
+                          value: _vm.text,
+                          callback: function($$v) {
+                            _vm.text = $$v
+                          },
+                          expression: "text"
                         }
-                      },
-                      {
-                        key: "pageText",
-                        fn: function(ref) {
-                          var pageStart = ref.pageStart
-                          var pageStop = ref.pageStop
-                          return [
-                            _vm._v(
-                              "\n\t\t\t\t\t\t\tFrom " +
-                                _vm._s(pageStart) +
-                                " to " +
-                                _vm._s(pageStop) +
-                                "\n\t\t\t\t\t\t"
-                            )
-                          ]
+                      }),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: { type: "number", label: "Timeout" },
+                        model: {
+                          value: _vm.timeout,
+                          callback: function($$v) {
+                            _vm.timeout = _vm._n($$v)
+                          },
+                          expression: "timeout"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: {
+                            block: "",
+                            large: "",
+                            color: "warning",
+                            dark: ""
+                          },
+                          nativeOn: {
+                            click: function($event) {
+                              _vm.snackbar2 = true
+                            }
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.$t("message.showSnackbar")))]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-snackbar",
+                {
+                  attrs: {
+                    timeout: _vm.timeout,
+                    color: _vm.color,
+                    "multi-line": _vm.mode2 === "multi-line",
+                    vertical: _vm.mode2 === "vertical"
+                  },
+                  model: {
+                    value: _vm.snackbar2,
+                    callback: function($$v) {
+                      _vm.snackbar2 = $$v
+                    },
+                    expression: "snackbar2"
+                  }
+                },
+                [
+                  _vm._v("\n\t\t\t\t" + _vm._s(_vm.text) + "\n\t\t\t\t"),
+                  _c(
+                    "v-btn",
+                    {
+                      attrs: { color: "error" },
+                      nativeOn: {
+                        click: function($event) {
+                          _vm.snackbar2 = false
                         }
                       }
-                    ])
-                  })
+                    },
+                    [_vm._v(_vm._s(_vm.$t("message.close")))]
+                  )
                 ],
                 1
               )
@@ -373,57 +598,9 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-a60ce814", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-70be207a", module.exports)
   }
 }
-
-/***/ }),
-
-/***/ 242:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(2279)
-/* template */
-var __vue_template__ = __webpack_require__(2280)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/views/tables/SearchWithText.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-a60ce814", Component.options)
-  } else {
-    hotAPI.reload("data-v-a60ce814", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
 
 /***/ })
 

@@ -1,87 +1,10 @@
 webpackJsonp([50],{
 
-/***/ 2155:
+/***/ 2286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -122,50 +45,29 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      datepicker: null,
-      datepicker2: null,
-      date: null,
-      date1: null,
-      date2: null,
-      menu: false,
-      menu1: false,
-      modal: false,
-      dateFormatted: null
+      years: [{
+        color: 'cyan',
+        year: '1960'
+      }, {
+        color: 'green',
+        year: '1970'
+      }, {
+        color: 'pink',
+        year: '1980'
+      }, {
+        color: 'amber',
+        year: '1990'
+      }, {
+        color: 'orange',
+        year: '2000'
+      }]
     };
-  },
-  methods: {
-    formatDate: function formatDate(date) {
-      if (!date) {
-        return null;
-      }
-
-      var _date$split = date.split("-"),
-          _date$split2 = _slicedToArray(_date$split, 3),
-          year = _date$split2[0],
-          month = _date$split2[1],
-          day = _date$split2[2];
-
-      return "".concat(month, "/").concat(day, "/").concat(year);
-    },
-    parseDate: function parseDate(date) {
-      if (!date) {
-        return null;
-      }
-
-      var _date$split3 = date.split("/"),
-          _date$split4 = _slicedToArray(_date$split3, 3),
-          month = _date$split4[0],
-          day = _date$split4[1],
-          year = _date$split4[2];
-
-      return "".concat(year, "-").concat(month.padStart(2, "0"), "-").concat(day.padStart(2, "0"));
-    }
   }
 });
 
 /***/ }),
 
-/***/ 2156:
+/***/ 2287:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -174,12 +76,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "hover-wrapper" },
     [
       _c("page-title-bar"),
       _vm._v(" "),
       _c(
         "v-container",
-        { attrs: { fluid: "", "grid-list-xl": "", "pt-0": "" } },
+        { attrs: { "grid-list-xl": "", "pt-0": "" } },
         [
           _c(
             "v-layout",
@@ -187,394 +90,56 @@ var render = function() {
             [
               _c(
                 "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.datePickerHorizontal"),
-                    contentCustomClass: "div-responsive",
-                    colClasses: "xs12 md6"
-                  }
-                },
+                { attrs: { colClasses: "xl12 lg12 md12 sm12 xs12" } },
                 [
-                  _c("v-date-picker", {
-                    model: {
-                      value: _vm.datepicker,
-                      callback: function($$v) {
-                        _vm.datepicker = $$v
-                      },
-                      expression: "datepicker"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.datePickerVertical"),
-                    contentCustomClass: "div-responsive",
-                    colClasses: "xs12 md6"
-                  }
-                },
-                [
-                  _c("v-date-picker", {
-                    attrs: { landscape: "" },
-                    model: {
-                      value: _vm.datepicker2,
-                      callback: function($$v) {
-                        _vm.datepicker2 = $$v
-                      },
-                      expression: "datepicker2"
-                    }
-                  })
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.datePickersInDialogAndMenu"),
-                    colClasses: "xs12 md6"
-                  }
-                },
-                [
-                  _c(
-                    "v-menu",
-                    {
-                      ref: "menu",
-                      attrs: {
-                        lazy: "",
-                        "close-on-content-click": false,
-                        transition: "scale-transition",
-                        "offset-y": "",
-                        "full-width": "",
-                        "nudge-right": 40,
-                        "min-width": "290px",
-                        "return-value": _vm.date
-                      },
-                      on: {
-                        "update:returnValue": function($event) {
-                          _vm.date = $event
-                        },
-                        "update:return-value": function($event) {
-                          _vm.date = $event
-                        }
-                      },
-                      model: {
-                        value: _vm.menu,
-                        callback: function($$v) {
-                          _vm.menu = $$v
-                        },
-                        expression: "menu"
-                      }
-                    },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          slot: "activator",
-                          label: "Picker in menu",
-                          "prepend-icon": "event",
-                          readonly: ""
-                        },
-                        slot: "activator",
-                        model: {
-                          value: _vm.date,
-                          callback: function($$v) {
-                            _vm.date = $$v
-                          },
-                          expression: "date"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-date-picker",
-                        {
-                          attrs: { "no-title": "", scrollable: "" },
-                          model: {
-                            value: _vm.date,
-                            callback: function($$v) {
-                              _vm.date = $$v
-                            },
-                            expression: "date"
-                          }
-                        },
-                        [
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "primary" },
-                              on: {
-                                click: function($event) {
-                                  _vm.menu = false
-                                }
-                              }
-                            },
-                            [_vm._v("Cancel")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "warning" },
-                              on: {
-                                click: function($event) {
-                                  return _vm.$refs.menu.save(_vm.date)
-                                }
-                              }
-                            },
-                            [_vm._v("OK")]
-                          )
-                        ],
-                        1
+                  _c("div", { staticClass: "mb-4" }, [
+                    _c("p", [
+                      _vm._v(
+                        "The opposite slot provides an additional layer of customization within your timelines."
                       )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.datePickersWithModal"),
-                    colClasses: "xs12 md6"
-                  }
-                },
-                [
-                  _c(
-                    "v-dialog",
-                    {
-                      ref: "dialog",
-                      attrs: {
-                        persistent: "",
-                        lazy: "",
-                        "full-width": "",
-                        width: "290px",
-                        "return-value": _vm.date2
-                      },
-                      on: {
-                        "update:returnValue": function($event) {
-                          _vm.date2 = $event
-                        },
-                        "update:return-value": function($event) {
-                          _vm.date2 = $event
-                        }
-                      },
-                      model: {
-                        value: _vm.modal,
-                        callback: function($$v) {
-                          _vm.modal = $$v
-                        },
-                        expression: "modal"
-                      }
-                    },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          slot: "activator",
-                          label: "Picker in dialog",
-                          "prepend-icon": "event",
-                          readonly: ""
-                        },
-                        slot: "activator",
-                        model: {
-                          value: _vm.date2,
-                          callback: function($$v) {
-                            _vm.date2 = $$v
-                          },
-                          expression: "date2"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-date-picker",
-                        {
-                          attrs: { scrollable: "" },
-                          model: {
-                            value: _vm.date2,
-                            callback: function($$v) {
-                              _vm.date2 = $$v
-                            },
-                            expression: "date2"
-                          }
-                        },
-                        [
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "error" },
-                              on: {
-                                click: function($event) {
-                                  _vm.modal = false
-                                }
-                              }
-                            },
-                            [_vm._v("Cancel")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "primary" },
-                              on: {
-                                click: function($event) {
-                                  return _vm.$refs.dialog.save(_vm.date2)
-                                }
-                              }
-                            },
-                            [_vm._v("OK")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.datePickersFormattingDate"),
-                    colClasses: "xs12 md6"
-                  }
-                },
-                [
-                  _c(
-                    "v-menu",
-                    {
-                      ref: "menu1",
-                      attrs: {
-                        lazy: "",
-                        "close-on-content-click": false,
-                        transition: "scale-transition",
-                        "offset-y": "",
-                        "full-width": "",
-                        "nudge-right": 40,
-                        "min-width": "290px",
-                        "return-value": _vm.date1
-                      },
-                      on: {
-                        "update:returnValue": function($event) {
-                          _vm.date1 = $event
-                        },
-                        "update:return-value": function($event) {
-                          _vm.date1 = $event
-                        }
-                      },
-                      model: {
-                        value: _vm.menu1,
-                        callback: function($$v) {
-                          _vm.menu1 = $$v
-                        },
-                        expression: "menu1"
-                      }
-                    },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          slot: "activator",
-                          label: "Date in M/D/Y format",
-                          "prepend-icon": "event",
-                          readonly: ""
-                        },
-                        on: {
-                          blur: function($event) {
-                            _vm.date1 = _vm.parseDate(_vm.dateFormatted)
-                          }
-                        },
-                        slot: "activator",
-                        model: {
-                          value: _vm.dateFormatted,
-                          callback: function($$v) {
-                            _vm.dateFormatted = $$v
-                          },
-                          expression: "dateFormatted"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-date-picker",
-                        {
-                          attrs: { "no-title": "", scrollable: "" },
-                          on: {
-                            input: function($event) {
-                              _vm.dateFormatted = _vm.formatDate($event)
-                            }
-                          },
-                          model: {
-                            value: _vm.date1,
-                            callback: function($$v) {
-                              _vm.date1 = $$v
-                            },
-                            expression: "date1"
-                          }
-                        },
-                        [
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "error" },
-                              on: {
-                                click: function($event) {
-                                  _vm.menu1 = false
-                                }
-                              }
-                            },
-                            [_vm._v("Cancel")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "primary" },
-                              on: {
-                                click: function($event) {
-                                  return _vm.$refs.menu1.save(_vm.date1)
-                                }
-                              }
-                            },
-                            [_vm._v("OK")]
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
+                    ])
+                  ]),
                   _vm._v(" "),
-                  _c("p", [
-                    _vm._v("Date in ISO format:\n\t\t\t\t\t"),
-                    _c("strong", [_vm._v(_vm._s(_vm.date1))])
-                  ])
+                  _c(
+                    "v-timeline",
+                    _vm._l(_vm.years, function(year, i) {
+                      return _c(
+                        "v-timeline-item",
+                        { key: i, attrs: { color: year.color, small: "" } },
+                        [
+                          _c("span", {
+                            class:
+                              "headline font-weight-bold " +
+                              year.color +
+                              "--text",
+                            attrs: { slot: "opposite" },
+                            domProps: { textContent: _vm._s(year.year) },
+                            slot: "opposite"
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "py-3" }, [
+                            _c(
+                              "h2",
+                              {
+                                class:
+                                  "headline font-weight-light mb-3 " +
+                                  year.color +
+                                  "--text"
+                              },
+                              [_vm._v("Lorem ipsum")]
+                            ),
+                            _vm._v(" "),
+                            _c("div", [
+                              _vm._v(
+                                "\n                           Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.\n                        "
+                              )
+                            ])
+                          ])
+                        ]
+                      )
+                    }),
+                    1
+                  )
                 ],
                 1
               )
@@ -594,21 +159,21 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-54bdbf7a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0fcf6f01", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 216:
+/***/ 247:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(2155)
+var __vue_script__ = __webpack_require__(2286)
 /* template */
-var __vue_template__ = __webpack_require__(2156)
+var __vue_template__ = __webpack_require__(2287)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -625,7 +190,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/views/ui-elements/Datepicker.vue"
+Component.options.__file = "resources/js/views/timelines/OppositeSlot.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -634,9 +199,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-54bdbf7a", Component.options)
+    hotAPI.createRecord("data-v-0fcf6f01", Component.options)
   } else {
-    hotAPI.reload("data-v-54bdbf7a", Component.options)
+    hotAPI.reload("data-v-0fcf6f01", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true

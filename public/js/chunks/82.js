@@ -1,6 +1,6 @@
 webpackJsonp([82],{
 
-/***/ 1553:
+/***/ 1554:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -45,22 +45,6 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
-
-/***/ }),
-
-/***/ 1560:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-  baseURL: Object({"MIX_PUSHER_APP_KEY":"","MIX_PUSHER_APP_CLUSTER":"mt1","NODE_ENV":"development"}).APP_URL,
-  headers: {
-    'Authorization': 'Bearer ' + localStorage.getItem('accessToken')
-  }
-}));
 
 /***/ }),
 
@@ -3357,7 +3341,7 @@ module.exports = Component.exports
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_slick__ = __webpack_require__(1567);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Api__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -3508,7 +3492,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_SessionSlider__ = __webpack_require__(1631);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_SessionSlider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_Components_Widgets_SessionSlider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Constants_AppConfig__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_AuthService__ = __webpack_require__(604);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__auth_AuthService__ = __webpack_require__(605);
 //
 //
 //

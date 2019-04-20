@@ -123,13 +123,21 @@ export default {
             "next": "Next »"
         },
         "crm": {
-            "CONTACTS": "Contacts",
+            "CONTACTS": "Kunden",
+            "CONTACT": "Kunde",
             "CONTACT_ID": "Kunden ID",
             "NAME": "Name",
             "ADDRESS": "Adresse",
             "TOTAL_INVOICES": "Rechnung",
             "STATUS": "Status",
-            "LINKED_TO_USER": "User"
+            "LINKED_TO_USER": "User",
+            "RC_QUOTE_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
+            "CALL_LEAD_SOURCE_TOOLTIP": "Call-Center",
+            "PDF_IL_MAN": "Herr",
+            "PDF_IL_WOMEN": "Frau",
+            "PDF_IL_COMPANY": "Firma",
+            "LOGOUT": "Abmelden",
+            "EDIT_ACCOUNT": "Konto bearbeiten"
         }
     },
     "en": {
@@ -256,13 +264,21 @@ export default {
             "next": "Next »"
         },
         "crm": {
-            "CONTACTS": "Kunden",
+            "CONTACTS": "Contacts",
+            "CONTACT": "Contact",
             "CONTACT_ID": "Contact Id",
             "NAME": "Name",
             "ADDRESS": "Address",
             "TOTAL_INVOICES": "Invoices",
             "STATUS": "Status",
-            "LINKED_TO_USER": "User"
+            "LINKED_TO_USER": "User",
+            "RC_QUOTE_TOOLTIP": "Is interested in a PH offer.",
+            "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
+            "PDF_IL_MAN": "Mr",
+            "PDF_IL_WOMEN": "Mrs",
+            "PDF_IL_COMPANY": "Company",
+            "LOGOUT": "Logout",
+            "EDIT_ACCOUNT": "Edit Account"
         }
     },
     "fr": {
@@ -389,12 +405,21 @@ export default {
             "next": "Next »"
         },
         "crm": {
-            "CONTACT_ID": "Clients",
+            "CONTACTS": "Clients",
+            "CONTACT": "Contact",
+            "CONTACT_ID": "Numéro de client",
             "NAME": "Nom",
             "ADDRESS": "Adresse",
             "TOTAL_INVOICES": "Factures",
             "STATUS": "Statut",
-            "LINKED_TO_USER": "User"
+            "LINKED_TO_USER": "User",
+            "RC_QUOTE_TOOLTIP": "Est intéressé par une offre PH.",
+            "CALL_LEAD_SOURCE_TOOLTIP": "centre d'appels",
+            "PDF_IL_MAN": "Monsieur",
+            "PDF_IL_WOMEN": "Madame",
+            "PDF_IL_COMPANY": "Société",
+            "LOGOUT": "Déconnexion",
+            "EDIT_ACCOUNT": "Modifier le compte"
         }
     },
     "it": {
@@ -521,13 +546,21 @@ export default {
             "next": "Next »"
         },
         "crm": {
-            "CONTACTS": "Clienti",
+            "CONTACTS": "Clientozoooo",
+            "CONTACT": "Kunde",
             "CONTACT_ID": "Numero cliente",
             "NAME": "Name",
             "ADDRESS": "Adresse",
-            "TOTAL_INVOICES": "Rechnung",
+            "TOTAL_INVOICES": "Rechnung(en)",
             "STATUS": "Status",
-            "LINKED_TO_USER": "User"
+            "LINKED_TO_USER": "User",
+            "RC_QUOTE_TOOLTIP": "È interessato a un'offerta PH.",
+            "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
+            "PDF_IL_MAN": "Signor",
+            "PDF_IL_WOMEN": "Signora",
+            "PDF_IL_COMPANY": "Solido",
+            "LOGOUT": "Esci",
+            "EDIT_ACCOUNT": "Modifica profilo"
         }
     }
 }

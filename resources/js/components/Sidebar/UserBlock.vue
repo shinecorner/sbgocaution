@@ -27,13 +27,13 @@
 					<template v-for="userLink in userLinks" v-if="userLink.id !== 4">
 						<v-list-tile :to="getMenuLink(userLink.path)" :key="userLink.id">
 							<i :class="userLink.icon"></i>
-							<span>{{$t(userLink.title)}}</span>
+							<span>{{$t('message.crm.EDIT_ACCOUNT')}}</span>
 						</v-list-tile>
 					</template>
 					<template v-else>
 						<v-list-tile @click="logoutUser" :key="userLink.id">
 							<i :class="userLink.icon"></i>
-							<span>{{$t(userLink.title)}}</span>
+							<span>{{$t('message.crm.LOGOUT')}}</span>
 						</v-list-tile>
 					</template>
 				</v-list>

@@ -6,29 +6,28 @@ import accentTheme from "Themes/accentTheme";
 import successTheme from "Themes/successTheme";
 
 // languages
-export const languages = [
-   {
-      name: "English",
-      icon: "en",
-      locale: "en"
-   },
-   {
-      name: "French",
-      icon: "fr",
-      locale: "fr"
-   },   
-   {
-      name: "German",
-      icon: "de",
-      locale: "de"
-   },
-      
-   {
-      name: "Italian",
-      icon: "it",
-      locale: "it"
-   }   
-]
+export const languages = {
+    de:{
+       name: "German",
+       icon: "de",
+       locale: "de"
+    }, 
+    en:{
+       name: "English",
+       icon: "en",
+       locale: "en"
+    },
+    fr:{
+       name: "French",
+       icon: "fr",
+       locale: "fr"
+    },            
+    it:{
+       name: "Italian",
+       icon: "it",
+       locale: "it"
+    }   
+}
 // sidebar background images
 export const sidebarBackgroundImages = [
    {
