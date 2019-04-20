@@ -15,7 +15,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return ContactResource::collection(Contact::paginate());
+        return ContactResource::collection(Contact::paginate(config('pagination.items_per_page')));
     }
 
     /**
