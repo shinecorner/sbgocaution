@@ -1,14 +1,14 @@
 webpackJsonp([37],{
 
-/***/ 140:
+/***/ 202:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(2040)
+var __vue_script__ = __webpack_require__(2129)
 /* template */
-var __vue_template__ = __webpack_require__(2041)
+var __vue_template__ = __webpack_require__(2130)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/views/ui-elements/Tooltip.vue"
+Component.options.__file = "resources/js/views/ui-elements/Ratings.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4b8afdb5", Component.options)
+    hotAPI.createRecord("data-v-32cb3ea8", Component.options)
   } else {
-    hotAPI.reload("data-v-4b8afdb5", Component.options)
+    hotAPI.reload("data-v-32cb3ea8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2040:
+/***/ 2129:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -102,17 +102,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      show: false
+      defaultRating: 3,
+      rating: 3
     };
   }
 });
 
 /***/ }),
 
-/***/ 2041:
+/***/ 2130:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -126,7 +146,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-container",
-        { attrs: { fluid: "", "grid-list-xl": "", "pt-0": "" } },
+        { attrs: { "grid-list-xl": "", "pt-0": "" } },
         [
           _c(
             "v-layout",
@@ -136,164 +156,155 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.tooltip"),
-                    colClasses: "xs12 md6"
+                    heading: _vm.$t("message.default"),
+                    customClasses: "mb-30",
+                    colClasses: "xl6 lg6 md6 sm12 xs12"
                   }
                 },
                 [
-                  _c(
-                    "v-tooltip",
-                    { attrs: { top: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { slot: "activator", color: "primary" },
-                          slot: "activator"
-                        },
-                        [_vm._v(_vm._s(_vm.$t("message.top")))]
-                      ),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Top tooltip")])
-                    ],
-                    1
-                  ),
+                  _c("div", { staticClass: "mb-4" }, [
+                    _c("p", [
+                      _vm._v("The "),
+                      _c("code", [_vm._v("v-rating")]),
+                      _vm._v(
+                        " component provides a simple interface for gathering user feedback."
+                      )
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c(
-                    "v-tooltip",
-                    { attrs: { right: "" } },
+                    "div",
+                    { staticClass: "text-xs-center" },
                     [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { slot: "activator", color: "warning" },
-                          slot: "activator"
-                        },
-                        [_vm._v(_vm._s(_vm.$t("message.right")))]
-                      ),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Right tooltip")])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-tooltip",
-                    { attrs: { bottom: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { slot: "activator", color: "info" },
-                          slot: "activator"
-                        },
-                        [_vm._v(_vm._s(_vm.$t("message.bottom")))]
-                      ),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Bottom tooltip")])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-tooltip",
-                    { attrs: { left: "" } },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { slot: "activator", color: "error" },
-                          slot: "activator"
-                        },
-                        [_vm._v(_vm._s(_vm.$t("message.left")))]
-                      ),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Left tooltip")])
+                      _c("v-rating", {
+                        model: {
+                          value: _vm.defaultRating,
+                          callback: function($$v) {
+                            _vm.defaultRating = $$v
+                          },
+                          expression: "defaultRating"
+                        }
+                      })
                     ],
                     1
                   )
-                ],
-                1
+                ]
               ),
               _vm._v(" "),
               _c(
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.visibility"),
-                    colClasses: "xs12 md6"
+                    heading: _vm.$t("message.sizeVariants"),
+                    customClasses: "mb-30",
+                    colClasses: "xl6 lg6 md6 sm12 xs12"
                   }
                 },
                 [
+                  _c("div", { staticClass: "mb-4" }, [
+                    _c("p", [
+                      _vm._v("Utilize the same sizing classes available in "),
+                      _c("code", [_vm._v("v-icon")]),
+                      _vm._v(" or provide your own with the size prop.")
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "v-layout",
-                    { attrs: { wrap: "" } },
+                    "div",
+                    { staticClass: "text-xs-center" },
                     [
-                      _c(
-                        "v-flex",
-                        { attrs: { xs6: "" } },
-                        [
-                          _c(
-                            "v-btn",
-                            {
-                              attrs: { color: "primary" },
-                              nativeOn: {
-                                click: function($event) {
-                                  _vm.show = !_vm.show
-                                }
-                              }
-                            },
-                            [_vm._v(_vm._s(_vm.$t("message.toggle")))]
-                          )
-                        ],
-                        1
-                      ),
+                      _c("v-rating", {
+                        attrs: {
+                          "background-color": "purple lighten-3",
+                          color: "purple",
+                          small: ""
+                        },
+                        model: {
+                          value: _vm.rating,
+                          callback: function($$v) {
+                            _vm.rating = $$v
+                          },
+                          expression: "rating"
+                        }
+                      }),
                       _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        { attrs: { xs6: "" } },
-                        [
-                          _c(
-                            "v-tooltip",
-                            {
-                              attrs: { top: "" },
-                              model: {
-                                value: _vm.show,
-                                callback: function($$v) {
-                                  _vm.show = $$v
-                                },
-                                expression: "show"
-                              }
-                            },
-                            [
-                              _c(
-                                "v-btn",
-                                {
-                                  attrs: { slot: "activator", icon: "" },
-                                  slot: "activator"
-                                },
-                                [
-                                  _c(
-                                    "v-icon",
-                                    { attrs: { color: "primary" } },
-                                    [_vm._v("shopping_cart")]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Programmatic tooltip")])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
+                      _c("v-rating", {
+                        attrs: {
+                          "background-color": "pink lighten-3",
+                          color: "pink"
+                        },
+                        model: {
+                          value: _vm.rating,
+                          callback: function($$v) {
+                            _vm.rating = $$v
+                          },
+                          expression: "rating"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-rating", {
+                        attrs: {
+                          "background-color": "orange lighten-3",
+                          color: "orange",
+                          medium: ""
+                        },
+                        model: {
+                          value: _vm.rating,
+                          callback: function($$v) {
+                            _vm.rating = $$v
+                          },
+                          expression: "rating"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-rating", {
+                        attrs: {
+                          "background-color": "green lighten-3",
+                          color: "green",
+                          large: ""
+                        },
+                        model: {
+                          value: _vm.rating,
+                          callback: function($$v) {
+                            _vm.rating = $$v
+                          },
+                          expression: "rating"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-rating", {
+                        attrs: {
+                          "background-color": "red lighten-3",
+                          color: "red",
+                          "x-large": ""
+                        },
+                        model: {
+                          value: _vm.rating,
+                          callback: function($$v) {
+                            _vm.rating = $$v
+                          },
+                          expression: "rating"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-rating", {
+                        attrs: {
+                          "background-color": "indigo lighten-3",
+                          color: "indigo",
+                          size: "55"
+                        },
+                        model: {
+                          value: _vm.rating,
+                          callback: function($$v) {
+                            _vm.rating = $$v
+                          },
+                          expression: "rating"
+                        }
+                      })
                     ],
                     1
                   )
-                ],
-                1
+                ]
               )
             ],
             1
@@ -311,7 +322,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4b8afdb5", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-32cb3ea8", module.exports)
   }
 }
 

@@ -1,14 +1,14 @@
 webpackJsonp([45],{
 
-/***/ 147:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(2052)
+var __vue_script__ = __webpack_require__(2153)
 /* template */
-var __vue_template__ = __webpack_require__(2053)
+var __vue_template__ = __webpack_require__(2154)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/views/ui-elements/Progress.vue"
+Component.options.__file = "resources/js/views/ui-elements/Chips.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-45d4f4eb", Component.options)
+    hotAPI.createRecord("data-v-3e2fe04e", Component.options)
   } else {
-    hotAPI.reload("data-v-45d4f4eb", Component.options)
+    hotAPI.reload("data-v-3e2fe04e", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2052:
+/***/ 2153:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -150,78 +150,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      interval: {},
-      value: 0,
-      valueDeterminate: 50,
-      buffer: 10,
-      bufferValue: 20
+      chip1: true,
+      chip2: true,
+      chip3: true,
+      chip4: true
     };
-  },
-  beforeDestroy: function beforeDestroy() {
-    clearInterval(this.interval);
-  },
-  methods: {
-    startBuffer: function startBuffer() {
-      var _this = this;
-
-      this.interval = setInterval(function () {
-        _this.buffer += Math.random() * (15 - 5) + 5;
-        _this.bufferValue += Math.random() * (15 - 5) + 5;
-      }, 2000);
-    }
-  },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    this.interval = setInterval(function () {
-      if (_this2.value === 100) {
-        return _this2.value = 0;
-      }
-
-      _this2.value += 10;
-    }, 1000);
-    this.startBuffer();
   }
 });
 
 /***/ }),
 
-/***/ 2053:
+/***/ 2154:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -250,44 +192,113 @@ var render = function() {
                   }
                 },
                 [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", [
-                      _vm._v(
-                        "By default, progress circular uses the applications secondary color."
-                      )
-                    ])
+                  _c("v-chip", { attrs: { close: "" } }, [
+                    _vm._v("Example Chip")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-chip", [_vm._v("Example Chip")]),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    { attrs: { close: "" } },
+                    [
+                      _c("v-avatar", [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              " https://randomuser.me/api/portraits/men/35.jpg ",
+                            alt: "trevor "
+                          }
+                        })
+                      ]),
+                      _vm._v("\n\t\t\t\t\tTrevor Hansen\n\t\t\t\t")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    [
+                      _c("v-avatar", { staticClass: "teal " }, [_vm._v("A")]),
+                      _vm._v("\n\t\t\t\t\tANZ Bank\n\t\t\t\t")
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "app-card",
+                {
+                  attrs: {
+                    heading: _vm.$t("message.outline"),
+                    colClasses: "xs12 md6"
+                  }
+                },
+                [
+                  _c("v-chip", { attrs: { outline: "", color: "secondary" } }, [
+                    _vm._v("Outline")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-chip", { attrs: { outline: "", color: "primary" } }, [
+                    _vm._v("Colored")
                   ]),
                   _vm._v(" "),
                   _c(
-                    "v-flex",
-                    { attrs: { row: "", "text-xs-center": "" } },
+                    "v-chip",
+                    { attrs: { outline: "", color: "red" } },
                     [
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 20, color: "primary" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 40, color: "error" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 60, color: "success" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 80, color: "warning" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 100, color: "info" }
-                      })
+                      _c(
+                        "v-icon",
+                        {
+                          staticClass: "error--text font-sm",
+                          attrs: { left: "" }
+                        },
+                        [_vm._v("build")]
+                      ),
+                      _vm._v("Icon\n\t\t\t\t")
                     ],
                     1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "app-card",
+                {
+                  attrs: {
+                    heading: _vm.$t("message.label"),
+                    colClasses: "xs12 md6"
+                  }
+                },
+                [
+                  _c("v-chip", { attrs: { label: "" } }, [_vm._v("Label")]),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    {
+                      attrs: { label: "", color: "pink", "text-color": "white" }
+                    },
+                    [
+                      _c("v-icon", { attrs: { left: "" } }, [_vm._v("label")]),
+                      _vm._v("Tags\n\t\t\t\t")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    { attrs: { label: "", outline: "", color: "red" } },
+                    [_vm._v("Outline")]
                   )
                 ],
                 1
@@ -302,46 +313,28 @@ var render = function() {
                   }
                 },
                 [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", [_vm._v("Alternate colors can be applied.")])
-                  ]),
+                  _c(
+                    "v-chip",
+                    { attrs: { color: "primary", "text-color": "white" } },
+                    [_vm._v("Primary")]
+                  ),
                   _vm._v(" "),
                   _c(
-                    "v-flex",
-                    {
-                      attrs: {
-                        row: "",
-                        "justify-space-between": "",
-                        "text-xs-center": ""
-                      }
-                    },
-                    [
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 100, color: "blue-grey" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 80, color: "deep-orange lighten-2" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 60, color: "brown" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 40, color: "lime" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { value: 20, color: "indigo darken-2" }
-                      })
-                    ],
-                    1
+                    "v-chip",
+                    { attrs: { color: "warning", "text-color": "white" } },
+                    [_vm._v("Warning")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    { attrs: { color: "error", "text-color": "white" } },
+                    [_vm._v("Colored Chip")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    { attrs: { color: "success", "text-color": "white" } },
+                    [_vm._v("Colored Chip")]
                   )
                 ],
                 1
@@ -358,55 +351,33 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.indeterminate"),
+                    heading: _vm.$t("message.colored"),
                     colClasses: "xs12 md6"
                   }
                 },
                 [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", [
-                      _vm._v(
-                        "An indeterminate progress circular animates forever."
-                      )
-                    ])
-                  ]),
+                  _c(
+                    "v-chip",
+                    { attrs: { color: "primary", "text-color": "white" } },
+                    [_vm._v("Primary")]
+                  ),
                   _vm._v(" "),
                   _c(
-                    "v-flex",
-                    {
-                      attrs: {
-                        row: "",
-                        "justify-content-space-between": "",
-                        "text-xs-center": ""
-                      }
-                    },
-                    [
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", color: "primary" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", color: "red" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", color: "purple" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", color: "green" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", color: "amber" }
-                      })
-                    ],
-                    1
+                    "v-chip",
+                    { attrs: { color: "warning", "text-color": "white" } },
+                    [_vm._v("Warning")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    { attrs: { color: "error", "text-color": "white" } },
+                    [_vm._v("Colored Chip")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    { attrs: { color: "success", "text-color": "white" } },
+                    [_vm._v("Colored Chip")]
                   )
                 ],
                 1
@@ -416,295 +387,76 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.sizeAndWidth"),
+                    heading: _vm.$t("message.icon"),
                     colClasses: "xs12 md6"
                   }
                 },
                 [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", [
-                      _vm._v(
-                        "The progress circular component can have an altered width and size."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "v-flex",
-                    {
-                      attrs: {
-                        row: "",
-                        "justify-content-space-between": "",
-                        "text-xs-center": ""
-                      }
-                    },
+                    "v-chip",
+                    { attrs: { color: "primary", "text-color": "white" } },
                     [
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", size: 50, color: "primary" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", width: 3, color: "red" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: {
-                          indeterminate: "",
-                          size: 70,
-                          width: 7,
-                          color: "purple"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", width: 3, color: "green" }
-                      }),
-                      _vm._v(" "),
-                      _c("v-progress-circular", {
-                        staticClass: "mx-2",
-                        attrs: { indeterminate: "", size: 50, color: "amber" }
-                      })
+                      _c(
+                        "v-avatar",
+                        [_c("v-icon", [_vm._v("account_circle")])],
+                        1
+                      ),
+                      _vm._v("\n\t\t\t\t\tRanee\n\t\t\t\t")
                     ],
                     1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.rotate"),
-                    colClasses: "xs12 md6"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", [_vm._v("The progress origin can be rotated.")])
-                  ]),
+                  ),
                   _vm._v(" "),
                   _c(
-                    "v-flex",
+                    "v-chip",
+                    { attrs: { color: "warning", "text-color": "white" } },
+                    [
+                      _vm._v("Premium\n\t\t\t\t\t"),
+                      _c("v-icon", { attrs: { right: "" } }, [_vm._v("star")])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    { attrs: { color: "error", "text-color": "white" } },
+                    [
+                      _vm._v("\n\t\t\t\t\t1 Year\n\t\t\t\t\t"),
+                      _c("v-icon", { attrs: { right: "" } }, [_vm._v("cake")])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
+                    { attrs: { color: "info", "text-color": "white" } },
+                    [
+                      _c("v-avatar", { staticClass: "green darken-4" }, [
+                        _vm._v("1")
+                      ]),
+                      _vm._v("\n\t\t\t\t\tYears\n\t\t\t\t")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-chip",
                     {
                       attrs: {
-                        row: "",
-                        "justify-content-space-between": "",
-                        "text-xs-center": ""
+                        close: "",
+                        color: "success",
+                        "text-color": "white"
                       }
                     },
                     [
                       _c(
-                        "v-progress-circular",
-                        {
-                          staticClass: "mx-2 my-2",
-                          attrs: {
-                            size: 100,
-                            width: 15,
-                            rotate: 360,
-                            value: _vm.value,
-                            color: "teal"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n\t\t\t\t\t\t" +
-                              _vm._s(_vm.value) +
-                              "\n\t\t\t\t\t"
-                          )
-                        ]
+                        "v-avatar",
+                        [_c("v-icon", [_vm._v("check_circle")])],
+                        1
                       ),
-                      _vm._v(" "),
-                      _c(
-                        "v-progress-circular",
-                        {
-                          staticClass: "mx-2 my-2",
-                          attrs: {
-                            size: 100,
-                            width: 15,
-                            rotate: -90,
-                            value: _vm.value,
-                            color: "primary"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n\t\t\t\t\t\t" +
-                              _vm._s(_vm.value) +
-                              "\n\t\t\t\t\t"
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-progress-circular",
-                        {
-                          staticClass: "mx-2 my-2",
-                          attrs: {
-                            size: 100,
-                            width: 15,
-                            rotate: 90,
-                            value: _vm.value,
-                            color: "red"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n\t\t\t\t\t\t" +
-                              _vm._s(_vm.value) +
-                              "\n\t\t\t\t\t"
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-progress-circular",
-                        {
-                          staticClass: "mx-2 my-2",
-                          attrs: {
-                            size: 100,
-                            width: 15,
-                            rotate: 180,
-                            value: _vm.value,
-                            color: "pink"
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n\t\t\t\t\t\t" +
-                              _vm._s(_vm.value) +
-                              "\n\t\t\t\t\t"
-                          )
-                        ]
-                      )
+                      _vm._v("\n\t\t\t\t\tConfirmed\n\t\t\t\t")
                     ],
                     1
                   )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.determinate"),
-                    colClasses: "xs12 md6"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", [
-                      _vm._v(
-                        "The progress linear component can have a determinate state modified by\n\t\t\t\t\t\t"
-                      ),
-                      _c("code", [_vm._v("v-model")]),
-                      _vm._v(".")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    {
-                      attrs: {
-                        row: "",
-                        "justify-content-space-between": "",
-                        "text-xs-center": ""
-                      }
-                    },
-                    [
-                      _c("v-progress-linear", {
-                        attrs: { color: "pink" },
-                        model: {
-                          value: _vm.valueDeterminate,
-                          callback: function($$v) {
-                            _vm.valueDeterminate = $$v
-                          },
-                          expression: "valueDeterminate"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { row: "", wrap: "" } },
-            [
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.indeterminate"),
-                    colClasses: "xs12 md6"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", [
-                      _vm._v(
-                        "Just as with the progress circular component, progress linear has an indeterminate state."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("v-progress-linear", {
-                    attrs: { indeterminate: true, color: "green" }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.buffer"),
-                    colClasses: "xs12 md6"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", [
-                      _vm._v(
-                        "A buffer state represents two values simultaneously. The primary value is controlled by the model, whereas the buffer is controlled by the\n\t\t\t\t\t\t"
-                      ),
-                      _c("code", [_vm._v("buffer-value")]),
-                      _vm._v(" prop.")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("v-progress-linear", {
-                    attrs: {
-                      buffer: "",
-                      "buffer-value": _vm.bufferValue,
-                      color: "yellow"
-                    },
-                    model: {
-                      value: _vm.buffer,
-                      callback: function($$v) {
-                        _vm.buffer = $$v
-                      },
-                      expression: "buffer"
-                    }
-                  })
                 ],
                 1
               )
@@ -724,7 +476,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-45d4f4eb", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-3e2fe04e", module.exports)
   }
 }
 

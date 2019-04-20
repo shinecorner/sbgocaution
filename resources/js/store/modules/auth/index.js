@@ -3,6 +3,7 @@
  */
 import Vue from 'vue'
 import webServices from 'WebServices'
+import api from '../../../api';
 import firebase from 'firebase/app';
 import Nprogress from 'nprogress';
 import router from '../../../router';
@@ -15,7 +16,8 @@ import {
 
 const state = {
     user: localStorage.getItem('user'),
-    isUserSigninWithAuth0: Boolean(localStorage.getItem('isUserSigninWithAuth0'))
+    isUserSigninWithAuth0: Boolean(localStorage.getItem('isUserSigninWithAuth0')),
+    accessToken: localStorage.getItem('accessToken'),
 }
 
 // getters
@@ -50,19 +52,22 @@ const actions = {
     },
      signInWithLaravelPassport(context, payload){
         const { user } = payload;
-        context.commit('loginUser');
+        context.commit('loginUser');        
         webServices.post('/login', JSON.stringify(user), { headers: {'Content-Type':'application/json'}})
             .then(response => {
-                if(response.data.response.api_status){
+                if(response.data.response.api_status){                    
+                    const access_token = response.data.response.access_token;
                     Nprogress.done();
-                    setTimeout(() => {
-                        context.commit('loginUserSuccess', user);
+                    setTimeout(() => {                        
+                        context.commit('loginUserSuccess', {user, access_token});
                     }, 500);
                 }else{
+                    localStorage.removeItem('accessToken');
                     context.commit('loginUserFailure', response.data.response);
                 }
         })
         .catch(error => {
+            localStorage.removeItem('accessToken');
             console.log(error);
             console.log("Failed");
         })
@@ -74,7 +79,7 @@ const actions = {
             .then(user => {
                 Nprogress.done();
                 setTimeout(() => {
-                    context.commit('loginUserSuccess', user);
+                    context.commit('loginUserSuccess', {user});
                 }, 500)
             })
             .catch(error => {
@@ -99,7 +104,8 @@ const actions = {
         firebase.auth().signInWithPopup(facebookAuthProvider).then((result) => {
             Nprogress.done();
             setTimeout(() => {
-                context.commit('loginUserSuccess', result.user);
+                const user = result.user;
+                context.commit('loginUserSuccess', {user});
             }, 500)
         }).catch(error => {
             context.commit('loginUserFailure', error);
@@ -110,7 +116,8 @@ const actions = {
         firebase.auth().signInWithPopup(googleAuthProvider).then((result) => {
             Nprogress.done();
             setTimeout(() => {
-                context.commit('loginUserSuccess', result.user);
+                const user = result.user;
+                context.commit('loginUserSuccess', {user});
             }, 500)
         }).catch(error => {
             context.commit('loginUserFailure', error);
@@ -121,7 +128,8 @@ const actions = {
         firebase.auth().signInWithPopup(twitterAuthProvider).then((result) => {
             Nprogress.done();
             setTimeout(() => {
-                context.commit('loginUserSuccess', result.user);
+                const user = result.user;
+                context.commit('loginUserSuccess', {user});
             }, 500)
         }).catch(error => {
             context.commit('loginUserFailure', error);
@@ -132,7 +140,8 @@ const actions = {
         firebase.auth().signInWithPopup(githubAuthProvider).then((result) => {
             Nprogress.done();
             setTimeout(() => {
-                context.commit('loginUserSuccess', result.user);
+                const user = result.user;
+                context.commit('loginUserSuccess', {user});
             }, 500)
         }).catch(error => {
             context.commit('loginUserFailure', error);
@@ -171,11 +180,17 @@ const mutations = {
     loginUser(state) {
         Nprogress.start();
     },
-    loginUserSuccess(state, user) {
+    loginUserSuccess(state, {user, access_token}) {
+        access_token = access_token || '';        
+        state.accessToken = access_token;
         state.user = user;
         localStorage.setItem('user',JSON.stringify(user));
+        localStorage.setItem('accessToken', access_token);
+        if(access_token){            
+            api.defaults.headers.common['Authorization'] = 'Bearer '+ access_token;            
+        }
         state.isUserSigninWithAuth0 = false
-        router.push("/default/dashboard/ecommerce");
+        router.push("/contacts");
         setTimeout(function(){
             Vue.notify({
                 group: 'loggedIn',
@@ -186,6 +201,7 @@ const mutations = {
     },
     loginUserFailure(state, error) {
         Nprogress.done();
+        localStorage.removeItem('accessToken');
         Vue.notify({
             group: 'loggedIn',
             type: 'error',
@@ -193,8 +209,11 @@ const mutations = {
         });
     },
     logoutUser(state) {
-        state.user = null
+        state.user = null;
+        state.accessToken = '';
         localStorage.removeItem('user');
+        localStorage.removeItem('accessToken');
+        delete axios.defaults.headers.common['Authorization'];
         router.push("/session/login");
     },
     signUpUser(state) {

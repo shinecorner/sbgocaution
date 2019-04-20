@@ -1,161 +1,18 @@
 webpackJsonp([44],{
 
-/***/ 145:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(2049)
-/* template */
-var __vue_template__ = __webpack_require__(2050)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/views/ui-elements/Radio.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-b5ce37a6", Component.options)
-  } else {
-    hotAPI.reload("data-v-b5ce37a6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 2049:
+/***/ 2155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 //
 //
 //
@@ -265,19 +122,50 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      radioButton: "radio-1",
-      column: null,
-      row: null,
-      ex7: ["red", "red darken-3", "indigo", "indigo darken-3", "orange", "orange darken-3"],
-      ex8: ["primary", "secondary", "success", "info", "warning", "error"],
-      ex11: ["red", "indigo", "orange", "primary", "secondary", "success", "info", "warning", "error", "red darken-3", "indigo darken-3", "orange darken-3"]
+      datepicker: null,
+      datepicker2: null,
+      date: null,
+      date1: null,
+      date2: null,
+      menu: false,
+      menu1: false,
+      modal: false,
+      dateFormatted: null
     };
+  },
+  methods: {
+    formatDate: function formatDate(date) {
+      if (!date) {
+        return null;
+      }
+
+      var _date$split = date.split("-"),
+          _date$split2 = _slicedToArray(_date$split, 3),
+          year = _date$split2[0],
+          month = _date$split2[1],
+          day = _date$split2[2];
+
+      return "".concat(month, "/").concat(day, "/").concat(year);
+    },
+    parseDate: function parseDate(date) {
+      if (!date) {
+        return null;
+      }
+
+      var _date$split3 = date.split("/"),
+          _date$split4 = _slicedToArray(_date$split3, 3),
+          month = _date$split4[0],
+          day = _date$split4[1],
+          year = _date$split4[2];
+
+      return "".concat(year, "-").concat(month.padStart(2, "0"), "-").concat(day.padStart(2, "0"));
+    }
   }
 });
 
 /***/ }),
 
-/***/ 2050:
+/***/ 2156:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -301,45 +189,21 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.radiosDefault"),
+                    heading: _vm.$t("message.datePickerHorizontal"),
+                    contentCustomClass: "div-responsive",
                     colClasses: "xs12 md6"
                   }
                 },
                 [
-                  _c("p", { staticClass: "ma-0" }, [
-                    _vm._v(_vm._s(_vm.radioButton || "null"))
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-radio-group",
-                    {
-                      model: {
-                        value: _vm.radioButton,
-                        callback: function($$v) {
-                          _vm.radioButton = $$v
-                        },
-                        expression: "radioButton"
-                      }
-                    },
-                    [
-                      _c("v-radio", {
-                        attrs: {
-                          color: "primary",
-                          label: "Radio 1",
-                          value: "Radio-1"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-radio", {
-                        attrs: {
-                          color: "primary",
-                          label: "Radio 2",
-                          value: "Radio-2"
-                        }
-                      })
-                    ],
-                    1
-                  )
+                  _c("v-date-picker", {
+                    model: {
+                      value: _vm.datepicker,
+                      callback: function($$v) {
+                        _vm.datepicker = $$v
+                      },
+                      expression: "datepicker"
+                    }
+                  })
                 ],
                 1
               ),
@@ -348,43 +212,22 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.radiosDirectionRow"),
+                    heading: _vm.$t("message.datePickerVertical"),
+                    contentCustomClass: "div-responsive",
                     colClasses: "xs12 md6"
                   }
                 },
                 [
-                  _c(
-                    "v-radio-group",
-                    {
-                      staticClass: "pt-0",
-                      attrs: { row: "" },
-                      model: {
-                        value: _vm.row,
-                        callback: function($$v) {
-                          _vm.row = $$v
-                        },
-                        expression: "row"
-                      }
-                    },
-                    [
-                      _c("v-radio", {
-                        attrs: {
-                          color: "primary",
-                          label: "Option 1",
-                          value: "radio-1"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-radio", {
-                        attrs: {
-                          color: "primary",
-                          label: "Option 2",
-                          value: "radio-2"
-                        }
-                      })
-                    ],
-                    1
-                  )
+                  _c("v-date-picker", {
+                    attrs: { landscape: "" },
+                    model: {
+                      value: _vm.datepicker2,
+                      callback: function($$v) {
+                        _vm.datepicker2 = $$v
+                      },
+                      expression: "datepicker2"
+                    }
+                  })
                 ],
                 1
               )
@@ -400,56 +243,102 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.radiosDirectionColumn"),
+                    heading: _vm.$t("message.datePickersInDialogAndMenu"),
                     colClasses: "xs12 md6"
                   }
                 },
                 [
                   _c(
-                    "v-radio-group",
+                    "v-menu",
                     {
-                      staticClass: "pt-0",
-                      attrs: { column: "" },
-                      model: {
-                        value: _vm.column,
-                        callback: function($$v) {
-                          _vm.column = $$v
+                      ref: "menu",
+                      attrs: {
+                        lazy: "",
+                        "close-on-content-click": false,
+                        transition: "scale-transition",
+                        "offset-y": "",
+                        "full-width": "",
+                        "nudge-right": 40,
+                        "min-width": "290px",
+                        "return-value": _vm.date
+                      },
+                      on: {
+                        "update:returnValue": function($event) {
+                          _vm.date = $event
                         },
-                        expression: "column"
+                        "update:return-value": function($event) {
+                          _vm.date = $event
+                        }
+                      },
+                      model: {
+                        value: _vm.menu,
+                        callback: function($$v) {
+                          _vm.menu = $$v
+                        },
+                        expression: "menu"
                       }
                     },
                     [
-                      _c("v-radio", {
+                      _c("v-text-field", {
                         attrs: {
-                          color: "primary",
-                          label: "Option 1",
-                          value: "radio-1"
+                          slot: "activator",
+                          label: "Picker in menu",
+                          "prepend-icon": "event",
+                          readonly: ""
+                        },
+                        slot: "activator",
+                        model: {
+                          value: _vm.date,
+                          callback: function($$v) {
+                            _vm.date = $$v
+                          },
+                          expression: "date"
                         }
                       }),
                       _vm._v(" "),
-                      _c("v-radio", {
-                        attrs: {
-                          color: "primary",
-                          label: "Option 2",
-                          value: "radio-2"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-radio", {
-                        attrs: {
-                          color: "primary",
-                          label: "Option 3",
-                          value: "radio-3"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-radio", {
-                        attrs: {
-                          color: "primary",
-                          label: "Option 4",
-                          value: "radio-4"
-                        }
-                      })
+                      _c(
+                        "v-date-picker",
+                        {
+                          attrs: { "no-title": "", scrollable: "" },
+                          model: {
+                            value: _vm.date,
+                            callback: function($$v) {
+                              _vm.date = $$v
+                            },
+                            expression: "date"
+                          }
+                        },
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  _vm.menu = false
+                                }
+                              }
+                            },
+                            [_vm._v("Cancel")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "warning" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$refs.menu.save(_vm.date)
+                                }
+                              }
+                            },
+                            [_vm._v("OK")]
+                          )
+                        ],
+                        1
+                      )
                     ],
                     1
                   )
@@ -461,160 +350,95 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.radiosColors"),
+                    heading: _vm.$t("message.datePickersWithModal"),
                     colClasses: "xs12 md6"
                   }
                 },
                 [
                   _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
-                    [
-                      _c(
-                        "v-flex",
-                        {
-                          staticClass: "col-height-auto",
-                          attrs: { xs12: "", sm6: "", md6: "" }
+                    "v-dialog",
+                    {
+                      ref: "dialog",
+                      attrs: {
+                        persistent: "",
+                        lazy: "",
+                        "full-width": "",
+                        width: "290px",
+                        "return-value": _vm.date2
+                      },
+                      on: {
+                        "update:returnValue": function($event) {
+                          _vm.date2 = $event
                         },
-                        [
-                          _c(
-                            "v-radio-group",
-                            {
-                              staticClass: "pt-0",
-                              attrs: { column: "" },
-                              model: {
-                                value: _vm.ex7,
-                                callback: function($$v) {
-                                  _vm.ex7 = $$v
-                                },
-                                expression: "ex7"
-                              }
-                            },
-                            [
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "red",
-                                  color: "red",
-                                  value: "red"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "red darken-3",
-                                  color: "red darken-3",
-                                  value: "red darken-3"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "indigo",
-                                  color: "indigo",
-                                  value: "indigo"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "indigo darken-3",
-                                  color: "indigo darken-3",
-                                  value: "indigo darken-3"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "orange",
-                                  color: "orange",
-                                  value: "orange"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "orange darken-3",
-                                  color: "orange darken-3",
-                                  value: "orange darken-3"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
+                        "update:return-value": function($event) {
+                          _vm.date2 = $event
+                        }
+                      },
+                      model: {
+                        value: _vm.modal,
+                        callback: function($$v) {
+                          _vm.modal = $$v
+                        },
+                        expression: "modal"
+                      }
+                    },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          slot: "activator",
+                          label: "Picker in dialog",
+                          "prepend-icon": "event",
+                          readonly: ""
+                        },
+                        slot: "activator",
+                        model: {
+                          value: _vm.date2,
+                          callback: function($$v) {
+                            _vm.date2 = $$v
+                          },
+                          expression: "date2"
+                        }
+                      }),
                       _vm._v(" "),
                       _c(
-                        "v-flex",
+                        "v-date-picker",
                         {
-                          staticClass: "col-height-auto",
-                          attrs: { xs12: "", sm6: "", md6: "" }
+                          attrs: { scrollable: "" },
+                          model: {
+                            value: _vm.date2,
+                            callback: function($$v) {
+                              _vm.date2 = $$v
+                            },
+                            expression: "date2"
+                          }
                         },
                         [
+                          _c("v-spacer"),
+                          _vm._v(" "),
                           _c(
-                            "v-radio-group",
+                            "v-btn",
                             {
-                              staticClass: "pt-0",
-                              attrs: { column: "" },
-                              model: {
-                                value: _vm.ex8,
-                                callback: function($$v) {
-                                  _vm.ex8 = $$v
-                                },
-                                expression: "ex8"
+                              attrs: { color: "error" },
+                              on: {
+                                click: function($event) {
+                                  _vm.modal = false
+                                }
                               }
                             },
-                            [
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "primary",
-                                  color: "primary",
-                                  value: "primary"
+                            [_vm._v("Cancel")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$refs.dialog.save(_vm.date2)
                                 }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "secondary",
-                                  color: "secondary",
-                                  value: "secondary"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "success",
-                                  color: "success",
-                                  value: "success"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "info",
-                                  color: "info",
-                                  value: "info"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "warning",
-                                  color: "warning",
-                                  value: "warning"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("v-radio", {
-                                attrs: {
-                                  label: "error",
-                                  color: "error",
-                                  value: "error"
-                                }
-                              })
-                            ],
-                            1
+                              }
+                            },
+                            [_vm._v("OK")]
                           )
                         ],
                         1
@@ -637,137 +461,109 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.switchesColors"),
-                    colClasses: "lg12 col-height-auto"
+                    heading: _vm.$t("message.datePickersFormattingDate"),
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
                   _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
+                    "v-menu",
+                    {
+                      ref: "menu1",
+                      attrs: {
+                        lazy: "",
+                        "close-on-content-click": false,
+                        transition: "scale-transition",
+                        "offset-y": "",
+                        "full-width": "",
+                        "nudge-right": 40,
+                        "min-width": "290px",
+                        "return-value": _vm.date1
+                      },
+                      on: {
+                        "update:returnValue": function($event) {
+                          _vm.date1 = $event
+                        },
+                        "update:return-value": function($event) {
+                          _vm.date1 = $event
+                        }
+                      },
+                      model: {
+                        value: _vm.menu1,
+                        callback: function($$v) {
+                          _vm.menu1 = $$v
+                        },
+                        expression: "menu1"
+                      }
+                    },
                     [
-                      _c(
-                        "v-flex",
-                        {
-                          staticClass: "col-height-auto",
-                          attrs: { xs12: "", sm6: "", md4: "" }
+                      _c("v-text-field", {
+                        attrs: {
+                          slot: "activator",
+                          label: "Date in M/D/Y format",
+                          "prepend-icon": "event",
+                          readonly: ""
                         },
-                        [
-                          _c("v-switch", {
-                            attrs: {
-                              label: "red",
-                              color: "red",
-                              value: "red",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "red darken-3",
-                              color: "red darken-3",
-                              value: "red darken-3",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          })
-                        ],
-                        1
-                      ),
+                        on: {
+                          blur: function($event) {
+                            _vm.date1 = _vm.parseDate(_vm.dateFormatted)
+                          }
+                        },
+                        slot: "activator",
+                        model: {
+                          value: _vm.dateFormatted,
+                          callback: function($$v) {
+                            _vm.dateFormatted = $$v
+                          },
+                          expression: "dateFormatted"
+                        }
+                      }),
                       _vm._v(" "),
                       _c(
-                        "v-flex",
+                        "v-date-picker",
                         {
-                          staticClass: "col-height-auto",
-                          attrs: { xs12: "", sm6: "", md4: "" }
+                          attrs: { "no-title": "", scrollable: "" },
+                          on: {
+                            input: function($event) {
+                              _vm.dateFormatted = _vm.formatDate($event)
+                            }
+                          },
+                          model: {
+                            value: _vm.date1,
+                            callback: function($$v) {
+                              _vm.date1 = $$v
+                            },
+                            expression: "date1"
+                          }
                         },
                         [
-                          _c("v-switch", {
-                            attrs: {
-                              label: "indigo",
-                              color: "indigo",
-                              value: "indigo",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          }),
+                          _c("v-spacer"),
                           _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "indigo darken-3",
-                              color: "indigo darken-3",
-                              value: "indigo darken-3",
-                              "hide-details": ""
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "error" },
+                              on: {
+                                click: function($event) {
+                                  _vm.menu1 = false
+                                }
+                              }
                             },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        {
-                          staticClass: "col-height-auto",
-                          attrs: { xs12: "", sm6: "", md4: "" }
-                        },
-                        [
-                          _c("v-switch", {
-                            attrs: {
-                              label: "orange",
-                              color: "orange",
-                              value: "orange",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          }),
+                            [_vm._v("Cancel")]
+                          ),
                           _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "orange darken-3",
-                              color: "orange darken-3",
-                              value: "orange darken-3",
-                              "hide-details": ""
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$refs.menu1.save(_vm.date1)
+                                }
+                              }
                             },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          })
+                            [_vm._v("OK")]
+                          )
                         ],
                         1
                       )
@@ -775,138 +571,10 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c(
-                    "v-layout",
-                    { attrs: { row: "", wrap: "" } },
-                    [
-                      _c(
-                        "v-flex",
-                        {
-                          staticClass: "col-height-auto",
-                          attrs: { xs12: "", sm6: "", md4: "" }
-                        },
-                        [
-                          _c("v-switch", {
-                            attrs: {
-                              label: "primary",
-                              color: "primary",
-                              value: "primary",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "secondary",
-                              color: "secondary",
-                              value: "secondary",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        {
-                          staticClass: "col-height-auto",
-                          attrs: { xs12: "", sm6: "", md4: "" }
-                        },
-                        [
-                          _c("v-switch", {
-                            attrs: {
-                              label: "success",
-                              color: "success",
-                              value: "success",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "info",
-                              color: "info",
-                              value: "info",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-flex",
-                        {
-                          staticClass: "col-height-auto",
-                          attrs: { xs12: "", sm6: "", md4: "" }
-                        },
-                        [
-                          _c("v-switch", {
-                            attrs: {
-                              label: "warning",
-                              color: "warning",
-                              value: "warning",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("v-switch", {
-                            attrs: {
-                              label: "error",
-                              color: "error",
-                              value: "error",
-                              "hide-details": ""
-                            },
-                            model: {
-                              value: _vm.ex11,
-                              callback: function($$v) {
-                                _vm.ex11 = $$v
-                              },
-                              expression: "ex11"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
+                  _c("p", [
+                    _vm._v("Date in ISO format:\n\t\t\t\t\t"),
+                    _c("strong", [_vm._v(_vm._s(_vm.date1))])
+                  ])
                 ],
                 1
               )
@@ -926,9 +594,57 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-b5ce37a6", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-54bdbf7a", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 216:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(2155)
+/* template */
+var __vue_template__ = __webpack_require__(2156)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/ui-elements/Datepicker.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-54bdbf7a", Component.options)
+  } else {
+    hotAPI.reload("data-v-54bdbf7a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ })
 

@@ -27,13 +27,13 @@
 					<template v-for="userLink in userLinks" v-if="userLink.id !== 4">
 						<v-list-tile :to="getMenuLink(userLink.path)" :key="userLink.id">
 							<i :class="userLink.icon"></i>
-							<span>{{$t(userLink.title)}}</span>
+							<span>{{$t('message.crm.EDIT_ACCOUNT')}}</span>
 						</v-list-tile>
 					</template>
 					<template v-else>
 						<v-list-tile @click="logoutUser" :key="userLink.id">
 							<i :class="userLink.icon"></i>
-							<span>{{$t(userLink.title)}}</span>
+							<span>{{$t('message.crm.LOGOUT')}}</span>
 						</v-list-tile>
 					</template>
 				</v-list>
@@ -54,19 +54,7 @@ export default {
 					title: 'message.userProfile',
 					icon: 'ti-user mr-3 primary--text',
 					path: '/users/user-profile'
-				},
-				{
-					id: 2,
-					title: 'message.inbox',
-					icon: 'ti-email mr-3 success--text',
-					path: '/inbox'
-				},
-				{
-					id: 3,
-					title: 'message.usersList',
-					icon: 'ti-bell mr-3 info--text',
-					path: '/users/users-list'
-				},
+				},				
 				{
 					id: 4,
 					title: 'message.logOut',

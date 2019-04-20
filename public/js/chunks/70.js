@@ -1,14 +1,14 @@
 webpackJsonp([70],{
 
-/***/ 123:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1974)
+var __vue_script__ = __webpack_require__(2069)
 /* template */
-var __vue_template__ = __webpack_require__(1975)
+var __vue_template__ = __webpack_require__(2070)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48,13 +48,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1974:
+/***/ 2069:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Helpers_helpers__ = __webpack_require__(54);
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -144,35 +144,35 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         text: "",
         align: "center",
         sortable: false,
-        class: "w-10"
+        "class": "w-10"
       }, {
         text: "Product",
         value: "product",
         sortable: false,
-        class: "w-50"
+        "class": "w-50"
       }, {
         text: "Quantity",
         value: "quantity",
         sortable: false,
         align: "center",
-        class: "w-10"
+        "class": "w-10"
       }, {
         text: "Price",
         value: "price",
         sortable: false,
         align: "center",
-        class: "w-10"
+        "class": "w-10"
       }, {
         text: "Total",
         value: "total",
         sortable: false,
         align: "center",
-        class: "w-10"
+        "class": "w-10"
       }, {
         text: "Remove",
         sortable: false,
         align: "center",
-        class: "w-10"
+        "class": "w-10"
       }]
     };
   },
@@ -198,8 +198,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _iteratorError = err;
         } finally {
           try {
-            if (!_iteratorNormalCompletion && _iterator.return != null) {
-              _iterator.return();
+            if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+              _iterator["return"]();
             }
           } finally {
             if (_didIteratorError) {
@@ -256,7 +256,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ 1975:
+/***/ 2070:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

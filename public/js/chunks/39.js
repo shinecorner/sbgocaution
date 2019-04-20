@@ -1,14 +1,14 @@
 webpackJsonp([39],{
 
-/***/ 148:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(2054)
+var __vue_script__ = __webpack_require__(2147)
 /* template */
-var __vue_template__ = __webpack_require__(2055)
+var __vue_template__ = __webpack_require__(2148)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25,7 +25,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/views/ui-elements/Tabs.vue"
+Component.options.__file = "resources/js/views/ui-elements/Progress.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -34,9 +34,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3abece88", Component.options)
+    hotAPI.createRecord("data-v-45d4f4eb", Component.options)
   } else {
-    hotAPI.reload("data-v-3abece88", Component.options)
+    hotAPI.reload("data-v-45d4f4eb", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -48,7 +48,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2054:
+/***/ 2147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -182,262 +182,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      tabIcons: [{
-        icon: "phone",
-        text: "Recents"
-      }, {
-        icon: "favorite",
-        text: "Favorites"
-      }, {
-        icon: "account_box",
-        text: "nearby"
-      }],
-      model: 'tab-2',
-      tabs: null,
-      active: null,
-      items: ["Item One", "Item Five", "Item Seventeen"],
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      interval: {},
+      value: 0,
+      valueDeterminate: 50,
+      buffer: 10,
+      bufferValue: 20
     };
   },
+  beforeDestroy: function beforeDestroy() {
+    clearInterval(this.interval);
+  },
   methods: {
-    next: function next() {
-      var active = parseInt(this.active);
-      this.active = active < 2 ? active + 1 : 0;
+    startBuffer: function startBuffer() {
+      var _this = this;
+
+      this.interval = setInterval(function () {
+        _this.buffer += Math.random() * (15 - 5) + 5;
+        _this.bufferValue += Math.random() * (15 - 5) + 5;
+      }, 2000);
     }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.interval = setInterval(function () {
+      if (_this2.value === 100) {
+        return _this2.value = 0;
+      }
+
+      _this2.value += 10;
+    }, 1000);
+    this.startBuffer();
   }
 });
 
 /***/ }),
 
-/***/ 2055:
+/***/ 2148:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -461,76 +245,101 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.usage"),
-                    colClasses: "xs12 md12"
+                    heading: _vm.$t("message.default"),
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
                   _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v("The "),
-                      _c("code", [_vm._v("v-tabs")]),
+                    _c("p", [
                       _vm._v(
-                        " component is used for hiding content behind a selectable item. This can also be used as a pseudo-navigation for a page, where the tabs are links and the tab-items are the content."
+                        "By default, progress circular uses the applications secondary color."
                       )
                     ])
                   ]),
                   _vm._v(" "),
                   _c(
-                    "v-tabs",
+                    "v-flex",
+                    { attrs: { row: "", "text-xs-center": "" } },
+                    [
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 20, color: "primary" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 40, color: "error" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 60, color: "success" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 80, color: "warning" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 100, color: "info" }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "app-card",
+                {
+                  attrs: {
+                    heading: _vm.$t("message.colored"),
+                    colClasses: "xs12 md6"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "mb-3" }, [
+                    _c("p", [_vm._v("Alternate colors can be applied.")])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
                     {
                       attrs: {
-                        color: "cyan",
-                        dark: "",
-                        "slider-color": "yellow"
-                      },
-                      model: {
-                        value: _vm.active,
-                        callback: function($$v) {
-                          _vm.active = $$v
-                        },
-                        expression: "active"
+                        row: "",
+                        "justify-space-between": "",
+                        "text-xs-center": ""
                       }
                     },
                     [
-                      _vm._l(_vm.items, function(item) {
-                        return _c(
-                          "v-tab",
-                          { key: item, attrs: { ripple: "" } },
-                          [
-                            _vm._v(
-                              "\n\t\t\t\t\t\t" + _vm._s(item) + "\n\n\t\t\t\t\t"
-                            )
-                          ]
-                        )
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 100, color: "blue-grey" }
                       }),
                       _vm._v(" "),
-                      _vm._l(_vm.items, function(item) {
-                        return _c(
-                          "v-tab-item",
-                          { key: item },
-                          [
-                            _c(
-                              "v-card",
-                              { attrs: { flat: "" } },
-                              [_c("v-card-text", [_vm._v(_vm._s(_vm.text))])],
-                              1
-                            )
-                          ],
-                          1
-                        )
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 80, color: "deep-orange lighten-2" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 60, color: "brown" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 40, color: "lime" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { value: 20, color: "indigo darken-2" }
                       })
-                    ],
-                    2
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "text-xs-center mt-3" },
-                    [
-                      _c("v-btn", { on: { click: _vm.next } }, [
-                        _vm._v("next tab")
-                      ])
                     ],
                     1
                   )
@@ -549,489 +358,283 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.fixedTabs"),
-                    colClasses: "xs12 md12"
+                    heading: _vm.$t("message.indeterminate"),
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
                   _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
+                    _c("p", [
                       _vm._v(
-                        "The fixed-tabs prop sets a higher minimum width and applies a new maximum width to "
-                      ),
-                      _c("code", [_vm._v("v-tabs-items")]),
-                      _vm._v(
-                        ". On desktop screens, the tab items will be centered within the "
-                      ),
-                      _c("code", [_vm._v("v-tabs")]),
-                      _vm._v(" component and switch to evenly fill on mobile.")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-tabs",
-                    { attrs: { "fixed-tabs": "" } },
-                    _vm._l(_vm.items, function(item) {
-                      return _c("v-tab", { key: item }, [
-                        _vm._v("\n\t\t\t\t\t\t" + _vm._s(item) + "\n\t\t\t\t\t")
-                      ])
-                    }),
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            [
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.rightAlignedTabs"),
-                    colClasses: "xs12 md12"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v("The right prop aligns the tabs to the right.")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-tabs",
-                    { attrs: { right: "" } },
-                    _vm._l(_vm.items, function(item) {
-                      return _c("v-tab", { key: item }, [
-                        _vm._v("\n\t\t\t\t\t\t" + _vm._s(item) + "\n\t\t\t\t\t")
-                      ])
-                    }),
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            [
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.content"),
-                    colClasses: "xs12 md12"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v(
-                        "Tabs are not the only thing you can put inside the "
-                      ),
-                      _c("code", [_vm._v("v-tabs")]),
-                      _vm._v(
-                        " component. In this example we've also added a toolbar."
+                        "An indeterminate progress circular animates forever."
                       )
                     ])
                   ]),
                   _vm._v(" "),
                   _c(
-                    "v-toolbar",
-                    { attrs: { color: "cyan", dark: "", tabs: "" } },
+                    "v-flex",
+                    {
+                      attrs: {
+                        row: "",
+                        "justify-content-space-between": "",
+                        "text-xs-center": ""
+                      }
+                    },
                     [
-                      _c("v-toolbar-side-icon"),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", color: "primary" }
+                      }),
                       _vm._v(" "),
-                      _c("v-toolbar-title", [_vm._v("Page title")]),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", color: "red" }
+                      }),
                       _vm._v(" "),
-                      _c("v-spacer"),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", color: "purple" }
+                      }),
                       _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", color: "green" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", color: "amber" }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "app-card",
+                {
+                  attrs: {
+                    heading: _vm.$t("message.sizeAndWidth"),
+                    colClasses: "xs12 md6"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "mb-3" }, [
+                    _c("p", [
+                      _vm._v(
+                        "The progress circular component can have an altered width and size."
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    {
+                      attrs: {
+                        row: "",
+                        "justify-content-space-between": "",
+                        "text-xs-center": ""
+                      }
+                    },
+                    [
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", size: 50, color: "primary" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", width: 3, color: "red" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: {
+                          indeterminate: "",
+                          size: 70,
+                          width: 7,
+                          color: "purple"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", width: 3, color: "green" }
+                      }),
+                      _vm._v(" "),
+                      _c("v-progress-circular", {
+                        staticClass: "mx-2",
+                        attrs: { indeterminate: "", size: 50, color: "amber" }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "app-card",
+                {
+                  attrs: {
+                    heading: _vm.$t("message.rotate"),
+                    colClasses: "xs12 md6"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "mb-3" }, [
+                    _c("p", [_vm._v("The progress origin can be rotated.")])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-flex",
+                    {
+                      attrs: {
+                        row: "",
+                        "justify-content-space-between": "",
+                        "text-xs-center": ""
+                      }
+                    },
+                    [
                       _c(
-                        "v-btn",
-                        { attrs: { icon: "" } },
-                        [_c("v-icon", [_vm._v("search")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        { attrs: { icon: "" } },
-                        [_c("v-icon", [_vm._v("more_vert")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-tabs",
+                        "v-progress-circular",
                         {
+                          staticClass: "mx-2 my-2",
                           attrs: {
-                            slot: "extension",
-                            centered: "",
-                            color: "cyan",
-                            "slider-color": "yellow"
-                          },
-                          slot: "extension",
-                          model: {
-                            value: _vm.model,
-                            callback: function($$v) {
-                              _vm.model = $$v
-                            },
-                            expression: "model"
+                            size: 100,
+                            width: 15,
+                            rotate: 360,
+                            value: _vm.value,
+                            color: "teal"
                           }
                         },
-                        _vm._l(3, function(i) {
-                          return _c(
-                            "v-tab",
-                            { key: i, attrs: { href: "#tab-" + i } },
-                            [
-                              _vm._v(
-                                "\n\t\t\t\t\t\tItem " +
-                                  _vm._s(i) +
-                                  "\n\t\t\t\t\t"
-                              )
-                            ]
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t" +
+                              _vm._s(_vm.value) +
+                              "\n\t\t\t\t\t"
                           )
-                        }),
-                        1
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-progress-circular",
+                        {
+                          staticClass: "mx-2 my-2",
+                          attrs: {
+                            size: 100,
+                            width: 15,
+                            rotate: -90,
+                            value: _vm.value,
+                            color: "primary"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t" +
+                              _vm._s(_vm.value) +
+                              "\n\t\t\t\t\t"
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-progress-circular",
+                        {
+                          staticClass: "mx-2 my-2",
+                          attrs: {
+                            size: 100,
+                            width: 15,
+                            rotate: 90,
+                            value: _vm.value,
+                            color: "red"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t" +
+                              _vm._s(_vm.value) +
+                              "\n\t\t\t\t\t"
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-progress-circular",
+                        {
+                          staticClass: "mx-2 my-2",
+                          attrs: {
+                            size: 100,
+                            width: 15,
+                            rotate: 180,
+                            value: _vm.value,
+                            color: "pink"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t" +
+                              _vm._s(_vm.value) +
+                              "\n\t\t\t\t\t"
+                          )
+                        ]
                       )
                     ],
                     1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-tabs-items",
-                    {
-                      model: {
-                        value: _vm.model,
-                        callback: function($$v) {
-                          _vm.model = $$v
-                        },
-                        expression: "model"
-                      }
-                    },
-                    _vm._l(3, function(i) {
-                      return _c(
-                        "v-tab-item",
-                        { key: i, attrs: { value: "tab-" + i } },
-                        [
-                          _c(
-                            "v-card",
-                            { attrs: { flat: "" } },
-                            [
-                              _c("v-card-text", {
-                                domProps: { textContent: _vm._s(_vm.text) }
-                              })
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    }),
-                    1
                   )
                 ],
                 1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            [
+              ),
+              _vm._v(" "),
               _c(
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.withSearch"),
-                    colClasses: "xs12 md12"
+                    heading: _vm.$t("message.determinate"),
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
                   _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
+                    _c("p", [
                       _vm._v(
-                        "Here is another example of additional content inside the "
+                        "The progress linear component can have a determinate state modified by\n\t\t\t\t\t\t"
                       ),
-                      _c("code", [_vm._v("v-tabs component")]),
+                      _c("code", [_vm._v("v-model")]),
                       _vm._v(".")
                     ])
                   ]),
                   _vm._v(" "),
                   _c(
-                    "v-toolbar",
-                    { attrs: { color: "purple", dark: "", tabs: "" } },
-                    [
-                      _c("v-text-field", {
-                        staticClass: "mx-3",
-                        attrs: {
-                          "append-icon": "mic",
-                          flat: "",
-                          label: "Search",
-                          "prepend-inner-icon": "search",
-                          "solo-inverted": ""
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-tabs",
-                        {
-                          attrs: {
-                            slot: "extension",
-                            centered: "",
-                            color: "transparent",
-                            "slider-color": "white"
-                          },
-                          slot: "extension",
-                          model: {
-                            value: _vm.tabs,
-                            callback: function($$v) {
-                              _vm.tabs = $$v
-                            },
-                            expression: "tabs"
-                          }
-                        },
-                        _vm._l(_vm.items, function(item) {
-                          return _c("v-tab", { key: item }, [
-                            _vm._v(
-                              "\n\t\t          " +
-                                _vm._s(item) +
-                                "\n\t\t        "
-                            )
-                          ])
-                        }),
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-tabs-items",
-                    {
-                      model: {
-                        value: _vm.tabs,
-                        callback: function($$v) {
-                          _vm.tabs = $$v
-                        },
-                        expression: "tabs"
-                      }
-                    },
-                    _vm._l(_vm.items, function(item) {
-                      return _c(
-                        "v-tab-item",
-                        { key: item },
-                        [
-                          _c(
-                            "v-card",
-                            [
-                              _c("v-card-text", [
-                                _vm._v(
-                                  "\n\t\t            " +
-                                    _vm._s(_vm.text) +
-                                    "\n\t\t          "
-                                )
-                              ])
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    }),
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            [
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.iconsAndText"),
-                    colClasses: "xs12 md12"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v(
-                        "By using the icons-and-text prop you can add icons to each tab item."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-tabs",
+                    "v-flex",
                     {
                       attrs: {
-                        centered: "",
-                        color: "cyan",
-                        dark: "",
-                        "icons-and-text": ""
+                        row: "",
+                        "justify-content-space-between": "",
+                        "text-xs-center": ""
                       }
                     },
                     [
-                      _c("v-tabs-slider", { attrs: { color: "yellow" } }),
-                      _vm._v(" "),
-                      _vm._l(_vm.tabIcons, function(icon, index) {
-                        return _c(
-                          "v-tab",
-                          { key: index, attrs: { href: "#tab-" + index } },
-                          [
-                            _vm._v(
-                              "\n\t\t\t      " +
-                                _vm._s(icon.text) +
-                                "\n\t\t\t      "
-                            ),
-                            _c("v-icon", [_vm._v(_vm._s(icon.icon))])
-                          ],
-                          1
-                        )
-                      }),
-                      _vm._v(" "),
-                      _vm._l(_vm.tabIcons, function(icon, index) {
-                        return _c(
-                          "v-tab-item",
-                          { key: index, attrs: { value: "tab-" + index } },
-                          [
-                            _c(
-                              "v-card",
-                              { attrs: { flat: "" } },
-                              [_c("v-card-text", [_vm._v(_vm._s(_vm.text))])],
-                              1
-                            )
-                          ],
-                          1
-                        )
+                      _c("v-progress-linear", {
+                        attrs: { color: "pink" },
+                        model: {
+                          value: _vm.valueDeterminate,
+                          callback: function($$v) {
+                            _vm.valueDeterminate = $$v
+                          },
+                          expression: "valueDeterminate"
+                        }
                       })
                     ],
-                    2
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            [
-              _c(
-                "app-card",
-                {
-                  attrs: {
-                    heading: _vm.$t("message.grow"),
-                    colClasses: "xs12 md12"
-                  }
-                },
-                [
-                  _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
-                      _vm._v(
-                        "The grow prop will make the tab items take up all available space."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-toolbar",
-                    { attrs: { color: "cyan", dark: "", tabs: "" } },
-                    [
-                      _c("v-toolbar-side-icon"),
-                      _vm._v(" "),
-                      _c("v-toolbar-title", [_vm._v("Page title")]),
-                      _vm._v(" "),
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        { attrs: { icon: "" } },
-                        [_c("v-icon", [_vm._v("search")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        { attrs: { icon: "" } },
-                        [_c("v-icon", [_vm._v("more_vert")])],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-tabs",
-                        {
-                          attrs: { slot: "extension", color: "cyan", grow: "" },
-                          slot: "extension",
-                          model: {
-                            value: _vm.tabs,
-                            callback: function($$v) {
-                              _vm.tabs = $$v
-                            },
-                            expression: "tabs"
-                          }
-                        },
-                        [
-                          _c("v-tabs-slider", { attrs: { color: "yellow" } }),
-                          _vm._v(" "),
-                          _vm._l(_vm.items, function(item) {
-                            return _c("v-tab", { key: item }, [
-                              _vm._v(
-                                "\n\t\t          " +
-                                  _vm._s(item) +
-                                  "\n\t\t        "
-                              )
-                            ])
-                          })
-                        ],
-                        2
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-tabs-items",
-                    {
-                      model: {
-                        value: _vm.tabs,
-                        callback: function($$v) {
-                          _vm.tabs = $$v
-                        },
-                        expression: "tabs"
-                      }
-                    },
-                    _vm._l(_vm.items, function(item) {
-                      return _c(
-                        "v-tab-item",
-                        { key: item },
-                        [
-                          _c(
-                            "v-card",
-                            { attrs: { flat: "" } },
-                            [_c("v-card-text", [_vm._v(_vm._s(_vm.text))])],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    }),
                     1
                   )
                 ],
@@ -1043,139 +646,65 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-layout",
+            { attrs: { row: "", wrap: "" } },
             [
               _c(
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.pagination"),
-                    colClasses: "xs12 md12"
+                    heading: _vm.$t("message.indeterminate"),
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
                   _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
+                    _c("p", [
                       _vm._v(
-                        "You can use a menu to hold additional tabs, swapping them out on the fly."
+                        "Just as with the progress circular component, progress linear has an indeterminate state."
                       )
                     ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "v-tabs",
-                    { attrs: { dark: "", color: "cyan", "show-arrows": "" } },
-                    [
-                      _c("v-tabs-slider", { attrs: { color: "yellow" } }),
-                      _vm._v(" "),
-                      _vm._l(12, function(i) {
-                        return _c(
-                          "v-tab",
-                          { key: i, attrs: { href: "#tab-" + i } },
-                          [
-                            _vm._v(
-                              "\n\t\t\t      Item " + _vm._s(i) + "\n\t\t\t    "
-                            )
-                          ]
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-tabs-items",
-                        _vm._l(12, function(i) {
-                          return _c(
-                            "v-tab-item",
-                            { key: i, attrs: { value: "tab-" + i } },
-                            [
-                              _c(
-                                "v-card",
-                                { attrs: { flat: "" } },
-                                [_c("v-card-text", [_vm._v(_vm._s(_vm.text))])],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        }),
-                        1
-                      )
-                    ],
-                    2
-                  )
+                  _c("v-progress-linear", {
+                    attrs: { indeterminate: true, color: "green" }
+                  })
                 ],
                 1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            [
+              ),
+              _vm._v(" "),
               _c(
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.customIcons"),
-                    colClasses: "xs12 md12"
+                    heading: _vm.$t("message.buffer"),
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
                   _c("div", { staticClass: "mb-3" }, [
-                    _c("p", { staticClass: "mb-0" }, [
+                    _c("p", [
                       _vm._v(
-                        "You can use a menu to hold additional tabs, swapping them out on the fly."
-                      )
+                        "A buffer state represents two values simultaneously. The primary value is controlled by the model, whereas the buffer is controlled by the\n\t\t\t\t\t\t"
+                      ),
+                      _c("code", [_vm._v("buffer-value")]),
+                      _vm._v(" prop.")
                     ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "v-tabs",
-                    {
-                      attrs: {
-                        color: "cyan",
-                        dark: "",
-                        "next-icon": "mdi-arrow-right-bold-box-outline",
-                        "prev-icon": "mdi-arrow-left-bold-box-outline",
-                        "show-arrows": ""
-                      }
+                  _c("v-progress-linear", {
+                    attrs: {
+                      buffer: "",
+                      "buffer-value": _vm.bufferValue,
+                      color: "yellow"
                     },
-                    [
-                      _c("v-tabs-slider", { attrs: { color: "yellow" } }),
-                      _vm._v(" "),
-                      _vm._l(12, function(i) {
-                        return _c(
-                          "v-tab",
-                          { key: i, attrs: { href: "#tab-" + i } },
-                          [
-                            _vm._v(
-                              "\n\t\t\t      Item " + _vm._s(i) + "\n\t\t\t    "
-                            )
-                          ]
-                        )
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-tabs-items",
-                        _vm._l(30, function(i) {
-                          return _c(
-                            "v-tab-item",
-                            { key: i, attrs: { value: "tab-" + i } },
-                            [
-                              _c(
-                                "v-card",
-                                { attrs: { flat: "" } },
-                                [_c("v-card-text", [_vm._v(_vm._s(_vm.text))])],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        }),
-                        1
-                      )
-                    ],
-                    2
-                  )
+                    model: {
+                      value: _vm.buffer,
+                      callback: function($$v) {
+                        _vm.buffer = $$v
+                      },
+                      expression: "buffer"
+                    }
+                  })
                 ],
                 1
               )
@@ -1195,7 +724,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3abece88", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-45d4f4eb", module.exports)
   }
 }
 

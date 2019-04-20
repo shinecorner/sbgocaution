@@ -1,58 +1,11 @@
 webpackJsonp([56],{
 
-/***/ 182:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(2191)
-/* template */
-var __vue_template__ = __webpack_require__(2192)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/views/timelines/OppositeSlot.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0fcf6f01", Component.options)
-  } else {
-    hotAPI.reload("data-v-0fcf6f01", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 2191:
+/***/ 2277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -90,32 +43,79 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      years: [{
-        color: 'cyan',
-        year: '1960'
+      loader: true,
+      search: "",
+      selected: [],
+      headers: [{
+        text: "Dessert (100g serving)",
+        align: "left",
+        sortable: false,
+        value: "name"
       }, {
-        color: 'green',
-        year: '1970'
+        text: "Calories",
+        value: "calories"
       }, {
-        color: 'pink',
-        year: '1980'
+        text: "Fat (g)",
+        value: "fat"
       }, {
-        color: 'amber',
-        year: '1990'
+        text: "Carbs (g)",
+        value: "carbs"
       }, {
-        color: 'orange',
-        year: '2000'
-      }]
+        text: "Protein (g)",
+        value: "protein"
+      }, {
+        text: "Sodium (mg)",
+        value: "sodium"
+      }, {
+        text: "Calcium (%)",
+        value: "calcium"
+      }, {
+        text: "Iron (%)",
+        value: "iron"
+      }],
+      items: []
     };
+  },
+  mounted: function mounted() {
+    this.getTablesData();
+  },
+  methods: {
+    getTablesData: function getTablesData() {
+      var _this = this;
+
+      __WEBPACK_IMPORTED_MODULE_0_Api__["a" /* default */].get("vuely/tablesData.js").then(function (response) {
+        _this.loader = false;
+        _this.items = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
 /***/ }),
 
-/***/ 2192:
+/***/ 2278:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -124,13 +124,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "hover-wrapper" },
     [
       _c("page-title-bar"),
       _vm._v(" "),
+      _c("app-section-loader", { attrs: { status: _vm.loader } }),
+      _vm._v(" "),
       _c(
         "v-container",
-        { attrs: { "grid-list-xl": "", "pt-0": "" } },
+        { attrs: { fluid: "", "grid-list-xl": "", "py-0": "" } },
         [
           _c(
             "v-layout",
@@ -138,56 +139,105 @@ var render = function() {
             [
               _c(
                 "app-card",
-                { attrs: { colClasses: "xl12 lg12 md12 sm12 xs12" } },
+                {
+                  attrs: {
+                    heading: _vm.$t("message.selectableRows"),
+                    fullBlock: true,
+                    colClasses: "xl12 lg12 md12 sm12 xs12"
+                  }
+                },
                 [
-                  _c("div", { staticClass: "mb-4" }, [
-                    _c("p", [
-                      _vm._v(
-                        "The opposite slot provides an additional layer of customization within your timelines."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "v-timeline",
-                    _vm._l(_vm.years, function(year, i) {
-                      return _c(
-                        "v-timeline-item",
-                        { key: i, attrs: { color: year.color, small: "" } },
-                        [
-                          _c("span", {
-                            class:
-                              "headline font-weight-bold " +
-                              year.color +
-                              "--text",
-                            attrs: { slot: "opposite" },
-                            domProps: { textContent: _vm._s(year.year) },
-                            slot: "opposite"
-                          }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "py-3" }, [
+                  _c("v-data-table", {
+                    attrs: {
+                      headers: _vm.headers,
+                      items: _vm.items,
+                      search: _vm.search,
+                      "item-key": "name",
+                      "select-all": ""
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "headerCell",
+                        fn: function(props) {
+                          return [
+                            _c("v-tooltip", { attrs: { bottom: "" } }, [
+                              _c(
+                                "span",
+                                {
+                                  attrs: { slot: "activator" },
+                                  slot: "activator"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t" +
+                                      _vm._s(props.header.text) +
+                                      "\n\t\t\t\t\t\t"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", [
+                                _vm._v(
+                                  "\n\t\t\t\t\t\t\t" +
+                                    _vm._s(props.header.text) +
+                                    "\n\t\t\t\t\t\t"
+                                )
+                              ])
+                            ])
+                          ]
+                        }
+                      },
+                      {
+                        key: "items",
+                        fn: function(props) {
+                          return [
                             _c(
-                              "h2",
-                              {
-                                class:
-                                  "headline font-weight-light mb-3 " +
-                                  year.color +
-                                  "--text"
-                              },
-                              [_vm._v("Lorem ipsum")]
+                              "td",
+                              [
+                                _c("v-checkbox", {
+                                  attrs: {
+                                    color: "primary",
+                                    "hide-details": ""
+                                  },
+                                  model: {
+                                    value: props.selected,
+                                    callback: function($$v) {
+                                      _vm.$set(props, "selected", $$v)
+                                    },
+                                    expression: "props.selected"
+                                  }
+                                })
+                              ],
+                              1
                             ),
                             _vm._v(" "),
-                            _c("div", [
-                              _vm._v(
-                                "\n                           Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.\n                        "
-                              )
-                            ])
-                          ])
-                        ]
-                      )
-                    }),
-                    1
-                  )
+                            _c("td", [_vm._v(_vm._s(props.item.name))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.calories))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.fat))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.carbs))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.protein))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.sodium))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.calcium))]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(props.item.iron))])
+                          ]
+                        }
+                      }
+                    ]),
+                    model: {
+                      value: _vm.selected,
+                      callback: function($$v) {
+                        _vm.selected = $$v
+                      },
+                      expression: "selected"
+                    }
+                  })
                 ],
                 1
               )
@@ -207,9 +257,57 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0fcf6f01", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-174dc06a", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 241:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(2277)
+/* template */
+var __vue_template__ = __webpack_require__(2278)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/tables/SelectableRows.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-174dc06a", Component.options)
+  } else {
+    hotAPI.reload("data-v-174dc06a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ })
 

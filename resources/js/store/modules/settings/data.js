@@ -6,68 +6,28 @@ import accentTheme from "Themes/accentTheme";
 import successTheme from "Themes/successTheme";
 
 // languages
-export const languages = [
-   {
-      name: "English",
-      icon: "en",
-      locale: "en"
-   },
-   {
-      name: "French",
-      icon: "fr",
-      locale: "fr"
-   },
-   {
-      name: "Hebrew",
-      icon: "he",
-      locale: "he"
-   },
-   {
-      name: "Russian",
-      icon: "ru",
-      locale: "ru"
-   },
-   {
-      name: "Arabic",
-      icon: "ar",
-      locale: "ar"
-   },
-   {
-      name: "Chinese",
-      icon: "cn",
-      locale: "cn"
-   },
-   {
-      name: "German",
-      icon: "ge",
-      locale: "ge"
-   },
-   {
-      name: "Spanish",
-      icon: "es",
-      locale: "sp"
-   },
-   {
-      name: "Japanese",
-      icon: "ja",
-      locale: "ja"
-   },
-   {
-      name: "Korean",
-      icon: "ko",
-      locale: "ko"
-   },
-   {
-      name: "Italian",
-      icon: "it",
-      locale: "it"
-   },
-   {
-      name: "Hungarian",
-      icon: "hu",
-      locale: "hu"
-   }
-]
+export const languages = {
+    de:{
+       name: "German",
+       icon: "de",
+       locale: "de"
+    }, 
+    en:{
+       name: "English",
+       icon: "en",
+       locale: "en"
+    },
+    fr:{
+       name: "French",
+       icon: "fr",
+       locale: "fr"
+    },            
+    it:{
+       name: "Italian",
+       icon: "it",
+       locale: "it"
+    }   
+}
 // sidebar background images
 export const sidebarBackgroundImages = [
    {

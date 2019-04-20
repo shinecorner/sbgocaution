@@ -48,12 +48,7 @@ export default {
     };
   },
   mounted() {
-    if (
-      this.selectedLocale.locale === "he" ||
-      this.selectedLocale.locale === "ar"
-    ) {
-      this.$store.dispatch("rtlLayout");
-    }
+    
   },
   computed: {
     ...mapGetters([

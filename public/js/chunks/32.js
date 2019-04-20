@@ -1,72 +1,10 @@
 webpackJsonp([32],{
 
-/***/ 1469:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-  baseURL: 'http://reactify.theironnetwork.org/data/'
-}));
-
-/***/ }),
-
-/***/ 175:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(2180)
-/* template */
-var __vue_template__ = __webpack_require__(2181)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/views/tables/Slots.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0649fe2c", Component.options)
-  } else {
-    hotAPI.reload("data-v-0649fe2c", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 2180:
+/***/ 2157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(1469);
 //
 //
 //
@@ -149,121 +87,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      loader: true,
-      items: [],
-      pagination: {
-        sortBy: "name"
-      },
-      selected: [],
-      headers: [{
-        text: "Dessert (100g serving)",
-        align: "left",
-        value: "name"
-      }, {
-        text: "Calories",
-        value: "calories"
-      }, {
-        text: "Fat (g)",
-        value: "fat"
-      }, {
-        text: "Carbs (g)",
-        value: "carbs"
-      }, {
-        text: "Protein (g)",
-        value: "protein"
-      }, {
-        text: "Sodium (mg)",
-        value: "sodium"
-      }, {
-        text: "Calcium (%)",
-        value: "calcium"
-      }, {
-        text: "Iron (%)",
-        value: "iron"
-      }]
+      e4: null,
+      e5: null,
+      time: null,
+      time2: null,
+      menu2: false,
+      modal2: false
     };
-  },
-  mounted: function mounted() {
-    this.getTablesData();
-  },
-  methods: {
-    toggleAll: function toggleAll() {
-      if (this.selected.length) this.selected = [];else this.selected = this.items.slice();
-    },
-    changeSort: function changeSort(column) {
-      if (this.pagination.sortBy === column) {
-        this.pagination.descending = !this.pagination.descending;
-      } else {
-        this.pagination.sortBy = column;
-        this.pagination.descending = false;
-      }
-    },
-    getTablesData: function getTablesData() {
-      var _this = this;
-
-      __WEBPACK_IMPORTED_MODULE_0_Api__["a" /* default */].get("vuely/tablesData.js").then(function (response) {
-        _this.loader = false;
-        _this.items = response.data;
-      }).catch(function (error) {
-        console.log(error);
-      });
-    }
   }
 });
 
 /***/ }),
 
-/***/ 2181:
+/***/ 2158:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -275,11 +114,9 @@ var render = function() {
     [
       _c("page-title-bar"),
       _vm._v(" "),
-      _c("app-section-loader", { attrs: { status: _vm.loader } }),
-      _vm._v(" "),
       _c(
         "v-container",
-        { attrs: { fluid: "", "grid-list-xl": "", "py-0": "" } },
+        { attrs: { fluid: "", "grid-list-xl": "", "pt-0": "" } },
         [
           _c(
             "v-layout",
@@ -289,147 +126,19 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.itemsAndHeaders"),
-                    fullBlock: true,
-                    customClasses: "mb-30",
-                    colClasses: "xl12 lg12 md12 sm12 xs12"
+                    heading: _vm.$t("message.timePicker"),
+                    contentCustomClass: "div-responsive",
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
-                  _c("v-data-table", {
-                    attrs: {
-                      headers: _vm.headers,
-                      items: _vm.items,
-                      "select-all": "",
-                      pagination: _vm.pagination,
-                      "item-key": "name"
-                    },
-                    on: {
-                      "update:pagination": function($event) {
-                        _vm.pagination = $event
-                      }
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "headers",
-                        fn: function(props) {
-                          return [
-                            _c(
-                              "tr",
-                              [
-                                _c(
-                                  "th",
-                                  [
-                                    _c("v-checkbox", {
-                                      attrs: {
-                                        color: "primary",
-                                        "hide-details": "",
-                                        "input-value": props.all,
-                                        indeterminate: props.indeterminate
-                                      },
-                                      nativeOn: {
-                                        click: function($event) {
-                                          return _vm.toggleAll($event)
-                                        }
-                                      }
-                                    })
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _vm._l(props.headers, function(header) {
-                                  return _c(
-                                    "th",
-                                    {
-                                      key: header.text,
-                                      class: [
-                                        "column sortable",
-                                        _vm.pagination.descending
-                                          ? "desc"
-                                          : "asc",
-                                        header.value === _vm.pagination.sortBy
-                                          ? "active"
-                                          : ""
-                                      ],
-                                      on: {
-                                        click: function($event) {
-                                          return _vm.changeSort(header.value)
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _c("v-icon", [_vm._v("arrow_upward")]),
-                                      _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t" +
-                                          _vm._s(header.text) +
-                                          "\n\t\t\t\t\t\t\t"
-                                      )
-                                    ],
-                                    1
-                                  )
-                                })
-                              ],
-                              2
-                            )
-                          ]
-                        }
-                      },
-                      {
-                        key: "items",
-                        fn: function(props) {
-                          return [
-                            _c(
-                              "tr",
-                              {
-                                attrs: { active: props.selected },
-                                on: {
-                                  click: function($event) {
-                                    props.selected = !props.selected
-                                  }
-                                }
-                              },
-                              [
-                                _c(
-                                  "td",
-                                  [
-                                    _c("v-checkbox", {
-                                      attrs: {
-                                        color: "primary",
-                                        "hide-details": "",
-                                        "input-value": props.selected
-                                      }
-                                    })
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.name))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.calories))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.fat))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.carbs))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.protein))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.sodium))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.calcium))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.iron))])
-                              ]
-                            )
-                          ]
-                        }
-                      }
-                    ]),
+                  _c("v-time-picker", {
                     model: {
-                      value: _vm.selected,
+                      value: _vm.e4,
                       callback: function($$v) {
-                        _vm.selected = $$v
+                        _vm.e4 = $$v
                       },
-                      expression: "selected"
+                      expression: "e4"
                     }
                   })
                 ],
@@ -440,71 +149,116 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.headerCell"),
-                    fullBlock: true,
-                    customClasses: "mb-30",
-                    colClasses: "xl12 lg12 md12 sm12 xs12"
+                    heading: _vm.$t("message.timePicker"),
+                    contentCustomClass: "div-responsive",
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
-                  _c("v-data-table", {
-                    attrs: { headers: _vm.headers, items: _vm.items },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "headerCell",
-                        fn: function(props) {
-                          return [
-                            _c("v-tooltip", { attrs: { bottom: "" } }, [
-                              _c(
-                                "span",
-                                {
-                                  attrs: { slot: "activator" },
-                                  slot: "activator"
-                                },
-                                [
-                                  _vm._v(
-                                    "\n\t\t\t\t\t\t\t\t" +
-                                      _vm._s(props.header.text) +
-                                      "\n\t\t\t\t\t\t\t"
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v(
-                                  "\n\t\t\t\t\t\t\t\t" +
-                                    _vm._s(props.header.text) +
-                                    "\n\t\t\t\t\t\t\t"
-                                )
-                              ])
-                            ])
-                          ]
+                  _c("v-time-picker", {
+                    attrs: { landscape: "" },
+                    model: {
+                      value: _vm.e5,
+                      callback: function($$v) {
+                        _vm.e5 = $$v
+                      },
+                      expression: "e5"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { row: "", wrap: "" } },
+            [
+              _c(
+                "app-card",
+                {
+                  attrs: {
+                    heading: _vm.$t("message.timePickerInDialogAndMenu"),
+                    colClasses: "xs12 md6"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "mb-3" }, [
+                    _c("p", { staticClass: "mb-0" }, [
+                      _vm._v(
+                        "Due to the flexibility of pickers, you can really dial in the experience exactly how you want it."
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-menu",
+                    {
+                      ref: "menu",
+                      attrs: {
+                        lazy: "",
+                        "close-on-content-click": false,
+                        transition: "scale-transition",
+                        "offset-y": "",
+                        "full-width": "",
+                        "nudge-right": 40,
+                        "max-width": "290px",
+                        "min-width": "290px",
+                        "return-value": _vm.time
+                      },
+                      on: {
+                        "update:returnValue": function($event) {
+                          _vm.time = $event
+                        },
+                        "update:return-value": function($event) {
+                          _vm.time = $event
                         }
                       },
-                      {
-                        key: "items",
-                        fn: function(props) {
-                          return [
-                            _c("td", [_vm._v(_vm._s(props.item.name))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.calories))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.fat))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.carbs))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.protein))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.sodium))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.calcium))]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(props.item.iron))])
-                          ]
-                        }
+                      model: {
+                        value: _vm.menu2,
+                        callback: function($$v) {
+                          _vm.menu2 = $$v
+                        },
+                        expression: "menu2"
                       }
-                    ])
-                  })
+                    },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          slot: "activator",
+                          label: "Picker in menu",
+                          "prepend-icon": "access_time",
+                          readonly: ""
+                        },
+                        slot: "activator",
+                        model: {
+                          value: _vm.time,
+                          callback: function($$v) {
+                            _vm.time = $$v
+                          },
+                          expression: "time"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("v-time-picker", {
+                        on: {
+                          change: function($event) {
+                            return _vm.$refs.menu.save(_vm.time)
+                          }
+                        },
+                        model: {
+                          value: _vm.time,
+                          callback: function($$v) {
+                            _vm.time = $$v
+                          },
+                          expression: "time"
+                        }
+                      })
+                    ],
+                    1
+                  )
                 ],
                 1
               ),
@@ -513,70 +267,100 @@ var render = function() {
                 "app-card",
                 {
                   attrs: {
-                    heading: _vm.$t("message.expand"),
-                    fullBlock: true,
-                    customClasses: "mb-30",
-                    colClasses: "xl12 lg12 md12 sm12 xs12"
+                    heading: _vm.$t("message.timePicker"),
+                    colClasses: "xs12 md6"
                   }
                 },
                 [
-                  _c("v-data-table", {
-                    attrs: {
-                      headers: _vm.headers,
-                      items: _vm.items,
-                      "hide-actions": "",
-                      "item-key": "name"
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "items",
-                        fn: function(props) {
-                          return [
-                            _c(
-                              "tr",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    props.expanded = !props.expanded
-                                  }
-                                }
-                              },
-                              [
-                                _c("td", [_vm._v(_vm._s(props.item.name))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.calories))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.fat))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.carbs))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.protein))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.sodium))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.calcium))]),
-                                _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(props.item.iron))])
-                              ]
-                            )
-                          ]
+                  _c(
+                    "v-dialog",
+                    {
+                      ref: "dialog",
+                      attrs: {
+                        persistent: "",
+                        lazy: "",
+                        "full-width": "",
+                        width: "290px",
+                        "return-value": _vm.time2
+                      },
+                      on: {
+                        "update:returnValue": function($event) {
+                          _vm.time2 = $event
+                        },
+                        "update:return-value": function($event) {
+                          _vm.time2 = $event
                         }
                       },
-                      {
-                        key: "expand",
-                        fn: function(props) {
-                          return [
-                            _c(
-                              "v-card",
-                              { attrs: { flat: "" } },
-                              [_c("v-card-text", [_vm._v("Peek-a-boo!")])],
-                              1
-                            )
-                          ]
-                        }
+                      model: {
+                        value: _vm.modal2,
+                        callback: function($$v) {
+                          _vm.modal2 = $$v
+                        },
+                        expression: "modal2"
                       }
-                    ])
-                  })
+                    },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          slot: "activator",
+                          label: "Picker in dialog",
+                          "prepend-icon": "access_time",
+                          readonly: ""
+                        },
+                        slot: "activator",
+                        model: {
+                          value: _vm.time2,
+                          callback: function($$v) {
+                            _vm.time2 = $$v
+                          },
+                          expression: "time2"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "v-time-picker",
+                        {
+                          attrs: { actions: "" },
+                          model: {
+                            value: _vm.time2,
+                            callback: function($$v) {
+                              _vm.time2 = $$v
+                            },
+                            expression: "time2"
+                          }
+                        },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "error" },
+                              on: {
+                                click: function($event) {
+                                  _vm.modal2 = false
+                                }
+                              }
+                            },
+                            [_vm._v("Cancel")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "primary" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.$refs.dialog.save(_vm.time2)
+                                }
+                              }
+                            },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
                 ],
                 1
               )
@@ -596,9 +380,57 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0649fe2c", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-9e51f04e", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 217:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(2157)
+/* template */
+var __vue_template__ = __webpack_require__(2158)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/ui-elements/Timepicker.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9e51f04e", Component.options)
+  } else {
+    hotAPI.reload("data-v-9e51f04e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ })
 

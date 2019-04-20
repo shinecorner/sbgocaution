@@ -1,54 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 110:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(1748)
-/* template */
-var __vue_template__ = __webpack_require__(1792)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/views/dashboard/WebAnalytics.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c774c8e8", Component.options)
-  } else {
-    hotAPI.reload("data-v-c774c8e8", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 1468:
+/***/ 1560:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76,26 +28,13 @@ var ChartConfig = {
 
 /***/ }),
 
-/***/ 1469:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(289);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
-  baseURL: 'http://reactify.theironnetwork.org/data/'
-}));
-
-/***/ }),
-
-/***/ 1470:
+/***/ 1561:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export VueCharts */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_index_js__ = __webpack_require__(1480);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BaseCharts__ = __webpack_require__(1481);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mixins_index_js__ = __webpack_require__(1571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__BaseCharts__ = __webpack_require__(1572);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["d"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__BaseCharts__["c"]; });
@@ -130,7 +69,7 @@ var VueCharts = {
 
 /***/ }),
 
-/***/ 1480:
+/***/ 1571:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -217,7 +156,9 @@ var reactiveData = {
 var reactiveProp = {
   props: {
     chartData: {
-      required: true
+      type: Object,
+      required: true,
+      default: function _default() {}
     }
   },
   watch: {
@@ -231,7 +172,7 @@ var reactiveProp = {
 
 /***/ }),
 
-/***/ 1481:
+/***/ 1572:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -245,7 +186,7 @@ var reactiveProp = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return Radar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Bubble; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return Scatter; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(1482);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(1573);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
 
 function generateChart(chartId, chartType) {
@@ -345,7 +286,7 @@ var Scatter = generateChart('scatter-chart', 'scatter');
 
 /***/ }),
 
-/***/ 1482:
+/***/ 1573:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -15032,50 +14973,50 @@ return src;
 
 /***/ }),
 
-/***/ 1501:
+/***/ 1592:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1468);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Helpers_helpers__ = __webpack_require__(54);
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  extends: __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["e" /* Line */],
+  "extends": __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["e" /* Line */],
   props: {
     dataSet: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [85, 50, 80, 90, 10, 5, 15, 60, 30, 20, 50];
       }
     },
     lineTension: {
       type: Number,
-      default: function _default() {
+      "default": function _default() {
         return 0;
       }
     },
     dataLabels: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
       }
     },
     enableXAxesLine: {
       type: Boolean,
-      default: true
+      "default": true
     },
     color: {
       type: String,
-      default: function _default() {
+      "default": function _default() {
         return __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__["a" /* ChartConfig */].color.white;
       }
     },
     gridLines: {
       type: Boolean,
-      default: false
+      "default": false
     }
   },
   data: function data() {
@@ -15137,15 +15078,15 @@ return src;
 
 /***/ }),
 
-/***/ 1616:
+/***/ 1709:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1617)
+var __vue_script__ = __webpack_require__(1710)
 /* template */
-var __vue_template__ = __webpack_require__(1618)
+var __vue_template__ = __webpack_require__(1711)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -15185,12 +15126,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1617:
+/***/ 1710:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Constants_chart_config__ = __webpack_require__(1468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Constants_chart_config__ = __webpack_require__(1560);
 //
 //
 //
@@ -15275,7 +15216,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1618:
+/***/ 1711:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -15344,15 +15285,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1619:
+/***/ 1712:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1620)
+var __vue_script__ = __webpack_require__(1713)
 /* template */
-var __vue_template__ = __webpack_require__(1621)
+var __vue_template__ = __webpack_require__(1714)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -15392,12 +15333,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1620:
+/***/ 1713:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(1469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -15466,7 +15407,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       __WEBPACK_IMPORTED_MODULE_0_Api__["a" /* default */].get("vuely/supportTickets.js").then(function (response) {
         _this.loader = false;
         _this.supportTickets = response.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         console.log(error);
       });
     }
@@ -15475,7 +15416,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1621:
+/***/ 1714:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -15642,15 +15583,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1622:
+/***/ 1715:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1623)
+var __vue_script__ = __webpack_require__(1716)
 /* template */
-var __vue_template__ = __webpack_require__(1624)
+var __vue_template__ = __webpack_require__(1717)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -15690,12 +15631,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1623:
+/***/ 1716:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 //
 //
@@ -15863,7 +15804,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1624:
+/***/ 1717:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -15968,45 +15909,45 @@ if (false) {
 
 /***/ }),
 
-/***/ 1625:
+/***/ 1718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 // Line Chart Widget
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  extends: __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["e" /* Line */],
+  "extends": __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["e" /* Line */],
   props: {
     data: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [10, 30, 30, 60, 75, 10];
       }
     },
     lineTension: {
       type: Number,
-      default: function _default() {
+      "default": function _default() {
         return 0.6;
       }
     },
     labels: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return ['A', 'B', 'C', 'D', 'E', 'F'];
       }
     },
     color: {
       type: String,
-      default: function _default() {
+      "default": function _default() {
         return __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__["a" /* ChartConfig */].color.info;
       }
     },
     enableShadow: {
       type: Boolean,
-      default: false
+      "default": false
     }
   },
   data: function data() {
@@ -16083,48 +16024,96 @@ if (false) {
 
 /***/ }),
 
-/***/ 1748:
+/***/ 175:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(1843)
+/* template */
+var __vue_template__ = __webpack_require__(1887)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/dashboard/WebAnalytics.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-c774c8e8", Component.options)
+  } else {
+    hotAPI.reload("data-v-c774c8e8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 1843:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Widgets_VisitorsAreaChart__ = __webpack_require__(1749);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Widgets_VisitorsAreaChart__ = __webpack_require__(1844);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Widgets_VisitorsAreaChart___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_Components_Widgets_VisitorsAreaChart__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Components_Widgets_TrafficChannelV2__ = __webpack_require__(1753);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Components_Widgets_TrafficChannelV2__ = __webpack_require__(1848);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Components_Widgets_TrafficChannelV2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_Components_Widgets_TrafficChannelV2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_BrowserStatics__ = __webpack_require__(1755);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_BrowserStatics__ = __webpack_require__(1850);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_BrowserStatics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_Components_Widgets_BrowserStatics__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Components_Widgets_ServerLoad__ = __webpack_require__(1616);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Components_Widgets_ServerLoad__ = __webpack_require__(1709);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Components_Widgets_ServerLoad___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_Components_Widgets_ServerLoad__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_Components_Widgets_BandwidthUsageV2__ = __webpack_require__(1757);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_Components_Widgets_BandwidthUsageV2__ = __webpack_require__(1852);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_Components_Widgets_BandwidthUsageV2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_Components_Widgets_BandwidthUsageV2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_Components_Widgets_TotalDownloading__ = __webpack_require__(1760);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_Components_Widgets_TotalDownloading__ = __webpack_require__(1855);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_Components_Widgets_TotalDownloading___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_Components_Widgets_TotalDownloading__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_Components_Widgets_Notifications__ = __webpack_require__(1763);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_Components_Widgets_Notifications__ = __webpack_require__(1858);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_Components_Widgets_Notifications___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_Components_Widgets_Notifications__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_Components_Widgets_SupportTickets__ = __webpack_require__(1619);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_Components_Widgets_SupportTickets__ = __webpack_require__(1712);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_Components_Widgets_SupportTickets___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_Components_Widgets_SupportTickets__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_Components_Widgets_HotKeywords__ = __webpack_require__(1766);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_Components_Widgets_HotKeywords__ = __webpack_require__(1861);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_Components_Widgets_HotKeywords___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_Components_Widgets_HotKeywords__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_Components_Widgets_UsersStat__ = __webpack_require__(1769);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_Components_Widgets_UsersStat__ = __webpack_require__(1864);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_Components_Widgets_UsersStat___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_Components_Widgets_UsersStat__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_Components_Widgets_PlatformUsersStat__ = __webpack_require__(1772);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_Components_Widgets_PlatformUsersStat__ = __webpack_require__(1867);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_Components_Widgets_PlatformUsersStat___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_Components_Widgets_PlatformUsersStat__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_Components_Widgets_ServerStatus__ = __webpack_require__(1775);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_Components_Widgets_ServerStatus__ = __webpack_require__(1870);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_Components_Widgets_ServerStatus___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_Components_Widgets_ServerStatus__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_Components_Widgets_24x7CustomerSupport__ = __webpack_require__(1778);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_Components_Widgets_24x7CustomerSupport__ = __webpack_require__(1873);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_Components_Widgets_24x7CustomerSupport___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_Components_Widgets_24x7CustomerSupport__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_Components_Widgets_PromoWidget__ = __webpack_require__(1780);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_Components_Widgets_PromoWidget__ = __webpack_require__(1875);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_Components_Widgets_PromoWidget___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_Components_Widgets_PromoWidget__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_Components_Widgets_ActivityAroundWorld__ = __webpack_require__(1622);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_Components_Widgets_ActivityAroundWorld__ = __webpack_require__(1715);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_Components_Widgets_ActivityAroundWorld___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_Components_Widgets_ActivityAroundWorld__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_Components_Widgets_DeviceSeprations__ = __webpack_require__(1782);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_Components_Widgets_DeviceSeprations__ = __webpack_require__(1877);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_Components_Widgets_DeviceSeprations___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_Components_Widgets_DeviceSeprations__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_Components_StatsCardV3_StatsCardV3__ = __webpack_require__(1786);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_Components_StatsCardV3_StatsCardV3__ = __webpack_require__(1881);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_Components_StatsCardV3_StatsCardV3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_Components_StatsCardV3_StatsCardV3__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_Components_StatsCardV4_StatsCardV4__ = __webpack_require__(1789);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_Components_StatsCardV4_StatsCardV4__ = __webpack_require__(1884);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_Components_StatsCardV4_StatsCardV4___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_Components_StatsCardV4_StatsCardV4__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_Constants_chart_config__ = __webpack_require__(1468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_Constants_chart_config__ = __webpack_require__(1560);
 //
 //
 //
@@ -16421,15 +16410,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1749:
+/***/ 1844:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1750)
+var __vue_script__ = __webpack_require__(1845)
 /* template */
-var __vue_template__ = __webpack_require__(1752)
+var __vue_template__ = __webpack_require__(1847)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -16469,12 +16458,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1750:
+/***/ 1845:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_VisitorsStackedAreaChart__ = __webpack_require__(1751);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_VisitorsStackedAreaChart__ = __webpack_require__(1846);
 //
 //
 //
@@ -16505,19 +16494,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1751:
+/***/ 1846:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1468);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Helpers_helpers__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Helpers_helpers__ = __webpack_require__(54);
 // Line Chart Widget
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  extends: __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["e" /* Line */],
+  "extends": __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["e" /* Line */],
   data: function data() {
     return {
       gradient1: null,
@@ -16609,7 +16598,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1752:
+/***/ 1847:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -16674,7 +16663,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1753:
+/***/ 1848:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -16682,7 +16671,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(1754)
+var __vue_template__ = __webpack_require__(1849)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -16722,7 +16711,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1754:
+/***/ 1849:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -16828,7 +16817,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1755:
+/***/ 1850:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -16836,7 +16825,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(1756)
+var __vue_template__ = __webpack_require__(1851)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -16876,7 +16865,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1756:
+/***/ 1851:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17019,15 +17008,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1757:
+/***/ 1852:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1758)
+var __vue_script__ = __webpack_require__(1853)
 /* template */
-var __vue_template__ = __webpack_require__(1759)
+var __vue_template__ = __webpack_require__(1854)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17067,13 +17056,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1758:
+/***/ 1853:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_LineChartWithArea__ = __webpack_require__(1501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_LineChartWithArea__ = __webpack_require__(1592);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 //
 //
 //
@@ -17108,7 +17097,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1759:
+/***/ 1854:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17151,15 +17140,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1760:
+/***/ 1855:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1761)
+var __vue_script__ = __webpack_require__(1856)
 /* template */
-var __vue_template__ = __webpack_require__(1762)
+var __vue_template__ = __webpack_require__(1857)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17199,13 +17188,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1761:
+/***/ 1856:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_LineChartWithArea__ = __webpack_require__(1501);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_LineChartWithArea__ = __webpack_require__(1592);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 //
 //
 //
@@ -17240,7 +17229,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1762:
+/***/ 1857:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17283,15 +17272,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1763:
+/***/ 1858:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1764)
+var __vue_script__ = __webpack_require__(1859)
 /* template */
-var __vue_template__ = __webpack_require__(1765)
+var __vue_template__ = __webpack_require__(1860)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17331,7 +17320,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1764:
+/***/ 1859:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17424,7 +17413,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1765:
+/***/ 1860:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17508,15 +17497,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1766:
+/***/ 1861:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1767)
+var __vue_script__ = __webpack_require__(1862)
 /* template */
-var __vue_template__ = __webpack_require__(1768)
+var __vue_template__ = __webpack_require__(1863)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17556,12 +17545,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1767:
+/***/ 1862:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(1469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Api__ = __webpack_require__(603);
 //
 //
 //
@@ -17615,7 +17604,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       __WEBPACK_IMPORTED_MODULE_0_Api__["a" /* default */].get("vuely/hotKeywords.js").then(function (response) {
         _this.loader = false;
         _this.keywords = response.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         console.log(error);
       });
     }
@@ -17624,7 +17613,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1768:
+/***/ 1863:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17680,15 +17669,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1769:
+/***/ 1864:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1770)
+var __vue_script__ = __webpack_require__(1865)
 /* template */
-var __vue_template__ = __webpack_require__(1771)
+var __vue_template__ = __webpack_require__(1866)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17728,7 +17717,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1770:
+/***/ 1865:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17757,7 +17746,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1771:
+/***/ 1866:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17817,15 +17806,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1772:
+/***/ 1867:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1773)
+var __vue_script__ = __webpack_require__(1868)
 /* template */
-var __vue_template__ = __webpack_require__(1774)
+var __vue_template__ = __webpack_require__(1869)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17865,7 +17854,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1773:
+/***/ 1868:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17894,7 +17883,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1774:
+/***/ 1869:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17954,15 +17943,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1775:
+/***/ 1870:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1776)
+var __vue_script__ = __webpack_require__(1871)
 /* template */
-var __vue_template__ = __webpack_require__(1777)
+var __vue_template__ = __webpack_require__(1872)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18002,7 +17991,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1776:
+/***/ 1871:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18051,7 +18040,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1777:
+/***/ 1872:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18098,7 +18087,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1778:
+/***/ 1873:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -18106,7 +18095,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(1779)
+var __vue_template__ = __webpack_require__(1874)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18146,7 +18135,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1779:
+/***/ 1874:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18253,7 +18242,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1780:
+/***/ 1875:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -18261,7 +18250,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(1781)
+var __vue_template__ = __webpack_require__(1876)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18301,7 +18290,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1781:
+/***/ 1876:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18411,15 +18400,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1782:
+/***/ 1877:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1783)
+var __vue_script__ = __webpack_require__(1878)
 /* template */
-var __vue_template__ = __webpack_require__(1785)
+var __vue_template__ = __webpack_require__(1880)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18459,12 +18448,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1783:
+/***/ 1878:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_DeviceSeprations__ = __webpack_require__(1784);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_DeviceSeprations__ = __webpack_require__(1879);
 //
 //
 //
@@ -18500,17 +18489,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1784:
+/***/ 1879:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1470);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__ = __webpack_require__(1561);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Constants_chart_config__ = __webpack_require__(1560);
 // Doughnut Chart
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  extends: __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["c" /* Doughnut */],
+  "extends": __WEBPACK_IMPORTED_MODULE_0_vue_chartjs__["c" /* Doughnut */],
   data: function data() {
     return {
       options: {
@@ -18537,7 +18526,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1785:
+/***/ 1880:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18620,15 +18609,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1786:
+/***/ 1881:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1787)
+var __vue_script__ = __webpack_require__(1882)
 /* template */
-var __vue_template__ = __webpack_require__(1788)
+var __vue_template__ = __webpack_require__(1883)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18668,7 +18657,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1787:
+/***/ 1882:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18695,7 +18684,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1788:
+/***/ 1883:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18734,15 +18723,15 @@ if (false) {
 
 /***/ }),
 
-/***/ 1789:
+/***/ 1884:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(1790)
+var __vue_script__ = __webpack_require__(1885)
 /* template */
-var __vue_template__ = __webpack_require__(1791)
+var __vue_template__ = __webpack_require__(1886)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -18782,12 +18771,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 1790:
+/***/ 1885:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_LineChartV2__ = __webpack_require__(1625);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Charts_LineChartV2__ = __webpack_require__(1718);
 //
 //
 //
@@ -18818,7 +18807,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 1791:
+/***/ 1886:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18884,7 +18873,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 1792:
+/***/ 1887:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

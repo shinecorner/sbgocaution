@@ -1,67 +1,19 @@
 webpackJsonp([13],{
 
-/***/ 163:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(2143)
-/* template */
-var __vue_template__ = __webpack_require__(2154)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/views/users/UserProfile.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-39b55748", Component.options)
-  } else {
-    hotAPI.reload("data-v-39b55748", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 2143:
+/***/ 2238:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Widgets_UserDetail__ = __webpack_require__(2144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Widgets_UserDetail__ = __webpack_require__(2239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_Components_Widgets_UserDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_Components_Widgets_UserDetail__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Components_Widgets_Skills__ = __webpack_require__(2146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Components_Widgets_Skills__ = __webpack_require__(2241);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_Components_Widgets_Skills___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_Components_Widgets_Skills__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_Education__ = __webpack_require__(2148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_Education__ = __webpack_require__(2243);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_Components_Widgets_Education___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_Components_Widgets_Education__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Components_Widgets_ContactRequest__ = __webpack_require__(2150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Components_Widgets_ContactRequest__ = __webpack_require__(2245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_Components_Widgets_ContactRequest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_Components_Widgets_ContactRequest__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_Components_Widgets_UserActivity__ = __webpack_require__(2152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_Components_Widgets_UserActivity__ = __webpack_require__(2247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_Components_Widgets_UserActivity___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_Components_Widgets_UserActivity__);
 //
 //
@@ -133,7 +85,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 2144:
+/***/ 2239:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -141,7 +93,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(2145)
+var __vue_template__ = __webpack_require__(2240)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -181,7 +133,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2145:
+/***/ 2240:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -307,7 +259,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 2146:
+/***/ 2241:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -315,7 +267,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(2147)
+var __vue_template__ = __webpack_require__(2242)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -355,7 +307,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2147:
+/***/ 2242:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -426,7 +378,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 2148:
+/***/ 2243:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -434,7 +386,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(2149)
+var __vue_template__ = __webpack_require__(2244)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -474,7 +426,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2149:
+/***/ 2244:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -572,7 +524,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 2150:
+/***/ 2245:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -580,7 +532,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(2151)
+var __vue_template__ = __webpack_require__(2246)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -620,7 +572,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2151:
+/***/ 2246:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -682,7 +634,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 2152:
+/***/ 2247:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -690,7 +642,7 @@ var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(2153)
+var __vue_template__ = __webpack_require__(2248)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -730,7 +682,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 2153:
+/***/ 2248:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -962,7 +914,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 2154:
+/***/ 2249:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1095,6 +1047,54 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-39b55748", module.exports)
   }
 }
+
+/***/ }),
+
+/***/ 228:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(2238)
+/* template */
+var __vue_template__ = __webpack_require__(2249)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/views/users/UserProfile.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-39b55748", Component.options)
+  } else {
+    hotAPI.reload("data-v-39b55748", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ })
 
