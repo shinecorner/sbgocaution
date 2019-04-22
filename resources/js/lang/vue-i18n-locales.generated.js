@@ -128,7 +128,7 @@ export default {
             "CONTACT_ID": "Kunden ID",
             "NAME": "Name",
             "ADDRESS": "Adresse",
-            "TOTAL_INVOICES": "Rechnung",
+            "TOTAL_INVOICES": "Rechnung(en)",
             "STATUS": "Status",
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
@@ -137,7 +137,22 @@ export default {
             "PDF_IL_WOMEN": "Frau",
             "PDF_IL_COMPANY": "Firma",
             "LOGOUT": "Abmelden",
-            "EDIT_ACCOUNT": "Konto bearbeiten"
+            "EDIT_ACCOUNT": "Konto bearbeiten",
+            "CONTACT_QUOTE_TITLE": "Police(n)",
+            "WAITING_FOR_PROCESSING": "Warten auf Prüfung",
+            "NEW": "Neu",
+            "OFFER": "Offerte gesendet",
+            "IN_CLARIFICATION": "In Abklärung",
+            "PENDING": "Pendent",
+            "ACCEPTED": "Laufend",
+            "PRE_CONFIRMATION_PENDING": "Vorabbestätigung ausstehend",
+            "PRE_CONFIRMATION_SENT": "Vorabbestätigung gesendet",
+            "CANCELLED": "Annulliert",
+            "REJECTED": "Abgelehnt",
+            "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
+            "STATUS_RESOLVED": "Gekündigt",
+            "STATUS_QUOTE_WAITING": "Warten auf Prüfung",
+            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online"
         }
     },
     "en": {
@@ -278,7 +293,22 @@ export default {
             "PDF_IL_WOMEN": "Mrs",
             "PDF_IL_COMPANY": "Company",
             "LOGOUT": "Logout",
-            "EDIT_ACCOUNT": "Edit Account"
+            "EDIT_ACCOUNT": "Edit Account",
+            "CONTACT_QUOTE_TITLE": "New Policy",
+            "WAITING_FOR_PROCESSING": "Waiting for processing",
+            "NEW": "New",
+            "OFFER": "Offer",
+            "IN_CLARIFICATION": "In Clarification",
+            "PENDING": "Pending",
+            "ACCEPTED": "Accepted",
+            "PRE_CONFIRMATION_PENDING": "Pre-confirmation pending",
+            "PRE_CONFIRMATION_SENT": "Pre-confirmation sent",
+            "CANCELLED": "Cancelled",
+            "REJECTED": "Rejected",
+            "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
+            "STATUS_RESOLVED": "Resolved",
+            "STATUS_QUOTE_WAITING": "Waiting for processing",
+            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online"
         }
     },
     "fr": {
@@ -419,7 +449,22 @@ export default {
             "PDF_IL_WOMEN": "Madame",
             "PDF_IL_COMPANY": "Société",
             "LOGOUT": "Déconnexion",
-            "EDIT_ACCOUNT": "Modifier le compte"
+            "EDIT_ACCOUNT": "Modifier le compte",
+            "CONTACT_QUOTE_TITLE": "Police",
+            "WAITING_FOR_PROCESSING": "En attente de traitement",
+            "NEW": "Nouveau",
+            "OFFER": "Offre envoyée",
+            "IN_CLARIFICATION": "Clarifications en cours",
+            "PENDING": "En attente",
+            "ACCEPTED": "Actif",
+            "PRE_CONFIRMATION_PENDING": "Confirmation préalable en attente",
+            "PRE_CONFIRMATION_SENT": "Confirmation préalable envoyée",
+            "CANCELLED": "Annulé",
+            "REJECTED": "Rejected",
+            "DISSOLVED_IMMEDIATELY": "Dissous après l'achèvement",
+            "STATUS_RESOLVED": "Résigné",
+            "STATUS_QUOTE_WAITING": "En validation",
+            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online"
         }
     },
     "it": {
@@ -560,7 +605,22 @@ export default {
             "PDF_IL_WOMEN": "Signora",
             "PDF_IL_COMPANY": "Solido",
             "LOGOUT": "Esci",
-            "EDIT_ACCOUNT": "Modifica profilo"
+            "EDIT_ACCOUNT": "Modifica profilo",
+            "CONTACT_QUOTE_TITLE": "Police(n)",
+            "WAITING_FOR_PROCESSING": "Warten auf Prüfung",
+            "NEW": "Neu",
+            "OFFER": "Offerte gesendet",
+            "IN_CLARIFICATION": "In Abklärung",
+            "PENDING": "Pendent",
+            "ACCEPTED": "Laufend",
+            "PRE_CONFIRMATION_PENDING": "In attesa di conferma",
+            "PRE_CONFIRMATION_SENT": "Pre-conferma inviata",
+            "CANCELLED": "Annulliert",
+            "REJECTED": "Abgelehnt",
+            "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
+            "STATUS_RESOLVED": "Gekündigt",
+            "STATUS_QUOTE_WAITING": "Warten auf Prüfung",
+            "CONTACT_PDF_PRECONFIRMATION_IMG": ""
         }
     }
 }
