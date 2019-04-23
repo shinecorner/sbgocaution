@@ -31,21 +31,14 @@ class Contact extends JsonResource
 
         $data['nachname'] = $this->nachname;
         $data['vorname'] = $this->vorname;
-
-        if($this->language=="it-IT")
-            $data['language_flag'] = asset('/static/flag-icons/it.png');
-        elseif($this->language=="fr-FR")
-            $data['language_flag'] = asset('/static/flag-icons/fr.png');
-        elseif($this->language=="de-DE")
-            $data['language_flag'] = asset('/static/flag-icons/de.png');
-
+        $data['language_flag'] = get_language_flag($this->language);
         $data['address'] = $this->address;
         $data['contact_formate'] = $this->contact_formate;
 
         if($this->rc_quote == "Yes")
             $data['rc_quote'] = 1;
         elseif($this->rc_quote == "No")
-            $data['rc_quote'] = 1;
+            $data['rc_quote'] = 0;
 
         if($this->lead_source == "Call_centre")
             $data['call_lead_source'] = 1;

@@ -63,3 +63,17 @@ if (!function_exists('render_status_class')) {
         return $status;
     }
 }
+
+if (!function_exists('get_language_flag')) {
+
+    function get_language_flag($language){
+        if($language == "it-IT")
+            $language_flag = asset('/static/flag-icons/it.png');
+        elseif($language == "fr-FR")
+            $language_flag = asset('/static/flag-icons/fr.png');
+        elseif($language == "de-DE")
+            $language_flag = asset('/static/flag-icons/de.png');
+        return $language_flag;
+    }
+
+}
