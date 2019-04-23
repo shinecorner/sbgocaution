@@ -30,4 +30,8 @@ return [
     'STATUS_RESOLVED' => 'Résigné',
     'STATUS_QUOTE_WAITING' => 'En validation',
     'CONTACT_PDF_PRECONFIRMATION_IMG' => 'Vorabbestätigung Online',
+    'ORG_LANGUAGE_DE' => 'Deutsch',
+    'ORG_LANGUAGE_FR' => 'Französisch',
+    'ORG_LANGUAGE_IT' => 'Italienisch',
+    'ORG_LANGUAGE_EN' => 'English',
 ];

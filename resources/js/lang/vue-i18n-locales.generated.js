@@ -152,7 +152,11 @@ export default {
             "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
             "STATUS_RESOLVED": "Gekündigt",
             "STATUS_QUOTE_WAITING": "Warten auf Prüfung",
-            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online"
+            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online",
+            "ORG_LANGUAGE_DE": "Deutsch",
+            "ORG_LANGUAGE_FR": "Französisch",
+            "ORG_LANGUAGE_IT": "Italienisch",
+            "ORG_LANGUAGE_EN": "English"
         }
     },
     "en": {
@@ -308,7 +312,11 @@ export default {
             "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
             "STATUS_RESOLVED": "Resolved",
             "STATUS_QUOTE_WAITING": "Waiting for processing",
-            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online"
+            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online",
+            "ORG_LANGUAGE_DE": "Deutsch",
+            "ORG_LANGUAGE_FR": "Französisch",
+            "ORG_LANGUAGE_IT": "Italienisch",
+            "ORG_LANGUAGE_EN": "English"
         }
     },
     "fr": {
@@ -464,7 +472,11 @@ export default {
             "DISSOLVED_IMMEDIATELY": "Dissous après l'achèvement",
             "STATUS_RESOLVED": "Résigné",
             "STATUS_QUOTE_WAITING": "En validation",
-            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online"
+            "CONTACT_PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online",
+            "ORG_LANGUAGE_DE": "Deutsch",
+            "ORG_LANGUAGE_FR": "Französisch",
+            "ORG_LANGUAGE_IT": "Italienisch",
+            "ORG_LANGUAGE_EN": "English"
         }
     },
     "it": {
@@ -620,7 +632,11 @@ export default {
             "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
             "STATUS_RESOLVED": "Gekündigt",
             "STATUS_QUOTE_WAITING": "Warten auf Prüfung",
-            "CONTACT_PDF_PRECONFIRMATION_IMG": ""
+            "CONTACT_PDF_PRECONFIRMATION_IMG": "",
+            "ORG_LANGUAGE_DE": "Deutsch",
+            "ORG_LANGUAGE_FR": "Französisch",
+            "ORG_LANGUAGE_IT": "Italienisch",
+            "ORG_LANGUAGE_EN": "English"
         }
     }
 }
