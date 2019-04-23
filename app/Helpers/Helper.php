@@ -26,3 +26,40 @@ if (!function_exists('getUniqueNum')) {
         return $string;
     }
 }
+
+if (!function_exists('render_status_class')) {
+
+    function render_status_class($status){
+        switch($status){
+            case "paid": case "payed": case "accepted": case "accepted_client":case "contacted":
+            $status = "success" ;
+            break;
+            case "pending":case "partial_paid":case "waiting_for_payment":case "predeclared": case "invoice_status_nopayment":case 'status_quote_waiting': case 'claim_pending': case "quote_status_joint_guarantee": case 'pending_cancel': case 'online_payment_waiting': case 'online_payment_invalid': case "pre_confirmation_pending":
+            $status = "warning" ;
+            break;
+            case "pastdue": case "rejected": case "dissolved_with_claims":case "not_contacted": case "dissolved_without_claims": case "rejected_client":case "dissolved_immediately": case "refunded": case "partial_refunded":case 'reminder':case 'warning1':case 'warning2': case 'collection':case 'status_resolved':case 'debt_enforcement':case 'command':case 'follow':case 'loss':case 'seizure': case 'invoice_status_collection':
+            $status = "danger" ;
+            break;
+            case "cancelled": case "expired":
+            $status = "inverse" ;
+            break;
+            case "corrected":
+            $status = "info" ;
+            break;
+            case "offer": case "offer_pending": case "offer_sent":
+            $status = "offer" ;
+            break;
+            case "in_clarification":
+            $status = "in_clarification" ;
+            break;
+            case "pre_confirmation_sent": case "client_won":  case "receive_registration": case "registration_completed":
+            $status = "pre_confirmation" ;
+            break;
+            default:
+            $status = "default" ;
+            break;
+        }
+
+        return $status;
+    }
+}
