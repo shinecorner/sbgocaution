@@ -7,7 +7,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App;
 
-class SendStatusList
+class SendHelperData
 {
     /**
      * Create the event listener.

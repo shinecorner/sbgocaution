@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use App\Events\UserLoggedIn;
 use App\User;
 use DB;
 use Validator;
@@ -77,15 +78,10 @@ class AuthController extends Controller
             $data['access_token'] = $api_token;
             $data['name'] = $user->name;
             $data['email'] = $user->email;
-            $statuses = getContactStatus();
-            $languages = config('app.languages');
-            foreach($languages as $language){
-                foreach($statuses as $status){
-                    App::setLocale($language);
-                    $$language[$status] = __('crm.'. $status);
-                }
-                $data['helpers']['contact_statuslist'][$language] = $$language;
-            }
+
+            $data = event(new UserLoggedIn($data));
+            $data = array_pop($data);
+
             App::setLocale($request->lang);
             return response()->json(['response'=> $data ],200); 
         } 
