@@ -92,10 +92,10 @@ class AuthController extends Controller
                 App::setLocale('fr');
                 $fr[$status] = __('crm.'. $status);
             }
-            $data['helpers']['contact_status']['de'] = $de;
-            $data['helpers']['contact_status']['it'] = $it;
-            $data['helpers']['contact_status']['en'] = $en;
-            $data['helpers']['contact_status']['fr'] = $fr;
+            $data['helpers']['contact_statuslist']['de'] = $de;
+            $data['helpers']['contact_statuslist']['it'] = $it;
+            $data['helpers']['contact_statuslist']['en'] = $en;
+            $data['helpers']['contact_statuslist']['fr'] = $fr;
             App::setLocale($request->lang);
             return response()->json(['response'=> $data ],200); 
         } 
