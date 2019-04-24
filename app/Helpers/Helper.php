@@ -100,3 +100,25 @@ if (!function_exists('getContactStatus')) {
     }
 
 }
+
+if(!function_exists('roundTo5')){
+
+    function roundTo5($number){
+        $number = round($number * 2, 1) / 2;
+        return $number;
+    }
+
+}
+
+if(!function_exists('format')){
+
+    function format($number, $before = "", $after = ""){
+        $decpoint = config('invoices.decpoint');
+        $thousands = config('invoices.thousands');
+        $decimals = config('invoices.decimals');
+        $number = roundTo5($number);
+        return $before  . number_format($number, $decimals, $decpoint, $thousands)  . $after ;
+    }
+
+}
+
