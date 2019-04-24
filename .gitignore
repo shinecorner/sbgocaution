@@ -1,6 +1,8 @@
 /node_modules
 /nbproject
+/gocaution_crm
 /public/hot
+/public/js/chunks
 /public/storage
 /storage/*.key
 /vendor
@@ -13,3 +15,4 @@ npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
+/gocaution_crm/nbproject/private/
