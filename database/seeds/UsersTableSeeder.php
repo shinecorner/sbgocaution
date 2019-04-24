@@ -11,8 +11,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 4)->create()->each(function ($user) {
-            $user->createToken('GoCautionCRM')->accessToken;
-        });
+        factory(App\User::class, 4)->create();
     }
 }
