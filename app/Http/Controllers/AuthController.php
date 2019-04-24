@@ -78,6 +78,7 @@ class AuthController extends Controller
             $data['access_token'] = $api_token;
             $data['name'] = $user->name;
             $data['email'] = $user->email;
+            $data['premium_amount'] = format(177.23);
 
             $data = event(new UserLoggedIn($data));
             $data = array_pop($data);

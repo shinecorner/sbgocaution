@@ -39,7 +39,7 @@ class SendHelperData
                 App::setLocale($language);
                 $$language[$status] = __('crm.'. $status);
             }
-            $data['helpers']['contact_statuslist'][$language] = $$language;
+            $data['helpers'][$language]['contact_statuslist'] = $$language;
         }
         return $data;
     }
