@@ -30,6 +30,7 @@ return [
     'STATUS_RESOLVED' => 'Gekündigt',
     'STATUS_QUOTE_WAITING' => 'Warten auf Prüfung',
     'CONTACT_PDF_PRECONFIRMATION_IMG' => '',
+    'LANGUAGE' => 'linguaggio',
     'ORG_LANGUAGE_DE' => 'Deutsch',
     'ORG_LANGUAGE_FR' => 'Französisch',
     'ORG_LANGUAGE_IT' => 'Italienisch',

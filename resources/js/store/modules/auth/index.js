@@ -58,7 +58,10 @@ const actions = {
                 if(response.data.response.api_status){                    
                     const access_token = response.data.response.access_token;
                     Nprogress.done();
-                    setTimeout(() => {                        
+                    setTimeout(() => {                                                
+                        if('lang' in user){                            
+                            //context.commit('changeLanguageByKeyHandler', user.lang);
+                        } 
                         context.commit('loginUserSuccess', {user, access_token});
                     }, 500);
                 }else{
@@ -183,7 +186,7 @@ const mutations = {
     loginUserSuccess(state, {user, access_token}) {
         access_token = access_token || '';        
         state.accessToken = access_token;
-        state.user = user;
+        state.user = user;                       
         localStorage.setItem('user',JSON.stringify(user));
         localStorage.setItem('accessToken', access_token);
         if(access_token){            

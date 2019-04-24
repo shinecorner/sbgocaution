@@ -28,6 +28,13 @@
 							:rules="passwordRules" 
 							required
 						></v-text-field>
+                                                <v-select                    
+          :items="languageItems"
+          v-model="fetchLanguage"
+          item-text="name"
+          item-value="locale"
+          :label="$t('message.crm.LANGUAGE')"
+        ></v-select>
 						<v-checkbox 
 							color="primary" 
 							label="Remember me" 
@@ -107,14 +114,22 @@ export default {
       password: "test#123",
       passwordRules: [v => !!v || "Password is required"],
       appLogo: AppConfig.appLogo2,
-      brand: AppConfig.brand
+      brand: AppConfig.brand,
+      fetchLanguage: {name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de'},
+      languageItems: [
+             { name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de' },
+             { name: this.$t('message.crm.ORG_LANGUAGE_EN'), locale: 'en' },
+             { name: this.$t('message.crm.ORG_LANGUAGE_FR'), locale: 'fr' },
+             { name: this.$t('message.crm.ORG_LANGUAGE_IT'), locale: 'it' },
+        ]
     };
   },
   methods: {
     submit() {
       const user = {
         email: this.email,
-        password: this.password
+        password: this.password,
+        lang: this.fetchLanguage
       };
       this.$store.dispatch("signinUserInFirebase", {
         user
@@ -123,7 +138,8 @@ export default {
 		signInWithLaravelPassport(){
 			 const user = {
         email: this.email,
-        password: this.password
+        password: this.password,
+        lang: this.fetchLanguage
       };
       this.$store.dispatch("signInWithLaravelPassport", {
         user

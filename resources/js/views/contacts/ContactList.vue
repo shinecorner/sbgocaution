@@ -76,24 +76,18 @@
                                                     <span v-if="props.item.anrede" class="grey--text fs-12 fw-normal d-block">1 {{ $t('message.crm.TOTAL_INVOICES') }}</span>
                                                 </td>
                                                 <td width="5%">
-                                                   <v-menu
-                                                    offset-y
-                                                    content-class="dropdown-menu"
-                                                    transition="slide-y-transition">    
+                                                   <v-menu offset-y>
                                                     <v-icon medium slot="activator">zmdi-caret-down-circle</v-icon>
-                                                    <v-card>
-                                                      <v-list dense>
-                                                        <v-list-tile
-                                                          v-for="statusitem in statusitems"
-                                                          :key="$t(statusitem.state)"
-                                                        >
-                                                          <v-list-tile-title
-                                                            v-text="$t(statusitem.state)"
-                                                          />
-                                                        </v-list-tile>
-                                                      </v-list>
-                                                    </v-card>
-                                                  </v-menu>
+                                                  <v-list>
+                                                    <v-list-tile
+                                                      v-for="(statusitem, index) in statusitems"
+                                                      :key="index"
+                                                      @click=""
+                                                    >
+                                                      <v-list-tile-title>{{ statusitem.state }}</v-list-tile-title>
+                                                    </v-list-tile>
+                                                  </v-list>
+                                                </v-menu>
                                                 </td>                                                
                                                 <td>
                                                     <span class="grey--text fs-12 fw-normal d-block">
