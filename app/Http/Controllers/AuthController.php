@@ -78,24 +78,14 @@ class AuthController extends Controller
             $data['name'] = $user->name;
             $data['email'] = $user->email;
             $statuses = getContactStatus();
-            $de = [];
-            $it = [];
-            $en = [];
-            $fr = [];
-            foreach($statuses as $status){
-                App::setLocale('de');
-                $de[$status] = __('crm.'. $status);
-                App::setLocale('it');
-                $it[$status] = __('crm.'. $status);
-                App::setLocale('en');
-                $en[$status] = __('crm.'. $status);
-                App::setLocale('fr');
-                $fr[$status] = __('crm.'. $status);
+            $languages = config('app.languages');
+            foreach($languages as $language){
+                foreach($statuses as $status){
+                    App::setLocale($language);
+                    $$language[$status] = __('crm.'. $status);
+                }
+                $data['helpers']['contact_statuslist'][$language] = $$language;
             }
-            $data['helpers']['contact_statuslist']['de'] = $de;
-            $data['helpers']['contact_statuslist']['it'] = $it;
-            $data['helpers']['contact_statuslist']['en'] = $en;
-            $data['helpers']['contact_statuslist']['fr'] = $fr;
             App::setLocale($request->lang);
             return response()->json(['response'=> $data ],200); 
         } 
