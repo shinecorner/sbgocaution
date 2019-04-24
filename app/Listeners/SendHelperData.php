@@ -28,6 +28,10 @@ class SendHelperData
     public function handle(UserLoggedIn $event)
     {
         $data = $event->data;
+        return $this->getContactStatusList($data);
+    }
+
+    private function getContactStatusList($data){
         $statuses = getContactStatus();
         $languages = config('app.languages');
         foreach($languages as $language){
