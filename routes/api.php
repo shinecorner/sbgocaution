@@ -20,8 +20,8 @@ use Illuminate\Http\Request;
 Route::group([
     'prefix' => 'auth',
 ], function () {
-    Route::any('login', 'AuthController@login')->name('login');
-    Route::any('signup', 'AuthController@signup');
+    Route::post('login', 'AuthController@login')->name('login');
+    Route::post('signup', 'AuthController@signup');
 });
 
 Route::group([
