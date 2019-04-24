@@ -77,3 +77,26 @@ if (!function_exists('get_language_flag')) {
     }
 
 }
+
+if (!function_exists('getContactStatus')) {
+
+    function getContactStatus(){
+        $status = array();
+
+        $status[] = "new";
+        $status[] = "offer";
+        $status[] = "in_clarification";
+        $status[] = "pending";
+        $status[] = "accepted";
+        $status[] = "pre_confirmation_pending";
+        $status[] = "pre_confirmation_sent";
+        $status[] = "cancelled";
+        $status[] = "rejected";
+//      $status[] = "waiting_for_payment";
+        $status[] = "dissolved_immediately";
+        $status[] = "status_resolved";
+        $status[] = "status_quote_waiting";
+        return $status;
+    }
+
+}

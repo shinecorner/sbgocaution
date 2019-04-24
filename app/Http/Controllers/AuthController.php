@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\User;
 use DB;
 use Validator;
+use App;
+
 class AuthController extends Controller
 {
 
@@ -19,82 +21,83 @@ class AuthController extends Controller
     
     public function signup(Request $request)
     {
-        //$method = $request->method();         
-        if($request->isMethod('post'))
+        $validator = Validator::make($request->all(), [ 
+                    'name' => 'required', 
+                    'email' => 'required|email', 
+                    'password' => 'required', 
+                    ]);
+        if ($validator->fails()) {        
+            return response()->json(['response'=>[
+                                            'code'=>400,
+                                            'api_status'=>0,
+                                            'message'=>'Data is not in the proper format.',
+                                                ]
+                                    ]);        
+            }
+        $email = $request->email;
+        $eid =DB::table('users')->where('email' , $email)->exists();
+        if($eid == true)
         {
-            $validator = Validator::make($request->all(), [ 
-                        'name' => 'required', 
-                        'email' => 'required|email', 
-                        'password' => 'required', 
-                        ]);
-            if ($validator->fails()) {        
-                return response()->json(['response'=>[
-                                                'code'=>400,
-                                                'api_status'=>0,
-                                                'message'=>'Data is not in the proper format.',
-                                                    ]
-                                        ]);        
-                }
-            $email = $request->email;
-            $eid =DB::table('users')->where('email' , $email)->exists();
-            if($eid == true)
-            {
-                return response()->json(['response'=>[
-                                                'api_status' => 0 ,
-                                                'code' => 200,
-                                                'message'=> 'This email already exist.'
-                                                ]
-                                    ],200);
-            }
-            else
-            {
-                $input = $request->all(); 
-                $input['password'] = bcrypt($input['password']); 
-                $user = User::create($input);
-                $token =  $user->createToken('Personal Access Token')-> accessToken; 
-                $name =  $user->name;
-                $email = $user->email;
-                return response()->json(['response' => [
-                                                'api_status'=>1,
-                                                'code'=>201,
-                                                'message' => 'Successfully registered.',
-                                                ]
-                                        ],201); 
-            }
+            return response()->json(['response'=>[
+                                            'api_status' => 0 ,
+                                            'code' => 200,
+                                            'message'=> 'This email already exist.'
+                                            ]
+                                ],200);
         }
-            return response()->json($this -> wrongHTTP, 400);
+        else
+        {
+            $input = $request->all(); 
+            $input['password'] = bcrypt($input['password']); 
+            $user = User::create($input);
+            $token =  $user->createToken('Personal Access Token')-> accessToken; 
+            $name =  $user->name;
+            $email = $user->email;
+            return response()->json(['response' => [
+                                            'api_status'=>1,
+                                            'code'=>201,
+                                            'message' => 'Successfully registered.',
+                                            ]
+                                    ],201); 
+        }
     }
 
     public function login(Request $request)
     { 
-        if($request->isMethod('post'))
-        {
-            if(Auth::attempt(['email' => request('email'), 'password' => request('password')]))
-            { 
-                $user = Auth::user(); 
-                $name = $user->name;
-                $api_token =  $user->createToken('Personal Access Token')-> accessToken; 
-                $user->api_token = $api_token;
-                $user->save();
-                return response()->json(['response'=>[
-                                                'api_status'=>1,
-                                                'code'=>200,
-                                                'message'=>'Logged in Successfully.',
-                                                'access_token'=>$api_token  
-                                                ]
-                                     ],200); 
-            } 
-            else
-            { 
-                return response()->json(['response'=>
-                                            [
-                                            'api_status'=>0,
-                                            'code'=>200,
-                                            'message'=>'Data is not in the proper format or check your email and password.'
-                                            ]
-                                    ],200); 
-            } 
+        if(Auth::attempt(['email' => request('email'), 'password' => request('password')]))
+        { 
+            $user = Auth::user(); 
+            $name = $user->name;
+            $api_token =  $user->createToken('GoCaution CRM Token')-> accessToken; 
+            $user->api_token = $api_token;
+            $user->save();
+            $data['api_status'] = 1;
+            $data['code'] = 200;
+            $data['message'] = 'Logged in Successfully.';
+            $data['access_token'] = $api_token;
+            $data['name'] = $user->name;
+            $data['email'] = $user->email;
+            $statuses = getContactStatus();
+            $languages = config('app.languages');
+            foreach($languages as $language){
+                foreach($statuses as $status){
+                    App::setLocale($language);
+                    $$language[$status] = __('crm.'. $status);
+                }
+                $data['helpers']['contact_statuslist'][$language] = $$language;
+            }
+            App::setLocale($request->lang);
+            return response()->json(['response'=> $data ],200); 
+        } 
+        else
+        { 
+            return response()->json(['response'=>
+                                        [
+                                        'api_status'=>0,
+                                        'code'=>200,
+                                        'message'=>'Data is not in the proper format or check your email and password.'
+                                        ]
+                                ],200); 
         }
-            return response()->json($this -> wrongHTTP, 400);
     }
 }
