@@ -17,7 +17,7 @@ const state = {
 	backgroundImage: false,                                // enable sidebar background image
 	horizontalLayoutSidebar: false,                        // horizontal layout sidebar
 	languages,                                             // languages
-	selectedLocale: (localStorage.getItem('selectedLocale') ? JSON.parse(localStorage.getItem('selectedLocale')) : languages['de']),                          // selected locale
+	selectedLocale: languages['de'], //selected locale 
 	sidebarBackgroundImages,                               // sidebar backgorund images
 	selectedSidebarBgImage: sidebarBackgroundImages[0],    // selected sidebar background image
 	sidebarFilters,                                        // sidebar filters
@@ -109,12 +109,9 @@ const actions = {
 	backgroundImage(context) {
 		context.commit('sidebarBgImageHandler');
 	},
-	changeLanguage(context, payload) {
+	changeLanguage(context, payload) {                
 		context.commit('changeLanguageHandler', payload);
-	},
-        changeLanguageByKey(context, payload) {
-		context.commit('changeLanguageByKeyHandler', payload);
-	},
+	},        
 	changeBackgroundImage(context, payload) {
 		context.commit('changeBackgroundImageHandler', payload);
 	},
@@ -157,14 +154,9 @@ const mutations = {
 	},
 	sidebarBgImageHandler(state) {
 		state.backgroundImage = !state.backgroundImage;
-	},
-        changeLanguageByKeyHandler(state, languagecode) {
-		let language = state.languages[languagecode];
-                localStorage.setItem('selectedLocale', JSON.stringify(language));		
-	},
+	},        
 	changeLanguageHandler(state, language) {
-		state.selectedLocale = language;
-                localStorage.setItem('selectedLocale', JSON.stringify(language));
+		state.selectedLocale = language;                
 		if (language.locale === 'he' || language.locale === 'ar') {
 			state.rtlLayout = true;
 		} else {

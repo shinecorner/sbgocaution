@@ -115,7 +115,7 @@ export default {
       passwordRules: [v => !!v || "Password is required"],
       appLogo: AppConfig.appLogo2,
       brand: AppConfig.brand,
-      fetchLanguage: {name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de'},
+      fetchLanguage: 'de',
       languageItems: [
              { name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de' },
              { name: this.$t('message.crm.ORG_LANGUAGE_EN'), locale: 'en' },
@@ -124,6 +124,9 @@ export default {
         ]
     };
   },
+    computed: {
+		...mapGetters(["selectedLocale", "languages"])
+    },
   methods: {
     submit() {
       const user = {
@@ -141,6 +144,9 @@ export default {
         password: this.password,
         lang: this.fetchLanguage
       };
+      if('lang' in user){
+            this.changeLanguageByCode(user.lang);
+      }      
       this.$store.dispatch("signInWithLaravelPassport", {
         user
       });
@@ -162,6 +168,11 @@ export default {
     },
     signinWithAuth0() {
       login();
+    },
+    changeLanguageByCode(languagecode) {
+        this.$i18n.locale = languagecode;        
+        let language = this.$store.getters.languages[languagecode];        
+        this.$store.dispatch("changeLanguage", language);
     }
   }
 };
