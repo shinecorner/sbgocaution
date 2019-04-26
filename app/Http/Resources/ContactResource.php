@@ -37,6 +37,7 @@ class ContactResource extends JsonResource
 
         $data['nachname'] = $this->nachname;
         $data['vorname'] = $this->vorname;
+        $data['language'] = $this->language;
         $data['language_flag'] = get_language_flag($this->language);
         $data['address'] = $this->address;
         $data['email'] = $this->email;
@@ -80,6 +81,9 @@ class ContactResource extends JsonResource
         }
 
         $this->getContactEmailDuplicate($data);
+
+        $data['plz'] = $this->plz;
+        $data['ort'] = $this->ort;
 
         return $data;
     }
