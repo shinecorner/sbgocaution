@@ -6,12 +6,12 @@ use App\Contact;
 $factory->define(Contact::class, function (Faker $faker) {
 	
 	static $number = 1;
-
+    $real_contact_num = $number++;
     return [
         'date' => now(),
-        'real_contact_num' => $faker->randomNumber(3),
+        'real_contact_num' => $real_contact_num,
         'user_id' => $faker->numberBetween(1, 10),
-        'contact_formate' => getUniqueNum($number++, 3),
+        'contact_formate' => getUniqueNum($real_contact_num, 3),
         'anrede' => $faker->randomElement(['mr', 'mrs', 'company']),
         'nachname' => $faker->firstName,
         'vorname' => $faker->lastName,
