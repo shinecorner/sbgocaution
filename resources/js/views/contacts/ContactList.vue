@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="contactList">
 		<page-title-bar></page-title-bar>
 		<app-section-loader :status="loader"></app-section-loader>
 		<v-container fluid grid-list-xl py-0>
@@ -43,20 +43,24 @@
                                                         <i class="ti-layout-accordion-merged" slot="activator"></i>
                                                         <span>{{props.item.is_duplicate}}</span>
                                                     </v-tooltip>
+                                                    <v-tooltip top v-if="props.item.duplicateEmail">
+                                                        <i class="ti-email" slot="activator"></i>
+                                                        <span>{{props.item.duplicateEmail}}</span>
+                                                    </v-tooltip>
                                                     <v-tooltip top v-if="props.item.rc_quote">
                                                         <i class="ti-check" slot="activator"></i>
                                                         <span>{{$t('message.crm.RC_QUOTE_TOOLTIP')}}</span>
                                                     </v-tooltip>
-                                                    <v-tooltip top v-if="props.item.lead_source">
+                                                    <v-tooltip top v-if="props.item.call_lead_source">
                                                         <i class="ti-headphone" slot="activator"></i>
                                                         <span>{{$t('message.crm.CALL_LEAD_SOURCE_TOOLTIP')}}</span>
                                                     </v-tooltip>
-                                                    <v-tooltip top v-if="props.item.Send_Offer_By == 'post'">
+                                                    <v-tooltip top v-if="props.item.send_offer_by_post">
                                                         <i class="ti-headphone" slot="activator"></i>
                                                         <span>{{$t('message.crm.CALL_LEAD_SOURCE_TOOLTIP')}}</span>
                                                     </v-tooltip>
-                                                    <v-tooltip top v-if="props.item.language">
-                                                        <img :src="'/static/flag-icons/'+props.item.language+'.png'" class="img-responsive" slot="activator"/>                                                        
+                                                    <v-tooltip top v-if="props.item.language_flag">
+                                                        <img :src="props.item.language_flag" class="img-responsive" slot="activator"/>
                                                         <span>{{props.item.language}}</span>
                                                     </v-tooltip>
                                                 </td>
@@ -91,7 +95,7 @@
                                                 </td>                                                
                                                 <td>
                                                     <span class="grey--text fs-12 fw-normal d-block">
-                                                        <v-chip small dark color="orange" text-color="white">{{$t('message.crm.WAITING_FOR_PROCESSING')}}</v-chip>
+                                                        <v-chip small dark :class="props.item.status_class" text-color="white">{{props.item.status}}</v-chip>
                                                     </span>
                                                     <span class="grey--text fs-12 fw-normal d-block"><v-chip small dark color="orange" text-color="white">1</v-chip></span>
                                                     <span class="grey--text fs-12 fw-normal d-block"><v-chip small dark color="orange" text-color="white">1</v-chip></span>                                                    
@@ -176,3 +180,9 @@ export default {
   }
 };
 </script>
+<style scoped>
+.contactList >>> .v-list__tile{
+    height: 30px;
+    font-size: 13px;
+}
+</style>
