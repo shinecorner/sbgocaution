@@ -9,7 +9,7 @@ import {
 	themes,
 	headerFilters
 } from "./data";
-
+//console.log(localStorage);
 const state = {
 	darkMode: false,                                       // dark mode
 	collapseSidebar: false,                                // mini sidevar
@@ -17,7 +17,9 @@ const state = {
 	backgroundImage: false,                                // enable sidebar background image
 	horizontalLayoutSidebar: false,                        // horizontal layout sidebar
 	languages,                                             // languages
-	selectedLocale: languages['de'], //selected locale 
+	selectedLocale: localStorage.getItem('selectedLocale') || 'de', //selected locale
+        serverHelpers: localStorage.getItem('serverHelpers') || "{}",
+        currentLanguageHelpers: "{}",
 	sidebarBackgroundImages,                               // sidebar backgorund images
 	selectedSidebarBgImage: sidebarBackgroundImages[0],    // selected sidebar background image
 	sidebarFilters,                                        // sidebar filters
@@ -33,6 +35,17 @@ const state = {
 
 // getters
 const getters = {
+        serverHelpers: state => {                
+            return JSON.parse(state.serverHelpers);
+	},
+        currentLanguageHelpers: (state, getters) => {            
+            if(_.isEmpty(getters.serverHelpers)){
+                return JSON.parse("{}");
+            }
+            else{
+                return getters.serverHelpers[state.selectedLocale];
+            }            
+	},
 	darkMode: state => {
 		return state.darkMode;
 	},
@@ -94,6 +107,9 @@ const getters = {
 
 // actions
 const actions = {
+        setServerHelpers(context, payload) {           
+            context.commit('serverHelpersHandler', payload);            
+	},        
 	darkModeHandler(context) {
 		context.commit('darkModeHandler');
 	},
@@ -110,7 +126,8 @@ const actions = {
 		context.commit('sidebarBgImageHandler');
 	},
 	changeLanguage(context, payload) {                
-		context.commit('changeLanguageHandler', payload);
+            context.commit('changeLanguageHandler', payload);
+//            context.commit('changeCurrentLanguageHelpersHandler', payload);
 	},        
 	changeBackgroundImage(context, payload) {
 		context.commit('changeBackgroundImageHandler', payload);
@@ -139,7 +156,11 @@ const actions = {
 }
 
 // mutations
-const mutations = {
+const mutations = {        
+        serverHelpersHandler(state, helpers) {                
+            localStorage.setItem('serverHelpers', JSON.stringify(helpers.serverhelpers));
+            state.serverHelpers = JSON.stringify(helpers.serverhelpers);
+	},        
 	darkModeHandler(state) {
 		state.darkMode = !state.darkMode;
 	},
@@ -155,13 +176,22 @@ const mutations = {
 	sidebarBgImageHandler(state) {
 		state.backgroundImage = !state.backgroundImage;
 	},        
-	changeLanguageHandler(state, language) {
-		state.selectedLocale = language;                
-		if (language.locale === 'he' || language.locale === 'ar') {
+	changeLanguageHandler(state, languagecode) {
+		state.selectedLocale = languagecode;
+                localStorage.setItem('selectedLocale', languagecode);
+		if (languagecode === 'he' || languagecode === 'ar') {
 			state.rtlLayout = true;
 		} else {
 			state.rtlLayout = false;
 		}
+	},
+        changeCurrentLanguageHelpersHandler(state, languagecode) {
+            if(_.isEmpty(JSON.parse(state.serverHelpers))){
+                state.currentLanguageHelpers = JSON.parse("{}");
+            }
+            else{
+                state.currentLanguageHelpers = JSON.parse(state.serverHelpers[languagecode]);
+            }
 	},
 	changeBackgroundImageHandler(state, image) {
 		state.selectedSidebarBgImage = image;

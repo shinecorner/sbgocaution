@@ -57,8 +57,14 @@ const actions = {
             .then(response => {
                 if(response.data.response.api_status){                    
                     const access_token = response.data.response.access_token;
+                    const serverhelpers = response.data.response.helpers;
                     Nprogress.done();
-                    setTimeout(() => {                        
+                    setTimeout(() => {
+                        if ((typeof serverhelpers !== "undefined") && (Object.keys(serverhelpers).length)) {                            
+                            //context.commit('serverHelpersHandler',{serverhelpers});
+                            //setServerHelpers({ commit, dispatch },{serverhelpers});                            
+                            context.dispatch('setServerHelpers',{serverhelpers});
+                        }                        
                         context.commit('loginUserSuccess', {user, access_token});
                     }, 500);
                 }else{
@@ -181,7 +187,7 @@ const mutations = {
         Nprogress.start();
     },
     loginUserSuccess(state, {user, access_token}) {
-        access_token = access_token || '';        
+        access_token = access_token || '';
         state.accessToken = access_token;
         state.user = user;          
         localStorage.setItem('user',JSON.stringify(user));
@@ -189,7 +195,7 @@ const mutations = {
         if(access_token){            
             api.defaults.headers.common['Authorization'] = 'Bearer '+ access_token;            
         }
-        state.isUserSigninWithAuth0 = false
+        state.isUserSigninWithAuth0 = false;
         router.push("/contacts");
         setTimeout(function(){
             Vue.notify({
