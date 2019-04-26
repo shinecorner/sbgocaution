@@ -28,6 +28,7 @@ Route::group([
 	'middleware' => 'auth:api'
 ], function(){
 	Route::resource('contacts', 'ContactController');
+  Route::resource('configs', 'ConfigController');
 });
 
 
