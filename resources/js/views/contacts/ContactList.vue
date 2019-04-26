@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="contactList">
 		<page-title-bar></page-title-bar>
-		<app-section-loader :status="loader"></app-section-loader>
+		<app-section-loader :status="loading"></app-section-loader>
 		<v-container fluid grid-list-xl py-0>
 			<v-layout row wrap>
 				<app-card
@@ -11,11 +11,13 @@
 				>
 					<v-data-table
 						:headers="headers"
-						:items="items"
-						:search="search"
-						v-model="selected"
+						:items="contacts"
+                                                :pagination.sync="pagination"
+                                                :total-items="totalContacts"
+                                                :loading="loading"												
 						item-key="id"
-						select-all
+                                                rows-per-page-text=""
+                                                :rows-per-page-items="[]"						
 					>                                        
 					<template slot="headerCell" slot-scope="props">
 						<v-tooltip top>
@@ -27,14 +29,7 @@
 							</span>
 						</v-tooltip>
 					</template>
-					<template slot="items" slot-scope="props">
-						<td width="5%">
-							<v-checkbox
-								color="primary"
-								hide-details
-								v-model="props.selected"
-							></v-checkbox>
-						</td>
+					<template slot="items" slot-scope="props">						
 						<td>
                                                     {{ props.item.contact_formate }}
                                                     <br />   
@@ -43,20 +38,24 @@
                                                         <i class="ti-layout-accordion-merged" slot="activator"></i>
                                                         <span>{{props.item.is_duplicate}}</span>
                                                     </v-tooltip>
+                                                    <v-tooltip top v-if="props.item.duplicateEmail">
+                                                        <i class="ti-email" slot="activator"></i>
+                                                        <span>{{props.item.duplicateEmail}}</span>
+                                                    </v-tooltip>
                                                     <v-tooltip top v-if="props.item.rc_quote">
                                                         <i class="ti-check" slot="activator"></i>
                                                         <span>{{$t('message.crm.RC_QUOTE_TOOLTIP')}}</span>
                                                     </v-tooltip>
-                                                    <v-tooltip top v-if="props.item.lead_source">
+                                                    <v-tooltip top v-if="props.item.call_lead_source">
                                                         <i class="ti-headphone" slot="activator"></i>
                                                         <span>{{$t('message.crm.CALL_LEAD_SOURCE_TOOLTIP')}}</span>
                                                     </v-tooltip>
-                                                    <v-tooltip top v-if="props.item.Send_Offer_By == 'post'">
+                                                    <v-tooltip top v-if="props.item.send_offer_by_post">
                                                         <i class="ti-headphone" slot="activator"></i>
                                                         <span>{{$t('message.crm.CALL_LEAD_SOURCE_TOOLTIP')}}</span>
                                                     </v-tooltip>
-                                                    <v-tooltip top v-if="props.item.language">
-                                                        <img :src="'/static/flag-icons/'+props.item.language+'.png'" class="img-responsive" slot="activator"/>                                                        
+                                                    <v-tooltip top v-if="props.item.language_flag">
+                                                        <img :src="props.item.language_flag" class="img-responsive" slot="activator"/>
                                                         <span>{{props.item.language}}</span>
                                                     </v-tooltip>
                                                 </td>
@@ -91,7 +90,7 @@
                                                 </td>                                                
                                                 <td>
                                                     <span class="grey--text fs-12 fw-normal d-block">
-                                                        <v-chip small dark color="orange" text-color="white">{{$t('message.crm.WAITING_FOR_PROCESSING')}}</v-chip>
+                                                        <v-chip small dark :class="props.item.status_class" text-color="white">{{props.item.status}}</v-chip>
                                                     </span>
                                                     <span class="grey--text fs-12 fw-normal d-block"><v-chip small dark color="orange" text-color="white">1</v-chip></span>
                                                     <span class="grey--text fs-12 fw-normal d-block"><v-chip small dark color="orange" text-color="white">1</v-chip></span>                                                    
@@ -117,8 +116,8 @@
                                                     <v-icon medium>zmdi-plus</v-icon>
                                                     <span class="grey--text fs-12 fw-normal d-block">{{ $t('message.crm.CONTACT_QUOTE_TITLE') }}</span>
                                                 </td>
-					</template>
-					</v-data-table>
+					</template>                                        
+					</v-data-table>                                        
 				</app-card>
 			</v-layout>
 		</v-container>
@@ -131,8 +130,10 @@ import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      loader: true,
-      search: "",
+      loading: true,
+      totalContacts: 0,
+      pagination: {},      
+      contacts: [],      
       selected: [],
       headers: [        
         { text: 'message.crm.CONTACT_ID', value: "id", sortable: false },
@@ -144,12 +145,8 @@ export default {
         { text: 'message.crm.LINKED_TO_USER', value: "", sortable: false },        
         { text: '', value: "", sortable: false },
         { text: '', value: "", sortable: false },
-      ],
-      items: [],         
+      ],               
     };
-  },
-  mounted() {
-    this.getTablesData();
   },
   computed:{
      statusitems: function(){
@@ -160,19 +157,49 @@ export default {
             return {};
         }        
     }
-   },
-  methods: {
-    getTablesData() {      
-      api
-        .get("api/contacts")
-        .then(response => {         
-          this.loader = false;
-          this.items = response.data.data;          
+   },  
+  watch: {
+      pagination: {
+        handler () {          
+          this.getDataFromApi(this.pagination.page,'watcher')
+            .then(data => {
+              this.contacts = data.data;
+              this.totalContacts = data.meta.total;
+              this.pagination.totalItems= data.meta.total;
+              this.pagination.rowsPerPage = data.meta.per_page;
+              this.pagination.page = data.meta.current_page;
+              this.loading = false;
+            })
+        },
+        deep: true
+      }
+    },
+    mounted () {
+      this.getDataFromApi(this.pagination.page,'mounted')
+        .then(data => {
+          this.contacts = data.data;
+          this.totalContacts = data.meta.total;
+          this.loading = false;
         })
-        .catch(error => {
-          console.log(error);
+    },
+    methods: {
+      getDataFromApi (fetchpage, state) {
+        this.loading = true;
+        return new Promise(function(resolve, reject) {
+            api.get("api/contacts").then(response => {                
+                resolve(response.data);
+            }).catch(error => {
+                console.log(error);
+                reject(error);                
+            });
         });
-    }
-  }
+      }
+    }  
 };
 </script>
+<style scoped>
+.contactList >>> .v-list__tile{
+    height: 30px;
+    font-size: 13px;
+}
+</style>
