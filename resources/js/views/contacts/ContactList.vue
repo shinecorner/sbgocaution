@@ -84,7 +84,7 @@
                                                       :key="index"
                                                       @click=""
                                                     >
-                                                      <v-list-tile-title>{{ statusitem.state }}</v-list-tile-title>
+                                                      <v-list-tile-title>{{ statusitem}}</v-list-tile-title>
                                                     </v-list-tile>
                                                   </v-list>
                                                 </v-menu>
@@ -100,24 +100,18 @@
                                                     0
                                                 </td>
                                                 <td width="5%">
-                                                   <v-menu
-                                                    offset-y
-                                                    content-class="dropdown-menu"
-                                                    transition="slide-y-transition">    
+                                                   <v-menu offset-y>
                                                     <v-icon medium slot="activator">zmdi-caret-down-circle</v-icon>
-                                                    <v-card>
-                                                      <v-list dense>
-                                                        <v-list-tile
-                                                          v-for="statusitem in statusitems"
-                                                          :key="statusitem.state"
-                                                        >
-                                                          <v-list-tile-title
-                                                            v-text="statusitem.state"
-                                                          />
-                                                        </v-list-tile>
-                                                      </v-list>
-                                                    </v-card>
-                                                  </v-menu>
+                                                  <v-list>
+                                                    <v-list-tile
+                                                      v-for="(statusitem, index) in statusitems"
+                                                      :key="index"
+                                                      @click=""
+                                                    >
+                                                      <v-list-tile-title>{{ statusitem}}</v-list-tile-title>
+                                                    </v-list-tile>
+                                                  </v-list>
+                                                </v-menu>
                                                 </td>
                                                 <td width="5%">
                                                     <v-icon medium>zmdi-plus</v-icon>
@@ -133,7 +127,7 @@
 
 <script>
 import api from "Api";
-
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -151,35 +145,29 @@ export default {
         { text: '', value: "", sortable: false },
         { text: '', value: "", sortable: false },
       ],
-      items: [],
-      statusitems: [
-          { state: 'message.crm.NEW' },
-          { state: 'message.crm.OFFER' },
-          { state: 'message.crm.IN_CLARIFICATION' },
-          { state: 'message.crm.PENDING' },
-          { state: 'message.crm.ACCEPTED' },
-          { state: 'message.crm.PRE_CONFIRMATION_PENDING' },
-          { state: 'message.crm.PRE_CONFIRMATION_SENT' },
-          { state: 'message.crm.CANCELLED' },
-          { state: 'message.crm.REJECTED' },
-          { state: 'message.crm.DISSOLVED_IMMEDIATELY' },
-          { state: 'message.crm.STATUS_RESOLVED' },
-          { state: 'message.crm.STATUS_QUOTE_WAITING' },
-
-        ],
-      currentStatus : { state: 'Florida', abbr: 'FL' }
+      items: [],         
     };
   },
   mounted() {
     this.getTablesData();
   },
+  computed:{
+     statusitems: function(){
+        if(this.$store.getters.currentLanguageHelpers.hasOwnProperty('contact_statuslist')){
+            return this.$store.getters.currentLanguageHelpers.contact_statuslist;        
+        }
+        else{
+            return {};
+        }        
+    }
+   },
   methods: {
-    getTablesData() {
+    getTablesData() {      
       api
         .get("api/contacts")
         .then(response => {         
           this.loader = false;
-          this.items = response.data.data;
+          this.items = response.data.data;          
         })
         .catch(error => {
           console.log(error);

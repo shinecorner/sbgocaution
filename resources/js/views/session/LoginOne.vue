@@ -170,9 +170,8 @@ export default {
       login();
     },
     changeLanguageByCode(languagecode) {
-        this.$i18n.locale = languagecode;        
-        let language = this.$store.getters.languages[languagecode];        
-        this.$store.dispatch("changeLanguage", language);
+        this.$i18n.locale = languagecode;                
+        this.$store.dispatch("changeLanguage", languagecode);
     }
   }
 };

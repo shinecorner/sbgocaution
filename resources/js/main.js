@@ -126,7 +126,7 @@ Vue.use(VueGoogleMaps, {
 
 // Create VueI18n instance with options
 const i18n = new VueI18n({
-	locale: store.getters.selectedLocale.locale, // set locale
+	locale: store.getters.selectedLocale, // set locale
 	messages, // set locale messages
 })
 
