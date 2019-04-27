@@ -16,6 +16,7 @@
                                                 :total-items="totalContacts"
                                                 :loading="loading"												
 						item-key="id"
+                                                :disable-page-reset="true"
                                                 rows-per-page-text=""
                                                 :rows-per-page-items="[]"						
 					>                                        
@@ -156,18 +157,23 @@ export default {
         else{
             return {};
         }        
-    }
+      }
    },  
   watch: {
       pagination: {
         handler () {          
           this.getDataFromApi(this.pagination.page,'watcher')
             .then(data => {
-              this.contacts = data.data;
-              this.totalContacts = data.meta.total;
-              this.pagination.totalItems= data.meta.total;
-              this.pagination.rowsPerPage = data.meta.per_page;
-              this.pagination.page = data.meta.current_page;
+              if(data.hasOwnProperty('data')){
+                    this.contacts = data.data;
+              }
+              if(data.hasOwnProperty('meta')){
+                    this.totalContacts = data.meta.total;
+                    this.pagination.totalItems= data.meta.total;
+                    this.pagination.rowsPerPage = data.meta.per_page;
+                    this.pagination.page = data.meta.current_page;
+                }
+            
               this.loading = false;
             })
         },
@@ -177,16 +183,21 @@ export default {
     mounted () {
       this.getDataFromApi(this.pagination.page,'mounted')
         .then(data => {
-          this.contacts = data.data;
-          this.totalContacts = data.meta.total;
+            if(data.hasOwnProperty('data')){
+                this.contacts = data.data;
+            }
+            if(data.hasOwnProperty('meta')){
+                this.totalContacts = data.meta.total;
+            }          
           this.loading = false;
         })
     },
     methods: {
-      getDataFromApi (fetchpage, state) {
-        this.loading = true;
+      getDataFromApi (fetchpage, state) {        
+        this.loading = true;        
         return new Promise(function(resolve, reject) {
-            api.get("api/contacts").then(response => {                
+            let dataurl = "api/contacts?page="+fetchpage;
+            api.get(dataurl).then(response => {                
                 resolve(response.data);
             }).catch(error => {
                 console.log(error);
