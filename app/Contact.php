@@ -18,6 +18,6 @@ class Contact extends Model
 
     public function addresses()
     {
-        return $this->hasMany('App\Address')->select(array('id', 'address', 'plz', 'ort'));
+        return $this->hasMany('App\Address')->select(array('id', 'is_primary', 'address', 'plz', 'ort'));
     }
 }

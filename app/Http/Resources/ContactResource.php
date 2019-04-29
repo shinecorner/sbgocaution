@@ -38,8 +38,14 @@ class ContactResource extends JsonResource
         $data['nachname'] = $this->nachname;
         $data['vorname'] = $this->vorname;
         $data['language'] = $this->language;
+        
         $data['language_flag'] = get_language_flag($this->language);
-        $data['addresses'] = $this->addresses;
+
+        $address = $this->addresses->where('is_primary', 1)->first();
+        $data['address'] = $address != null ? $address->address : "";
+        $data['plz'] = $address != null ? $address->plz : "";
+        $data['ort'] = $address != null ? $address->ort : "";
+
         $data['email'] = $this->email;
         $data['contact_formate'] = $this->contact_formate;
 
