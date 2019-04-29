@@ -11,6 +11,8 @@ class ContactsTableSeeder extends Seeder
      */
     public function run()
     {
-	    factory(App\Contact::class, 20000)->create();
+	    factory(App\Contact::class, 20000)->create()->each(function ($contact) {
+                $contact->addresses()->save(factory(App\Address::class)->create());
+            });
     }
 }

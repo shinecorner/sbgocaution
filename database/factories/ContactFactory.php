@@ -16,7 +16,6 @@ $factory->define(Contact::class, function (Faker $faker) {
         'nachname' => $faker->firstName,
         'vorname' => $faker->lastName,
         'language' => $faker->randomElement(['de-DE', 'fr-FR', 'it-IT']),
-        'address' => $faker->address,
         'email' => $faker->email,
         'status' => $faker->randomElement(['new', 'offer', 'pre_confirmation_pending', 'pre_confirmation_sent', 'rejected', 'status_quote_waiting']),
         'rc_quote' => $faker->randomElement(['Yes', 'No'])
