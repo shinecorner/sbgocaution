@@ -122,3 +122,18 @@ if(!function_exists('format')){
 
 }
 
+if(!function_exists('getContactPDF')){
+
+    function getContactPDF(){
+        $status = array();
+
+       // $status['content_pdf']  = "CONTACT_PDF_PRECONFIRMATION";
+        $status['content_pdf_img']  = "CONTACT_PDF_PRECONFIRMATION_IMG";
+        $status['content_pdf1'] = "CONTACT_PDF_REJECTED";
+       // $status['refund']       = "CONTACT_PDF_OFFER";
+        $status['offer_print']       = "CONTACT_PDF_OFFER_PRINT_LETTER";
+        return $status;
+    }
+
+}
+
