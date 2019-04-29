@@ -7,7 +7,6 @@ use Carbon\Carbon;
 
 class Contact extends Model
 {
-	public $timestamps = false;
 
     protected $fillable = [
         'date', 'real_contact_num', 'id', 'user_id', 'anrede', 'nachname', 'vorname', 'language', 'address', 'contact_formate', 'status', 'rc_quote', 'plz', 'ort'
@@ -15,5 +14,10 @@ class Contact extends Model
 
     public function getDateAttribute($value) {
         return Carbon::parse($value)->format(config('date_format.display_date_format'));
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany('App\Address')->select(array('id', 'address', 'plz', 'ort'));
     }
 }

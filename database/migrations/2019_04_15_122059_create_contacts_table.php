@@ -24,11 +24,7 @@ class CreateContactsTable extends Migration {
 			$table->string('anrede')->default('mr');
 			$table->string('nachname');
 			$table->string('vorname');
-			$table->string('name1')->nullable();
 			$table->string('language');
-			$table->text('address', 65535);
-			$table->string('plz')->nullable();
-			$table->string('ort', 155)->nullable();
 			$table->string('email')->index('email')->nullable();
 			$table->string('telefon')->nullable();
 			$table->string('mobile')->nullable();
@@ -61,7 +57,6 @@ class CreateContactsTable extends Migration {
 			$table->string('betreibungen')->nullable();
 			$table->string('lead_source', 200)->default('Online Registrierung');
 			$table->text('message', 16777215)->nullable();
-			$table->text('contact_notes')->nullable();
 			$table->text('client_notice')->nullable();
 			$table->string('ip_user', 100)->nullable();
 			$table->string('company_type')->nullable();
@@ -90,7 +85,6 @@ class CreateContactsTable extends Migration {
 			$table->string('iban', 150)->nullable();
 			$table->string('promo_code', 150)->nullable();
 			$table->string('reg_type')->nullable();
-			$table->string('vatid')->nullable();
 			$table->string('serverinfo', 250)->nullable();
 			$table->string('mygocaution_username', 256)->nullable();
 			$table->string('mygocaution_password', 256)->nullable();
@@ -101,6 +95,7 @@ class CreateContactsTable extends Migration {
 			$table->boolean('promo_review_facebook')->nullable();
 			$table->boolean('promo_review_google')->nullable();
 			$table->boolean('promo_review_local')->nullable();
+			$table->timestamps();
 		});
 	}
 
