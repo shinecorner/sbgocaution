@@ -73,11 +73,11 @@
             <v-icon medium slot="activator">zmdi-caret-down-circle</v-icon>
             <v-list>
                 <v-list-tile
-                  v-for="(statusitem, index) in statusitems"
+                  v-for="(qs, index) in quotestatus"
                   :key="index"
                   @click=""
                 >
-                <v-list-tile-title>{{ statusitem}}</v-list-tile-title>
+                <v-list-tile-title>{{ qs }}</v-list-tile-title>
                 </v-list-tile>
           </v-list>
         </v-menu>
@@ -96,11 +96,11 @@
             <v-icon medium slot="activator">zmdi-caret-down-circle</v-icon>
           <v-list>
             <v-list-tile
-              v-for="(statusitem, index) in statusitems"
+              v-for="(co, index) in contactofferactions"
               :key="index"
               @click=""
             >
-              <v-list-tile-title>{{ statusitem}}</v-list-tile-title>
+              <v-list-tile-title>{{ co }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
         </v-menu>
@@ -175,9 +175,17 @@ export default {
         }
      },
      computed:{
-     statusitems: function(){
-        if(this.$store.getters.currentLanguageHelpers.hasOwnProperty('contact_statuslist')){
-            return this.$store.getters.currentLanguageHelpers.contact_statuslist;        
+     quotestatus: function(){
+        if(this.$store.getters.currentLanguageHelpers.hasOwnProperty('status_quote_waiting')){
+            return this.$store.getters.currentLanguageHelpers.status_quote_waiting;        
+        }
+        else{
+            return {};
+        }        
+    },
+    contactofferactions: function(){
+        if(this.$store.getters.currentLanguageHelpers.hasOwnProperty('CONTACT_PDF_OFFER_PRINT_LETTER')){
+            return this.$store.getters.currentLanguageHelpers.CONTACT_PDF_OFFER_PRINT_LETTER;        
         }
         else{
             return {};

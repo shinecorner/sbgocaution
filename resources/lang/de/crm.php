@@ -30,6 +30,8 @@ return [
     'STATUS_RESOLVED' => "Gekündigt",
     'STATUS_QUOTE_WAITING' => "Warten auf Prüfung",
     'CONTACT_PDF_PRECONFIRMATION_IMG' => 'Vorabbestätigung Online',
+    'CONTACT_PDF_REJECTED' => 'Ablehnungsschreiben',
+    'CONTACT_PDF_OFFER_PRINT_LETTER' => 'Offerte Begleitschreiben',
     'LANGUAGE' => 'Sprache',
     'ORG_LANGUAGE_DE' => 'Deutsch',
     'ORG_LANGUAGE_FR' => 'Französisch',

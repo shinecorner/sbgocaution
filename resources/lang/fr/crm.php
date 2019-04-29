@@ -30,6 +30,8 @@ return [
     'STATUS_RESOLVED' => 'Résigné',
     'STATUS_QUOTE_WAITING' => 'En validation',
     'CONTACT_PDF_PRECONFIRMATION_IMG' => 'Vorabbestätigung Online',
+    'CONTACT_PDF_REJECTED' => 'Lettre de refus',
+    'CONTACT_PDF_OFFER_PRINT_LETTER' => 'Lettre d\'offre',
     'LANGUAGE' => 'La langue',
     'ORG_LANGUAGE_DE' => 'Deutsch',
     'ORG_LANGUAGE_FR' => 'Französisch',
