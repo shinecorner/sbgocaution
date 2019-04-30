@@ -17,7 +17,7 @@ class CreateAddressesTable extends Migration
             $table->increments('id');
             $table->boolean('is_primary');
             $table->tinyInteger('type')->default(1);
-            $table->unsignedInteger('contact_id')->nullable();
+            $table->integer('contact_id')->nullable();
             $table->foreign('contact_id')->references('id')->on('contacts');
             $table->string('co_address_name')->nullable();
             $table->string('address')->nullable();
