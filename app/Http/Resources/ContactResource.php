@@ -89,14 +89,6 @@ class ContactResource extends JsonResource
 
         $this->getContactEmailDuplicate($data);
 
-        $contact_statuses = [
-            'contact_statuslist',
-            'contactPDF_statuslist'
-        ];
-        foreach ($contact_statuses as $contact_status) {
-            $this->getStatusList($data, $contact_status);
-        }
-
         return $data;
     }
 
@@ -128,25 +120,6 @@ class ContactResource extends JsonResource
                 $data['duplicateEmail'] .= "<br/>";
         }
 
-    }
-
-    private function getStatusList(&$data, $status){
-        switch ($status) {
-            case 'contact_statuslist':
-                $statuses = getContactStatus();
-                break;
-            case 'contactPDF_statuslist':
-                $statuses = getContactPDF();
-                break;
-        }
-        $languages = config('app.languages');
-        foreach($languages as $language){
-            foreach($statuses as $status){
-                App::setLocale($language);
-                $$language[$status] = __('crm.'. $status);
-            }
-            $data['helpers'][$language][$status] = $$language;
-        }
     }
 
 }
