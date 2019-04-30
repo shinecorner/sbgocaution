@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Contact;
+use App;
 
 class ContactResource extends JsonResource
 {
@@ -22,7 +23,7 @@ class ContactResource extends JsonResource
             'user_id' => $this->user_id,
         ];
         $data['status'] = __('crm.' . $this->status);
-        $data['status_class'] = render_status_class($this->status);
+        $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
 
         if($this->user_id && property_exists($this, 'username')) 
             $data['joomlauser'] = $this->username;
@@ -88,6 +89,14 @@ class ContactResource extends JsonResource
 
         $this->getContactEmailDuplicate($data);
 
+        $contact_statuses = [
+            'contact_statuslist',
+            'contactPDF_statuslist'
+        ];
+        foreach ($contact_statuses as $contact_status) {
+            $this->getStatusList($data, $contact_status);
+        }
+
         return $data;
     }
 
@@ -120,4 +129,24 @@ class ContactResource extends JsonResource
         }
 
     }
+
+    private function getStatusList(&$data, $status){
+        switch ($status) {
+            case 'contact_statuslist':
+                $statuses = getContactStatus();
+                break;
+            case 'contactPDF_statuslist':
+                $statuses = getContactPDF();
+                break;
+        }
+        $languages = config('app.languages');
+        foreach($languages as $language){
+            foreach($statuses as $status){
+                App::setLocale($language);
+                $$language[$status] = __('crm.'. $status);
+            }
+            $data['helpers'][$language][$status] = $$language;
+        }
+    }
+
 }

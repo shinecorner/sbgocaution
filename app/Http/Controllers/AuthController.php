@@ -80,9 +80,6 @@ class AuthController extends Controller
             $data['email'] = $user->email;
             $data['premium_amount'] = format(177.23);
 
-            $data = event(new UserLoggedIn($data));
-            $data = array_pop($data);
-
             App::setLocale($request->lang);
             return response()->json(['response'=> $data ],200); 
         } 
