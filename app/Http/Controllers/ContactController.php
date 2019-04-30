@@ -13,9 +13,14 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return ContactResource::collection(Contact::paginate(config('pagination.items_per_page')));
+        if($request->has('per_page')){
+            $per_page = $request->per_page;
+        } else {
+            $per_page = config('pagination.items_per_page');
+        }
+        return ContactResource::collection(Contact::paginate($per_page));
     }
 
     /**
