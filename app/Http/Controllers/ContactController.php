@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContactResource;
-use App\Http\Resources\ContactCollection;
+use App;
 
 class ContactController extends Controller
 {
@@ -21,7 +21,18 @@ class ContactController extends Controller
         } else {
             $per_page = config('pagination.items_per_page');
         }
-        return new ContactCollection(Contact::paginate($per_page));
+
+        $contact_statuses = [
+            'contact_statuslist',
+            'contactPDF_statuslist'
+        ];
+        
+        $data = [];
+        foreach ($contact_statuses as $contact_status) {
+            $this->getStatusList($data, $contact_status);
+        }
+
+        return ContactResource::collection(Contact::paginate($per_page))->additional($data);
     }
 
     /**
@@ -84,5 +95,24 @@ class ContactController extends Controller
         return response()->json([
             "api_status" => $contact->delete()
         ], 200);
+    }
+
+    private function getStatusList(&$data, $status){
+        switch ($status) {
+            case 'contact_statuslist':
+                $statuses = getContactStatus();
+                break;
+            case 'contactPDF_statuslist':
+                $statuses = getContactPDF();
+                break;
+        }
+        $languages = config('app.languages');
+        foreach($languages as $language){
+            foreach($statuses as $status){
+                App::setLocale($language);
+                $$language[$status] = __('crm.'. $status);
+            }
+            $data['helpers'][$language][$status] = $$language;
+        }
     }
 }
