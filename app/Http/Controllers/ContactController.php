@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContactResource;
+use App\Http\Resources\ContactCollection;
 
 class ContactController extends Controller
 {
@@ -20,7 +21,7 @@ class ContactController extends Controller
         } else {
             $per_page = config('pagination.items_per_page');
         }
-        return ContactResource::collection(Contact::paginate($per_page));
+        return new ContactCollection(Contact::paginate($per_page));
     }
 
     /**
