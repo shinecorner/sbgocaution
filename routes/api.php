@@ -29,6 +29,7 @@ Route::group([
 ], function(){
 	Route::resource('contacts', 'ContactController');
   Route::resource('configs', 'ConfigController');
+  Route::resource('roles', 'RoleController');
 });
 
 
