@@ -3,7 +3,7 @@ export const menus = {
 	'crm.business': [
 		{
 			action: 'zmdi-view-dashboard',
-			title: 'message.crm.CONTACTS',
+			title: 'message.crm.CRM',
 			active: true,
 			label: 'Old',
 			items: [

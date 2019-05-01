@@ -159,7 +159,15 @@ export default {
             "ORG_LANGUAGE_DE": "Deutsch",
             "ORG_LANGUAGE_FR": "Französisch",
             "ORG_LANGUAGE_IT": "Italienisch",
-            "ORG_LANGUAGE_EN": "English"
+            "ORG_LANGUAGE_EN": "English",
+            "CRM": "CRM",
+            "USERNAME": "Benutzername",
+            "PASSWORD": "Passwort",
+            "EMAIL": "E-Mail",
+            "CRM_LOGIN_TITLE": "goCaution® CRM",
+            "COM_USERS_LOGIN_REMEMBER_ME": "Angemeldet bleiben",
+            "COM_USERS_LOGIN_RESET": "Passwort vergessen?",
+            "LOGIN": "Anmelden"
         }
     },
     "en": {
@@ -322,7 +330,15 @@ export default {
             "ORG_LANGUAGE_DE": "Deutsch",
             "ORG_LANGUAGE_FR": "Französisch",
             "ORG_LANGUAGE_IT": "Italienisch",
-            "ORG_LANGUAGE_EN": "English"
+            "ORG_LANGUAGE_EN": "English",
+            "CRM": "CRM",
+            "USERNAME": "Username",
+            "PASSWORD": "Password",
+            "EMAIL": "E-mail",
+            "CRM_LOGIN_TITLE": "goCaution® CRM",
+            "COM_USERS_LOGIN_REMEMBER_ME": "Remember me",
+            "COM_USERS_LOGIN_RESET": "Forgot your password?",
+            "LOGIN": "Log in"
         }
     },
     "fr": {
@@ -485,7 +501,15 @@ export default {
             "ORG_LANGUAGE_DE": "Deutsch",
             "ORG_LANGUAGE_FR": "Französisch",
             "ORG_LANGUAGE_IT": "Italienisch",
-            "ORG_LANGUAGE_EN": "English"
+            "ORG_LANGUAGE_EN": "English",
+            "CRM": "CRM",
+            "USERNAME": "Identifiant",
+            "PASSWORD": "Mot de passe",
+            "EMAIL": "E-mail",
+            "CRM_LOGIN_TITLE": "goCaution® CRM",
+            "COM_USERS_LOGIN_REMEMBER_ME": "Se rappeler de moi",
+            "COM_USERS_LOGIN_RESET": "Mot de passe oublié ?",
+            "LOGIN": "Connexion"
         }
     },
     "it": {
@@ -648,7 +672,15 @@ export default {
             "ORG_LANGUAGE_DE": "Deutsch",
             "ORG_LANGUAGE_FR": "Französisch",
             "ORG_LANGUAGE_IT": "Italienisch",
-            "ORG_LANGUAGE_EN": "English"
+            "ORG_LANGUAGE_EN": "English",
+            "CRM": "CRM",
+            "USERNAME": "Nome utente",
+            "PASSWORD": "Password",
+            "EMAIL": "E-Mail",
+            "CRM_LOGIN_TITLE": "goCaution® CRM",
+            "COM_USERS_LOGIN_REMEMBER_ME": "Ricordami",
+            "COM_USERS_LOGIN_RESET": "Hai dimenticato la tua password?",
+            "LOGIN": "Accedi"
         }
     }
 }

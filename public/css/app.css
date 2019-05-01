@@ -11652,3 +11652,121 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.column-default {
+  border-left: 3px solid;
+  border-color: #777777;
+}
+
+.column-primary {
+  border-left: 3px solid;
+  border-color: #337ab7;
+}
+
+.column-success {
+  border-left: 3px solid;
+  border-color: #449d44;
+}
+
+.column-info {
+  border-left: 3px solid;
+  border-color: #31b0d5;
+}
+
+.column-warning {
+  border-left: 3px solid;
+  border-color: #f0ad4e;
+}
+
+.column-danger {
+  border-left: 3px solid;
+  border-color: #F44336;
+}
+
+.column-offer {
+  border-left: 3px solid;
+  border-color: #3f8ddd;
+}
+
+.column-in-clarification {
+  border-left: 3px solid;
+  border-color: #9c27b0;
+}
+
+.column-partner,
+.column-pre-confirmation {
+  border-left: 3px solid;
+  border-color: #066938;
+}
+
+.label-status-default {
+  background-color: #777777 !important;
+}
+
+.label-status-default[href]:hover,
+.label-status-default[href]:focus {
+  background-color: #5e5e5e !important;
+}
+
+.label-status-primary {
+  background-color: #337ab7 !important;
+}
+
+.label-status-primary[href]:hover,
+.label-primary[href]:focus {
+  background-color: #286090 !important;
+}
+
+.label-status-success[href]:hover,
+.label-success[href]:focus {
+  background-color: #449d44 !important;
+}
+
+.label-status-info[href]:hover,
+.label-info[href]:focus {
+  background-color: #31b0d5 !important;
+}
+
+.label-status-warning {
+  background-color: #f0ad4e !important;
+}
+
+.label-status-warning[href]:hover,
+.label-status-warning[href]:focus {
+  background-color: #F44336 !important;
+}
+
+.label-status-danger {
+  background-color: #F44336 !important;
+}
+
+.label-status-offer {
+  background-color: #3f8ddd !important;
+}
+
+.label-status-offer[href]:hover,
+.label-status-offer[href]:focus {
+  background-color: #3f8ddd !important;
+}
+
+.label-status-in-clarification {
+  background-color: #9c27b0 !important;
+}
+
+.label-status-in-clarification[href]:hover,
+.label-status-in-clarification[href]:focus {
+  background-color: #9c27b0 !important;
+}
+
+.label-status-partner,
+.label-status-pre-confirmation {
+  background-color: #066938 !important;
+}
+
+.vuetable-th-slot-c_invoices {
+  padding: 24px 6px !important;
+}
+
+.contactlistth.vuetable-th-slot-c_contactformate {
+  width: 10% !important;
+}
+
