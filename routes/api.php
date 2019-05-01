@@ -30,6 +30,7 @@ Route::group([
 	Route::resource('contacts', 'ContactController');
   Route::resource('configs', 'ConfigController');
   Route::resource('roles', 'RoleController');
+  Route::resource('permissions', 'PermissionController');
 });
 
 
