@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use Spatie\Permission\Models\Role;
 use App\Http\Resources\RoleResource;
 
@@ -92,4 +93,19 @@ class RoleController extends Controller
             "api_status" => $role->delete()
         ], 200);
     }
+
+    public function assignment(Request $request) {
+        $user = User::find($request->user_id);
+        $role = Role::find($request->role_id);
+        if(is_null($user) || is_null($role)){
+            return response()->json([
+                "api_status" => false
+            ], 404);            
+        }
+        $user->assignRole($role);
+        return response()->json([
+            "api_status" => true
+        ], 200);
+    }
+
 }

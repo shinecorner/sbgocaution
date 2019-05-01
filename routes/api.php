@@ -27,10 +27,12 @@ Route::group([
 Route::group([
 	'middleware' => 'auth:api'
 ], function(){
-	Route::resource('contacts', 'ContactController');
-  Route::resource('configs', 'ConfigController');
-  Route::resource('roles', 'RoleController');
-  Route::resource('permissions', 'PermissionController');
+    Route::post('user/role', 'RoleController@assignment');
+    Route::post('role/permission', 'PermissionController@assignment');
+    Route::resource('contacts', 'ContactController');
+    Route::resource('configs', 'ConfigController');
+    Route::resource('roles', 'RoleController');
+    Route::resource('permissions', 'PermissionController');
 });
 
 

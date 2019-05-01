@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Http\Resources\PermissionResource;
 
@@ -92,4 +93,19 @@ class PermissionController extends Controller
             "api_status" => $permission->delete()
         ], 200);
     }
+
+    public function assignment(Request $request) {
+        $role = Role::find($request->role_id);
+        $permission = Permission::find($request->permission_id);
+        if(is_null($role) || is_null($permission)){
+            return response()->json([
+                "api_status" => false
+            ], 404);            
+        }
+        $role->givePermissionTo($permission);
+        return response()->json([
+            "api_status" => true
+        ], 200);
+    }
+
 }
