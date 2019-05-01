@@ -37,4 +37,12 @@ return [
     'ORG_LANGUAGE_FR' => 'Französisch',
     'ORG_LANGUAGE_IT' => 'Italienisch',
     'ORG_LANGUAGE_EN' => 'English',
+    'CRM' => 'CRM',
+    'USERNAME' => 'Benutzername',
+    'PASSWORD' => 'Passwort',
+    'EMAIL' => 'E-Mail',
+    'CRM_LOGIN_TITLE' => 'goCaution® CRM',
+    'COM_USERS_LOGIN_REMEMBER_ME' => 'Angemeldet bleiben',
+    'COM_USERS_LOGIN_RESET' => 'Passwort vergessen?',
+    'LOGIN' => 'Anmelden',
 ];
