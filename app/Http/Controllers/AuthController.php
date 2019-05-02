@@ -72,15 +72,14 @@ class AuthController extends Controller
             $api_token =  $user->createToken('GoCaution CRM Token')-> accessToken; 
             $user->api_token = $api_token;
             $user->save();
+            App::setLocale($request->lang);
             $data['api_status'] = 1;
             $data['code'] = 200;
-            $data['message'] = 'Logged in Successfully.';
+            $data['message'] = __('crm.AUTH_LOGIN_SUCCESS');
             $data['access_token'] = $api_token;
             $data['name'] = $user->name;
             $data['email'] = $user->email;
             $data['premium_amount'] = format(177.23);
-
-            App::setLocale($request->lang);
             return response()->json(['response'=> $data ],200); 
         } 
         else
@@ -90,7 +89,7 @@ class AuthController extends Controller
                                         [
                                         'api_status'=>0,
                                         'code'=>200,
-                                        'message'=> __('crm.AUTH_INVALID_PASS')
+                                        'message'=> __('crm.AUTH_LOGIN_FAIL')
                                         ]
                                 ],200); 
         }
