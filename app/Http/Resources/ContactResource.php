@@ -31,9 +31,9 @@ class ContactResource extends JsonResource
             $data['joomlauser'] = __('JNO');
 
         switch($this->anrede){
-            case 'mr': $data['anrede'] = __('Herr'); break;
-            case 'mrs': $data['anrede'] = __('Frau'); break;
-            case 'company': $data['anrede'] = __('Firma'); break;
+            case 'mr': $data['anrede'] = __('crm.PDF_IL_MAN'); break;
+            case 'mrs': $data['anrede'] = __('crm.PDF_IL_WOMEN'); break;
+            case 'company': $data['anrede'] = __('crm.PDF_IL_COMPANY'); break;
         }
 
         $data['nachname'] = $this->nachname;
