@@ -45,4 +45,5 @@ return [
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Angemeldet bleiben',
     'COM_USERS_LOGIN_RESET' => 'Passwort vergessen?',
     'LOGIN' => 'Anmelden',
+    'AUTH_INVALID_PASS' => 'Benutzername und Passwort falsch oder das Benutzerkonto existiert noch nicht!',
 ];

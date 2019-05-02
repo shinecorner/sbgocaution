@@ -45,4 +45,5 @@ return [
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Se rappeler de moi',
     'COM_USERS_LOGIN_RESET' => 'Mot de passe oublié ?',
     'LOGIN' => 'Connexion',
+    'AUTH_INVALID_PASS' => "Le mot de passe ne correspond pas au nom d'utilisateur, ou vous n'avez pas encore de compte.",
 ];

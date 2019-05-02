@@ -84,12 +84,13 @@ class AuthController extends Controller
             return response()->json(['response'=> $data ],200); 
         } 
         else
-        { 
+        {
+            App::setLocale($request->lang); 
             return response()->json(['response'=>
                                         [
                                         'api_status'=>0,
                                         'code'=>200,
-                                        'message'=>'Data is not in the proper format or check your email and password.'
+                                        'message'=> __('crm.AUTH_INVALID_PASS')
                                         ]
                                 ],200); 
         }

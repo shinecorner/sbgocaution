@@ -45,4 +45,5 @@ return [
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Ricordami',
     'COM_USERS_LOGIN_RESET' => 'Hai dimenticato la tua password?',
     'LOGIN' => 'Accedi',
+    'AUTH_INVALID_PASS' => 'Nome utente e password non corretti o non hai ancora un account.',
 ];

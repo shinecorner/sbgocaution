@@ -45,4 +45,5 @@ return [
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Remember me',
     'COM_USERS_LOGIN_RESET' => 'Forgot your password?',
     'LOGIN' => 'Log in',
+    'AUTH_INVALID_PASS' => 'Username and password do not match or you do not have an account yet.',
 ];
