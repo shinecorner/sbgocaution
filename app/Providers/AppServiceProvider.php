@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Config;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        config(Config::all(['key', 'value'])
+            ->keyBy('key')
+            ->transform(function ($config) {
+                 return $config->value;
+            })->toArray());
     }
 
     /**
