@@ -30,11 +30,13 @@
           v-model="fetchLanguage"
           item-text="name"
           item-value="locale"
+          @change="changeLanguageByCode"
           :label="$t('message.crm.LANGUAGE')"
         ></v-select>
 						<v-checkbox 
 							color="primary" 
 							:label="$t('message.crm.COM_USERS_LOGIN_REMEMBER_ME')" 
+                                                        class="rememberme"
 							v-model="checkbox"
 						></v-checkbox>
 						<router-link class="mb-1" to="/session/forgot-password">{{$t('message.crm.COM_USERS_LOGIN_RESET')}}?</router-link>
@@ -101,8 +103,8 @@ export default {
         user
       });
     },
-		signInWithLaravelPassport(){
-			 const user = {
+    signInWithLaravelPassport(){
+        const user = {
         email: this.email,
         password: this.password,
         lang: this.fetchLanguage
@@ -113,25 +115,10 @@ export default {
       this.$store.dispatch("signInWithLaravelPassport", {
         user
       });
-		},
-    signInWithFacebook() {
-      this.$store.dispatch("signinUserWithFacebook");
-    },
-    signInWithGoogle() {
-      this.$store.dispatch("signinUserWithGoogle");
-    },
-    signInWithTwitter() {
-      this.$store.dispatch("signinUserWithTwitter");
-    },
-    signInWithGithub() {
-      this.$store.dispatch("signinUserWithGithub");
-    },
+    },   
     onCreateAccount() {
       this.$router.push("/session/sign-up");
-    },
-    signinWithAuth0() {
-      login();
-    },
+    },   
     changeLanguageByCode(languagecode) {
         this.$i18n.locale = languagecode;                
         this.$store.dispatch("changeLanguage", languagecode);
@@ -139,3 +126,8 @@ export default {
   }
 };
 </script>
+<style scoped>    
+    .rememberme >>> .v-label{
+            top: 4px;
+        }    
+</style>

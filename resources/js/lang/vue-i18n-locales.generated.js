@@ -167,7 +167,25 @@ export default {
             "CRM_LOGIN_TITLE": "goCaution® CRM",
             "COM_USERS_LOGIN_REMEMBER_ME": "Angemeldet bleiben",
             "COM_USERS_LOGIN_RESET": "Passwort vergessen?",
-            "LOGIN": "Anmelden"
+            "LOGIN": "Anmelden",
+            "AUTH_LOGIN_SUCCESS": "Erfolgreich angemeldet.",
+            "AUTH_LOGIN_FAIL": "Benutzername und Passwort falsch oder das Benutzerkonto existiert noch nicht!",
+            "EDIT": "Öffnen",
+            "QUOTES": "Policen",
+            "INVOICES": "Rechnungen",
+            "PAID": "Bezahlt",
+            "UNPAID_SIMPLE": "Warten auf Zahlung",
+            "PARTIAL_PAID": "Teilweise bezahlt",
+            "PASTDUE": "Aktivierung überfällig",
+            "REFUNDED": "Rückvergütet",
+            "PARTIAL_REFUNDED": "Rückvergütung in Bearbeitung",
+            "REMINDER": "Zahlungserinnerung",
+            "WARNING1": "Mahnstufe 1",
+            "WARNING2": "Mahnstufe 2",
+            "INVOICE_STATUS_COLLECTION": "Betreibungsandrohung",
+            "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
+            "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
+            "DEBT_ENFORCEMENT": "Betreibungsverfahren"
         }
     },
     "en": {
@@ -338,7 +356,25 @@ export default {
             "CRM_LOGIN_TITLE": "goCaution® CRM",
             "COM_USERS_LOGIN_REMEMBER_ME": "Remember me",
             "COM_USERS_LOGIN_RESET": "Forgot your password?",
-            "LOGIN": "Log in"
+            "LOGIN": "Log in",
+            "AUTH_LOGIN_SUCCESS": "Logged in Successfully.",
+            "AUTH_LOGIN_FAIL": "Username and password do not match or you do not have an account yet.",
+            "EDIT": "Edit",
+            "QUOTES": "Polices",
+            "INVOICES": "Invoices",
+            "PAID": "Paid",
+            "UNPAID_SIMPLE": "Unpaid",
+            "PARTIAL_PAID": "Partially paid",
+            "PASTDUE": "Past due date",
+            "REFUNDED": "Refunded",
+            "PARTIAL_REFUNDED": "Refund in progress",
+            "REMINDER": "Reminder",
+            "WARNING1": "Warning 1",
+            "WARNING2": "Warning 2",
+            "INVOICE_STATUS_COLLECTION": "Collection",
+            "ONLINE_PAYMENT_WAITING": "Online payment waiting",
+            "ONLINE_PAYMENT_INVALID": "Online payment invalid",
+            "DEBT_ENFORCEMENT": "Debt enforcement"
         }
     },
     "fr": {
@@ -509,7 +545,25 @@ export default {
             "CRM_LOGIN_TITLE": "goCaution® CRM",
             "COM_USERS_LOGIN_REMEMBER_ME": "Se rappeler de moi",
             "COM_USERS_LOGIN_RESET": "Mot de passe oublié ?",
-            "LOGIN": "Connexion"
+            "LOGIN": "Connexion",
+            "AUTH_LOGIN_SUCCESS": "Connecté avec succès.",
+            "AUTH_LOGIN_FAIL": "Le mot de passe ne correspond pas au nom d'utilisateur, ou vous n'avez pas encore de compte.",
+            "EDIT": "Éditer",
+            "QUOTES": "Polices",
+            "INVOICES": "Factures",
+            "PAID": "Payé",
+            "UNPAID_SIMPLE": "Non payé",
+            "PARTIAL_PAID": "Partiellement payé",
+            "PASTDUE": "Rappel",
+            "REFUNDED": "Remboursé",
+            "PARTIAL_REFUNDED": "Remboursé en partie",
+            "REMINDER": "Rappel de paiement",
+            "WARNING1": "1er rappel",
+            "WARNING2": "2ème rappel",
+            "INVOICE_STATUS_COLLECTION": "Menace de poursuite",
+            "ONLINE_PAYMENT_WAITING": "Paiement en ligne en attente",
+            "ONLINE_PAYMENT_INVALID": "Paiement en ligne non valide",
+            "DEBT_ENFORCEMENT": "Procédures d'exécution forcée"
         }
     },
     "it": {
@@ -680,7 +734,25 @@ export default {
             "CRM_LOGIN_TITLE": "goCaution® CRM",
             "COM_USERS_LOGIN_REMEMBER_ME": "Ricordami",
             "COM_USERS_LOGIN_RESET": "Hai dimenticato la tua password?",
-            "LOGIN": "Accedi"
+            "LOGIN": "Accedi",
+            "AUTH_LOGIN_SUCCESS": "Effettuato l'accesso con successo.",
+            "AUTH_LOGIN_FAIL": "Nome utente e password non corretti o non hai ancora un account.",
+            "EDIT": "Edita",
+            "QUOTES": "Policen",
+            "INVOICES": "Rechnungen",
+            "PAID": "Pagato",
+            "UNPAID_SIMPLE": "Offen",
+            "PARTIAL_PAID": "Teilweise bezahlt",
+            "PASTDUE": "Aktivierung überfällig",
+            "REFUNDED": "Rückvergütet",
+            "PARTIAL_REFUNDED": "Rückvergütung in Bearbeitung",
+            "REMINDER": "Promemoria di pagamento",
+            "WARNING1": "1° sollecito",
+            "WARNING2": "2° sollecito",
+            "INVOICE_STATUS_COLLECTION": "minaccia di fallimento",
+            "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
+            "ONLINE_PAYMENT_INVALID": "Pagamento online non valido",
+            "DEBT_ENFORCEMENT": "Procedure di esecuzione"
         }
     }
 }
