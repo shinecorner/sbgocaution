@@ -57,15 +57,17 @@ const actions = {
             .then(response => {
                 if(response.data.response.api_status){                    
                     const access_token = response.data.response.access_token;
-                    const serverhelpers = response.data.response.helpers;
+                    const message = response.data.response.message;
+                    
+                    //const serverhelpers = response.data.response.helpers;
                     Nprogress.done();
                     setTimeout(() => {
-                        if ((typeof serverhelpers !== "undefined") && (Object.keys(serverhelpers).length)) {                            
+                        //if ((typeof serverhelpers !== "undefined") && (Object.keys(serverhelpers).length)) {                            
                             //context.commit('serverHelpersHandler',{serverhelpers});
                             //setServerHelpers({ commit, dispatch },{serverhelpers});                            
-                            context.dispatch('setServerHelpers',{serverhelpers});
-                        }                        
-                        context.commit('loginUserSuccess', {user, access_token});
+                            //context.dispatch('setServerHelpers',{serverhelpers});
+                        //}                        
+                        context.commit('loginUserSuccess', {user, access_token, message});
                     }, 500);
                 }else{
                     localStorage.removeItem('accessToken');
@@ -186,8 +188,9 @@ const mutations = {
     loginUser(state) {
         Nprogress.start();
     },
-    loginUserSuccess(state, {user, access_token}) {
+    loginUserSuccess(state, {user, access_token, message}) {
         access_token = access_token || '';
+        message = message || '';
         state.accessToken = access_token;
         state.user = user;          
         localStorage.setItem('user',JSON.stringify(user));
@@ -201,7 +204,7 @@ const mutations = {
             Vue.notify({
                 group: 'loggedIn',
                 type: 'success',
-                text: 'User Logged In Success!'
+                text: message
             });
        },1500);
     },
