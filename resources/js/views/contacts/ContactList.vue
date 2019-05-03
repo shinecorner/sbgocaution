@@ -106,13 +106,13 @@
                                         <div class="d-block">
                                             <v-tooltip top> 
                                                 <v-chip slot="activator" small dark class="fs-12" color="orange" text-color="white"><span class="fs-12">1</span></v-chip>
-                                                <span>{{$t('message.crm.STATUS_QUOTE_WAITING')}}</span>
+                                                <span>{{$t('message.crm.QUOTES')}}:&nbsp;{{$t('message.crm.STATUS_QUOTE_WAITING')}}</span>
                                             </v-tooltip>
                                         </div>
                                         <div class="d-block">
                                             <v-tooltip top v-for="n in 5" v-bind:key="'invoice'+n"> 
                                                 <v-chip slot="activator" small dark class="fs-12" color="orange" text-color="white"><span class="fs-12">1</span></v-chip>
-                                                <span>{{$t('message.crm.ONLINE_PAYMENT_WAITING')}}</span>
+                                                <span>{{$t('message.crm.INVOICES')}}:&nbsp;{{$t('message.crm.ONLINE_PAYMENT_WAITING')}}</span>
                                             </v-tooltip>
                                         </div>
                                     </div>
