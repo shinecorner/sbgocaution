@@ -35,11 +35,24 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->mapCrmRoutes();
+
+        $this->mapLaraloginRoutes();
+
+        $this->mapLaramyRoutes();
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
+    }
 
-        //
+    private function baseDomain(string $subdomain = ''): string
+    {
+        if (strlen($subdomain) > 0) {
+            $subdomain = "{$subdomain}.";
+        }
+
+        return $subdomain . config('app.base_domain');
     }
 
     /**
@@ -51,7 +64,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::middleware('web')
+        Route::domain($this->baseDomain())
+             ->middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
     }
@@ -67,7 +81,53 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('api')
              ->middleware('api')
-             ->namespace($this->namespace)
+             ->namespace($this->namespace.'\Api')
              ->group(base_path('routes/api.php'));
     }
+
+    /**
+     * Define the "api" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapCrmRoutes()
+    {
+        Route::domain($this->baseDomain('crm'))
+             ->middleware('web')
+             ->namespace($this->namespace.'\Crm')
+             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'web.php'));
+    }
+
+    /**
+     * Define the "api" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapLaraloginRoutes()
+    {
+        Route::domain($this->baseDomain('laralogin'))
+             ->middleware('web')
+             ->namespace($this->namespace.'\Laralogin')
+             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'laralogin.php'));
+    }
+
+    /**
+     * Define the "api" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapLaramyRoutes()
+    {
+        Route::domain($this->baseDomain('laramy'))
+             ->middleware('web')
+             ->namespace($this->namespace.'\Laramy')
+             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'laramy.php'));
+    }
+
 }
