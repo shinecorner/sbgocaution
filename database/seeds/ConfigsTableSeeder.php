@@ -15,39 +15,39 @@ class ConfigsTableSeeder extends Seeder
     	DB::table('configs')->truncate();
         DB::table('configs')->insert([
             [
-            	'key' => 'date_format.display_date_format',
+            	'option' => 'date_format.display_date_format',
             	'value' => 'd.m.Y H:i:s'
             ],
             [
-            	'key' => 'pagination.items_per_page',
+            	'option' => 'pagination.items_per_page',
             	'value' => 20
             ],
             [
-            	'key' => 'invoices.invoice_num_format',
+            	'option' => 'invoices.invoice_num_format',
             	'value' => '[yyyy]-[num]'
             ],
             [
-            	'key' => 'invoices.quote_num_format',
+            	'option' => 'invoices.quote_num_format',
             	'value' => '[yyyy]-[num]'
             ],
             [
-            	'key' => 'invoices.contact_num_format',
+            	'option' => 'invoices.contact_num_format',
             	'value' => 'KD-[yyyy][mm]150[num]'
             ],
             [
-            	'key' => 'invoices.invoice_number_digits',
+            	'option' => 'invoices.invoice_number_digits',
             	'value' => 0
             ],
             [
-            	'key' => 'invoices.decpoint',
+            	'option' => 'invoices.decpoint',
             	'value' => '.'
             ],
             [
-            	'key' => 'invoices.thousands',
+            	'option' => 'invoices.thousands',
             	'value' => ','
             ],
             [
-            	'key' => 'invoices.decimals',
+            	'option' => 'invoices.decimals',
             	'value' => 2
             ],
             
