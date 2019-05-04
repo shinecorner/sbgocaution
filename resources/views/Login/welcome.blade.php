@@ -1,0 +1,1 @@
+<h1>Welcome to Laralogin!</h1>

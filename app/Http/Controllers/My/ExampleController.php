@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Laramy;
+namespace App\Http\Controllers\My;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -8,6 +8,6 @@ use App\Http\Controllers\Controller;
 class ExampleController extends Controller
 {
     public function index() {
-    	echo "Welcome to Laramy!";
+    	return view('My.welcome');
     }
 }
