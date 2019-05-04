@@ -28,7 +28,7 @@ class ConfigController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'key' => 'required|alpha_dash|unique:configs,key',
+            'option' => 'required|alpha_dash|unique:configs,option',
             'value' => 'required'        
         ]);
 
@@ -56,7 +56,7 @@ class ConfigController extends Controller
     public function update(Request $request, Config $config)
     {
         $request->validate([
-            'key' => 'required|alpha_dash|unique:configs,key,' . $config->id,
+            'option' => 'required|alpha_dash|unique:configs,option,' . $config->id,
             'value' => 'required'
         ]);
 

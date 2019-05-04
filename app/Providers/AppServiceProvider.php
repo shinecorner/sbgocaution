@@ -16,11 +16,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        config(Config::all(['key', 'value'])
-            ->keyBy('key')
-            ->transform(function ($config) {
-                 return $config->value;
-            })->toArray());
+        if(Schema::hasTable('configs')) {
+            config(Config::all(['option', 'value'])
+                ->keyBy('option')
+                ->transform(function ($config) {
+                     return $config->value;
+                })->toArray());
+        }
     }
 
     /**
