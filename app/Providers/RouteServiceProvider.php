@@ -37,9 +37,11 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+        $this->mapLoginRoutes();
 
-        //
+        $this->mapMyRoutes();
+
+        $this->mapWebRoutes();
     }
 
     /**
@@ -67,7 +69,47 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('api')
              ->middleware('api')
-             ->namespace($this->namespace)
+             ->namespace($this->namespace.'\Api')
              ->group(base_path('routes/api.php'));
     }
+
+    private function baseDomain(string $subdomain = ''): string
+    {
+        if (strlen($subdomain) > 0) {
+            $subdomain = "{$subdomain}.";
+        }
+
+        return $subdomain . config('app.base_domain');
+    }
+
+    /**
+     * Define the "login" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapLoginRoutes()
+    {
+        Route::domain($this->baseDomain('laralogin'))
+             ->middleware('web')
+             ->namespace($this->namespace.'\Login')
+             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'login.php'));
+    }
+
+    /**
+     * Define the "my" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapMyRoutes()
+    {
+        Route::domain($this->baseDomain('laramy'))
+             ->middleware('web')
+             ->namespace($this->namespace.'\My')
+             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'my.php'));
+    }
+
 }

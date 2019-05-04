@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Config;
 use App\Http\Resources\ConfigResource;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ConfigController extends Controller
