@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Config;
 use App\Http\Resources\ConfigResource;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ConfigController extends Controller
@@ -27,7 +28,7 @@ class ConfigController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'key' => 'required|alpha_dash|unique:configs,key',
+            'option' => 'required|alpha_dash|unique:configs,option',
             'value' => 'required'        
         ]);
 
@@ -55,7 +56,7 @@ class ConfigController extends Controller
     public function update(Request $request, Config $config)
     {
         $request->validate([
-            'key' => 'required|alpha_dash|unique:configs,key,' . $config->id,
+            'option' => 'required|alpha_dash|unique:configs,option,' . $config->id,
             'value' => 'required'
         ]);
 

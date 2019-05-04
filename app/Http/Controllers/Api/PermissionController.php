@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-use App\User;
 use Spatie\Permission\Models\Role;
-use App\Http\Resources\RoleResource;
+use Spatie\Permission\Models\Permission;
+use App\Http\Resources\PermissionResource;
+use App\Http\Controllers\Controller;
 
-class RoleController extends Controller
+class PermissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,7 +23,7 @@ class RoleController extends Controller
             $per_page = config('pagination.items_per_page');
         }
 
-        return RoleResource::collection(Role::paginate($per_page));
+        return PermissionResource::collection(Permission::paginate($per_page));
     }
 
     /**
@@ -34,10 +35,10 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|alpha_dash|unique:roles,name',
+            'name' => 'required|alpha_dash|unique:permissions,name',
         ]);
 
-        return new RoleResource(Role::create($request->all()));
+        return new PermissionResource(Permission::create($request->all()));
     }
 
     /**
@@ -48,8 +49,8 @@ class RoleController extends Controller
      */
     public function show($id)
     {
-        $role = Role::find($id);
-        return new RoleResource($role);
+        $permission = Permission::find($id);
+        return new PermissionResource($permission);
     }
 
     /**
@@ -62,14 +63,14 @@ class RoleController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|alpha_dash|unique:roles,name,' . $id
+            'name' => 'required|alpha_dash|unique:permissions,name,' . $id
         ]);
 
-        $role = Role::find($id);
+        $permission = Permission::find($id);
 
         return response()->json([
-            "api_status" => $role->update($request->all()),
-            "data" => $role
+            "api_status" => $permission->update($request->all()),
+            "data" => $permission
         ], 200);
     }
 
@@ -81,28 +82,28 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        $role = Role::find($id);
+        $permission = Permission::find($id);
 
-        if(is_null($role)) {
+        if(is_null($permission)) {
             return response()->json([
                 "api_status" => false
             ], 404);
         }
 
         return response()->json([
-            "api_status" => $role->delete()
+            "api_status" => $permission->delete()
         ], 200);
     }
 
     public function assignment(Request $request) {
-        $user = User::find($request->user_id);
         $role = Role::find($request->role_id);
-        if(is_null($user) || is_null($role)){
+        $permission = Permission::find($request->permission_id);
+        if(is_null($role) || is_null($permission)){
             return response()->json([
                 "api_status" => false
             ], 404);            
         }
-        $user->assignRole($role);
+        $role->givePermissionTo($permission);
         return response()->json([
             "api_status" => true
         ], 200);
