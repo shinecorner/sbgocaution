@@ -35,8 +35,9 @@
                                     @vuetable:loaded="onLoaded"
                                   >    
                                 <template slot="c_contactformate" slot-scope="props">
-                                  <span class="name-div">{{ props.rowData.contact_formate }}</span>                                  
-                                  <span class="grey--text fs-12 fw-normal mb-2 d-block">{{ props.rowData.date }}</span>
+                                  <span class="primary-text">{{ props.rowData.contact_formate }}</span>                                  
+                                  <span class="grey--text secondary-text fs-12 fw-normal d-block">{{ props.rowData.date }}</span>
+                                  <div class="secondary-text fs-12">
                                   <v-tooltip top v-if="props.rowData.is_duplicate">
                                       <i class="ti-layout-accordion-merged" slot="activator"></i>
                                       <span>{{props.rowData.is_duplicate}}</span>
@@ -61,28 +62,27 @@
                                       <img height="12" :src="props.rowData.language_flag" slot="activator"/>
                                       <span>{{props.rowData.language}}</span>
                                   </v-tooltip>
+                                  </div>
                                 </template>
                                 <template slot="c_edit" slot-scope="props">
-                                    <a>
-                                        <span class="name-div centertext"><i class="ti-pencil-alt"></i></span>
-                                        <span class="grey--text fs-12 fw-normal d-block">{{ $t('message.crm.EDIT') }}</span>
+                                    <a>                                         
+                                        <span class="primary-text centertext"><v-icon size="18">ti-pencil-alt</v-icon></span>
+                                        <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.crm.EDIT') }}</span>
                                     </a>
                                 </template>
                                 <template slot="c_name" slot-scope="props">
-                                    <span class="name-div">{{ props.rowData.nachname }} {{ props.rowData.vorname }}</span>
-                                    <span v-if="props.rowData.company_name" class="grey--text fs-12 fw-normal d-block">{{ props.rowData.company_name }}</span>
-                                    <span v-if="props.rowData.anrede" class="grey--text fs-12 fw-normal d-block">{{ props.rowData.anrede }}</span>        
+                                    <span class="primary-text">{{ props.rowData.nachname }} {{ props.rowData.vorname }}</span>
+                                    <span v-if="props.rowData.company_name" class="grey--text fs-12 secondary-text fw-normal d-block">{{ props.rowData.company_name }}</span>
+                                    <span v-if="props.rowData.anrede" class="grey--text fs-12 secondary-text fw-normal d-block">{{ props.rowData.anrede }}</span>        
                                 </template>
-                                <template slot="c_address" slot-scope="props">
-                                    <div class="name-div">
-                                        <!--<span v-if="props.rowData.address" class="grey--text fs-12 fw-normal d-block">{{ props.rowData.address }}</span>-->
-                                        {{ props.rowData.plz }} {{ props.rowData.ort }}
-                                    </div>
+                                <template slot="c_address" slot-scope="props">                                    
+                                    <span class="primary-text" v-if="props.rowData.address">{{ props.rowData.address }}</span>
+                                    <span class="primary-text secondary-text">{{ props.rowData.plz }} {{ props.rowData.ort }}</span>                                    
                                 </template>
                                 <template slot="c_invoices" slot-scope="props">
                                     <span class="amount-div">{{ 'CHF 94.50' }}</span>
-                                    <span class="grey--text fs-12 fw-normal d-block">1 {{ $t('message.crm.CONTACT_QUOTE_TITLE') }}</span>
-                                    <span class="grey--text fs-12 fw-normal d-block">1 {{ $t('message.crm.TOTAL_INVOICES') }}</span>                                    
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">1 {{ $t('message.crm.CONTACT_QUOTE_TITLE') }}</span>
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">1 {{ $t('message.crm.TOTAL_INVOICES') }}</span>                                    
                                 </template>
                                 <template slot="c_statusdropdown" slot-scope="props">
                                     <v-menu offset-y>
@@ -100,18 +100,18 @@
                                     </v-menu>
                                 </template>
                                 <template slot="c_status" slot-scope="props">
-                                    <div :class="props.rowData.status_class.replace('label-status','column')">
-                                        <v-chip small :class="props.rowData.status_class" text-color="white"><span class="fs-12">{{props.rowData.status}}</span></v-chip>
+                                    <div :class="props.rowData.status_class.replace('label-status','column') + ' status-chips'">
+                                        <v-chip small :class="props.rowData.status_class" text-color="white">{{props.rowData.status}}</v-chip>
                                         
-                                        <div class="d-block">
+                                        <div>
                                             <v-tooltip top> 
-                                                <v-chip slot="activator" small dark class="fs-12" color="orange" text-color="white"><span class="fs-12">1</span></v-chip>
+                                                <v-chip slot="activator" small dark color="orange" text-color="white">1</v-chip>
                                                 <span>{{$t('message.crm.QUOTES')}}:&nbsp;{{$t('message.crm.STATUS_QUOTE_WAITING')}}</span>
                                             </v-tooltip>
                                         </div>
-                                        <div class="d-block">
+                                        <div>
                                             <v-tooltip top v-for="n in 5" v-bind:key="'invoice'+n"> 
-                                                <v-chip slot="activator" small dark class="fs-12" color="orange" text-color="white"><span class="fs-12">1</span></v-chip>
+                                                <v-chip slot="activator" small dark color="orange" text-color="white">1</v-chip>
                                                 <span>{{$t('message.crm.INVOICES')}}:&nbsp;{{$t('message.crm.ONLINE_PAYMENT_WAITING')}}</span>
                                             </v-tooltip>
                                         </div>
@@ -136,8 +136,8 @@
                                 </template>-->
                                 <template slot="c_addquote" slot-scope="props">
                                     <a>
-                                        <span class="name-div centertext"><i class="ti-plus"></i></span>
-                                        <span class="grey--text fs-12 fw-normal d-block">{{ $t('message.crm.CONTACT_QUOTE_TITLE') }}</span>
+                                        <span class="primary-text centertext"><v-icon size="18">ti-plus</v-icon></span>
+                                        <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.crm.CONTACT_QUOTE_TITLE') }}</span>
                                     </a>                                                                        
                                 </template>
                             </vuetable>
@@ -191,8 +191,8 @@ export default {
                 { title: this.$t('message.crm.ADDRESS'), name: "c_address" },
                 { title: this.$t('message.crm.TOTAL_INVOICES'), name: "c_invoices" },                
                 { title: "", name: "c_statusdropdown", dataClass: 'statusdropdown_column', titleClass:'statusdropdown_column' },
-                { title: this.$t('message.crm.STATUS'), name: "c_status"},
-                { title: this.$t('message.crm.LINKED_TO_USER'), name: "c_userlink", dataClass: "centertext"},
+                { title: this.$t('message.crm.STATUS'), name: "c_status", dataClass: 'status_quote_column', titleClass:'status_quote_column'},
+                { title: this.$t('message.crm.LINKED_TO_USER'), name: "c_userlink"},
                 //{ title: "", name: "c_action" },
                 { title: "", name: "c_addquote" },
             ],
@@ -294,6 +294,12 @@ export default {
 };
 </script>
 <style scoped>
+.contactlist >>> .status_quote_column{
+    padding: 0 0 0 8px !important;
+}
+.statusdropdown_column .v-icon{
+    font-size: 24px !important;
+}
 .status_dropdown >>> .v-list__tile{
     height: 30px !important;
     font-size: 0.75rem !important;
@@ -316,7 +322,7 @@ export default {
     padding: 8px;
     vertical-align: top;
 }
-.contactlist >>> .name-div, .amount-div {
+.contactlist >>> .primary-text, .amount-div {
     display: block;    
     font-weight: 400;
     line-height: 18px;
@@ -327,18 +333,28 @@ export default {
     text-decoration: none;
     white-space: nowrap;
 }
+.contactlist >>> .secondary-text{
+    margin-top: 4px;
+}
 .contactlist >>> td.statusdropdown_column, .contactlist >>> th.statusdropdown_column{
     padding: 8px 0;
     width: 10px;
 }
 .contactlist >>> .v-datatable .v-chip__content{
-    padding: 0 8px;
+    padding: 0 4px;
 }
 .contactlist >>> .v-datatable .centertext{
     text-align: center;
 }
 .contactlist >>> .v-chip--small{
-    height: 18px !important;
+    font-size: 10.998px;
+    height: 18px !important;    
     font-weight: bold;
+    padding: 2px;    
+    border-radius: 4px !important;
+    margin: 6px 1px 2px 1px;
+}
+.contactlist >>> .status-chips{
+    padding: 6px 4px;
 }
 </style>
