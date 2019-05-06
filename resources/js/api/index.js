@@ -20,9 +20,8 @@ let apiObject = axios.create({
         return response;
     }, function (error) {
     if (401 === error.response.status) {
-        router.push("/session/login");
-        return {};
-        //return Promise.reject(error);
+        router.push("/session/login");        
+        return Promise.reject(error);
     } else {
         return Promise.reject(error);
     }
