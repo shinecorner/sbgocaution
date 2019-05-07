@@ -78,4 +78,19 @@ class ConfigController extends Controller
             "api_status" => $config->delete()
         ], 200);
     }
+
+    public function updateAll(Request $request)
+    {
+        $status = true;
+        foreach($request->all() as $req_config){
+            $config = Config::find($req_config['id']);
+            if(!$config->update($req_config)){
+                $status = false;
+            }
+        }
+        return response()->json([
+            "api_status" => $status,
+            "message" => __('crm.CONFIG_SUCCESS')
+        ], 200);
+    }
 }

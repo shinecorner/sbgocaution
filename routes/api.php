@@ -30,6 +30,7 @@ Route::group([
     Route::post('user/role', 'RoleController@assignment');
     Route::post('role/permission', 'PermissionController@assignment');
     Route::resource('contacts', 'ContactController');
+    Route::put('configs/all','ConfigController@updateAll');
     Route::resource('configs', 'ConfigController');
     Route::resource('roles', 'RoleController');
     Route::resource('permissions', 'PermissionController');

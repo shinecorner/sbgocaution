@@ -50,6 +50,50 @@ class ConfigsTableSeeder extends Seeder
             	'option' => 'invoices.decimals',
             	'value' => 2
             ],
+            [
+                'option' => 'mail.from.name',
+                'value' => 'goCaution®'
+            ],
+            [
+                'option' => 'mail.from.address',
+                'value' => 'info@gocaution.ch'
+            ],
+            [
+                'option' => 'mail.driver',
+                'value' => 'log'
+            ],
+            [
+                'option' => 'mail.reply_to.name',
+                'value' => 'goCaution®'
+            ],
+            [
+                'option' => 'mail.reply_to.address',
+                'value' => 'info@gocaution.ch'
+            ],
+            [
+                'option' => 'mail.port',
+                'value' => '465'
+            ],
+            [
+                'option' => 'mail.encryption',
+                'value' => 'tls'
+            ],
+            [
+                'option' => 'mail.authentication',
+                'value' => 'Yes'
+            ],
+            [
+                'option' => 'mail.username',
+                'value' => 'null'
+            ],
+            [
+                'option' => 'mail.password',
+                'value' => 'null'
+            ],
+            [
+                'option' => 'general.robots',
+                'value' => 'No index, No follow'
+            ],
             
         ]);
         Artisan::call('config:cache');
