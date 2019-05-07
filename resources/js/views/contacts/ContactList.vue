@@ -18,7 +18,7 @@
                                 :heading="$t('message.crm.CONTACTS')"
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12"
-                        >                                
+                        >            
                                 <div class="v-table__overflow">
 				<vuetable ref="vuetable"
                                     api-url="api/contacts"
@@ -29,11 +29,15 @@
                                     pagination-path="pagination" 
                                     data-path="mydata"
                                     :append-params="moreParams"    
-                                    :per-page="perPage"  
+                                    :per-page="perPage" 
+                                    track-by="id"
                                     @vuetable:pagination-data="onPaginationData"
                                     @vuetable:loading="onLoading"        
                                     @vuetable:loaded="onLoaded"
-                                  >    
+                                  >                                                                     
+                                <template slot="prettycheck" slot-scope="props">
+                                    <v-checkbox v-model="checkedRows" :id="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
+                                </template>  
                                 <template slot="c_contactformate" slot-scope="props">
                                   <span class="primary-text">{{ props.rowData.contact_formate }}</span>                                  
                                   <span class="grey--text secondary-text fs-12 fw-normal d-block">{{ props.rowData.date }}</span>
@@ -160,13 +164,12 @@
 <script>
 import api from "Api";
 import { mapGetters } from "vuex";
-import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown, VuetableFieldCheckbox } from 'vuetable-2';
+import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
 export default {
     components: {
         Vuetable,
         VuetablePagination,
-        VuetablePaginationInfo,
-        VuetableFieldCheckbox
+        VuetablePaginationInfo        
     }, 
     watch: {
         selectedLocale: function(newVal, oldVal){
@@ -183,8 +186,9 @@ export default {
             moreParams: {},
             paginationComponent: 'vuetable-pagination',
             httpOptions: { headers: { Authorization: 'Bearer '+localStorage.getItem('accessToken') } },
+            checkedRows: [],
             fields: [  
-                {name: VuetableFieldCheckbox,   titleClass: 'chkbox_title',dataClass: 'chkbox_data center'},
+                {name: "prettycheck",   title: ''},
                 { title: this.$t('message.crm.CONTACT_ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
                 { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
                 { title: this.$t('message.crm.NAME'), name: "c_name" },
@@ -304,7 +308,7 @@ export default {
     height: 30px !important;
     font-size: 0.75rem !important;
 }
-.contactlist >>> .chkbox_title input{
+.contactlist >>> .chkbox_title{
     display: none;
 }
 .contactlist >>> table.v-datatable th{
