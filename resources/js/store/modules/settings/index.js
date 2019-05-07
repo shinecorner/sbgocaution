@@ -1,6 +1,8 @@
 /**
  * Settings Module
  */
+import Vue from 'vue'
+import api from 'Api'
 import {
 	languages,
 	sidebarBackgroundImages,
@@ -30,7 +32,8 @@ const state = {
 	selectedTheme: themes[0],                              // selected theme
 	headerFilters,                                         // header filters
 	activeHeaderFilter: headerFilters[1],                  // selected header filter
-	mobileSearchForm: false								   // Is Mobile Search Form Open
+	mobileSearchForm: false,								   // Is Mobile Search Form Open
+	configs: []
 }
 
 // getters
@@ -107,8 +110,8 @@ const getters = {
 
 // actions
 const actions = {
-        setServerHelpers(context, payload) {           
-            context.commit('serverHelpersHandler', payload);            
+    setServerHelpers(context, payload) {           
+        context.commit('serverHelpersHandler', payload);            
 	},        
 	darkModeHandler(context) {
 		context.commit('darkModeHandler');
@@ -152,14 +155,22 @@ const actions = {
 	},
 	toggleSearchForm(context) {
 		context.commit('toggleSearchFormHandler');
+	},
+	setConfigs(context){
+		api.get('/api/configs').then(response => context.commit('configs', response.data.data))
+	},
+	saveConfig(context, payload) {
+		api.put('/api/configs/all', state.configs).then(response => {
+			Vue.notify({ group: 'loggedIn', type: 'success', text: response.data.message })	
+		})
 	}
 }
 
 // mutations
 const mutations = {        
-        serverHelpersHandler(state, helpers) {                
-            localStorage.setItem('serverHelpers', JSON.stringify(helpers.serverhelpers));
-            state.serverHelpers = JSON.stringify(helpers.serverhelpers);
+    serverHelpersHandler(state, helpers) {                
+        localStorage.setItem('serverHelpers', JSON.stringify(helpers.serverhelpers));
+        state.serverHelpers = JSON.stringify(helpers.serverhelpers);
 	},        
 	darkModeHandler(state) {
 		state.darkMode = !state.darkMode;
@@ -216,6 +227,9 @@ const mutations = {
 	},
 	toggleSearchFormHandler(state) {
 		state.mobileSearchForm = !state.mobileSearchForm;
+	},
+	configs(state, configs) {
+		state.configs = configs
 	}
 }
 

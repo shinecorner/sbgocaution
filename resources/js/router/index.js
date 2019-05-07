@@ -7,6 +7,7 @@ import horizontalRoutes from './horizontal';
 import boxedRoutes from './boxed';
 import mini from './mini';
 import boxedV2 from './boxed-v2';
+import Full from 'Container/Full';
 
 // session components
 const SignUpOne = () => import('Views/session/SignUpOne');
@@ -14,6 +15,7 @@ const LoginOne = () => import('Views/session/LoginOne');
 const LockScreen = () => import('Views/session/LockScreen');
 const ForgotPassword = () => import('Views/session/ForgotPassword');
 const ResetPassword = () => import('Views/session/ResetPassword');
+const SettingPage = () => import('Views/settings/SettingPage');
 
 const Auth0CallBack = () => import('Components/Auth0Callback/Auth0Callback');
 
@@ -70,6 +72,20 @@ export default new Router({
 				title: 'message.resetPassword',
 				breadcrumb: null
 			}
+		},
+		{
+			path: '/settings',
+			component: Full,
+			children: [
+			  {
+			     path: '/settings',
+			     component: SettingPage,
+			     meta: {
+			        requiresAuth: true,
+			        title: 'message.crm.SETTINGS'            
+			     }
+			  },
+			],
 		}
 	]
 })
