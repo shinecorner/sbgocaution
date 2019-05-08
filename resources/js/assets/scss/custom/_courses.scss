@@ -524,13 +524,14 @@ iframe {
 		display: block;
 	}
 }
-.sidebar-label {
-	position: absolute;
-	background: #e53935;
+.sidebar-label {	
+	background: $success;
 	color: #fff;
-	padding: .1rem .2rem;
-	border-radius: 5px;
-	font-size: .6rem;
+	padding: 2px 4px;
+	border-radius: 4px;
+	font-size: 10.998px;
+        font-weight: bold;
+        margin: 0 2px;
 	top: 16px;
 	right: 40px;
 	letter-spacing: 1px;

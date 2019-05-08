@@ -19,7 +19,7 @@
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12"
                         >            
-                                <div class="v-table__overflow">
+                                <div class="v-table__overflow list-table-container">
 				<vuetable ref="vuetable"
                                     api-url="api/contacts"
                                     :http-fetch="contactFetch"
@@ -298,17 +298,6 @@ export default {
 };
 </script>
 <style scoped>
-.contactlist >>> table.v-table tbody td.vuetable-slot{
-    vertical-align: top;
-    padding: 8px;
-    line-height: 18px;
-    text-align: left;        
-}
-.contactlist >>> table.v-table thead th{
-    text-align: left;
-    padding: 8px;
-}
-.contactlist >>> table td.chkbox_column, .contactlist >>> table th.chkbox_column{
-    padding: 8px 16px !important;
-}
+
+
 </style>
