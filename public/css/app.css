@@ -11762,11 +11762,62 @@ a.text-dark:focus {
   background-color: #066938 !important;
 }
 
-.vuetable-th-slot-c_invoices {
-  padding: 24px 6px !important;
+.status_quote_column {
+  padding: 0 0 0 8px !important;
 }
 
-.contactlistth.vuetable-th-slot-c_contactformate {
-  width: 10% !important;
+.status-chips {
+  padding: 6px 4px;
+}
+
+.secondary-text {
+  margin-top: 4px;
+}
+
+.primary-text,
+.amount-div {
+  display: block;
+  font-weight: 400;
+  line-height: 18px;
+  outline: medium none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.status_dropdown .v-list__tile {
+  height: 30px !important;
+  font-size: 0.75rem !important;
+}
+
+table.v-table tbody .v-chip .v-chip__content {
+  padding: 0 4px;
+}
+
+table.v-table tbody .v-chip--small {
+  font-size: 10.998px;
+  height: 18px !important;
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 4px !important;
+  margin: 6px 1px 2px 1px;
+}
+
+table.v-table tbody td.statusdropdown_column,
+table.v-table thead th.statusdropdown_column {
+  padding: 8px 0 !important;
+  width: 10px;
+}
+
+.contact_flag {
+  position: relative;
+  top: -1px;
+  left: 1.5px;
+}
+
+.column_icon_container {
+  width: 125px;
 }
 

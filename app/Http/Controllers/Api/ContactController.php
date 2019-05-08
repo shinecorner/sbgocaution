@@ -33,7 +33,7 @@ class ContactController extends Controller
             $this->getStatusList($data, $contact_status);
         }
 
-        return ContactResource::collection(Contact::paginate($per_page))->additional($data);
+        return ContactResource::collection(Contact::latest()->paginate($per_page))->additional($data);
     }
 
     /**
