@@ -1,6 +1,6 @@
 <template>
     <div class="contactlist">
-        <page-title-bar></page-title-bar>
+        <!--<page-title-bar></page-title-bar>-->
             <app-section-loader :status="loading"></app-section-loader>
 		<v-container fluid grid-list-xl py-0>
                     <v-layout row wrap>
@@ -175,6 +175,7 @@ export default {
         selectedLocale: function(newVal, oldVal){
             //console.log(newVal);
             //console.log(this.$t('message.crm.CONTACT_ID'));
+            this.$refs.vuetable.refresh();
             this.reinitializeFields();
         }
     },
