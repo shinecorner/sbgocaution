@@ -3,109 +3,135 @@
 		<page-title-bar></page-title-bar>
 		<v-container fluid grid-list-xl pt-0>
 			<v-layout row wrap>
-				<v-tabs fixed-tabs>
-					<v-tab
-						v-for="item in items"
-						:key="item"
-					>
-						{{item}}
-					</v-tab>
-					<v-tab-item>
-						<v-form v-if="configs.length">
-							<v-select v-bind:items="length_options" v-model="configs[1].value" :label="$t('message.crm.ITEMS_PER_PAGE')"></v-select>
-						</v-form>
-					</v-tab-item>
-					<v-tab-item>
-						<v-form v-if="configs.length">
-							<v-select hide-details v-bind:items="robot_options" v-model="configs[19].value" :label="$t('message.crm.ROBOTS')"></v-select>
-						</v-form>
-					</v-tab-item>
-					<v-tab-item>
-						<v-form v-if="configs.length">
-							<v-text-field
-								:label="$t('message.crm.INVOICE_DATE_FORMAT')"
-								v-model="configs[0].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.INVOICE_NUMBER_FORMAT')"
-								v-model="configs[2].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.QUOTE_NUMBER_FORMAT')"
-								v-model="configs[3].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.CONTACT_NUMBER_FORMAT')"
-								v-model="configs[4].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.INVOICE_NUM_DIGITS')"
-								v-model="configs[5].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.DECPOINTS')"
-								v-model="configs[6].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.THOUSANDS')"
-								v-model="configs[7].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.DECIMALS')"
-								v-model="configs[8].value"
-								required></v-text-field>
-						</v-form>
-					</v-tab-item>
-					<v-tab-item>
-						<v-form v-if="configs.length">
-							<v-select  hide-details v-bind:items="mail_options" :label="$t('message.crm.SEND_MAILS')" v-model="configs[11].value"></v-select>
-							<v-text-field
-								:label="$t('message.crm.FROM_NAME_ON_EMAILS')"
-								v-model="configs[9].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.FROM_EMAIL_ON_EMAILS')"
-								v-model="configs[10].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.REPLY_ADDRESS')"
-								v-model="configs[12].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.REPLY_NAME')"
-								v-model="configs[13].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.PORT')"
-								v-model="configs[14].value"
-								required></v-text-field>
-							<v-text-field
-								:label="$t('message.crm.SMTP_SECURITY')"
-								v-model="configs[15].value"
-								required></v-text-field>
-							<v-switch 
-								:label="$t('message.crm.SMTP_AUTHENTICATION')"
-								v-model="configs[16].value"
-								color="success"
-								value="Yes"></v-switch>
-							<v-text-field
-								:label="$t('message.crm.SMTP_USER')"
-								v-model="configs[17].value"
-								required></v-text-field>
-							<v-text-field
-								type="password"
-								:label="$t('message.crm.SMTP_PASSWORD')"
-								v-model="configs[18].value"
-								required></v-text-field>
-							
-						</v-form>
-					</v-tab-item>
-				</v-tabs>
-			</v-layout>
-			<v-layout>
-				<v-btn color="success" @click="saveConfig()">
-					{{$t("message.crm.SUBMIT")}}
-				</v-btn>
+				<app-card colClasses="xs12 md12" customClasses="mb-30">
+					<v-tabs left>
+						<v-tab
+							v-for="item in items"
+							:key="item"
+						>
+							{{item}}
+						</v-tab>
+						<v-tab-item>
+							<v-form v-model="form1.valid" ref="form" lazy-validation>
+								<v-layout row wrap>
+									<v-flex sm6 md4 lg4>
+										<v-text-field
+											:label="$t('message.crm.INVOICE_DATE_FORMAT')"
+											v-model="configs['date_format.display_date_format']"
+											:rules="form1.dateFormat"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.INVOICE_NUMBER_FORMAT')"
+											v-model="configs['invoices.invoice_num_format']"
+											:rules="form1.invoiceNumberFormat"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.QUOTE_NUMBER_FORMAT')"
+											v-model="configs['invoices.quote_num_format']"
+											:rules="form1.quoteNumberFormat"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.CONTACT_NUMBER_FORMAT')"
+											v-model="configs['invoices.contact_num_format']"
+											:rules="form1.contactNumberFormat"
+											required></v-text-field>
+									</v-flex>
+									<v-flex sm6 md4 lg4>
+										<v-text-field
+											type="number"
+											:label="$t('message.crm.INVOICE_NUM_DIGITS')"
+											v-model="configs['invoices.invoice_number_digits']"
+											:rules="form1.invoiceNumberDigits"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.DECPOINTS')"
+											v-model="configs['invoices.decpoint']"
+											:rules="form1.decpoint"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.THOUSANDS')"
+											v-model="configs['invoices.thousands']"
+											:rules="form1.thousands"
+											required></v-text-field>
+										<v-text-field
+											type="number"
+											:label="$t('message.crm.DECIMALS')"
+											v-model="configs['invoices.decimals']"
+											:rules="form1.decimals"
+											required></v-text-field>
+									</v-flex>
+									<v-flex sm6 md4 lg4>
+										<v-select v-bind:items="length_options" v-model="configs['pagination.items_per_page']" :label="$t('message.crm.ITEMS_PER_PAGE')"></v-select>
+										<v-select v-bind:items="robot_options" v-model="configs['general.robots']" :label="$t('message.crm.ROBOTS')"></v-select>
+									</v-flex>
+								</v-layout>
+								<v-btn color="success" @click="form1Submit()">
+									{{$t("message.crm.SUBMIT")}}
+								</v-btn>
+							</v-form>
+						</v-tab-item>
+						<v-tab-item>
+							<v-form v-model="form2.valid" ref="form" lazy-validation>
+								<v-layout row wrap>
+									<v-flex sm6 md4 lg4>
+										<v-select hide-details v-bind:items="mail_options" :label="$t('message.crm.SEND_MAILS')" v-model="configs['mail.driver']"></v-select>
+										<v-text-field
+											:label="$t('message.crm.FROM_NAME_ON_EMAILS')"
+											v-model="configs['mail.from.name']"
+											:rules="form2.mailFromName"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.FROM_EMAIL_ON_EMAILS')"
+											v-model="configs['mail.from.address']"
+											:rules="form2.mailFromAddress"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.REPLY_ADDRESS')"
+											v-model="configs['mail.reply_to.address']"
+											:rules="form2.replyToAddress"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.REPLY_NAME')"
+											v-model="configs['mail.reply_to.name']"
+											:rules="form2.replyToName"
+											required></v-text-field>
+									</v-flex>
+									<v-flex sm6 md4 lg4>
+										<v-text-field
+											:label="$t('message.crm.PORT')"
+											v-model="configs['mail.port']"
+											:rules="form2.port"
+											required></v-text-field>
+										<v-text-field
+											:label="$t('message.crm.SMTP_SECURITY')"
+											v-model="configs['mail.encryption']"
+											:rules="form2.encryption"
+											required></v-text-field>
+										<v-switch 
+											:label="$t('message.crm.SMTP_AUTHENTICATION')"
+											v-model="configs['mail.authentication']"
+											color="success"
+											value="Yes"></v-switch>
+										<v-text-field
+											:label="$t('message.crm.SMTP_USER')"
+											v-model="configs['mail.username']"
+											:rules="form2.username"
+											required></v-text-field>
+										<v-text-field
+											type="password"
+											:label="$t('message.crm.SMTP_PASSWORD')"
+											v-model="configs['mail.password']"
+											:rules="form2.password"
+											required></v-text-field>
+									</v-flex>
+								</v-layout>
+								<v-btn color="success" @click="form2Submit()">
+									{{$t("message.crm.SUBMIT")}}
+								</v-btn>
+							</v-form>
+						</v-tab-item>
+					</v-tabs>
+				</app-card>
 			</v-layout>
 		</v-container>
 	</div>
@@ -116,10 +142,66 @@ import { mapState, mapActions  } from "vuex";
 export default {
 	data() {
 		return {
-			items: ["Global", "General", "CRM", "Email"],
+			items: ["CRM", "Email"],
 			robot_options: ['Index, Follow', 'No index, Follow', 'Index, No follow', 'No index, No follow'],
 			mail_options: ['log','smtp'],
 			length_options: ['5', '10', '20', '25', '30', '50', '100', '200', '500'],
+	      	form1: {
+		        valid: false,
+		        dateFormat: [
+		          	v => !!v || "Date Format is required"
+		        ],
+		        invoiceNumberFormat: [
+		        	v => !!v || "Invoice Number Format is required"
+		        ],
+		        quoteNumberFormat: [
+		        	v => !!v || "Quote Number Format is required"
+		        ],
+		        contactNumberFormat: [
+		        	v => !!v || "Contact Number Format is required"
+		        ],
+		        invoiceNumberDigits: [
+		        	v => !!v || "Invoice Number Digits is required"
+		        ],
+		        decpoint: [
+		        	v => !!v || "Decpoint is required"
+		        ],
+		        thousands: [
+		        	v => !!v || "Thousands is required"
+		        ],
+		        decimals: [
+		        	v => !!v || "Decimals is required"
+		        ]
+	      	},
+	      	form2:{
+	      		mailFromName: [
+	      			v => !!v || "Mail from name is required"
+	      		],
+	      		mailFromAddress: [
+	      			v => !!v || "Mail from address is required",
+		          	v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || "E-mail must be valid"
+	      		],
+	      		replyToName: [
+	      			v => !!v || "Reply to name is required"
+	      		],
+	      		replyToAddress: [
+	      			v => !!v || "Reply to address is required",
+	      			v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || "E-mail must be valid"
+	      		],
+	      		port: [
+	      			v => !!v || "Port is required"
+	      		],
+	      		encryption: [
+	      			v => !!v || "Encryption is required"
+	      		],
+	      		username: [
+	      			v => !!v || "Username is required"
+	      		],
+	      		password: [
+	      			v => !!v || "Password is required"
+	      		],
+	      		
+	      	}
 		};
 	},
 	computed: {
@@ -131,7 +213,20 @@ export default {
 		this.setConfigs()
 	},
 	methods: {
-		...mapActions(["setConfigs", "saveConfig"])
+		...mapActions(["setConfigs", "saveConfig"]),
+		form1Submit(){
+			this.saveConfig();
+		},
+		form1Submit(){
+			if (this.$refs.form.validate()) {
+				this.saveConfig();
+			}
+		},
+		form2Submit(){
+			if (this.$refs.form.validate()) {
+				this.saveConfig();
+			}
+		}
 	}
 };
 </script>

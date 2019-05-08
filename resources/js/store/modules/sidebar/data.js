@@ -7,9 +7,17 @@ export const menus = {
 			active: true,
 			label: 'Old',
 			items: [
-				{ title: 'message.crm.CONTACTS', path: '/contacts', exact: true, label: 'Old' },
-				{ title: 'message.crm.SETTINGS', path: '/settings', exact: true, label: 'Old' }
+				{ title: 'message.crm.CONTACTS', path: '/contacts', exact: true, label: 'Old' }
 			]
-		}				
+		},
+		{
+			action: 'zmdi-wrench',
+			title: 'message.crm.OPTIONS',
+			active: false,
+			label: 'Old',
+			items: [
+				{ title: 'message.crm.OPTIONS', path: '/settings', exact: true, label: 'Old' }
+			]
+		}		
 	],	
 }
