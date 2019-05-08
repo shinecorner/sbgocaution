@@ -21,7 +21,7 @@
 	import {
 		mapGetters
 	} from "vuex";
-	
+	import api from "Api";
 	export default {
 		computed: {
 			...mapGetters(["selectedLocale", "languages"])
@@ -30,6 +30,7 @@
 			changeLanguage(languagecode) {
 				this.$i18n.locale = languagecode;
 				this.$store.dispatch("changeLanguage", languagecode);
+                                api.defaults.headers.common['X-localization'] = localStorage.getItem('selectedLocale');
 			}
 		}
 	};

@@ -1,6 +1,6 @@
 <template>
     <div class="contactlist">
-        <page-title-bar></page-title-bar>
+        <!--<page-title-bar></page-title-bar>-->
             <app-section-loader :status="loading"></app-section-loader>
 		<v-container fluid grid-list-xl py-0>
                     <v-layout row wrap>
@@ -36,7 +36,7 @@
                                     @vuetable:loaded="onLoaded"
                                   >                                                                     
                                 <template slot="prettycheck" slot-scope="props">
-                                    <v-checkbox v-model="checkedRows" :id="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
+                                    <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                                 </template>  
                                 <template slot="c_contactformate" slot-scope="props">
                                   <span class="primary-text">{{ props.rowData.contact_formate }}</span>                                  
@@ -175,6 +175,7 @@ export default {
         selectedLocale: function(newVal, oldVal){
             //console.log(newVal);
             //console.log(this.$t('message.crm.CONTACT_ID'));
+            this.$refs.vuetable.refresh();
             this.reinitializeFields();
         }
     },
