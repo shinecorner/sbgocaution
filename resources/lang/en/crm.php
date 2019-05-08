@@ -10,6 +10,7 @@ return [
     'LINKED_TO_USER' => 'User',
     'RC_QUOTE_TOOLTIP' => 'Is interested in a PH offer.',
     'CALL_LEAD_SOURCE_TOOLTIP' => 'Call center',
+    'SEND_OFFER_BY_POST_TOOLTIP' => 'Offer by post',
     'PDF_IL_MAN'=>'Mr',
     'PDF_IL_WOMEN'=>'Mrs',
     'PDF_IL_COMPANY'=>'Company',

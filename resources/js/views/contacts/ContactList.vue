@@ -40,37 +40,37 @@
                                 </template>  
                                 <template slot="c_contactformate" slot-scope="props">
                                   <span class="primary-text">{{ props.rowData.contact_formate }}</span>                                  
-                                  <span class="grey--text secondary-text fs-12 fw-normal d-block">{{ props.rowData.date }}</span>
-                                  <div class="secondary-text fs-12">
-                                  <v-tooltip top v-if="props.rowData.is_duplicate">
-                                      <i class="ti-layout-accordion-merged" slot="activator"></i>
-                                      <span>{{props.rowData.is_duplicate}}</span>
-                                  </v-tooltip>
-                                  <v-tooltip top v-if="props.rowData.duplicateEmail">
-                                      <i class="ti-email" slot="activator"></i>
-                                      <span>{{props.rowData.duplicateEmail}}</span>
-                                  </v-tooltip>
-                                  <v-tooltip top v-if="props.rowData.rc_quote">
-                                      <i class="ti-check" slot="activator"></i>
-                                      <span>{{$t('message.crm.RC_QUOTE_TOOLTIP')}}</span>
-                                  </v-tooltip>
-                                  <v-tooltip top v-if="props.rowData.call_lead_source">
-                                      <i class="ti-headphone" slot="activator"></i>
+                                  <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.date }}</span>
+                                  <div class="pt-2 column_icon_container">
+                                    <v-tooltip top v-if="props.rowData.is_duplicate">                                        
+                                        <v-icon color="orange darken-2" size="18" slot="activator">zmdi-alert-triangle</v-icon>
+                                        <span>{{props.rowData.is_duplicate}}</span>
+                                    </v-tooltip>
+                                    <v-tooltip top v-if="props.rowData.duplicateEmail">                                        
+                                        <v-icon color="red darken-2" size="18" slot="activator">zmdi-email</v-icon>
+                                        <span>{{props.rowData.duplicateEmail}}</span>
+                                    </v-tooltip>
+                                    <v-tooltip top v-if="props.rowData.rc_quote">
+                                        <v-icon color="green darken-2" size="18" slot="activator">zmdi-check-square</v-icon>
+                                        <span>{{$t('message.crm.RC_QUOTE_TOOLTIP')}}</span>
+                                    </v-tooltip>
+                                    <v-tooltip top v-if="props.rowData.call_lead_source">                                    
+                                        <v-icon color="purple darken-2" size="18" slot="activator">zmdi-phone</v-icon>
                                       <span>{{$t('message.crm.CALL_LEAD_SOURCE_TOOLTIP')}}</span>
-                                  </v-tooltip>
-                                  <v-tooltip top v-if="props.rowData.send_offer_by_post">
-                                      <i class="ti-headphone" slot="activator"></i>
-                                      <span>{{$t('message.crm.CALL_LEAD_SOURCE_TOOLTIP')}}</span>
-                                  </v-tooltip>
-                                  <v-tooltip top v-if="props.rowData.language_flag">
-                                      <img height="12" :src="props.rowData.language_flag" slot="activator"/>
-                                      <span>{{props.rowData.language}}</span>
-                                  </v-tooltip>
+                                    </v-tooltip>
+                                    <v-tooltip top v-if="props.rowData.send_offer_by_post">
+                                        <v-icon color="blue darken-2" size="18" slot="activator">zmdi-email</v-icon>
+                                        <span>{{$t('message.crm.SEND_OFFER_BY_POST_TOOLTIP')}}</span>
+                                    </v-tooltip>
+                                    <v-tooltip top v-if="props.rowData.language_flag">
+                                        <img class="contact_flag" height="12" :src="props.rowData.language_flag" slot="activator"/>
+                                        <span>{{props.rowData.language}}</span>
+                                    </v-tooltip>
                                   </div>
                                 </template>
                                 <template slot="c_edit" slot-scope="props">
                                     <a>                                         
-                                        <span class="primary-text centertext"><v-icon size="18">ti-pencil-alt</v-icon></span>
+                                        <span class="primary-text text-xs-center"><v-icon size="18">ti-pencil-alt</v-icon></span>
                                         <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.crm.EDIT') }}</span>
                                     </a>
                                 </template>
@@ -90,7 +90,7 @@
                                 </template>
                                 <template slot="c_statusdropdown" slot-scope="props">
                                     <v-menu offset-y>
-                                        <v-icon medium slot="activator">zmdi-caret-down-circle</v-icon>
+                                        <v-icon size="24" slot="activator">zmdi-caret-down-circle</v-icon>
                                         <v-list>
                                             <v-list-tile
                                               class="status_dropdown"
@@ -140,7 +140,7 @@
                                 </template>-->
                                 <template slot="c_addquote" slot-scope="props">
                                     <a>
-                                        <span class="primary-text centertext"><v-icon size="18">ti-plus</v-icon></span>
+                                        <span class="primary-text text-xs-center"><v-icon size="18">ti-plus</v-icon></span>
                                         <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.crm.CONTACT_QUOTE_TITLE') }}</span>
                                     </a>                                                                        
                                 </template>
@@ -188,7 +188,7 @@ export default {
             httpOptions: { headers: { Authorization: 'Bearer '+localStorage.getItem('accessToken') } },
             checkedRows: [],
             fields: [  
-                {name: "prettycheck",   title: ''},
+                {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
                 { title: this.$t('message.crm.CONTACT_ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
                 { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
                 { title: this.$t('message.crm.NAME'), name: "c_name" },
@@ -298,67 +298,17 @@ export default {
 };
 </script>
 <style scoped>
-.contactlist >>> .status_quote_column{
-    padding: 0 0 0 8px !important;
-}
-.statusdropdown_column .v-icon{
-    font-size: 24px !important;
-}
-.status_dropdown >>> .v-list__tile{
-    height: 30px !important;
-    font-size: 0.75rem !important;
-}
-.contactlist >>> .chkbox_title{
-    display: none;
-}
-.contactlist >>> table.v-datatable th{
-    text-align: left;
-    padding: 8px;
-}
-.contactlist >>> td.vuetable-slot{
+.contactlist >>> table.v-table tbody td.vuetable-slot{
     vertical-align: top;
     padding: 8px;
     line-height: 18px;
     text-align: left;        
 }
-.contactlist >>> th.chkbox_data, .contactlist >>> td.chkbox_data{    
-    width: 10px;
+.contactlist >>> table.v-table thead th{
+    text-align: left;
     padding: 8px;
-    vertical-align: top;
 }
-.contactlist >>> .primary-text, .amount-div {
-    display: block;    
-    font-weight: 400;
-    line-height: 18px;
-    outline: medium none;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-    text-decoration: none;
-    white-space: nowrap;
-}
-.contactlist >>> .secondary-text{
-    margin-top: 4px;
-}
-.contactlist >>> td.statusdropdown_column, .contactlist >>> th.statusdropdown_column{
-    padding: 8px 0;
-    width: 10px;
-}
-.contactlist >>> .v-datatable .v-chip__content{
-    padding: 0 4px;
-}
-.contactlist >>> .v-datatable .centertext{
-    text-align: center;
-}
-.contactlist >>> .v-chip--small{
-    font-size: 10.998px;
-    height: 18px !important;    
-    font-weight: bold;
-    padding: 2px;    
-    border-radius: 4px !important;
-    margin: 6px 1px 2px 1px;
-}
-.contactlist >>> .status-chips{
-    padding: 6px 4px;
+.contactlist >>> table td.chkbox_column, .contactlist >>> table th.chkbox_column{
+    padding: 8px 16px !important;
 }
 </style>
