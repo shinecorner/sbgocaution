@@ -211,7 +211,8 @@ export default {
             "SMTP_SECURITY": "SMTP-Sicherheit",
             "SMTP_AUTHENTICATION": "SMTP-Authentifizierung",
             "SMTP_USER": "Benutzer",
-            "SMTP_PASSWORD": "Passwort"
+            "SMTP_PASSWORD": "Passwort",
+            "OPTIONS": "Optionen"
         }
     },
     "en": {
@@ -426,7 +427,8 @@ export default {
             "SMTP_SECURITY": "SMTP Security",
             "SMTP_AUTHENTICATION": "SMTP Authentication",
             "SMTP_USER": "user",
-            "SMTP_PASSWORD": "password"
+            "SMTP_PASSWORD": "password",
+            "OPTIONS": "Options"
         }
     },
     "fr": {
@@ -641,7 +643,8 @@ export default {
             "SMTP_SECURITY": "Sécurité SMTP",
             "SMTP_AUTHENTICATION": "Authentification SMTP",
             "SMTP_USER": "Utilisateur",
-            "SMTP_PASSWORD": "Mot de passe"
+            "SMTP_PASSWORD": "Mot de passe",
+            "OPTIONS": "Possibilités"
         }
     },
     "it": {
@@ -856,7 +859,8 @@ export default {
             "SMTP_SECURITY": "Sicurezza SMTP",
             "SMTP_AUTHENTICATION": "Autenticazione SMTP",
             "SMTP_USER": "Utente",
-            "SMTP_PASSWORD": "La password"
+            "SMTP_PASSWORD": "La password",
+            "OPTIONS": "Opzioni"
         }
     }
 }

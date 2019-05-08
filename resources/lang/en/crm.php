@@ -88,5 +88,6 @@ return [
     'SMTP_SECURITY' => 'SMTP Security',
     'SMTP_AUTHENTICATION' => 'SMTP Authentication',
     'SMTP_USER' => 'user',
-    'SMTP_PASSWORD' => 'password'
+    'SMTP_PASSWORD' => 'password',
+    'OPTIONS' => 'Options',
 ];
