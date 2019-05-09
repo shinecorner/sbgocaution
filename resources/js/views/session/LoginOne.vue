@@ -102,9 +102,9 @@ export default {
       fetchLanguage: 'de',
       languageItems: [
              { name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de', flag: '/static/flag-icons/de.png' },
-             { name: this.$t('message.crm.ORG_LANGUAGE_EN'), locale: 'en', flag: '/static/flag-icons/en.png' },
              { name: this.$t('message.crm.ORG_LANGUAGE_FR'), locale: 'fr', flag: '/static/flag-icons/fr.png' },
              { name: this.$t('message.crm.ORG_LANGUAGE_IT'), locale: 'it', flag: '/static/flag-icons/it.png' },
+             { name: this.$t('message.crm.ORG_LANGUAGE_EN'), locale: 'en', flag: '/static/flag-icons/en.png' },                          
         ]
     };
   },
