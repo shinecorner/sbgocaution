@@ -12,11 +12,11 @@ if (!function_exists('getUniqueNum')) {
      *
      * */
     function getUniqueNum($real_invoice_num, $type = 1){
-        if($type == 1) $format = config('invoices.invoice_num_format');
-        elseif($type == 2) $format = config('invoices.quote_num_format');
-        elseif($type == 3) $format = config('invoices.contact_num_format');
+        if($type == 1) $format = config('crm.invoice_num_format');
+        elseif($type == 2) $format = config('crm.quote_num_format');
+        elseif($type == 3) $format = config('crm.contact_num_format');
 
-        $real_invoice_num = str_pad($real_invoice_num, config('invoices.invoice_number_digits'), '0', STR_PAD_LEFT);
+        $real_invoice_num = str_pad($real_invoice_num, config('crm.invoice_number_digits'), '0', STR_PAD_LEFT);
 
         $string = str_replace("[num]", $real_invoice_num, $format);
         $string = str_replace("[yyyy]", date("Y"), $string);
@@ -113,9 +113,9 @@ if(!function_exists('roundTo5')){
 if(!function_exists('format')){
 
     function format($number, $before = "", $after = ""){
-        $decpoint = config('invoices.decpoint');
-        $thousands = config('invoices.thousands');
-        $decimals = config('invoices.decimals');
+        $decpoint = config('crm.decpoint');
+        $thousands = config('crm.thousands');
+        $decimals = config('crm.decimals');
         $number = roundTo5($number);
         return $before  . number_format($number, $decimals, $decpoint, $thousands)  . $after ;
     }

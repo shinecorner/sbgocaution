@@ -12,60 +12,67 @@
 							{{item}}
 						</v-tab>
 						<v-tab-item class="mt-3">
-							<v-form v-model="form1.valid" ref="form" lazy-validation>
+							<v-form v-model="form1.valid" ref="form1" lazy-validation>
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
 											:label="$t('message.crm.INVOICE_DATE_FORMAT')"
-											v-model="configs['date_format.display_date_format']"
+											v-model="configs['crm.display_date_format']"
 											:rules="form1.dateFormat"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.crm.INVOICE_NUMBER_FORMAT')"
-											v-model="configs['invoices.invoice_num_format']"
-											:rules="form1.invoiceNumberFormat"
+											:label="$t('message.crm.CONTACT_NUM_FORMAT')"
+											v-model="configs['crm.contact_num_format']"
+											:rules="form1.contact_num_format"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.crm.QUOTE_NUMBER_FORMAT')"
-											v-model="configs['invoices.quote_num_format']"
-											:rules="form1.quoteNumberFormat"
+											:label="$t('message.crm.INVOICE_NUMBER_FORMAT')"
+											v-model="configs['crm.invoice_num_format']"
+											:rules="form1.invoiceNumberFormat"
 											required></v-text-field>
 									</v-flex>
 								</v-layout>
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
+											:label="$t('message.crm.QUOTE_NUMBER_FORMAT')"
+											v-model="configs['crm.quote_num_format']"
+											:rules="form1.quoteNumberFormat"
+											required></v-text-field>
+									</v-flex>
+									<v-flex sm6 md4 lg4>
+										<v-text-field
 											type="number"
 											:label="$t('message.crm.INVOICE_NUM_DIGITS')"
-											v-model="configs['invoices.invoice_number_digits']"
+											v-model="configs['crm.invoice_number_digits']"
 											:rules="form1.invoiceNumberDigits"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
 											:label="$t('message.crm.DECPOINTS')"
-											v-model="configs['invoices.decpoint']"
+											v-model="configs['crm.decpoint']"
 											:rules="form1.decpoint"
-											required></v-text-field>
-									</v-flex>
-									<v-flex sm6 md4 lg4>
-										<v-text-field
-											:label="$t('message.crm.THOUSANDS')"
-											v-model="configs['invoices.thousands']"
-											:rules="form1.thousands"
 											required></v-text-field>
 									</v-flex>
 								</v-layout>
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
-										<v-select v-bind:items="length_options" v-model="configs['pagination.items_per_page']" :label="$t('message.crm.ITEMS_PER_PAGE')"></v-select>
+										<v-text-field
+											:label="$t('message.crm.THOUSANDS')"
+											v-model="configs['crm.thousands']"
+											:rules="form1.thousands"
+											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
-										<v-select v-bind:items="robot_options" v-model="configs['general.robots']" :label="$t('message.crm.ROBOTS')"></v-select>
+										<v-select v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('message.crm.ITEMS_PER_PAGE')"></v-select>
+									</v-flex>
+									<v-flex sm6 md4 lg4>
+										<v-select v-bind:items="robot_options" v-model="configs['crm.robots']" :label="$t('message.crm.ROBOTS')"></v-select>
 									</v-flex>
 								</v-layout>
 								<v-btn color="success" @click="form1Submit()">
@@ -74,7 +81,7 @@
 							</v-form>
 						</v-tab-item>
 						<v-tab-item class="mt-3">
-							<v-form v-model="form2.valid" ref="form" lazy-validation>
+							<v-form v-model="form2.valid" ref="form2" lazy-validation>
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-select hide-details v-bind:items="mail_options" :label="$t('message.crm.SEND_MAILS')" v-model="configs['mail.driver']"></v-select>
@@ -176,6 +183,9 @@ export default {
 		        dateFormat: [
 		          	v => !!v || "Date Format is required"
 		        ],
+		        contact_num_format:[
+		        	v => !!v || "Contact Number Format is required"
+		        ],
 		        invoiceNumberFormat: [
 		        	v => !!v || "Invoice Number Format is required"
 		        ],
@@ -240,15 +250,12 @@ export default {
 	methods: {
 		...mapActions(["setConfigs", "saveConfig"]),
 		form1Submit(){
-			this.saveConfig();
-		},
-		form1Submit(){
-			if (this.$refs.form.validate()) {
+			if (this.$refs.form1.validate()) {
 				this.saveConfig();
 			}
 		},
 		form2Submit(){
-			if (this.$refs.form.validate()) {
+			if (this.$refs.form2.validate()) {
 				this.saveConfig();
 			}
 		}

@@ -15,39 +15,39 @@ class ConfigsTableSeeder extends Seeder
     	DB::table('configs')->truncate();
         DB::table('configs')->insert([
             [
-            	'option' => 'date_format.display_date_format',
+            	'option' => 'crm.display_date_format',
             	'value' => 'd.m.Y H:i:s'
             ],
             [
-            	'option' => 'pagination.items_per_page',
+            	'option' => 'crm.items_per_page',
             	'value' => 20
             ],
             [
-            	'option' => 'invoices.invoice_num_format',
+            	'option' => 'crm.invoice_num_format',
             	'value' => '[yyyy]-[num]'
             ],
             [
-            	'option' => 'invoices.quote_num_format',
+            	'option' => 'crm.quote_num_format',
             	'value' => '[yyyy]-[num]'
             ],
             [
-            	'option' => 'invoices.contact_num_format',
+            	'option' => 'crm.contact_num_format',
             	'value' => 'KD-[yyyy][mm]150[num]'
             ],
             [
-            	'option' => 'invoices.invoice_number_digits',
+            	'option' => 'crm.invoice_number_digits',
             	'value' => 0
             ],
             [
-            	'option' => 'invoices.decpoint',
+            	'option' => 'crm.decpoint',
             	'value' => '.'
             ],
             [
-            	'option' => 'invoices.thousands',
+            	'option' => 'crm.thousands',
             	'value' => ','
             ],
             [
-            	'option' => 'invoices.decimals',
+            	'option' => 'crm.decimals',
             	'value' => 2
             ],
             [
@@ -91,7 +91,7 @@ class ConfigsTableSeeder extends Seeder
                 'value' => 'null'
             ],
             [
-                'option' => 'general.robots',
+                'option' => 'crm.robots',
                 'value' => 'No index, No follow'
             ],
             

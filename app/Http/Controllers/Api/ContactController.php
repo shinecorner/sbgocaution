@@ -20,7 +20,7 @@ class ContactController extends Controller
         if($request->has('per_page')){
             $per_page = $request->per_page;
         } else {
-            $per_page = config('pagination.items_per_page');
+            $per_page = config('crm.items_per_page');
         }
 
         $contact_statuses = [
