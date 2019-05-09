@@ -133,6 +133,7 @@ export default {
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call-Center",
+            "SEND_OFFER_BY_POST_TOOLTIP": "Offerte per Post",
             "PDF_IL_MAN": "Herr",
             "PDF_IL_WOMEN": "Frau",
             "PDF_IL_COMPANY": "Firma",
@@ -210,7 +211,8 @@ export default {
             "SMTP_SECURITY": "SMTP-Sicherheit",
             "SMTP_AUTHENTICATION": "SMTP-Authentifizierung",
             "SMTP_USER": "Benutzer",
-            "SMTP_PASSWORD": "Passwort"
+            "SMTP_PASSWORD": "Passwort",
+            "OPTIONS": "Optionen"
         }
     },
     "en": {
@@ -347,6 +349,7 @@ export default {
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "Is interested in a PH offer.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
+            "SEND_OFFER_BY_POST_TOOLTIP": "Offer by post",
             "PDF_IL_MAN": "Mr",
             "PDF_IL_WOMEN": "Mrs",
             "PDF_IL_COMPANY": "Company",
@@ -424,7 +427,8 @@ export default {
             "SMTP_SECURITY": "SMTP Security",
             "SMTP_AUTHENTICATION": "SMTP Authentication",
             "SMTP_USER": "user",
-            "SMTP_PASSWORD": "password"
+            "SMTP_PASSWORD": "password",
+            "OPTIONS": "Options"
         }
     },
     "fr": {
@@ -561,6 +565,7 @@ export default {
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "Est intéressé par une offre PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "centre d'appels",
+            "SEND_OFFER_BY_POST_TOOLTIP": "Offre par courrier",
             "PDF_IL_MAN": "Monsieur",
             "PDF_IL_WOMEN": "Madame",
             "PDF_IL_COMPANY": "Société",
@@ -638,7 +643,8 @@ export default {
             "SMTP_SECURITY": "Sécurité SMTP",
             "SMTP_AUTHENTICATION": "Authentification SMTP",
             "SMTP_USER": "Utilisateur",
-            "SMTP_PASSWORD": "Mot de passe"
+            "SMTP_PASSWORD": "Mot de passe",
+            "OPTIONS": "Possibilités"
         }
     },
     "it": {
@@ -775,6 +781,7 @@ export default {
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "È interessato a un'offerta PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
+            "SEND_OFFER_BY_POST_TOOLTIP": "Offerte per Post",
             "PDF_IL_MAN": "Signor",
             "PDF_IL_WOMEN": "Signora",
             "PDF_IL_COMPANY": "Solido",
@@ -852,7 +859,8 @@ export default {
             "SMTP_SECURITY": "Sicurezza SMTP",
             "SMTP_AUTHENTICATION": "Autenticazione SMTP",
             "SMTP_USER": "Utente",
-            "SMTP_PASSWORD": "La password"
+            "SMTP_PASSWORD": "La password",
+            "OPTIONS": "Opzioni"
         }
     }
 }

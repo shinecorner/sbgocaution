@@ -12,6 +12,9 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+.list-table-container table.v-table thead td:not(:nth-child(1)), .list-table-container table.v-table tbody td:not(:nth-child(1)), .list-table-container table.v-table thead th:not(:nth-child(1)), .list-table-container table.v-table tbody th:not(:nth-child(1)), .list-table-container table.v-table thead td:first-child, .list-table-container table.v-table tbody td:first-child, .list-table-container table.v-table thead th:first-child, .list-table-container table.v-table tbody th:first-child{
+    padding: 8px;
+}
 .column-default{
     border-left: 3px solid;
     border-color: #777777;
@@ -52,53 +55,113 @@
   border-left: 3px solid;  
   border-color: #066938;
 }
-.label-status-default {
-    background-color: #777777 !important;
-}
-.label-status-default[href]:hover, .label-status-default[href]:focus {
-    background-color: #5e5e5e !important;
-}
-.label-status-primary {
-    background-color: #337ab7 !important;
-}
-.label-status-primary[href]:hover, .label-primary[href]:focus {
-    background-color: #286090 !important;
+.theme--light.v-chip{
+    &.label-status-default {
+        background-color: #777777;
+    }
+    &.label-status-warning {
+        background-color: #f0ad4e;
+    }
+    &.label-status-warning[href]:hover, .label-status-warning[href]:focus {
+        background-color: #F44336;
+    }
+    &.label-status-default {
+        background-color: #777777;
+    }
+    &.label-status-default[href]:hover, &.label-status-default[href]:focus {
+        background-color: #5e5e5e;
+    }
+    &.label-status-primary {
+        background-color: #337ab7;
+    }
+    &.label-status-primary[href]:hover, &.label-primary[href]:focus {
+        background-color: #286090;
+    }
+
+    &.label-status-success[href]:hover, &.label-success[href]:focus {
+        background-color: #449d44;
+    }
+
+    &.label-status-info[href]:hover, &.label-info[href]:focus {
+        background-color: #31b0d5;
+    }
+
+    &.label-status-danger {
+        background-color: #F44336;
+    }
+    &.label-status-offer {
+        background-color: #3f8ddd;
+    }
+    &.label-status-offer[href]:hover, &.label-status-offer[href]:focus {
+        background-color: #3f8ddd;
+    }
+    &.label-status-in-clarification {
+        background-color: #9c27b0;
+    }
+    &.label-status-in-clarification[href]:hover, &.label-status-in-clarification[href]:focus {
+        background-color: #9c27b0;
+    }
+    &.label-status-partner, &.label-status-pre-confirmation {
+        background-color: #066938;
+    } 
 }
 
-.label-status-success[href]:hover, .label-success[href]:focus {
-    background-color: #449d44 !important;
+.list-table-container table.v-table tbody td.vuetable-slot .status-chips{
+    padding: 6px 4px;
+}
+.list-table-container table.v-table tbody td.vuetable-slot .secondary-text{
+    margin-top: 4px;
+}
+.list-table-container table.v-table tbody td.vuetable-slot .primary-text, .list-table-container table.v-table tbody td.vuetable-slot .amount-div {
+    display: block;    
+    font-weight: 400;
+    line-height: 18px;
+    outline: medium none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.status_dropdown .v-list__tile{
+    height: 30px;
+    font-size: 0.75rem;
+}
+.list-table-container table.v-table tbody .v-chip .v-chip__content{
+    padding: 0 4px;
 }
 
-.label-status-info[href]:hover, .label-info[href]:focus {
-    background-color: #31b0d5 !important;
+.list-table-container table.v-table tbody .v-chip--small{
+    font-size: 10.998px;
+    height: 18px !important;    
+    font-weight: bold;
+    padding: 2px;    
+    border-radius: 4px;
+    margin: 6px 1px 2px 1px;
 }
-.label-status-warning {
-    background-color: #f0ad4e !important;
+.list-table-container table.v-table tbody td.statusdropdown_column, table.v-table thead th.statusdropdown_column{
+    padding: 8px 0;
+    width: 10px;
 }
-.label-status-warning[href]:hover, .label-status-warning[href]:focus {
-    background-color: #F44336 !important;
+.list-table-container table.v-table tbody td.vuetable-slot .contact_flag{    
+    position: relative;
+    top: -1px;
+    left: 1.5px;
 }
-.label-status-danger {
-    background-color: #F44336 !important;
+.list-table-container table.v-table tbody td.vuetable-slot .column_icon_container{
+    width: 125px;
 }
-.label-status-offer {
-    background-color: #3f8ddd !important;
+.list-table-container table.v-table thead th{
+    text-align: left;    
 }
-.label-status-offer[href]:hover, .label-status-offer[href]:focus {
-    background-color: #3f8ddd !important;
+.list-table-container table.v-table tbody td.vuetable-slot{
+    vertical-align: top;    
+    line-height: 18px;
+    text-align: left;        
 }
-.label-status-in-clarification {
-    background-color: #9c27b0 !important;
+.list-table-container table.v-table tbody td.vuetable-slot.status_quote_column{
+    padding: 0 0 0 8px;
 }
-.label-status-in-clarification[href]:hover, .label-status-in-clarification[href]:focus {
-    background-color: #9c27b0 !important;
-}
-.label-status-partner, .label-status-pre-confirmation {
-  background-color: #066938 !important;
-} 
-.vuetable-th-slot-c_invoices{
-    padding: 24px 6px !important;
-}
-.contactlist{
-    &th.vuetable-th-slot-c_contactformate { width: 10% !important; }
+.list-table-container table.v-table tbody td.chkbox_column, .list-table-container table.v-table thead th.chkbox_column{
+    padding: 8px 16px;
 }

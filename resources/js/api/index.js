@@ -11,7 +11,8 @@ let apiObject = axios.create({
     }
     else{
         delete apiObject.defaults.headers.common["Authorization"];
-    }    
+    }   
+    apiObject.defaults.headers.common['X-localization'] = localStorage.getItem('selectedLocale');
     apiObject.interceptors.response.use(function (response) {
         if (response.data.hasOwnProperty('helpers')) {
             const serverhelpers = response.data.helpers;        

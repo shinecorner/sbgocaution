@@ -33,7 +33,13 @@
 										:to="!subItem.exact ? `/${getCurrentAppLayoutHandler() + subItem.path}` : subItem.path"
 									>
 										<v-list-tile-content>
-											<v-list-tile-title>{{ textTruncate($t(subItem.title)) }}</v-list-tile-title>
+											<v-list-tile-title>
+                                                                                            {{ textTruncate($t(subItem.title)) }}
+                                                                                            <span  v-if = "subItem.label == 'New'">
+                                                                                                <span class="sidebar-label ml-2">{{subItem.label}}</span>
+                                                                                                <span class="sidebar-label">{{'30'}}</span>                                                                                                
+                                                                                            </span>
+                                                                                        </v-list-tile-title>
 										</v-list-tile-content>
 									</v-list-tile>
 								</v-list-group>

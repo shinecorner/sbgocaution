@@ -25,14 +25,33 @@
 							:rules="passwordRules" 
 							required
 						></v-text-field>
-                                                <v-select                    
-          :items="languageItems"
-          v-model="fetchLanguage"
-          item-text="name"
-          item-value="locale"
-          @change="changeLanguageByCode"
-          :label="$t('message.crm.LANGUAGE')"
-        ></v-select>
+                                               <v-select                                                    
+                                                    :label="$t('message.crm.LANGUAGE')"
+                                                    :items="languageItems"
+                                                    v-model="fetchLanguage"
+                                                    item-text="name"
+                                                    item-value="locale"                                                                                                                                             
+                                                    @change="changeLanguageByCode"
+                                                  >
+                                                    <template slot="selection" slot-scope="data">
+                                                      <v-flex xs1>                                                        
+                                                        <img :src="data.item.flag"/>                                                        
+                                                      </v-flex>
+                                                      <v-flex class='ml-1'>
+                                                        {{ data.item.name }}
+                                                      </v-flex>
+                                                    </template>
+                                                    <template slot="item" slot-scope="data">                                                      
+                                                        <v-flex xs1>
+                                                            <img :src="data.item.flag" />
+                                                        </v-flex>    
+                                                        <v-flex class='ml-1'>
+                                                            <v-list-tile-content>
+                                                              <v-list-tile-title v-html="data.item.name"></v-list-tile-title>
+                                                            </v-list-tile-content>
+                                                        </v-flex>    
+                                                    </template>
+                                                  </v-select>
 						<v-checkbox 
 							color="primary" 
 							:label="$t('message.crm.COM_USERS_LOGIN_REMEMBER_ME')" 
@@ -82,10 +101,10 @@ export default {
       brand: AppConfig.brand,
       fetchLanguage: 'de',
       languageItems: [
-             { name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de' },
-             { name: this.$t('message.crm.ORG_LANGUAGE_EN'), locale: 'en' },
-             { name: this.$t('message.crm.ORG_LANGUAGE_FR'), locale: 'fr' },
-             { name: this.$t('message.crm.ORG_LANGUAGE_IT'), locale: 'it' },
+             { name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de', flag: '/static/flag-icons/de.png' },
+             { name: this.$t('message.crm.ORG_LANGUAGE_FR'), locale: 'fr', flag: '/static/flag-icons/fr.png' },
+             { name: this.$t('message.crm.ORG_LANGUAGE_IT'), locale: 'it', flag: '/static/flag-icons/it.png' },
+             { name: this.$t('message.crm.ORG_LANGUAGE_EN'), locale: 'en', flag: '/static/flag-icons/en.png' },                          
         ]
     };
   },
