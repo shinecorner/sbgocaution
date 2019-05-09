@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Config;
 use App\Http\Resources\ConfigResource;
+use App\Http\Resources\ConfigCollection;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        return ConfigResource::collection(Config::paginate(config('pagination.items_per_page')));
+        return new ConfigCollection(Config::all());
     }
 
     /**
@@ -82,9 +83,10 @@ class ConfigController extends Controller
     public function updateAll(Request $request)
     {
         $status = true;
-        foreach($request->all() as $req_config){
-            $config = Config::find($req_config['id']);
-            if(!$config->update($req_config)){
+        foreach($request->all() as $key => $value){
+            $config = Config::where('option', $key)->first();
+            $config->value = $value;
+            if(!$config->save()){
                 $status = false;
             }
         }
