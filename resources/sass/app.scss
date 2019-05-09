@@ -162,6 +162,6 @@
 .list-table-container table.v-table tbody td.vuetable-slot.status_quote_column{
     padding: 0 0 0 8px;
 }
-.list-table-container table td.chkbox_column, .list-table-container table th.chkbox_column{
+.list-table-container table.v-table tbody td.chkbox_column, .list-table-container table.v-table thead th.chkbox_column{
     padding: 8px 16px;
 }
