@@ -12,21 +12,21 @@ export const languages = {
        icon: "de",
        locale: "de"
     }, 
-    en:{
-       name: "English",
-       icon: "en",
-       locale: "en"
-    },
     fr:{
        name: "French",
        icon: "fr",
        locale: "fr"
-    },            
+    }, 
     it:{
        name: "Italian",
        icon: "it",
        locale: "it"
-    }   
+    },   
+    en:{
+       name: "English",
+       icon: "en",
+       locale: "en"
+    }                   
 }
 // sidebar background images
 export const sidebarBackgroundImages = [
