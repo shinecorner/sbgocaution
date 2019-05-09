@@ -93,9 +93,9 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'de',
 
-    'languages' => ['de', 'en', 'fr', 'it'],
+    'languages' => ['de', 'fr', 'it', 'en'],
 
     /*
     |--------------------------------------------------------------------------
