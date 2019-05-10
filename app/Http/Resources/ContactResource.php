@@ -16,12 +16,8 @@ class ContactResource extends JsonResource
      */
     public function toArray($request)
     {
-        $data = [
-            'date' => $this->date,
-            'real_contact_num' => $this->real_contact_num,
-            'id' => $this->id,
-            'user_id' => $this->user_id,
-        ];
+        $data = parent::toArray($request);
+
         $data['status'] = __('crm.' . $this->status);
         $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
 
@@ -31,20 +27,20 @@ class ContactResource extends JsonResource
             $data['joomlauser'] = __('JNO');
 
         $data['anrede'] = get_anrede($this->anrede);
-
-        $data['nachname'] = $this->nachname;
-        $data['vorname'] = $this->vorname;
-        $data['language'] = $this->language;
         
         $data['language_flag'] = get_language_flag($this->language);
 
         $address = $this->addresses->where('is_primary', 1)->first();
-        $data['address'] = $address != null ? $address->address : "";
-        $data['plz'] = $address != null ? $address->plz : "";
-        $data['ort'] = $address != null ? $address->ort : "";
 
-        $data['email'] = $this->email;
-        $data['contact_formate'] = $this->contact_formate;
+        if($address){
+            $data['address'] = $address->address;
+            $data['plz'] = $address->plz;
+            $data['ort'] = $address->ort;
+        } else {
+            $data['address'] = "";
+            $data['plz'] = "";
+            $data['ort'] = "";            
+        }
 
         if($this->rc_quote == "Yes")
             $data['rc_quote'] = 1;
@@ -61,7 +57,6 @@ class ContactResource extends JsonResource
         else
             $data['send_offer_by_post'] = 0;
 
-        $data['is_duplicate'] = $this->is_duplicate;
         if ($this->is_duplicate) {
             $draws = Contact::where('is_duplicate', '=', 1)
             ->where('nachname', '=', $this->nachname)
@@ -88,7 +83,7 @@ class ContactResource extends JsonResource
         return $data;
     }
 
-    function getContactEmailDuplicate(&$data) 
+    private function getContactEmailDuplicate(&$data) 
     {
 
         if (empty($this->email)) {
