@@ -31,9 +31,16 @@ class ContactResource extends JsonResource
         $data['language_flag'] = get_language_flag($this->language);
 
         $address = $this->addresses->where('is_primary', 1)->first();
-        $data['address'] = $address != null ? $address->address : "";
-        $data['plz'] = $address != null ? $address->plz : "";
-        $data['ort'] = $address != null ? $address->ort : "";
+
+        if($address){
+            $data['address'] = $address->address;
+            $data['plz'] = $address->plz;
+            $data['ort'] = $address->ort;
+        } else {
+            $data['address'] = "";
+            $data['plz'] = "";
+            $data['ort'] = "";            
+        }
 
         if($this->rc_quote == "Yes")
             $data['rc_quote'] = 1;
