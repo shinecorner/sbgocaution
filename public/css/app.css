@@ -11798,9 +11798,10 @@ a.text-dark:focus {
   white-space: nowrap;
 }
 
+.v-select-list .v-list__tile,
 .status_dropdown .v-list__tile {
   height: 30px;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
 .list-table-container table.v-table tbody .v-chip .v-chip__content {
