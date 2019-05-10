@@ -23,7 +23,7 @@
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.crm.CONTACT_NUM_FORMAT')"
+											:label="$t('message.crm.CONTACT_NUMBER_FORMAT')"
 											v-model="configs['crm.contact_num_format']"
 											:rules="form1.contact_num_format"
 											required></v-text-field>

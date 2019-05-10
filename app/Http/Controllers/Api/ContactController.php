@@ -115,5 +115,7 @@ class ContactController extends Controller
             }
             $data['helpers'][$language][$status] = $$language;
         }
+        $local = (request()->hasHeader('X-localization')) ? request()->header('X-localization') : 'de';
+        app()->setLocale($local);
     }
 }
