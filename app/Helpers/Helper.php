@@ -137,3 +137,21 @@ if(!function_exists('getContactPDF')){
 
 }
 
+if(!function_exists('get_anrede')){
+
+    function get_anrede($anrede){
+        switch($anrede) {
+            case 'mr': 
+                return __('crm.PDF_IL_MAN'); 
+                break;
+            case 'mrs': 
+                return __('crm.PDF_IL_WOMEN'); 
+                break;
+            case 'company': 
+                return __('crm.PDF_IL_COMPANY'); 
+                break;
+        }
+    }
+
+}
+
