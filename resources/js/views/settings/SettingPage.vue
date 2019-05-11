@@ -175,7 +175,7 @@ export default {
 	data() {
 		return {
 			items: ["CRM", "Email"],
-			robot_options: ['Index, Follow', 'No index, Follow', 'Index, No follow', 'No index, No follow'],
+			robot_options: ['index, follow', 'noindex, follow', 'index, nofollow', 'noindex, nofollow'],
 			mail_options: ['log','smtp'],
 			length_options: ['5', '10', '20', '25', '30', '50', '100', '200', '500'],
 	      	form1: {

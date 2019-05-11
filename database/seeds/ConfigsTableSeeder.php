@@ -92,7 +92,7 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
                 'option' => 'crm.robots',
-                'value' => 'No index, No follow'
+                'value' => 'noindex, nofollow'
             ],
             
         ]);
