@@ -177,7 +177,7 @@ export default {
 			items: ["CRM", "Email"],
 			robot_options: ['index, follow', 'noindex, follow', 'index, nofollow', 'noindex, nofollow'],
 			mail_options: ['log','smtp'],
-			length_options: ['5', '10', '20', '25', '30', '50', '100', '200', '500'],
+			length_options: ['20', '25', '50', '100', '500'],
 	      	form1: {
 		        valid: false,
 		        dateFormat: [
