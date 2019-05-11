@@ -20,7 +20,7 @@ class UpdateColumnsAddressesTable extends Migration
             $table->string('state')->nullable(false)->default('')->change();
             $table->string('ort')->nullable(false)->default('')->change();
             $table->string('comment')->nullable(false)->default('')->change();
-            $table->string('ordering')->nullable(false)->default('')->change();
+            $table->string('ordering')->nullable(false)->change();
             $table->string('from_partner')->nullable(false)->default('')->change();
             $table->string('old_cn')->nullable(false)->default('')->change();
             $table->string('not_correct')->nullable(false)->default('')->change();
@@ -41,7 +41,7 @@ class UpdateColumnsAddressesTable extends Migration
             $table->string('state')->nullable()->default(NULL)->change();
             $table->string('ort')->nullable()->default(NULL)->change();
             $table->string('comment')->nullable()->default(NULL)->change();
-            $table->string('ordering')->nullable()->default(NULL)->change();
+            $table->string('ordering')->nullable()->change();
             $table->string('from_partner')->nullable()->default(NULL)->change();
             $table->string('old_cn')->nullable()->default(NULL)->change();
             $table->string('not_correct')->nullable()->default(NULL)->change();

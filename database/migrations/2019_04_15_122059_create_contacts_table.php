@@ -14,9 +14,9 @@ class CreateContactsTable extends Migration {
 	{
 		Schema::create('contacts', function(Blueprint $table)
 		{
+			$table->integer('id', true);
 			$table->timestamp('date')->default(DB::raw('CURRENT_TIMESTAMP'));
 			$table->integer('real_contact_num');
-			$table->integer('id', true);
 			$table->integer('user_id')->index('user_id');
 			$table->string('contact_formate');
 			$table->integer('contact_type')->default(1);

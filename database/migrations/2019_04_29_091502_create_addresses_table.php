@@ -16,7 +16,7 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('is_primary');
-            $table->tinyInteger('type')->default(1);
+            $table->tinyInteger('type')->comment('1 = normal address, 2 = c/o address')->default(1);
             $table->integer('contact_id')->nullable();
             $table->foreign('contact_id')->references('id')->on('contacts');
             $table->string('co_address_name')->nullable();
