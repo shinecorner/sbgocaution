@@ -22,12 +22,13 @@
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
-										<v-text-field
-											:label="$t('message.crm.CONTACT_NUMBER_FORMAT')"
-											v-model="configs['crm.contact_num_format']"
-											:rules="form1.contact_num_format"
-											required></v-text-field>
+										<v-select v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('message.crm.ITEMS_PER_PAGE')"></v-select>
 									</v-flex>
+									<v-flex sm6 md4 lg4>
+										<v-select v-bind:items="robot_options" v-model="configs['crm.robots']" :label="$t('message.crm.ROBOTS')"></v-select>
+									</v-flex>
+								</v-layout>
+								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
 											:label="$t('message.crm.INVOICE_NUMBER_FORMAT')"
@@ -35,8 +36,6 @@
 											:rules="form1.invoiceNumberFormat"
 											required></v-text-field>
 									</v-flex>
-								</v-layout>
-								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
 											:label="$t('message.crm.QUOTE_NUMBER_FORMAT')"
@@ -46,17 +45,9 @@
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											type="number"
-											:label="$t('message.crm.INVOICE_NUM_DIGITS')"
-											v-model="configs['crm.invoice_number_digits']"
-											:rules="form1.invoiceNumberDigits"
-											required></v-text-field>
-									</v-flex>
-									<v-flex sm6 md4 lg4>
-										<v-text-field
-											:label="$t('message.crm.DECPOINTS')"
-											v-model="configs['crm.decpoint']"
-											:rules="form1.decpoint"
+											:label="$t('message.crm.CONTACT_NUMBER_FORMAT')"
+											v-model="configs['crm.contact_num_format']"
+											:rules="form1.contact_num_format"
 											required></v-text-field>
 									</v-flex>
 								</v-layout>
@@ -69,10 +60,29 @@
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
-										<v-select v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('message.crm.ITEMS_PER_PAGE')"></v-select>
+										<v-text-field
+											:label="$t('message.crm.DECPOINTS')"
+											v-model="configs['crm.decpoint']"
+											:rules="form1.decpoint"
+											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
-										<v-select v-bind:items="robot_options" v-model="configs['crm.robots']" :label="$t('message.crm.ROBOTS')"></v-select>
+										<v-text-field
+											type="number"
+											:label="$t('message.crm.INVOICE_NUM_DIGITS')"
+											v-model="configs['crm.invoice_number_digits']"
+											:rules="form1.invoiceNumberDigits"
+											required></v-text-field>
+									</v-flex>
+								</v-layout>
+								<v-layout row wrap>
+									<v-flex sm6 md4 lg4>
+										<v-text-field
+											type="number"
+											:label="$t('message.crm.DECIMALS')"
+											v-model="configs['crm.decimals']"
+											:rules="form1.decimals"
+											required></v-text-field>
 									</v-flex>
 								</v-layout>
 								<v-btn color="success" @click="form1Submit()">
@@ -126,11 +136,7 @@
 								</v-layout>
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
-										<v-text-field
-											:label="$t('message.crm.SMTP_SECURITY')"
-											v-model="configs['mail.encryption']"
-											:rules="form2.encryption"
-											required></v-text-field>
+										<v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('message.crm.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
@@ -175,65 +181,69 @@ export default {
 	data() {
 		return {
 			items: ["CRM", "Email"],
-			robot_options: ['index, follow', 'noindex, follow', 'index, nofollow', 'noindex, nofollow'],
+			robot_options: [
+				{ value: 'index, follow', text: 'Index, Follow' },
+				{ value: 'noindex, follow', text: 'No Index, follow' },
+				{ value: 'index, nofollow', text: 'Index, No follow' },
+				{ value: 'noindex, nofollow', text: 'No index, No follow' }
+			],
 			mail_options: ['log','smtp'],
 			length_options: ['20', '25', '50', '100', '500'],
+			smtp_encryption:[
+								{ value: 'none', text: 'None' },
+								{ value: 'ssl', text: 'SSL/TLS' },
+								{ value: 'tls', text: 'STARTTLS' }
+							],
 	      	form1: {
 		        valid: false,
 		        dateFormat: [
-		          	v => !!v || "Date Format is required"
+		          	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.INVOICE_DATE_FORMAT')})
 		        ],
 		        contact_num_format:[
-		        	v => !!v || "Contact Number Format is required"
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.CONTACT_NUMBER_FORMAT')})
 		        ],
 		        invoiceNumberFormat: [
-		        	v => !!v || "Invoice Number Format is required"
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.INVOICE_NUMBER_FORMAT')})
 		        ],
 		        quoteNumberFormat: [
-		        	v => !!v || "Quote Number Format is required"
-		        ],
-		        contactNumberFormat: [
-		        	v => !!v || "Contact Number Format is required"
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.QUOTE_NUMBER_FORMAT')})
 		        ],
 		        invoiceNumberDigits: [
-		        	v => !!v || "Invoice Number Digits is required"
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.INVOICE_NUM_DIGITS')})
 		        ],
 		        decpoint: [
-		        	v => !!v || "Decpoint is required"
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.DECPOINTS')})
 		        ],
 		        thousands: [
-		        	v => !!v || "Thousands is required"
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.THOUSANDS')})
 		        ],
 		        decimals: [
-		        	v => !!v || "Decimals is required"
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.DECIMALS')})
 		        ]
 	      	},
 	      	form2:{
 	      		mailFromName: [
-	      			v => !!v || "Mail from name is required"
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.FROM_NAME_ON_EMAILS')})
 	      		],
 	      		mailFromAddress: [
-	      			v => !!v || "Mail from address is required",
-		          	v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || "E-mail must be valid"
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.FROM_EMAIL_ON_EMAILS')}),
+		          	v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('message.validation.email', {attribute: this.$t('message.crm.FROM_EMAIL_ON_EMAILS')})
 	      		],
 	      		replyToName: [
-	      			v => !!v || "Reply to name is required"
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.REPLY_NAME')})
 	      		],
 	      		replyToAddress: [
-	      			v => !!v || "Reply to address is required",
-	      			v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || "E-mail must be valid"
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.REPLY_ADDRESS')}),
+	      			v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('message.validation.email', {attribute: this.$t('message.crm.REPLY_ADDRESS')})
 	      		],
 	      		port: [
-	      			v => !!v || "Port is required"
-	      		],
-	      		encryption: [
-	      			v => !!v || "Encryption is required"
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.PORT')})
 	      		],
 	      		username: [
-	      			v => !!v || "Username is required"
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.SMTP_USER')})
 	      		],
 	      		password: [
-	      			v => !!v || "Password is required"
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.crm.SMTP_PASSWORD')})
 	      		],
 	      		
 	      	}
