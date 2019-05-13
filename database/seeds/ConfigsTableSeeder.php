@@ -20,7 +20,7 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
             	'option' => 'crm.items_per_page',
-            	'value' => 20
+            	'value' => 50
             ],
             [
             	'option' => 'crm.invoice_num_format',
