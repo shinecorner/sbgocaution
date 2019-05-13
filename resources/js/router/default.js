@@ -1,4 +1,5 @@
 import Full from 'Container/Full'
+import AppConfig from "Constants/AppConfig";
 
 const ContactList = () => import('Views/contacts/ContactList');
 const SettingPage = () => import('Views/settings/SettingPage');
@@ -13,7 +14,15 @@ export default {
         component: ContactList,
         meta: {
             requiresAuth: true,
-            title: 'message.crm.CONTACTS'            
+            title: 'message.crm.CONTACTS',
+             breadcrumb: [
+              {
+                breadcrumbInactive: 'message.crm.CRM'
+              },
+              {
+                breadcrumbActive: 'message.crm.CONTACTS'
+              }
+            ]
         }
       },
       {
@@ -22,6 +31,14 @@ export default {
         meta: {
             requiresAuth: true,
             title: 'message.crm.OPTIONS',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'message.crm.CRM'
+              },
+              {
+                breadcrumbActive: 'message.crm.OPTIONS'
+              }
+            ]
         }
       }
    ]
