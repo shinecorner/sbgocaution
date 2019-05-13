@@ -6,7 +6,7 @@ use App\Address;
 $factory->define(Address::class, function (Faker $faker) {
     return [
     	'is_primary' => 1,
-    	'type' => $faker->boolean(),
+    	'type' => 1,
         'co_address_name' => '',
         'address' => $faker->streetAddress,
         'plz' => $faker->numberBetween($min = 1000, $max = 9000),

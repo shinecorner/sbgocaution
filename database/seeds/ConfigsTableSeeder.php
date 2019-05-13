@@ -24,11 +24,11 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
             	'option' => 'crm.invoice_num_format',
-            	'value' => '[yyyy]-[num]'
+            	'value' => 'RE-[yyyy]150[num]'
             ],
             [
             	'option' => 'crm.quote_num_format',
-            	'value' => '[yyyy]-[num]'
+            	'value' => 'MK-[yyyy]950[num]'
             ],
             [
             	'option' => 'crm.contact_num_format',
@@ -76,7 +76,7 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
                 'option' => 'mail.encryption',
-                'value' => 'tls'
+                'value' => 'ssl'
             ],
             [
                 'option' => 'mail.authentication',
@@ -84,15 +84,15 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
                 'option' => 'mail.username',
-                'value' => 'null'
+                'value' => 'info@gocaution.ch'
             ],
             [
                 'option' => 'mail.password',
-                'value' => 'null'
+                'value' => '%h+DpP<WtkLcq'
             ],
             [
                 'option' => 'crm.robots',
-                'value' => 'No index, No follow'
+                'value' => 'noindex, nofollow'
             ],
             
         ]);
