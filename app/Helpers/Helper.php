@@ -137,10 +137,10 @@ if(!function_exists('getContactPDF')){
 
 }
 
-if(!function_exists('get_anrede')){
+if(!function_exists('get_salutation')){
 
-    function get_anrede($anrede){
-        switch($anrede) {
+    function get_salutation($salutation){
+        switch($salutation) {
             case 'mr': 
                 return __('crm.PDF_IL_MAN'); 
                 break;
