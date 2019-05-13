@@ -13,7 +13,7 @@ class Contact extends Model
     ];
 
     public function getDateAttribute($value) {
-        return Carbon::parse($value)->format(config('date_format.display_date_format'));
+        return Carbon::parse($value)->format(config('crm.display_date_format'));
     }
 
     public function addresses()
