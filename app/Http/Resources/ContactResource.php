@@ -26,7 +26,7 @@ class ContactResource extends JsonResource
         else 
             $data['joomlauser'] = __('JNO');
 
-        $data['anrede'] = get_anrede($this->anrede);
+        $data['salutation'] = get_salutation($this->salutation);
         
         $data['language_flag'] = get_language_flag($this->language);
 
@@ -34,12 +34,12 @@ class ContactResource extends JsonResource
 
         if($address){
             $data['address'] = $address->address;
-            $data['plz'] = $address->plz;
-            $data['ort'] = $address->ort;
+            $data['zip'] = $address->zip;
+            $data['city'] = $address->city;
         } else {
             $data['address'] = "";
-            $data['plz'] = "";
-            $data['ort'] = "";            
+            $data['zip'] = "";
+            $data['city'] = "";            
         }
 
         if($this->rc_quote == "Yes")
@@ -59,8 +59,8 @@ class ContactResource extends JsonResource
 
         if ($this->is_duplicate) {
             $draws = Contact::where('is_duplicate', '=', 1)
-            ->where('nachname', '=', $this->nachname)
-            ->where('vorname', '=', $this->vorname)
+            ->where('name', '=', $this->name)
+            ->where('firstname', '=', $this->firstname)
             ->where('id', '!=', $this->id)
             ->groupBy('id')
             ->orderBy('id', 'asc')->get();
@@ -70,8 +70,8 @@ class ContactResource extends JsonResource
             if (!empty($draws)) {
                 foreach ($draws as $key => $draw) {
                     $data['duplicate'] .= "(" .$draw->contact_formate .") ";
-                    $data['duplicate'] .= $draw->nachname. " ";
-                    $data['duplicate'] .= $draw->vorname;
+                    $data['duplicate'] .= $draw->name. " ";
+                    $data['duplicate'] .= $draw->firstname;
                     if(($key+1) != count($draws))
                         $data['duplicate'] .= "<br/>";
                 }
@@ -103,8 +103,8 @@ class ContactResource extends JsonResource
 
         foreach ($draws as $key => $draw) {
             $data['duplicateEmail'] .= "(" .$draw->contact_formate .") ";
-            $data['duplicateEmail'] .= $draw->nachname. " ";
-            $data['duplicateEmail'] .= $draw->vorname;
+            $data['duplicateEmail'] .= $draw->name. " ";
+            $data['duplicateEmail'] .= $draw->firstname;
             $data['duplicateEmail'] .= "<br/>";
             $data['duplicateEmail'] .= $draw->email; 
             if(($key+1) != count($draws)) 

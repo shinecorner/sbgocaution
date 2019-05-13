@@ -9,7 +9,7 @@ class Contact extends Model
 {
 
     protected $fillable = [
-        'date', 'real_contact_num', 'id', 'user_id', 'anrede', 'nachname', 'vorname', 'language', 'address', 'contact_formate', 'status', 'rc_quote', 'plz', 'ort'
+        'id', 'date', 'real_contact_num', 'user_id', 'salutation', 'name', 'firstname', 'language', 'address', 'contact_formate', 'status', 'rc_quote', 'zip', 'city'
     ];
 
     public function getDateAttribute($value) {
@@ -18,6 +18,6 @@ class Contact extends Model
 
     public function addresses()
     {
-        return $this->hasMany('App\Address')->select(array('id', 'is_primary', 'address', 'plz', 'ort'));
+        return $this->hasMany('App\Address')->select(array('id', 'is_primary', 'address', 'zip', 'city'));
     }
 }
