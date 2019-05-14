@@ -14,6 +14,7 @@ class UpdateColumnsContactsAdditionalsTable extends Migration
     public function up()
     {
         Schema::table('contacts_additionals', function (Blueprint $table) {
+            $table->integer('contact_id')->nullable(false)->change();
             $table->string('prop_adress')->nullable(false)->default('')->change();
             $table->string('prop_plz')->nullable(false)->default('')->change();
             $table->string('prop_ort')->nullable(false)->default('')->change();
@@ -42,6 +43,7 @@ class UpdateColumnsContactsAdditionalsTable extends Migration
     public function down()
     {
         Schema::table('contacts_additionals', function (Blueprint $table) {
+            $table->integer('contact_id')->nullable()->change();
             $table->string('prop_adress')->nullable()->default(NULL)->change();
             $table->string('prop_plz')->nullable()->default(NULL)->change();
             $table->string('prop_ort')->nullable()->default(NULL)->change();
