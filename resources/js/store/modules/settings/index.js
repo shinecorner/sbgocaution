@@ -33,6 +33,7 @@ const state = {
 	headerFilters,                                         // header filters
 	activeHeaderFilter: headerFilters[1],                  // selected header filter
 	mobileSearchForm: false,								   // Is Mobile Search Form Open
+        headerTitle: "",
 	configs: []
 }
 
@@ -60,6 +61,9 @@ const getters = {
 	},
 	rtlLayout: state => {
 		return state.rtlLayout;
+	},
+        headerTitle: state => {
+		return state.headerTitle;
 	},
 	backgroundImage: state => {
 		return state.backgroundImage;
@@ -115,6 +119,9 @@ const actions = {
 	},        
 	darkModeHandler(context) {
 		context.commit('darkModeHandler');
+	},
+        setHeaderTitle(context,payload) {
+		context.commit('headerTitleHandler', payload);
 	},
 	collapseSidebar(context) {
 		context.commit('collapseSidebarHandler');
@@ -174,6 +181,9 @@ const mutations = {
 	},        
 	darkModeHandler(state) {
 		state.darkMode = !state.darkMode;
+	},
+        headerTitleHandler(state, titleValue) {
+		state.headerTitle = titleValue;
 	},
 	collapseSidebarHandler(state) {
 		state.collapseSidebar = !state.collapseSidebar;
