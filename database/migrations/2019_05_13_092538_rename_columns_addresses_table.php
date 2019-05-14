@@ -14,8 +14,8 @@ class RenameColumnsAddressesTable extends Migration
     public function up()
     {
         Schema::table('addresses', function (Blueprint $table) {
-            $table->renameColumn('plz', 'property_zip');
-            $table->renameColumn('ort', 'property_city');
+            $table->renameColumn('plz', 'zip');
+            $table->renameColumn('ort', 'city');
         });
     }
 
@@ -27,8 +27,8 @@ class RenameColumnsAddressesTable extends Migration
     public function down()
     {
         Schema::table('addresses', function (Blueprint $table) {
-            $table->renameColumn('property_zip', 'plz');
-            $table->renameColumn('property_city', 'ort');
+            $table->renameColumn('zip', 'plz');
+            $table->renameColumn('city', 'ort');
         });
     }
 }
