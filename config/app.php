@@ -99,6 +99,8 @@ return [
 
     'faker_locale' => 'de_DE',
 
+    'customer_data' => 'kundendatenbank',
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
