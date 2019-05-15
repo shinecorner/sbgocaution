@@ -1,4 +1,10 @@
 {
     "/js/main.js": "/js/main.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/Login/assets/styles/css/themes/lite-purple.min.css": "/Login/assets/styles/css/themes/lite-purple.min.css",
+    "/Login/assets/styles/css/themes/lite-blue.min.css": "/Login/assets/styles/css/themes/lite-blue.min.css",
+    "/Login/assets/styles/css/themes/dark-purple.min.css": "/Login/assets/styles/css/themes/dark-purple.min.css",
+    "/Login/assets/js/laravel/app.js": "/Login/assets/js/laravel/app.js",
+    "/Login/assets/js/script.js": "/Login/assets/js/script.js",
+    "/Login/assets/js/common-bundle-script.js": "/Login/assets/js/common-bundle-script.js"
 }

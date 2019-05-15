@@ -34,5 +34,21 @@ mix.webpackConfig({
 });
 
 mix.js('resources/js/main.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
-   
+   .sass('resources/sass/app.scss', 'public/css')
+   .js('resources/laravel/js/app.js', 'public/Login/assets/js/laravel/app.js')
+    .sass('resources/gull/assets/styles/sass/themes/lite-purple.scss', 'public/Login/assets/styles/css/themes/lite-purple.min.css');
+    // .sass('resources/gull/assets/styles/sass/themes/lite-blue.scss', 'public/Login/assets/styles/css/themes/lite-blue.min.css')
+    // .sass('resources/gull/assets/styles/sass/themes/dark-purple.scss', 'public/Login/assets/styles/css/themes/dark-purple.min.css');
+
+   mix.combine([
+       'node_modules/jquery/dist/jquery.min.js',
+       'node_modules/bootstrap/js/bootstrap.bundle.js',
+       'node_modules/bootstrap/js/bootstrap.min.js',
+       'resources/gull/assets/js/vendor/perfect-scrollbar.min.js',
+   ], 'public/Login/assets/js/common-bundle-script.js');
+
+   mix.js([
+
+       'resources/gull/assets/js/script.js',
+
+   ], 'public/Login/assets/js/script.js');
