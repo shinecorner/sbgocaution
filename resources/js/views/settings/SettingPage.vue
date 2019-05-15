@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<page-title-bar></page-title-bar>
+		<!-- <page-title-bar></page-title-bar> -->
 		<v-container fluid grid-list-xl pt-0>
 			<v-layout row wrap>
 				<app-card colClasses="xs12 md12" customClasses="mb-30">
@@ -255,7 +255,8 @@ export default {
 			})
 	},
 	created() {
-		this.setConfigs()
+		this.setConfigs(),
+                this.$store.dispatch("setHeaderTitle", 'message.crm.OPTIONS');    
 	},
 	methods: {
 		...mapActions(["setConfigs", "saveConfig"]),

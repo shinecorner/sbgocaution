@@ -3,6 +3,7 @@
 /gocaution_crm
 /public/hot
 /public/js/chunks
+/public/js/main.js
 /public/storage
 /storage/*.key
 /vendor
