@@ -10,7 +10,7 @@ $factory->define(Contact::class, function (Faker $faker) {
     return [
         'date' => now(),
         'real_contact_num' => $real_contact_num,
-        'user_id' => $faker->numberBetween(1, 10),
+        'user_id' => 0,
         'contact_formate' => getUniqueNum($real_contact_num, 3),
         'salutation' => $faker->randomElement(['mr', 'mrs', 'company']),
         'name' => $faker->name,
