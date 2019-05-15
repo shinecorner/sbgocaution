@@ -57,18 +57,13 @@ class Contact extends Model
             $offer = $directory_kundendatenbank.DS.$directory_offer.DS.$this->id;
             if(Storage::disk('public')->exists($offer)){
                 Storage::disk('public')->delete($offer);
-                foreach($this->offers as $offer){
-                    $offer->delete();
-                }
+                $this->offers()->delete();
             }
 
             $preconfirmation = $directory_kundendatenbank.DS.$directory_preconfirmation.DS.$this->id;
             if(Storage::disk('public')->exists($preconfirmation)){
                 Storage::disk('public')->delete($preconfirmation);
-
-                foreach($this->preconfirmations as $preconfirmation){
-                    $preconfirmation->delete();
-                }
+                $this->preconfirmations()->delete();
             }
         }
         $this->status = request()->status;
