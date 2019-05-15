@@ -38,7 +38,7 @@
                                     <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                                 </template>  
                                 <template slot="c_contactformate" slot-scope="props">
-                                  <span class="primary-text">{{ props.rowData.contact_formate }}</span>                                  
+                                  <span class="primary-text">{{ props.rowData.contact_num }}</span>                                  
                                   <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.date }}</span>
                                   <div class="column_icon_container">
                                     <v-tooltip top v-if="props.rowData.is_duplicate">                                        
@@ -94,7 +94,7 @@
                                             </v-tooltip>    
                                         </template>                                                                                
                                     </span>
-                                    <span class="primary-text left ml-1">{{ props.rowData.name}}</span>                                    
+                                    <span class="primary-text left ml-1">{{ props.rowData.first_name + ' ' + props.rowData.last_name}}</span>                                    
                                 </template>
                                 <template slot="c_address" slot-scope="props">                                    
                                     <span class="primary-text" v-if="props.rowData.address">{{ props.rowData.address }}</span>
@@ -325,35 +325,38 @@ export default {
 };
 </script>
 <style scoped>
-
+.contactlist >>> .v-datatable{
+    table-layout: fixed;
+    min-width: 1100px;
+}
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(1), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(1){
-    width: 2%;
+    width: 40px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(2), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(2){
-    width: 12%;
+    width: 140px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(3), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(3){
-    width: 5%;
+    width: 48px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(4), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(4){
-    width: 29%;
+    width: 13%;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(5), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(5){
-    width: 22%;
+    width: 17%;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(6), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(6){
-    width: 10%;
+    width: 98px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(7), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(7){
-    width: 2%;
+    width: 32px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(8), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(8){
-    width: 10%;
+    width: 200px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(9), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(9){
-    width: 2%;
+    width: 40px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(10), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(10){
-    width: 5%;
+    width: 65px;
 }
 </style>
