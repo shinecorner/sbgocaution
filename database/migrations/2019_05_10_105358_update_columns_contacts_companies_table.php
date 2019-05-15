@@ -13,8 +13,9 @@ class UpdateColumnsContactsCompaniesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('contacts_companies', function (Blueprint $table) {
-            $table->integer('contact_id')->nullable(false)->change();
+            $table->integer('contact_id')->nullable(false)->default(0)->change();
             $table->string('type')->nullable(false)->default('')->change();
             $table->string('branche')->nullable(false)->default('')->change();
             $table->string('name')->nullable(false)->default('')->change();
@@ -25,6 +26,7 @@ class UpdateColumnsContactsCompaniesTable extends Migration
             $table->string('website')->nullable(false)->default('')->change();
             $table->string('mail')->nullable(false)->default('')->change();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -34,8 +36,9 @@ class UpdateColumnsContactsCompaniesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('contacts_companies', function (Blueprint $table) {
-            $table->integer('contact_id')->nullable()->change();
+            $table->integer('contact_id')->nullable()->default(NULL)->change();
             $table->string('type')->nullable()->default(NULL)->change();
             $table->string('branche')->nullable()->default(NULL)->change();
             $table->string('name')->nullable()->default(NULL)->change();
@@ -46,5 +49,6 @@ class UpdateColumnsContactsCompaniesTable extends Migration
             $table->string('website')->nullable()->default(NULL)->change();
             $table->string('mail')->nullable()->default(NULL)->change();
         });
+        Schema::enableForeignKeyConstraints();
     }
 }

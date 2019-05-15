@@ -1,3 +1,3 @@
 <?php
 
-define('DS', DIRECTORY_SEPARATOR);
+defined ('DS') or define('DS', DIRECTORY_SEPARATOR);

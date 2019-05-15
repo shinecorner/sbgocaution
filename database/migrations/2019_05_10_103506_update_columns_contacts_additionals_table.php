@@ -13,8 +13,9 @@ class UpdateColumnsContactsAdditionalsTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('contacts_additionals', function (Blueprint $table) {
-            $table->integer('contact_id')->nullable(false)->change();
+            $table->integer('contact_id')->nullable(false)->default(0)->change();
             $table->string('prop_adress')->nullable(false)->default('')->change();
             $table->string('prop_plz')->nullable(false)->default('')->change();
             $table->string('prop_ort')->nullable(false)->default('')->change();
@@ -31,8 +32,8 @@ class UpdateColumnsContactsAdditionalsTable extends Migration
             $table->string('house_owner_address')->nullable(false)->default('')->change();
             $table->string('house_owner_plz')->nullable(false)->default('')->change();
             $table->string('house_owner_city')->nullable(false)->default('')->change();
-           
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -42,8 +43,9 @@ class UpdateColumnsContactsAdditionalsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('contacts_additionals', function (Blueprint $table) {
-            $table->integer('contact_id')->nullable()->change();
+            $table->integer('contact_id')->nullable()->default(NULL)->change();
             $table->string('prop_adress')->nullable()->default(NULL)->change();
             $table->string('prop_plz')->nullable()->default(NULL)->change();
             $table->string('prop_ort')->nullable()->default(NULL)->change();
@@ -60,7 +62,7 @@ class UpdateColumnsContactsAdditionalsTable extends Migration
             $table->string('house_owner_address')->nullable()->default(NULL)->change();
             $table->string('house_owner_plz')->nullable()->default(NULL)->change();
             $table->string('house_owner_city')->nullable()->default(NULL)->change();
-          
         });
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -13,7 +13,9 @@ class UpdateColumnsAddressesTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('addresses', function (Blueprint $table) {
+            $table->integer('contact_id')->nullable(false)->default(0)->change();
             $table->string('co_address_name')->nullable(false)->default('')->change();
             $table->string('address')->nullable(false)->default('')->change();
             $table->string('plz')->nullable(false)->default('')->change();
@@ -25,6 +27,7 @@ class UpdateColumnsAddressesTable extends Migration
             $table->string('old_cn')->nullable(false)->default('')->change();
             $table->string('not_correct')->nullable(false)->default('')->change();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -34,7 +37,9 @@ class UpdateColumnsAddressesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::table('addresses', function (Blueprint $table) {
+            $table->integer('contact_id')->nullable()->default(NULL)->change();
             $table->string('co_address_name')->nullable()->default(NULL)->change();
             $table->string('address')->nullable()->default(NULL)->change();
             $table->string('plz')->nullable()->default(NULL)->change();
@@ -46,5 +51,6 @@ class UpdateColumnsAddressesTable extends Migration
             $table->string('old_cn')->nullable()->default(NULL)->change();
             $table->string('not_correct')->nullable()->default(NULL)->change();
         });
+        Schema::enableForeignKeyConstraints();
     }
 }
