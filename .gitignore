@@ -5,6 +5,7 @@
 /public/js/chunks
 /public/js/main.js
 /public/storage
+/public/Login
 /storage/*.key
 /vendor
 /.idea
