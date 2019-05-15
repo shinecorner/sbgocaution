@@ -9,13 +9,12 @@
                                 colClasses="xl12 lg12 md12 sm12 xs12"
                         >                                
                             <v-flex xs3 md1 lg1 offset-xs9 offset-md11 offset-lg11>                            
-                                <v-select class="perpage_selectbox" hide-details v-bind:items="perPageItems"  v-model.number="perPage" single-line  menu-props="bottom" ></v-select>
+                                <v-select solo class="perpage_selectbox" hide-details v-bind:items="perPageItems"  v-model.number="perPage" single-line  menu-props="bottom" ></v-select>
                             </v-flex>
                         </app-card>
                     </v-layout>
                     <v-layout row wrap>
-                        <app-card
-                                :heading="$t('message.crm.CONTACTS')"
+                        <app-card                                
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12"
                         >            
@@ -41,7 +40,7 @@
                                 <template slot="c_contactformate" slot-scope="props">
                                   <span class="primary-text">{{ props.rowData.contact_formate }}</span>                                  
                                   <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.date }}</span>
-                                  <div class="pt-2 column_icon_container">
+                                  <div class="column_icon_container">
                                     <v-tooltip top v-if="props.rowData.is_duplicate">                                        
                                         <v-icon color="orange darken-2" size="18" slot="activator">zmdi-alert-triangle</v-icon>
                                         <span>{{props.rowData.is_duplicate}}</span>
@@ -75,13 +74,31 @@
                                     </a>
                                 </template>
                                 <template slot="c_name" slot-scope="props">
-                                    <span class="primary-text">{{ props.rowData.nachname }} {{ props.rowData.vorname }}</span>
-                                    <span v-if="props.rowData.company_name" class="grey--text fs-12 secondary-text fw-normal d-block">{{ props.rowData.company_name }}</span>
-                                    <span v-if="props.rowData.anrede" class="grey--text fs-12 secondary-text fw-normal d-block">{{ props.rowData.anrede }}</span>        
+                                    <span class="salute_icon left">
+                                        <template v-if="props.rowData.salutation === 'company'">
+                                            <v-tooltip top>                                                
+                                                <v-icon slot="activator" size="18">zmdi-accounts</v-icon>
+                                                <span>{{$t('message.crm.PDF_IL_COMPANY')}}</span>
+                                            </v-tooltip>                                            
+                                        </template>
+                                        <template v-else-if="props.rowData.salutation === 'mr'">
+                                            <v-tooltip top>
+                                                <v-icon slot="activator" size="18">zmdi-male-alt</v-icon>
+                                                <span>{{$t('message.crm.PDF_IL_MAN')}}</span>                                                
+                                            </v-tooltip>   
+                                        </template>                                                                                
+                                        <template v-else-if="props.rowData.salutation === 'mrs'">                                            
+                                            <v-tooltip top>
+                                                <v-icon slot="activator" size="18">zmdi-female</v-icon>
+                                                <span>{{$t('message.crm.PDF_IL_WOMEN')}}</span>
+                                            </v-tooltip>    
+                                        </template>                                                                                
+                                    </span>
+                                    <span class="primary-text left ml-1">{{ props.rowData.name}}</span>                                    
                                 </template>
                                 <template slot="c_address" slot-scope="props">                                    
                                     <span class="primary-text" v-if="props.rowData.address">{{ props.rowData.address }}</span>
-                                    <span class="primary-text secondary-text">{{ props.rowData.plz }} {{ props.rowData.ort }}</span>                                    
+                                    <span class="primary-text secondary-text">{{ props.rowData.zip }} {{ props.rowData.city }}</span>                                    
                                 </template>
                                 <template slot="c_invoices" slot-scope="props">
                                     <span class="amount-div">{{ 'CHF 94.50' }}</span>
@@ -90,7 +107,9 @@
                                 </template>
                                 <template slot="c_statusdropdown" slot-scope="props">
                                     <v-menu offset-y>
-                                        <v-icon size="24" slot="activator">zmdi-caret-down-circle</v-icon>
+                                        <v-btn icon slot="activator" class="ma-0">
+                                            <v-icon>more_vert</v-icon>
+                                        </v-btn>
                                         <v-list>
                                             <v-list-tile
                                               class="status_dropdown"
@@ -122,7 +141,12 @@
                                     </div>
                                 </template>
                                 <template slot="c_userlink" slot-scope="props">
-                                    {{'0'}}
+                                    <v-avatar v-if="props.rowData.user_id" size="26" color="#449d44">
+                                        <a href="#"><v-icon color="white" small>ti-link</v-icon></a>
+                                    </v-avatar>
+                                    <v-avatar v-else size="26" color="#777777">
+                                        <v-icon color="white" small>ti-link</v-icon>
+                                    </v-avatar>
                                 </template>
                                 <!-- <template slot="c_action" slot-scope="props">
                                     <v-menu offset-y>
@@ -146,14 +170,14 @@
                                 </template>
                             </vuetable>
                         </div>
-                        <div class="layout row wrap">
+                        <div class="layout row wrap pagination-container">
                         <v-flex sm6></v-flex>                        
-                        <v-flex sm6>
+                        <v-flex sm6>                            
                             <vuetable-pagination ref="pagination" 
                             :css="css.pagination"   
                               @vuetable-pagination:change-page="onChangePage"
                             ></vuetable-pagination>
-                        </v-flex>                        
+                        </v-flex>
                         </div>
                     </app-card>
                 </v-layout>
@@ -197,9 +221,9 @@ export default {
                 { title: this.$t('message.crm.TOTAL_INVOICES'), name: "c_invoices" },                
                 { title: "", name: "c_statusdropdown", dataClass: 'statusdropdown_column', titleClass:'statusdropdown_column' },
                 { title: this.$t('message.crm.STATUS'), name: "c_status", dataClass: 'status_quote_column', titleClass:'status_quote_column'},
-                { title: this.$t('message.crm.LINKED_TO_USER'), name: "c_userlink"},
+                { title: "", name: "c_userlink", dataClass: 'userid_link'},
                 //{ title: "", name: "c_action" },
-                { title: "", name: "c_addquote" },
+                { title: "", name: "c_addquote",  dataClass: 'add_policy_btn'},
             ],
             css: {
                 table: {
@@ -252,8 +276,7 @@ export default {
               this.$refs.vuetable.fields[3].title = this.$t('message.crm.NAME');
               this.$refs.vuetable.fields[4].title = this.$t('message.crm.ADDRESS');  
               this.$refs.vuetable.fields[5].title = this.$t('message.crm.TOTAL_INVOICES');  
-              this.$refs.vuetable.fields[7].title = this.$t('message.crm.STATUS');  
-              this.$refs.vuetable.fields[8].title = this.$t('message.crm.LINKED_TO_USER');
+              this.$refs.vuetable.fields[7].title = this.$t('message.crm.STATUS');                
               this.$refs.vuetable.normalizeFields();
            });
         },
@@ -295,10 +318,42 @@ export default {
 
 
 
-  }
+  },
+    created() {
+        this.$store.dispatch("setHeaderTitle", 'message.crm.CONTACTS');    
+    }
 };
 </script>
 <style scoped>
 
-
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(1), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(1){
+    width: 2%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(2), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(2){
+    width: 12%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(3), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(3){
+    width: 5%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(4), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(4){
+    width: 29%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(5), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(5){
+    width: 22%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(6), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(6){
+    width: 10%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(7), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(7){
+    width: 2%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(8), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(8){
+    width: 10%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(9), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(9){
+    width: 2%;
+}
+.contactlist >>> .list-table-container table.v-table thead th:nth-child(10), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(10){
+    width: 5%;
+}
 </style>

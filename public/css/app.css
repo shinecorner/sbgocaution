@@ -11660,7 +11660,7 @@ a.text-dark:focus {
 .list-table-container table.v-table tbody td:first-child,
 .list-table-container table.v-table thead th:first-child,
 .list-table-container table.v-table tbody th:first-child {
-  padding: 8px;
+  padding: 6px;
 }
 
 .column-default {
@@ -11778,7 +11778,7 @@ a.text-dark:focus {
 }
 
 .list-table-container table.v-table tbody td.vuetable-slot .status-chips {
-  padding: 6px 4px;
+  padding: 9px 4px;
 }
 
 .list-table-container table.v-table tbody td.vuetable-slot .secondary-text {
@@ -11814,12 +11814,12 @@ a.text-dark:focus {
   font-weight: bold;
   padding: 2px;
   border-radius: 4px;
-  margin: 6px 1px 2px 1px;
+  margin: 1px;
 }
 
 .list-table-container table.v-table tbody td.statusdropdown_column,
 table.v-table thead th.statusdropdown_column {
-  padding: 8px 0;
+  padding: 4px 0;
   width: 10px;
 }
 
@@ -11831,6 +11831,7 @@ table.v-table thead th.statusdropdown_column {
 
 .list-table-container table.v-table tbody td.vuetable-slot .column_icon_container {
   width: 125px;
+  margin-top: 4px;
 }
 
 .list-table-container table.v-table thead th {
@@ -11844,11 +11845,38 @@ table.v-table thead th.statusdropdown_column {
 }
 
 .list-table-container table.v-table tbody td.vuetable-slot.status_quote_column {
-  padding: 0 0 0 8px;
+  padding: 0;
 }
 
 .list-table-container table.v-table tbody td.chkbox_column,
 .list-table-container table.v-table thead th.chkbox_column {
-  padding: 8px 16px;
+  padding: 8px 0 8px 12px;
+}
+
+.list-table-container table.v-table tbody td.vuetable-slot.edit_data,
+.list-table-container table.v-table tbody td.vuetable-slot.userid_link,
+.list-table-container table.v-table tbody td.vuetable-slot.add_policy_btn {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.container.grid-list-xl *:not(:only-child) .layout.pagination-container:last-child {
+  margin: auto -12px;
+}
+
+.layout.pagination-container .btn-primary {
+  background-color: #eee !important;
+  border-color: #ccc;
+}
+
+.layout.pagination-container .btn-nav {
+  font-size: 1.5rem;
+  padding-top: 0;
+}
+
+.perpage_selectbox .v-select__selections {
+  font-size: 0.85rem;
 }
 

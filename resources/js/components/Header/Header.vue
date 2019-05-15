@@ -25,8 +25,9 @@
 		>	
 			<div class="d-custom-flex align-items-center navbar-left">
 				<div v-if="!horizontal">
-					<v-toolbar-side-icon icon large @click.stop="drawer = !drawer" class="v-step-0"></v-toolbar-side-icon>
-				</div>
+					<v-toolbar-side-icon icon large @click.stop="drawer = !drawer" class="v-step-0"></v-toolbar-side-icon>                                        
+                                        {{$t(headerTitle)}}                                        
+				</div>                                
 				<div class="site-logo-wrap d-custom-flex ml-0 align-items-center" v-else>
 					<router-link to="/horizontal/dashboard/ecommerce" class="grayish-blue site-logo-img">
 						<img src="/static/img/site-logo.png" alt="site logo" width="100" height="30">
@@ -82,7 +83,8 @@ export default {
 			"selectedSidebarBgImage",
 			"darkMode",
 			"collapseSidebar",
-			"activeHeaderFilter"
+			"activeHeaderFilter",
+                        "headerTitle"
 		])
 	},
 	methods: {
