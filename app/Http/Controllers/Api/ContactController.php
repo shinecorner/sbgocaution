@@ -33,6 +33,10 @@ class ContactController extends Controller
             $this->getStatusList($data, $contact_status);
         }
 
+        $data['helpers']['navbar_contacts_count'] = Contact::whereIn('status', [
+            "new", "status_quote_waiting", "pre_confirmation_pending"
+        ])->count();
+
         return ContactResource::collection(Contact::latest()->paginate($per_page))->additional($data);
     }
 
