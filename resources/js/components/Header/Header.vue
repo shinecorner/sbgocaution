@@ -8,7 +8,7 @@
 			v-model="drawer"
 			:mini-variant.sync="collapseSidebar"
 			mini-variant-width="70"
-			:width="250"
+			:width="230"
 			class="Vuely-sidebar"
 			:style="{backgroundImage: 'url(' + selectedSidebarBgImage.url + ')'}"
 			:class="{'background-none': !backgroundImage}"
