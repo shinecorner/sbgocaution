@@ -14,6 +14,7 @@ class RenameColumnsAddressesTable extends Migration
     public function up()
     {
         Schema::table('addresses', function (Blueprint $table) {
+            $table->renameColumn('co_address_name', 'co_name');
             $table->renameColumn('plz', 'zip');
             $table->renameColumn('ort', 'city');
         });
@@ -27,6 +28,7 @@ class RenameColumnsAddressesTable extends Migration
     public function down()
     {
         Schema::table('addresses', function (Blueprint $table) {
+            $table->renameColumn('co_name', 'co_address_name');
             $table->renameColumn('zip', 'plz');
             $table->renameColumn('city', 'ort');
         });

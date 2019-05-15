@@ -7,7 +7,7 @@ $factory->define(Address::class, function (Faker $faker) {
     return [
     	'is_primary' => 1,
     	'type' => 1,
-        'co_address_name' => '',
+        'co_name' => '',
         'address' => $faker->streetAddress,
         'zip' => $faker->numberBetween($min = 1000, $max = 9000),
         'state' => strtoupper($faker->word(2)),

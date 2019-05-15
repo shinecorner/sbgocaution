@@ -28,7 +28,6 @@ class DropContactsOfferPreconfirmsTable extends Migration
             $table->integer('contact_id');
             $table->foreign('contact_id')->references('id')->on('contacts');
             $table->text('preconfirmation_file_name', 65535);
-            $table->integer('preconfirmation_type');
             $table->text('preconfirmation_sent', 65535);
             $table->date('preconfirmation_sent_date');
             $table->boolean('preconfirmation_reminder_sent');

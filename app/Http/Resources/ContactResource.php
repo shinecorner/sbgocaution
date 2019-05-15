@@ -58,8 +58,8 @@ class ContactResource extends JsonResource
 
         if ($this->is_duplicate) {
             $draws = Contact::where('is_duplicate', '=', 1)
-            ->where('name', '=', $this->name)
-            ->where('firstname', '=', $this->firstname)
+            ->where('first_name', '=', $this->first_name)
+            ->where('last_name', '=', $this->last_name)
             ->where('id', '!=', $this->id)
             ->groupBy('id')
             ->orderBy('id', 'asc')->get();
@@ -68,9 +68,9 @@ class ContactResource extends JsonResource
 
             if (!empty($draws)) {
                 foreach ($draws as $key => $draw) {
-                    $data['duplicate'] .= "(" .$draw->contact_formate .") ";
-                    $data['duplicate'] .= $draw->name. " ";
-                    $data['duplicate'] .= $draw->firstname;
+                    $data['duplicate'] .= "(" .$draw->contact_num .") ";
+                    $data['duplicate'] .= $draw->first_name. " ";
+                    $data['duplicate'] .= $draw->last_name;
                     if(($key+1) != count($draws))
                         $data['duplicate'] .= "<br/>";
                 }
@@ -101,9 +101,9 @@ class ContactResource extends JsonResource
         $data['duplicateEmail'] = '';
 
         foreach ($draws as $key => $draw) {
-            $data['duplicateEmail'] .= "(" .$draw->contact_formate .") ";
-            $data['duplicateEmail'] .= $draw->name. " ";
-            $data['duplicateEmail'] .= $draw->firstname;
+            $data['duplicateEmail'] .= "(" .$draw->contact_num .") ";
+            $data['duplicateEmail'] .= $draw->first_name. " ";
+            $data['duplicateEmail'] .= $draw->last_name;
             $data['duplicateEmail'] .= "<br/>";
             $data['duplicateEmail'] .= $draw->email; 
             if(($key+1) != count($draws)) 
