@@ -14,6 +14,7 @@ class UpdateColumnsContactsOfferPreconfirmsTable extends Migration
     public function up()
     {
         Schema::table('contacts_offer_preconfirms', function (Blueprint $table) {
+            $table->integer('contact_id')->nullable(false)->change();
             $table->string('preconfirmation_file_name')->nullable(false)->default('')->change();
             $table->string('preconfirmation_sent')->nullable(false)->default('')->change();
             $table->string('preconfirmation_sent_date')->nullable(false)->default('')->change();
@@ -31,6 +32,7 @@ class UpdateColumnsContactsOfferPreconfirmsTable extends Migration
     public function down()
     {
         Schema::table('contacts_offer_preconfirms', function (Blueprint $table) {
+            $table->integer('contact_id')->nullable()->change();
             $table->string('preconfirmation_file_name')->nullable()->default(NULL)->change();
             $table->string('preconfirmation_sent')->nullable()->default(NULL)->change();
             $table->string('preconfirmation_sent_date')->nullable()->default(NULL)->change();
