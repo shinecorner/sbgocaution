@@ -89,5 +89,6 @@ return [
     'SMTP_AUTHENTICATION' => 'Authentification SMTP',
     'SMTP_USER' => 'Utilisateur',
     'SMTP_PASSWORD' => 'Mot de passe',
-     'OPTIONS' => 'Possibilités',
+    'OPTIONS' => 'Possibilités',
+    'CONTACT_CW' => 'CW',
 ];

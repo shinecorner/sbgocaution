@@ -26,22 +26,23 @@
 											
 										</v-list-tile-content>
 									</v-list-tile>
-									<v-list-tile
-										v-for="subItem in item.items"
-										v-bind:key="subItem.title"
-										v-if="subItem !== null"
-										:to="!subItem.exact ? `/${getCurrentAppLayoutHandler() + subItem.path}` : subItem.path"
-									>
-										<v-list-tile-content>
+                                                                        <template v-for="subItem in item.items" v-if="subItem !== null" style="position:relative;">
+                                                                                <v-list-tile v-bind:key="subItem.title">
+                                                                                    <v-list-tile-content>
 											<v-list-tile-title>
-                                                                                            {{ textTruncate($t(subItem.title)) }}
-                                                                                            <span  v-if = "subItem.label == 'New'">
-                                                                                                <span class="sidebar-label ml-2">{{subItem.label}}</span>
-                                                                                                <span class="sidebar-label">{{'30'}}</span>                                                                                                
-                                                                                            </span>
+                                                                                            <router-link :to="!subItem.exact ? `/${getCurrentAppLayoutHandler() + subItem.path}` : subItem.path"> {{ textTruncate($t(subItem.title)) }}</router-link>                                                                                            
                                                                                         </v-list-tile-title>
-										</v-list-tile-content>
-									</v-list-tile>
+                                                                                    </v-list-tile-content>
+                                                                                    <span  v-if = "subItem.label == 'contact'" class="sidebar-label-container">
+                                                                                        <span class="sidebar-label ml-2">
+                                                                                            <router-link class="d-inline-block" :to="!subItem.exact ? `/${getCurrentAppLayoutHandler() + subItem.path}` : subItem.path">{{((serverHelpers.navbar_contacts_count)? serverHelpers.navbar_contacts_count : '0')}}</router-link>
+                                                                                        </span>
+                                                                                        <span class="sidebar-label">
+                                                                                            <router-link class="d-inline-block" to="/crediweb">{{$t('message.crm.CONTACT_CW')}}</router-link>
+                                                                                        </span>
+                                                                                    </span>                                                                                
+                                                                                </v-list-tile>                                                                                
+                                                                        </template>									                                                                       
 								</v-list-group>
 							</template>	
 							<template v-else>
@@ -94,7 +95,7 @@ export default {
     AppLogo
   },
   computed: {
-    ...mapGetters(["sidebarSelectedFilter", "menus"])
+    ...mapGetters(["sidebarSelectedFilter", "menus", "serverHelpers"])
   },
   methods: {
     textTruncate(text) {
