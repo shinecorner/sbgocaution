@@ -56,7 +56,7 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
                 'option' => 'mail.from.address',
-                'value' => 'info@gocaution.ch'
+                'value' => 'laravelmail@gocaution.ch'
             ],
             [
                 'option' => 'mail.driver',
@@ -68,7 +68,7 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
                 'option' => 'mail.reply_to.address',
-                'value' => 'info@gocaution.ch'
+                'value' => 'laravelmail@gocaution.ch'
             ],
             [
                 'option' => 'mail.port',
