@@ -12,7 +12,7 @@
 @yield('before-css')
     {{-- theme css --}}
 
-      <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-purple.min.css')}}">
+      <link rel="stylesheet" href="{{asset('Login/assets/styles/css/themes/lite-purple.min.css')}}">
     <link rel="stylesheet" href="{{asset('Login/assets/styles/vendor/perfect-scrollbar.css')}}">
  {{-- page specific css --}}
  @yield('page-css')
