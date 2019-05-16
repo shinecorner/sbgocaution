@@ -84,11 +84,11 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
                 'option' => 'mail.username',
-                'value' => 'info@gocaution.ch'
+                'value' => 'laravelmail@gocaution.ch'
             ],
             [
                 'option' => 'mail.password',
-                'value' => '%h+DpP<WtkLcq'
+                'value' => 'ThJh[$yL-rTiY'
             ],
             [
                 'option' => 'crm.robots',
