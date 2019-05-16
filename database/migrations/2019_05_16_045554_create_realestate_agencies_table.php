@@ -14,11 +14,13 @@ class CreateRealestateAgenciesTable extends Migration
     public function up()
     {
         Schema::create('realestate_agencies', function (Blueprint $table) {
+          $table->collation = 'utf8mb4_unicode_ci';
+          $table->charset = 'utf8mb4';
           $table->increments('id');
           $table->integer('real_realestate_agency_num');
           $table->integer('user_id');
           $table->integer('created_by');
-          $table->tinyInteger('is_duplicate')->default(0);
+          $table->boolean('is_duplicate')->default(0);
           $table->string('realestate_agency_num',255);
           $table->string('number',255);
           $table->string('status',255)->default('not_contacted');
@@ -36,7 +38,7 @@ class CreateRealestateAgenciesTable extends Migration
           $table->string('email',255);
           $table->string('website',255);
           $table->string('language',100);
-          $table->tinyInteger('region');
+          $table->boolean('region');
           $table->string('inter1',255);
           $table->string('inter2',255);
           $table->string('inter3',255);
@@ -62,20 +64,19 @@ class CreateRealestateAgenciesTable extends Migration
           $table->string('contact_person_2_position',70);
           $table->string('contact_person_3_position',70);
           $table->integer('key_account_manager');
-          $table->tinyInteger('quote_comment_notification')->default(1);
-          $table->tinyInteger('damage_comment_notification')->default(1);
-          $table->tinyInteger('certificate_email')->default(1);
+          $table->boolean('quote_comment_notification')->default(1);
+          $table->boolean('damage_comment_notification')->default(1);
+          $table->boolean('certificate_email')->default(1);
           $table->string('payment_recipient_bank',255);
           $table->string('payment_recipient_iban',255);
           $table->string('payment_recipient_post_account',255);
           $table->string('child_realestate_agencies',255);
           $table->text('scan_file_name');
-          $table->tinyInteger('mass_email_sent');
+          $table->boolean('mass_email_sent');
           $table->dateTime('mass_email_sent_time');
-          $table->tinyInteger('newpolicy_email_notification')->default(1);
-          $table->tinyInteger('hoacception')->default(0);
+          $table->boolean('newpolicy_email_notification')->default(1);
+          $table->boolean('hoacception')->default(0);
           $table->timestamps();
-
         });
     }
 
