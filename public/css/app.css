@@ -11880,3 +11880,25 @@ table.v-table thead th.statusdropdown_column {
   font-size: 0.85rem;
 }
 
+.sidebar .v-list__tile__content a,
+.sidebar .v-list__tile__content a:hover {
+  display: inline-block !important;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.sidebar .v-list__tile__content a.router-link-active {
+  font-weight: 700;
+}
+
+.sidebar-label a,
+.sidebar-label a:hover {
+  color: #FFFFFF;
+}
+
+.sidebar-label-container {
+  position: relative;
+  left: -15px;
+}
+

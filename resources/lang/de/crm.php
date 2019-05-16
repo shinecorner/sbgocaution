@@ -90,4 +90,5 @@ return [
     'SMTP_USER' => 'Benutzer',
     'SMTP_PASSWORD' => 'Passwort',
     'OPTIONS' => 'Optionen',
+    'CONTACT_CW' => 'CW',
 ];

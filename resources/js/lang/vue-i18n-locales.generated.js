@@ -212,7 +212,8 @@ export default {
             "SMTP_AUTHENTICATION": "SMTP-Authentifizierung",
             "SMTP_USER": "Benutzer",
             "SMTP_PASSWORD": "Passwort",
-            "OPTIONS": "Optionen"
+            "OPTIONS": "Optionen",
+            "CONTACT_CW": "CW"
         }
     },
     "en": {
@@ -428,7 +429,8 @@ export default {
             "SMTP_AUTHENTICATION": "SMTP Authentication",
             "SMTP_USER": "user",
             "SMTP_PASSWORD": "password",
-            "OPTIONS": "Options"
+            "OPTIONS": "Options",
+            "CONTACT_CW": "CW"
         }
     },
     "fr": {
@@ -644,7 +646,8 @@ export default {
             "SMTP_AUTHENTICATION": "Authentification SMTP",
             "SMTP_USER": "Utilisateur",
             "SMTP_PASSWORD": "Mot de passe",
-            "OPTIONS": "Possibilités"
+            "OPTIONS": "Possibilités",
+            "CONTACT_CW": "CW"
         }
     },
     "it": {
@@ -860,7 +863,8 @@ export default {
             "SMTP_AUTHENTICATION": "Autenticazione SMTP",
             "SMTP_USER": "Utente",
             "SMTP_PASSWORD": "La password",
-            "OPTIONS": "Opzioni"
+            "OPTIONS": "Opzioni",
+            "CONTACT_CW": "CW"
         }
     }
 }

@@ -5,18 +5,18 @@ export const menus = {
 			action: 'zmdi-view-dashboard',
 			title: 'message.crm.CRM',
 			active: true,
-			label: 'Old',
+			label: 'crm',
 			items: [
-				{ title: 'message.crm.CONTACTS', path: '/contacts', exact: true, label: 'Old' }
+				{ title: 'message.crm.CONTACTS', path: '/contacts', exact: true, label: 'contact' }
 			]
 		},
 		{
 			action: 'zmdi-wrench',
 			title: 'message.crm.OPTIONS',
 			active: false,
-			label: 'Old',
+			label: 'options',
 			items: [
-				{ title: 'message.crm.OPTIONS', path: '/settings', exact: true, label: 'Old' }
+				{ title: 'message.crm.OPTIONS', path: '/settings', exact: true, label: 'option_item' }
 			]
 		}		
 	],	
