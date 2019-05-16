@@ -14,10 +14,10 @@ class CreateRealestateAgenciesTable extends Migration
     public function up()
     {
         Schema::create('realestate_agencies', function (Blueprint $table) {
-          $table->dateTime('created_datetime')->default(DB::raw('CURRENT_TIMESTAMP'));
           $table->increments('id');
           $table->integer('real_realestate_agency_num');
           $table->integer('user_id');
+          $table->integer('created_by');
           $table->tinyInteger('is_duplicate')->default(0);
           $table->string('realestate_agency_num',255);
           $table->string('number',255);
@@ -29,7 +29,6 @@ class CreateRealestateAgenciesTable extends Migration
           $table->string('lattitude',50);
           $table->string('longitude',50);
           $table->string('state',255);
-          $table->string('stateold',255);
           $table->string('country',255);
           $table->string('phone',255);
           $table->string('phone2',255);
@@ -46,7 +45,7 @@ class CreateRealestateAgenciesTable extends Migration
           $table->string('contact_person_3',200);
           $table->string('crediweb_username_old',255);
           $table->string('crediweb_password_old',255);
-          $table->string('status_vertrag',255);
+          $table->string('status_contract',255);
           $table->longText('notes');
           $table->string('partner_username',150);
           $table->string('partner_password',150);
@@ -75,6 +74,8 @@ class CreateRealestateAgenciesTable extends Migration
           $table->dateTime('mass_email_sent_time');
           $table->tinyInteger('newpolicy_email_notification')->default(1);
           $table->tinyInteger('hoacception')->default(0);
+          $table->timestamps();
+
         });
     }
 
