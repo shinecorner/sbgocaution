@@ -16,18 +16,18 @@ class CreateRealestateAgenciesTable extends Migration
         Schema::create('realestate_agencies', function (Blueprint $table) {
           $table->dateTime('created_datetime')->default(DB::raw('CURRENT_TIMESTAMP'));
           $table->increments('id');
-          $table->integer('real_contact_num');
-          $table->integer('user_id')->references('id')->on('users');
+          $table->integer('real_realestate_agency_num');
+          $table->integer('user_id');
           $table->tinyInteger('is_duplicate')->default(0);
-          $table->string('contact_num',255);
+          $table->string('realestate_agency_num',255);
           $table->string('number',255);
           $table->string('status',255)->default('not_contacted');
           $table->string('name',255);
           $table->text('address');
-          $table->string('zipcode',255);
+          $table->string('zip',255);
           $table->string('city',255);
-          $table->string('lattitude',255);
-          $table->string('longitude',255);
+          $table->string('lattitude',50);
+          $table->string('longitude',50);
           $table->string('state',255);
           $table->string('stateold',255);
           $table->string('country',255);
@@ -62,7 +62,6 @@ class CreateRealestateAgenciesTable extends Migration
           $table->string('contact_person_1_position',70);
           $table->string('contact_person_2_position',70);
           $table->string('contact_person_3_position',70);
-          $table->longText('old_notes');
           $table->integer('key_account_manager');
           $table->tinyInteger('quote_comment_notification')->default(1);
           $table->tinyInteger('damage_comment_notification')->default(1);
@@ -70,11 +69,11 @@ class CreateRealestateAgenciesTable extends Migration
           $table->string('payment_recipient_bank',255);
           $table->string('payment_recipient_iban',255);
           $table->string('payment_recipient_post_account',255);
-          $table->string('child_organizations',255);
+          $table->string('child_realestate_agencies',255);
           $table->text('scan_file_name');
           $table->tinyInteger('mass_email_sent');
           $table->dateTime('mass_email_sent_time');
-          $table->tinyInteger('newquote_email_notification')->default(1);
+          $table->tinyInteger('newpolicy_email_notification')->default(1);
           $table->tinyInteger('hoacception')->default(0);
         });
     }
