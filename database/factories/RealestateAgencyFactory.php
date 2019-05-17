@@ -19,6 +19,7 @@ use App\User;
 $factory->define(App\RealestateAgency::class, function (Faker $faker) {
   $users = User::all()->pluck('id')->toArray();
     return [
+      
        'real_realestate_agency_num' => $faker->randomDigit ,
        'user_id' => $faker-> randomElement($users) ,
        'created_by' => $faker->randomElement(['1', '2','3']),
