@@ -141,11 +141,11 @@
                                     </div>
                                 </template>
                                 <template slot="c_userlink" slot-scope="props">
-                                    <v-avatar v-if="props.rowData.user_id" size="26" color="#449d44">
+                                    <v-avatar v-if="props.rowData.user_id" size="26" class="round-badge-success">
                                         <a href="#"><v-icon color="white" small>ti-link</v-icon></a>
                                     </v-avatar>
-                                    <v-avatar v-else size="26" color="#777777">
-                                        <v-icon color="white" small>ti-link</v-icon>
+                                    <v-avatar v-else size="26" class="round-badge-disabled">
+                                        <a href="#"><v-icon color="white" small>ti-link</v-icon></a>
                                     </v-avatar>
                                 </template>
                                 <!-- <template slot="c_action" slot-scope="props">
@@ -205,7 +205,7 @@ export default {
     },
      data() {
         return {
-            loading: true,
+            loading: true,            
             perPage: 20,
             perPageItems:[20,25,50,100,500],
             moreParams: {},

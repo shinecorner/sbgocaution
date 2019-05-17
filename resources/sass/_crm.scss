@@ -160,6 +160,19 @@
     text-align: center;
     vertical-align: middle;
 }
+.v-avatar{
+    &.round-badge-disabled{
+        background-color: #777777;        
+    }    
+    &.round-badge-success{
+        background-color: #91c545;        
+    }
+    &.round-badge-disabled a, &.round-badge-success a{
+        padding-bottom: 5px;
+    }
+}
+    
+
 .container.grid-list-xl *:not(:only-child) .layout.pagination-container:last-child {margin: auto -12px;}
 
 .layout.pagination-container .btn-primary {

@@ -2,7 +2,7 @@
 	<div class="session-wrapper">
 		<div class="session-left">
 			<!--<session-slider-widget></session-slider-widget>-->
-		</div>
+		</div>                 
 		<div class="session-right text-xs-center">
 			<div class="session-table-cell">
 				<div class="session-content">
@@ -58,7 +58,7 @@
                                                         class="rememberme"
 							v-model="checkbox"
 						></v-checkbox>
-						<router-link class="mb-1" to="/session/forgot-password">{{$t('message.crm.COM_USERS_LOGIN_RESET')}}?</router-link>
+						<!--<router-link class="mb-1" to="/session/forgot-password">{{$t('message.crm.COM_USERS_LOGIN_RESET')}}?</router-link>-->
 						<div>						
                                                     <v-btn large @click="signInWithLaravelPassport" block color="primary">{{$t('message.crm.LOGIN')}}</v-btn>
 						</div>						
@@ -87,19 +87,19 @@ export default {
   data() {
     return {
       checkbox: false,
-      valid: false,
-      email: "demo@example.com",
+      valid: false,      
+      email: "",
       emailRules: [
-        v => !!v || "E-mail is required",
+        v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.crm.EMAIL')}),
         v =>
           /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
-          "E-mail must be valid"
+          this.$t('message.validation.invalid',{attribute: this.$t('message.crm.EMAIL')})
       ],
-      password: "test#123",
-      passwordRules: [v => !!v || "Password is required"],
+      password: "",
+      passwordRules: [v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.crm.PASSWORD')})],
       appLogo: AppConfig.appLogo2,
       brand: AppConfig.brand,
-      fetchLanguage: 'de',
+      fetchLanguage: localStorage.getItem('selectedLocale') || 'de',
       languageItems: [
              { name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de', flag: '/static/flag-icons/de.png' },
              { name: this.$t('message.crm.ORG_LANGUAGE_FR'), locale: 'fr', flag: '/static/flag-icons/fr.png' },
@@ -142,7 +142,7 @@ export default {
         this.$i18n.locale = languagecode;                
         this.$store.dispatch("changeLanguage", languagecode);
     }
-  }
+            }
 };
 </script>
 <style scoped>    
