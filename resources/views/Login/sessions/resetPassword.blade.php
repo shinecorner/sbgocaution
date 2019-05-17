@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>{{ __('login.login') }}</title>
+    <title>{{ __('crm.login') }}</title>
 
     <!--=======================CSS=============================-->
     <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-purple.min.css')}}">
@@ -43,69 +43,41 @@
                         <div class="login-form-module">
                             <div class="login-wrap login-form" style="display:block">
                                 <div class="login">
-                                    <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-{{ __('login.login') }}</h3>
+                                    <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-{{ __('crm.login') }}</h3>
                                     <hr />
-                                    <form style="margin-top: -10px;" action="{{ route('doLogin', app()->getLocale()) }}" method="post" class="form-horizontal">
+                                    <form style="margin-top: -10px;" action="{{ route('updatePassword', app()->getLocale()) }}" method="post" class="form-horizontal">
                                         {{ csrf_field() }}
+                                        <input type="hidden" name="user_id" value="{{ $user_id }}">
+                                        <input type="hidden" name="token" value="{{ $token }}">
                                         <fieldset>
                                             @if(Session::has('message'))
-                                            <p class="alert alert-info cstm-alert">{{ __('login.'.Session::get('message')) }}</p>
-                                            @endif
-
-                                            @if(Session::has('error'))
-                                            <p class="alert alert-info cstm-alert error">{{ __('login.'.Session::get('error')) }}</p>
-                                            @endif
-
+                                            <p class="alert alert-info">{{ __('login.'.Session::get('message')) }}</p>
+                                            @endif 
                                             <div class="form-group">
                                                 <div class="control-label">
-                                                    <label id="username-lbl" for="username" class="required">
-                                                        {{ __('login.username') }}<span class="star">&#160;*</span></label>
+                                                    <label id="new_password" for="new_password" class="required">
+                                                        {{ __('login.new_password') }}<span class="star">&#160;*</span></label>
                                                 </div>
                                                 <div class="controls">
-                                                    <input type="text" name="username" value="{{ Cookie::get('login_username') }}" id="username" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                    <div class="error">{{ $errors->first('username') }}</div>
+                                                    <input type="password" name="new_password" id="new_password" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
+                                                    <div class="error">{{ $errors->first('new_password') }}</div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="control-label">
-                                                    <label id="password-lbl" for="password" class="required">
-                                                        {{ __('login.password') }}<span class="star">&#160;*</span></label>
+                                                    <label id="new_password" for="new_password" class="required">
+                                                        {{ __('login.confirm_password') }}<span class="star">&#160;*</span></label>
                                                 </div>
                                                 <div class="controls">
-                                                    <input type="password" name="password" value="{{ Cookie::get('login_password') }}" id="password" value="" class="validate-password required" size="25" maxlength="99" required aria-required="true" /> </div>
-                                                <div class="error">{{ $errors->first('password') }}</div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="control-label">
-                                                    <label id="username-lbl" for="username" class="required">
-                                                        {{ __('login.language') }}<span class="star">&nbsp;*</span></label>
-                                                </div>
-                                                <select class="selectpicker lang width100" data-width="fit" id="languagechange">
-                                                  <!-- <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
-                                                   <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option> -->
-                                                    <option data-content='<span class="flag-icon flag-icon-us"></span> Deutsch' value="de" data-content='Deutsch'>{{ __('login.org_language_de') }}</option>
-                                                    <option data-content='<span class="flag-icon flag-icon-us"></span> Französisch' value="fr" data-content='Französisch'>{{ __('login.org_language_fr') }}</option>
-                                                    <option data-content='<span class="flag-icon flag-icon-us"></span> Italienisch' value="it" data-content='Italienisch'>{{ __('login.org_language_it') }}</option>
-                                                    <option data-content='<span class="flag-icon flag-icon-us"></span> English' value="en" data-content='English'>{{ __('login.org_language_en') }}</option>
-                                                </select>
-
-
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="checkbox">
-                                                    <label>
-
-                                                        <input id="remember" type="checkbox" @if (Cookie::get('login_remember')) checked @endif name="remember_me" value="yes" />{{ __('login.com_users_login_remember_me') }}</label>
+                                                    <input type="password" name="new_password_confirmation" id="confirm_password" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
+                                                    <div class="error">{{ $errors->first('confirm_password') }}</div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
-                                                    <button type="submit" class="btn btn-primary btn-block">{{ __('login.login') }}</button>
+                                                    <button type="submit" class="btn btn-primary btn-block">{{ __('login.reset') }}</button>
                                                 </div>
-
                                             </div>
                                         </fieldset>
                                     </form>
@@ -120,46 +92,6 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-- Forget password -->
-                            <div class="login-wrap forgetPassword-form" style="display:none">
-                                <div class="login">
-                                    <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-</h3>
-                                    <hr />
-                                    <form style="margin-top: -10px;" action="{{ route('getResetLink', app()->getLocale()) }}" method="post" class="form-horizontal">
-                                        {{ csrf_field() }}
-                                        <fieldset>
-                                            @if(Session::has('message'))
-                                            <p class="alert cstm-alert alert-info">{{ Session::get('message') }}</p>
-                                            @endif
-
-                                            <div class="form-group">
-                                                <div class="control-label">
-                                                    <label id="username-lbl" for="username" class="required">
-                                                        {{ __('login.username') }}<span class="star">&#160;*</span></label>
-                                                </div>
-                                                <div class="controls">
-                                                    <input type="text" name="username" value="" id="username" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                    <div class="error">{{ $errors->first('username') }}</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
-                                                    <button type="submit" class="btn btn-primary btn-block">{{ __('login.get_reset_link') }}</button>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                                <br />
-
-                                <div class="other-links form-group">
-                                    <ul>
-                                        <li><a href ="#" onclick="show_forget_password('login')">{{ __('login.back_to_login') }}</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- from end -->
 
                         </div>
                     </div>
@@ -195,16 +127,16 @@
                         <div class="clearfix form-group">
 
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target=".new-account-request">{{ __('login.request_access') }}</button>
-                            <!-- <div class="modal fade new-account-request" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                            <div class="modal fade new-account-request" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
                                 <div class="modal-dialog modal-sm" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title text-center" id="myModalLabel">
-                                        <span class="clearfix"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></span>
-                                        <span class="clearfix">{{ __('login.login_page_request_policy') }}</span>
-                                        </h4>
+        <span class="clearfix"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></span>
+        <span class="clearfix">{{ __('login.login_page_request_policy') }}</span>
+</h4>
                                         </div>
 
                                         <div class="modal-body">
@@ -314,7 +246,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
 
                         </div>
                     </div>
@@ -340,49 +272,7 @@
         </div>
 
     </div>
-
 </body>
-<script>
-    $(document).ready(function() {
-        var lang = $(location).attr('href');
-        var selectedLang = lang.substr(lang.length - 3);
-        if (selectedLang == '/it') $("#languagechange").val('it');
-        else if (selectedLang == '/fr') $("#languagechange").val('fr');
-        else if (selectedLang == '/de') $("#languagechange").val('de');
-        else if (selectedLang == '/en') $("#languagechange").val('en');
-    });
-    $('#languagechange').change(function() {
-        var lang = $('#languagechange').val();
-        var pageURL = $(location).attr('href').split("/").splice(0, 3).join("/");
-        window.location.href = pageURL + "/" + lang;
-    });
 
-    function show_forget_password(openFrom) {
-        if (openFrom == 'forgetPassword') {
-            $(".forgetPassword-form").css("display", "block");
-            $('.login-form').css("display", "none");
-        } else {
-            $(".forgetPassword-form").css("display", "none");
-            $('.login-form').css("display", "block");
-        }
-    }
-    $(function() {
-      var list = $('.js-dropdown-list');
-      var link = $('.js-link');
-      link.click(function(e) {
-        e.preventDefault();
-        list.slideToggle(200);
-      });
-      list.find('li').click(function() {
-        var text = $(this).html();
-        var icon = '<i class="fa fa-chevron-down"></i>';
-        link.html(text+icon);
-        list.slideToggle(200);
-        if (text === '* Reset') {
-          link.html('Select one option'+icon);
-        }
-      });
-    });
-</script>
 
 </html>

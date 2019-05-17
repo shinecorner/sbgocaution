@@ -2,21 +2,39 @@
 
 // Route::get('/', 'ExampleController@index');
 
-Route::get('/', function () { return view('Login.dashboard.dashboardv1'); })->where('any','.*');
+Route::get('/sendMail', 'LoginController@sendMail');
 
-Route::get('/login/{lang?}', function ($lang = 'de') { return view('Login.sessions/login'); });
+Route::get('/', function () {
+    return redirect(app()->getLocale());
+});
 
-Route::post('/doLogin','LoginController@index');
+Route::group(['prefix' => '{locale}',
+              'where' => ['locale' => '[a-zA-Z]{2}'],
+              'middleware' => 'setlocale'
+          ], function() {
 
-Route::get('/logout','LoginController@log_out');
+      Route::get('/', function () { return view('Login.sessions.login'); })->name('login');
 
-Route::group(['middleware' => 'usersession'], function () {
+      Route::post('/doLogin','LoginController@login')->name('doLogin');
+
+      Route::post('/getResetLink', 'LoginController@password_reset_link')->name('getResetLink');
+
+      Route::get('/forgetPassword', function() { return view('Login.sessions.forgetPassword'); })->name('forgetPassword');
+
+      Route::get('/resetPassword/{id}/{token}','LoginController@reset_password')->name('resetPassword');
+
+      Route::post('/updatePassword','LoginController@update_password')->name('updatePassword');
+
+      Route::group(['middleware' => 'usersession'], function () {
+
+          Route::get('/dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard');
+
+          Route::get('/logout','LoginController@logout')->name('signout');
+
+      });
 
 });
-// Route::get('/login', function () {
-//     return view('Login.dashboard.dashboardv1');
-// });
-// Route::view('/', 'starter')->name('starter');
+
 Route::get('large-compact-sidebar/dashboard/dashboard1', function () {
     // set layout sesion(key)
     session(['layout' => 'compact']);

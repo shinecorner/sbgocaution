@@ -50,7 +50,7 @@
 
 
                     <li class="nav-item {{ request()->is('datatables/*') ? 'active' : '' }}">
-                        <a class="nav-item-hold" href="{{route('basic-tables')}}">
+                        <a class="nav-item-hold" href="{{route('basic-tables', app()->getLocale())}}">
                             <i class="nav-icon i-File-Horizontal-Text"></i>
                             <span class="nav-text">Datatables</span>
                         </a>

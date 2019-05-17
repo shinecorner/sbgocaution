@@ -158,7 +158,7 @@
                             </div>
                             <a class="dropdown-item">Account settings</a>
                             <a class="dropdown-item">Billing history</a>
-                            <a class="dropdown-item" href="{{route('signIn')}}">Sign out</a>
+                            <a class="dropdown-item" href="{{route('signout', app()->getLocale())}}">Sign out</a>
                         </div>
                     </div>
                 </div>
