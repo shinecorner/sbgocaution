@@ -17,11 +17,10 @@ use App\User;
 
 
 $factory->define(App\RealestateAgency::class, function (Faker $faker) {
-  $users = User::all()->pluck('id')->toArray();
     return [
-      
+
        'real_realestate_agency_num' => $faker->randomDigit ,
-       'user_id' => $faker-> randomElement($users) ,
+       'user_id' => 5 ,
        'created_by' => $faker->randomElement(['1', '2','3']),
        'is_duplicate' => $faker->boolean ,
        'realestate_agency_num' => $faker->phoneNumber ,
