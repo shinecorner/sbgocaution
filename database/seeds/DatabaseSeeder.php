@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ContactsTableSeeder::class);
         $this->call(RealestateAgenciesTableSeeder::class);
         $this->call(CountriesTableSeeder::class);
+        $this->call(CantonsTableSeeder::class);
+        $this->call(CantonsZipTableSeeder::class);
     }
 }
