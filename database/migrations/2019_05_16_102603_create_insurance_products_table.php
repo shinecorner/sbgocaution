@@ -16,6 +16,7 @@ class CreateInsuranceProductsTable extends Migration
         Schema::create('insurance_products', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('contact_id');
+            $table->foreign('contact_id')->references('id')->on('contacts');
             $table->string('interested_in');
             $table->string('status');
             $table->string('provider');

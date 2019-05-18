@@ -16,6 +16,7 @@ class CreateDamagesTable extends Migration
         Schema::create('damages', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('policy_id');
+            $table->foreign('policy_id')->references('id')->on('policies');
             $table->string('damage_id');
             $table->string('status');
             $table->datetime('notification_date');

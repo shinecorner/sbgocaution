@@ -16,22 +16,18 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('policy_id');
+            $table->foreign('policy_id')->references('id')->on('policies');
             $table->string('invoice_num');
             $table->integer('real_invoice_num');
             $table->integer('contact_id');
             $table->datetime('added');
             $table->decimal('computed_total',12,2);
             $table->string('status');
-            $table->integer('type')->default(1);
             $table->datetime('date');
             $table->date('startdate');
             $table->date('enddate');
             $table->date('rec_nextdate');
             $table->tinyInteger('is_recurrent');
-            $table->tinyInteger('rec_email');
-            $table->integer('rec_year');
-            $table->integer('rec_month');
-            $table->integer('rec_day');
             $table->integer('rec_count')->default(0);
             $table->tinyInteger('reminder_status')->default(0);
             $table->tinyInteger('sent_reminder');
@@ -45,7 +41,6 @@ class CreateInvoicesTable extends Migration
             $table->tinyInteger('sent_command');
             $table->date('sent_command_date');
             $table->tinyInteger('special_time_allowance');
-            $table->integer('template_id');
             $table->decimal('discount',12,4);
             $table->datetime('duedate');
             $table->string('auth_code');
@@ -75,7 +70,6 @@ class CreateInvoicesTable extends Migration
             $table->timestamps();
             $table->index('invoice_num');
             $table->index('status');
-            $table->index('type');
             $table->index('rec_count'); 
             $table->index('contact_id');
         });

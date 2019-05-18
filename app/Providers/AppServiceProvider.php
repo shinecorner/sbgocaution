@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+        Schema::defaultStringLength(255);
         if(Schema::hasTable('configs')) {
             config(Config::all(['option', 'value'])
                 ->keyBy('option')

@@ -34,7 +34,6 @@ class CreatePrivateLandlordsTable extends Migration
             $table->string('email');
             $table->string('website');
             $table->longText('notes');
-            $table->string('vatid');
             $table->string('fax');
             $table->tinyInteger('policy_comment_notification');
             $table->tinyInteger('damage_comment_notification');
