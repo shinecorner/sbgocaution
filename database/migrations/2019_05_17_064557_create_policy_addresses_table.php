@@ -15,7 +15,7 @@ class CreatePolicyAddressesTable extends Migration
     {
         Schema::create('policy_addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('policy_id');
+            $table->integer('policy_id')->unsigned();
             $table->foreign('policy_id')->references('id')->on('policies');
             $table->string('address');
             $table->string('zip');

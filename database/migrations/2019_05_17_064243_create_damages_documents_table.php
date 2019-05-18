@@ -15,7 +15,7 @@ class CreateDamagesDocumentsTable extends Migration
     {
         Schema::create('damages_documents', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('damage_id');
+            $table->integer('damage_id')->unsigned();
             $table->foreign('damage_id')->references('id')->on('damages');
             $table->string('document');
             $table->integer('type')->default(1);

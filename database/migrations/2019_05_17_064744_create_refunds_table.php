@@ -15,7 +15,7 @@ class CreateRefundsTable extends Migration
     {
         Schema::create('refunds', function (Blueprint $table) {
             $table->increments('id');
-             $table->integer('invoice_id');
+             $table->integer('invoice_id')->unsigned();
              $table->foreign('invoice_id')->references('id')->on('invoices');
              $table->string('type');
              $table->string('reason');
