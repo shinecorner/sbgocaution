@@ -81,14 +81,23 @@
                                                     <label id="username-lbl" for="username" class="required">
                                                         {{ __('login.language') }}<span class="star">&nbsp;*</span></label>
                                                 </div>
-                                                <select class="selectpicker lang width100" data-width="fit" id="languagechange">
-                                                  <!-- <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
-                                                   <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option> -->
+                                                <!-- <select class="selectpicker lang width100" data-width="fit" id="languagechange">
+                                                  <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+                                                   <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
                                                     <option data-content='<span class="flag-icon flag-icon-us"></span> Deutsch' value="de" data-content='Deutsch'>{{ __('login.org_language_de') }}</option>
                                                     <option data-content='<span class="flag-icon flag-icon-us"></span> Französisch' value="fr" data-content='Französisch'>{{ __('login.org_language_fr') }}</option>
                                                     <option data-content='<span class="flag-icon flag-icon-us"></span> Italienisch' value="it" data-content='Italienisch'>{{ __('login.org_language_it') }}</option>
                                                     <option data-content='<span class="flag-icon flag-icon-us"></span> English' value="en" data-content='English'>{{ __('login.org_language_en') }}</option>
-                                                </select>
+                                                </select> -->
+                                                <div class="cstm-dropdown">
+                                                  <a href="#" class="js-link"><span class="flag-icon"><img id="selected_img" data-v-d7480896="" src="/static/flag-icons/de.png"></span><span id="selected_lang">Deutsch</span><i class="fa fa-chevron-down"></i></a>
+                                                  <ul class="js-dropdown-list">
+                                                    <li  data-content="de" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/de.png"></span> Deutsch</li>
+                                                    <li  data-content="fr" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/fr.png"></span> Französisch</li>
+                                                    <li  data-content="it" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/it.png"></span> Italienisch</li>
+                                                    <li  data-content="en" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/en.png"></span> English</li>
+                                                  </ul>
+                                                </div>
 
 
                                             </div>
@@ -97,7 +106,7 @@
                                                 <div class="checkbox">
                                                     <label>
 
-                                                        <input id="remember" type="checkbox" @if (Cookie::get('login_remember')) checked @endif name="remember_me" value="yes" />{{ __('login.com_users_login_remember_me') }}</label>
+                                                        <input id="remember" type="checkbox" @if (Cookie::get('login_remember')) checked @endif name="remember" value="yes" />{{ __('login.com_users_login_remember_me') }}</label>
                                                 </div>
                                             </div>
 
@@ -343,16 +352,31 @@
 
 </body>
 <script>
+
     $(document).ready(function() {
         var lang = $(location).attr('href');
-        var selectedLang = lang.substr(lang.length - 3);
-        if (selectedLang == '/it') $("#languagechange").val('it');
-        else if (selectedLang == '/fr') $("#languagechange").val('fr');
-        else if (selectedLang == '/de') $("#languagechange").val('de');
-        else if (selectedLang == '/en') $("#languagechange").val('en');
+         var selectedLang = lang.substr(lang.length - 3);
+         if (selectedLang == '/it'){
+           $('#selected_img').attr('src','/static/flag-icons/it.png');
+           $('#selected_lang').text(" Italienisch");
+         }
+         else if (selectedLang == '/fr'){
+           $('#selected_img').attr('src','/static/flag-icons/fr.png');
+           $('#selected_lang').text(" Französisch");
+         }
+         else if (selectedLang == '/de'){
+           $('#selected_img').attr('src','/static/flag-icons/de.png');
+           $('#selected_lang').text(" Deutsch");
+         }
+         else{
+           $('#selected_img').attr('src','/static/flag-icons/en.png');
+           $('#selected_lang').text(" English");
+         }
     });
-    $('#languagechange').change(function() {
-        var lang = $('#languagechange').val();
+
+    $('.languagechange').click(function() {
+
+        var lang = $(this).attr('data-content');
         var pageURL = $(location).attr('href').split("/").splice(0, 3).join("/");
         window.location.href = pageURL + "/" + lang;
     });
