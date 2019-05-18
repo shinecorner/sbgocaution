@@ -18,14 +18,11 @@ class CreatePoliciesTable extends Migration
             $table->string('policy_num');
             $table->integer('real_policy_num');
             $table->integer('contact_id');
-            $table->datetime('added');
             $table->decimal('computed_total',12,2);
             $table->string('status');
-            $table->integer('type')->default(1);
             $table->datetime('date');
             $table->date('startdate');
             $table->date('enddate');
-            $table->integer('template_id');
             $table->string('auth_code');
             $table->datetime('last_sent');
             $table->mediumText('certificate_send_details');
@@ -52,7 +49,7 @@ class CreatePoliciesTable extends Migration
             $table->integer('md_invoiceid');
             $table->string('sub_rent',10);
             $table->string('bank_name');
-            $table->string('paid_rent_regular');
+            $table->tinyInteger('paid_rent_regular');
             $table->string('existing_customer_quotestion1_sub',10);
             $table->string('existing_customer_quotestion1',10);
             $table->string('policy_at_other_provider');

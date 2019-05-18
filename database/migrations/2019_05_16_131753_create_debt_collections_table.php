@@ -16,6 +16,7 @@ class CreateDebtCollectionsTable extends Migration
         Schema::create('debt_collections', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('invoice_id');
+            $table->foreign('invoice_id')->references('id')->on('invoices');
             $table->tinyInteger('answer')->default(0);
             $table->date('paid_date');
             $table->string('ref_num');
