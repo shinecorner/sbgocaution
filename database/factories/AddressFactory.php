@@ -13,7 +13,6 @@ $factory->define(Address::class, function (Faker $faker) {
         'state' => strtoupper($faker->word(2)),
         'city' => $faker->city,
         'comment' => '',
-        'ordering' => $faker->numberBetween($min = 1, $max = 5),
         'from_partner' => 0,
         'old_cn' => '',
         'not_correct' => $faker->boolean()
