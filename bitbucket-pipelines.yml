@@ -23,7 +23,6 @@ definitions:
     mysql:
       image: mysql:5.7
       environment:
-        MYSQL_DATABASE: 'homestead'
-        MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
-        MYSQL_USER: 'homestead'
-        MYSQL_PASSWORD: 'secret'
+        MYSQL_DATABASE: 'laravelcrm'
+        MYSQL_USER: 'root'
+        MYSQL_PASSWORD: ''
