@@ -122,4 +122,12 @@ class ContactController extends Controller
         $local = (request()->hasHeader('X-localization')) ? request()->header('X-localization') : 'de';
         app()->setLocale($local);
     }
+
+    public function change_status(Request $request, $id){
+        $contact = Contact::find($id);
+        return response()->json([
+            "api_status" => $contact->change_status(),
+            "data" => $contact
+        ], 200);
+    }
 }
