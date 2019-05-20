@@ -27,7 +27,7 @@ $factory->define(App\RealestateAgency::class, function (Faker $faker) {
        'number' => $faker->randomElement(['ORG-001', 'ORG-002','ORG-003']),
        'name' => $faker->name ,
        'address' => $faker->address ,
-       'zip' => $faker->postcode ,
+       'zip' => $faker->numberBetween($min = 1000, $max = 9000) ,
        'city' => $faker->city ,
        'lattitude' => $faker->latitude() ,
        'longitude' => $faker->latitude() ,
