@@ -69,22 +69,7 @@
                                                 <div class="error">{{ $errors->first('password') }}</div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <div class="control-label">
-                                                    <label id="username-lbl" for="username" class="required">
-                                                        {{ __('login.language') }}<span class="star">&nbsp;*</span></label>
-                                                </div>
-                                                <!-- <div class="cstm-dropdown">
-                                                  <a href="#" class="js-link"><span class="flag-icon"><img id="selected_img" data-v-d7480896="" src="/static/flag-icons/de.png"></span><span id="selected_lang">Deutsch</span><i class="fa fa-chevron-down"></i></a>
-                                                  <ul class="js-dropdown-list">
-                                                    <li  data-content="de" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/de.png"></span> Deutsch</li>
-                                                    <li  data-content="fr" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/fr.png"></span> Französisch</li>
-                                                    <li  data-content="it" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/it.png"></span> Italienisch</li>
-                                                    <li  data-content="en" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/en.png"></span> English</li>
-                                                  </ul>
-                                                </div> -->
-                                            </div>
-
+                                            
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
