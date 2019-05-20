@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" dir="ltr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr">
 
 <head>
 
@@ -45,16 +45,9 @@
                                 <div class="login">
                                     <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-{{ __('login.login') }}</h3>
                                     <hr />
-                                    <form style="margin-top: -10px;" action="{{ route('doLogin', app()->getLocale()) }}" method="post" class="form-horizontal">
+                                    <form style="margin-top: -10px;" action="{{ url(app()->getLocale(),'login') }}" method="post" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <fieldset>
-                                            @if(Session::has('message'))
-                                            <p class="alert alert-info cstm-alert">{{ __('login.'.Session::get('message')) }}</p>
-                                            @endif
-
-                                            @if(Session::has('error'))
-                                            <p class="alert alert-info cstm-alert error">{{ __('login.'.Session::get('error')) }}</p>
-                                            @endif
 
                                             <div class="form-group">
                                                 <div class="control-label">
@@ -62,8 +55,8 @@
                                                         {{ __('login.username') }}<span class="star">&#160;*</span></label>
                                                 </div>
                                                 <div class="controls">
-                                                    <input type="text" name="username" value="{{ Cookie::get('login_username') }}" id="username" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                    <div class="error">{{ $errors->first('username') }}</div>
+                                                    <input type="text" name="email" value="{{ Cookie::get('login_username') }}" id="email" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
+                                                    <div class="error">{{ $errors->first('email') }}</div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -81,14 +74,6 @@
                                                     <label id="username-lbl" for="username" class="required">
                                                         {{ __('login.language') }}<span class="star">&nbsp;*</span></label>
                                                 </div>
-                                                <!-- <select class="selectpicker lang width100" data-width="fit" id="languagechange">
-                                                  <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
-                                                   <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
-                                                    <option data-content='<span class="flag-icon flag-icon-us"></span> Deutsch' value="de" data-content='Deutsch'>{{ __('login.org_language_de') }}</option>
-                                                    <option data-content='<span class="flag-icon flag-icon-us"></span> Französisch' value="fr" data-content='Französisch'>{{ __('login.org_language_fr') }}</option>
-                                                    <option data-content='<span class="flag-icon flag-icon-us"></span> Italienisch' value="it" data-content='Italienisch'>{{ __('login.org_language_it') }}</option>
-                                                    <option data-content='<span class="flag-icon flag-icon-us"></span> English' value="en" data-content='English'>{{ __('login.org_language_en') }}</option>
-                                                </select> -->
                                                 <div class="cstm-dropdown">
                                                   <a href="#" class="js-link"><span class="flag-icon"><img id="selected_img" data-v-d7480896="" src="/static/flag-icons/de.png"></span><span id="selected_lang">Deutsch</span><i class="fa fa-chevron-down"></i></a>
                                                   <ul class="js-dropdown-list">
@@ -98,15 +83,13 @@
                                                     <li  data-content="en" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/en.png"></span> English</li>
                                                   </ul>
                                                 </div>
-
-
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
 
-                                                        <input id="remember" type="checkbox" @if (Cookie::get('login_remember')) checked @endif name="remember" value="yes" />{{ __('login.com_users_login_remember_me') }}</label>
+                                                        <input id="remember" type="checkbox"  name="remember" value="yes" />{{ __('login.com_users_login_remember_me') }}</label>
                                                 </div>
                                             </div>
 
@@ -124,7 +107,8 @@
 
                                 <div class="other-links form-group">
                                     <ul>
-                                        <li><a href="#" onclick="show_forget_password('forgetPassword')">@lang('crm.COM_USERS_LOGIN_RESET')</a></li>
+                                      <!-- <li><a href="#" onclick="show_forget_password('forgetPassword')">@lang('crm.COM_USERS_LOGIN_RESET')</a></li> -->
+                                        <li><a href="{{ url(app()->getLocale(), 'passwordRequest') }}" >@lang('crm.COM_USERS_LOGIN_RESET')</a></li>
 
                                     </ul>
                                 </div>
@@ -134,7 +118,7 @@
                                 <div class="login">
                                     <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-</h3>
                                     <hr />
-                                    <form style="margin-top: -10px;" action="{{ route('getResetLink', app()->getLocale()) }}" method="post" class="form-horizontal">
+                                    <form style="margin-top: -10px;" action="" method="post" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <fieldset>
                                             @if(Session::has('message'))
@@ -352,6 +336,19 @@
 
 </body>
 <script>
+    // $(document).ready(function() {
+    //     var lang = $(location).attr('href');
+    //     var selectedLang = lang.substr(lang.length - 3);
+    //     if (selectedLang == '/it') $("#languagechange").val('it');
+    //     else if (selectedLang == '/fr') $("#languagechange").val('fr');
+    //     else if (selectedLang == '/de') $("#languagechange").val('de');
+    //     else if (selectedLang == '/en') $("#languagechange").val('en');
+    // });
+    // $('#languagechange').change(function() {
+    //     var lang = $('#languagechange').val();
+    //     var pageURL = $(location).attr('href').split("/").splice(0, 3).join("/");
+    //     window.location.href = pageURL + "/" + lang;
+    // });
 
     $(document).ready(function() {
         var lang = $(location).attr('href');
@@ -375,7 +372,6 @@
     });
 
     $('.languagechange').click(function() {
-
         var lang = $(this).attr('data-content');
         var pageURL = $(location).attr('href').split("/").splice(0, 3).join("/");
         window.location.href = pageURL + "/" + lang;
