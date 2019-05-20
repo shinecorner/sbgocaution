@@ -26,13 +26,13 @@ class UpdateColumns1ContactsTable extends Migration
             ]);
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY contact_type TINYINT(1) NOT NULL DEFAULT 1');
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY garant_total TINYINT(1) DEFAULT 1');
-            DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY additional_id TINYINT(1) NOT NULL DEFAULT 1');
+            DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY additional_id INT(11) NOT NULL DEFAULT 1');
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY promo_success TINYINT(1) NOT NULL DEFAULT 1');
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY promo_review TINYINT(1) NOT NULL DEFAULT 1');
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY promo_review_facebook TINYINT(1) NOT NULL DEFAULT 1');
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY promo_review_google TINYINT(1) NOT NULL DEFAULT 1');
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY promo_review_local TINYINT(1) NOT NULL DEFAULT 1');
-            $table->boolean('preconfirmation_type');
+            $table->boolean('preconfirmation_type')->default(1);
         });
         Schema::enableForeignKeyConstraints();
     }
