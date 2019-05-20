@@ -69,11 +69,10 @@
                                                 <div class="error">{{ $errors->first('password') }}</div>
                                             </div>
 
-                                            
+
                                             <div class="form-group">
                                                 <div class="checkbox">
                                                     <label>
-
                                                         <input id="remember" type="checkbox"  name="remember" value="yes" />{{ __('login.com_users_login_remember_me') }}</label>
                                                 </div>
                                             </div>
