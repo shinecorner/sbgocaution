@@ -705,3 +705,11 @@ span.flag-icon {
     margin: 30px auto;
 }
 }
+@media only screen and (max-width: 375px)  {
+  .login-main .logo-img {
+    width: 120px;
+}
+.mod-languages .btn.dropdown-toggle {
+    padding: 2px 10px 0 0;
+}
+}
