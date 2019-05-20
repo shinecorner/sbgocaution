@@ -1,40 +1,43 @@
 <?php
 
-use App\Mail\MailtrapExample;
-use Illuminate\Support\Facades\Mail;
 
     Route::get('/', function () {
         return redirect('/de');
     });
 
-    Route::get('/sendMail','LoginController@sendMail');
+    Route::get('/sendMail','AuthLoginController@sendMail');
 
     Auth::routes();
 
+    Route::get('/login', function () {
+        return redirect('/de');
+    })->name('login');
+
     Route::group(['prefix' => '{locale}',
                   'where' => ['locale' => '[a-zA-Z]{2}'],
-                  'middleware' => ['web']], function () {
+                  'middleware' => ['setLocale']], function () {
           Route::get('/', function () {
               return view('Login.sessions.login');
           });
 
-          Route::post('login','AuthLoginController@log_in');
+          Route::post('login','AuthLoginController@login');
 
-          Route::get('/dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard');
+          Route::middleware(['auth'])->group(function () {
 
-          Route::post('logout','AuthLoginController@log_out');
+          Route::get('/dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard')->middleware('auth');;
 
-          Route::get('password/reset/{token}', 'Login\Login_Controller@show_Reset_Form');
+              Route::post('logout','AuthLoginController@logout');
 
-          Route::get('passwordRequest','AuthLoginController@show_Link_RequestForm');
+          });
 
-          Route::post('passwordEmail','AuthLoginController@send_Reset_Link_Email');
 
-          Route::post('password.update','AuthLoginController@reset_password');
+          Route::get('passwordRequest','AuthLoginController@showLinkRequestForm');
+
+          Route::post('passwordEmail','AuthLoginController@sendResetLinkEmail');
+
+          Route::post('password.update','AuthLoginController@resetPassword');
 
     });
-
-  
 
     Route::get('large-compact-sidebar/dashboard/dashboard1', function () {
         // set layout sesion(key)
