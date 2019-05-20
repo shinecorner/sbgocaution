@@ -19,7 +19,7 @@ pipelines:
           - php artisan serve &
           - sleep 5
           - ./vendor/bin/phpunit
-          - curl -vk http://localhost:8000
+          - curl -vk http://crm.gocaution.local
         services:
           - mysql
 
@@ -28,7 +28,6 @@ definitions:
     mysql:
       image: mysql:5.7
       environment:
-        MYSQL_DATABASE: 'homestead'
-        MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
-        MYSQL_USER: 'homestead'
-        MYSQL_PASSWORD: 'secret'
+        MYSQL_DATABASE: 'laracrm'
+        MYSQL_USER: 'root'
+        MYSQL_PASSWORD: ''
