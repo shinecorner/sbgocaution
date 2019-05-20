@@ -45,22 +45,31 @@
                                 <div class="login">
                                     <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-{{ __('crm.login') }}</h3>
                                     <hr />
-                                    <form style="margin-top: -10px;" action="{{ route('updatePassword', app()->getLocale()) }}" method="post" class="form-horizontal">
+                                    <form style="margin-top: -10px;" action="{{ route('password.update', app()->getLocale()) }}" method="post" class="form-horizontal">
                                         {{ csrf_field() }}
-                                        <input type="hidden" name="user_id" value="{{ $user_id }}">
                                         <input type="hidden" name="token" value="{{ $token }}">
                                         <fieldset>
-                                            @if(Session::has('message'))
-                                            <p class="alert alert-info">{{ __('login.'.Session::get('message')) }}</p>
-                                            @endif 
+
+                                          <div class="form-group">
+                                              <div class="control-label">
+                                                  <label id="new_password" for="new_password" class="required">
+                                                      {{ __('login.username') }}<span class="star">&#160;*</span></label>
+                                              </div>
+                                              <div class="controls">
+                                                  <input type="password" name="email" id="email" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
+                                                  <div class="error">{{ $errors->first('email') }}</div>
+                                              </div>
+                                          </div>
                                             <div class="form-group">
                                                 <div class="control-label">
                                                     <label id="new_password" for="new_password" class="required">
                                                         {{ __('login.new_password') }}<span class="star">&#160;*</span></label>
                                                 </div>
                                                 <div class="controls">
-                                                    <input type="password" name="new_password" id="new_password" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                    <div class="error">{{ $errors->first('new_password') }}</div>
+                                                    <input type="password" name="password" id="password" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
+                                                    @if ($errors->has('password'))
+                                                      <div class="error">{{ $errors->first('new_password') }}</div>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -69,8 +78,8 @@
                                                         {{ __('login.confirm_password') }}<span class="star">&#160;*</span></label>
                                                 </div>
                                                 <div class="controls">
-                                                    <input type="password" name="new_password_confirmation" id="confirm_password" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                    <div class="error">{{ $errors->first('confirm_password') }}</div>
+                                                    <input type="password" name="password_confirmation" id="password_confirmation" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
+
                                                 </div>
                                             </div>
 

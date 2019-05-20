@@ -30,6 +30,13 @@ class AuthLoginController extends controller
         return view('Login.sessions.reset');
     }
 
+    public function showResetForm(Request $request, $token = null)
+    {
+        return view('Login.sessions.resetPassword')->with(
+            ['token' => $token, 'email' => $request->email]
+        );
+    }
+
     public function login(Request $request){
       return (new LoginController)->Login($request);
     }
@@ -46,13 +53,10 @@ class AuthLoginController extends controller
       return (new ForgotPasswordController)->sendResetLinkEmail($request);
     }
 
-    public function resetPassword(Request $request){
+    public function reset(Request $request){
       return (new ResetPasswordController)->reset();
     }
 
-    public function showResetForm($token){
-      return (new ResetPasswordController)->showResetForm($token);
-    }
 
     // public function sendMail(){
     //   config(['mail.driver' => 'smtp']);

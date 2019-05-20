@@ -30,12 +30,13 @@
 
           });
 
-
           Route::get('passwordRequest','AuthLoginController@showLinkRequestForm');
 
           Route::post('passwordEmail','AuthLoginController@sendResetLinkEmail');
 
-          Route::post('password.update','AuthLoginController@resetPassword');
+          Route::get('password.reset','AuthLoginController@showResetForm');
+
+          Route::post('password.update', 'AuthLoginController@reset');
 
     });
 

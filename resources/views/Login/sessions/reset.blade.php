@@ -45,7 +45,7 @@
                             <!-- Forget password -->
                             <div class="login-wrap forgetPassword-form">
                                 <div class="login">
-                                    <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-</h3>
+                                    <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-{{ __('login.forget_password')}}</h3>
                                     <hr />
                                     <form style="margin-top: -10px;" action="{{ url( app()->getLocale(),'passwordEmail') }}" method="post" class="form-horizontal">
                                         {{ csrf_field() }}

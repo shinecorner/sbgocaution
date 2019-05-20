@@ -74,7 +74,7 @@
                                                     <label id="username-lbl" for="username" class="required">
                                                         {{ __('login.language') }}<span class="star">&nbsp;*</span></label>
                                                 </div>
-                                                <div class="cstm-dropdown">
+                                                <!-- <div class="cstm-dropdown">
                                                   <a href="#" class="js-link"><span class="flag-icon"><img id="selected_img" data-v-d7480896="" src="/static/flag-icons/de.png"></span><span id="selected_lang">Deutsch</span><i class="fa fa-chevron-down"></i></a>
                                                   <ul class="js-dropdown-list">
                                                     <li  data-content="de" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/de.png"></span> Deutsch</li>
@@ -82,7 +82,7 @@
                                                     <li  data-content="it" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/it.png"></span> Italienisch</li>
                                                     <li  data-content="en" class="languagechange"><span class="flag-icon"><img data-v-d7480896="" src="/static/flag-icons/en.png"></span> English</li>
                                                   </ul>
-                                                </div>
+                                                </div> -->
                                             </div>
 
                                             <div class="form-group">
@@ -188,126 +188,6 @@
                         <div class="clearfix form-group">
 
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target=".new-account-request">{{ __('login.request_access') }}</button>
-                            <!-- <div class="modal fade new-account-request" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                                <div class="modal-dialog modal-sm" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title text-center" id="myModalLabel">
-                                        <span class="clearfix"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></span>
-                                        <span class="clearfix">{{ __('login.login_page_request_policy') }}</span>
-                                        </h4>
-                                        </div>
-
-                                        <div class="modal-body">
-                                            <div class="moduletable">
-                                                <div class="rsform">
-                                                    <form method="post" id="userForm" action="https://www.login.gocaution.ch/de">
-                                                        <div id="rsform_error_4" style="display: none;">
-                                                            <p class="formRed">Please complete all required fields!</p>
-                                                        </div>
-                                                        <fieldset class="formContainer" id="rsform_4_page_0">
-                                                            <div class="row">
-                                                                <div class="col-sm-12">
-                                                                    <div class="rsform-block rsform-block-text">
-                                                                        <p style="color: #8dbf43">Gerne vereinbaren wir mit Ihnen einen telefonischen Termin und führen Sie mittels Bildschirmübertragung durch die Applikation, unabhängig davon, ob bereits Mieterinnen von Ihnen eine Kautionspolice bei uns abgeschlossen haben oder nicht.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-firmenname">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Firmenname">Firmenname</label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="40" name="form[Firmenname]" id="Firmenname" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component40" class="formNoError">Invalid Input</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-name">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Name">Name<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="20" name="form[Name]" id="Name" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component33" class="formNoError">Bitte ausfüllen</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-vorname">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Vorname">Vorname<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="20" name="form[Vorname]" id="Vorname" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component37" class="formNoError">Bitte ausfüllen</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-adresse">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Adresse">Adresse<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="40" name="form[Adresse]" id="Adresse" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component41" class="formNoError">Bitten geben Sie Ihre Adresse ein</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-postleitzahl-und-ort">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Postleitzahl und Ort">Postleitzahl und Ort<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="40" name="form[Postleitzahl und Ort]" id="Postleitzahl und Ort" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component42" class="formNoError">Bitten geben Sie Ihre PLZ und den Ort ein.</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-mobile">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Mobile">Telefon/Mobile<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="20" name="form[Mobile]" id="Mobile" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component38" class="formNoError">Bitte ausfüllen</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-e-mail">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="E-Mail">E-Mail<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="20" name="form[E-Mail]" id="E-Mail" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component34" class="formNoError">Bitte geben Sie eine gültige E-Mail Adresse ein.</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group rsform-block rsform-block-send">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Send"></label>
-                                                                        <div class="formControls">
-                                                                            <button type="submit" name="form[Send]" id="Send" class="rsform-submit-button  btn btn-primary">Senden</button>
-                                                                            <span class="help-block formValidation"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </fieldset>
-                                                        <input type="hidden" name="form[formId]" value="4" />
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
 
                         </div>
                     </div>
@@ -329,30 +209,34 @@
                         <div style="text-align: center; font-size: 9px; margin-bottom: 20px;">goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen</div>
                     </div>
                 </div>
+                <div class="position-absolute">
+                  <div class="mod-languages">
+                      <div class="btn-group">
+                          <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+                              <span class="caret"></span> &nbsp;
+                              <img id="selected_img" src="{{asset('/static/flag-icons/de.png')}}" alt="" /><span id="selected_lang"> Deutsch </span></a>
+                              <ul class="lang-block dropdown-menu" dir="ltr">
+                                  <li data-content="de" class="languagechange"><a href="#"><img src="{{asset('/static/flag-icons/de.png')}}" alt="" /> Deutsch </a></li>
+                                  <li data-content="fr" class="languagechange"><a href="#"><img src="{{asset('/static/flag-icons/fr.png')}}" alt="" /> Français </a></li>
+                                  <li data-content="it" class="languagechange"><a href="#"><img src="{{asset('/static/flag-icons/it.png')}}" alt="" /> Italienisch </a></li>
+                                  <li data-content="en" class="languagechange"><a href="#"><img src="{{asset('/static/flag-icons/en.png')}}" alt="" /> English </a></li>
+                              </ul>
+                      </div>
+                  </div>
+                </div>
             </div>
+
         </div>
 
     </div>
 
 </body>
 <script>
-    // $(document).ready(function() {
-    //     var lang = $(location).attr('href');
-    //     var selectedLang = lang.substr(lang.length - 3);
-    //     if (selectedLang == '/it') $("#languagechange").val('it');
-    //     else if (selectedLang == '/fr') $("#languagechange").val('fr');
-    //     else if (selectedLang == '/de') $("#languagechange").val('de');
-    //     else if (selectedLang == '/en') $("#languagechange").val('en');
-    // });
-    // $('#languagechange').change(function() {
-    //     var lang = $('#languagechange').val();
-    //     var pageURL = $(location).attr('href').split("/").splice(0, 3).join("/");
-    //     window.location.href = pageURL + "/" + lang;
-    // });
 
     $(document).ready(function() {
         var lang = $(location).attr('href');
          var selectedLang = lang.substr(lang.length - 3);
+
          if (selectedLang == '/it'){
            $('#selected_img').attr('src','/static/flag-icons/it.png');
            $('#selected_lang').text(" Italienisch");
