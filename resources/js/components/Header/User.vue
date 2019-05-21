@@ -1,5 +1,13 @@
 <template>
-   <v-menu offset-y origin="right top" left content-class="language-dropdown" transition="slide-y-transition" nudge-top="-10" class="user-block-wrap d-none">
+                    <v-menu 
+			bottom
+			offset-y
+			left
+			content-class="userblock-dropdown" 
+			nudge-top="-10"
+			nudge-right="0"
+			transition="slide-y-transition"
+                    >
 		<v-btn icon large slot="activator">
 			<img src="/static/avatars/user-13.jpg" alt="avatar" height="40" width="40" class="img-responsive rounded-circle" />
 		</v-btn>
@@ -12,13 +20,13 @@
             <template v-for="userLink in userLinks" v-if="userLink.id !== 4">
                <v-list-tile :to="getMenuLink(userLink.path)" :key="userLink.id">
                   <i :class="userLink.icon"></i>
-                  <span>{{$t(userLink.title)}}</span>
+                  <span>{{$t('message.crm.EDIT_ACCOUNT')}}</span>
                </v-list-tile>
             </template>
             <template v-else>
                <v-list-tile @click="logoutUser" :key="userLink.id">
                   <i :class="userLink.icon"></i>
-                  <span>{{$t(userLink.title)}}</span>
+                  <span>{{$t('message.crm.LOGOUT')}}</span>
                </v-list-tile>
             </template>
          </v-list>

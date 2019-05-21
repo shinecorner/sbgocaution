@@ -11889,6 +11889,16 @@ table.v-table thead th.statusdropdown_column {
   padding-top: 0;
 }
 
+.layout.pagination-container .btn-nav:nth-child(2) {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+.layout.pagination-container .btn-nav:nth-child(8) {
+  padding-left: 20px;
+  padding-right: 0;
+}
+
 .perpage_selectbox .v-select__selections {
   font-size: 0.85rem;
 }
@@ -11910,8 +11920,19 @@ table.v-table thead th.statusdropdown_column {
   color: #FFFFFF;
 }
 
-.sidebar-label-container {
-  position: relative;
-  left: -15px;
+.container.grid-list-xl .layout .flex.search-content {
+  padding-top: 24px;
+}
+
+.search-content .v-text-field.v-text-field--solo .v-input__control {
+  /*min-height: 32px;*/
+}
+
+.sidebar.leftbar {
+  /*width: 90%;*/
+}
+
+.sidebar .navigation .v-list__tile__content {
+  padding: 0 0 0 20px;
 }
 

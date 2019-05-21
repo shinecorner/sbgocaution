@@ -525,17 +525,19 @@ iframe {
 	}
 }
 .sidebar-label {	
-	background: $success;
+        display: inline-block;
+	background: #91c545;
 	color: #fff;
-	padding: 2px 4px;
-	border-radius: 4px;
+	padding: 2px 5px;
+	border-radius: 9px;        
 	font-size: 10.998px;
-        font-weight: bold;
+        font-weight: bold;        	
+	line-height: 15px;
+        vertical-align: baseline;
+        white-space: nowrap;
+        position: relative;
         margin: 0 2px;
-	top: 16px;
-	right: 40px;
-	letter-spacing: 1px;
-	line-height: 13px;
+        right: 45px
 }
 .v-navigation-drawer .navigation .v-list .v-list__tile--link {
 	width: 250px;
