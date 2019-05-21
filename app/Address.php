@@ -11,6 +11,11 @@ class Address extends Model
         'is_primary', 'type', 'contact_id', 'co_address_name', 'address', 'plz', 'state', 'ort', 'comment'
     ];
 
+    /**
+     * Get related Contact object.
+     * 
+     * @return Relationship Object
+     */
     public function contact()
     {
         return $this->belongsTo('App\Contact');

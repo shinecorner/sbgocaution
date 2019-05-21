@@ -3,13 +3,10 @@
 if (!function_exists('getUniqueNum')) {
     /**
      * Returns a Unique Number
-     *
+     * 
      * @param integer $real_invoice_num
-     *
      * @param integer $type
-     *
      * @return string unique number
-     *
      * */
     function getUniqueNum($real_invoice_num, $type = 1){
         if($type == 1) $format = config('crm.invoice_num_format');
@@ -28,44 +25,54 @@ if (!function_exists('getUniqueNum')) {
 }
 
 if (!function_exists('render_status_class')) {
-
+    /**
+     * Returns an appropriate status class from status.
+     * 
+     * @param string $status
+     * @return string $status_class
+     */
     function render_status_class($status){
         switch($status){
             case "paid": case "payed": case "accepted": case "accepted_client":case "contacted":
-            $status = "success" ;
+            $status_class = "success" ;
             break;
             case "pending":case "partial_paid":case "waiting_for_payment":case "predeclared": case "invoice_status_nopayment":case 'status_quote_waiting': case 'claim_pending': case "quote_status_joint_guarantee": case 'pending_cancel': case 'online_payment_waiting': case 'online_payment_invalid': case "pre_confirmation_pending":
-            $status = "warning" ;
+            $status_class = "warning" ;
             break;
             case "pastdue": case "rejected": case "dissolved_with_claims":case "not_contacted": case "dissolved_without_claims": case "rejected_client":case "dissolved_immediately": case "refunded": case "partial_refunded":case 'reminder':case 'warning1':case 'warning2': case 'collection':case 'status_resolved':case 'debt_enforcement':case 'command':case 'follow':case 'loss':case 'seizure': case 'invoice_status_collection':
-            $status = "danger" ;
+            $status_class = "danger" ;
             break;
             case "cancelled": case "expired":
-            $status = "inverse" ;
+            $status_class = "inverse" ;
             break;
             case "corrected":
-            $status = "info" ;
+            $status_class = "info" ;
             break;
             case "offer": case "offer_pending": case "offer_sent":
-            $status = "offer" ;
+            $status_class = "offer" ;
             break;
             case "in_clarification":
-            $status = "in_clarification" ;
+            $status_class = "in_clarification" ;
             break;
             case "pre_confirmation_sent": case "client_won":  case "receive_registration": case "registration_completed":
-            $status = "pre_confirmation" ;
+            $status_class = "pre_confirmation" ;
             break;
             default:
-            $status = "default" ;
+            $status_class = "default" ;
             break;
         }
 
-        return $status;
+        return $status_class;
     }
 }
 
 if (!function_exists('get_language_flag')) {
-
+    /**
+     * Returns a language flag image path based on language.
+     * 
+     * @param  string $language
+     * @return string $language_flag
+     */
     function get_language_flag($language){
         if($language == "it-IT")
             $language_flag = asset('/static/flag-icons/it.png');
@@ -73,13 +80,19 @@ if (!function_exists('get_language_flag')) {
             $language_flag = asset('/static/flag-icons/fr.png');
         elseif($language == "de-DE")
             $language_flag = asset('/static/flag-icons/de.png');
+        elseif($language == "en-EN")
+            $language_flag = asset('/static/flag-icons/en.png');
         return $language_flag;
     }
 
 }
 
 if (!function_exists('getContactStatus')) {
-
+    /**
+     * Returns all the statuses.
+     * 
+     * @return array $status
+     */
     function getContactStatus(){
         $status = array();
 
@@ -102,7 +115,12 @@ if (!function_exists('getContactStatus')) {
 }
 
 if(!function_exists('roundTo5')){
-
+    /**
+     * Returns decimal number which is round to 5.
+     * 
+     * @param  decimal $number
+     * @return decimal $number
+     */
     function roundTo5($number){
         $number = round($number * 2, 1) / 2;
         return $number;
@@ -111,7 +129,14 @@ if(!function_exists('roundTo5')){
 }
 
 if(!function_exists('format')){
-
+    /**
+     * Returns formatted decimal number.
+     * 
+     * @param  decimal $number
+     * @param  string $before
+     * @param  string $after
+     * @return string
+     */
     function format($number, $before = "", $after = ""){
         $decpoint = config('crm.decpoint');
         $thousands = config('crm.thousands');
@@ -123,7 +148,11 @@ if(!function_exists('format')){
 }
 
 if(!function_exists('getContactPDF')){
-
+    /**
+     * Returns Contact PDF related statues.
+     * 
+     * @return array $status
+     */
     function getContactPDF(){
         $status = array();
 
@@ -138,7 +167,12 @@ if(!function_exists('getContactPDF')){
 }
 
 if(!function_exists('get_salutation')){
-
+    /**
+     * Returns translated salutation.
+     * 
+     * @param string $salutation
+     * @return string translated salutation
+     */
     function get_salutation($salutation){
         switch($salutation) {
             case 'mr': 

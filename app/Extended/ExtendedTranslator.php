@@ -6,6 +6,16 @@ use Illuminate\Translation\Translator;
 
 class ExtendedTranslator extends Translator
 {
+
+	/**
+	 * get lowercase key and convert it uppercase key.
+	 * 
+	 * @param string $key
+	 * @param array $replace
+	 * @param string $locale
+	 * @param boolean $fallback
+	 * @return string $key
+	 */
     public function get($key, array $replace = [], $locale = null, $fallback = true)
     {
     	$values = explode('.', $key);

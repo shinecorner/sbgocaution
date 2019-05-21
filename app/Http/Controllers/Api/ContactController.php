@@ -120,10 +120,11 @@ class ContactController extends Controller
     }
 
     /**
+     * Returns the translated statues.
      * 
-     * @param  [type]
-     * @param  [type]
-     * @return [type]
+     * @param reference array of $data
+     * @param string $status
+     * @return void
      */
     private function getStatusList(&$data, $status){
         switch ($status) {

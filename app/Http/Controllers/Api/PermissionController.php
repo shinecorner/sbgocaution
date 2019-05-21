@@ -95,6 +95,14 @@ class PermissionController extends Controller
         ], 200);
     }
 
+    /**
+     * Assign permission to role.
+     * 
+     * @param  Request
+     * 
+     * @return \Illuminate\Http\Response
+     * 
+     */
     public function assignment(Request $request) {
         $role = Role::find($request->role_id);
         $permission = Permission::find($request->permission_id);
