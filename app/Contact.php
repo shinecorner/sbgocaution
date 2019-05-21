@@ -67,10 +67,9 @@ class Contact extends Model
             }
         }
         $this->status = request()->status;
-        $this->save();
         // @TODO Activity Log
         //$dispatcher->trigger('onChangeContactStatus',array($cid, $status));
-        return true;
+        return $this->save();
     }
 
 }

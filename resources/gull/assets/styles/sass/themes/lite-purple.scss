@@ -49,3 +49,4 @@ $theme-colors: ( primary: $primary, secondary: $secondary, success: $success, in
 @import "../../../../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../bootstrap-rtl.scss";
 @import "../globals/globals.scss";
+@import "../custom.scss";

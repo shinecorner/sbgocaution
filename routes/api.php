@@ -29,6 +29,7 @@ Route::group([
 ], function(){
     Route::post('user/role', 'RoleController@assignment');
     Route::post('role/permission', 'PermissionController@assignment');
+    Route::put('contacts/change_status/{id}', 'ContactController@change_status');
     Route::resource('contacts', 'ContactController');
     Route::put('configs/all','ConfigController@updateAll');
     Route::resource('configs', 'ConfigController');

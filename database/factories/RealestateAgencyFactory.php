@@ -17,17 +17,17 @@ use App\User;
 
 
 $factory->define(App\RealestateAgency::class, function (Faker $faker) {
-  $users = User::all()->pluck('id')->toArray();
     return [
+
        'real_realestate_agency_num' => $faker->randomDigit ,
-       'user_id' => $faker-> randomElement($users) ,
+       'user_id' => 5 ,
        'created_by' => $faker->randomElement(['1', '2','3']),
        'is_duplicate' => $faker->boolean ,
        'realestate_agency_num' => $faker->phoneNumber ,
        'number' => $faker->randomElement(['ORG-001', 'ORG-002','ORG-003']),
        'name' => $faker->name ,
        'address' => $faker->address ,
-       'zip' => $faker->postcode ,
+       'zip' => $faker->numberBetween($min = 1000, $max = 9000) ,
        'city' => $faker->city ,
        'lattitude' => $faker->latitude() ,
        'longitude' => $faker->latitude() ,

@@ -25,7 +25,7 @@ class CreateContactsTable extends Migration {
 			$table->string('nachname');
 			$table->string('vorname');
 			$table->string('language');
-			$table->string('email')->index('email')->nullable();
+			$table->string('email')->index()->nullable();
 			$table->string('telefon')->nullable();
 			$table->string('mobile')->nullable();
 			$table->string('birthday', 150)->nullable();
@@ -67,7 +67,7 @@ class CreateContactsTable extends Migration {
 			$table->string('mygocaution_password', 256)->nullable();
 			$table->string('existing_customer_gocaution', 10)->nullable();
 			$table->string('nation_sub_question', 10)->nullable();
-			$table->boolean('promo_success')->index('promo_success')->nullable();
+			$table->boolean('promo_success')->index()->nullable();
 			$table->boolean('promo_review')->nullable();
 			$table->boolean('promo_review_facebook')->nullable();
 			$table->boolean('promo_review_google')->nullable();
