@@ -158,7 +158,15 @@
                             </div>
                             <a class="dropdown-item">Account settings</a>
                             <a class="dropdown-item">Billing history</a>
-                            <a class="dropdown-item" href="{{route('signIn')}}">Sign out</a>
+                            <!-- <a class="dropdown-item" href="{{url( app()->getLocale(), 'logout')}}">Sign out</a> -->
+                            <a class="dropdown-item" href="{{ url(app()->getLocale(),'logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                Sign out
+                            </a>
+                            <form id="logout-form" action="{{ url(app()->getLocale(),'logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>

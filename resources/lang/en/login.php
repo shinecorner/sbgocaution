@@ -1,0 +1,38 @@
+<?php
+  return [
+    /* from CRM */
+    'LOGIN' => 'Log in',
+    'USERNAME' => 'Username',
+    'PASSWORD' => 'Password',
+    'LANGUAGE' => 'Language',
+    'ORG_LANGUAGE_DE' => 'Deutsch',
+    'ORG_LANGUAGE_FR' => 'Französisch',
+    'ORG_LANGUAGE_IT' => 'Italienisch',
+    'ORG_LANGUAGE_EN' => 'English',
+    'COM_USERS_LOGIN_REMEMBER_ME' => 'Remember me',
+    /* END */
+
+    'LOGIN_TITLE' => 'goCaution® LARALOGIN',
+    'FORGET_PASSWORD' => 'Forget Password',
+    'GET_RESET_LINK' => 'Get Reset Link',
+    'BACK_TO_LOGIN' => 'Back to Login?',
+    'SUPPORT'       => 'Support',
+    'LOGIN_PAGE_DESCRIPTION_TITLE' => 'Manage rental deposits online' ,
+    'LOGIN_PAGE_DESCRIPTION_LINE_ONE'   => 'With our landlord login, you always have an overview of the rental deposit guarantees of your tenants',
+    'LOGIN_PAGE_DESCRIPTION_LINE_TWO'   => 'and can take care of all the necessary steps - from opening to mutations, right up to resolution - digitally.',
+    'LOGIN_PAGE_DESCRIPTION_LINE_THREE' => 'The web-based application can be used immediately, is intuitively understandable',
+    'LOGIN_PAGE_DESCRIPTION_LINE_FOUR'  => 'and based on the life cycle of a bail.',
+    'LOGIN_PAGE_REQUEST_POLICY' => 'Request your access and manage the tenant policies online.',
+    'REQUEST_ACCESS' => 'Anfrage Zugang',
+    'ERROR_USER_DOESNOT_EXISTS' => "User doesnot exists",
+    'ERROR_INVALID_PASSWORD'  => "Invalid password",
+    'RESET_LINK_SENT' => 'Password reset Link has been sent on your email, please check',
+    'UNREGISTERED_EMAIL'  => 'Email is not registered with us',
+    'RESET_TOKEN_MISSMATCH' => 'Password reset token missmatched',
+    'USED_LINK' => 'Link already used',
+    'INVALID_USER_ID' => 'Invalid Userid',
+    'PASSWORD_RESET_SUCCESS' => 'Password updated, to continue please login',
+    'NEW_PASSWORD' => "New Password",
+    'CONFIRM_PASSWORD' => 'Confirm Password',
+    'RESET' => 'Reset',
+  ];
