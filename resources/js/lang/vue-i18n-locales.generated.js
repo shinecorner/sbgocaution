@@ -214,7 +214,8 @@ export default {
             "SMTP_USER": "Benutzer",
             "SMTP_PASSWORD": "Passwort",
             "OPTIONS": "Optionen",
-            "CONTACT_CW": "CW"
+            "CONTACT_CW": "CW",
+            "DATA_LOADING": "Seien Sie geduldig, wir laden Daten für Sie"
         }
     },
     "en": {
@@ -432,7 +433,8 @@ export default {
             "SMTP_USER": "user",
             "SMTP_PASSWORD": "password",
             "OPTIONS": "Options",
-            "CONTACT_CW": "CW"
+            "CONTACT_CW": "CW",
+            "DATA_LOADING": "Be patient we are loading data for you"
         }
     },
     "fr": {
@@ -650,7 +652,8 @@ export default {
             "SMTP_USER": "Utilisateur",
             "SMTP_PASSWORD": "Mot de passe",
             "OPTIONS": "Possibilités",
-            "CONTACT_CW": "CW"
+            "CONTACT_CW": "CW",
+            "DATA_LOADING": "Soyez patient, nous chargeons les données pour vous"
         }
     },
     "it": {
@@ -868,7 +871,8 @@ export default {
             "SMTP_USER": "Utente",
             "SMTP_PASSWORD": "La password",
             "OPTIONS": "Opzioni",
-            "CONTACT_CW": "CW"
+            "CONTACT_CW": "CW",
+            "DATA_LOADING": "Sii paziente, stiamo caricando i dati per te"
         }
     }
 }

@@ -2,17 +2,17 @@
     <div class="contactlist">
         <!--<page-title-bar></page-title-bar>-->
             <app-section-loader :status="loading"></app-section-loader>
-		<v-container fluid grid-list-xl py-0>
+		<v-container fluid grid-list-xl py-0>                    
                     <v-layout row wrap>
                         <app-card                                
                                 :fullBlock="true"
-                                colClasses="xl12 lg12 md12 sm12 xs12"
+                                colClasses="xl12 lg12 md12 sm12 xs12 search-content"
                         >                                
                             <v-flex xs3 md1 lg1 offset-xs9 offset-md11 offset-lg11>                            
                                 <v-select solo class="perpage_selectbox" hide-details v-bind:items="perPageItems"  v-model.number="perPage" single-line  menu-props="bottom" ></v-select>
                             </v-flex>
                         </app-card>
-                    </v-layout>
+                    </v-layout>                    
                     <v-layout row wrap>
                         <app-card                                
                                 :fullBlock="true"
@@ -20,6 +20,7 @@
                         >            
                                 <div class="v-table__overflow list-table-container">
 				<vuetable ref="vuetable"
+                                    :no-data-template="$t('message.crm.DATA_LOADING')"
                                     api-url="api/contacts"
                                     :http-fetch="contactFetch"
                                     :fields="fields"           
@@ -192,7 +193,7 @@ import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginatio
 export default {
     components: {
         Vuetable,
-        VuetablePagination,
+        VuetablePagination,        
         VuetablePaginationInfo        
     }, 
     watch: {
@@ -201,7 +202,7 @@ export default {
             //console.log(this.$t('message.crm.CONTACT_ID'));
             this.$refs.vuetable.refresh();
             this.reinitializeFields();
-        }
+      }    
     },
      data() {
         return {
@@ -333,7 +334,7 @@ export default {
     width: 40px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(2), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(2){
-    width: 140px;
+    width: 120px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(3), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(3){
     width: 48px;
@@ -348,7 +349,7 @@ export default {
     width: 98px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(7), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(7){
-    width: 32px;
+    width: 25px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(8), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(8){
     width: 200px;

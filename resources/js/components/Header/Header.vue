@@ -44,7 +44,7 @@
 			<div class="navbar-right">
 				<!--<v-btn class="v-step-2 upgrade-btn" color="primary" tag="link" @click="sidebarPath('/pages/pricing-1')">{{ $t('message.pricing') }}</v-btn>-->
 				<language-provider></language-provider>
-				<!-- <user></user> -->
+				<user></user>
 			</div>
 		</v-toolbar>
 		<!-- Chat Searchbar -->		

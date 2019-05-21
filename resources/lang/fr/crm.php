@@ -91,4 +91,5 @@ return [
     'SMTP_PASSWORD' => 'Mot de passe',
     'OPTIONS' => 'Possibilités',
     'CONTACT_CW' => 'CW',
+    'DATA_LOADING' => 'Soyez patient, nous chargeons les données pour vous',
 ];
