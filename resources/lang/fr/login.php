@@ -3,7 +3,7 @@
     /* from CRM */
     'LOGIN' => 'Connexion',
     'USERNAME' => 'Identifiant',
-    'PASSWORD' => 'Mot de passe',
+    'PASSWORD' => 'Mot de passe ?',
     'LANGUAGE' => 'La langue',
     'ORG_LANGUAGE_DE' => 'Deutsch',
     'ORG_LANGUAGE_FR' => 'Französisch',
@@ -12,16 +12,17 @@
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Se rappeler de moi',
     /* END */
 
-    'LOGIN_TITLE' => 'goCaution® LARALOGIN',
-    'FORGET_PASSWORD' => 'Mot de passe oublié',
+    'LOGIN_TITLE' => 'goCaution® Espace bailleurs',
+    'FORGET_PASSWORD' => 'Mot de passe oublié ?',
     'GET_RESET_LINK' => 'Obtenir le lien de réinitialisation',
     'BACK_TO_LOGIN' => 'Retour connexion?',
     'SUPPORT'       => 'Soutien',
+    'SUPPORT_ADDRESS' => "goCaution SA - Freiburgstrasse 574 - 3172 Niederwangen",
     'LOGIN_PAGE_DESCRIPTION_TITLE' => 'Gérer les dépôts de location en ligne' ,
-    'LOGIN_PAGE_DESCRIPTION_LINE_ONE'   => "Avec notre identifiant propriétaire, vous avez toujours une vue d'ensemble des garanties de dépôt de loyer de vos locataires",
-    'LOGIN_PAGE_DESCRIPTION_LINE_TWO'   => "et peut prendre en charge toutes les étapes nécessaires - de l’ouverture aux mutations, en passant par la résolution - en numérique.",
-    'LOGIN_PAGE_DESCRIPTION_LINE_THREE' => "L'application Web peut être utilisée immédiatement, est intuitivement compréhensible",
-    'LOGIN_PAGE_DESCRIPTION_LINE_FOUR'  => "et basé sur le cycle de vie d'une caution.",
+    'LOGIN_PAGE_DESCRIPTION_LINE_ONE'   => "goCaution a mis en place un Espace bailleurs qui vous permettra d'avoir une visualisation et une gestion complète de vos garanties de loyer.",
+    'LOGIN_PAGE_DESCRIPTION_LINE_TWO'   => "Ainsi, vous pourrez gérer l'établissement d'un certificat jusqu'à la résiliation avec ou sans sinistre.",
+    'LOGIN_PAGE_DESCRIPTION_LINE_THREE' => "Notre application web est simple de manipulation et rapide. Adapté à la philosophie de goCaution,",
+    'LOGIN_PAGE_DESCRIPTION_LINE_FOUR'  => "qui est le traitement 100% en ligne, celui-ci vous permettra un gain de temps considérable.",
     'LOGIN_PAGE_REQUEST_POLICY' => 'Demandez votre accès et gérez les politiques de locataire en ligne.',
     'REQUEST_ACCESS' => "Demande d'accès",
     'ERROR_USER_DOESNOT_EXISTS' => "L'utilisateur n'existe pas",
@@ -36,4 +37,5 @@
     'NEW_PASSWORD' => "nouveau mot de passe",
     'CONFIRM_PASSWORD' => 'Confirmez le mot de passe',
     'RESET' => 'réinitialiser',
+    'COM_USERS_USERNAME_RESET' => "Identifiant oublié ?",
   ];

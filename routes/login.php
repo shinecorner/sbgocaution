@@ -1,63 +1,30 @@
 <?php
 
-
-    Route::get('/', function () {
-        return redirect('/de');
-    });
-
-    Route::get('/sendMail','AuthLoginController@sendMail');
-
     Auth::routes();
+    Route::get('/', function () { return redirect('/de'); });
+    Route::get('/sendMail','AuthLoginController@sendMail');
+    Route::get('/login', function () { return redirect('/de'); })->name('login');
+    Route::get('password.reset', 'AuthLoginController@showResetForm')->name('password.reset');
+    Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
 
-    Route::get('/login', function () {
-        return redirect('/de');
-    })->name('login');
-
-    Route::group(['prefix' => '{locale}',
-                  'where' => ['locale' => '[a-zA-Z]{2}'],
-                  'middleware' => ['setLocale']], function () {
-          Route::get('/', function () {
-              return view('Login.sessions.login');
-          });
-
+    Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => ['setLocale']], function () {   
+          Route::get('/', function () { return view('Login.sessions.login'); });
           Route::post('login','AuthLoginController@login');
 
           Route::middleware(['auth'])->group(function () {
-
-          Route::get('/dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard')->middleware('auth');;
-
+              Route::get('/dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard');
               Route::post('logout','AuthLoginController@logout');
-
           });
-
-          Route::get('passwordRequest','AuthLoginController@showLinkRequestForm');
-
-          Route::post('passwordEmail','AuthLoginController@sendResetLinkEmail');
-
-          Route::get('password.reset','AuthLoginController@showResetForm');
-
+          Route::get('passwordRequest', 'AuthLoginController@showLinkRequestForm');
+          Route::get('password/reset/{token}','AuthLoginController@showResetForm');
+          Route::post('passwordEmail', 'AuthLoginController@sendResetLinkEmail');
           Route::post('password.update', 'AuthLoginController@reset');
 
     });
 
-    Route::get('large-compact-sidebar/dashboard/dashboard1', function () {
-        // set layout sesion(key)
-        session(['layout' => 'compact']);
-        return view('Login.dashboard.dashboardv1');
-    })->name('compact');
-
-    Route::get('large-sidebar/dashboard/dashboard1', function () {
-        // set layout sesion(key)
-        session(['layout' => 'normal']);
-        return view('Login.dashboard.dashboardv1');
-    })->name('normal');
-
-    Route::get('horizontal-bar/dashboard/dashboard1', function () {
-        // set layout sesion(key)
-        session(['layout' => 'horizontal']);
-        return view('Login.dashboard.dashboardv1');
-    })->name('horizontal');
-
+    Route::get('large-compact-sidebar/dashboard/dashboard1', function () { session(['layout' => 'compact']); return view('Login.dashboard.dashboardv1'); })->name('compact');
+    Route::get('large-sidebar/dashboard/dashboard1', function () { session(['layout' => 'normal']); return view('Login.dashboard.dashboardv1'); })->name('normal');
+    Route::get('horizontal-bar/dashboard/dashboard1', function () { session(['layout' => 'horizontal']); return view('Login.dashboard.dashboardv1'); })->name('horizontal');
 
     Route::view('dashboard/dashboard1', 'Login.dashboard.dashboardv1')->name('dashboard_version_1');
     Route::view('dashboard/dashboard2', 'Login.dashboard.dashboardv2')->name('dashboard_version_2');

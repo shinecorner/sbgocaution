@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" dir="ltr">
+<html lang="app()->getLocale()) }}" dir="ltr">
 
 <head>
 
@@ -7,15 +7,15 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>{{ __('crm.login') }}</title>
+    <title>{{ __('login.login') }}</title>
 
     <!--=======================CSS=============================-->
     <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-purple.min.css')}}">
     <!--=======================CSS=============================-->
 
     <!--=======================Font CSS=============================-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet" type="text/css" /> -->
     <!--=======================Font CSS=============================-->
 
     <!--=======================js=============================-->
@@ -43,52 +43,49 @@
                         <div class="login-form-module">
                             <div class="login-wrap login-form" style="display:block">
                                 <div class="login">
-                                    <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-{{ __('crm.login') }}</h3>
+                                    <h3 class="login-top-title">{{ __('login.login_title') }}</h3>
                                     <hr />
-                                    <form style="margin-top: -10px;" action="{{ route('password.update', app()->getLocale()) }}" method="post" class="form-horizontal">
-                                        {{ csrf_field() }}
-                                        <input type="hidden" name="token" value="{{ $token }}">
-                                        <fieldset>
+                                    <form class="needs-validation no-cross" action="{{ url(app()->getLocale(), 'password.update') }}" method="post" novalidate>
+                                      @csrf
+                                      <input type="hidden" name="token" value="{{ $token }}">
 
-                                          <div class="form-group">
-                                              <div class="control-label">
-                                                  <label id="new_password" for="new_password" class="required">
-                                                      {{ __('login.username') }}<span class="star">&#160;*</span></label>
-                                              </div>
-                                              <div class="controls">
-                                                  <input type="password" name="email" id="email" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                  <div class="error">{{ $errors->first('email') }}</div>
-                                              </div>
-                                          </div>
-                                            <div class="form-group">
-                                                <div class="control-label">
-                                                    <label id="new_password" for="new_password" class="required">
-                                                        {{ __('login.new_password') }}<span class="star">&#160;*</span></label>
+
+                                        <div class="form-row">
+                                            <div class="col-md-12 mb1">
+                                                <label for="validationCustom01">{{ __('login.username') }}<span class="star">&#160;*</span></label>
+                                                <input type="text" class="form-control" name="email" id="validationCustom01" placeholder="" value="" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid username.
                                                 </div>
-                                                <div class="controls">
-                                                    <input type="password" name="password" id="password" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                    @if ($errors->has('password'))
-                                                      <div class="error">{{ $errors->first('new_password') }}</div>
-                                                    @endif
+                                                @if ($errors->has('email'))
+                                                  <div class="error" style="color:red;">{{ $errors->first('email') }}</div>
+                                                @endif
+
+                                            </div>
+                                            <div class="col-md-12 mb1">
+                                                <label for="validationCustom02">{{ __('login.new_password') }}<span class="star">&#160;*</span></label>
+                                                <input type="password" class="form-control" name="password" id="validationCustom02" placeholder="" value="" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid password.
+                                                </div>
+                                                @if ($errors->has('password'))
+                                                  <div class="error"  style="color:red;">{{ $errors->first('password') }}</div>
+                                                @endif
+                                            </div>
+                                            <div class="col-md-12 mb1">
+                                                <label for="validationCustom02">{{ __('login.confirm_password') }}<span class="star">&#160;*</span></label>
+                                                <input type="password" class="form-control" name="password_confirmation" id="validationCustom02" placeholder="" value="" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid confirm password.
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="control-label">
-                                                    <label id="new_password" for="new_password" class="required">
-                                                        {{ __('login.confirm_password') }}<span class="star">&#160;*</span></label>
-                                                </div>
-                                                <div class="controls">
-                                                    <input type="password" name="password_confirmation" id="password_confirmation" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
+                                        </div>
 
-                                                </div>
+                                        <div class="form-group">
+                                            <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
+                                                <button type="submit" class="btn btn-primary btn-block">{{ __('login.reset') }}</button>
                                             </div>
-
-                                            <div class="form-group">
-                                                <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
-                                                    <button type="submit" class="btn btn-primary btn-block">{{ __('login.reset') }}</button>
-                                                </div>
-                                            </div>
-                                        </fieldset>
+                                        </div>
                                     </form>
 
                                 </div>
@@ -96,11 +93,12 @@
 
                                 <div class="other-links form-group">
                                     <ul>
-                                        <li><a href="#" onclick="show_forget_password('forgetPassword')">@lang('crm.COM_USERS_LOGIN_RESET')</a></li>
-
+                                      <li><a href="{{ url(app()->getLocale()) }}" >@lang('login.BACK_TO_LOGIN')</a></li>
+                                      <li><a href="#" >@lang('login.COM_USERS_USERNAME_RESET')</a></li>
                                     </ul>
                                 </div>
                             </div>
+
 
                         </div>
                     </div>
@@ -119,7 +117,7 @@
                             </div>
                         </div>
                         <div style="text-align: center; font-size: 9px; margin-bottom: 20px;">
-                            goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen</div>
+                            {{__('login.support_address')}}</div>
                     </div>
                 </div>
 
@@ -136,126 +134,6 @@
                         <div class="clearfix form-group">
 
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target=".new-account-request">{{ __('login.request_access') }}</button>
-                            <div class="modal fade new-account-request" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-                                <div class="modal-dialog modal-sm" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title text-center" id="myModalLabel">
-        <span class="clearfix"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></span>
-        <span class="clearfix">{{ __('login.login_page_request_policy') }}</span>
-</h4>
-                                        </div>
-
-                                        <div class="modal-body">
-                                            <div class="moduletable">
-                                                <div class="rsform">
-                                                    <form method="post" id="userForm" action="https://www.login.gocaution.ch/de">
-                                                        <div id="rsform_error_4" style="display: none;">
-                                                            <p class="formRed">Please complete all required fields!</p>
-                                                        </div>
-                                                        <fieldset class="formContainer" id="rsform_4_page_0">
-                                                            <div class="row">
-                                                                <div class="col-sm-12">
-                                                                    <div class="rsform-block rsform-block-text">
-                                                                        <p style="color: #8dbf43">Gerne vereinbaren wir mit Ihnen einen telefonischen Termin und führen Sie mittels Bildschirmübertragung durch die Applikation, unabhängig davon, ob bereits Mieterinnen von Ihnen eine Kautionspolice bei uns abgeschlossen haben oder nicht.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-firmenname">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Firmenname">Firmenname</label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="40" name="form[Firmenname]" id="Firmenname" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component40" class="formNoError">Invalid Input</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-name">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Name">Name<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="20" name="form[Name]" id="Name" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component33" class="formNoError">Bitte ausfüllen</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-vorname">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Vorname">Vorname<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="20" name="form[Vorname]" id="Vorname" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component37" class="formNoError">Bitte ausfüllen</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-adresse">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Adresse">Adresse<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="40" name="form[Adresse]" id="Adresse" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component41" class="formNoError">Bitten geben Sie Ihre Adresse ein</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-postleitzahl-und-ort">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Postleitzahl und Ort">Postleitzahl und Ort<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="40" name="form[Postleitzahl und Ort]" id="Postleitzahl und Ort" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component42" class="formNoError">Bitten geben Sie Ihre PLZ und den Ort ein.</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-mobile">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Mobile">Telefon/Mobile<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="20" name="form[Mobile]" id="Mobile" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component38" class="formNoError">Bitte ausfüllen</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group rsform-block rsform-block-e-mail">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="E-Mail">E-Mail<strong class="formRequired">*</strong></label>
-                                                                        <div class="formControls">
-                                                                            <input type="text" value="" size="20" name="form[E-Mail]" id="E-Mail" class="rsform-input-box form-control" />
-                                                                            <span class="help-block formValidation"><span id="component34" class="formNoError">Bitte geben Sie eine gültige E-Mail Adresse ein.</span></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-sm-12">
-                                                                    <div class="form-group rsform-block rsform-block-send">
-                                                                        <label class="control-label formControlLabel" data-toggle="tooltip" title="" for="Send"></label>
-                                                                        <div class="formControls">
-                                                                            <button type="submit" name="form[Send]" id="Send" class="rsform-submit-button  btn btn-primary">Senden</button>
-                                                                            <span class="help-block formValidation"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </fieldset>
-                                                        <input type="hidden" name="form[formId]" value="4" />
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
@@ -277,11 +155,39 @@
                         <div style="text-align: center; font-size: 9px; margin-bottom: 20px;">goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen</div>
                     </div>
                 </div>
+                <div class="position-absolute">
+                  <div class="mod-languages">
+                    <div class="btn-group">
+                        <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+                            <span class="caret"></span> &nbsp;
+                            @if(app()->getLocale()=='de')
+                            <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/de.png')}}" alt="" /><span id="selected_lang"> Deutsch </span>
+                            @elseif(app()->getLocale()=='fr')
+                            <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /><span id="selected_lang"> Français </span>
+                            @elseif(app()->getLocale()=='it')
+                            <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/it.png')}}" alt="" /><span id="selected_lang"> Italienisch </span>
+                            @else
+                            <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/en.png')}}" alt="" /><span id="selected_lang"> English </span>
+                            @endif
+                          </a>
+                            <ul class="lang-block dropdown-menu" dir="ltr">
+                                <li data-content="de" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/de.png')}}" alt="" /> Deutsch </a></li>
+                                <li data-content="fr" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /> Français </a></li>
+                                <li data-content="it" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/it.png')}}" alt="" /> Italienisch </a></li>
+                                <li data-content="en" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/en.png')}}" alt="" /> English </a></li>
+                            </ul>
+                    </div>
+                  </div>
+                </div>
             </div>
+
         </div>
 
     </div>
+
 </body>
 
+
+ <script src="{{asset('Login/assets/js/form.validation.script.js')}}"></script>
 
 </html>
