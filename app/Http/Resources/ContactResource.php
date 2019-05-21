@@ -82,6 +82,12 @@ class ContactResource extends JsonResource
         return $data;
     }
 
+    /**
+     * if contact contains duplicate email then will return all duplicate contact numbers along with first name, last name and email.
+     * 
+     * @param  reference of Array $data
+     * @return void
+     */
     private function getContactEmailDuplicate(&$data) 
     {
 

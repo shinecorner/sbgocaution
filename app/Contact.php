@@ -13,26 +13,53 @@ class Contact extends Model
         'id', 'date', 'real_contact_num', 'user_id', 'salutation', 'name', 'firstname', 'language', 'address', 'contact_formate', 'status', 'rc_quote', 'zip', 'city'
     ];
 
+    /**
+     * Parse the value of date attribute and format the date.
+     * 
+     * @param  date $value
+     * @return Carbon Object
+     */
     public function getDateAttribute($value) {
         return Carbon::parse($value)->format(config('crm.display_date_format'));
     }
 
+    /**
+     * Get related primary address object with specified fields.
+     * 
+     * @return Relationship Object
+     */
     public function addresses()
     {
         return $this->hasMany('App\Address')->select(array('id', 'is_primary', 'address', 'zip', 'city'));
     }
 
+    /**
+     * Get related offers collection object.
+     * 
+     * @return Relationship Object
+     */
     public function offers()
     {
         return $this->hasMany('App\ContactOffer');
     }
 
+    /**
+     * Get related preconfirmations collection object.
+     * 
+     * @return Relationship Object
+     */
     public function preconfirmations()
     {
         return $this->hasMany('App\ContactPreconfirm');
     }
 
-    function change_status()
+    /**
+     * Check the change status if contains status change related to offer or pre_confirmation_sent
+     * then remove related documents.
+     * 
+     * @return boolean
+     */
+    function changeStatus()
     {
         $old_status = $this->status;
         $status = request()->status;
