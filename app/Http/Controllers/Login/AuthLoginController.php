@@ -5,12 +5,11 @@ namespace App\Http\Controllers\Login;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Http\Controller\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use Mail;
-
+use Cookie;
 
 
 class AuthLoginController extends controller
@@ -26,55 +25,46 @@ class AuthLoginController extends controller
     |
     */
 
+    protected $loginInstance;
+    protected $ForgotPasswordInstance;
+    protected $ResetPasswordInstance;
+
+    public function __construct(){
+      $this->loginInstance = new LoginController();
+      $this->ForgotPasswordInstance = new ForgotPasswordController();
+      $this->ResetPasswordInstance = new ResetPasswordController();
+    }
+
     public function showLinkRequestForm(Request $request, $token = null){
         return view('Login.sessions.reset');
     }
 
     public function showResetForm(Request $request, $token = null)
     {
+      $token = $request->segment(4);
         return view('Login.sessions.resetPassword')->with(
             ['token' => $token, 'email' => $request->email]
         );
     }
 
     public function login(Request $request){
-      return (new LoginController)->Login($request);
+      return $this->loginInstance->Login($request);
     }
 
     public function logout(Request $request){
-      return (new LoginController)->logout($request);
+      return $this->loginInstance->logout($request);
     }
 
     public function showLoginForm(){
-      return (new LoginController)->showLoginForm();
+      return $this->loginInstance->showLoginForm();
     }
 
     public function sendResetLinkEmail(Request $request){
-      return (new ForgotPasswordController)->sendResetLinkEmail($request);
+      return $this->ForgotPasswordInstance->sendResetLinkEmail($request);
     }
 
     public function reset(Request $request){
-      return (new ResetPasswordController)->reset();
+      return $this->ResetPasswordInstance->reset($request);
     }
-
-
-    // public function sendMail(){
-    //   config(['mail.driver' => 'smtp']);
-    //   config(['mail.host' => 'smtp.gmail.com']);
-    //   config(['mail.port' => '465']);
-    //   config(['mail.username' => 'kundanfortest@gmail.com']);
-    //   config(['mail.password' => 'AB3d@#12@']);
-    //   config(['mail.from.address' => 'kundanfortest@gmail.com']);
-    //   config(['mail.from.name' => 'sandeep']);
-    //   config(['mail.reply_to.address' => 'kundanfortest@gmail.com']);
-    //   // dd(env('MAIL_HOST'));
-    //   $user["name"] = "sandeep";
-    //   Mail::send('Login.sessions.email', ['user' => $user], function ($m) use ($user) {
-    //         $m->from('hello@app.com', 'Your Application');
-    //
-    //         $m->to('kundanfortest@gmail.com', 'sandeep')->subject('Your Reminder!');
-    //     });
-    // }
-
 
 }

@@ -14,8 +14,8 @@
     <!--=======================CSS=============================-->
 
     <!--=======================Font CSS=============================-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet" type="text/css" /> -->
     <!--=======================Font CSS=============================-->
 
     <!--=======================js=============================-->
@@ -38,52 +38,44 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="login-content Site-content">
                         <div class="login-form-module">
                             <div class="login-wrap login-form" style="display:block">
                                 <div class="login">
-                                    <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-{{ __('login.login') }}</h3>
+                                    <h3 class="login-top-title">{{ __('login.login_title') }}</h3>
                                     <hr />
-                                    <form style="margin-top: -10px;" action="{{ url(app()->getLocale(),'login') }}" method="post" class="form-horizontal">
-                                        {{ csrf_field() }}
-                                        <fieldset>
-
-                                            <div class="form-group">
-                                                <div class="control-label">
-                                                    <label id="username-lbl" for="username" class="required">
-                                                        {{ __('login.username') }}<span class="star">&#160;*</span></label>
-                                                </div>
-                                                <div class="controls">
-                                                    <input type="text" name="email" value="{{ Cookie::get('login_username') }}" id="email" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                    <div class="error">{{ $errors->first('email') }}</div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="control-label">
-                                                    <label id="password-lbl" for="password" class="required">
-                                                        {{ __('login.password') }}<span class="star">&#160;*</span></label>
-                                                </div>
-                                                <div class="controls">
-                                                    <input type="password" name="password" value="{{ Cookie::get('login_password') }}" id="password" value="" class="validate-password required" size="25" maxlength="99" required aria-required="true" /> </div>
-                                                <div class="error">{{ $errors->first('password') }}</div>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input id="remember" type="checkbox"  name="remember" value="yes" />{{ __('login.com_users_login_remember_me') }}</label>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
-                                                    <button type="submit" class="btn btn-primary btn-block">{{ __('login.login') }}</button>
+                                    <form class="needs-validation no-cross" action="{{ url(app()->getLocale(),'login') }}" method="post" novalidate>
+                                      @csrf
+                                      @if ($errors->has('email'))
+                                        <sapn style="color:red;">{{ $errors->first('email') }}</span>
+                                      @endif
+                                        <div class="form-row">
+                                            <div class="col-md-12 mb1">
+                                                <label for="validationCustom01">{{ __('login.username') }}<span class="star">&#160;*</span></label>
+                                                <input type="text" class="form-control" name="email" id="validationCustom01"  value="" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid username.
                                                 </div>
 
                                             </div>
-                                        </fieldset>
+                                            <div class="col-md-12 mb1">
+                                                <label for="validationCustom02">{{ __('login.password') }}<span class="star">&#160;*</span></label>
+                                                <input type="password" class="form-control" name="password" id="validationCustom02"  value="" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid password.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="checkbox checkbox-outline-success">
+                                            <input type="checkbox" name="remember" @if (Cookie::get('login_remember')) checked @endif >
+                                            <span>{{ __('login.com_users_login_remember_me') }}</span>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <div class="form-group">
+                                            <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
+                                                <button type="submit" class="btn btn-primary btn-block">{{ __('login.login') }}</button>
+                                            </div>
+                                        </div>
                                     </form>
 
                                 </div>
@@ -91,52 +83,12 @@
 
                                 <div class="other-links form-group">
                                     <ul>
-                                      <!-- <li><a href="#" onclick="show_forget_password('forgetPassword')">@lang('crm.COM_USERS_LOGIN_RESET')</a></li> -->
-                                        <li><a href="{{ url(app()->getLocale(), 'passwordRequest') }}" >@lang('crm.COM_USERS_LOGIN_RESET')</a></li>
-
+                                        <li><a href="{{ url(app()->getLocale(), 'passwordRequest') }}" >@lang('login.FORGET_PASSWORD')</a></li>
+                                        <li><a href="#" >@lang('login.COM_USERS_USERNAME_RESET')</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <!-- Forget password -->
-                            <div class="login-wrap forgetPassword-form" style="display:none">
-                                <div class="login">
-                                    <h3 class="login-top-title">{{ __('login.login_title') }} Vermieter-</h3>
-                                    <hr />
-                                    <form style="margin-top: -10px;" action="" method="post" class="form-horizontal">
-                                        {{ csrf_field() }}
-                                        <fieldset>
-                                            @if(Session::has('message'))
-                                            <p class="alert cstm-alert alert-info">{{ Session::get('message') }}</p>
-                                            @endif
 
-                                            <div class="form-group">
-                                                <div class="control-label">
-                                                    <label id="username-lbl" for="username" class="required">
-                                                        {{ __('login.username') }}<span class="star">&#160;*</span></label>
-                                                </div>
-                                                <div class="controls">
-                                                    <input type="text" name="username" value="" id="username" value="" class="validate-username required" size="25" required aria-required="true" autofocus />
-                                                    <div class="error">{{ $errors->first('username') }}</div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
-                                                    <button type="submit" class="btn btn-primary btn-block">{{ __('login.get_reset_link') }}</button>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </form>
-                                </div>
-                                <br />
-
-                                <div class="other-links form-group">
-                                    <ul>
-                                        <li><a href ="#" onclick="show_forget_password('login')">{{ __('login.back_to_login') }}</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- from end -->
 
                         </div>
                     </div>
@@ -155,7 +107,7 @@
                             </div>
                         </div>
                         <div style="text-align: center; font-size: 9px; margin-bottom: 20px;">
-                            goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen</div>
+                            {{__('login.support_address')}}</div>
                     </div>
                 </div>
 
@@ -198,12 +150,21 @@
                       <div class="btn-group">
                           <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
                               <span class="caret"></span> &nbsp;
-                              <img id="selected_img" src="{{asset('/static/flag-icons/de.png')}}" alt="" /><span id="selected_lang"> Deutsch </span></a>
+                              @if(app()->getLocale()=='de')
+                              <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/de.png')}}" alt="" /><span id="selected_lang"> Deutsch </span>
+                              @elseif(app()->getLocale()=='fr')
+                              <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /><span id="selected_lang"> Français </span>
+                              @elseif(app()->getLocale()=='it')
+                              <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/it.png')}}" alt="" /><span id="selected_lang"> Italienisch </span>
+                              @else
+                              <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/en.png')}}" alt="" /><span id="selected_lang"> English </span>
+                              @endif
+                            </a>
                               <ul class="lang-block dropdown-menu" dir="ltr">
-                                  <li data-content="de" class="languagechange"><a href="#"><img src="{{asset('/static/flag-icons/de.png')}}" alt="" /> Deutsch </a></li>
-                                  <li data-content="fr" class="languagechange"><a href="#"><img src="{{asset('/static/flag-icons/fr.png')}}" alt="" /> Français </a></li>
-                                  <li data-content="it" class="languagechange"><a href="#"><img src="{{asset('/static/flag-icons/it.png')}}" alt="" /> Italienisch </a></li>
-                                  <li data-content="en" class="languagechange"><a href="#"><img src="{{asset('/static/flag-icons/en.png')}}" alt="" /> English </a></li>
+                                  <li data-content="de" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/de.png')}}" alt="" /> Deutsch </a></li>
+                                  <li data-content="fr" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /> Français </a></li>
+                                  <li data-content="it" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/it.png')}}" alt="" /> Italienisch </a></li>
+                                  <li data-content="en" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/en.png')}}" alt="" /> English </a></li>
                               </ul>
                       </div>
                   </div>
@@ -216,28 +177,6 @@
 
 </body>
 <script>
-
-    $(document).ready(function() {
-        var lang = $(location).attr('href');
-         var selectedLang = lang.substr(lang.length - 3);
-
-         if (selectedLang == '/it'){
-           $('#selected_img').attr('src','/static/flag-icons/it.png');
-           $('#selected_lang').text(" Italienisch");
-         }
-         else if (selectedLang == '/fr'){
-           $('#selected_img').attr('src','/static/flag-icons/fr.png');
-           $('#selected_lang').text(" Französisch");
-         }
-         else if (selectedLang == '/de'){
-           $('#selected_img').attr('src','/static/flag-icons/de.png');
-           $('#selected_lang').text(" Deutsch");
-         }
-         else{
-           $('#selected_img').attr('src','/static/flag-icons/en.png');
-           $('#selected_lang').text(" English");
-         }
-    });
 
     $('.languagechange').click(function() {
         var lang = $(this).attr('data-content');
@@ -272,5 +211,7 @@
       });
     });
 </script>
+
+ <script src="{{asset('Login/assets/js/form.validation.script.js')}}"></script>
 
 </html>

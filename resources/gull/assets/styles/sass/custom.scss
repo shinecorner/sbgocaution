@@ -1,3 +1,4 @@
+
 .login-main .t3-login .login-form-module .other-links {
     margin-bottom: 0;
 }
@@ -617,17 +618,7 @@ div.t3-wrapper.t3-login-wrap,
 .login-main .logo-img {
     width: 150px;
 }
-.cstm-alert{
-  background-color: #8dbf42;
-  border-color: #b8c6d8;
-  color: #fff;
-  text-align: center;
-  border: none;
-  border-radius: 4px;
-}
-.cstm-alert.error{
-  background-color: #ce1a0c;
-}
+
 
 /*Dropdown*/
 .cstm-dropdown{
@@ -670,6 +661,41 @@ span.flag-icon {
     top: -1px;
 }
 /* dropdown css ends */
+
+/* vendor css 21/05 */
+body{
+  overflow-y: auto!important;
+}
+form.needs-validation.no-cross.was-validated .form-control:invalid{
+  background-image: none;
+}
+.login-main .checkbox > span{
+    font-size: 11px;
+    min-height: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+.login-main .login label.checkbox {
+  line-height: 1.238462!important;
+  padding-left: 20px!important;
+}
+.login-main .checkbox .checkmark{
+  height: 15px;
+  width: 15px;
+  min-height: 15px;
+}
+.mb1{
+  margin-bottom: 10px;
+}
+.login-main .column-flexible .promo-inner .custom p{
+  margin-bottom: 10px;
+}
+.mx-20{
+  max-width: 20px;
+}
+.mR-5{
+    margin-right: 5px;
+}
 
 @media (min-width: 576px) {
 .login-main .t3-login  .modal-sm {
