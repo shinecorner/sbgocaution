@@ -669,6 +669,9 @@ body{
 form.needs-validation.no-cross.was-validated .form-control:invalid{
   background-image: none;
 }
+form.needs-validation.no-cross.was-validated .form-control:valid{
+  background-image: none;
+}
 .login-main .checkbox > span{
     font-size: 11px;
     min-height: 20px;
