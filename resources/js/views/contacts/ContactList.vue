@@ -38,7 +38,7 @@
                                 <template slot="prettycheck" slot-scope="props">
                                     <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                                 </template>  
-                                <template slot="c_contactformate" slot-scope="props">
+                                <template slot="c_contactformate" slot-scope="props">                                  
                                   <span class="primary-text">{{ props.rowData.contact_num }}</span>                                  
                                   <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.date }}</span>
                                   <div class="column_icon_container">
@@ -74,23 +74,23 @@
                                         <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.crm.EDIT') }}</span>
                                     </a>
                                 </template>
-                                <template slot="c_name" slot-scope="props">
+                                <template slot="c_name" slot-scope="props">                                    
                                     <span class="salute_icon left">
                                         <template v-if="props.rowData.salutation === 'company'">
                                             <v-tooltip top>                                                
-                                                <v-icon slot="activator" size="18">zmdi-accounts</v-icon>
+                                                <font-awesome-icon :icon="['far', 'building']" slot="activator"/>
                                                 <span>{{$t('message.crm.PDF_IL_COMPANY')}}</span>
                                             </v-tooltip>                                            
                                         </template>
                                         <template v-else-if="props.rowData.salutation === 'mr'">
                                             <v-tooltip top>
-                                                <v-icon slot="activator" size="18">zmdi-male-alt</v-icon>
+                                                <font-awesome-icon :icon="['fas', 'mars']" slot="activator"/>
                                                 <span>{{$t('message.crm.PDF_IL_MAN')}}</span>                                                
                                             </v-tooltip>   
                                         </template>                                                                                
                                         <template v-else-if="props.rowData.salutation === 'mrs'">                                            
                                             <v-tooltip top>
-                                                <v-icon slot="activator" size="18">zmdi-female</v-icon>
+                                                <font-awesome-icon :icon="['fas', 'venus']" slot="activator"/>
                                                 <span>{{$t('message.crm.PDF_IL_WOMEN')}}</span>
                                             </v-tooltip>    
                                         </template>                                                                                
@@ -347,7 +347,7 @@ export default {
     width: 48px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(4), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(4){
-    width: 13%;
+    width: 14%;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(5), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(5){
     width: 17%;

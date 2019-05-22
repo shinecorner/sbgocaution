@@ -4,7 +4,11 @@
 import VuePerfectScrollbar from "vue-perfect-scrollbar";
 import AppSectionLoader from "Components/AppSectionLoader/AppSectionLoader";
 import { RotateSquare2 } from "vue-loading-spinner";
-
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+library.add(fas, far)
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // delete Confirmation Dialog
 import DeleteConfirmationDialog from "Components/DeleteConfirmationDialog/DeleteConfirmationDialog";
 
@@ -32,6 +36,7 @@ const GlobalComponents = {
       Vue.component('appSectionLoader', AppSectionLoader);
       Vue.component('pageTitleBar', PageTitleBar);
       Vue.component('rotateSquare2', RotateSquare2);
+      Vue.component('font-awesome-icon', FontAwesomeIcon);  
    }
 }
 
