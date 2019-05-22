@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Contact;
+use App\Config;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContactResource;
 use App\Http\Controllers\Controller;
@@ -36,6 +37,14 @@ class ContactController extends Controller
         $data['helpers']['navbar_contacts_count'] = Contact::whereIn('status', [
             "new", "status_quote_waiting", "pre_confirmation_pending"
         ])->count();
+
+        $configs = Config::all();
+        $config_data = $configs->reduce(function ($configLookup, $config) {
+            $configLookup[$config['option']] = $config['value'];
+            return $configLookup;
+        }, []);
+
+        $data['helpers']['configs'] = $config_data;
 
         return ContactResource::collection(Contact::latest()->paginate($per_page))->additional($data);
     }
@@ -102,6 +111,21 @@ class ContactController extends Controller
         ], 200);
     }
 
+    public function change_status(Request $request, $id){
+        $contact = Contact::find($id);
+        return response()->json([
+            "api_status" => $contact->change_status(),
+            "data" => $contact
+        ], 200);
+    }
+
+    /**
+     * Returns the translated statues.
+     * 
+     * @param reference array of $data
+     * @param string $status
+     * @return void
+     */
     private function getStatusList(&$data, $status){
         switch ($status) {
             case 'contact_statuslist':
@@ -123,11 +147,5 @@ class ContactController extends Controller
         app()->setLocale($local);
     }
 
-    public function change_status(Request $request, $id){
-        $contact = Contact::find($id);
-        return response()->json([
-            "api_status" => $contact->change_status(),
-            "data" => $contact
-        ], 200);
-    }
+
 }

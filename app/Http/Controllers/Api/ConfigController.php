@@ -80,6 +80,12 @@ class ConfigController extends Controller
         ], 200);
     }
 
+    /**
+     * Update whole resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function updateAll(Request $request)
     {
         $status = true;

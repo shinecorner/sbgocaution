@@ -95,6 +95,14 @@ class RoleController extends Controller
         ], 200);
     }
 
+    /**
+     * Assign user to role.
+     * 
+     * @param  Request
+     * 
+     * @return \Illuminate\Http\Response
+     * 
+     */
     public function assignment(Request $request) {
         $user = User::find($request->user_id);
         $role = Role::find($request->role_id);
