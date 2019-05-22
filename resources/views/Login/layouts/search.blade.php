@@ -1,7 +1,7 @@
    <!-- ============ Search UI Start ============= -->
   <div class="search-ui">
         <div class="search-header">
-            <img src="{{asset('Login/assets/images/logo.png')}}" alt="" class="logo">
+            <img src="{{asset('Login/assets/images/logo_green.png')}}" alt="" class="logo">
             <button class="search-close btn btn-icon bg-transparent float-right mt-2">
                 <i class="i-Close-Window text-22 text-muted"></i>
             </button>

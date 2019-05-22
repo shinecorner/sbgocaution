@@ -8,7 +8,7 @@ $pink : #e83e8c !default;
 $red : #880a1f !default;
 $orange : #e97d23 !default;
 $yellow : #FFC107 !default;
-$green : #4CAF50 !default;
+$green : #066938 !default;
 $teal : #20c997 !default;
 $cyan : #9C27B0 !default;
 $grey-r:#6c7293 !default;
@@ -44,4 +44,3 @@ $theme-colors: ( primary: $primary, secondary: $secondary, success: $success, in
 @import "../globals/globals.scss";
 @import "dark/dark";
 @import "../bootstrap-rtl.scss";
-@import "../custom.scss";

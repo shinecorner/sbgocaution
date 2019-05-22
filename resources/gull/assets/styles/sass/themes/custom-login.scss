@@ -94,8 +94,8 @@
     color: #292c35;
 }
 .login-main hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 18px;
     border: 0;
         border-top-color: currentcolor;
         border-top-style: none;
@@ -200,7 +200,7 @@ div.t3-wrapper.t3-login-wrap,
 .login-main .column-flexible {
     width: 100%;
     display: block;
-    background: #8DBF42;
+    background: #8ebf43;
     padding: 95px 75px 0;
     color: #ffffff;
     position: relative;
@@ -242,7 +242,7 @@ div.t3-wrapper.t3-login-wrap,
 .login-main .t3-login .modal-header .close {
     padding: 3px 7px;
     border-radius: 20px;
-    background: #8DBF42;
+    background: #8ebf43;
     position: absolute;
     right: 10px;
 }
@@ -371,7 +371,7 @@ div.t3-wrapper.t3-login-wrap,
     margin: 20px -20px 0;
 }
 .login-main .login-header-block.visible-xs {
-    background: #8DBF42;
+    background: #8ebf43;
     padding: 5px 20px;
 }
 .login-main .t3-login .login-header-block .logo-image {
@@ -696,7 +696,10 @@ form.needs-validation.no-cross.was-validated .form-control:invalid, form.needs-v
 .mR-5{
     margin-right: 5px;
 }
-
+.login-main .login-grid{
+  background: #E4F1D5;
+}
+// vendor css end
 @media (min-width: 576px) {
 .login-main .t3-login  .modal-sm {
     max-width: inherit !important;

@@ -18,7 +18,7 @@
                     <div class="col-md-12">
                         <div class="p-4 text-center">
                             <div class="auth-logo text-center mb-4">
-                                <img src="{{asset('Login/assets/images/logo.png')}}" alt="">
+                                <img src="{{asset('Login/assets/images/logo_green.png')}}" alt="">
                             </div>
                             <h1 class="mb-3 text-18">Check the Dashboard</h1>
 

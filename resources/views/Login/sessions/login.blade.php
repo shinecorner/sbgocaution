@@ -10,13 +10,8 @@
     <title>{{ __('login.login') }}</title>
 
     <!--=======================CSS=============================-->
-    <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-purple.min.css')}}">
+    <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-green.min.css')}}">
     <!--=======================CSS=============================-->
-
-    <!--=======================Font CSS=============================-->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet" type="text/css" /> -->
-    <!--=======================Font CSS=============================-->
 
     <!--=======================js=============================-->
     <script src="/Login/assets/js/common-bundle-script.js"></script>
@@ -25,7 +20,6 @@
 </head>
 
 <body class="login-main">
-
     <div class="t3-wrapper t3-login-wrap">
         <div class="t3-login ">
             <div class="row login-grid">
@@ -67,7 +61,7 @@
                                             </div>
                                         </div>
                                         <label class="checkbox checkbox-outline-success">
-                                            <input type="checkbox" name="remember" @if (Cookie::get('login_remember')) checked @endif >
+                                            <input type="checkbox" name="remember" >
                                             <span>{{ __('login.com_users_login_remember_me') }}</span>
                                             <span class="checkmark"></span>
                                         </label>
