@@ -94,8 +94,8 @@
     color: #292c35;
 }
 .login-main hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 18px;
     border: 0;
         border-top-color: currentcolor;
         border-top-style: none;
@@ -696,7 +696,10 @@ form.needs-validation.no-cross.was-validated .form-control:invalid, form.needs-v
 .mR-5{
     margin-right: 5px;
 }
-
+.login-main .login-grid{
+  background: #E4F1D5;
+}
+// vendor css end
 @media (min-width: 576px) {
 .login-main .t3-login  .modal-sm {
     max-width: inherit !important;

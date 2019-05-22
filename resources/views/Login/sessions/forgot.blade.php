@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gull - Laravel + Bootstrap 4 admin template</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('Login/assets/styles/css/themes/lite-purple.min.css')}}">
+    <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-green.min.css')}}">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
                     <div class="col-md-6">
                         <div class="p-4">
                             <div class="auth-logo text-center mb-4">
-                                <img src="{{asset('Login/assets/images/logo.png')}}" alt="">
+                                <img src="{{asset('Login/assets/images/logo_green.png')}}" alt="">
                             </div>
                             <h1 class="mb-3 text-18">Forgot Password</h1>
                             <form action="">

@@ -36,9 +36,14 @@ mix.webpackConfig({
 mix.js('resources/js/main.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .js('resources/laravel/js/app.js', 'public/Login/assets/js/laravel/app.js')
-    .sass('resources/gull/assets/styles/sass/themes/lite-purple.scss', 'public/Login/assets/styles/css/themes/lite-purple.min.css');
-    // .sass('resources/gull/assets/styles/sass/themes/lite-blue.scss', 'public/Login/assets/styles/css/themes/lite-blue.min.css')
-    // .sass('resources/gull/assets/styles/sass/themes/dark-purple.scss', 'public/Login/assets/styles/css/themes/dark-purple.min.css');
+   .sass('resources/gull/assets/styles/sass/themes/lite-purple.scss', 'public/Login/assets/styles/css/themes/lite-purple.min.css')
+   .sass('resources/gull/assets/styles/sass/themes/lite-green.scss', 'public/Login/assets/styles/css/themes/lite-green-plain.min.css')
+   .sass('resources/gull/assets/styles/sass/themes/custom-login.scss', 'public/Login/assets/styles/css/themes/custom.min.css');
+
+   mix.combine([
+    'public/Login/assets/styles/css/themes/lite-green-plain.min.css',
+    'public/Login/assets/styles/css/themes/custom.min.css',
+    ], 'public/Login/assets/styles/css/themes/lite-green.min.css');
 
    mix.combine([
        'node_modules/jquery/dist/jquery.min.js',

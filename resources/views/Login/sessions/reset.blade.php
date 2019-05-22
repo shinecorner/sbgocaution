@@ -10,13 +10,9 @@
     <title>{{ __('login.login') }}</title>
 
     <!--=======================CSS=============================-->
-    <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-purple.min.css')}}">
+    <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-green.min.css')}}">
     <!--=======================CSS=============================-->
 
-    <!--=======================Font CSS=============================-->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet" type="text/css" /> -->
-    <!--=======================Font CSS=============================-->
 
     <!--=======================js=============================-->
     <script src="/Login/assets/js/common-bundle-script.js"></script>
