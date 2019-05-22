@@ -1,8 +1,11 @@
 <template>
     <div class="vld-parent">
         <loading :active.sync="status"         
+        loader="dots"
         :is-full-page="fullPage"
         color="#3490dc"        
+        opacity="0.3"
+        background-color="#fff"
         ></loading>        
     </div>
 </template>
