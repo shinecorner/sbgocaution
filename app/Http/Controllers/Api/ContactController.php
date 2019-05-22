@@ -21,7 +21,7 @@ class ContactController extends Controller
         if($request->has('per_page')){
             $per_page = $request->per_page;
         } else {
-            $per_page = config('crm.items_per_page');
+            $per_page = config('general.items_per_page');
         }
 
         $contact_statuses = [
@@ -114,7 +114,7 @@ class ContactController extends Controller
     public function change_status(Request $request, $id){
         $contact = Contact::find($id);
         return response()->json([
-            "api_status" => $contact->change_status(),
+            "api_status" => $contact->changeStatus(),
             "data" => $contact
         ], 200);
     }
@@ -139,7 +139,7 @@ class ContactController extends Controller
         foreach($languages as $language){
             foreach($statuses as $status){
                 App::setLocale($language);
-                $$language[$status] = __('crm.'. $status);
+                $$language[$status] = __('contact.'. $status);
             }
             $data['helpers'][$language][$status] = $$language;
         }

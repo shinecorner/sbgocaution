@@ -18,13 +18,13 @@ class ContactResource extends JsonResource
     {
         $data = parent::toArray($request);
 
-        $data['status'] = __('crm.' . $this->status);
+        $data['status'] = __('contact.' . $this->status);
         $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
 
         if($this->user_id && property_exists($this, 'username')) 
             $data['joomlauser'] = $this->username;
         else 
-            $data['joomlauser'] = __('JNO');
+            $data['joomlauser'] = __('general.JNO');
 
         $data['saluation_formatted'] = get_salutation($this->salutation);
         $data['language_flag'] = get_language_flag($this->language);

@@ -98,7 +98,7 @@ class ConfigController extends Controller
         }
         return response()->json([
             "api_status" => $status,
-            "message" => __('crm.CONFIG_SUCCESS')
+            "message" => __('general.CONFIG_SUCCESS')
         ], 200);
     }
 }

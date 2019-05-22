@@ -176,13 +176,13 @@ if(!function_exists('get_salutation')){
     function get_salutation($salutation){
         switch($salutation) {
             case 'mr': 
-                return __('crm.PDF_IL_MAN'); 
+                return __('general.PDF_IL_MAN'); 
                 break;
             case 'mrs': 
-                return __('crm.PDF_IL_WOMEN'); 
+                return __('general.PDF_IL_WOMEN'); 
                 break;
             case 'company': 
-                return __('crm.PDF_IL_COMPANY'); 
+                return __('general.PDF_IL_COMPANY'); 
                 break;
         }
     }
