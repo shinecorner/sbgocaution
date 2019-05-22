@@ -5,9 +5,9 @@
         <v-toolbar flat class="transparent scroll-area navigation">
           <v-list>
 				<app-logo></app-logo>
-                                <!--<user-block></user-block>-->
-				<template v-for="(category, key) in menus">
-					<div :key="key">	
+                                <!--<user-block></user-block>-->                                
+				<template v-for="(category, key, index) in menus">
+					<div :key="key" :class="{ 'first-menu-item': (index === 0) }">	
                                                 <div class="sidebar-title px-3">
 							<span>{{$t(key)}}</span>
 						</div>

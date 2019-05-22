@@ -116,7 +116,7 @@
                                               class="status_dropdown"
                                               v-for="(qs, index) in quotestatus"
                                               :key="index"
-                                              @click=""
+                                              @click="changeStatus(index,props.rowData.id)"
                                             >
                                             <v-list-tile-title>{{ qs }}</v-list-tile-title>
                                             </v-list-tile>
@@ -281,6 +281,13 @@ export default {
               this.$refs.vuetable.normalizeFields();
            });
         },
+        changeStatus(val,id){
+            api.put('/api/contacts/change_status/'+id, {status: val}) .then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
         contactFetch(apiUrl,httpOptions){
             return api.get(apiUrl, httpOptions);
         },
@@ -359,5 +366,6 @@ export default {
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(10), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(10){
     width: 65px;
+    border-right: none;
 }
 </style>

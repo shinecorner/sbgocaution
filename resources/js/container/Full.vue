@@ -2,7 +2,7 @@
 <template>
 	<div class="app-default-layout">
 		<template v-if="loading">
-			<rotate-square2></rotate-square2>
+			<app-section-loader :status="loading"></app-section-loader>
 		</template>
 		<template v-else>
 			<!-- App Header -->

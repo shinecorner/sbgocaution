@@ -11936,3 +11936,11 @@ table.v-table thead th.statusdropdown_column {
   padding: 0 0 0 20px;
 }
 
+.sidebar .first-menu-item {
+  padding-top: 30px;
+}
+
+.search-content .perpage_selectbox {
+  width: 65px;
+}
+
