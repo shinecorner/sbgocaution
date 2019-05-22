@@ -666,7 +666,7 @@ span.flag-icon {
 body{
   overflow-y: auto!important;
 }
-form.needs-validation.no-cross.was-validated .form-control:invalid{
+form.needs-validation.no-cross.was-validated .form-control:invalid, form.needs-validation.no-cross.was-validated .form-control:valid{
   background-image: none;
 }
 .login-main .checkbox > span{

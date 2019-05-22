@@ -42,8 +42,7 @@ mix.js('resources/js/main.js', 'public/js')
 
    mix.combine([
        'node_modules/jquery/dist/jquery.min.js',
-       'node_modules/bootstrap/js/bootstrap.bundle.js',
-       'node_modules/bootstrap/js/bootstrap.min.js',
+       'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
        'resources/gull/assets/js/vendor/perfect-scrollbar.min.js',
    ], 'public/Login/assets/js/common-bundle-script.js');
 
