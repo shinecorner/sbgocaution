@@ -41,8 +41,9 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
-            'localization'
+            'localization',
             //\Barryvdh\Cors\HandleCors::class,
+            'PerPagePagination'
         ],
     ];
 
@@ -66,5 +67,6 @@ class Kernel extends HttpKernel
         'localization' => \App\Http\Middleware\Localization::class,
         //'cors' => \App\Http\Middleware\cors::class,
         'setLocale' => \App\Http\Middleware\SetLocale::class,
+        'PerPagePagination' => \App\Http\Middleware\PerPagePagination::class
     ];
 }

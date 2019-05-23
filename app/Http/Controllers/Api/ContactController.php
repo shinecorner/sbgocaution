@@ -18,12 +18,6 @@ class ContactController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('per_page')){
-            $per_page = $request->per_page;
-        } else {
-            $per_page = config('general.items_per_page');
-        }
-
         $contact_statuses = [
             'contact_statuslist',
             'contactPDF_statuslist'
@@ -46,7 +40,7 @@ class ContactController extends Controller
 
         $data['helpers']['configs'] = $config_data;
 
-        return ContactResource::collection(Contact::latest()->paginate($per_page))->additional($data);
+        return ContactResource::collection(Contact::latest()->paginate($request->per_page))->additional($data);
     }
 
     /**
