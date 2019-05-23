@@ -94,7 +94,7 @@ class ContactController extends Controller
 
         return response()->json([
             "api_status" => $contact->update($request->all()),
-            "data" => $contact
+            "data" => new ContactResource($contact)
         ], 200);
     }
 
@@ -115,7 +115,7 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         return response()->json([
             "api_status" => $contact->changeStatus(),
-            "data" => $contact
+            "data" => new ContactResource($contact)
         ], 200);
     }
 
