@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class PerPagePagination
+class Pagination
 {
     /**
      * Handle an incoming request.
