@@ -80,7 +80,7 @@
                     <div class="login-bottom-block visible-xs clearfix">
                         <br/>
                         <div class="login-support">{{ __('login.support') }}
-                            <br><b>0800 461 461</b></div>
+                            <br><b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="goCaution® Vermieter-Login">
