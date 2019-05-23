@@ -186,15 +186,10 @@ a:focus {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.login-main .width100,
-.login-main .full-width > .form-control {
-  width: 100% !important;
-}
 
 .login-main .language-dropdown a {
   color: #ffffff;
-  text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -482,7 +477,7 @@ div.t3-wrapper.t3-login-wrap,
 .login-main {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
-  line-height: 1.53846154 !important;
+  line-height: 1.53846154;
   color: #646566;
   background-color: #f4f5f6;
   letter-spacing: 0;
@@ -555,9 +550,9 @@ div.t3-wrapper.t3-login-wrap,
 }
 
 .login-main .login label {
-  font-size: 13px !important;
-  line-height: 1.53846154 !important;
-  color: #646566 !important;
+  font-size: 13px ;
+  line-height: 1.53846154 ;
+  color: #646566 ;
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
@@ -576,7 +571,7 @@ div.t3-wrapper.t3-login-wrap,
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
-  font-size: 11px !important;
+  font-size: 11px;
 }
 
 .login-main .btn-default {
@@ -760,8 +755,8 @@ span.flag-icon {
 
 /* vendor css 21/05 */
 
-body {
-  overflow-y: auto !important;
+html body {
+  overflow-y: auto;
 }
 
 form.needs-validation.no-cross.was-validated .form-control:invalid,
@@ -781,8 +776,8 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 }
 
 .login-main .login label.checkbox {
-  line-height: 1.238462 !important;
-  padding-left: 20px !important;
+  line-height: 1.238462 ;
+  padding-left: 20px ;
   margin-top: 7px;
 }
 
@@ -847,15 +842,9 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 }
 
 
-@media (min-width: 576px) {
-  .login-main .t3-login .modal-sm {
-    max-width: inherit !important;
-  }
-}
-
 @media (max-width: 767px) {
   .login-main .visible-xs {
-    display: block !important;
+    display: block;
   }
 
   .login-main .row {
@@ -863,8 +852,8 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
     flex-wrap: wrap;
   }
 
-  .login-main .hidden-xs {
-    display: none !important;
+  .login-main br.hidden-xs {
+      display: none;
   }
 
   .login-main .login-bottom-block.visible-xs {

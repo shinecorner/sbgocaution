@@ -38,11 +38,11 @@ class AuthLoginController extends controller
       $this->loginInstance = new LoginController();
       $this->ForgotPasswordInstance = new ForgotPasswordController();
       $this->ResetPasswordInstance = new ResetPasswordController();
-      $this->languageInfo = array('en' => array('name' => 'English', 'image' =>'en.png'), 'fr' => array('name' => 'Français', 'image' =>'fr.png'),'it' =>array('name' => 'Italienisch', 'image' =>'it.png') ,'de' => array('name' => 'Deutsch', 'image' =>'de.png'));
+
     }
 
     public function loginForm(){
-      return view('Login.sessions.signin')->with(['languageInfo' => $this->languageInfo]);
+      return view('Login.sessions.signin');
     }
 
     /**
@@ -54,7 +54,7 @@ class AuthLoginController extends controller
      */
 
     public function showForgetPasswordForm(Request $request, $token = null){
-        return view('Login.sessions.forgot')->with(['languageInfo' => $this->languageInfo]);
+        return view('Login.sessions.forgot');
     }
 
     /**
@@ -69,7 +69,7 @@ class AuthLoginController extends controller
     {
       $token = $request->segment(4);
         return view('Login.sessions.reset')->with(
-            ['token' => $token, 'email' => $request->email,'languageInfo' => $this->languageInfo]
+            ['token' => $token, 'email' => $request->email]
         );
     }
 

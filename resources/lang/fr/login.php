@@ -5,13 +5,14 @@
     'USERNAME' => 'Identifiant',
     'PASSWORD' => 'Mot de passe',
     'LANGUAGE' => 'La langue',
-    'ORG_LANGUAGE_DE' => 'Deutsch',
-    'ORG_LANGUAGE_FR' => 'Französisch',
-    'ORG_LANGUAGE_IT' => 'Italienisch',
-    'ORG_LANGUAGE_EN' => 'English',
+    'DE' => 'Deutsch',
+    'FR' => 'Französisch',
+    'IT' => 'Italienisch',
+    'EN' => 'English',
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Se rappeler de moi',
     /* END */
 
+    'TITLE' => 'goCaution® Ouverture de session du propriétaire',
     'LOGIN_TITLE' => 'goCaution® Espace bailleurs',
     'FORGET_PASSWORD' => 'Mot de passe oublié ?',
     'GET_RESET_LINK' => 'Obtenir le lien de réinitialisation',

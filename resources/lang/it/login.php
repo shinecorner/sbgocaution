@@ -6,13 +6,14 @@
     'USERNAME' => 'Nome utente',
     'PASSWORD' => 'Password',
     'LANGUAGE' => 'linguaggio',
-    'ORG_LANGUAGE_DE' => 'Deutsch',
-    'ORG_LANGUAGE_FR' => 'Französisch',
-    'ORG_LANGUAGE_IT' => 'Italienisch',
-    'ORG_LANGUAGE_EN' => 'English',
+    'DE' => 'Deutsch',
+    'FR' => 'Französisch',
+    'IT' => 'Italienisch',
+    'EN' => 'English',
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Ricordami',
     /* END */
 
+    'TITLE' => 'goCaution® Login Proprietario',
     'LOGIN_TITLE' => 'goCaution® LARALOGIN',
     'FORGET_PASSWORD' => 'dimenticare la password',
     'GET_RESET_LINK' => 'Ottieni il link di reset',

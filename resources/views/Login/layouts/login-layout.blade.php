@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>{{ __('login.login') }}</title>
-
+    <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
     <!--=======================CSS=============================-->
     <link rel="stylesheet" href="{{mix('Login/assets/styles/css/themes/lite-green.min.css')}}">
     <!--=======================CSS=============================-->
@@ -27,8 +27,8 @@
                     <div class="login-header-block visible-xs">
                         <div class="logo">
                             <div class="logo-image">
-                                <a href="#" title="goCaution® Vermieter-Login">
-                                    <img class="logo-img" src="{{ asset('Login/assets/images/logo-w.png') }}" alt="goCaution® Vermieter-Login" /> </a>
+                                <a href="#" title="{{ __('login.title') }}">
+                                    <img class="logo-img" src="{{ asset('Login/assets/images/logo-w.png') }}" alt="{{ __('login.title') }}" /> </a>
                             </div>
                         </div>
                     </div>
@@ -45,8 +45,8 @@
                             <br><b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
-                                <a href="#" title="goCaution® Vermieter-Login">
-                                    <img class="logo-img" src="{{ asset('Login/images/logo_de.png') }}" alt="goCaution® Vermieter-Login" />
+                                <a href="#" title="{{ __('login.title') }}">
+                                    <img class="logo-img" src="{{ asset('Login/images/logo_de.png') }}" alt="{{ __('login.title') }}" />
                                     <span>{{ __('login.login_title') }}</span>
                                 </a>
                                 <small class="site-slogan">{{ __('login.login_title') }}</small>
@@ -83,8 +83,8 @@
                             <br><b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
-                                <a href="#" title="goCaution® Vermieter-Login">
-                                    <img class="logo-img" src="{{ asset('Login/images/logo_de.png') }}" alt="goCaution® Vermieter-Login" />
+                                <a href="#" title="{{ __('login.title') }}">
+                                    <img class="logo-img" src="{{ asset('Login/images/logo_de.png') }}" alt="{{ __('login.title') }}" />
                                     <span>{{ __('login.login_title') }}</span>
                                 </a>
                                 <small class="site-slogan">{{ __('login.login_title') }}</small>
@@ -99,12 +99,12 @@
                       <div class="btn-group">
                           <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
                               <span class="caret"></span> &nbsp;
-                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/'.$languageInfo[app()->getLocale()]['image']) }}" alt="" /><span id="selected_lang">{{ $languageInfo[app()->getLocale()]['name'] }}</span>
+                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/'.app()->getLocale().'.png') }}" alt="" /><span id="selected_lang">{{ __('login.'.app()->getLocale()) }}</span>
                             </a>
                               <ul class="lang-block dropdown-menu" dir="ltr">
 
                                 @foreach(config('app.languages') as $language)
-                                  <li data-content="{{$language}}" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/'.$languageInfo[$language]['image'])}}" alt="" /> {{ $languageInfo[$language]['name'] }}</a></li>
+                                  <li data-content="{{$language}}" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/'.$language.'.png')}}" alt="" /> {{ __('login.'.$language) }}</a></li>
                                 @endforeach
                               </ul>
                       </div>
