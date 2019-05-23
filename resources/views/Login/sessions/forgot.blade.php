@@ -26,7 +26,7 @@
 
             <div class="form-group">
                 <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('login.get_reset_link') }}</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-outline-primary">{{ __('login.get_reset_link') }}</button>
                 </div>
             </div>
         </form>

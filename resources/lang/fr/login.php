@@ -5,13 +5,14 @@
     'USERNAME' => 'Identifiant',
     'PASSWORD' => 'Mot de passe',
     'LANGUAGE' => 'La langue',
-    'ORG_LANGUAGE_DE' => 'Deutsch',
-    'ORG_LANGUAGE_FR' => 'Französisch',
-    'ORG_LANGUAGE_IT' => 'Italienisch',
-    'ORG_LANGUAGE_EN' => 'English',
+    'DE' => 'Deutsch',
+    'FR' => 'Französisch',
+    'IT' => 'Italienisch',
+    'EN' => 'English',
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Se rappeler de moi',
     /* END */
 
+    'TITLE' => 'goCaution® Ouverture de session du propriétaire',
     'LOGIN_TITLE' => 'goCaution® Espace bailleurs',
     'FORGET_PASSWORD' => 'Mot de passe oublié ?',
     'GET_RESET_LINK' => 'Obtenir le lien de réinitialisation',
@@ -40,5 +41,6 @@
     'COM_USERS_USERNAME_RESET' => "Identifiant oublié ?",
     'USERNAME_REQUIRED' => "Veuillez fournir un nom d'utilisateur valide.",
     'PASSWORD_REQUIRED' => "Veuillez fournir un mot de passe valide.",
-    'CONFIRM_PASSWORD_REQUIRED' => 'Veuillez fournir un mot de passe de confirmation valide.'
+    'CONFIRM_PASSWORD_REQUIRED' => 'Veuillez fournir un mot de passe de confirmation valide.',
+    'CONTACT' => '0800 461 461'
   ];

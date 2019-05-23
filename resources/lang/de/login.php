@@ -5,13 +5,14 @@
           'USERNAME' => 'Benutzername',
           'PASSWORD' => 'Passwort',
           'LANGUAGE' => 'Sprache',
-          'ORG_LANGUAGE_DE' => 'Deutsch',
-          'ORG_LANGUAGE_FR' => 'Französisch',
-          'ORG_LANGUAGE_IT' => 'Italienisch',
-          'ORG_LANGUAGE_EN' => 'English',
+          'DE' => 'Deutsch',
+          'FR' => 'Französisch',
+          'IT' => 'Italienisch',
+          'EN' => 'English',
           'COM_USERS_LOGIN_REMEMBER_ME' => 'Angemeldet bleiben',
           /* END */
 
+          'TITLE' => 'goCaution® Vermieter-Login',
           'LOGIN_TITLE' => 'goCaution® Vermieter-Login',
           'FORGET_PASSWORD' => 'Passwort vergessen?',
           'GET_RESET_LINK' => 'Link zurücksetzen',
@@ -40,5 +41,6 @@
           'COM_USERS_USERNAME_RESET' => "Benutzername vergessen?",
           'USERNAME_REQUIRED' => 'Bitte geben Sie einen gültigen Benutzernamen an.',
           'PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Passwort an.',
-          'CONFIRM_PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Bestätigungspasswort an.'
+          'CONFIRM_PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Bestätigungspasswort an.',
+          'CONTACT' => '0800 461 461'
   ];
