@@ -40,5 +40,6 @@
           'COM_USERS_USERNAME_RESET' => "Benutzername vergessen?",
           'USERNAME_REQUIRED' => 'Bitte geben Sie einen gültigen Benutzernamen an.',
           'PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Passwort an.',
-          'CONFIRM_PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Bestätigungspasswort an.'
+          'CONFIRM_PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Bestätigungspasswort an.',
+          'CONTACT' => '0800 461 461'
   ];

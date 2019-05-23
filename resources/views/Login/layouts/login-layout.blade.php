@@ -32,6 +32,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="login-content Site-content">
                         <div class="login-form-module">
                             @yield('login')
@@ -40,8 +41,8 @@
 
                     <div class="login-bottom-block hidden-xs">
                         <br/>
-                        <div style="text-align: center; font-size: 15px">{{ __('login.support')}}
-                            <br><b>0800 461 461</b></div>
+                        <div class="login-support">{{ __('login.support')}}
+                            <br><b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="goCaution® Vermieter-Login">
@@ -51,13 +52,14 @@
                                 <small class="site-slogan">{{ __('login.login_title') }}</small>
                             </div>
                         </div>
-                        <div style="text-align: center; font-size: 9px; margin-bottom: 20px;">
+                        <div class="address-content">
                             {{__('login.support_address')}}</div>
                     </div>
                 </div>
 
                 <div class="column-flexible">
                     <div class="promo-inner">
+
 
                         <div class="custom">
                             <h1>{{ __('login.login_page_description_title') }}</h1>
@@ -77,7 +79,7 @@
                     </span>
                     <div class="login-bottom-block visible-xs clearfix">
                         <br/>
-                        <div style="text-align: center; font-size: 15px">{{ __('login.support') }}
+                        <div class="login-support">{{ __('login.support') }}
                             <br><b>0800 461 461</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
@@ -91,26 +93,19 @@
                         <div class="mb-shift">goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen</div>
                     </div>
                 </div>
+
                 <div class="position-absolute">
-                  <div class="mod-languages">
+                  <div class="language-dropdown">
                       <div class="btn-group">
                           <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
                               <span class="caret"></span> &nbsp;
-                              @if(app()->getLocale()=='de')
-                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/de.png')}}" alt="" /><span id="selected_lang"> Deutsch </span>
-                              @elseif(app()->getLocale()=='fr')
-                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /><span id="selected_lang"> Français </span>
-                              @elseif(app()->getLocale()=='it')
-                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/it.png')}}" alt="" /><span id="selected_lang"> Italienisch </span>
-                              @else
-                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/en.png')}}" alt="" /><span id="selected_lang"> English </span>
-                              @endif
+                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/'.$languageInfo[app()->getLocale()]['image']) }}" alt="" /><span id="selected_lang">{{ $languageInfo[app()->getLocale()]['name'] }}</span>
                             </a>
                               <ul class="lang-block dropdown-menu" dir="ltr">
-                                  <li data-content="de" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/de.png')}}" alt="" /> Deutsch </a></li>
-                                  <li data-content="fr" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /> Français </a></li>
-                                  <li data-content="it" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/it.png')}}" alt="" /> Italienisch </a></li>
-                                  <li data-content="en" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/en.png')}}" alt="" /> English </a></li>
+
+                                @foreach(config('app.languages') as $language)
+                                  <li data-content="{{$language}}" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/'.$languageInfo[$language]['image'])}}" alt="" /> {{ $languageInfo[$language]['name'] }}</a></li>
+                                @endforeach
                               </ul>
                       </div>
                   </div>
@@ -126,8 +121,10 @@
 
     $('.languagechange').click(function() {
         var lang = $(this).attr('data-content');
-        var pageURL = $(location).attr('href').split("/").splice(0, 3).join("/");
-        window.location.href = pageURL + "/" + lang;
+        var url =$(location).attr('href');
+        var segments = url.split("/");
+        var language_segments = segments[segments.length-(segments.length-3)];
+        window.location.href = url.replace(language_segments, lang);
     });
 
 

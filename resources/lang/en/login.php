@@ -37,5 +37,6 @@
     'RESET' => 'Reset',
     'USERNAME_REQUIRED' => 'Please provide a valid username.',
     'PASSWORD_REQUIRED' => 'Please provide a valid password.',
-    'CONFIRM_PASSWORD_REQUIRED' => 'Please provide a valid confirm password.'
+    'CONFIRM_PASSWORD_REQUIRED' => 'Please provide a valid confirm password.',
+    'CONTACT' => '0800 461 461'
   ];

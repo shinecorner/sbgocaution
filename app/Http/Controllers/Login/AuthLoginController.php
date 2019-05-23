@@ -28,6 +28,7 @@ class AuthLoginController extends controller
     protected $loginInstance;
     protected $ForgotPasswordInstance;
     protected $ResetPasswordInstance;
+    protected $languageInfo;
 
     /**
      * Creating instance of controller.
@@ -37,6 +38,11 @@ class AuthLoginController extends controller
       $this->loginInstance = new LoginController();
       $this->ForgotPasswordInstance = new ForgotPasswordController();
       $this->ResetPasswordInstance = new ResetPasswordController();
+      $this->languageInfo = array('en' => array('name' => 'English', 'image' =>'en.png'), 'fr' => array('name' => 'Français', 'image' =>'fr.png'),'it' =>array('name' => 'Italienisch', 'image' =>'it.png') ,'de' => array('name' => 'Deutsch', 'image' =>'de.png'));
+    }
+
+    public function loginForm(){
+      return view('Login.sessions.signin')->with(['languageInfo' => $this->languageInfo]);
     }
 
     /**
@@ -47,8 +53,8 @@ class AuthLoginController extends controller
      * @return view
      */
 
-    public function showLinkRequestForm(Request $request, $token = null){
-        return view('Login.sessions.forgot');
+    public function showForgetPasswordForm(Request $request, $token = null){
+        return view('Login.sessions.forgot')->with(['languageInfo' => $this->languageInfo]);
     }
 
     /**
@@ -59,11 +65,11 @@ class AuthLoginController extends controller
      * @return view
      */
 
-    public function showResetForm(Request $request, $token = null)
+    public function showResetPasswordForm(Request $request, $token = null)
     {
       $token = $request->segment(4);
         return view('Login.sessions.reset')->with(
-            ['token' => $token, 'email' => $request->email]
+            ['token' => $token, 'email' => $request->email,'languageInfo' => $this->languageInfo]
         );
     }
 
@@ -111,7 +117,7 @@ class AuthLoginController extends controller
      * @return view
      */
 
-    public function sendResetLinkEmail(Request $request){
+    public function sendResetPasswordLinkEmail(Request $request){
       return $this->ForgotPasswordInstance->sendResetLinkEmail($request);
     }
 

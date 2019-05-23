@@ -40,5 +40,6 @@
     'COM_USERS_USERNAME_RESET' => "Identifiant oublié ?",
     'USERNAME_REQUIRED' => "Veuillez fournir un nom d'utilisateur valide.",
     'PASSWORD_REQUIRED' => "Veuillez fournir un mot de passe valide.",
-    'CONFIRM_PASSWORD_REQUIRED' => 'Veuillez fournir un mot de passe de confirmation valide.'
+    'CONFIRM_PASSWORD_REQUIRED' => 'Veuillez fournir un mot de passe de confirmation valide.',
+    'CONTACT' => '0800 461 461'
   ];

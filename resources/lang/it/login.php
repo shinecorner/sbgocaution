@@ -38,5 +38,6 @@
     'RESET' => 'reset',
     'USERNAME_REQUIRED' => 'Si prega di fornire un nome utente valido.',
     'PASSWORD_REQUIRED' => 'Si prega di fornire una password valida.',
-    'CONFIRM_PASSWORD_REQUIRED' => 'Si prega di fornire una password di conferma valida.'
+    'CONFIRM_PASSWORD_REQUIRED' => 'Si prega di fornire una password di conferma valida.',
+    'CONTACT' => '0800 461 461'
   ];

@@ -1,23 +1,23 @@
 <?php
 
     Auth::routes();
-    Route::get('/', function () { return redirect('/de'); });
+    Route::get('/', function () { return redirect(app()->getLocale()); });
     Route::get('/sendMail','AuthLoginController@sendMail');
-    Route::get('/login', function () { return redirect('/de'); })->name('login');
-    Route::get('password.reset', 'AuthLoginController@showResetForm')->name('password.reset');
+    Route::get('/login', function () { return redirect(app()->getLocale()); })->name('login');
+    Route::get('password.reset', 'AuthLoginController@showResetPasswordForm')->name('password.reset');
     Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
 
     Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => ['setLocale']], function () {
-          Route::get('/', function () { return view('Login.sessions.signin'); });
+          Route::get('/', 'AuthLoginController@loginForm');
           Route::post('login','AuthLoginController@login');
 
           Route::middleware(['auth'])->group(function () {
               Route::get('/dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard');
               Route::post('logout','AuthLoginController@logout');
           });
-          Route::get('passwordRequest', 'AuthLoginController@showLinkRequestForm');
-          Route::get('password/reset/{token}','AuthLoginController@showResetForm');
-          Route::post('passwordEmail', 'AuthLoginController@sendResetLinkEmail');
+          Route::get('passwordRequest', 'AuthLoginController@showForgetPasswordForm');
+          Route::get('password/reset/{token}','AuthLoginController@showResetPasswordForm');
+          Route::post('passwordEmail', 'AuthLoginController@sendResetPasswordLinkEmail');
           Route::post('password.update', 'AuthLoginController@reset');
 
     });
