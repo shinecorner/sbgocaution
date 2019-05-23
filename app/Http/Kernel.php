@@ -43,7 +43,7 @@ class Kernel extends HttpKernel
             'bindings',
             'localization',
             //\Barryvdh\Cors\HandleCors::class,
-            'PerPagePagination'
+            'Pagination'
         ],
     ];
 
@@ -67,6 +67,6 @@ class Kernel extends HttpKernel
         'localization' => \App\Http\Middleware\Localization::class,
         //'cors' => \App\Http\Middleware\cors::class,
         'setLocale' => \App\Http\Middleware\SetLocale::class,
-        'PerPagePagination' => \App\Http\Middleware\PerPagePagination::class
+        'Pagination' => \App\Http\Middleware\Pagination::class
     ];
 }
