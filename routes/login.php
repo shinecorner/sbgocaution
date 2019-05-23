@@ -7,8 +7,8 @@
     Route::get('password.reset', 'AuthLoginController@showResetForm')->name('password.reset');
     Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
 
-    Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => ['setLocale']], function () {   
-          Route::get('/', function () { return view('Login.sessions.login'); });
+    Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => ['setLocale']], function () {
+          Route::get('/', function () { return view('Login.sessions.signin'); });
           Route::post('login','AuthLoginController@login');
 
           Route::middleware(['auth'])->group(function () {
