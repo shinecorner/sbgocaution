@@ -13,9 +13,9 @@
           /* END */
 
           'LOGIN_TITLE' => 'goCaution® Vermieter-Login',
-          'FORGET_PASSWORD' => 'Passwort vergessen ?',
+          'FORGET_PASSWORD' => 'Passwort vergessen?',
           'GET_RESET_LINK' => 'Link zurücksetzen',
-          'BACK_TO_LOGIN' => 'Zurück zur Anmeldung ?',
+          'BACK_TO_LOGIN' => 'Zurück zur Anmeldung?',
           'SUPPORT'       => 'Unterstützung',
           'SUPPORT_ADDRESS' => "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
           'LOGIN_PAGE_DESCRIPTION_TITLE' => 'Mietkautionen online verwalten' ,
@@ -37,5 +37,8 @@
           'NEW_PASSWORD' => "Neues Kennwort",
           'CONFIRM_PASSWORD' => 'Passwort bestätigen',
           'RESET' => 'zurücksetzen',
-          'COM_USERS_USERNAME_RESET' => "Benutzername vergessen ?",
+          'COM_USERS_USERNAME_RESET' => "Benutzername vergessen?",
+          'USERNAME_REQUIRED' => 'Bitte geben Sie einen gültigen Benutzernamen an.',
+          'PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Passwort an.',
+          'CONFIRM_PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Bestätigungspasswort an.'
   ];

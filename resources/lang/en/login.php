@@ -35,4 +35,7 @@
     'NEW_PASSWORD' => "New Password",
     'CONFIRM_PASSWORD' => 'Confirm Password',
     'RESET' => 'Reset',
+    'USERNAME_REQUIRED' => 'Please provide a valid username.',
+    'PASSWORD_REQUIRED' => 'Please provide a valid password.',
+    'CONFIRM_PASSWORD_REQUIRED' => 'Please provide a valid confirm password.'
   ];
