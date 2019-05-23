@@ -3,7 +3,7 @@
     /* from CRM */
     'LOGIN' => 'Connexion',
     'USERNAME' => 'Identifiant',
-    'PASSWORD' => 'Mot de passe ?',
+    'PASSWORD' => 'Mot de passe',
     'LANGUAGE' => 'La langue',
     'ORG_LANGUAGE_DE' => 'Deutsch',
     'ORG_LANGUAGE_FR' => 'Französisch',
@@ -18,7 +18,7 @@
     'BACK_TO_LOGIN' => 'Retour connexion?',
     'SUPPORT'       => 'Soutien',
     'SUPPORT_ADDRESS' => "goCaution SA - Freiburgstrasse 574 - 3172 Niederwangen",
-    'LOGIN_PAGE_DESCRIPTION_TITLE' => 'Gérer les dépôts de location en ligne' ,
+    'LOGIN_PAGE_DESCRIPTION_TITLE' => 'Gérer les cautions de loyer en ligne' ,
     'LOGIN_PAGE_DESCRIPTION_LINE_ONE'   => "goCaution a mis en place un Espace bailleurs qui vous permettra d'avoir une visualisation et une gestion complète de vos garanties de loyer.",
     'LOGIN_PAGE_DESCRIPTION_LINE_TWO'   => "Ainsi, vous pourrez gérer l'établissement d'un certificat jusqu'à la résiliation avec ou sans sinistre.",
     'LOGIN_PAGE_DESCRIPTION_LINE_THREE' => "Notre application web est simple de manipulation et rapide. Adapté à la philosophie de goCaution,",
@@ -38,4 +38,7 @@
     'CONFIRM_PASSWORD' => 'Confirmez le mot de passe',
     'RESET' => 'réinitialiser',
     'COM_USERS_USERNAME_RESET' => "Identifiant oublié ?",
+    'USERNAME_REQUIRED' => "Veuillez fournir un nom d'utilisateur valide.",
+    'PASSWORD_REQUIRED' => "Veuillez fournir un mot de passe valide.",
+    'CONFIRM_PASSWORD_REQUIRED' => 'Veuillez fournir un mot de passe de confirmation valide.'
   ];

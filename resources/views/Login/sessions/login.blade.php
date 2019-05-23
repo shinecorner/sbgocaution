@@ -28,13 +28,13 @@
                         <div class="logo">
                             <div class="logo-image">
                                 <a href="#" title="goCaution® Vermieter-Login">
-                                    <img class="logo-img" src="{{ asset('Login/images/logo_de.png') }}" alt="goCaution® Vermieter-Login" /> </a>
+                                    <img class="logo-img" src="{{ asset('Login/assets/images/logo-w.png') }}" alt="goCaution® Vermieter-Login" /> </a>
                             </div>
                         </div>
                     </div>
                     <div class="login-content Site-content">
                         <div class="login-form-module">
-                            <div class="login-wrap login-form" style="display:block">
+                            <div class="login-wrap">
                                 <div class="login">
                                     <h3 class="login-top-title">{{ __('login.login_title') }}</h3>
                                     <hr />
@@ -43,31 +43,32 @@
                                       @if ($errors->has('email'))
                                         <sapn style="color:red;">{{ $errors->first('email') }}</span>
                                       @endif
+                                        <div class="form-row pB-5 ">
+                                          <div class="col-md-12">
+                                              <label for="validationCustom01">{{ __('login.username') }}<span class="star">&#160;*</span></label>
+                                              <input type="text" class="form-control" name="email" id="validationCustom01"  value="" required>
+                                              <div class="invalid-feedback">
+                                                  {{ __('login.username_required') }}
+                                              </div>
+                                          </div>
+                                        </div>
                                         <div class="form-row">
-                                            <div class="col-md-12 mb1">
-                                                <label for="validationCustom01">{{ __('login.username') }}<span class="star">&#160;*</span></label>
-                                                <input type="text" class="form-control" name="email" id="validationCustom01"  value="" required>
-                                                <div class="invalid-feedback">
-                                                    Please provide a valid username.
-                                                </div>
-
-                                            </div>
-                                            <div class="col-md-12 mb1">
-                                                <label for="validationCustom02">{{ __('login.password') }}<span class="star">&#160;*</span></label>
-                                                <input type="password" class="form-control" name="password" id="validationCustom02"  value="" required>
-                                                <div class="invalid-feedback">
-                                                    Please provide a valid password.
-                                                </div>
-                                            </div>
+                                          <div class="col-md-12">
+                                              <label for="validationCustom02">{{ __('login.password') }}<span class="star">&#160;*</span></label>
+                                              <input type="password" class="form-control" name="password" id="validationCustom02"  value="" required>
+                                              <div class="invalid-feedback">
+                                                  {{ __('login.password_required') }}
+                                              </div>
+                                          </div>
                                         </div>
                                         <label class="checkbox checkbox-outline-success">
                                             <input type="checkbox" name="remember" >
-                                            <span>{{ __('login.com_users_login_remember_me') }}</span>
+                                            <span class="chechbox-label">{{ __('login.com_users_login_remember_me') }}</span>
                                             <span class="checkmark"></span>
                                         </label>
                                         <div class="form-group">
                                             <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
-                                                <button type="submit" class="btn btn-primary btn-block">{{ __('login.login') }}</button>
+                                                <button type="submit" class="btn btn-primary btn-block btn-outline-primary">{{ __('login.login') }}</button>
                                             </div>
                                         </div>
                                     </form>
@@ -78,7 +79,6 @@
                                 <div class="other-links form-group">
                                     <ul>
                                         <li><a href="{{ url(app()->getLocale(), 'passwordRequest') }}" >@lang('login.FORGET_PASSWORD')</a></li>
-                                        <li><a href="#" >@lang('login.COM_USERS_USERNAME_RESET')</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -121,8 +121,9 @@
 
                         </div>
                     </div>
-
-                    <img src="{{ asset('Login/images/vermieter-login-app.png') }}">
+                    <span class="fixed-response">
+                      <img src="{{ asset('Login/images/vermieter-login-app.png') }}">
+                    </span>
                     <div class="login-bottom-block visible-xs clearfix">
                         <br/>
                         <div style="text-align: center; font-size: 15px">{{ __('login.support') }}
@@ -136,7 +137,7 @@
                                 <small class="site-slogan">{{ __('login.login_title') }}</small>
                             </div>
                         </div>
-                        <div style="text-align: center; font-size: 9px; margin-bottom: 20px;">goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen</div>
+                        <div class="mb-shift">goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen</div>
                     </div>
                 </div>
                 <div class="position-absolute">
@@ -145,20 +146,20 @@
                           <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
                               <span class="caret"></span> &nbsp;
                               @if(app()->getLocale()=='de')
-                              <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/de.png')}}" alt="" /><span id="selected_lang"> Deutsch </span>
+                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/de.png')}}" alt="" /><span id="selected_lang"> Deutsch </span>
                               @elseif(app()->getLocale()=='fr')
-                              <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /><span id="selected_lang"> Français </span>
+                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /><span id="selected_lang"> Français </span>
                               @elseif(app()->getLocale()=='it')
-                              <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/it.png')}}" alt="" /><span id="selected_lang"> Italienisch </span>
+                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/it.png')}}" alt="" /><span id="selected_lang"> Italienisch </span>
                               @else
-                              <img class="mx-20 mR-5" id="selected_img" src="{{asset('/static/flag-icons/en.png')}}" alt="" /><span id="selected_lang"> English </span>
+                              <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/en.png')}}" alt="" /><span id="selected_lang"> English </span>
                               @endif
                             </a>
                               <ul class="lang-block dropdown-menu" dir="ltr">
-                                  <li data-content="de" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/de.png')}}" alt="" /> Deutsch </a></li>
-                                  <li data-content="fr" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /> Français </a></li>
-                                  <li data-content="it" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/it.png')}}" alt="" /> Italienisch </a></li>
-                                  <li data-content="en" class="languagechange"><a href="#"><img class="mx-20 mR-5" src="{{asset('/static/flag-icons/en.png')}}" alt="" /> English </a></li>
+                                  <li data-content="de" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/de.png')}}" alt="" /> Deutsch </a></li>
+                                  <li data-content="fr" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/fr.png')}}" alt="" /> Français </a></li>
+                                  <li data-content="it" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/it.png')}}" alt="" /> Italienisch </a></li>
+                                  <li data-content="en" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/en.png')}}" alt="" /> English </a></li>
                               </ul>
                       </div>
                   </div>
@@ -178,15 +179,7 @@
         window.location.href = pageURL + "/" + lang;
     });
 
-    function show_forget_password(openFrom) {
-        if (openFrom == 'forgetPassword') {
-            $(".forgetPassword-form").css("display", "block");
-            $('.login-form').css("display", "none");
-        } else {
-            $(".forgetPassword-form").css("display", "none");
-            $('.login-form').css("display", "block");
-        }
-    }
+
     $(function() {
       var list = $('.js-dropdown-list');
       var link = $('.js-link');
