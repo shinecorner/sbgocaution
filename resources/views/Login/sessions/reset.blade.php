@@ -17,7 +17,7 @@
                         {{ __('login.username_required') }}
                     </div>
                     @if ($errors->has('email'))
-                      <div class="error" style="color:red;">{{ $errors->first('email') }}</div>
+                      <span class="red-alert">{{ $errors->first('email') }}</span>
                     @endif
 
                 </div>
@@ -28,7 +28,7 @@
                         {{ __('login.password_required') }}
                     </div>
                     @if ($errors->has('password'))
-                      <div class="error"  style="color:red;">{{ $errors->first('password') }}</div>
+                      <div class="error" class="red-alert">{{ $errors->first('password') }}</div>
                     @endif
                 </div>
                 <div class="col-md-12 mb1">
@@ -41,7 +41,7 @@
             </div>
 
             <div class="form-group">
-                <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
+                <div class="text-center reset-btn" >
                     <button type="submit" class="btn btn-primary btn-block btn-outline-primary">{{ __('login.reset') }}</button>
                 </div>
             </div>
