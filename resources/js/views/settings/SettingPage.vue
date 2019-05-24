@@ -16,36 +16,41 @@
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.INVOICE_DATE_FORMAT')"
+											:label="$t('message.setting.INVOICE_DATE_FORMAT')"
 											v-model="configs['crm.display_date_format']"
 											:rules="form1.dateFormat"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
-										<v-select v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('message.general.ITEMS_PER_PAGE')"></v-select>
+										<v-select v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('message.setting.ITEMS_PER_PAGE')"></v-select>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
-										<v-select v-bind:items="robot_options" v-model="configs['crm.robots']" :label="$t('message.general.ROBOTS')"></v-select>
+										<v-text-field
+											type="number"
+											:label="$t('message.setting.DECIMALS')"
+											v-model="configs['crm.decimals']"
+											:rules="form1.decimals"
+											required></v-text-field>
 									</v-flex>
 								</v-layout>
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.INVOICE_NUMBER_FORMAT')"
+											:label="$t('message.setting.INVOICE_NUMBER_FORMAT')"
 											v-model="configs['crm.invoice_num_format']"
 											:rules="form1.invoiceNumberFormat"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.QUOTE_NUMBER_FORMAT')"
+											:label="$t('message.setting.QUOTE_NUMBER_FORMAT')"
 											v-model="configs['crm.quote_num_format']"
 											:rules="form1.quoteNumberFormat"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.CONTACT_NUMBER_FORMAT')"
+											:label="$t('message.setting.CONTACT_NUMBER_FORMAT')"
 											v-model="configs['crm.contact_num_format']"
 											:rules="form1.contact_num_format"
 											required></v-text-field>
@@ -54,14 +59,14 @@
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.THOUSANDS')"
+											:label="$t('message.setting.THOUSANDS')"
 											v-model="configs['crm.thousands']"
 											:rules="form1.thousands"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.DECPOINTS')"
+											:label="$t('message.setting.DECPOINTS')"
 											v-model="configs['crm.decpoint']"
 											:rules="form1.decpoint"
 											required></v-text-field>
@@ -69,19 +74,9 @@
 									<v-flex sm6 md4 lg4>
 										<v-text-field
 											type="number"
-											:label="$t('message.general.INVOICE_NUM_DIGITS')"
+											:label="$t('message.setting.INVOICE_NUM_DIGITS')"
 											v-model="configs['crm.invoice_number_digits']"
 											:rules="form1.invoiceNumberDigits"
-											required></v-text-field>
-									</v-flex>
-								</v-layout>
-								<v-layout row wrap>
-									<v-flex sm6 md4 lg4>
-										<v-text-field
-											type="number"
-											:label="$t('message.general.DECIMALS')"
-											v-model="configs['crm.decimals']"
-											:rules="form1.decimals"
 											required></v-text-field>
 									</v-flex>
 								</v-layout>
@@ -94,18 +89,18 @@
 							<v-form v-model="form2.valid" ref="form2" lazy-validation>
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
-										<v-select hide-details v-bind:items="mail_options" :label="$t('message.general.SEND_MAILS')" v-model="configs['mail.driver']"></v-select>
+										<v-select hide-details v-bind:items="mail_options" :label="$t('message.setting.SEND_MAILS')" v-model="configs['mail.driver']"></v-select>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.FROM_NAME_ON_EMAILS')"
+											:label="$t('message.setting.FROM_NAME_ON_EMAILS')"
 											v-model="configs['mail.from.name']"
 											:rules="form2.mailFromName"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.FROM_EMAIL_ON_EMAILS')"
+											:label="$t('message.setting.FROM_EMAIL_ON_EMAILS')"
 											v-model="configs['mail.from.address']"
 											:rules="form2.mailFromAddress"
 											required></v-text-field>
@@ -114,21 +109,21 @@
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.REPLY_ADDRESS')"
+											:label="$t('message.setting.REPLY_ADDRESS')"
 											v-model="configs['mail.reply_to.address']"
 											:rules="form2.replyToAddress"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.REPLY_NAME')"
+											:label="$t('message.setting.REPLY_NAME')"
 											v-model="configs['mail.reply_to.name']"
 											:rules="form2.replyToName"
 											required></v-text-field>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.PORT')"
+											:label="$t('message.setting.PORT')"
 											v-model="configs['mail.port']"
 											:rules="form2.port"
 											required></v-text-field>
@@ -136,11 +131,11 @@
 								</v-layout>
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
-										<v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('message.general.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
+										<v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('message.setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
-											:label="$t('message.general.SMTP_USER')"
+											:label="$t('message.setting.SMTP_USER')"
 											v-model="configs['mail.username']"
 											:rules="form2.username"
 											required></v-text-field>
@@ -148,7 +143,7 @@
 									<v-flex sm6 md4 lg4>
 										<v-text-field
 											type="password"
-											:label="$t('message.general.SMTP_PASSWORD')"
+											:label="$t('message.setting.SMTP_PASSWORD')"
 											v-model="configs['mail.password']"
 											:rules="form2.password"
 											required></v-text-field>
@@ -157,7 +152,7 @@
 								<v-layout row wrap>
 									<v-flex sm6 md4 lg4>
 										<v-switch 
-											:label="$t('message.general.SMTP_AUTHENTICATION')"
+											:label="$t('message.setting.SMTP_AUTHENTICATION')"
 											v-model="configs['mail.authentication']"
 											color="success"
 											value="Yes"></v-switch>
@@ -197,53 +192,53 @@ export default {
 	      	form1: {
 		        valid: false,
 		        dateFormat: [
-		          	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.INVOICE_DATE_FORMAT')})
+		          	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.INVOICE_DATE_FORMAT')})
 		        ],
 		        contact_num_format:[
-		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.CONTACT_NUMBER_FORMAT')})
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.CONTACT_NUMBER_FORMAT')})
 		        ],
 		        invoiceNumberFormat: [
-		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.INVOICE_NUMBER_FORMAT')})
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.INVOICE_NUMBER_FORMAT')})
 		        ],
 		        quoteNumberFormat: [
-		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.QUOTE_NUMBER_FORMAT')})
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.QUOTE_NUMBER_FORMAT')})
 		        ],
 		        invoiceNumberDigits: [
-		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.INVOICE_NUM_DIGITS')})
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.INVOICE_NUM_DIGITS')})
 		        ],
 		        decpoint: [
-		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.DECPOINTS')})
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.DECPOINTS')})
 		        ],
 		        thousands: [
-		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.THOUSANDS')})
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.THOUSANDS')})
 		        ],
 		        decimals: [
-		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.DECIMALS')})
+		        	v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.DECIMALS')})
 		        ]
 	      	},
 	      	form2:{
 	      		mailFromName: [
-	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.FROM_NAME_ON_EMAILS')})
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.FROM_NAME_ON_EMAILS')})
 	      		],
 	      		mailFromAddress: [
-	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.FROM_EMAIL_ON_EMAILS')}),
-		          	v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('message.validation.email', {attribute: this.$t('message.general.FROM_EMAIL_ON_EMAILS')})
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.FROM_EMAIL_ON_EMAILS')}),
+		          	v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('message.validation.email', {attribute: this.$t('message.setting.FROM_EMAIL_ON_EMAILS')})
 	      		],
 	      		replyToName: [
-	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.REPLY_NAME')})
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.REPLY_NAME')})
 	      		],
 	      		replyToAddress: [
-	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.REPLY_ADDRESS')}),
-	      			v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('message.validation.email', {attribute: this.$t('message.general.REPLY_ADDRESS')})
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.REPLY_ADDRESS')}),
+	      			v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('message.validation.email', {attribute: this.$t('message.setting.REPLY_ADDRESS')})
 	      		],
 	      		port: [
-	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.PORT')})
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.PORT')})
 	      		],
 	      		username: [
-	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.SMTP_USER')})
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.SMTP_USER')})
 	      		],
 	      		password: [
-	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.general.SMTP_PASSWORD')})
+	      			v => !!v || this.$t('message.validation.required', {attribute: this.$t('message.setting.SMTP_PASSWORD')})
 	      		],
 	      		
 	      	}
@@ -256,7 +251,7 @@ export default {
 	},
 	created() {
 		this.setConfigs(),
-                this.$store.dispatch("setHeaderTitle", 'message.general.OPTIONS');    
+                this.$store.dispatch("setHeaderTitle", 'message.setting.OPTIONS');    
 	},
 	methods: {
 		...mapActions(["setConfigs", "saveConfig"]),

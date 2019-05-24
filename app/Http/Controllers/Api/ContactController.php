@@ -121,21 +121,20 @@ class ContactController extends Controller
      * @return void
      */
     private function getStatusList(&$data, $status){
+        $languages = config('app.languages');
         switch ($status) {
             case 'contact_statuslist':
-                $statuses = getContactStatus();
+                foreach($languages as $language) {
+                    App::setLocale($language);
+                    $data['helpers'][$language][$status] = getContactStatus();
+                }
                 break;
             case 'contactPDF_statuslist':
-                $statuses = getContactPDF();
+                foreach($languages as $language) {
+                    App::setLocale($language);
+                    $data['helpers'][$language][$status] = getContactPDF();
+                }
                 break;
-        }
-        $languages = config('app.languages');
-        foreach($languages as $language){
-            foreach($statuses as $status){
-                App::setLocale($language);
-                $$language[$status] = __('contact.'. $status);
-            }
-            $data['helpers'][$language][$status] = $$language;
         }
         $local = (request()->hasHeader('X-localization')) ? request()->header('X-localization') : 'de';
         app()->setLocale($local);

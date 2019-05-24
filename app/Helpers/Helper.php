@@ -1,6 +1,7 @@
 <?php
  
 if (!function_exists('getUniqueNum')) {
+
     /**
      * Returns a Unique Number
      * 
@@ -8,7 +9,7 @@ if (!function_exists('getUniqueNum')) {
      * @param integer $type
      * @return string unique number
      * */
-    function getUniqueNum($real_invoice_num, $type = 1){
+    function getUniqueNum($real_invoice_num, $type = 1) {
         if($type == 1) $format = config('crm.invoice_num_format');
         elseif($type == 2) $format = config('crm.quote_num_format');
         elseif($type == 3) $format = config('crm.contact_num_format');
@@ -25,6 +26,7 @@ if (!function_exists('getUniqueNum')) {
 }
 
 if (!function_exists('render_status_class')) {
+
     /**
      * Returns an appropriate status class from status.
      * 
@@ -67,6 +69,7 @@ if (!function_exists('render_status_class')) {
 }
 
 if (!function_exists('get_language_flag')) {
+
     /**
      * Returns a language flag image path based on language.
      * 
@@ -88,33 +91,35 @@ if (!function_exists('get_language_flag')) {
 }
 
 if (!function_exists('getContactStatus')) {
+
     /**
-     * Returns all the statuses.
+     * Returns translated statuses.
      * 
      * @return array $status
      */
     function getContactStatus(){
         $status = array();
 
-        $status[] = "new";
-        $status[] = "offer";
-        $status[] = "in_clarification";
-        $status[] = "pending";
-        $status[] = "accepted";
-        $status[] = "pre_confirmation_pending";
-        $status[] = "pre_confirmation_sent";
-        $status[] = "cancelled";
-        $status[] = "rejected";
+        $status["new"] = __('general.NEW');
+        $status["offer"] = __('general.OFFER');
+        $status["in_clarification"] = __('general.IN_CLARIFICATION');
+        $status["pending"] = __('general.PENDING');
+        $status["accepted"] = __('general.ACCEPTED');
+        $status["pre_confirmation_pending"] = __('general.PRE_CONFIRMATION_PENDING');
+        $status["pre_confirmation_sent"] = __('general.PRE_CONFIRMATION_SENT');
+        $status["cancelled"] = __('general.CANCELLED');
+        $status["rejected"] = __('general.REJECTED');
 //      $status[] = "waiting_for_payment";
-        $status[] = "dissolved_immediately";
-        $status[] = "status_resolved";
-        $status[] = "status_quote_waiting";
+        $status["dissolved_immediately"] = __('general.DISSOLVED_IMMEDIATELY');
+        $status["status_resolved"] = __('general.STATUS_RESOLVED');
+        $status["status_quote_waiting"] = __('general.STATUS_QUOTE_WAITING');
         return $status;
     }
 
 }
 
 if(!function_exists('roundTo5')){
+
     /**
      * Returns decimal number which is round to 5.
      * 
@@ -129,6 +134,7 @@ if(!function_exists('roundTo5')){
 }
 
 if(!function_exists('format')){
+
     /**
      * Returns formatted decimal number.
      * 
@@ -148,6 +154,7 @@ if(!function_exists('format')){
 }
 
 if(!function_exists('getContactPDF')){
+    
     /**
      * Returns Contact PDF related statues.
      * 
@@ -157,16 +164,17 @@ if(!function_exists('getContactPDF')){
         $status = array();
 
        // $status['content_pdf']  = "CONTACT_PDF_PRECONFIRMATION";
-        $status['content_pdf_img']  = "CONTACT_PDF_PRECONFIRMATION_IMG";
-        $status['content_pdf1'] = "CONTACT_PDF_REJECTED";
+        $status['content_pdf_img'] = __('general.PDF_PRECONFIRMATION_IMG');
+        $status['content_pdf1'] = __('general.PDF_REJECTED');
        // $status['refund']       = "CONTACT_PDF_OFFER";
-        $status['offer_print']       = "CONTACT_PDF_OFFER_PRINT_LETTER";
+        $status['offer_print'] = __('general.PDF_OFFER_PRINT_LETTER');
         return $status;
     }
 
 }
 
 if(!function_exists('get_salutation')){
+
     /**
      * Returns translated salutation.
      * 
@@ -185,6 +193,33 @@ if(!function_exists('get_salutation')){
                 return __('general.PDF_IL_COMPANY'); 
                 break;
         }
+    }
+
+}
+
+if(!function_exists('getLeadSource')){
+
+    function getLeadSource(){
+        $leadsource = array();
+
+        $leadsource['online_registration'] = __('contact.ONLINE_REGISTRATION');
+        $leadsource['affiliate_marketing'] = __('contact.AFFILIATE_MARKETNG');
+        $leadsource['partner_management'] = __('contact.PARTNERVERWALTUNG');
+        $leadsource['other'] = __('contact.ANDERE');
+        $leadsource['partner_login'] = __('contact.LEAD_SOURCE_PARTNERLOGIN');
+        $leadsource['call_centre'] = __('contact.LEAD_SOURCE_CALLCENTRE');
+
+        $leadsource['pdf_cls'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_CLS');
+        $leadsource['pdf_mks'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_MKS');
+        $leadsource['pdf_go'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_GO');
+        $leadsource['form_offer'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_OFFER');
+        $leadsource['form_preconfirmation'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_PRECONFIRMATION');
+        $leadsource['mks_gocaution'] = __('contact.COM_INVOICES_LEADSOURCE_MKS_GOCAUTION');
+        $leadsource['mks_offer'] = __('contact.COM_INVOICES_LEADSOURCE_MKS');
+        $leadsource['cls_offer'] = __('contact.COM_INVOICES_LEADSOURCE_CLS');
+        $leadsource['ca_offer'] = __('contact.COM_INVOICES_LEADSOURCE_CA');
+
+        return $leadsource;
     }
 
 }
