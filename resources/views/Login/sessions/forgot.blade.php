@@ -1,10 +1,17 @@
 @extends('Login.layouts.login-layout')
 @section('login')
-<div class="login-wrap">
+<div class="login-wrap border-bot">
     <div class="login">
-        <h3 class="login-top-title">{{ __('login.login_title') }}</h3>
-        <hr />
-        <form class="needs-validation no-cross" action="{{ url(app()->getLocale(),'passwordEmail') }}" method="post" novalidate>
+      <div class="other-links form-group  pt-41">
+        <a class="users-back-button" href="{{ url(app()->getLocale()) }}"><img src="{{asset('Login/images/icon-back.png')}}" alt="icon-back"> {{ __('login.back') }}</a>
+      </div>
+        <!-- <h3 class="login-top-title">{{ __('login.login_title') }}</h3> -->
+        <div class="msg-login-forgot">
+          <p>
+            {{__('login.forgot_text')}}
+          </p>
+        </div>
+        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'routes.PASSWORD_EMAIL')) }}" method="post" novalidate>
             @csrf
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
@@ -14,29 +21,31 @@
             @if ($errors->has('email'))
               <span class="red-alert">{{ $errors->first('email') }}</span>
             @endif
-              <div class="form-row">
+              <div class="form-row pt-7">
                   <div class="col-md-12 mb1">
-                      <label for="validationCustom01">{{ __('login.username') }}<span class="star">&#160;*</span></label>
-                      <input type="text" class="form-control" name="email" id="validationCustom01" placeholder="username" value="" required>
+                      <label data-toggle="popover" data-content="{{ __('login.popover_data') }}" data-original-title="Adresse e-mail" for="validationCustom01">{{ __('login.identifier') }}<span class="star">&#160;*</span></label>
+                      <input type="text" class="form-control" name="email" id="validationCustom01" value="" required>
                       <div class="invalid-feedback">
                           {{ __('login.username_required') }}
                       </div>
                   </div>
               </div>
-
+            <br/>
             <div class="form-group">
-                <div class="text-center reset-btn" >
-                    <button type="submit" class="btn btn-primary btn-block btn-outline-primary">{{ __('login.get_reset_link') }}</button>
+                <div class="text-center reset-btn pt-0 mob-pb-10" >
+                    <button type="submit" class="btn btn-primary btn-block btn-outline-primary">{{ __('login.send_forgot_mail') }}</button>
                 </div>
             </div>
         </form>
     </div>
-    <br />
 
-    <div class="other-links form-group">
-        <ul>
-            <li><a href="{{ url(app()->getLocale()) }}" >@lang('login.BACK_TO_LOGIN')</a></li>
-        </ul>
-    </div>
+
 </div>
+<script>
+   $("[data-toggle=popover]").popover({
+     trigger : 'hover'
+   }
+   );
+
+</script>
 @endsection

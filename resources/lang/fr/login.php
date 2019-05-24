@@ -6,7 +6,7 @@
     'PASSWORD' => 'Mot de passe',
     'LANGUAGE' => 'La langue',
     'DE' => 'Deutsch',
-    'FR' => 'Französisch',
+    'FR' => 'Français',
     'IT' => 'Italienisch',
     'EN' => 'English',
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Se rappeler de moi',
@@ -42,5 +42,12 @@
     'USERNAME_REQUIRED' => "Veuillez fournir un nom d'utilisateur valide.",
     'PASSWORD_REQUIRED' => "Veuillez fournir un mot de passe valide.",
     'CONFIRM_PASSWORD_REQUIRED' => 'Veuillez fournir un mot de passe de confirmation valide.',
-    'CONTACT' => '0800 461 461'
+    'CONTACT' => '0800 461 461',
+    'LOGO_IMG' => 'logo_fr.png',
+    'LOGIN_IMG' => 'landlord-login-app.png',
+    'FORGOT_TEXT' => "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
+    'POPOVER_DATA' => "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur.&lt;br /&gt;Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe.",
+    'IDENTIFIER' => 'Adresse e-mail',
+    'BACK' => 'verso',
+    'SEND_FORGOT_MAIL' => 'Envoyer',
   ];

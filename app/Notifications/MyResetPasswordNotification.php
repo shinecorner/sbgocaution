@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Notifications;
-
+use \Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Notifications\Messages\MailMessage;
 
 
@@ -15,9 +15,10 @@ class MyResetPasswordNotification extends \Illuminate\Auth\Notifications\ResetPa
      */
     public function toMail($notifiable)
     {
+        // echo LaravelLocalization::getURLFromRouteNameTranslated(\Session::get('locale'),'routes.PASSWORD_RESET').'/'.$this->token; die();
         return (new MailMessage)
             ->line('You are receiving this email because we received a password reset request for your account.')
-            ->action('Reset Password', url(\Session::get('locale').'/password/reset', $this->token))
+            ->action('Reset Password', url(LaravelLocalization::getURLFromRouteNameTranslated(\Session::get('locale'),'routes.PASSWORD_RESET')).'/'.$this->token )
             ->line('If you did not request a password reset, no further action is required.');
     }
 }
