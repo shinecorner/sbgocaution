@@ -167,6 +167,17 @@ const actions = {
 		api.get('/api/configs').then(response => context.commit('configs', response.data.data))
 	},
 	saveConfig(context, payload) {
+                let s_helpers = {};
+                s_helpers['serverhelpers'] = this.getters.serverHelpers;
+                if(s_helpers.serverhelpers.hasOwnProperty('configs')){                    
+                    for(var key in state.configs){
+                        if(s_helpers.serverhelpers.configs.hasOwnProperty(key)){                            
+                            s_helpers.serverhelpers.configs[key] = state.configs[key];
+                        }
+                    }                    
+//                    s_helpers.configs = state.configs;
+                    context.commit('serverHelpersHandler', s_helpers);
+                }
 		api.put('/api/configs/all', state.configs).then(response => {
 			Vue.notify({ group: 'loggedIn', type: 'success', text: response.data.message })	
 		})

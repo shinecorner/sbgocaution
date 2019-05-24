@@ -7,6 +7,7 @@ return [
     'USERNAME' => 'Benutzername',
     'PASSWORD' => 'Passwort',
     'EMAIL' => 'E-Mail',
+    'CRM_TITLE' => 'goCaution AG',
     'CRM_LOGIN_TITLE' => 'goCaution® CRM',
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Angemeldet bleiben',
     'COM_USERS_LOGIN_RESET' => 'Passwort vergessen?',

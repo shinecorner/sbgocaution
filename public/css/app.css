@@ -11704,7 +11704,8 @@ a.text-dark:focus {
 }
 
 .column-partner,
-.column-pre-confirmation {
+.column-pre-confirmation,
+.column-inverse {
   border-left: 3px solid;
   border-color: #066938;
 }
@@ -11740,9 +11741,17 @@ a.text-dark:focus {
   background-color: #286090;
 }
 
+.theme--light.v-chip.label-status-success {
+  background-color: #449d44;
+}
+
 .theme--light.v-chip.label-status-success[href]:hover,
 .theme--light.v-chip.label-success[href]:focus {
   background-color: #449d44;
+}
+
+.theme--light.v-chip.label-status-info {
+  background-color: #31b0d5;
 }
 
 .theme--light.v-chip.label-status-info[href]:hover,
@@ -11773,7 +11782,8 @@ a.text-dark:focus {
 }
 
 .theme--light.v-chip.label-status-partner,
-.theme--light.v-chip.label-status-pre-confirmation {
+.theme--light.v-chip.label-status-pre-confirmation,
+.theme--light.v-chip.label-status-inverse {
   background-color: #066938;
 }
 

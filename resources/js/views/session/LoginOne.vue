@@ -10,23 +10,23 @@
 						:src="appLogo"
 						class="img-responsive mb-3" 						
 					/>					
-					<p class="fs-14">{{$t('message.crm.CRM_LOGIN_TITLE')}}</p>
+					<p class="fs-14">{{$t('message.general.CRM_LOGIN_TITLE')}}</p>
 					<v-form v-model="valid" class="mb-4">
 						<v-text-field 
-							:label="$t('message.crm.EMAIL')" 
+							:label="$t('message.general.EMAIL')" 
 							v-model="email" 
 							:rules="emailRules" 
 							required
 						></v-text-field>
 						<v-text-field 
-							:label="$t('message.crm.PASSWORD')" 
+							:label="$t('message.general.PASSWORD')" 
 							v-model="password" 
 							type="password" 
 							:rules="passwordRules" 
 							required
 						></v-text-field>
                                                <v-select                                                    
-                                                    :label="$t('message.crm.LANGUAGE')"
+                                                    :label="$t('message.login.LANGUAGE')"
                                                     :items="languageItems"
                                                     v-model="fetchLanguage"
                                                     item-text="name"
@@ -54,13 +54,13 @@
                                                   </v-select>
 						<v-checkbox 
 							color="primary" 
-							:label="$t('message.crm.COM_USERS_LOGIN_REMEMBER_ME')" 
+							:label="$t('message.general.COM_USERS_LOGIN_REMEMBER_ME')" 
                                                         class="rememberme"
 							v-model="checkbox"
 						></v-checkbox>
-						<!--<router-link class="mb-1" to="/session/forgot-password">{{$t('message.crm.COM_USERS_LOGIN_RESET')}}?</router-link>-->
+						<!--<router-link class="mb-1" to="/session/forgot-password">{{$t('message.general.COM_USERS_LOGIN_RESET')}}?</router-link>-->
 						<div>						
-                                                    <v-btn large @click="signInWithLaravelPassport" block color="primary">{{$t('message.crm.LOGIN')}}</v-btn>
+                                                    <v-btn large @click="signInWithLaravelPassport" block color="primary">{{$t('message.general.LOGIN')}}</v-btn>
 						</div>						
 					</v-form>					
 				</div>
@@ -90,21 +90,21 @@ export default {
       valid: false,      
       email: "",
       emailRules: [
-        v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.crm.EMAIL')}),
+        v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.general.EMAIL')}),
         v =>
           /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
-          this.$t('message.validation.invalid',{attribute: this.$t('message.crm.EMAIL')})
+          this.$t('message.validation.invalid',{attribute: this.$t('message.general.EMAIL')})
       ],
       password: "",
-      passwordRules: [v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.crm.PASSWORD')})],
+      passwordRules: [v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.general.PASSWORD')})],
       appLogo: AppConfig.appLogo2,
       brand: AppConfig.brand,
       fetchLanguage: localStorage.getItem('selectedLocale') || 'de',
       languageItems: [
-             { name: this.$t('message.crm.ORG_LANGUAGE_DE'), locale: 'de', flag: '/static/flag-icons/de.png' },
-             { name: this.$t('message.crm.ORG_LANGUAGE_FR'), locale: 'fr', flag: '/static/flag-icons/fr.png' },
-             { name: this.$t('message.crm.ORG_LANGUAGE_IT'), locale: 'it', flag: '/static/flag-icons/it.png' },
-             { name: this.$t('message.crm.ORG_LANGUAGE_EN'), locale: 'en', flag: '/static/flag-icons/en.png' },                          
+             { name: this.$t('message.login.DE'), locale: 'de', flag: '/static/flag-icons/de.png' },
+             { name: this.$t('message.login.FR'), locale: 'fr', flag: '/static/flag-icons/fr.png' },
+             { name: this.$t('message.login.IT'), locale: 'it', flag: '/static/flag-icons/it.png' },
+             { name: this.$t('message.login.EN'), locale: 'en', flag: '/static/flag-icons/en.png' },                          
         ]
     };
   },
