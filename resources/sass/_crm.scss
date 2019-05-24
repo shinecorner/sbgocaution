@@ -37,7 +37,7 @@
     border-color: #9c27b0;
 }
 
-.column-partner, .column-pre-confirmation {
+.column-partner, .column-pre-confirmation, .column-inverse {
   border-left: 3px solid;  
   border-color: #066938;
 }
@@ -63,11 +63,15 @@
     &.label-status-primary[href]:hover, &.label-primary[href]:focus {
         background-color: #286090;
     }
-
+    &.label-status-success {
+        background-color: #449d44;
+    }
     &.label-status-success[href]:hover, &.label-success[href]:focus {
         background-color: #449d44;
     }
-
+    &.label-status-info{
+        background-color: #31b0d5;
+    }
     &.label-status-info[href]:hover, &.label-info[href]:focus {
         background-color: #31b0d5;
     }
@@ -87,9 +91,9 @@
     &.label-status-in-clarification[href]:hover, &.label-status-in-clarification[href]:focus {
         background-color: #9c27b0;
     }
-    &.label-status-partner, &.label-status-pre-confirmation {
+    &.label-status-partner, &.label-status-pre-confirmation, &.label-status-inverse {
         background-color: #066938;
-    } 
+    }    
 }
 
 .list-table-container table.v-table tbody td.vuetable-slot .status-chips{

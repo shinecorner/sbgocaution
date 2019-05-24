@@ -60,7 +60,7 @@
                                                                                             <router-link class="d-inline-block" :to="!item.exact ? `/${getCurrentAppLayoutHandler() + item.path}` : item.path">{{((serverHelpers.navbar_contacts_count)? serverHelpers.navbar_contacts_count : '0')}}</router-link>
                                                                                         </span>
                                                                                         <span class="sidebar-label">
-                                                                                            <router-link class="d-inline-block" to="/crediweb">{{$t('message.crm.CONTACT_CW')}}</router-link>
+                                                                                            <router-link class="d-inline-block" to="/crediweb">{{$t('message.contact.CONTACT_CW')}}</router-link>
                                                                                         </span>
                                                                                 </span> 
 									</v-list-tile>
