@@ -1,0 +1,27 @@
+<?php
+return [
+    'SETTING' => 'Einstellung',
+    'SETTINGS' => 'Einstellungen',
+    'INVOICE_NUMBER_FORMAT' => "Format der Rechnungsnummer",
+    'QUOTE_NUMBER_FORMAT' => "Format der Angebotsnummer",
+    'CONTACT_NUMBER_FORMAT' => "Format der Kontaktnummer",
+    'INVOICE_DATE_FORMAT' => "Format des Rechnungsdatums",
+    'ITEMS_PER_PAGE' => "Standard Listenlänge",
+    'DECPOINTS' => 'Dezimalpunkt-Symbol',
+    'THOUSANDS' => 'Tausend-Trennsymbol',
+    'DECIMALS' => 'Anzahl der Dezimalstellen',
+    'INVOICE_NUM_DIGITS' => 'Mindestanzahl der Ziffern für die formatierte Rechnungsnummer',
+    'CONFIG_SUCCESS' => 'Konfiguration erfolgreich aktualisiert!',
+    'FROM_NAME_ON_EMAILS' => 'Von (Name) in E-Mails',
+    'FROM_EMAIL_ON_EMAILS' => 'Von (E-Mail) auf E-Mails',
+    'ROBOTS' => 'Roboter',
+    'SEND_MAILS' => 'Mails versenden',
+    'REPLY_ADDRESS' => 'Antwortadresse',
+    'REPLY_NAME' => 'Antwortname',
+    'PORT' => 'Hafen',
+    'SMTP_SECURITY' => 'SMTP-Sicherheit',
+    'SMTP_AUTHENTICATION' => 'SMTP-Authentifizierung',
+    'SMTP_USER' => 'Benutzer',
+    'SMTP_PASSWORD' => 'Passwort',
+    'OPTIONS' => 'Optionen'
+];
