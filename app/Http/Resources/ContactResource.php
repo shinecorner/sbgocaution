@@ -18,7 +18,7 @@ class ContactResource extends JsonResource
     {
         $data = parent::toArray($request);
 
-        $data['status'] = __('contact.' . $this->status);
+        $data['status'] = __('general.' . $this->status);
         $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
 
         if($this->user_id && property_exists($this, 'username')) 
@@ -40,6 +40,9 @@ class ContactResource extends JsonResource
             $data['zip'] = "";
             $data['city'] = "";            
         }
+
+        $data['count_of_policies'] = $this->policies()->count();
+        $data['count_of_invoices'] = $this->policies()->count();
 
         if($this->rc_quote == "Yes")
             $data['rc_quote'] = 1;

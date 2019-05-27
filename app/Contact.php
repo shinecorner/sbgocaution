@@ -34,6 +34,15 @@ class Contact extends Model
     }
 
     /**
+     * Get related policies collection object.
+     * @return Relationship Object
+     */
+    public function policies()
+    {
+        return $this->hasMany('App\Policy');
+    }
+
+    /**
      * Get related offers collection object.
      * 
      * @return Relationship Object

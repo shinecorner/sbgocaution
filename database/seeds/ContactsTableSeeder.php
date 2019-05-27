@@ -15,9 +15,16 @@ class ContactsTableSeeder extends Seeder
     {
         Schema::disableForeignKeyConstraints();
         DB::table('contacts')->truncate();
-	    factory(App\Contact::class, 200)->create()->each(function ($contact) {
-                $contact->addresses()->save(factory(App\Address::class)->create());
-            });
+        DB::table('policies')->truncate();
+        DB::table('invoices')->truncate();
+	    factory(App\Contact::class, 100)->create()->each(function ($contact) {
+            $contact->addresses()->save(factory(App\Address::class)->create());
+            for($i = mt_rand(1,6); $i < 6; $i++){
+                $policy = factory(App\Policy::class)->create();
+                $contact->policies()->save($policy); 
+                $policy->invoices()->save(factory(App\Invoice::class)->create());
+            }
+        });
         Schema::enableForeignKeyConstraints();
     }
 }
