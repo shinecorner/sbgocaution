@@ -15,6 +15,7 @@
 
     <!--=======================js=============================-->
     <script src="/Login/assets/js/common-bundle-script.js"></script>
+    
     <!--=======================js=============================-->
 
 </head>
@@ -41,12 +42,12 @@
 
                     <div class="login-bottom-block hidden-xs">
                         <br/>
-                        <div class="login-support">{{ __('login.support')}}
+                        <div class="login-support">SUPPORT
                             <br><b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('login.title') }}">
-                                    <img class="logo-img" src="{{ asset('Login/images/logo_de.png') }}" alt="{{ __('login.title') }}" />
+                                    <img class="logo-img" src="{{ asset('Login/images/'.__('login.logo_img')) }}" alt="{{ __('login.title') }}" />
                                     <span>{{ __('login.login_title') }}</span>
                                 </a>
                                 <small class="site-slogan">{{ __('login.login_title') }}</small>
@@ -75,16 +76,16 @@
                         </div>
                     </div>
                     <span class="fixed-response">
-                      <img src="{{ asset('Login/images/vermieter-login-app.png') }}">
+                      <img src="{{ asset('Login/images/'.__('login.LOGIN_IMG')) }}">
                     </span>
                     <div class="login-bottom-block visible-xs clearfix">
                         <br/>
-                        <div class="login-support">{{ __('login.support') }}
+                        <div class="login-support">SUPPORT
                             <br><b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('login.title') }}">
-                                    <img class="logo-img" src="{{ asset('Login/images/logo_de.png') }}" alt="{{ __('login.title') }}" />
+                                    <img class="logo-img" src="{{ asset('Login/images/'.__('login.logo_img')) }}" alt="{{ __('login.title') }}" />
                                     <span>{{ __('login.login_title') }}</span>
                                 </a>
                                 <small class="site-slogan">{{ __('login.login_title') }}</small>
@@ -102,20 +103,16 @@
                               <img class="mx-15" id="selected_img" src="{{asset('/static/flag-icons/'.app()->getLocale().'.png') }}" alt="" /><span id="selected_lang">{{ __('login.'.app()->getLocale()) }}</span>
                             </a>
                               <ul class="lang-block dropdown-menu" dir="ltr">
-
-                                @foreach(config('app.languages') as $language)
-                                  <li data-content="{{$language}}" class="languagechange"><a href="#"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/'.$language.'.png')}}" alt="" /> {{ __('login.'.$language) }}</a></li>
+                                @foreach(LaravelLocalization::getSupportedLocales() as $lang => $properties)
+                                  <li data-content="{{$lang}}"><a href="{{LaravelLocalization::getLocalizedURL($lang)}}"><img class="mx-15 mR-5" src="{{asset('/static/flag-icons/'.$lang.'.png')}}" alt="" /> {{ __('login.'.$lang) }}</a></li>
                                 @endforeach
                               </ul>
                       </div>
                   </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </body>
 <script>
 
@@ -148,5 +145,8 @@
 </script>
 
  <script src="{{asset('Login/assets/js/form.validation.script.js')}}"></script>
+
+
+
 
 </html>

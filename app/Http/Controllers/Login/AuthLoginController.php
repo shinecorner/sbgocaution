@@ -28,7 +28,6 @@ class AuthLoginController extends controller
     protected $loginInstance;
     protected $ForgotPasswordInstance;
     protected $ResetPasswordInstance;
-    protected $languageInfo;
 
     /**
      * Creating instance of controller.
@@ -67,7 +66,6 @@ class AuthLoginController extends controller
 
     public function showResetPasswordForm(Request $request, $token = null)
     {
-      $token = $request->segment(4);
         return view('Login.sessions.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );

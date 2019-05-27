@@ -6,7 +6,7 @@
           'PASSWORD' => 'Passwort',
           'LANGUAGE' => 'Sprache',
           'DE' => 'Deutsch',
-          'FR' => 'Französisch',
+          'FR' => 'Français',
           'IT' => 'Italienisch',
           'EN' => 'English',
           'COM_USERS_LOGIN_REMEMBER_ME' => 'Angemeldet bleiben',
@@ -42,5 +42,12 @@
           'USERNAME_REQUIRED' => 'Bitte geben Sie einen gültigen Benutzernamen an.',
           'PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Passwort an.',
           'CONFIRM_PASSWORD_REQUIRED' => 'Bitte geben Sie ein gültiges Bestätigungspasswort an.',
-          'CONTACT' => '0800 461 461'
+          'CONTACT' => '0800 461 461',
+          'LOGO_IMG' => 'logo_de.png',
+          'LOGIN_IMG' => 'vermieter-login-app.png',
+          'FORGOT_TEXT' => 'Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.',
+          'POPOVER_DATA' => 'Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.',
+          'IDENTIFIER' => 'E-Mail-Adresse',
+          'BACK' => 'Zurück',
+          'SEND_FORGOT_MAIL' => 'Senden',
   ];

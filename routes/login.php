@@ -1,25 +1,20 @@
 <?php
 
-Auth::routes();
-Route::get('/', function () { return redirect(app()->getLocale()); });
-Route::get('/sendMail','AuthLoginController@sendMail');
-Route::get('/login', function () { return redirect(app()->getLocale()); })->name('login');
-Route::get('password.reset', 'AuthLoginController@showResetPasswordForm')->name('password.reset');
 Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
+{
+  // echo LaravelLocalization::transRoute("routes.password_reset"); die();
+  	Route::get('/', 'AuthLoginController@loginForm')->name('login');
+    Route::get(LaravelLocalization::transRoute("routes.FORGOT_PASSWORD_LINK"), 'AuthLoginController@showForgetPasswordForm');
+    Route::get(LaravelLocalization::transRoute("routes.PASSWORD_RESET").'/{token}','AuthLoginController@showResetPasswordForm');
+    Route::post(LaravelLocalization::transRoute("routes.LOGIN"),'AuthLoginController@login');
+    Route::post(LaravelLocalization::transRoute("routes.PASSWORD_EMAIL"), 'AuthLoginController@sendResetPasswordLinkEmail');
+    Route::post(LaravelLocalization::transRoute("routes.PASSWORD_UPDATE"), 'AuthLoginController@reset');
 
-Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => ['setLocale']], function () {
-      Route::get('/', 'AuthLoginController@loginForm');
-      Route::post('login','AuthLoginController@login');
-
-      Route::middleware(['auth'])->group(function () {
-          Route::get('/dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard');
-          Route::post('logout','AuthLoginController@logout');
-      });
-      Route::get('passwordRequest', 'AuthLoginController@showForgetPasswordForm');
-      Route::get('password/reset/{token}','AuthLoginController@showResetPasswordForm');
-      Route::post('passwordEmail', 'AuthLoginController@sendResetPasswordLinkEmail');
-      Route::post('password.update', 'AuthLoginController@reset');
-
+    Route::middleware(['auth'])->group(function () {
+        Route::get('dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard');
+        Route::post(LaravelLocalization::transRoute("routes.LOGOUT"), 'AuthLoginController@logout');
+    });
 });
 
 Route::get('large-compact-sidebar/dashboard/dashboard1', function () { session(['layout' => 'compact']); return view('Login.dashboard.dashboardv1'); })->name('compact');
