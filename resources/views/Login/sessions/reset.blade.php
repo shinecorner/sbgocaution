@@ -4,7 +4,7 @@
     <div class="login">
         <h3 class="login-top-title">{{ __('login.login_title') }}</h3>
         <hr />
-        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'routes.PASSWORD_UPDATE')) }}" method="post" novalidate>
+        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.ROUTES.PASSWORD_UPDATE')) }}" method="post" novalidate>
           @csrf
           <input type="hidden" name="token" value="{{ $token }}">
 

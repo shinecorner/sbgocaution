@@ -4,7 +4,7 @@
     <div class="login">
         <h3 class="login-top-title">{{ __('login.login_title') }}</h3>
         <hr />
-        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'routes.LOGIN')) }}" method="post" novalidate>
+        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.ROUTES.LOGIN')) }}" method="post" novalidate>
           @csrf
           @if ($errors->has('email'))
             <span class="red-alert">{{ $errors->first('email') }}</span>
@@ -44,7 +44,7 @@
 
     <div class="other-links form-group">
         <ul>
-            <li><a href="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'routes.FORGOT_PASSWORD_LINK')) }}" >@lang('login.FORGET_PASSWORD')</a></li>
+            <li><a href="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.ROUTES.FORGOT_PASSWORD_LINK')) }}" >@lang('login.FORGET_PASSWORD')</a></li>
         </ul>
     </div>
 </div>
