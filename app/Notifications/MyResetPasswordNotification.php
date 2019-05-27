@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Notifications;
-use \Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use LaravelLocalization;
 use Illuminate\Notifications\Messages\MailMessage;
 
 
