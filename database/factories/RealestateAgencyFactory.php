@@ -28,7 +28,7 @@ $factory->define(App\RealestateAgency::class, function (Faker $faker) {
        'address' => $faker->address ,
        'zip' => $faker->numberBetween($min = 1000, $max = 9000) ,
        'city' => $faker->city ,
-       'lattitude' => $faker->latitude() ,
+       'latitude' => $faker->latitude() ,
        'longitude' => $faker->latitude() ,
        'state' => $faker->state ,
        'country' => $faker->countryCode ,
