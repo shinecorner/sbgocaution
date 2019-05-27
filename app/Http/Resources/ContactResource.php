@@ -41,6 +41,9 @@ class ContactResource extends JsonResource
             $data['city'] = "";            
         }
 
+        $data['count_of_policies'] = $this->policies()->count();
+        $data['count_of_invoices'] = $this->policies()->count();
+
         if($this->rc_quote == "Yes")
             $data['rc_quote'] = 1;
         elseif($this->rc_quote == "No")
