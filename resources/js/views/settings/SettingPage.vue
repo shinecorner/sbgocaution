@@ -183,7 +183,7 @@ export default {
 				{ value: 'noindex, nofollow', text: 'No index, No follow' }
 			],
 			mail_options: ['log','smtp'],
-			length_options: ['20', '25', '50', '100', '500'],
+			length_options: ((typeof process.env.MIX_PER_PAGE_OPTIONS === 'undefined')?  ['20','25','50','100','500'] : process.env.MIX_PER_PAGE_OPTIONS.split(',')),
 			smtp_encryption:[
 								{ value: 'none', text: 'None' },
 								{ value: 'ssl', text: 'SSL/TLS' },

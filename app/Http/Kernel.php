@@ -67,6 +67,6 @@ class Kernel extends HttpKernel
         'localization' => \App\Http\Middleware\Localization::class,
         //'cors' => \App\Http\Middleware\cors::class,
         'setLocale' => \App\Http\Middleware\SetLocale::class,
-        'Pagination' => \App\Http\Middleware\Pagination::class
+        'Pagination' => \App\Http\Middleware\Pagination::class,
     ];
 }

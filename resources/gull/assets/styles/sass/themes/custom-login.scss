@@ -186,21 +186,16 @@ a:focus {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.login-main .width100,
-.login-main .full-width > .form-control {
-  width: 100% !important;
-}
 
-.login-main .mod-languages a {
+.login-main .language-dropdown a {
   color: #ffffff;
-  text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
 }
 
-.login-main .mod-languages a:hover,
-.login-main .mod-languages a:focus,
-.login-main .mod-languages li.active a {
+.login-main .language-dropdown a:hover,
+.login-main .language-dropdown a:focus,
+.login-main .language-dropdown li.active a {
   color: #056938;
 }
 
@@ -482,7 +477,7 @@ div.t3-wrapper.t3-login-wrap,
 .login-main {
   font-family: "Roboto", sans-serif;
   font-size: 13px;
-  line-height: 1.53846154 !important;
+  line-height: 1.53846154;
   color: #646566;
   background-color: #f4f5f6;
   letter-spacing: 0;
@@ -555,9 +550,9 @@ div.t3-wrapper.t3-login-wrap,
 }
 
 .login-main .login label {
-  font-size: 13px !important;
-  line-height: 1.53846154 !important;
-  color: #646566 !important;
+  font-size: 13px ;
+  line-height: 1.53846154 ;
+  color: #646566 ;
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
@@ -576,7 +571,7 @@ div.t3-wrapper.t3-login-wrap,
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
-  font-size: 11px !important;
+  font-size: 11px;
 }
 
 .login-main .btn-default {
@@ -659,11 +654,11 @@ div.t3-wrapper.t3-login-wrap,
   transition: opacity 0.15s linear;
 }
 
-.login-main .mod-languages .open > .dropdown-menu {
+.login-main .language-dropdown .open > .dropdown-menu {
   display: block;
 }
 
-.login-main .mod-languages .dropdown-menu > li > a {
+.login-main .language-dropdown .dropdown-menu > li > a {
   display: block;
   padding: 5px 20px;
   clear: both;
@@ -673,14 +668,14 @@ div.t3-wrapper.t3-login-wrap,
   white-space: nowrap;
 }
 
-.login-main .mod-languages .dropdown-menu > li > a:hover,
-.login-main .mod-languages .dropdown-menu > li > a:focus {
+.login-main .language-dropdown .dropdown-menu > li > a:hover,
+.login-main .language-dropdown .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #262626;
   background-color: #f5f5f5;
 }
 
-.login-main .mod-languages .caret {
+.login-main .language-dropdown .caret {
   display: inline-block;
   width: 0;
   height: 0;
@@ -691,7 +686,7 @@ div.t3-wrapper.t3-login-wrap,
   border-left: 4px solid transparent;
 }
 
-.login-main .mod-languages .btn .caret {
+.login-main .language-dropdown .btn .caret {
   margin-left: 0;
   position: relative;
   left: 5px;
@@ -760,8 +755,8 @@ span.flag-icon {
 
 /* vendor css 21/05 */
 
-body {
-  overflow-y: auto !important;
+html body {
+  overflow-y: auto;
 }
 
 form.needs-validation.no-cross.was-validated .form-control:invalid,
@@ -781,8 +776,8 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 }
 
 .login-main .login label.checkbox {
-  line-height: 1.238462 !important;
-  padding-left: 20px !important;
+  line-height: 1.238462 ;
+  padding-left: 20px ;
   margin-top: 7px;
 }
 
@@ -792,6 +787,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 
 .login-main .mx-15 {
   max-width: 15px;
+  margin-right: 4px;
 }
 
 .login-main .mR-5 {
@@ -805,6 +801,10 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   font-size: 11px;
   line-height: 1.53846154;
   border-radius: 3px;
+}
+
+.login-main button.btn:focus{
+  box-shadow: none;
 }
 
 .login-main .login-grid {
@@ -830,15 +830,21 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   border-color: none;
 }
 
-@media (min-width: 576px) {
-  .login-main .t3-login .modal-sm {
-    max-width: inherit !important;
-  }
+.login-main .login-support{
+  text-align: center;
+  font-size: 15px
 }
+
+.login-main .address-content{
+  text-align: center;
+  font-size: 9px;
+  margin-bottom: 20px;
+}
+
 
 @media (max-width: 767px) {
   .login-main .visible-xs {
-    display: block !important;
+    display: block;
   }
 
   .login-main .row {
@@ -846,8 +852,8 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
     flex-wrap: wrap;
   }
 
-  .login-main .hidden-xs {
-    display: none !important;
+  .login-main br.hidden-xs {
+      display: none;
   }
 
   .login-main .login-bottom-block.visible-xs {
@@ -882,7 +888,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 
 @media only screen and (max-width: 375px) {
 
-  .mod-languages .btn.dropdown-toggle {
+  .language-dropdown .btn.dropdown-toggle {
     padding: 2px 10px 0 0;
   }
 }

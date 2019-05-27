@@ -28,6 +28,7 @@ class AuthLoginController extends controller
     protected $loginInstance;
     protected $ForgotPasswordInstance;
     protected $ResetPasswordInstance;
+    protected $languageInfo;
 
     /**
      * Creating instance of controller.
@@ -37,6 +38,11 @@ class AuthLoginController extends controller
       $this->loginInstance = new LoginController();
       $this->ForgotPasswordInstance = new ForgotPasswordController();
       $this->ResetPasswordInstance = new ResetPasswordController();
+
+    }
+
+    public function loginForm(){
+      return view('Login.sessions.signin');
     }
 
     /**
@@ -47,7 +53,7 @@ class AuthLoginController extends controller
      * @return view
      */
 
-    public function showLinkRequestForm(Request $request, $token = null){
+    public function showForgetPasswordForm(Request $request, $token = null){
         return view('Login.sessions.forgot');
     }
 
@@ -59,7 +65,7 @@ class AuthLoginController extends controller
      * @return view
      */
 
-    public function showResetForm(Request $request, $token = null)
+    public function showResetPasswordForm(Request $request, $token = null)
     {
       $token = $request->segment(4);
         return view('Login.sessions.reset')->with(
@@ -111,7 +117,7 @@ class AuthLoginController extends controller
      * @return view
      */
 
-    public function sendResetLinkEmail(Request $request){
+    public function sendResetPasswordLinkEmail(Request $request){
       return $this->ForgotPasswordInstance->sendResetLinkEmail($request);
     }
 

@@ -7,7 +7,7 @@
         <form class="needs-validation no-cross" action="{{ url(app()->getLocale(),'login') }}" method="post" novalidate>
           @csrf
           @if ($errors->has('email'))
-            <sapn style="color:red;">{{ $errors->first('email') }}</span>
+            <span class="red-alert">{{ $errors->first('email') }}</span>
           @endif
             <div class="form-row pB-5 ">
               <div class="col-md-12">
@@ -33,7 +33,7 @@
                 <span class="checkmark"></span>
             </label>
             <div class="form-group">
-                <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
+                <div class="text-center reset-btn">
                     <button type="submit" class="btn btn-primary btn-block btn-outline-primary">{{ __('login.login') }}</button>
                 </div>
             </div>
@@ -44,7 +44,8 @@
 
     <div class="other-links form-group">
         <ul>
-            <li><a href="{{ url(app()->getLocale(), 'passwordRequest') }}" >@lang('login.FORGET_PASSWORD')</a></li>
+            <li><a href="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'routes.FORGOT_PASSWORD_LINK')) }}" >@lang('login.FORGET_PASSWORD')</a></li>
+            <!-- <li><a href="{{ url(app()->getLocale(), 'passwordRequest') }}" >@lang('login.FORGET_PASSWORD')</a></li> -->
         </ul>
     </div>
 </div>

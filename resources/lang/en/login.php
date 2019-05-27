@@ -5,13 +5,14 @@
     'USERNAME' => 'Username',
     'PASSWORD' => 'Password',
     'LANGUAGE' => 'Language',
-    'ORG_LANGUAGE_DE' => 'Deutsch',
-    'ORG_LANGUAGE_FR' => 'Französisch',
-    'ORG_LANGUAGE_IT' => 'Italienisch',
-    'ORG_LANGUAGE_EN' => 'English',
+    'DE' => 'Deutsch',
+    'FR' => 'Französisch',
+    'IT' => 'Italienisch',
+    'EN' => 'English',
     'COM_USERS_LOGIN_REMEMBER_ME' => 'Remember me',
     /* END */
 
+    'TITLE' => 'goCaution® Landlord Login',
     'LOGIN_TITLE' => 'goCaution® LARALOGIN',
     'FORGET_PASSWORD' => 'Forget Password ?',
     'GET_RESET_LINK' => 'Get Reset Link',
@@ -37,5 +38,6 @@
     'RESET' => 'Reset',
     'USERNAME_REQUIRED' => 'Please provide a valid username.',
     'PASSWORD_REQUIRED' => 'Please provide a valid password.',
-    'CONFIRM_PASSWORD_REQUIRED' => 'Please provide a valid confirm password.'
+    'CONFIRM_PASSWORD_REQUIRED' => 'Please provide a valid confirm password.',
+    'CONTACT' => '0800 461 461'
   ];

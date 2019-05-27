@@ -12,7 +12,7 @@
                 </div>
             @endif
             @if ($errors->has('email'))
-              <sapn style="color:red;">{{ $errors->first('email') }}</span>
+              <span class="red-alert">{{ $errors->first('email') }}</span>
             @endif
               <div class="form-row">
                   <div class="col-md-12 mb1">
@@ -25,8 +25,8 @@
               </div>
 
             <div class="form-group">
-                <div class="text-center" style="padding-top: 10px; padding-left: 0px; padding-right: 0px;">
-                    <button type="submit" class="btn btn-primary btn-block">{{ __('login.get_reset_link') }}</button>
+                <div class="text-center reset-btn" >
+                    <button type="submit" class="btn btn-primary btn-block btn-outline-primary">{{ __('login.get_reset_link') }}</button>
                 </div>
             </div>
         </form>
