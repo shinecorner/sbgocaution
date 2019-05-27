@@ -3,7 +3,7 @@
 <div class="login-wrap border-bot">
     <div class="login">
       <div class="other-links form-group  pt-41">
-        <a class="users-back-button" href="{{ url(app()->getLocale()) }}"><img src="{{asset('Login/images/icon-back.png')}}" alt="icon-back"> {{ __('login.back') }}</a>
+        <a class="users-back-button" href="{{ url(app()->getLocale()) }}"><img src="{{asset('Login/images/icon-back.png')}}" alt="icon-back">{{ __('login.back') }}</a>
       </div>
         <!-- <h3 class="login-top-title">{{ __('login.login_title') }}</h3> -->
         <div class="msg-login-forgot">
@@ -11,7 +11,7 @@
             {{__('login.forgot_text')}}
           </p>
         </div>
-        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'routes.PASSWORD_EMAIL')) }}" method="post" novalidate>
+        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.ROUTES.PASSWORD_EMAIL')) }}" method="post" novalidate>
             @csrf
             @if (session('status'))
                 <div class="alert alert-success" role="alert">

@@ -188,7 +188,7 @@ a:focus {
 
 .login-main .language-dropdown a {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
 }
 
@@ -222,6 +222,8 @@ div.t3-wrapper.t3-login-wrap,
   height: 100%;
   padding: 0;
 }
+
+
 
 .login-main .column-flexible {
   width: 100%;
@@ -698,7 +700,7 @@ div.t3-wrapper.t3-login-wrap,
 .login-main .language-dropdown .btn .caret {
   margin-left: 0;
   position: relative;
-  left: 5px;
+  left: 3px;
 }
 
 .login-main .logo-img {
@@ -795,8 +797,8 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 }
 
 .login-main .mx-15 {
-  max-width: 15px;
-  margin-right: 4px;
+  max-width: 18px;
+  margin-right: 3px;
 }
 
 .login-main .mR-5 {
@@ -819,6 +821,10 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 
 .login-main .login-grid {
   background: #E4F1D5;
+}
+
+.login-main .forgot-grid{
+  background: #DBEACE;
 }
 
 .login-main .btn-primary,
@@ -888,6 +894,13 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 }
 h3.popover-header{
   margin: 0;
+}
+.login-main .login-support p.log-support{
+  margin-bottom: 0;
+}
+.login-main .users-back-button > img{
+  max-width: 14px;
+  margin-right: 2px;
 }
 @media (max-width: 767px) {
   .login-main .visible-xs {

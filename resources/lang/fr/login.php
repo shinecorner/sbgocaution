@@ -48,6 +48,15 @@
     'FORGOT_TEXT' => "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
     'POPOVER_DATA' => "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur.&lt;br /&gt;Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe.",
     'IDENTIFIER' => 'Adresse e-mail',
-    'BACK' => 'verso',
+    'BACK' => 'Retour',
     'SEND_FORGOT_MAIL' => 'Envoyer',
+    'ROUTES' => [
+        'FORGOT_PASSWORD_LINK' => 'anmeldung/forgot-password',
+        'LOGIN' => 'connexion',
+        'DASHBOARD' => 'tableau_de_bord',
+        'PASSWORD_RESET' => 'réinitialiser_mot_de_passe',
+        'PASSWORD_EMAIL' => 'mot_de_passe_email',
+        'PASSWORD_UPDATE' => 'mot_de_passe_update',
+        'LOGOUT' => 'deconnexion',
+    ],
   ];

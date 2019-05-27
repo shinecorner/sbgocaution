@@ -50,4 +50,13 @@
           'IDENTIFIER' => 'E-Mail-Adresse',
           'BACK' => 'Zurück',
           'SEND_FORGOT_MAIL' => 'Senden',
+          'ROUTES' => [
+              'FORGOT_PASSWORD_LINK' => 'anmeldung/passwort-vergessen',
+              'LOGIN' => 'anmelden',
+              'DASHBOARD' => 'instrumentenbord',
+              'PASSWORD_RESET' => 'passwortRucksetzen',
+              'PASSWORD_EMAIL' => 'passwort_email',
+              'PASSWORD_UPDATE' => 'passwort_aktualisierung',
+              'LOGOUT' => 'abmeldung',
+          ],
   ];

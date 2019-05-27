@@ -47,4 +47,13 @@
     'IDENTIFIER' => 'Identifier',
     'BACK' => 'back',
     'SEND_FORGOT_MAIL' => 'sending',
+    'ROUTES' => [
+        'FORGOT_PASSWORD_LINK' => 'registration/password-forgotten',
+        'LOGIN' => 'login',
+        'DASHBOARD' => 'dashboard',
+        'PASSWORD_RESET' => 'passwordReset',
+        'PASSWORD_EMAIL' => 'password_email',
+        'PASSWORD_UPDATE' => 'password_update',
+        'LOGOUT' => 'logout',
+    ],
   ];

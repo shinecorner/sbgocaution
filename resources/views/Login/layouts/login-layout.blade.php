@@ -15,7 +15,7 @@
 
     <!--=======================js=============================-->
     <script src="/Login/assets/js/common-bundle-script.js"></script>
-    
+
     <!--=======================js=============================-->
 
 </head>
@@ -23,7 +23,7 @@
 <body class="login-main">
     <div class="t3-wrapper t3-login-wrap">
         <div class="t3-login ">
-            <div class="row login-grid">
+            <div class="@if(Request::path() == app()->getLocale()) row login-grid @else row login-grid forgot-grid @endif">
                 <div class="column-fixed Site">
                     <div class="login-header-block visible-xs">
                         <div class="logo">
@@ -42,8 +42,8 @@
 
                     <div class="login-bottom-block hidden-xs">
                         <br/>
-                        <div class="login-support">SUPPORT
-                            <br><b>{{ __('login.contact') }}</b></div>
+                        <div class="login-support"> <p class="log-support">SUPPORT</p>
+                            <b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('login.title') }}">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <div class="column-flexible">
+                  <div class="column-flexible">
                     <div class="promo-inner">
 
 
@@ -71,7 +71,7 @@
                         </div>
                         <div class="clearfix form-group">
 
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".new-account-request">{{ __('login.request_access') }}</button>
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target=".new-account-request"> {{ __('login.request_access') }}</button>
 
                         </div>
                     </div>
@@ -80,8 +80,9 @@
                     </span>
                     <div class="login-bottom-block visible-xs clearfix">
                         <br/>
-                        <div class="login-support">SUPPORT
-                            <br><b>{{ __('login.contact') }}</b></div>
+                        <div class="login-support">
+                          SUPPORT
+                          <b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('login.title') }}">
