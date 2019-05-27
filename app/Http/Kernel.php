@@ -41,7 +41,7 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
-            'localization'
+            'localization',
             //\Barryvdh\Cors\HandleCors::class,
             'Pagination'
         ],
@@ -68,9 +68,5 @@ class Kernel extends HttpKernel
         //'cors' => \App\Http\Middleware\cors::class,
         'setLocale' => \App\Http\Middleware\SetLocale::class,
         'Pagination' => \App\Http\Middleware\Pagination::class,
-        'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
-    		'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
-    		'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
-        'localeViewPath' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
     ];
 }
