@@ -17,7 +17,7 @@
           'FORGET_PASSWORD' => 'Passwort vergessen?',
           'GET_RESET_LINK' => 'Link zurücksetzen',
           'BACK_TO_LOGIN' => 'Zurück zur Anmeldung?',
-          'SUPPORT'       => 'Unterstützung',
+          'SUPPORT'       => 'SUPPORT',
           'SUPPORT_ADDRESS' => "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
           'LOGIN_PAGE_DESCRIPTION_TITLE' => 'Mietkautionen online verwalten' ,
           'LOGIN_PAGE_DESCRIPTION_LINE_ONE'   => 'Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter',

@@ -9,32 +9,38 @@
           @if ($errors->has('email'))
             <span class="red-alert">{{ $errors->first('email') }}</span>
           @endif
-            <div class="form-row pB-5 ">
-              <div class="col-md-12">
-                  <label for="validationCustom01">{{ __('login.username') }}<span class="star">&#160;*</span></label>
-                  <input type="text" class="form-control" name="email" id="validationCustom01"  value="" required>
-                  <div class="invalid-feedback">
-                      {{ __('login.username_required') }}
-                  </div>
-              </div>
+            <div class="input-wrapper">
+                <label for="validationTooltipUsername">{{ __('login.username') }}<span class="star">&#160;*</span></label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="email" id="validationTooltipUsername" placeholder="{{ __('login.username') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
+                    <div class="invalid-feedback">
+                        {{ __('login.username_required') }}
+                    </div>
+                </div>
             </div>
-            <div class="form-row">
-              <div class="col-md-12">
-                  <label for="validationCustom02">{{ __('login.password') }}<span class="star">&#160;*</span></label>
-                  <input type="password" class="form-control" name="password" id="validationCustom02"  value="" required>
-                  <div class="invalid-feedback">
-                      {{ __('login.password_required') }}
-                  </div>
-              </div>
+            <div class="input-wrapper">
+                <label for="validationTooltipUsername">{{ __('login.password') }}<span class="star">&#160;*</span></label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-key" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="password" name="password" class="form-control" id="validationTooltipUsername" placeholder="{{ __('login.password') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
+                    <div class="invalid-feedback">
+                        {{ __('login.password_required') }}
+                    </div>
+                </div>
             </div>
             <label class="checkbox checkbox-outline-success">
-                <input type="checkbox" name="remember" >
-                <span class="chechbox-label">{{ __('login.com_users_login_remember_me') }}</span>
-                <span class="checkmark"></span>
-            </label>
+                  <input type="checkbox" name="remember">
+                  <span>{{ __('login.com_users_login_remember_me') }}</span>
+                  <span class="checkmark"></span>
+              </label>
             <div class="form-group">
                 <div class="text-center reset-btn">
-                    <button type="submit" class="btn btn-primary btn-block btn-outline-primary">{{ __('login.login') }}</button>
+                    <button type="submit" class="btn btn-success btn-block">{{ __('login.login') }}</button>
                 </div>
             </div>
         </form>
