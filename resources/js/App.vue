@@ -11,8 +11,7 @@
     	<router-view :auth="auth" :authenticated="authenticated"></router-view>
       <notifications 
         group="loggedIn" 
-        position="top right"
-        animation-type="velocity"
+        position="top right"        
       />
   </v-app>
 </template>

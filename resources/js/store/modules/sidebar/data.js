@@ -11,10 +11,10 @@ export const menus = {
                         exact: true
 		}			
     ],
-    'message.general.OPTIONS':[
+    'message.setting.OPTIONS':[
         {
             action: 'zmdi-wrench',
-            title: 'message.general.OPTIONS',
+            title: 'message.setting.OPTIONS',
             active: false,
             label: 'option_item',
             path: '/settings',

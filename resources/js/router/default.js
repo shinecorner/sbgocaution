@@ -30,13 +30,13 @@ export default {
         component: SettingPage,
         meta: {
             requiresAuth: true,
-            title: 'message.general.OPTIONS',
+            title: 'message.setting.OPTIONS',
             breadcrumb: [
               {
                 breadcrumbInactive: 'message.contact.CRM'
               },
               {
-                breadcrumbActive: 'message.general.OPTIONS'
+                breadcrumbActive: 'message.setting.OPTIONS'
               }
             ]
         }
