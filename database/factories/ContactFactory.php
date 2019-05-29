@@ -23,7 +23,7 @@ $factory->define(Contact::class, function (Faker $faker) {
         'last_name' => $faker->lastName,
         'language' => $faker->randomElement(['de-DE', 'fr-FR', 'it-IT', 'en-EN']),
         'email' => $email,
-        'status' => $faker->randomElement(['new', 'offer', 'pre_confirmation_pending', 'pre_confirmation_sent', 'rejected', 'status_quote_waiting']),
+        'status' => $faker->randomElement(['new', 'offer', 'pre_confirmation_pending', 'pre_confirmation_sent', 'rejected', 'quote_waiting']),
         'rc_quote' => $faker->randomElement(['Yes', 'No']),
         'lead_source' => $faker->randomElement(array_keys(getLeadSource())),
         'is_duplicate' => $duplicate

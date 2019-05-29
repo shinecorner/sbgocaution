@@ -18,7 +18,7 @@ class ContactResource extends JsonResource
     {
         $data = parent::toArray($request);
 
-        $data['status'] = __('general.' . $this->status);
+        $data['status'] = __('contact.status.' . $this->status);
         $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
 
         if($this->user_id && property_exists($this, 'username')) 
@@ -38,11 +38,38 @@ class ContactResource extends JsonResource
         } else {
             $data['address'] = "";
             $data['zip'] = "";
-            $data['city'] = "";            
+            $data['city'] = "";
         }
 
-        $data['count_of_policies'] = $this->policies()->count();
-        $data['count_of_invoices'] = $this->policies()->count();
+        $policies = $this->policies;
+        $data['count_policies'] = $policies->count();
+        $invoice_count = 0;
+        $invoice_total = 0;
+        $LichtensteinZipCodes = getLichtensteinZipCodes();
+        $LichtensteinMK = [];
+        foreach($policies as $policy) {
+            foreach($policy->invoices as $invoice){
+                $invoice_count++;
+                $invoice_total += $invoice->computed_total;
+            }
+            if(in_array($policy->policy_address->zip, $LichtensteinZipCodes)){
+                $LichtensteinMK[] = $policy->policy_num;
+            }
+        }
+        if(count($LichtensteinMK) > 0){
+            $data['LichtensteinZipCodesResult'] = __('contact.INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST', [ 'POLICY_NUMS' => implode(", ", $LichtensteinMK)]);
+        }
+        $data['count_invoices'] = $invoice_count;
+        $data['invoice_total'] = __('general.CHF') . format($invoice_total);
+        $statues = array_keys(getContactStatus());
+        foreach($statues as $status) {
+            $data['count_policy_by_status'][$status] = $policies->filter(function($policy) use ($status) {
+                $data['count_invoice_by_status'][$status] = $policy->invoices->filter(function($invoice) use ($status){
+                    return $invoice->status == $status;
+                });
+                return $policy->status == $status;
+            })->count();
+        }
 
         if($this->rc_quote == "Yes")
             $data['rc_quote'] = 1;
