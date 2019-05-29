@@ -93,29 +93,90 @@ if (!function_exists('get_language_flag')) {
 if (!function_exists('getContactStatus')) {
 
     /**
-     * Returns translated statuses.
+     * Returns translated contact statuses.
      * 
      * @return array $status
      */
     function getContactStatus(){
         $status = array();
 
-        $status["new"] = __('general.NEW');
-        $status["offer"] = __('general.OFFER');
-        $status["in_clarification"] = __('general.IN_CLARIFICATION');
-        $status["pending"] = __('general.PENDING');
-        $status["accepted"] = __('general.ACCEPTED');
-        $status["pre_confirmation_pending"] = __('general.PRE_CONFIRMATION_PENDING');
-        $status["pre_confirmation_sent"] = __('general.PRE_CONFIRMATION_SENT');
-        $status["cancelled"] = __('general.CANCELLED');
-        $status["rejected"] = __('general.REJECTED');
+        $status["new"] = __('contact.status.NEW');
+        $status["offer"] = __('contact.status.OFFER');
+        $status["in_clarification"] = __('contact.status.IN_CLARIFICATION');
+        $status["pending"] = __('contact.status.PENDING');
+        $status["accepted"] = __('contact.status.ACCEPTED');
+        $status["pre_confirmation_pending"] = __('contact.status.PRE_CONFIRMATION_PENDING');
+        $status["pre_confirmation_sent"] = __('contact.status.PRE_CONFIRMATION_SENT');
+        $status["cancelled"] = __('contact.status.CANCELLED');
+        $status["rejected"] = __('contact.status.REJECTED');
 //      $status[] = "waiting_for_payment";
-        $status["dissolved_immediately"] = __('general.DISSOLVED_IMMEDIATELY');
-        $status["status_resolved"] = __('general.STATUS_RESOLVED');
-        $status["status_quote_waiting"] = __('general.STATUS_QUOTE_WAITING');
+        $status["dissolved_immediately"] = __('contact.status.DISSOLVED_IMMEDIATELY');
+        $status["status_resolved"] = __('contact.status.RESOLVED');
+        $status["status_quote_waiting"] = __('contact.status.QUOTE_WAITING');
         return $status;
     }
 
+}
+
+if(!function_exists('getPolicyStatus')) {
+    /**
+     * Returns translated policy statuses.
+     * 
+     * @return array $status
+     */
+    function getPolicyStatus() {
+        $status = array();
+
+        $status["status_quote_waiting"] = __('policy.status.STATUS_QUOTE_WAITING');
+        $status["predeclared"] = __('policy.status.PREDECLARED');
+        $status["accepted"] = __('policy.status.ACCEPTED');
+        $status["cancellation_with_claim_pending"] = __('policy.status.CANCELLATION_WITH_CLIAM_PENDING');
+        $status["cancellation_without_claim_pending"] = __('policy.status.CANCELLATION_WITHOUT_CLIAM_PENDING');
+        $status["dissolved_with_claims"] = __('policy.status.DISSOLVED_WITH_CLAIMS');
+        $status["dissolved_without_claims"] = __('policy.status.DISSOLVED_WITHOUT_CLAIMS');
+        $status["dissolved_immediately"] = __('policy.status.DISSOLVED_IMMEDIATELY');
+        $status["quote_status_joint_guarantee"] = __('policy.status.QUOTE_STATUS_JOINT_GUARANTEE');
+        $status["rejected_client"] = __('policy.status.REJECTED_CLIENT');
+       // $status[] = "collection";
+        $status["pending_cancel"] = __('policy.status.PENDING_CANCEL');
+        
+        //$status[] = "accepted_client";
+        //$status[] = "rejected";
+        //$status[] = "claims_reported";
+        //$status[] = "claims_in_processing";
+        //$status[] = "expired";
+        return $status;
+    }
+}
+
+if(!function_exists('getInvoiceStatus')) {
+    /**
+     * Returns translated invoice statuses.
+     * 
+     * @return array $status
+     */
+    function getInvoiceStatus(){
+        $status = array();
+        $status['waiting_for_payment'] = __('invoice.status.WAITING_FOR_PAYMENT');
+        $status['partial_paid'] = __('invoice.status.PARTIAL_PAID');
+        $status['paid'] = __('invoice.status.PAID');
+        $status['pastdue'] = __('invoice.status.PASTDUE');
+        $status['refunded'] = __('invoice.status.REFUNDED');
+        $status['partial_refunded'] = __('invoice.status.PARTIAL_REFUNDED');
+        $status['reminder'] = __('invoice.status.REMINDER');
+        $status['warning1'] = __('invoice.status.WARNING1');
+        $status['warning2'] = __('invoice.status.WARNING2');
+        $status['collection'] = __('invoice.status.COLLECTION');
+        $status['online_payment_waiting'] = __('invoice.status.ONLINE_PAYMENT_WAITING');
+        $status['online_payment_invalid'] = __('invoice.status.ONLINE_PAYMENT_INVALID');
+        $status['debt_enforcement'] = __('invoice.status.DEBT_ENFORCEMENT');
+       /* $status[] = "command";
+        $status[] = "follow";
+        $status[] = "loss";
+        $status[] = "seizure";*/
+
+        return $status;
+    }
 }
 
 if(!function_exists('roundTo5')){
@@ -164,10 +225,10 @@ if(!function_exists('getContactPDF')){
         $status = array();
 
        // $status['content_pdf']  = "CONTACT_PDF_PRECONFIRMATION";
-        $status['content_pdf_img'] = __('general.PDF_PRECONFIRMATION_IMG');
-        $status['content_pdf1'] = __('general.PDF_REJECTED');
+        $status['content_pdf_img'] = __('contact.PDF_PRECONFIRMATION_IMG');
+        $status['content_pdf1'] = __('contact.PDF_REJECTED');
        // $status['refund']       = "CONTACT_PDF_OFFER";
-        $status['offer_print'] = __('general.PDF_OFFER_PRINT_LETTER');
+        $status['offer_print'] = __('contact.PDF_OFFER_PRINT_LETTER');
         return $status;
     }
 
@@ -184,13 +245,13 @@ if(!function_exists('get_salutation')){
     function get_salutation($salutation){
         switch($salutation) {
             case 'mr': 
-                return __('general.PDF_IL_MAN'); 
+                return __('general.MR'); 
                 break;
             case 'mrs': 
-                return __('general.PDF_IL_WOMEN'); 
+                return __('general.MRS'); 
                 break;
             case 'company': 
-                return __('general.PDF_IL_COMPANY'); 
+                return __('general.COMPANY'); 
                 break;
         }
     }
@@ -222,5 +283,15 @@ if(!function_exists('getLeadSource')){
         return $leadsource;
     }
 
+}
+
+if(!function_exists('getLichtensteinZipCodes')){
+    /**
+     * returns all Lichtenstein Zip codes.
+     * @return array
+     */
+    function getLichtensteinZipCodes(){
+        return config('app.lichtenstein_zip_codes');
+    }
 }
 

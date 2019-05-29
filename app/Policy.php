@@ -14,5 +14,10 @@ class Policy extends Model
     {
         return $this->hasMany('App\Invoice');
     }
+
+    public function policy_address()
+    {
+    	return $this->hasOne('App\PolicyAddress');
+    }
 	
 }
