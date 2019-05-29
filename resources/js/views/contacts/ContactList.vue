@@ -20,7 +20,7 @@
                         >            
                                 <div class="v-table__overflow list-table-container">
 				<vuetable ref="vuetable"
-                                    :no-data-template="$t('message.contact.DATA_LOADING')"
+                                    :no-data-template="$t('message.general.DATA_LOADING')"
                                     api-url="api/contacts"
                                     :http-fetch="contactFetch"
                                     :fields="fields"           
@@ -38,7 +38,7 @@
                                 <template slot="prettycheck" slot-scope="props">
                                     <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                                 </template>  
-                                <template slot="c_contactformate" slot-scope="props">                                  
+                                <template slot="c_contactformate" slot-scope="props">                                                                  
                                   <span class="primary-text">{{ props.rowData.contact_num }}</span>                                  
                                   <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.date }}</span>
                                   <div class="column_icon_container">
@@ -71,7 +71,7 @@
                                 <template slot="c_edit" slot-scope="props">
                                     <a>                                         
                                         <span class="primary-text text-xs-center"><v-icon size="18">ti-pencil-alt</v-icon></span>
-                                        <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.contact.EDIT') }}</span>
+                                        <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.general.EDIT') }}</span>
                                     </a>
                                 </template>
                                 <template slot="c_name" slot-scope="props">                                    
@@ -79,19 +79,19 @@
                                         <template v-if="props.rowData.salutation === 'company'">
                                             <v-tooltip top>                                                
                                                 <font-awesome-icon :icon="['far', 'building']" slot="activator"/>
-                                                <span>{{$t('message.general.PDF_IL_COMPANY')}}</span>
+                                                <span>{{$t('message.general.COMPANY')}}</span>
                                             </v-tooltip>                                            
                                         </template>
                                         <template v-else-if="props.rowData.salutation === 'mr'">
                                             <v-tooltip top>
                                                 <font-awesome-icon :icon="['fas', 'mars']" slot="activator"/>
-                                                <span>{{$t('message.general.PDF_IL_MAN')}}</span>                                                
+                                                <span>{{$t('message.general.MR')}}</span>                                                
                                             </v-tooltip>   
                                         </template>                                                                                
                                         <template v-else-if="props.rowData.salutation === 'mrs'">                                            
                                             <v-tooltip top>
                                                 <font-awesome-icon :icon="['fas', 'venus']" slot="activator"/>
-                                                <span>{{$t('message.general.PDF_IL_WOMEN')}}</span>
+                                                <span>{{$t('message.general.MRS')}}</span>
                                             </v-tooltip>    
                                         </template>                                                                                
                                     </span>
@@ -130,13 +130,13 @@
                                         <div>
                                             <v-tooltip top> 
                                                 <v-chip slot="activator" small dark color="orange" text-color="white">1</v-chip>
-                                                <span>{{$t('message.contact.QUOTES')}}:&nbsp;{{$t('message.contact.STATUS_QUOTE_WAITING')}}</span>
+                                                <span>{{$t('message.general.QUOTES')}}:&nbsp;{{$t('message.general.STATUS_QUOTE_WAITING')}}</span>
                                             </v-tooltip>
                                         </div>
                                         <div>
                                             <v-tooltip top v-for="n in 5" v-bind:key="'invoice'+n"> 
                                                 <v-chip slot="activator" small dark color="orange" text-color="white">1</v-chip>
-                                                <span>{{$t('message.contact.INVOICES')}}:&nbsp;{{$t('message.contact.ONLINE_PAYMENT_WAITING')}}</span>
+                                                <span>{{$t('message.general.INVOICES')}}:&nbsp;{{$t('message.contact.ONLINE_PAYMENT_WAITING')}}</span>
                                             </v-tooltip>
                                         </div>
                                     </div>
@@ -218,11 +218,11 @@ export default {
                 {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
                 { title: this.$t('message.contact.CONTACT_ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
                 { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
-                { title: this.$t('message.contact.NAME'), name: "c_name" },
-                { title: this.$t('message.contact.ADDRESS'), name: "c_address" },
+                { title: this.$t('message.general.NAME'), name: "c_name" },
+                { title: this.$t('message.general.ADDRESS'), name: "c_address" },
                 { title: this.$t('message.contact.TOTAL_INVOICES'), name: "c_invoices" },                
                 { title: "", name: "c_statusdropdown", dataClass: 'statusdropdown_column', titleClass:'statusdropdown_column' },
-                { title: this.$t('message.contact.STATUS'), name: "c_status", dataClass: 'status_quote_column', titleClass:'status_quote_column'},
+                { title: this.$t('message.general.STATUS'), name: "c_status", dataClass: 'status_quote_column', titleClass:'status_quote_column'},
                 { title: "", name: "c_userlink", dataClass: 'userid_link'},
                 //{ title: "", name: "c_action" },
                 { title: "", name: "c_addquote",  dataClass: 'add_policy_btn'},
@@ -275,10 +275,10 @@ export default {
         reinitializeFields(){
             this.$nextTick(()=>{                            
               this.$refs.vuetable.fields[1].title = this.$t('message.contact.CONTACT_ID');
-              this.$refs.vuetable.fields[3].title = this.$t('message.contact.NAME');
-              this.$refs.vuetable.fields[4].title = this.$t('message.contact.ADDRESS');  
+              this.$refs.vuetable.fields[3].title = this.$t('message.general.NAME');
+              this.$refs.vuetable.fields[4].title = this.$t('message.general.ADDRESS');  
               this.$refs.vuetable.fields[5].title = this.$t('message.contact.TOTAL_INVOICES');  
-              this.$refs.vuetable.fields[7].title = this.$t('message.contact.STATUS');                
+              this.$refs.vuetable.fields[7].title = this.$t('message.general.STATUS');                
               this.$refs.vuetable.normalizeFields();
            });
         },
@@ -357,10 +357,10 @@ export default {
     width: 48px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(4), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(4){
-    width: 14%;
+    width: 15%;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(5), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(5){
-    width: 17%;
+    width: 16%;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(6), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(6){
     width: 98px;

@@ -9,10 +9,10 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="robots" content="noindex, nofollow" />
 
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,600,700,800" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('fonts/montserrat/montserrat.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('fonts/material_icons/material_icons.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('fonts/materialdesign_webfont/css/materialdesignicons.min.css')}}">  
+  <link rel="stylesheet" type="text/css" href="{{asset('fonts/material-design-iconic-font/css/material-design-iconic-font.min.css')}}">    
   <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
   <title>{{__('general.CRM_TITLE')}}</title>
 </head>

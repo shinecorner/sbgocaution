@@ -1,6 +1,6 @@
 <template>
   <div :class="[colClasses, { 'flex': colClasses}]">
-    <fullscreen ref="fullscreen">
+    <!-- <fullscreen ref="fullscreen"> -->
       <div class="app-card" :class="[customClasses, { 'd-none': close }]">
         <app-card-heading
           :heading="heading"
@@ -23,7 +23,7 @@
         </app-card-footer>
         <app-section-loader :status="reload"></app-section-loader>
       </div>
-    </fullscreen>
+    <!-- </fullscreen> -->
   </div>
 </template>
 
