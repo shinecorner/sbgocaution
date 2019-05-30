@@ -1,6 +1,6 @@
 <?php
   return [
-    /* from CRM */
+
     'LOGIN' => 'Connexion',
     'USERNAME' => 'Identifiant',
     'PASSWORD' => 'Mot de passe',
@@ -9,16 +9,14 @@
     'FR' => 'Français',
     'IT' => 'Italienisch',
     'EN' => 'English',
-    'COM_USERS_LOGIN_REMEMBER_ME' => 'Se rappeler de moi',
-    /* END */
-
+    'LOGIN_REMEMBER_ME' => 'Se rappeler de moi',
     'TITLE' => 'goCaution® Ouverture de session du propriétaire',
     'LOGIN_TITLE' => 'goCaution® Espace bailleurs',
     'FORGET_PASSWORD' => 'Mot de passe oublié ?',
     'GET_RESET_LINK' => 'Obtenir le lien de réinitialisation',
     'BACK_TO_LOGIN' => 'Retour connexion?',
     'SUPPORT'       => 'SUPPORT',
-    'SUPPORT_ADDRESS' => "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
+    'SUPPORT_ADDRESS' => "goCaution SA - Freiburgstrasse 574 - 3172 Niederwangen",
     'LOGIN_PAGE_DESCRIPTION_TITLE' => 'Gérer les cautions de loyer en ligne' ,
     'LOGIN_PAGE_DESCRIPTION_LINE_ONE'   => "goCaution a mis en place un Espace bailleurs qui vous permettra d'avoir une visualisation et une gestion complète de vos garanties de loyer.",
     'LOGIN_PAGE_DESCRIPTION_LINE_TWO'   => "Ainsi, vous pourrez gérer l'établissement d'un certificat jusqu'à la résiliation avec ou sans sinistre.",
@@ -30,7 +28,6 @@
     'ERROR_INVALID_PASSWORD'  => "Mot de passe incorrect",
     'RESET_LINK_SENT' => "Le lien de réinitialisation de mot de passe a été envoyé sur votre email, s'il vous plaît vérifier",
     'UNREGISTERED_EMAIL'  => "Email n'est pas enregistré avec nous",
-    'UNREGISTERED_EMAIL'  => "Email n'est pas enregistré avec nous",
     'RESET_TOKEN_MISSMATCH' => "Le jeton de réinitialisation de mot de passe ne correspond pas",
     'USED_LINK' => "Lien déjà utilisé",
     'INVALID_USER_ID' => "Identifiant invalide",
@@ -38,7 +35,6 @@
     'NEW_PASSWORD' => "nouveau mot de passe",
     'CONFIRM_PASSWORD' => 'Confirmez le mot de passe',
     'RESET' => 'réinitialiser',
-    'COM_USERS_USERNAME_RESET' => "Identifiant oublié ?",
     'USERNAME_REQUIRED' => "Veuillez fournir un nom d'utilisateur valide.",
     'PASSWORD_REQUIRED' => "Veuillez fournir un mot de passe valide.",
     'CONFIRM_PASSWORD_REQUIRED' => 'Veuillez fournir un mot de passe de confirmation valide.',
@@ -50,11 +46,12 @@
     'IDENTIFIER' => 'Adresse e-mail',
     'BACK' => 'Retour',
     'SEND_FORGOT_MAIL' => 'Envoyer',
-    'ROUTES' => [
+    'RESPONSIVE_LOGO' => 'logo-w-fr.png',
+    'routes' => [
         'FORGOT_PASSWORD_LINK' => 'anmeldung/forgot-password',
         'LOGIN' => 'connexion',
         'DASHBOARD' => 'tableau_de_bord',
-        'PASSWORD_RESET' => 'réinitialiser_mot_de_passe',
+        'PASSWORD_RESET' => 'reinitialiser_mot_de_passe',
         'PASSWORD_EMAIL' => 'mot_de_passe_email',
         'PASSWORD_UPDATE' => 'mot_de_passe_update',
         'LOGOUT' => 'deconnexion',
