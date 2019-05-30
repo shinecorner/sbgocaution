@@ -9,10 +9,6 @@ return [
     'CALL_LEAD_SOURCE_TOOLTIP' => 'centre d\'appels',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offre par courrier',
     'INVOICE_STATUS_COLLECTION' => 'Menace de poursuite',
-    'ONLINE_PAYMENT_WAITING' => 'Paiement en ligne en attente',
-    'ONLINE_PAYMENT_INVALID' => 'Paiement en ligne non valide',
-    'DEBT_ENFORCEMENT' => "Procédures d'exécution forcée", 
-    'ADD_NEW_POLICY' => 'Police',  
     'AFFILIATE_MARKETNG' => "Affiliate Marketing",
     'leadsource' => [
         'ONLINE_REGISTRATION' => "Online Registrierung",
@@ -29,9 +25,11 @@ return [
         'CLS'=> "CautionLoyerSuisse.ch",
         'CA' => "Cauzione-Affitto.ch"
     ],
-    'PDF_PRECONFIRMATION_IMG'=> "Lettre de pré-confirmation",
-    'PDF_REJECTED' => "Lettre de refus",
-    'PDF_OFFER_PRINT_LETTER' => "Lettre d'offre",
+    'pdf' => [
+        'PRECONFIRMATION_IMG'=> "Lettre de pré-confirmation",
+        'REJECTED' => "Lettre de refus",
+        'OFFER_PRINT_LETTER' => "Lettre d'offre"
+    ],
     'status' => [
         'PAID' => "Payé",
         'UNPAID_SIMPLE' => 'Non payé',
