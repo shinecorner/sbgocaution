@@ -158,12 +158,12 @@
                             </div>
                             <a class="dropdown-item">Account settings</a>
                             <a class="dropdown-item">Billing history</a>
-                            <a class="dropdown-item" href="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'routes.LOGOUT')) }}"
+                            <a class="dropdown-item" href="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.routes.LOGOUT')) }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 Sign out
                             </a>
-                            <form id="logout-form" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'routes.LOGOUT')) }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.routes.LOGOUT')) }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                         </div>
