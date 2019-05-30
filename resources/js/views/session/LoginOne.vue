@@ -10,7 +10,7 @@
 						:src="appLogo"
 						class="img-responsive mb-3" 						
 					/>					
-					<p class="fs-14">{{$t('message.general.CRM_LOGIN_TITLE')}}</p>
+					<p class="fs-14">{{$t('message.login.LOGIN_TITLE')}}</p>
 					<v-form v-model="valid" class="mb-4">
 						<v-text-field 
 							:label="$t('message.general.EMAIL')" 
@@ -19,7 +19,7 @@
 							required
 						></v-text-field>
 						<v-text-field 
-							:label="$t('message.general.PASSWORD')" 
+							:label="$t('message.login.PASSWORD')" 
 							v-model="password" 
 							type="password" 
 							:rules="passwordRules" 
@@ -54,13 +54,13 @@
                                                   </v-select>
 						<v-checkbox 
 							color="primary" 
-							:label="$t('message.general.COM_USERS_LOGIN_REMEMBER_ME')" 
+							:label="$t('message.login.COM_USERS_LOGIN_REMEMBER_ME')" 
                                                         class="rememberme"
 							v-model="checkbox"
 						></v-checkbox>
-						<!--<router-link class="mb-1" to="/session/forgot-password">{{$t('message.general.COM_USERS_LOGIN_RESET')}}?</router-link>-->
+						<!--<router-link class="mb-1" to="/session/forgot-password">{{$t('message.login.COM_USERS_LOGIN_RESET')}}?</router-link>-->
 						<div>						
-                                                    <v-btn large @click="signInWithLaravelPassport" block color="primary">{{$t('message.general.LOGIN')}}</v-btn>
+                                                    <v-btn large @click="signInWithLaravelPassport" block color="primary">{{$t('message.login.LOGIN')}}</v-btn>
 						</div>						
 					</v-form>					
 				</div>
@@ -90,13 +90,13 @@ export default {
       valid: false,      
       email: "",
       emailRules: [
-        v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.general.EMAIL')}),
+        v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.login.EMAIL')}),
         v =>
           /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
-          this.$t('message.validation.invalid',{attribute: this.$t('message.general.EMAIL')})
+          this.$t('message.validation.invalid',{attribute: this.$t('message.login.EMAIL')})
       ],
       password: "",
-      passwordRules: [v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.general.PASSWORD')})],
+      passwordRules: [v => !!v || this.$t('message.validation.required',{attribute: this.$t('message.login.PASSWORD')})],
       appLogo: AppConfig.appLogo2,
       brand: AppConfig.brand,
       fetchLanguage: localStorage.getItem('selectedLocale') || 'de',

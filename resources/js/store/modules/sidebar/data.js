@@ -1,6 +1,6 @@
 // Sidebar Routers
 export const menus = {
-    'message.contact.CRM': [	
+    'message.general.CRM': [	
 		{
 			action: 'zmdi-accounts',
 			title: 'message.contact.CONTACTS',

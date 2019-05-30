@@ -38,7 +38,7 @@
                                 <template slot="prettycheck" slot-scope="props">
                                     <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                                 </template>  
-                                <template slot="c_contactformate" slot-scope="props">                                                                  
+                                <template slot="c_contactformate" slot-scope="props">                                  
                                   <span class="primary-text">{{ props.rowData.contact_num }}</span>                                  
                                   <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.date }}</span>
                                   <div class="column_icon_container">
@@ -103,7 +103,7 @@
                                 </template>
                                 <template slot="c_invoices" slot-scope="props">
                                     <span class="amount-div">{{ 'CHF 94.50' }}</span>
-                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">1 {{ $t('message.contact.CONTACT_QUOTE_TITLE') }}</span>
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">1 {{ $t('message.contact.ADD_NEW_POLICY') }}</span>
                                     <span class="grey--text fs-12 secondary-text fw-normal d-block">1 {{ $t('message.contact.TOTAL_INVOICES') }}</span>                                    
                                 </template>
                                 <template slot="c_statusdropdown" slot-scope="props">
@@ -114,7 +114,7 @@
                                         <v-list>
                                             <v-list-tile
                                               class="status_dropdown"
-                                              v-for="(qs, index) in quotestatus"
+                                              v-for="(qs, index) in contactstatus"
                                               :key="index"
                                               @click="changeStatus(index,props.rowData.id)"
                                             >
@@ -130,7 +130,7 @@
                                         <div>
                                             <v-tooltip top> 
                                                 <v-chip slot="activator" small dark color="orange" text-color="white">1</v-chip>
-                                                <span>{{$t('message.general.QUOTES')}}:&nbsp;{{$t('message.general.STATUS_QUOTE_WAITING')}}</span>
+                                                <span>{{$t('message.general.QUOTES')}}:&nbsp;{{$t('message.contact.status.QUOTE_WAITING')}}</span>
                                             </v-tooltip>
                                         </div>
                                         <div>
@@ -166,7 +166,7 @@
                                 <template slot="c_addquote" slot-scope="props">
                                     <a>
                                         <span class="primary-text text-xs-center"><v-icon size="18">ti-plus</v-icon></span>
-                                        <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.contact.CONTACT_QUOTE_TITLE') }}</span>
+                                        <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.contact.ADD_NEW_POLICY') }}</span>
                                     </a>                                                                        
                                 </template>
                             </vuetable>
@@ -199,7 +199,7 @@ export default {
     watch: {
         selectedLocale: function(newVal, oldVal){
             //console.log(newVal);
-            //console.log(this.$t('message.contact.CONTACT_ID'));
+            //console.log(this.$t('message.contact.ID'));
             this.$refs.vuetable.refresh();
             this.reinitializeFields();
       }
@@ -209,14 +209,15 @@ export default {
             loading: true,
             currentPerPage: '',
             perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),
-            perPageItems: ((typeof process.env.MIX_PER_PAGE_OPTIONS === 'undefined')?  [20,25,50,100,500] : process.env.MIX_PER_PAGE_OPTIONS.split(',').map(Number)),
+            //perPageItems: ((typeof process.env.MIX_PER_PAGE_OPTIONS === 'undefined')?  [20,25,50,100,500] : process.env.MIX_PER_PAGE_OPTIONS.split(',').map(Number)),
+            perPageItems: process.env.MIX_PER_PAGE_OPTIONS.split(',').map(Number),
             moreParams: {},
             paginationComponent: 'vuetable-pagination',
             httpOptions: { headers: { Authorization: 'Bearer '+localStorage.getItem('accessToken') } },
             checkedRows: [],
             fields: [  
                 {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
-                { title: this.$t('message.contact.CONTACT_ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
+                { title: this.$t('message.contact.ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
                 { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
                 { title: this.$t('message.general.NAME'), name: "c_name" },
                 { title: this.$t('message.general.ADDRESS'), name: "c_address" },
@@ -254,9 +255,9 @@ export default {
      },     
      computed:{
      ...mapGetters(["selectedLocale"]),
-     quotestatus: function(){
-        if(this.$store.getters.currentLanguageHelpers.hasOwnProperty('status_quote_waiting')){            
-            return this.$store.getters.currentLanguageHelpers.status_quote_waiting;        
+     contactstatus: function(){
+        if(this.$store.getters.currentLanguageHelpers.hasOwnProperty('contact_statuslist')){            
+            return this.$store.getters.currentLanguageHelpers.contact_statuslist;        
         }
         else{
             return {};
@@ -271,10 +272,10 @@ export default {
         }        
     }    
    },   
-      methods: {
+      methods: {        
         reinitializeFields(){
             this.$nextTick(()=>{                            
-              this.$refs.vuetable.fields[1].title = this.$t('message.contact.CONTACT_ID');
+              this.$refs.vuetable.fields[1].title = this.$t('message.contact.ID');
               this.$refs.vuetable.fields[3].title = this.$t('message.general.NAME');
               this.$refs.vuetable.fields[4].title = this.$t('message.general.ADDRESS');  
               this.$refs.vuetable.fields[5].title = this.$t('message.contact.TOTAL_INVOICES');  
@@ -285,9 +286,17 @@ export default {
         changeStatus(val,id){
             api.put('/api/contacts/change_status/'+id, {status: val}) .then(function (response) {
                 if((typeof response.data.data !== "undefined") && (response.data.data.hasOwnProperty('id'))){                    
-                    document.getElementById('c_status_'+response.data.data.id).className="status-chips " + response.data.data.status_class.replace('label-status','column');
-                    document.getElementById('c_status_chip_'+response.data.data.id).className="v-chip v-chip--small theme--light white--text " + response.data.data.status_class;
-                    document.getElementById('c_status_chip_'+response.data.data.id).firstChild.innerText = response.data.data.status;                    
+                    let row_id = response.data.data.id;
+                    
+                    let columnModifiers = $('#c_status_'+row_id).attr('class').split(/\s+/).filter(className => { return className.match(/^column-/) });
+                    $('#c_status_'+row_id).removeClass(columnModifiers.join(' '));
+                    $('#c_status_'+row_id).addClass(response.data.data.status_class.replace('label-status','column'));
+                    
+                    let statusModifiers = $('#c_status_chip_'+row_id).attr('class').split(/\s+/).filter(className => { return className.match(/^label-status-/) });
+                    $('#c_status_chip_'+row_id).removeClass(statusModifiers.join(' '));
+                    $('#c_status_chip_'+row_id).addClass(response.data.data.status_class);
+
+                    $('#c_status_chip_'+row_id).html(response.data.data.status);
                 }
             }).catch(function (error) {
                 console.log(error);
