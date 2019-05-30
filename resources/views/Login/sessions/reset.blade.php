@@ -4,12 +4,9 @@
     <div class="login">
         <h3 class="login-top-title">{{ __('login.login_title') }}</h3>
         <hr />
-        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.ROUTES.PASSWORD_UPDATE')) }}" method="post" novalidate>
+        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.routes.PASSWORD_UPDATE')) }}" method="post" novalidate>
           @csrf
           <input type="hidden" name="token" value="{{ $token }}">
-
-
-
                 <div class="input-wrapper">
                     <label for="validationTooltipUsername">{{ __('login.username') }}<span class="star">&#160;*</span></label>
                     <div class="input-group">
@@ -18,12 +15,9 @@
                         </div>
                         <input type="text" class="form-control" name="email" id="validationTooltipUsername" placeholder="{{ __('login.username') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
                         <div class="invalid-feedback">
-                            {{ __('login.username_required') }}
+                            {{ __('login.USERNAME_REQUIRED') }}
                         </div>
                     </div>
-                    @if ($errors->has('email'))
-                      <span class="red-alert">{{ $errors->first('email') }}</span>
-                    @endif
                 </div>
 
                 <div class="input-wrapper">
@@ -37,9 +31,7 @@
                             {{ __('login.password_required') }}
                         </div>
                     </div>
-                    @if ($errors->has('password'))
-                      <div class="error" class="red-alert">{{ $errors->first('password') }}</div>
-                    @endif
+
                 </div>
                 <div class="input-wrapper">
                     <label for="validationTooltipUsername">{{ __('login.confirm_password') }}<span class="star">&#160;*</span></label>
