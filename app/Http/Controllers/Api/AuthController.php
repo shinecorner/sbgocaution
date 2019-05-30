@@ -76,7 +76,7 @@ class AuthController extends Controller
             App::setLocale($request->lang);
             $data['api_status'] = 1;
             $data['code'] = 200;
-            $data['message'] = __('login.AUTH_LOGIN_SUCCESS');
+            $data['message'] = __('general.AUTH_LOGIN_SUCCESS');
             $data['access_token'] = $api_token;
             $data['name'] = $user->name;
             $data['email'] = $user->email;
@@ -90,7 +90,7 @@ class AuthController extends Controller
                                         [
                                         'api_status'=>0,
                                         'code'=>200,
-                                        'message'=> __('login.AUTH_LOGIN_FAIL')
+                                        'message'=> __('general.AUTH_LOGIN_FAIL')
                                         ]
                                 ],200); 
         }
