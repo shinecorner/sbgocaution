@@ -61,14 +61,30 @@ class ContactResource extends JsonResource
         }
         $data['count_invoices'] = $invoice_count;
         $data['invoice_total'] = __('general.CHF') . format($invoice_total);
-        $statues = array_keys(getContactStatus());
-        foreach($statues as $status) {
-            $data['count_policy_by_status'][$status] = $policies->filter(function($policy) use ($status) {
-                $data['count_invoice_by_status'][$status] = $policy->invoices->filter(function($invoice) use ($status){
-                    return $invoice->status == $status;
-                });
-                return $policy->status == $status;
-            })->count();
+        if($policies->isNotEmpty()) {
+
+            $policy_statuses = array_keys(getPolicyStatus());
+            foreach($policy_statuses as $policy_status) {
+                $count = $policies->where('status', $policy_status)->count();
+                if($count > 0){
+                    $data['count_policy_by_status'][$policy_status] = $count;
+                }
+            }
+
+            $invoice_statuses = array_keys(getInvoiceStatus());
+            foreach($policies as $policy){
+                $sum = 0;
+                foreach($invoice_statuses as $invoice_status) {
+                    $count = $policy->invoices->where('status', $invoice_status)->count();
+                    if($count > 0) {
+                        if(isset($data['count_invoice_by_status'][$invoice_status])){
+                            $data['count_invoice_by_status'][$invoice_status]++;
+                        } else {
+                            $data['count_invoice_by_status'][$invoice_status] = $count;
+                        }
+                    }
+                }
+            }
         }
 
         if($this->rc_quote == "Yes")

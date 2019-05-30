@@ -8,10 +8,6 @@ return [
     'RC_QUOTE_TOOLTIP' => 'È interessato a un\'offerta PH.',
     'CALL_LEAD_SOURCE_TOOLTIP' => 'Call center',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offerte per Post', 
-    'INVOICE_STATUS_COLLECTION' => 'minaccia di fallimento',
-    'ONLINE_PAYMENT_WAITING' => 'Online-Zahlung wartend',
-    'ONLINE_PAYMENT_INVALID' => 'Pagamento online non valido',
-    'DEBT_ENFORCEMENT' => 'Procedure di esecuzione',  
     'ADD_NEW_POLICY' => 'Police(n)', 
     'AFFILIATE_MARKETNG' => "Affiliate Marketing",
     'leadsource' => [
@@ -28,10 +24,12 @@ return [
         'MKS' => "Mietkautionschweiz.ch",
         'CLS'=> "CautionLoyerSuisse.ch",
         'CA' => "Cauzione-Affitto.ch"
-    ], 
-    'PDF_PRECONFIRMATION_IMG' => "Vorabbestätigung Online",
-    'PDF_REJECTED' => "Ablehnungsschreiben",
-    'PDF_OFFER_PRINT_LETTER' => "Offerte Begleitschreiben",
+    ],
+    'pdf' => [
+        'PRECONFIRMATION_IMG' => "Vorabbestätigung Online",
+        'REJECTED' => "Ablehnungsschreiben",
+        'OFFER_PRINT_LETTER' => "Offerte Begleitschreiben"
+    ],
     'status' => [
         'PAID' => "Pagato",
         'UNPAID_SIMPLE' => 'Offen',

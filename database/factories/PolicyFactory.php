@@ -9,7 +9,7 @@ $factory->define(App\Policy::class, function (Faker $faker) {
         'real_policy_num' => $real_policy_num,
         'policy_num' => getUniqueNum($real_policy_num, 2),
         'computed_total' => $faker->randomFloat(),
-        'status' => $faker->randomElement(['new', 'offer', 'pre_confirmation_pending', 'pre_confirmation_sent', 'rejected', 'status_quote_waiting']),
+        'status' => $faker->randomElement(array_keys(getPolicyStatus())),
         'date' => $faker->dateTime(),
         'startdate' => date('Y-m-d', strtotime( '+'.mt_rand(1,5).' days')),
         'contact_id' => 0,
