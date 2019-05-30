@@ -23,5 +23,7 @@ return [
     'ANDERE' => "Andere",
     'CHF' => 'CHF',
     'DATA_LOADING' => 'Bitte warten Sie, während wir Daten laden...',
-    'JNO' => "Nein"
+    'JNO' => "Nein",
+    'AUTH_LOGIN_SUCCESS' => 'Erfolgreich angemeldet.',
+    'AUTH_LOGIN_FAIL' => 'Die Anmeldung ist fehlgeschlagen.',
 ];

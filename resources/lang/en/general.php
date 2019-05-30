@@ -23,5 +23,7 @@ return [
     'ANDERE' => "Andere",
     'CHF' => 'CHF',
     'DATA_LOADING' => 'Please wait while, we\'re loading data...',
-    'JNO' => "No"
+    'JNO' => "No",
+    'AUTH_LOGIN_SUCCESS' => 'Logged in Successfully.',
+    'AUTH_LOGIN_FAIL' => 'Logged in failed.',
 ];
