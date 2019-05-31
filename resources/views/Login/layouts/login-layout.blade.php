@@ -59,8 +59,6 @@
 
                   <div class="column-flexible">
                     <div class="promo-inner">
-
-
                         <div class="custom">
                             <h1>{{ __('login.login_page_description_title') }}</h1>
                             <p>{{ __('login.login_page_description_line_one') }}

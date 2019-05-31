@@ -56,4 +56,7 @@
         'PASSWORD_UPDATE' => 'passwort_aktualisierung',
         'LOGOUT' => 'abmeldung',
     ],
+    'ERROR' => 'Fehler',
+    '404_ERROR' => "Entschuldigung! Die Seite, die Sie gesucht haben, existiert nicht.",
+    'GO_BACK_HOME' => 'Gehen Sie zurück nach Hause.',
   ];
