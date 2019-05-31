@@ -31,16 +31,6 @@ return [
         'OFFER_PRINT_LETTER' => "Offerte Begleitschreiben"
     ],
     'status' => [
-        'PAID' => "Pagato",
-        'UNPAID_SIMPLE' => 'Offen',
-        'PARTIAL_PAID' => 'Teilweise bezahlt',
-        'PASTDUE' => 'Aktivierung überfällig',
-        'REFUNDED' => 'Rückvergütet',
-        'PARTIAL_REFUNDED' => 'Rückvergütung in Bearbeitung',
-        'REMINDER' => 'Promemoria di pagamento',
-        'WARNING1' => '1° sollecito',
-        'WARNING2' => '2° sollecito',
-        'WAITING_FOR_PROCESSING' => 'Warten auf Prüfung',
         'NEW' => 'Neu',
         'OFFER' => 'Offerte gesendet',
         'IN_CLARIFICATION' => 'In Abklärung',
