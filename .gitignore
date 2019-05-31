@@ -27,3 +27,5 @@ yarn-error.log
 .env
 .phpunit.result.cache
 /gocaution_crm/nbproject/private/
+/public/My/assets/js/
+/public/My/assets/styles/

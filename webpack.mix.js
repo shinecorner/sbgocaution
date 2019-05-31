@@ -37,7 +37,8 @@ mix.js('resources/js/main.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .js('resources/laravel/js/app.js', 'public/Login/assets/js/laravel/app.js')
    .sass('resources/gull/assets/styles/sass/themes/lite-green.scss', 'public/Login/assets/styles/css/themes/lite-green-plain.min.css')
-   .sass('resources/gull/assets/styles/sass/themes/custom-login.scss', 'public/Login/assets/styles/css/themes/custom.min.css');
+   .sass('resources/gull/assets/styles/sass/themes/custom-login.scss', 'public/Login/assets/styles/css/themes/custom.min.css')
+   .sass('resources/gull/assets/styles/sass/themes/custom-my.scss', 'public/My/assets/styles/css/themes/custom-my.min.css');
 
    mix.combine([
     'public/Login/assets/styles/css/themes/lite-green-plain.min.css',
@@ -49,6 +50,18 @@ mix.js('resources/js/main.js', 'public/js')
        'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
        'resources/gull/assets/js/vendor/perfect-scrollbar.min.js',
    ], 'public/Login/assets/js/common-bundle-script.js');
+
+
+    mix.combine([
+        'public/Login/assets/styles/css/themes/lite-green-plain.min.css',
+        'public/My/assets/styles/css/themes/custom-my.min.css',
+    ], 'public/My/assets/styles/css/themes/lite-green.min.css');
+
+    mix.combine([
+        'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.bundle.js',
+        'resources/gull/assets/js/vendor/perfect-scrollbar.min.js',
+    ], 'public/My/assets/js/common-bundle-script.js');
 
    mix.js([
 
