@@ -14,6 +14,8 @@ return [
     'RESET' => 'zurücksetzen',
     'EDIT' => 'Öffnen',
     'QUOTES' => 'Policen',
+    'SUCCESS' => 'Erfolg',
+    'ERROR' => 'Fehler',
     'INVOICES' => 'Rechnungen',
     'LANGUAGE_DE' => 'Deutsch',
     'LANGUAGE_FR' => 'Französisch',

@@ -14,6 +14,8 @@ return [
     'RESET' => 'reset',
     'EDIT' => 'Edita',
     'QUOTES' => 'Policen',
+    'SUCCESS' => 'riuscita',
+    'ERROR' => 'sbaglio',
     'INVOICES' => 'Rechnungen',
     'LANGUAGE_DE' => 'Deutsch',
     'LANGUAGE_FR' => 'Französisch',
