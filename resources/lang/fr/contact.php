@@ -9,9 +9,9 @@ return [
     'CALL_LEAD_SOURCE_TOOLTIP' => 'centre d\'appels',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offre par courrier',
     'ADD_NEW_POLICY' => 'Police(n)',
-    'AFFILIATE_MARKETNG' => "Affiliate Marketing",
     'leadsource' => [
         'ONLINE_REGISTRATION' => "Online Registrierung",
+        'AFFILIATE_MARKETNG' => "Affiliate Marketing",
         'PARTNERVERWALTUNG' => "Partnerverwaltung",
         'PARTNERLOGIN' => "Partner-Login",
         'CALLCENTRE' => "Callcenter VG",

@@ -1,18 +1,18 @@
 <?php
 return [
 	'status' => [
-		'WAITING_FOR_PAYMENT' => "Waiting for payment",
-		'PARTIAL_PAID' => "Partially paid",
-		'PAID' => "Paid",
-		'PASTDUE' => "Past due date",
-		'REFUNDED' => "Refunded",
-		'PARTIAL_REFUNDED' => "Partially refunded",
-		'REMINDER' => "Zahlungserinnerung",
-		'WARNING1' => "Mahnstufe 1",
-		'WARNING2' => "Mahnstufe 2",
-		'COLLECTION' => "Betreibungsandrohung",
-		'ONLINE_PAYMENT_WAITING' => "Online-Zahlung wartend",
-		'ONLINE_PAYMENT_INVALID' => "Online-Zahlung ungültig",
-		'DEBT_ENFORCEMENT' =>  "Betreibungsverfahren"
+		'WAITING_FOR_PAYMENT' => "In attesa di pagamento",
+		'PARTIAL_PAID' => "Parzialmente pagato",
+		'PAID' => "Pagato",
+		'PASTDUE' => "Scadenza",
+		'REFUNDED' => "Rimborsato",
+		'PARTIAL_REFUNDED' => "Rimborso in corso",
+		'REMINDER' => "sollecito di pagamento",
+		'WARNING1' => "Livello di sollecito 1",
+		'WARNING2' => "Livello di sollecito 2",
+		'COLLECTION' => "minaccia di fallimento",
+		'ONLINE_PAYMENT_WAITING' => "Pagamento online in attesa di pagamento",
+		'ONLINE_PAYMENT_INVALID' => "Pagamento online non valido",
+		'DEBT_ENFORCEMENT' =>  "procedure di esecuzione"
 	]
 ];

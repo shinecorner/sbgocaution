@@ -15,15 +15,18 @@ return [
     'EDIT' => 'Edita',
     'QUOTES' => 'Policen',
     'INVOICES' => 'Rechnungen',
-    'LANGUAGE_DE' => 'Deutsch',
-    'LANGUAGE_FR' => 'Französisch',
-    'LANGUAGE_IT' => 'Italienisch',
-    'LANGUAGE_EN' => 'English',
+    'language' => [
+        'DE' => 'Deutsch',
+        'FR' => 'Französisch',
+        'IT' => 'Italienisch',
+        'EN' => 'English'
+    ],
     'CONTACT_CW' => 'CW', 
     'ANDERE' => "Andere",
     'CHF' => 'CHF',
     'DATA_LOADING' => 'Si prega di attendere mentre, stiamo caricando i dati...',
-    'JNO' => "No",
+    'YES' => "Sì",
+    'NO' => "No",
     'AUTH_LOGIN_SUCCESS' => 'Effettuato l\'accesso con successo.',
     'AUTH_LOGIN_FAIL' => 'Loggato fallito.',
 ];
