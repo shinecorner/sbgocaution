@@ -7,12 +7,12 @@ return [
 		'PASTDUE' => "Rappel",
 		'REFUNDED' => "Remboursé",
 		'PARTIAL_REFUNDED' => "Partially refunded",
-		'REMINDER' => "Zahlungserinnerung",
-		'WARNING1' => "Mahnstufe 1",
-		'WARNING2' => "Mahnstufe 2",
-		'COLLECTION' => "Betreibungsandrohung",
-		'ONLINE_PAYMENT_WAITING' => "Online-Zahlung wartend",
-		'ONLINE_PAYMENT_INVALID' => "Online-Zahlung ungültig",
-		'DEBT_ENFORCEMENT' =>  "Betreibungsverfahren"
+		'REMINDER' => "rappel de paiement",
+		'WARNING1' => "Niveau de relance 1",
+		'WARNING2' => "Niveau de relance 2",
+		'COLLECTION' => "menace de faillite",
+		'ONLINE_PAYMENT_WAITING' => "Paiement en ligne en attente",
+		'ONLINE_PAYMENT_INVALID' => "Paiement en ligne non valable",
+		'DEBT_ENFORCEMENT' =>  "procédures d'exécution forcée"
 	]
 ];

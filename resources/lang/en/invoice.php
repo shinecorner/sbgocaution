@@ -3,16 +3,16 @@ return [
 	'status' => [
 		'WAITING_FOR_PAYMENT' => "Waiting for payment",
 		'PARTIAL_PAID' => "Partially paid",
-		'PAID' => "Bezahlt",
+		'PAID' => "Paid",
 		'PASTDUE' => "Past due date",
 		'REFUNDED' => "Refunded",
 		'PARTIAL_REFUNDED' => "Refund in progress",
-		'REMINDER' => "Zahlungserinnerung",
-		'WARNING1' => "Mahnstufe 1",
-		'WARNING2' => "Mahnstufe 2",
-		'COLLECTION' => "Betreibungsandrohung",
-		'ONLINE_PAYMENT_WAITING' => "Online-Zahlung wartend",
-		'ONLINE_PAYMENT_INVALID' => "Online-Zahlung ungültig",
-		'DEBT_ENFORCEMENT' =>  "Betreibungsverfahren"
+		'REMINDER' => "Payment reminder",
+		'WARNING1' => "Dunning level 1",
+		'WARNING2' => "Dunning level 2",
+		'COLLECTION' => "Threat of bankruptcy",
+		'ONLINE_PAYMENT_WAITING' => "Online payment waiting",
+		'ONLINE_PAYMENT_INVALID' => "Invalid online payment",
+		'DEBT_ENFORCEMENT' =>  "Debt enforcement proceedings"
 	]
 ];

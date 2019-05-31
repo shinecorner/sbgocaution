@@ -9,9 +9,9 @@ return [
     'CALL_LEAD_SOURCE_TOOLTIP' => 'Call center',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offer by post',
     'ADD_NEW_POLICY' => 'New Policy',
-    'AFFILIATE_MARKETNG' => "Affiliate Marketing",
     'leadsource' => [
         'ONLINE_REGISTRATION' => "Online Registrierung",
+        'AFFILIATE_MARKETNG' => "Affiliate Marketing",
         'PARTNERVERWALTUNG' => "Partnerverwaltung",
         'PARTNERLOGIN' => "Partner-Login",
         'CALLCENTRE' => "Callcenter VG",
