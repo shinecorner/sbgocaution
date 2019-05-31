@@ -11,7 +11,7 @@
             {{__('login.forgot_text')}}
           </p>
         </div>
-        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.ROUTES.PASSWORD_EMAIL')) }}" method="post" novalidate>
+        <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.routes.PASSWORD_EMAIL')) }}" method="post" novalidate>
             @csrf
             @if (session('status'))
                 <div class="alert alert-success" role="alert">

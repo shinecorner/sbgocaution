@@ -25,7 +25,7 @@ class RenameColumnsRealestateAgenciesTable extends Migration
      */
     public function down()
     {
-      Schema::table('stnk', function(Blueprint $table) {
+      Schema::table('realestate_agencies', function(Blueprint $table) {
           $table->renameColumn('latitude', 'lattitude');
       });
     }

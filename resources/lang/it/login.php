@@ -1,7 +1,6 @@
 <?php
   return [
 
-    /* from CRM */
     'LOGIN' => 'Accedi',
     'USERNAME' => 'Nome utente',
     'PASSWORD' => 'Password',
@@ -10,9 +9,7 @@
     'FR' => 'Français',
     'IT' => 'Italienisch',
     'EN' => 'English',
-    'COM_USERS_LOGIN_REMEMBER_ME' => 'Ricordami',
-    /* END */
-
+    'LOGIN_REMEMBER_ME' => 'Ricordami',
     'TITLE' => 'goCaution® Login Proprietario',
     'LOGIN_TITLE' => 'goCaution® LARALOGIN',
     'FORGET_PASSWORD' => 'dimenticare la password',
@@ -49,7 +46,8 @@
     'IDENTIFIER' => 'Identificatore',
     'BACK' => 'dorso',
     'SEND_FORGOT_MAIL' => 'invio',
-    'ROUTES' => [
+    'RESPONSIVE_LOGO' => 'logo-w-de.png',
+    'routes' => [
         'FORGOT_PASSWORD_LINK' => 'registrazione/password-dimenticata',
         'LOGIN' => 'accedi',
         'DASHBOARD' => 'plancia',

@@ -1,6 +1,6 @@
 <?php
   return [
-    /* from CRM */
+
     'LOGIN' => 'Log in',
     'USERNAME' => 'Username',
     'PASSWORD' => 'Password',
@@ -9,9 +9,7 @@
     'FR' => 'Français',
     'IT' => 'Italienisch',
     'EN' => 'English',
-    'COM_USERS_LOGIN_REMEMBER_ME' => 'Remember me',
-    /* END */
-
+    'LOGIN_REMEMBER_ME' => 'Remember me',
     'TITLE' => 'goCaution® Landlord Login',
     'LOGIN_TITLE' => 'goCaution® LARALOGIN',
     'FORGET_PASSWORD' => 'Forget Password ?',
@@ -48,7 +46,8 @@
     'IDENTIFIER' => 'Identifier',
     'BACK' => 'back',
     'SEND_FORGOT_MAIL' => 'sending',
-    'ROUTES' => [
+    'RESPONSIVE_LOGO' => 'logo-w-de.png',
+    'routes' => [
         'FORGOT_PASSWORD_LINK' => 'registration/password-forgotten',
         'LOGIN' => 'login',
         'DASHBOARD' => 'dashboard',

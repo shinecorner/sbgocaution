@@ -25,5 +25,7 @@ return [
     'ANDERE' => "Andere",
     'CHF' => 'CHF',
     'DATA_LOADING' => 'Si prega di attendere mentre, stiamo caricando i dati...',
-    'JNO' => "No"
+    'JNO' => "No",
+    'AUTH_LOGIN_SUCCESS' => 'Effettuato l\'accesso con successo.',
+    'AUTH_LOGIN_FAIL' => 'Loggato fallito.',
 ];
