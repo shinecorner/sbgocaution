@@ -18,7 +18,6 @@ import VueQuillEditor from 'vue-quill-editor'
 import wysiwyg from 'vue-wysiwyg'
 //import VueBreadcrumbs from 'vue2-breadcrumbs'
 import VueResource from 'vue-resource'
-import Notifications from 'vue-notification'
 //import velocity from 'velocity-animate'
 import AmCharts from 'amcharts3'
 import AmSerial from 'amcharts3/amcharts/serial'
@@ -57,6 +56,13 @@ import './lib/VuelyCss'
 
 // messages
 import messages from './lang';
+
+import VeeValidate from 'vee-validate';
+import deValidation from 'vee-validate/dist/locale/de';
+import enValidation from 'vee-validate/dist/locale/en';
+import frValidation from 'vee-validate/dist/locale/fr';
+import itValidation from 'vee-validate/dist/locale/it';
+import Snotify from 'vue-snotify';
 
 // navigation guards before each
 router.beforeEach((to, from, next) => {
@@ -114,11 +120,11 @@ Vue.use(VueResource)
 Vue.use(wysiwyg, {})
 //Vue.use(VueBreadcrumbs)
 //Vue.use(Notifications, { velocity })
-Vue.use(Notifications)
 //Vue.use(fullscreen);
 Vue.use(GlobalComponents);
 //Vue.use(VueVideoPlayer);
 //Vue.use(Croppa);
+Vue.use(Snotify);
 Vue.use(VueGoogleMaps, {
 	load: {
 		key: 'AIzaSyBtdO5k6CRntAMJCF-H5uZjTCoSGX95cdk' // Add your here your google map api key
@@ -131,6 +137,19 @@ const i18n = new VueI18n({
 	messages, // set locale messages
 })
 
+Vue.use(VeeValidate, {
+   fieldsBagName: 'formFields', 
+   i18nRootKey: 'validations', // customize the root path for validation messages.
+   i18n,
+   dictionary: {
+    de: deValidation,
+    en: enValidation,
+    fr: frValidation,
+    it: itValidation
+   }
+});
+
+Vue.prototype.$eventHub = new Vue();
 /* eslint-disable no-new */
 new Vue({
 	store,

@@ -8,11 +8,8 @@
 		'rtl-layout': rtlLayout
 	}]"
   > 
-    	<router-view :auth="auth" :authenticated="authenticated"></router-view>
-      <notifications 
-        group="loggedIn" 
-        position="top right"        
-      />
+    	<router-view :auth="auth" :authenticated="authenticated"></router-view>      
+        <toast-notify></toast-notify>
   </v-app>
 </template>
 
@@ -25,7 +22,7 @@ const auth = new AuthService();
 
 const { login, logout, authenticated, authNotifier } = auth;
 
-export default {
+export default {  
   data() {
     authNotifier.on("authChange", authState => {
       this.authenticated = authState.authenticated;

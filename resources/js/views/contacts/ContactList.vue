@@ -69,10 +69,14 @@
                                   </div>
                                 </template>
                                 <template slot="c_edit" slot-scope="props">
-                                    <a>                                         
-                                        <span class="primary-text text-xs-center"><v-icon size="18">ti-pencil-alt</v-icon></span>
-                                        <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.general.EDIT') }}</span>
-                                    </a>
+                                    <v-tooltip top v-if="props.rowData.id">
+                                            <a href="#" slot="activator">
+                                                <v-avatar size="26" class="round-badge-success">
+                                                    <v-icon color="white" small>zmdi zmdi-edit</v-icon>
+                                                </v-avatar>
+                                            </a>    
+                                        <span>{{ $t('message.general.EDIT') }}</span>
+                                    </v-tooltip>
                                 </template>
                                 <template slot="c_name" slot-scope="props">                                    
                                     <span class="salute_icon left">
@@ -164,10 +168,14 @@
                                     </v-menu>
                                 </template>-->
                                 <template slot="c_addquote" slot-scope="props">
-                                    <a>
-                                        <span class="primary-text text-xs-center"><v-icon size="18">ti-plus</v-icon></span>
-                                        <span class="grey--text fs-12 secondary-text fw-normal d-block">{{ $t('message.contact.ADD_NEW_POLICY') }}</span>
-                                    </a>                                                                        
+                                    <v-tooltip top>
+                                            <a href="#" slot="activator">
+                                                <v-avatar size="26" class="round-badge-success">
+                                                    <v-icon color="white" small>zmdi zmdi-plus</v-icon>
+                                                </v-avatar>
+                                            </a>    
+                                        <span>{{ $t('message.contact.ADD_NEW_POLICY') }}</span>
+                                    </v-tooltip>                                    
                                 </template>
                             </vuetable>
                         </div>
@@ -363,7 +371,7 @@ export default {
     width: 120px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(3), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(3){
-    width: 48px;
+    width: 40px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(4), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(4){
     width: 15%;
@@ -384,7 +392,7 @@ export default {
     width: 40px;
 }
 .contactlist >>> .list-table-container table.v-table thead th:nth-child(10), .contactlist >>> .list-table-container table.v-table tbody td:nth-child(10){
-    width: 65px;
+    width: 40px;
     border-right: none;
 }
 </style>

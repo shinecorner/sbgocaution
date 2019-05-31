@@ -3,6 +3,7 @@ import AppConfig from "Constants/AppConfig";
 
 const ContactList = () => import('Views/contacts/ContactList');
 const SettingPage = () => import('Views/settings/SettingPage');
+const DemoPage = () => import('Views/demo/DemoPage');
 
 export default {
    path: '/',
@@ -17,7 +18,7 @@ export default {
             title: 'message.contact.CONTACTS',
              breadcrumb: [
               {
-                breadcrumbInactive: 'message.contact.CRM'
+                breadcrumbInactive: 'message.general.CRM'
               },
               {
                 breadcrumbActive: 'message.contact.CONTACTS'
@@ -33,10 +34,26 @@ export default {
             title: 'message.setting.OPTIONS',
             breadcrumb: [
               {
-                breadcrumbInactive: 'message.contact.CRM'
+                breadcrumbInactive: 'message.general.CRM'
               },
               {
                 breadcrumbActive: 'message.setting.OPTIONS'
+              }
+            ]
+        }
+      },
+      {
+        path: '/demo',
+        component: DemoPage,
+        meta: {
+            requiresAuth: true,
+            title: 'Demo',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'CRM'
+              },
+              {
+                breadcrumbActive: 'Demo'
               }
             ]
         }

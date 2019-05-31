@@ -21,7 +21,7 @@ import AppCard from 'Components/AppCard/AppCard';
 // stats card
 import StatsCard from 'Components/StatsCard/StatsCard';
 import StatsCardV2 from 'Components/StatsCardV2/StatsCardV2';
-
+import ToastNotify from 'Components/Notification/ToastNotify';
 // section tooltip
 import SectionTooltip from "Components/SectionTooltip/SectionTooltip"
 
@@ -37,6 +37,7 @@ const GlobalComponents = {
       Vue.component('pageTitleBar', PageTitleBar);
       Vue.component('rotateSquare2', RotateSquare2);
       Vue.component('font-awesome-icon', FontAwesomeIcon);  
+      Vue.component('toast-notify',ToastNotify);  
    }
 }
 

@@ -154,14 +154,10 @@ export default {
             "RC_QUOTE_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call-Center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offerte per Post",
-            "INVOICE_STATUS_COLLECTION": "Betreibungsandrohung",
-            "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
-            "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
-            "DEBT_ENFORCEMENT": "Betreibungsverfahren",
             "ADD_NEW_POLICY": "Police(n)",
-            "AFFILIATE_MARKETNG": "Affiliate Marketing",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
+                "AFFILIATE_MARKETNG": "Affiliate Marketing",
                 "PARTNERVERWALTUNG": "Partnerverwaltung",
                 "PARTNERLOGIN": "Vermieter-Login",
                 "CALLCENTRE": "Callcenter VG",
@@ -175,20 +171,12 @@ export default {
                 "CLS": "CautionLoyerSuisse.ch",
                 "CA": "Cauzione-Affitto.ch"
             },
-            "PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online",
-            "PDF_REJECTED": "Ablehnungsschreiben",
-            "PDF_OFFER_PRINT_LETTER": "Offerte Begleitschreiben",
+            "pdf": {
+                "PRECONFIRMATION_IMG": "Vorabbestätigung Online",
+                "REJECTED": "Ablehnungsschreiben",
+                "OFFER_PRINT_LETTER": "Offerte Begleitschreiben"
+            },
             "status": {
-                "PAID": "Bezahlt",
-                "UNPAID_SIMPLE": "Warten auf Zahlung",
-                "PARTIAL_PAID": "Teilweise bezahlt",
-                "PASTDUE": "Aktivierung überfällig",
-                "REFUNDED": "Rückvergütet",
-                "PARTIAL_REFUNDED": "Rückvergütung in Bearbeitung",
-                "REMINDER": "Zahlungserinnerung",
-                "WARNING1": "Mahnstufe 1",
-                "WARNING2": "Mahnstufe 2",
-                "WAITING_FOR_PROCESSING": "Warten auf Prüfung",
                 "NEW": "Neu",
                 "OFFER": "Offerte gesendet",
                 "IN_CLARIFICATION": "In Abklärung",
@@ -210,17 +198,17 @@ export default {
         },
         "policy": {
             "status": {
-                "STATUS_QUOTE_WAITING": "Warten auf Prüfung",
+                "WAITING": "Warten auf Prüfung",
                 "PREDECLARED": "Vorpoliciert",
-                "CLAIM_PENDING": "Schadensfall in Bearbeitung",
                 "ACCEPTED": "Laufend",
+                "CANCELLATION_WITH_CLAIM_PENDING": "Schadensfall in Bearbeitung",
+                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Kündigung in Bearbeitung",
                 "DISSOLVED_WITH_CLAIMS": "Aufgelöst MS",
                 "DISSOLVED_WITHOUT_CLAIMS": "Aufgelöst OS",
                 "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
-                "QUOTE_STATUS_JOINT_GUARANTEE": "Solidarbürgschaft hängig",
+                "JOINT_GUARANTEE": "Solidarbürgschaft hängig",
                 "REJECTED_CLIENT": "Annulliert durch Kunden",
-                "PENDING_CANCEL": "Auflösung gemeldet",
-                "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+                "PENDING_CANCEL": "Auflösung gemeldet"
             }
         },
         "invoice": {
@@ -255,16 +243,23 @@ export default {
             "RESET": "zurücksetzen",
             "EDIT": "Öffnen",
             "QUOTES": "Policen",
+            "SUCCESS": "Erfolg",
+            "ERROR": "Fehler",
             "INVOICES": "Rechnungen",
-            "LANGUAGE_DE": "Deutsch",
-            "LANGUAGE_FR": "Französisch",
-            "LANGUAGE_IT": "Italienisch",
-            "LANGUAGE_EN": "English",
+            "langugae": {
+                "DE": "Deutsch",
+                "FR": "Französisch",
+                "IT": "Italienisch",
+                "EN": "English"
+            },
             "CONTACT_CW": "CW",
             "ANDERE": "Andere",
             "CHF": "CHF",
             "DATA_LOADING": "Bitte warten Sie, während wir Daten laden...",
-            "JNO": "Nein"
+            "YES": "Ja",
+            "NO": "Nein",
+            "AUTH_LOGIN_SUCCESS": "Erfolgreich angemeldet.",
+            "AUTH_LOGIN_FAIL": "Die Anmeldung ist fehlgeschlagen."
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -275,7 +270,7 @@ export default {
             "FR": "Français",
             "IT": "Italienisch",
             "EN": "English",
-            "COM_USERS_LOGIN_REMEMBER_ME": "Angemeldet bleiben",
+            "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
             "TITLE": "goCaution® Vermieter-Login",
             "LOGIN_TITLE": "goCaution® Vermieter-Login",
             "FORGET_PASSWORD": "Passwort vergessen?",
@@ -285,7 +280,7 @@ export default {
             "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
             "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
             "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-            "LOGIN_PAGE_DESCRIPTION_LINE_TWO": "und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
+            "LOGIN_PAGE_DESCRIPTION_LINE_TWO": " und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
             "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
             "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
             "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
@@ -301,7 +296,6 @@ export default {
             "NEW_PASSWORD": "Neues Kennwort",
             "CONFIRM_PASSWORD": "Passwort bestätigen",
             "RESET": "zurücksetzen",
-            "COM_USERS_USERNAME_RESET": "Benutzername vergessen?",
             "USERNAME_REQUIRED": "Bitte geben Sie einen gültigen Benutzernamen an.",
             "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
             "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
@@ -313,7 +307,8 @@ export default {
             "IDENTIFIER": "E-Mail-Adresse",
             "BACK": "Zurück",
             "SEND_FORGOT_MAIL": "Senden",
-            "ROUTES": {
+            "RESPONSIVE_LOGO": "logo-w-de.png",
+            "routes": {
                 "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
                 "LOGIN": "anmelden",
                 "DASHBOARD": "instrumentenbord",
@@ -480,9 +475,9 @@ export default {
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offer by post",
             "ADD_NEW_POLICY": "New Policy",
-            "AFFILIATE_MARKETNG": "Affiliate Marketing",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
+                "AFFILIATE_MARKETNG": "Affiliate Marketing",
                 "PARTNERVERWALTUNG": "Partnerverwaltung",
                 "PARTNERLOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
@@ -523,34 +518,34 @@ export default {
         },
         "policy": {
             "status": {
-                "STATUS_QUOTE_WAITING": "Waiting for processing",
+                "WAITING": "Waiting for processing",
                 "PREDECLARED": "Predeclared",
                 "ACCEPTED": "Accepted",
-                "CANCELLATION_WITH_CLIAM_PENDING": "Schadensfall in Bearbeitung",
-                "CANCELLATION_WITHOUT_CLIAM_PENDING": "Notice in process",
+                "CANCELLATION_WITH_CLAIM_PENDING": "Claim in progress",
+                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Notice in process",
                 "DISSOLVED_WITH_CLAIMS": "Dissolved with claim",
                 "DISSOLVED_WITHOUT_CLAIMS": "Dissolved without claims",
                 "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
-                "QUOTE_STATUS_JOINT_GUARANTEE": "Solidarbürgschaft hängig",
+                "JOINT_GUARANTEE": "Joint surety pending",
                 "REJECTED_CLIENT": "Rejected by client",
-                "PENDING_CANCEL": "Auflösung gemeldet"
+                "PENDING_CANCEL": "Resolution reported"
             }
         },
         "invoice": {
             "status": {
                 "WAITING_FOR_PAYMENT": "Waiting for payment",
                 "PARTIAL_PAID": "Partially paid",
-                "PAID": "Bezahlt",
+                "PAID": "Paid",
                 "PASTDUE": "Past due date",
                 "REFUNDED": "Refunded",
                 "PARTIAL_REFUNDED": "Refund in progress",
-                "REMINDER": "Zahlungserinnerung",
-                "WARNING1": "Mahnstufe 1",
-                "WARNING2": "Mahnstufe 2",
-                "COLLECTION": "Betreibungsandrohung",
-                "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
-                "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
-                "DEBT_ENFORCEMENT": "Betreibungsverfahren"
+                "REMINDER": "Payment reminder",
+                "WARNING1": "Dunning level 1",
+                "WARNING2": "Dunning level 2",
+                "COLLECTION": "Threat of bankruptcy",
+                "ONLINE_PAYMENT_WAITING": "Online payment waiting",
+                "ONLINE_PAYMENT_INVALID": "Invalid online payment",
+                "DEBT_ENFORCEMENT": "Debt enforcement proceedings"
             }
         },
         "general": {
@@ -568,16 +563,23 @@ export default {
             "RESET": "Reset",
             "EDIT": "Edit",
             "QUOTES": "Polices",
+            "SUCCESS": "Success",
+            "ERROR": "Error",
             "INVOICES": "Invoices",
-            "LANGUAGE_DE": "Deutsch",
-            "LANGUAGE_FR": "Französisch",
-            "LANGUAGE_IT": "Italienisch",
-            "LANGUAGE_EN": "English",
+            "language": {
+                "DE": "Deutsch",
+                "FR": "Französisch",
+                "IT": "Italienisch",
+                "EN": "English"
+            },
             "CONTACT_CW": "CW",
             "ANDERE": "Andere",
             "CHF": "CHF",
             "DATA_LOADING": "Please wait while, we're loading data...",
-            "JNO": "No"
+            "YES": "Yes",
+            "NO": "No",
+            "AUTH_LOGIN_SUCCESS": "Logged in Successfully.",
+            "AUTH_LOGIN_FAIL": "Logged in failed."
         },
         "login": {
             "LOGIN": "Log in",
@@ -588,7 +590,7 @@ export default {
             "FR": "Français",
             "IT": "Italienisch",
             "EN": "English",
-            "COM_USERS_LOGIN_REMEMBER_ME": "Remember me",
+            "LOGIN_REMEMBER_ME": "Remember me",
             "TITLE": "goCaution® Landlord Login",
             "LOGIN_TITLE": "goCaution® LARALOGIN",
             "FORGET_PASSWORD": "Forget Password ?",
@@ -625,7 +627,8 @@ export default {
             "IDENTIFIER": "Identifier",
             "BACK": "back",
             "SEND_FORGOT_MAIL": "sending",
-            "ROUTES": {
+            "RESPONSIVE_LOGO": "logo-w-de.png",
+            "routes": {
                 "FORGOT_PASSWORD_LINK": "registration/password-forgotten",
                 "LOGIN": "login",
                 "DASHBOARD": "dashboard",
@@ -791,14 +794,10 @@ export default {
             "RC_QUOTE_TOOLTIP": "Est intéressé par une offre PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "centre d'appels",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offre par courrier",
-            "INVOICE_STATUS_COLLECTION": "Menace de poursuite",
-            "ONLINE_PAYMENT_WAITING": "Paiement en ligne en attente",
-            "ONLINE_PAYMENT_INVALID": "Paiement en ligne non valide",
-            "DEBT_ENFORCEMENT": "Procédures d'exécution forcée",
-            "ADD_NEW_POLICY": "Police",
-            "AFFILIATE_MARKETNG": "Affiliate Marketing",
+            "ADD_NEW_POLICY": "Police(n)",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
+                "AFFILIATE_MARKETNG": "Affiliate Marketing",
                 "PARTNERVERWALTUNG": "Partnerverwaltung",
                 "PARTNERLOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
@@ -812,20 +811,12 @@ export default {
                 "CLS": "CautionLoyerSuisse.ch",
                 "CA": "Cauzione-Affitto.ch"
             },
-            "PDF_PRECONFIRMATION_IMG": "Lettre de pré-confirmation",
-            "PDF_REJECTED": "Lettre de refus",
-            "PDF_OFFER_PRINT_LETTER": "Lettre d'offre",
+            "pdf": {
+                "PRECONFIRMATION_IMG": "Lettre de pré-confirmation",
+                "REJECTED": "Lettre de refus",
+                "OFFER_PRINT_LETTER": "Lettre d'offre"
+            },
             "status": {
-                "PAID": "Payé",
-                "UNPAID_SIMPLE": "Non payé",
-                "PARTIAL_PAID": "Partiellement payé",
-                "PASTDUE": "Rappel",
-                "REFUNDED": "Remboursé",
-                "PARTIAL_REFUNDED": "Remboursé en partie",
-                "REMINDER": "Rappel de paiement",
-                "WARNING1": "1er rappel",
-                "WARNING2": "2ème rappel",
-                "WAITING_FOR_PROCESSING": "En attente de traitement",
                 "NEW": "Nouveau",
                 "OFFER": "Offre envoyée",
                 "IN_CLARIFICATION": "Clarifications en cours",
@@ -847,17 +838,17 @@ export default {
         },
         "policy": {
             "status": {
-                "STATUS_QUOTE_WAITING": "En validation",
+                "WAITING": "En validation",
                 "PREDECLARED": "Pre-police",
-                "CLAIM_PENDING": "Schadensfall in Bearbeitung",
                 "ACCEPTED": "Actif",
+                "CANCELLATION_WITH_CLAIM_PENDING": "Réclamation en cours",
+                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Résiliation en cours",
                 "DISSOLVED_WITH_CLAIMS": "Dissous avec sinistre",
                 "DISSOLVED_WITHOUT_CLAIMS": "Dissous sans sinistre",
                 "DISSOLVED_IMMEDIATELY": "Dissous après l'achèvement",
-                "QUOTE_STATUS_JOINT_GUARANTEE": "Attente cautionnement solidaire",
-                "REJECTED_CLIENT": "Rejected by client",
-                "PENDING_CANCEL": "Résolution/Mouvement rapportée",
-                "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+                "JOINT_GUARANTEE": "Attente cautionnement solidaire",
+                "REJECTED_CLIENT": "Annulées par les clients",
+                "PENDING_CANCEL": "Résolution/Mouvement rapportée"
             }
         },
         "invoice": {
@@ -868,13 +859,13 @@ export default {
                 "PASTDUE": "Rappel",
                 "REFUNDED": "Remboursé",
                 "PARTIAL_REFUNDED": "Partially refunded",
-                "REMINDER": "Zahlungserinnerung",
-                "WARNING1": "Mahnstufe 1",
-                "WARNING2": "Mahnstufe 2",
-                "COLLECTION": "Betreibungsandrohung",
-                "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
-                "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
-                "DEBT_ENFORCEMENT": "Betreibungsverfahren"
+                "REMINDER": "rappel de paiement",
+                "WARNING1": "Niveau de relance 1",
+                "WARNING2": "Niveau de relance 2",
+                "COLLECTION": "menace de faillite",
+                "ONLINE_PAYMENT_WAITING": "Paiement en ligne en attente",
+                "ONLINE_PAYMENT_INVALID": "Paiement en ligne non valable",
+                "DEBT_ENFORCEMENT": "procédures d'exécution forcée"
             }
         },
         "general": {
@@ -892,16 +883,23 @@ export default {
             "RESET": "réinitialiser",
             "EDIT": "Éditer",
             "QUOTES": "Polices",
+            "SUCCESS": "Succès",
+            "ERROR": "Erreur",
             "INVOICES": "Factures",
-            "LANGUAGE_DE": "Deutsch",
-            "LANGUAGE_FR": "Französisch",
-            "LANGUAGE_IT": "Italienisch",
-            "LANGUAGE_EN": "English",
+            "language": {
+                "DE": "Deutsch",
+                "FR": "Französisch",
+                "IT": "Italienisch",
+                "EN": "English"
+            },
             "CONTACT_CW": "CW",
             "ANDERE": "Andere",
             "CHF": "CHF",
             "DATA_LOADING": "Veuillez patienter, nous chargeons les données...",
-            "JNO": "Non"
+            "YES": "Oui",
+            "NO": "Non",
+            "AUTH_LOGIN_SUCCESS": "Connecté avec succès.",
+            "AUTH_LOGIN_FAIL": "La connexion a échoué."
         },
         "login": {
             "LOGIN": "Connexion",
@@ -912,14 +910,14 @@ export default {
             "FR": "Français",
             "IT": "Italienisch",
             "EN": "English",
-            "COM_USERS_LOGIN_REMEMBER_ME": "Se rappeler de moi",
+            "LOGIN_REMEMBER_ME": "Se rappeler de moi",
             "TITLE": "goCaution® Ouverture de session du propriétaire",
             "LOGIN_TITLE": "goCaution® Espace bailleurs",
             "FORGET_PASSWORD": "Mot de passe oublié ?",
             "GET_RESET_LINK": "Obtenir le lien de réinitialisation",
             "BACK_TO_LOGIN": "Retour connexion?",
             "SUPPORT": "SUPPORT",
-            "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
+            "SUPPORT_ADDRESS": "goCaution SA - Freiburgstrasse 574 - 3172 Niederwangen",
             "LOGIN_PAGE_DESCRIPTION_TITLE": "Gérer les cautions de loyer en ligne",
             "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "goCaution a mis en place un Espace bailleurs qui vous permettra d'avoir une visualisation et une gestion complète de vos garanties de loyer.",
             "LOGIN_PAGE_DESCRIPTION_LINE_TWO": "Ainsi, vous pourrez gérer l'établissement d'un certificat jusqu'à la résiliation avec ou sans sinistre.",
@@ -938,7 +936,6 @@ export default {
             "NEW_PASSWORD": "nouveau mot de passe",
             "CONFIRM_PASSWORD": "Confirmez le mot de passe",
             "RESET": "réinitialiser",
-            "COM_USERS_USERNAME_RESET": "Identifiant oublié ?",
             "USERNAME_REQUIRED": "Veuillez fournir un nom d'utilisateur valide.",
             "PASSWORD_REQUIRED": "Veuillez fournir un mot de passe valide.",
             "CONFIRM_PASSWORD_REQUIRED": "Veuillez fournir un mot de passe de confirmation valide.",
@@ -950,11 +947,12 @@ export default {
             "IDENTIFIER": "Adresse e-mail",
             "BACK": "Retour",
             "SEND_FORGOT_MAIL": "Envoyer",
-            "ROUTES": {
+            "RESPONSIVE_LOGO": "logo-w-fr.png",
+            "routes": {
                 "FORGOT_PASSWORD_LINK": "anmeldung/forgot-password",
                 "LOGIN": "connexion",
                 "DASHBOARD": "tableau_de_bord",
-                "PASSWORD_RESET": "réinitialiser_mot_de_passe",
+                "PASSWORD_RESET": "reinitialiser_mot_de_passe",
                 "PASSWORD_EMAIL": "mot_de_passe_email",
                 "PASSWORD_UPDATE": "mot_de_passe_update",
                 "LOGOUT": "deconnexion"
@@ -1116,14 +1114,10 @@ export default {
             "RC_QUOTE_TOOLTIP": "È interessato a un'offerta PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offerte per Post",
-            "INVOICE_STATUS_COLLECTION": "minaccia di fallimento",
-            "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
-            "ONLINE_PAYMENT_INVALID": "Pagamento online non valido",
-            "DEBT_ENFORCEMENT": "Procedure di esecuzione",
             "ADD_NEW_POLICY": "Police(n)",
-            "AFFILIATE_MARKETNG": "Affiliate Marketing",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
+                "AFFILIATE_MARKETNG": "Affiliate Marketing",
                 "PARTNERVERWALTUNG": "Partnerverwaltung",
                 "PARTNERLOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
@@ -1137,20 +1131,12 @@ export default {
                 "CLS": "CautionLoyerSuisse.ch",
                 "CA": "Cauzione-Affitto.ch"
             },
-            "PDF_PRECONFIRMATION_IMG": "Vorabbestätigung Online",
-            "PDF_REJECTED": "Ablehnungsschreiben",
-            "PDF_OFFER_PRINT_LETTER": "Offerte Begleitschreiben",
+            "pdf": {
+                "PRECONFIRMATION_IMG": "Vorabbestätigung Online",
+                "REJECTED": "Ablehnungsschreiben",
+                "OFFER_PRINT_LETTER": "Offerte Begleitschreiben"
+            },
             "status": {
-                "PAID": "Pagato",
-                "UNPAID_SIMPLE": "Offen",
-                "PARTIAL_PAID": "Teilweise bezahlt",
-                "PASTDUE": "Aktivierung überfällig",
-                "REFUNDED": "Rückvergütet",
-                "PARTIAL_REFUNDED": "Rückvergütung in Bearbeitung",
-                "REMINDER": "Promemoria di pagamento",
-                "WARNING1": "1° sollecito",
-                "WARNING2": "2° sollecito",
-                "WAITING_FOR_PROCESSING": "Warten auf Prüfung",
                 "NEW": "Neu",
                 "OFFER": "Offerte gesendet",
                 "IN_CLARIFICATION": "In Abklärung",
@@ -1172,34 +1158,34 @@ export default {
         },
         "policy": {
             "status": {
-                "STATUS_QUOTE_WAITING": "Warten auf Prüfung",
+                "WAITING": "In attesa di ispezione",
                 "PREDECLARED": "Vorpoliciert",
-                "CLAIM_PENDING": "Schadensfall in Bearbeitung",
-                "ACCEPTED": "Laufend",
-                "DISSOLVED_WITH_CLAIMS": "Aufgelöst MS",
-                "DISSOLVED_WITHOUT_CLAIMS": "Aufgelöst OS",
-                "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
-                "QUOTE_STATUS_JOINT_GUARANTEE": "Solidarbürgschaft hängig",
-                "REJECTED_CLIENT": "Annulliert durch Kunden",
-                "PENDING_CANCEL": "Auflösung gemeldet",
-                "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+                "ACCEPTED": "Corsa",
+                "CANCELLATION_WITH_CLAIM_PENDING": "Reclami in corso",
+                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Avviso in attesa",
+                "DISSOLVED_WITH_CLAIMS": "SM risolta",
+                "DISSOLVED_WITHOUT_CLAIMS": "Sistema operativo risolto",
+                "DISSOLVED_IMMEDIATELY": "Disciolto dopo il completamento",
+                "JOINT_GUARANTEE": "Fideiussione congiunta pendente",
+                "REJECTED_CLIENT": "Annullato dai clienti",
+                "PENDING_CANCEL": "Risoluzione segnalata"
             }
         },
         "invoice": {
             "status": {
-                "WAITING_FOR_PAYMENT": "Waiting for payment",
-                "PARTIAL_PAID": "Partially paid",
-                "PAID": "Paid",
-                "PASTDUE": "Past due date",
-                "REFUNDED": "Refunded",
-                "PARTIAL_REFUNDED": "Partially refunded",
-                "REMINDER": "Zahlungserinnerung",
-                "WARNING1": "Mahnstufe 1",
-                "WARNING2": "Mahnstufe 2",
-                "COLLECTION": "Betreibungsandrohung",
-                "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
-                "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
-                "DEBT_ENFORCEMENT": "Betreibungsverfahren"
+                "WAITING_FOR_PAYMENT": "In attesa di pagamento",
+                "PARTIAL_PAID": "Parzialmente pagato",
+                "PAID": "Pagato",
+                "PASTDUE": "Scadenza",
+                "REFUNDED": "Rimborsato",
+                "PARTIAL_REFUNDED": "Rimborso in corso",
+                "REMINDER": "sollecito di pagamento",
+                "WARNING1": "Livello di sollecito 1",
+                "WARNING2": "Livello di sollecito 2",
+                "COLLECTION": "minaccia di fallimento",
+                "ONLINE_PAYMENT_WAITING": "Pagamento online in attesa di pagamento",
+                "ONLINE_PAYMENT_INVALID": "Pagamento online non valido",
+                "DEBT_ENFORCEMENT": "procedure di esecuzione"
             }
         },
         "general": {
@@ -1217,16 +1203,23 @@ export default {
             "RESET": "reset",
             "EDIT": "Edita",
             "QUOTES": "Policen",
+            "SUCCESS": "riuscita",
+            "ERROR": "sbaglio",
             "INVOICES": "Rechnungen",
-            "LANGUAGE_DE": "Deutsch",
-            "LANGUAGE_FR": "Französisch",
-            "LANGUAGE_IT": "Italienisch",
-            "LANGUAGE_EN": "English",
+            "language": {
+                "DE": "Deutsch",
+                "FR": "Französisch",
+                "IT": "Italienisch",
+                "EN": "English"
+            },
             "CONTACT_CW": "CW",
             "ANDERE": "Andere",
             "CHF": "CHF",
             "DATA_LOADING": "Si prega di attendere mentre, stiamo caricando i dati...",
-            "JNO": "No"
+            "YES": "Sì",
+            "NO": "No",
+            "AUTH_LOGIN_SUCCESS": "Effettuato l'accesso con successo.",
+            "AUTH_LOGIN_FAIL": "Loggato fallito."
         },
         "login": {
             "LOGIN": "Accedi",
@@ -1237,7 +1230,7 @@ export default {
             "FR": "Français",
             "IT": "Italienisch",
             "EN": "English",
-            "COM_USERS_LOGIN_REMEMBER_ME": "Ricordami",
+            "LOGIN_REMEMBER_ME": "Ricordami",
             "TITLE": "goCaution® Login Proprietario",
             "LOGIN_TITLE": "goCaution® LARALOGIN",
             "FORGET_PASSWORD": "dimenticare la password",
@@ -1274,7 +1267,8 @@ export default {
             "IDENTIFIER": "Identificatore",
             "BACK": "dorso",
             "SEND_FORGOT_MAIL": "invio",
-            "ROUTES": {
+            "RESPONSIVE_LOGO": "logo-w-de.png",
+            "routes": {
                 "FORGOT_PASSWORD_LINK": "registrazione/password-dimenticata",
                 "LOGIN": "accedi",
                 "DASHBOARD": "plancia",
