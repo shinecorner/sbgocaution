@@ -1,10 +1,9 @@
 <?php
 
-
 Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
 {
-  // echo LaravelLocalization::transRoute("routes.password_reset"); die();
+    Route::get('/test', 'AuthLoginController@loginForm')->name('login');
   	Route::get('/', 'AuthLoginController@loginForm')->name('login');
     Route::get(LaravelLocalization::transRoute("login.routes.FORGOT_PASSWORD_LINK"), 'AuthLoginController@showForgetPasswordForm');
     Route::get(LaravelLocalization::transRoute("login.routes.PASSWORD_RESET").'/{token}','AuthLoginController@showResetPasswordForm');

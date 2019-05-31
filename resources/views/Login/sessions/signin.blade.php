@@ -37,7 +37,7 @@
                   <input type="checkbox" name="remember">
                   <span>{{ __('login.login_remember_me') }}</span>
                   <span class="checkmark"></span>
-              </label>
+            </label>
             <div class="form-group">
                 <div class="text-center reset-btn">
                     <button type="submit" class="btn btn-success btn-block">{{ __('login.login') }}</button>
