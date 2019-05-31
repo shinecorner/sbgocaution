@@ -17,15 +17,18 @@ return [
     'SUCCESS' => 'Succès',
     'ERROR' => 'Erreur',    
     'INVOICES' => 'Factures',
-    'LANGUAGE_DE' => 'Deutsch',
-    'LANGUAGE_FR' => 'Französisch',
-    'LANGUAGE_IT' => 'Italienisch',
-    'LANGUAGE_EN' => 'English',
+    'language' => [
+        'DE' => 'Deutsch',
+        'FR' => 'Französisch',
+        'IT' => 'Italienisch',
+        'EN' => 'English'
+    ],
     'CONTACT_CW' => 'CW',
     'ANDERE' => "Andere",
     'CHF' => 'CHF',
     'DATA_LOADING' => 'Veuillez patienter, nous chargeons les données...',
-    'JNO' => "Non",
+    'YES' => "Oui",
+    'NO' => "Non",
     'AUTH_LOGIN_SUCCESS' => 'Connecté avec succès.',
     'AUTH_LOGIN_FAIL' => 'La connexion a échoué.',
 ];

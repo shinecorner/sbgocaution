@@ -9,9 +9,9 @@ return [
     'CALL_LEAD_SOURCE_TOOLTIP' => 'Call center',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offerte per Post', 
     'ADD_NEW_POLICY' => 'Police(n)', 
-    'AFFILIATE_MARKETNG' => "Affiliate Marketing",
     'leadsource' => [
         'ONLINE_REGISTRATION' => "Online Registrierung",
+        'AFFILIATE_MARKETNG' => "Affiliate Marketing",
         'PARTNERVERWALTUNG' => "Partnerverwaltung",
         'PARTNERLOGIN' => "Partner-Login",
         'CALLCENTRE' => "Callcenter VG",
@@ -31,16 +31,6 @@ return [
         'OFFER_PRINT_LETTER' => "Offerte Begleitschreiben"
     ],
     'status' => [
-        'PAID' => "Pagato",
-        'UNPAID_SIMPLE' => 'Offen',
-        'PARTIAL_PAID' => 'Teilweise bezahlt',
-        'PASTDUE' => 'Aktivierung überfällig',
-        'REFUNDED' => 'Rückvergütet',
-        'PARTIAL_REFUNDED' => 'Rückvergütung in Bearbeitung',
-        'REMINDER' => 'Promemoria di pagamento',
-        'WARNING1' => '1° sollecito',
-        'WARNING2' => '2° sollecito',
-        'WAITING_FOR_PROCESSING' => 'Warten auf Prüfung',
         'NEW' => 'Neu',
         'OFFER' => 'Offerte gesendet',
         'IN_CLARIFICATION' => 'In Abklärung',
