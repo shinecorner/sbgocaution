@@ -71,6 +71,10 @@ class ConfigsTableSeeder extends Seeder
                 'value' => 'laravelmail@gocaution.ch'
             ],
             [
+                'option' => 'mail.host',
+                'value' => 'mail.cyon.ch'
+            ],
+            [
                 'option' => 'mail.port',
                 'value' => '465'
             ],
