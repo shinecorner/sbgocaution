@@ -1,6 +1,6 @@
 <?php
 return [
-'status' => [
+	'status' => [
 		'WAITING_FOR_PAYMENT' => "En attente",
 		'PARTIAL_PAID' => "Partiellement payé",
 		'PAID' => "Payé",

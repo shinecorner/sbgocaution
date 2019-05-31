@@ -8,7 +8,7 @@ return [
     'RC_QUOTE_TOOLTIP' => 'Est intéressé par une offre PH.',
     'CALL_LEAD_SOURCE_TOOLTIP' => 'centre d\'appels',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offre par courrier',
-    'INVOICE_STATUS_COLLECTION' => 'Menace de poursuite',
+    'ADD_NEW_POLICY' => 'Police(n)',
     'AFFILIATE_MARKETNG' => "Affiliate Marketing",
     'leadsource' => [
         'ONLINE_REGISTRATION' => "Online Registrierung",
@@ -31,16 +31,6 @@ return [
         'OFFER_PRINT_LETTER' => "Lettre d'offre"
     ],
     'status' => [
-        'PAID' => "Payé",
-        'UNPAID_SIMPLE' => 'Non payé',
-        'PARTIAL_PAID' => 'Partiellement payé',
-        'PASTDUE' => 'Rappel',
-        'REFUNDED' => 'Remboursé',
-        'PARTIAL_REFUNDED' => 'Remboursé en partie',
-        'REMINDER' => 'Rappel de paiement',
-        'WARNING1' => '1er rappel',
-        'WARNING2' => '2ème rappel',  
-        'WAITING_FOR_PROCESSING' => 'En attente de traitement',
         'NEW' => 'Nouveau',
         'OFFER' => 'Offre envoyée',
         'IN_CLARIFICATION' => 'Clarifications en cours',
