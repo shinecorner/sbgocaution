@@ -269,8 +269,7 @@ export default {
 	},
 	methods: {
 		...mapActions(["setConfigs", "saveConfig"]),
-		validateForm(scope) {
-                console.log(scope);
+		validateForm(scope) {                
                 this.$validator.validateAll(scope).then((result) => {                    
                   if (result) {
                     this.saveConfig();

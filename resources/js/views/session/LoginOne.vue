@@ -11,19 +11,25 @@
 						class="img-responsive mb-3" 						
 					/>					
 					<p class="fs-14">{{$t('message.login.LOGIN_TITLE')}}</p>
-					<v-form v-model="valid" class="mb-4">
+					<v-form @submit.prevent="signInWithLaravelPassport()" class="mb-4">
 						<v-text-field 
 							:label="$t('message.general.EMAIL')" 
 							v-model="email" 
-							:rules="emailRules" 
-							required
+              :data-vv-as="$t('message.general.EMAIL')"
+              data-vv-name="email"
+              v-validate="'required|email'"
+              :error="errors.has('email')"
+              required							 							
 						></v-text-field>
 						<v-text-field 
 							:label="$t('message.login.PASSWORD')" 
 							v-model="password" 
-							type="password" 
-							:rules="passwordRules" 
-							required
+							type="password" 							
+              :data-vv-as="$t('message.login.PASSWORD')"
+              data-vv-name="password"
+              v-validate="'required'"
+              :error="errors.has('password')"
+              required
 						></v-text-field>
                                                <v-select                                                    
                                                     :label="$t('message.login.LANGUAGE')"
@@ -54,13 +60,13 @@
                                                   </v-select>
 						<v-checkbox 
 							color="primary" 
-							:label="$t('message.login.COM_USERS_LOGIN_REMEMBER_ME')" 
+							:label="$t('message.login.LOGIN_REMEMBER_ME')" 
                                                         class="rememberme"
 							v-model="checkbox"
 						></v-checkbox>
 						<!--<router-link class="mb-1" to="/session/forgot-password">{{$t('message.login.COM_USERS_LOGIN_RESET')}}?</router-link>-->
 						<div>						
-                                                    <v-btn large @click="signInWithLaravelPassport" block color="primary">{{$t('message.login.LOGIN')}}</v-btn>
+                                                    <v-btn type="submit" large block color="primary">{{$t('message.login.LOGIN')}}</v-btn>
 						</div>						
 					</v-form>					
 				</div>
@@ -123,17 +129,29 @@ export default {
       });
     },
     signInWithLaravelPassport(){
-        const user = {
-        email: this.email,
-        password: this.password,
-        lang: this.fetchLanguage
-      };
-      if('lang' in user){
-            this.changeLanguageByCode(user.lang);
-      }      
-      this.$store.dispatch("signInWithLaravelPassport", {
-        user
-      });
+      this.$validator.validateAll().then((result) => {                    
+          if (result) {
+              const user = {
+                email: this.email,
+                password: this.password,
+                lang: this.fetchLanguage
+              };
+              if('lang' in user){
+                    this.changeLanguageByCode(user.lang);
+              }      
+              this.$store.dispatch("signInWithLaravelPassport", {
+                user
+              });
+          }
+          else{
+            let msgHTML = '';
+            _.forOwn(this.$validator.errors.all(), function(msg, key) { 
+                msgHTML += ('<li>' + msg + '<\/li>')
+            });            
+            Vue.prototype.$eventHub.$emit('fireError', '<ul>' + msgHTML + '<\/ul>');
+            return;
+          }
+        });        
     },   
     onCreateAccount() {
       this.$router.push("/session/sign-up");

@@ -200,15 +200,14 @@ const mutations = {
         }
         state.isUserSigninWithAuth0 = false;
         router.push("/contacts");
-        setTimeout(function(){
-            console.log('kit');
-            Vue.prototype.$eventHub.$emit('fireSuccess', message);
+        setTimeout(function(){            
+            Vue.prototype.$eventHub.$emit('fireSuccessSingle', message);
        },1500);
     },
     loginUserFailure(state, error) {
         Nprogress.done();
         localStorage.removeItem('accessToken');
-        Vue.prototype.$eventHub.$emit('fireError', error.message);        
+        Vue.prototype.$eventHub.$emit('fireErrorSingle', error.message);        
     },
     logoutUser(state) {
         state.user = null;
@@ -224,11 +223,11 @@ const mutations = {
     signUpUserSuccess(state, user) {
         state.user = localStorage.setItem('user', user);
         router.push("/default/dashboard/ecommerce");
-        Vue.prototype.$eventHub.$emit('fireSuccess', 'Account Created!');        
+        Vue.prototype.$eventHub.$emit('fireSuccessSingle', 'Account Created!');        
     },
     signUpUserFailure(state, error) {
         Nprogress.done();
-        Vue.prototype.$eventHub.$emit('fireError', error.message);          
+        Vue.prototype.$eventHub.$emit('fireErrorSingle', error.message);          
     },
     signInUserWithAuth0Success(state, user) {
         state.user = user;
@@ -241,10 +240,10 @@ const mutations = {
     },
     sendEmailSuccessfully(state){
         router.push("/session/login");
-        Vue.prototype.$eventHub.$emit('fireSuccess', 'Email Sent Successfully!');         
+        Vue.prototype.$eventHub.$emit('fireSuccessSingle', 'Email Sent Successfully!');         
     },
      invalidEmailSent(state){
-         Vue.prototype.$eventHub.$emit('fireError', 'Please Enter Valid Email Id!');          
+         Vue.prototype.$eventHub.$emit('fireErrorSingle', 'Please Enter Valid Email Id!');          
      }
 }
 
