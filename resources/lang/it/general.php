@@ -29,4 +29,5 @@ return [
     'NO' => "No",
     'AUTH_LOGIN_SUCCESS' => 'Effettuato l\'accesso con successo.',
     'AUTH_LOGIN_FAIL' => 'Loggato fallito.',
+    'CONFIG_SUCCESS' => 'Config aggiornato con successo!',
 ];

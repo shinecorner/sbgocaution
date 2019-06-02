@@ -29,4 +29,5 @@ return [
     'NO' => "Nein",
     'AUTH_LOGIN_SUCCESS' => 'Erfolgreich angemeldet.',
     'AUTH_LOGIN_FAIL' => 'Die Anmeldung ist fehlgeschlagen.',
+    'CONFIG_SUCCESS' => 'Konfiguration erfolgreich aktualisiert!',
 ];
