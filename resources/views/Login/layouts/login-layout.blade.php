@@ -5,7 +5,7 @@
 
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>{{ __('login.login') }}</title>
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
@@ -28,7 +28,7 @@
                         <div class="logo">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('login.title') }}">
-                                    <img class="logo-img" src="{{ asset('Login/assets/images/logo-w.png') }}" alt="{{ __('login.title') }}" /> </a>
+                                    <img class="logo-img" src="{{ asset('Login/assets/images/'.__('login.responsive_logo')) }}" alt="{{ __('login.title') }}" /> </a>
                             </div>
                         </div>
                     </div>
@@ -59,8 +59,6 @@
 
                   <div class="column-flexible">
                     <div class="promo-inner">
-
-
                         <div class="custom">
                             <h1>{{ __('login.login_page_description_title') }}</h1>
                             <p>{{ __('login.login_page_description_line_one') }}
@@ -69,7 +67,7 @@
                                 <br class="hidden-xs">{{ __('login.login_page_description_line_four') }}</p>
                         </div>
                         <div class="clearfix form-group">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".new-account-request"> {{ __('login.request_access') }}</button>
+                            <button type="button" class="btn btn-raised btn-raised-secondary color-triplet" data-toggle="modal" data-target=".new-account-request"> {{ __('login.request_access') }}</button>
                         </div>
                     </div>
                     <span class="fixed-response">
@@ -78,12 +76,12 @@
                     <div class="login-bottom-block visible-xs clearfix">
                         <br/>
                         <div class="login-support">
-                          {{ __('login.support') }}
+                          {{ __('login.support') }}<br>
                           <b>{{ __('login.contact') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('login.title') }}">
-                                    <img class="logo-img" src="{{ asset('Login/images/'.__('login.logo_img')) }}" alt="{{ __('login.title') }}" />
+                                    <img class="logo-img" src="{{ asset('Login/assets/images/'.__('login.logo_img')) }}" alt="{{ __('login.title') }}" />
                                     <span>{{ __('login.login_title') }}</span>
                                 </a>
                                 <small class="site-slogan">{{ __('login.login_title') }}</small>

@@ -1,22 +1,26 @@
 <?php
 
-
 Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
 {
-  // echo LaravelLocalization::transRoute("routes.password_reset"); die();
+    Route::get('/test', 'AuthLoginController@loginForm')->name('login');
   	Route::get('/', 'AuthLoginController@loginForm')->name('login');
-    Route::get(LaravelLocalization::transRoute("login.ROUTES.FORGOT_PASSWORD_LINK"), 'AuthLoginController@showForgetPasswordForm');
-    Route::get(LaravelLocalization::transRoute("login.ROUTES.PASSWORD_RESET").'/{token}','AuthLoginController@showResetPasswordForm');
-    Route::post(LaravelLocalization::transRoute("login.ROUTES.LOGIN"),'AuthLoginController@login');
-    Route::post(LaravelLocalization::transRoute("login.ROUTES.PASSWORD_EMAIL"), 'AuthLoginController@sendResetPasswordLinkEmail');
-    Route::post(LaravelLocalization::transRoute("login.ROUTES.PASSWORD_UPDATE"), 'AuthLoginController@reset');
+    Route::get(LaravelLocalization::transRoute("login.routes.FORGOT_PASSWORD_LINK"), 'AuthLoginController@showForgetPasswordForm');
+    Route::get(LaravelLocalization::transRoute("login.routes.PASSWORD_RESET").'/{token}','AuthLoginController@showResetPasswordForm');
+    Route::post(LaravelLocalization::transRoute("login.routes.LOGIN"),'AuthLoginController@login');
+    Route::post(LaravelLocalization::transRoute("login.routes.PASSWORD_EMAIL"), 'AuthLoginController@sendResetPasswordLinkEmail');
+    Route::post(LaravelLocalization::transRoute("login.routes.PASSWORD_UPDATE"), 'AuthLoginController@reset');
 
     Route::middleware(['auth'])->group(function () {
         Route::get('dashboard', function () { return view('Login.dashboard.dashboardv1'); })->name('dashboard');
-        Route::post(LaravelLocalization::transRoute("login.ROUTES.LOGOUT"), 'AuthLoginController@logout');
+        Route::post(LaravelLocalization::transRoute("login.routes.LOGOUT"), 'AuthLoginController@logout');
     });
+    Route::any('/{any}',function(){
+        return  view('Login.others.notFound');
+    })->where('any','.*')->name('any');
 });
+
+
 
 Route::get('large-compact-sidebar/dashboard/dashboard1', function () { session(['layout' => 'compact']); return view('Login.dashboard.dashboardv1'); })->name('compact');
 Route::get('large-sidebar/dashboard/dashboard1', function () { session(['layout' => 'normal']); return view('Login.dashboard.dashboardv1'); })->name('normal');

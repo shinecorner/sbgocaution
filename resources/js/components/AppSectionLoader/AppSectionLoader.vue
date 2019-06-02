@@ -3,7 +3,7 @@
         <loading :active.sync="status"         
         loader="dots"
         :is-full-page="fullPage"
-        color="#3490dc"        
+        color="#066938"        
         opacity="0.3"
         background-color="#fff"
         ></loading>        
