@@ -20,22 +20,22 @@
 									v-model="item.active"
 								>
 									<v-list-tile slot="activator">
-										<v-list-tile-contents
+										<v-list-tile-content>
 											<v-list-tile-title  v-if="item.items!= null">
 												<i class="mr-1 zmdi" :class="item.action"></i>
 												<span >{{ textTruncate($t(item.title)) }}</span>
-											</v-list-tile-title>											
+											</v-list-tile-title>
 										</v-list-tile-content>                                                                                
 									</v-list-tile>
-                                                                        <template v-for="subItem in item.items" v-if="subItem !== null" style="position:relative;">
-                                                                                <v-list-tile v-bind:key="subItem.title">
-                                                                                    <v-list-tile-content>
-											<v-list-tile-title>
-                                                                                            <router-link :to="!subItem.exact ? `/${getCurrentAppLayoutHandler() + subItem.path}` : subItem.path"> {{ textTruncate($t(subItem.title)) }}</router-link>                                                                                            
-                                                                                        </v-list-tile-title>
-                                                                                    </v-list-tile-content>                                                                                                                                                                   
-                                                                                </v-list-tile>                                                                                
-                                                                        </template>									                                                                       
+									<template v-for="subItem in item.items" v-if="subItem !== null" style="position:relative;">
+												<v-list-tile v-bind:key="subItem.title">
+														<v-list-tile-content>
+																<v-list-tile-title>
+																		<router-link :to="!subItem.exact ? `/${getCurrentAppLayoutHandler() + subItem.path}` : subItem.path"> {{ textTruncate($t(subItem.title)) }}</router-link>                                                                                            
+																</v-list-tile-title>
+														</v-list-tile-content>                                                                                                                                                                   
+												</v-list-tile>                                                                                
+								</template>									                                                                       
 								</v-list-group>
 							</template>	
 							<template v-else>
@@ -55,16 +55,15 @@
 												</router-link>
 											</v-list-tile-title>
 										</v-list-tile-content>
-                                                                                <span  v-if="item.label === 'contact'">
-                                                                                        <span class="sidebar-label ml-2">
-                                                                                            <router-link class="d-inline-block" :to="!item.exact ? `/${getCurrentAppLayoutHandler() + item.path}` : item.path">{{((serverHelpers.navbar_contacts_count)? serverHelpers.navbar_contacts_count : '0')}}</router-link>
-                                                                                        </span>
-                                                                                        <span class="sidebar-label">
-                                                                                            <router-link class="d-inline-block" to="/crediweb">CW</router-link>
-                                                                                        </span>
-                                                                                </span> 
-									</v-list-tile>
-									
+											<span  v-if="item.label === 'contact'">
+												<span class="sidebar-label ml-2">
+														<router-link class="d-inline-block" :to="!item.exact ? `/${getCurrentAppLayoutHandler() + item.path}` : item.path">{{((serverHelpers.navbar_contacts_count)? serverHelpers.navbar_contacts_count : '0')}}</router-link>
+												</span>
+												<span class="sidebar-label">
+														<router-link class="d-inline-block" to="/crediweb">CW</router-link>
+												</span>
+											</span> 
+									</v-list-tile>									
 								</v-list-group>
 							</template>	
 						</template>

@@ -15,7 +15,8 @@ return [
     'EDIT' => 'Éditer',
     'QUOTES' => 'Polices',
     'SUCCESS' => 'Succès',
-    'ERROR' => 'Erreur',    
+    'ERROR' => 'Erreur', 
+    'SAVE_SUCCESSFULLY' => 'Données sauvegardées avec succès',   
     'INVOICES' => 'Factures',
     'language' => [
         'DE' => 'Deutsch',

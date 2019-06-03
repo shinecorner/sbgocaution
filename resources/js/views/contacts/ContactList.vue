@@ -140,7 +140,7 @@
                                         <div>
                                             <v-tooltip top v-for="n in 5" v-bind:key="'invoice'+n"> 
                                                 <v-chip slot="activator" small dark color="orange" text-color="white">1</v-chip>
-                                                <span>{{$t('message.general.INVOICES')}}:&nbsp;{{$t('message.contact.ONLINE_PAYMENT_WAITING')}}</span>
+                                                <span>{{$t('message.general.INVOICES')}}:&nbsp;{{$t('message.invoice.status.ONLINE_PAYMENT_WAITING')}}</span>
                                             </v-tooltip>
                                         </div>
                                     </div>

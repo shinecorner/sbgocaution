@@ -179,8 +179,15 @@
 									</v-flex>
 								</v-layout>
 								<v-layout row wrap>
-									<v-flex sm6 md4 lg4>
-										<v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('message.setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
+									<v-flex sm6 md4 lg4>										
+                                                                                <v-text-field
+											:label="$t('message.setting.SMTP_HOST')"
+											v-model="configs['mail.host']"
+                                                                                        :data-vv-as="$t('message.setting.SMTP_HOST')"
+                                                                                        data-vv-name="host"
+                                                                                        v-validate="'required'"
+                                                                                        :error="errors.has('email.host')"											
+											required></v-text-field>									
 									</v-flex>
 									<v-flex sm6 md4 lg4>
 										<v-text-field
@@ -205,6 +212,9 @@
 									</v-flex>
 								</v-layout>
 								<v-layout row wrap>
+                                                                        <v-flex sm6 md4 lg4>
+                                                                                <v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('message.setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
+                                                                        </v-flex>        
 									<v-flex sm6 md4 lg4>
 										<v-switch 
 											:label="$t('message.setting.SMTP_AUTHENTICATION')"
@@ -269,8 +279,7 @@ export default {
 	},
 	methods: {
 		...mapActions(["setConfigs", "saveConfig"]),
-		validateForm(scope) {
-                console.log(scope);
+		validateForm(scope) {                
                 this.$validator.validateAll(scope).then((result) => {                    
                   if (result) {
                     this.saveConfig();

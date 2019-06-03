@@ -16,6 +16,15 @@ export default {
     methods: {
         fireError(msgHTML){
             this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('message.general.ERROR')+`</div> <div class="snotifyToast__body"> `+ msgHTML +` <div class="snotify-icon snotify-icon--error"></div>`,{
+                timeout: 2000000,
+                showProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                type: 'error'
+            });
+        },
+        fireErrorSingle(msg){
+            this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('message.general.ERROR')+`</div> <div class="snotifyToast__body"> <ul><li>`+msg+`</li></ul> <div class="snotify-icon snotify-icon--error"></div>`,{
                 timeout: 2000,
                 showProgressBar: true,
                 closeOnClick: true,
@@ -25,6 +34,15 @@ export default {
         },
         fireSuccess(msgHTML){
             this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('message.general.SUCCESS')+`</div> <div class="snotifyToast__body"> `+ msgHTML +` <div class="snotify-icon snotify-icon--success"></div>`,{
+                timeout: 2000000,
+                showProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                type: 'success'
+            });
+        },
+        fireSuccessSingle(msg){
+            this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('message.general.SUCCESS')+`</div> <div class="snotifyToast__body"> <ul><li>`+msg+`</li></ul><div class="snotify-icon snotify-icon--success"></div>`,{
                 timeout: 2000,
                 showProgressBar: true,
                 closeOnClick: true,
@@ -36,6 +54,8 @@ export default {
     mounted(){
         Vue.prototype.$eventHub.$on('fireError', this.fireError);
         Vue.prototype.$eventHub.$on('fireSuccess', this.fireSuccess);
+        Vue.prototype.$eventHub.$on('fireErrorSingle', this.fireErrorSingle);
+        Vue.prototype.$eventHub.$on('fireSuccessSingle', this.fireSuccessSingle);
     }
 };
 </script>
@@ -55,5 +75,8 @@ export default {
 }
 .app-msg >>> .snotifyToast__body ul{
     
+}
+.app-msg >>> .snotify-icon{
+    top: 30px;
 }
 </style>

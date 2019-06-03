@@ -179,7 +179,7 @@ const actions = {
                     context.commit('serverHelpersHandler', s_helpers);
                 }
 		api.put('/api/configs/all', state.configs).then(response => {                        
-                        Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);			
+                        Vue.prototype.$eventHub.$emit('fireSuccessSingle', response.data.message);			
 		})
 	}
 }
