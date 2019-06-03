@@ -179,8 +179,7 @@
 									</v-flex>
 								</v-layout>
 								<v-layout row wrap>
-									<v-flex sm6 md4 lg4>
-										<!--<v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('message.setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>-->
+									<v-flex sm6 md4 lg4>										
                                                                                 <v-text-field
 											:label="$t('message.setting.SMTP_HOST')"
 											v-model="configs['mail.host']"
@@ -213,6 +212,9 @@
 									</v-flex>
 								</v-layout>
 								<v-layout row wrap>
+                                                                        <v-flex sm6 md4 lg4>
+                                                                                <v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('message.setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
+                                                                        </v-flex>        
 									<v-flex sm6 md4 lg4>
 										<v-switch 
 											:label="$t('message.setting.SMTP_AUTHENTICATION')"
