@@ -10,24 +10,24 @@
             <span class="red-alert">{{ $errors->first('email') }}</span>
           @endif
             <div class="input-wrapper">
-                <label for="validationTooltipUsername">{{ __('login.username') }}<span class="star">&#160;*</span></label>
+                <label for="validationTooltipEmail">{{ __('login.email') }}<span class="star">&#160;*</span></label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                     </div>
-                    <input type="text" class="form-control" name="email" id="validationTooltipUsername" placeholder="{{ __('login.username') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
+                    <input type="text" class="form-control" name="email" id="validationTooltipEmail" placeholder="{{ __('login.email') }}" aria-describedby="validationTooltipEmail" required="">
                     <div class="invalid-feedback">
-                        {{ __('login.username_required') }}
+                        {{ __('login.email_required') }}
                     </div>
                 </div>
             </div>
             <div class="input-wrapper">
-                <label for="validationTooltipUsername">{{ __('login.password') }}<span class="star">&#160;*</span></label>
+                <label for="validationTooltipPassword">{{ __('login.password') }}<span class="star">&#160;*</span></label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-key" aria-hidden="true"></i></span>
+                        <span class="input-group-text" id="validationTooltipPasswordPrepend"><i class="fa fa-key" aria-hidden="true"></i></span>
                     </div>
-                    <input type="password" name="password" class="form-control" id="validationTooltipUsername" placeholder="{{ __('login.password') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
+                    <input type="password" name="password" class="form-control" id="validationTooltipPasswordPrepend" placeholder="{{ __('login.password') }}" aria-describedby="validationTooltipPasswordPrepend" required="">
                     <div class="invalid-feedback">
                         {{ __('login.password_required') }}
                     </div>

@@ -2,7 +2,7 @@
   return [
 
     'LOGIN' => 'Log in',
-    'USERNAME' => 'Username',
+    'EMAIL' => 'Email',
     'PASSWORD' => 'Password',
     'LANGUAGE' => 'Language',
     'DE' => 'Deutsch',
@@ -35,7 +35,7 @@
     'NEW_PASSWORD' => "New Password",
     'CONFIRM_PASSWORD' => 'Confirm Password',
     'RESET' => 'Reset',
-    'USERNAME_REQUIRED' => 'Please provide a valid username.',
+    'EMAIL_REQUIRED' => 'Please provide a valid email.',
     'PASSWORD_REQUIRED' => 'Please provide a valid password.',
     'CONFIRM_PASSWORD_REQUIRED' => 'Please provide a valid confirm password.',
     'CONTACT' => '0800 461 461',
