@@ -16,6 +16,7 @@ return [
     'POLICIES' => 'Policen',
     'SUCCESS' => 'riuscita',
     'ERROR' => 'sbaglio',
+    'SAVE_SUCCESSFULLY' => 'Dati salvati con successo',   
     'INVOICES' => 'Rechnungen',
     'language' => [
         'DE' => 'Deutsch',

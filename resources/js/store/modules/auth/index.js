@@ -200,8 +200,7 @@ const mutations = {
         }
         state.isUserSigninWithAuth0 = false;
         router.push("/contacts");
-        setTimeout(function(){
-            console.log('kit');
+        setTimeout(function(){            
             Vue.prototype.$eventHub.$emit('fireSuccess', message);
        },1500);
     },
