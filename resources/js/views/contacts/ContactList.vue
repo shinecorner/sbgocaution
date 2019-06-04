@@ -48,7 +48,7 @@
                                     </v-tooltip>
                                     <v-tooltip top v-if="props.rowData.duplicateEmail">                                        
                                         <v-icon color="red darken-2" size="18" slot="activator">zmdi-email</v-icon>
-                                        <span>{{props.rowData.duplicateEmail}}</span>
+                                        <span v-html="props.rowData.duplicateEmail"></span>
                                     </v-tooltip>
                                     <v-tooltip top v-if="props.rowData.rc_quote">
                                         <v-icon color="green darken-2" size="18" slot="activator">zmdi-check-square</v-icon>
