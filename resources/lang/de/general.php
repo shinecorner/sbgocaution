@@ -14,6 +14,9 @@ return [
     'RESET' => 'zurücksetzen',
     'EDIT' => 'Öffnen',
     'QUOTES' => 'Policen',
+    'SUCCESS' => 'Erfolg',
+    'ERROR' => 'Fehler',
+    'SAVE_SUCCESSFULLY' => 'Daten erfolgreich gespeichert',
     'INVOICES' => 'Rechnungen',
     'langugae' => [
         'DE' => 'Deutsch',
@@ -29,4 +32,5 @@ return [
     'NO' => "Nein",
     'AUTH_LOGIN_SUCCESS' => 'Erfolgreich angemeldet.',
     'AUTH_LOGIN_FAIL' => 'Die Anmeldung ist fehlgeschlagen.',
+    'CONFIG_SUCCESS' => 'Konfiguration erfolgreich aktualisiert!',
 ];

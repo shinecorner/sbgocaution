@@ -56,4 +56,7 @@
         'PASSWORD_UPDATE' => 'mot_de_passe_update',
         'LOGOUT' => 'deconnexion',
     ],
+    'ERROR' => 'Abus',
+    '404_ERROR' => "Désolé ! La page que vous cherchiez n'existe pas.",
+    'GO_BACK_HOME' => 'Retour à la maison',
   ];

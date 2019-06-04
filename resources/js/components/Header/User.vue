@@ -16,19 +16,16 @@
             <span class="white--text fs-14 fw-bold d-block">John Leider</span>
             <span class="d-block fs-12 fw-normal">info@example.com</span>
          </div>
-         <v-list class="dropdown-list">
-            <template v-for="userLink in userLinks" v-if="userLink.id !== 4">
-               <v-list-tile :to="getMenuLink(userLink.path)" :key="userLink.id">
-                  <i :class="userLink.icon"></i>
-                  <span>{{$t('message.contact.EDIT_ACCOUNT')}}</span>
+         <v-list class="dropdown-list">            
+               <v-list-tile :to="getMenuLink('/users/user-profile')">
+                  <i class="ti-user mr-3 primary--text"></i>
+                  <span>{{$t('message.user.EDIT_ACCOUNT')}}</span>
+               </v-list-tile>                        
+               <v-list-tile @click="logoutUser">
+                  <i class="ti-power-off mr-3 error--text"></i>
+                  <span>{{$t('message.login.routes.LOGOUT')}}</span>
                </v-list-tile>
-            </template>
-            <template v-else>
-               <v-list-tile @click="logoutUser" :key="userLink.id">
-                  <i :class="userLink.icon"></i>
-                  <span>{{$t('message.general.LOGOUT')}}</span>
-               </v-list-tile>
-            </template>
+            
          </v-list>
       </div>
 	</v-menu>
@@ -39,19 +36,7 @@
    export default{
       data() {
          return {
-            userLinks: [
-               {
-                  id: 1,
-                  title: 'message.userProfile',
-                  icon: 'ti-user mr-3 primary--text',
-                  path: '/users/user-profile'
-               },                              
-               {
-                  id: 4,
-                  title: 'message.logOut',
-                  icon: 'ti-power-off mr-3 error--text'
-               }
-            ]
+            
          }
       },
       methods: {

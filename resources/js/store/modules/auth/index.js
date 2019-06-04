@@ -200,22 +200,14 @@ const mutations = {
         }
         state.isUserSigninWithAuth0 = false;
         router.push("/contacts");
-        setTimeout(function(){
-            Vue.notify({
-                group: 'loggedIn',
-                type: 'success',
-                text: message
-            });
+        setTimeout(function(){            
+            Vue.prototype.$eventHub.$emit('fireSuccess', message);
        },1500);
     },
     loginUserFailure(state, error) {
         Nprogress.done();
         localStorage.removeItem('accessToken');
-        Vue.notify({
-            group: 'loggedIn',
-            type: 'error',
-            text: error.message
-        });
+        Vue.prototype.$eventHub.$emit('fireError', error.message);        
     },
     logoutUser(state) {
         state.user = null;
@@ -231,19 +223,11 @@ const mutations = {
     signUpUserSuccess(state, user) {
         state.user = localStorage.setItem('user', user);
         router.push("/default/dashboard/ecommerce");
-        Vue.notify({
-            group: 'loggedIn',
-            type: 'success',
-            text: 'Account Created!'
-        });
+        Vue.prototype.$eventHub.$emit('fireSuccess', 'Account Created!');        
     },
     signUpUserFailure(state, error) {
         Nprogress.done();
-         Vue.notify({
-            group: 'loggedIn',
-            type: 'error',
-            text: error.message
-        });
+        Vue.prototype.$eventHub.$emit('fireError', error.message);          
     },
     signInUserWithAuth0Success(state, user) {
         state.user = user;
@@ -256,18 +240,10 @@ const mutations = {
     },
     sendEmailSuccessfully(state){
         router.push("/session/login");
-         Vue.notify({
-            group: 'loggedIn',
-            type: 'success',
-            text: 'Email Sent Successfully!'
-        });
+        Vue.prototype.$eventHub.$emit('fireSuccess', 'Email Sent Successfully!');         
     },
      invalidEmailSent(state){
-         Vue.notify({
-            group: 'loggedIn',
-            type: 'error',
-            text: 'Please Enter Valid Email Id!'
-        });
+         Vue.prototype.$eventHub.$emit('fireError', 'Please Enter Valid Email Id!');          
      }
 }
 

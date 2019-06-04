@@ -6,6 +6,12 @@
         <hr />
         <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.routes.PASSWORD_UPDATE')) }}" method="post" novalidate>
           @csrf
+          @if ($errors->has('email'))
+            <span class="red-alert">{{ $errors->first('email') }}</span>
+          @endif
+          @if ($errors->has('password'))
+            <div class="error" class="red-alert">{{ $errors->first('password') }}</div>
+          @endif
           <input type="hidden" name="token" value="{{ $token }}">
                 <div class="input-wrapper">
                     <label for="validationTooltipUsername">{{ __('login.username') }}<span class="star">&#160;*</span></label>
@@ -44,12 +50,10 @@
                             {{ __('login.confirm_password_required') }}
                         </div>
                     </div>
-
                 </div>
-
             <div class="form-group">
                 <div class="text-center reset-btn">
-                    <button type="submit" class="btn btn-success btn-block m-1 mb-3">{{ __('login.reset') }}</button>
+                    <button type="submit" class="btn btn-success btn-block">{{ __('login.reset') }}</button>
                 </div>
             </div>
         </form>

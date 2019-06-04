@@ -178,8 +178,8 @@ const actions = {
 //                    s_helpers.configs = state.configs;
                     context.commit('serverHelpersHandler', s_helpers);
                 }
-		api.put('/api/configs/all', state.configs).then(response => {
-			Vue.notify({ group: 'loggedIn', type: 'success', text: response.data.message })	
+		api.put('/api/configs/all', state.configs).then(response => {                        
+                        Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);			
 		})
 	}
 }

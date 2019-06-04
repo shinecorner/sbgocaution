@@ -14,6 +14,9 @@ return [
     'RESET' => 'reset',
     'EDIT' => 'Edita',
     'QUOTES' => 'Policen',
+    'SUCCESS' => 'riuscita',
+    'ERROR' => 'sbaglio',
+    'SAVE_SUCCESSFULLY' => 'Dati salvati con successo',   
     'INVOICES' => 'Rechnungen',
     'language' => [
         'DE' => 'Deutsch',
@@ -29,4 +32,5 @@ return [
     'NO' => "No",
     'AUTH_LOGIN_SUCCESS' => 'Effettuato l\'accesso con successo.',
     'AUTH_LOGIN_FAIL' => 'Loggato fallito.',
+    'CONFIG_SUCCESS' => 'Config aggiornato con successo!',
 ];

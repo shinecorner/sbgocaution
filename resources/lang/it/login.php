@@ -56,4 +56,7 @@
         'PASSWORD_UPDATE' => 'aggiornamento_password',
         'LOGOUT' => 'uscita',
     ],
+    'ERROR' => 'Sbaglio',
+    '404_ERROR' => "Scusate! La pagina che stavi cercando non esiste.",
+    'GO_BACK_HOME' => 'Torna a casa',
   ];

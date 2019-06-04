@@ -19,6 +19,7 @@ return [
     'REPLY_ADDRESS' => 'Antwortadresse',
     'REPLY_NAME' => 'Antwortname',
     'PORT' => 'Hafen',
+    'SMTP_HOST' => 'SMTP Host',
     'SMTP_SECURITY' => 'SMTP-Sicherheit',
     'SMTP_AUTHENTICATION' => 'SMTP-Authentifizierung',
     'SMTP_USER' => 'Benutzer',
