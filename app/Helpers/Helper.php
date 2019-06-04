@@ -111,8 +111,8 @@ if (!function_exists('getContactStatus')) {
         $status["rejected"] = __('contact.status.REJECTED');
 //      $status[] = "waiting_for_payment";
         $status["dissolved_immediately"] = __('contact.status.DISSOLVED_IMMEDIATELY');
-        $status["status_resolved"] = __('contact.status.RESOLVED');
-        $status["status_quote_waiting"] = __('contact.status.QUOTE_WAITING');
+        $status["resolved"] = __('contact.status.RESOLVED');
+        $status["quote_waiting"] = __('contact.status.QUOTE_WAITING');
         return $status;
     }
 
@@ -127,7 +127,7 @@ if(!function_exists('getPolicyStatus')) {
     function getPolicyStatus() {
         $status = array();
 
-        $status["status_quote_waiting"] = __('policy.status.STATUS_QUOTE_WAITING');
+        $status["waiting"] = __('policy.status.WAITING');
         $status["predeclared"] = __('policy.status.PREDECLARED');
         $status["accepted"] = __('policy.status.ACCEPTED');
         $status["cancellation_with_claim_pending"] = __('policy.status.CANCELLATION_WITH_CLIAM_PENDING');
@@ -135,7 +135,7 @@ if(!function_exists('getPolicyStatus')) {
         $status["dissolved_with_claims"] = __('policy.status.DISSOLVED_WITH_CLAIMS');
         $status["dissolved_without_claims"] = __('policy.status.DISSOLVED_WITHOUT_CLAIMS');
         $status["dissolved_immediately"] = __('policy.status.DISSOLVED_IMMEDIATELY');
-        $status["quote_status_joint_guarantee"] = __('policy.status.QUOTE_STATUS_JOINT_GUARANTEE');
+        $status["joint_guarantee"] = __('policy.status.JOINT_GUARANTEE');
         $status["rejected_client"] = __('policy.status.REJECTED_CLIENT');
        // $status[] = "collection";
         $status["pending_cancel"] = __('policy.status.PENDING_CANCEL');
@@ -225,10 +225,10 @@ if(!function_exists('getContactPDF')){
         $status = array();
 
        // $status['content_pdf']  = "CONTACT_PDF_PRECONFIRMATION";
-        $status['content_pdf_img'] = __('contact.PDF_PRECONFIRMATION_IMG');
-        $status['content_pdf1'] = __('contact.PDF_REJECTED');
+        $status['content_pdf_img'] = __('contact.pdf.PRECONFIRMATION_IMG');
+        $status['content_pdf1'] = __('contact.pdf.REJECTED');
        // $status['refund']       = "CONTACT_PDF_OFFER";
-        $status['offer_print'] = __('contact.PDF_OFFER_PRINT_LETTER');
+        $status['offer_print'] = __('contact.pdf.OFFER_PRINT_LETTER');
         return $status;
     }
 
@@ -263,22 +263,22 @@ if(!function_exists('getLeadSource')){
     function getLeadSource(){
         $leadsource = array();
 
-        $leadsource['online_registration'] = __('contact.ONLINE_REGISTRATION');
-        $leadsource['affiliate_marketing'] = __('contact.AFFILIATE_MARKETNG');
-        $leadsource['partner_management'] = __('contact.PARTNERVERWALTUNG');
-        $leadsource['other'] = __('contact.ANDERE');
-        $leadsource['partner_login'] = __('contact.LEAD_SOURCE_PARTNERLOGIN');
-        $leadsource['call_centre'] = __('contact.LEAD_SOURCE_CALLCENTRE');
+        $leadsource['online_registration'] = __('contact.leadsource.ONLINE_REGISTRATION');
+        $leadsource['affiliate_marketing'] = __('contact.leadsource.AFFILIATE_MARKETNG');
+        $leadsource['partner_management'] = __('contact.leadsource.PARTNERVERWALTUNG');
+        $leadsource['other'] = __('contact.leadsource.ANDERE');
+        $leadsource['partner_login'] = __('contact.leadsource.PARTNERLOGIN');
+        $leadsource['call_centre'] = __('contact.leadsource.CALLCENTRE');
 
-        $leadsource['pdf_cls'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_CLS');
-        $leadsource['pdf_mks'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_MKS');
-        $leadsource['pdf_go'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_GO');
-        $leadsource['form_offer'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_OFFER');
-        $leadsource['form_preconfirmation'] = __('contact.COM_INVOICES_LEADSOURCE_PDF_PRECONFIRMATION');
-        $leadsource['mks_gocaution'] = __('contact.COM_INVOICES_LEADSOURCE_MKS_GOCAUTION');
-        $leadsource['mks_offer'] = __('contact.COM_INVOICES_LEADSOURCE_MKS');
-        $leadsource['cls_offer'] = __('contact.COM_INVOICES_LEADSOURCE_CLS');
-        $leadsource['ca_offer'] = __('contact.COM_INVOICES_LEADSOURCE_CA');
+        $leadsource['pdf_cls'] = __('contact.leadsource.PDF_CLS');
+        $leadsource['pdf_mks'] = __('contact.leadsource.PDF_MKS');
+        $leadsource['pdf_go'] = __('contact.leadsource.PDF_GO');
+        $leadsource['form_offer'] = __('contact.leadsource.PDF_OFFER');
+        $leadsource['form_preconfirmation'] = __('contact.leadsource.PDF_PRECONFIRMATION');
+        $leadsource['mks_gocaution'] = __('contact.leadsource.MKS_GOCAUTION');
+        $leadsource['mks_offer'] = __('contact.leadsource.MKS');
+        $leadsource['cls_offer'] = __('contact.leadsource.CLS');
+        $leadsource['ca_offer'] = __('contact.leadsource.CA');
 
         return $leadsource;
     }
