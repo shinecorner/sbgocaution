@@ -17,7 +17,7 @@
                         <app-card                                
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12"
-                        >            
+                        >                                      
                                 <div class="v-table__overflow list-table-container">
 				<vuetable ref="vuetable"
                                     :no-data-template="$t('message.general.DATA_LOADING')"
@@ -107,8 +107,8 @@
                                 </template>
                                 <template slot="c_invoices" slot-scope="props">
                                     <span class="amount-div">{{ 'CHF 94.50' }}</span>
-                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">1 {{ $t('message.contact.ADD_NEW_POLICY') }}</span>
-                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">1 {{ $t('message.contact.TOTAL_INVOICES') }}</span>                                    
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('message.contact.ADD_NEW_POLICY') }}</span>
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('message.contact.TOTAL_INVOICES') }}</span>                                    
                                 </template>
                                 <template slot="c_statusdropdown" slot-scope="props">
                                     <v-menu offset-y>
@@ -132,15 +132,15 @@
                                         <v-chip small :id="'c_status_chip_'+props.rowData.id" :class="props.rowData.status_class" text-color="white">{{props.rowData.status}}</v-chip>
                                         
                                         <div>
-                                            <v-tooltip top> 
-                                                <v-chip slot="activator" small dark color="orange" text-color="white">1</v-chip>
-                                                <span>{{$t('message.general.QUOTES')}}:&nbsp;{{$t('message.contact.status.QUOTE_WAITING')}}</span>
+                                            <v-tooltip top v-for="(quote_count,quote_status, quote_index) in props.rowData.count_policy_by_status" v-bind:key="quote_index"> 
+                                                <v-chip slot="activator" small dark color="orange" text-color="white">{{quote_count}}</v-chip>
+                                                <span>{{$t('message.general.QUOTES')}}:&nbsp;{{tConverted('message.policy.status.'+quote_status)}}</span>
                                             </v-tooltip>
                                         </div>
                                         <div>
-                                            <v-tooltip top v-for="n in 5" v-bind:key="'invoice'+n"> 
-                                                <v-chip slot="activator" small dark color="orange" text-color="white">1</v-chip>
-                                                <span>{{$t('message.general.INVOICES')}}:&nbsp;{{$t('message.invoice.status.ONLINE_PAYMENT_WAITING')}}</span>
+                                            <v-tooltip top v-for="(invoice_count,invoice_status, invoice_index) in props.rowData.count_invoice_by_status" v-bind:key="invoice_index"> 
+                                                <v-chip slot="activator" small dark color="orange" text-color="white">{{invoice_count}}</v-chip>
+                                                <span>{{$t('message.general.INVOICES')}}:&nbsp;{{tConverted('message.invoice.status.'+invoice_status)}}</span>
                                             </v-tooltip>
                                         </div>
                                     </div>
@@ -198,7 +198,9 @@
 import api from "Api";
 import { mapGetters } from "vuex";
 import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
+import globalFunction from "Helpers/helpers";
 export default {
+    mixins: [globalFunction],
     components: {
         Vuetable,
         VuetablePagination,        

@@ -285,11 +285,7 @@ export default {
                     this.saveConfig();
                   }
                   else{
-                    let msgHTML = '';
-                    _.forOwn(this.$validator.errors.all(scope), function(msg, key) { 
-                        msgHTML += ('<li>' + msg + '<\/li>')
-                    });            
-                    Vue.prototype.$eventHub.$emit('fireError', '<ul>' + msgHTML + '<\/ul>');
+                    Vue.prototype.$eventHub.$emit('fireError', this.$validator.errors.all(scope));
                     return;
                   }
                 });

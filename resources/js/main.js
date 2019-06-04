@@ -124,7 +124,16 @@ Vue.use(wysiwyg, {})
 Vue.use(GlobalComponents);
 //Vue.use(VueVideoPlayer);
 //Vue.use(Croppa);
-Vue.use(Snotify);
+Vue.use(Snotify,{
+	toast: {    	
+		showProgressBar: true,
+		closeOnClick: true,
+		pauseOnHover: true,
+	  },
+	  global:{
+		oneAtTime: true,
+	  }
+});
 Vue.use(VueGoogleMaps, {
 	load: {
 		key: 'AIzaSyBtdO5k6CRntAMJCF-H5uZjTCoSGX95cdk' // Add your here your google map api key
