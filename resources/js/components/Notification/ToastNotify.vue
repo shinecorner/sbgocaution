@@ -24,15 +24,13 @@ export default {
                 msgHTML += ('<li>' + msg + '<\/li>')
             }            
             this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('message.general.ERROR')+`</div> <div class="snotifyToast__body"> <ul>`+ msgHTML +` </ul><div class="snotify-icon snotify-icon--error"></div>`,{                
-                type: 'error', 
-                timeout: 2000               
+                type: 'error'                
             });
         },
         
         fireSuccess(msg){                                    
             this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('message.general.SUCCESS')+`</div> <div class="snotifyToast__body"> <ul><li>`+ msg +` </li></ul><div class="snotify-icon snotify-icon--success"></div>`,{                
-                type: 'success',
-                timeout: 2000
+                type: 'success'
             });
         }
     },
