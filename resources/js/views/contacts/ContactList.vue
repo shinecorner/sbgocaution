@@ -107,7 +107,7 @@
                                 </template>
                                 <template slot="c_invoices" slot-scope="props">
                                     <span class="amount-div">{{ 'CHF 94.50' }}</span>
-                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('message.contact.ADD_NEW_POLICY') }}</span>
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('message.contact.TOTAL_POLICIES') }}</span>
                                     <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('message.contact.TOTAL_INVOICES') }}</span>                                    
                                 </template>
                                 <template slot="c_statusdropdown" slot-scope="props">
@@ -128,8 +128,8 @@
                                     </v-menu>
                                 </template>
                                 <template slot="c_status" slot-scope="props">
-                                    <div :class="props.rowData.status_class.replace('label-status','column') + ' status-chips'" :id="'c_status_'+props.rowData.id">
-                                        <v-chip small :id="'c_status_chip_'+props.rowData.id" :class="props.rowData.status_class" text-color="white">{{props.rowData.status}}</v-chip>
+                                    <div :columnclass="props.rowData.status_class.replace('label-status','column')" :class="props.rowData.status_class.replace('label-status','column') + ' status-chips'" :id="'c_status_'+props.rowData.id">
+                                        <v-chip small :id="'c_status_chip_'+props.rowData.id" :chipclass="props.rowData.status_class" :class="props.rowData.status_class" text-color="white">{{props.rowData.status}}</v-chip>
                                         
                                         <div>
                                             <v-tooltip top v-for="(quote_count,quote_status, quote_index) in props.rowData.count_policy_by_status" v-bind:key="quote_index"> 
@@ -294,19 +294,25 @@ export default {
            });
         },
         changeStatus(val,id){
+            let that = this;
             api.put('/api/contacts/change_status/'+id, {status: val}) .then(function (response) {
                 if((typeof response.data.data !== "undefined") && (response.data.data.hasOwnProperty('id'))){                    
                     let row_id = response.data.data.id;
                     
-                    let columnModifiers = $('#c_status_'+row_id).attr('class').split(/\s+/).filter(className => { return className.match(/^column-/) });
-                    $('#c_status_'+row_id).removeClass(columnModifiers.join(' '));
-                    $('#c_status_'+row_id).addClass(response.data.data.status_class.replace('label-status','column'));
+                    let columnclass = $('#c_status_'+row_id).attr('columnclass');
+                    let new_columnclass = response.data.data.status_class.replace('label-status','column');
+                    $('#c_status_'+row_id).removeClass(columnclass);
+                    $('#c_status_'+row_id).attr('columnclass', new_columnclass);
+                    $('#c_status_'+row_id).addClass(new_columnclass);
                     
-                    let statusModifiers = $('#c_status_chip_'+row_id).attr('class').split(/\s+/).filter(className => { return className.match(/^label-status-/) });
-                    $('#c_status_chip_'+row_id).removeClass(statusModifiers.join(' '));
-                    $('#c_status_chip_'+row_id).addClass(response.data.data.status_class);
+                    let chipclass = $('#c_status_chip_'+row_id).attr('chipclass');
+                    let new_chipclass = response.data.data.status_class;
+                    $('#c_status_chip_'+row_id).removeClass(chipclass);
+                    $('#c_status_chip_'+row_id).attr('chipclass', new_chipclass);
+                    $('#c_status_chip_'+row_id).addClass(new_chipclass);
 
-                    $('#c_status_chip_'+row_id).html(response.data.data.status);
+                    $('#c_status_chip_'+row_id+' .v-chip__content').html(response.data.data.status);
+                    Vue.prototype.$eventHub.$emit('fireSuccess', that.$t('message.general.SAVE_SUCCESSFULLY')); 
                 }
             }).catch(function (error) {
                 console.log(error);
