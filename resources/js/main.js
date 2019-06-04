@@ -129,6 +129,7 @@ Vue.use(Snotify,{
 		showProgressBar: true,
 		closeOnClick: true,
 		pauseOnHover: true,
+                timeout: 2000
 	  },
 	  global:{
 		oneAtTime: true,
