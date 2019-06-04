@@ -143,12 +143,8 @@ export default {
                 user
               });
           }
-          else{
-            let msgHTML = '';
-            _.forOwn(this.$validator.errors.all(), function(msg, key) { 
-                msgHTML += ('<li>' + msg + '<\/li>')
-            });            
-            Vue.prototype.$eventHub.$emit('fireError', '<ul>' + msgHTML + '<\/ul>');
+          else{            
+            Vue.prototype.$eventHub.$emit('fireError', this.$validator.errors.all());
             return;
           }
         });        

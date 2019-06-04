@@ -4,42 +4,51 @@
 .column-default{
     border-left: 3px solid;
     border-color: #777777;
+    height: 100%;
 }
 
 .column-primary {
     border-left: 3px solid;
     border-color: #337ab7;
+    height: 100%;
 }
 .column-success{
     border-left: 3px solid;
     border-color: #449d44;
+    height: 100%;
 }
 
 .column-info{
     border-left: 3px solid;
     border-color: #31b0d5;
+    height: 100%;
 }
 .column-warning {
     border-left: 3px solid;
     border-color: #f0ad4e;
+    height: 100%;
 }
 .column-danger {
     border-left: 3px solid;
     border-color: #F44336;
+    height: 100%;
 }
 .column-offer {
     border-left: 3px solid;
     border-color: #3f8ddd;
+    height: 100%;
 }
 
 .column-in-clarification {
     border-left: 3px solid;
     border-color: #9c27b0;
+    height: 100%;
 }
 
 .column-partner, .column-pre-confirmation, .column-inverse {
   border-left: 3px solid;  
   border-color: #066938;
+  height: 100%;
 }
 .theme--light.v-chip{
     &.label-status-default {
@@ -230,3 +239,4 @@
 .search-content .perpage_selectbox{
     width: 65px;    
 }
+button:focus{outline:none;}
