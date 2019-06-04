@@ -32,4 +32,5 @@ return [
     'NO' => "Non",
     'AUTH_LOGIN_SUCCESS' => 'Connecté avec succès.',
     'AUTH_LOGIN_FAIL' => 'La connexion a échoué.',
+    'CONFIG_SUCCESS' => 'Config mis à jour avec succès !',
 ];

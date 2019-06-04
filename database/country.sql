@@ -109,7 +109,7 @@ INSERT INTO `g84hn_countries` (`dename`, `frname`, `itname`, `enname`, `alpha_2`
 ( 'Kokosinseln', 'Îles Cocos', 'Isole Cocos (Keeling)', 'Cocos (Keeling) Islands', 'CC', 'CCK',now(), now()),
 ( 'Kolumbien', 'Colombie', 'Colombia', 'Colombia', 'CO', 'COL',now(), now()),
 ( 'Komoren', 'Comores (pays)', 'Comore', 'Comoros', 'KM', 'COM',now(), now()),
-( 'Kongo, Republik (ehem. K.-Brazzaville)', 'République démocratique du Congo', 'Rep. del Congo', 'Congo', 'CG', 'COG',now(), now()),
+( 'Kongo', 'République démocratique du Congo', 'Rep. del Congo', 'Congo', 'CG', 'COG',now(), now()),
 ( 'Korea, Demokratische Volksrepublik (Nordkorea)', 'Corée du Nord', 'Corea del Nord', 'Korea (Democratic People\'s Republic of)', 'KP', 'PRK',now(), now()),
 ( 'Korea, Republik (Südkorea)', 'Corée du Sud', 'Corea del Sud', 'Korea (Republic of)', 'KR', 'KOR',now(), now()),
 ( 'Kroatien', 'Croatie', 'Croazia', 'Croatia', 'HR', 'HRV',now(), now()),

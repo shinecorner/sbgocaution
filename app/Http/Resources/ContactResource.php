@@ -24,7 +24,7 @@ class ContactResource extends JsonResource
         if($this->user_id && property_exists($this, 'username')) 
             $data['joomlauser'] = $this->username;
         else 
-            $data['joomlauser'] = __('general.JNO');
+            $data['joomlauser'] = __('general.NO');
 
         $data['saluation_formatted'] = get_salutation($this->salutation);
         $data['language_flag'] = get_language_flag($this->language);
@@ -41,51 +41,7 @@ class ContactResource extends JsonResource
             $data['city'] = "";
         }
 
-        $policies = $this->policies;
-        $data['count_policies'] = $policies->count();
-        $invoice_count = 0;
-        $invoice_total = 0;
-        $LichtensteinZipCodes = getLichtensteinZipCodes();
-        $LichtensteinMK = [];
-        foreach($policies as $policy) {
-            foreach($policy->invoices as $invoice){
-                $invoice_count++;
-                $invoice_total += $invoice->computed_total;
-            }
-            if(in_array($policy->policy_address->zip, $LichtensteinZipCodes)){
-                $LichtensteinMK[] = $policy->policy_num;
-            }
-        }
-        if(count($LichtensteinMK) > 0){
-            $data['LichtensteinZipCodesResult'] = __('contact.INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST', [ 'POLICY_NUMS' => implode(", ", $LichtensteinMK)]);
-        }
-        $data['count_invoices'] = $invoice_count;
-        $data['invoice_total'] = __('general.CHF') . format($invoice_total);
-        if($policies->isNotEmpty()) {
-
-            $policy_statuses = array_keys(getPolicyStatus());
-            foreach($policy_statuses as $policy_status) {
-                $count = $policies->where('status', $policy_status)->count();
-                if($count > 0){
-                    $data['count_policy_by_status'][$policy_status] = $count;
-                }
-            }
-
-            $invoice_statuses = array_keys(getInvoiceStatus());
-            foreach($policies as $policy){
-                $sum = 0;
-                foreach($invoice_statuses as $invoice_status) {
-                    $count = $policy->invoices->where('status', $invoice_status)->count();
-                    if($count > 0) {
-                        if(isset($data['count_invoice_by_status'][$invoice_status])){
-                            $data['count_invoice_by_status'][$invoice_status]++;
-                        } else {
-                            $data['count_invoice_by_status'][$invoice_status] = $count;
-                        }
-                    }
-                }
-            }
-        }
+        $this->policyAndInvoiceStatusCounts($data);
 
         if($this->rc_quote == "Yes")
             $data['rc_quote'] = 1;
@@ -162,6 +118,53 @@ class ContactResource extends JsonResource
                 $data['duplicateEmail'] .= "<br/>";
         }
 
+    }
+
+    private function policyAndInvoiceStatusCounts(&$data){
+        $policies = $this->policies;
+        $data['count_policies'] = $policies->count();
+        $invoice_count = 0;
+        $invoice_total = 0;
+        $LichtensteinZipCodes = getLichtensteinZipCodes();
+        $LichtensteinMK = [];
+        foreach($policies as $policy) {
+            foreach($policy->invoices as $invoice){
+                $invoice_count++;
+                $invoice_total += $invoice->computed_total;
+            }
+            if(in_array($policy->policy_address->zip, $LichtensteinZipCodes)){
+                $LichtensteinMK[] = $policy->policy_num;
+            }
+        }
+        if(count($LichtensteinMK) > 0){
+            $data['LichtensteinZipCodesResult'] = __('contact.INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST', [ 'POLICY_NUMS' => implode(", ", $LichtensteinMK)]);
+        }
+        $data['count_invoices'] = $invoice_count;
+        $data['invoice_total'] = format($invoice_total,__('general.CHF'));
+        if($policies->isNotEmpty()) {
+
+            $policy_statuses = array_keys(getPolicyStatus());
+            foreach($policy_statuses as $policy_status) {
+                $count = $policies->where('status', $policy_status)->count();
+                if($count > 0){
+                    $data['count_policy_by_status'][$policy_status] = $count;
+                }
+            }
+
+            $invoice_statuses = array_keys(getInvoiceStatus());
+            foreach($policies as $policy){
+                foreach($invoice_statuses as $invoice_status) {
+                    $count = $policy->invoices->where('status', $invoice_status)->count();
+                    if($count > 0) {
+                        if(isset($data['count_invoice_by_status'][$invoice_status])){
+                            $data['count_invoice_by_status'][$invoice_status]++;
+                        } else {
+                            $data['count_invoice_by_status'][$invoice_status] = $count;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }
