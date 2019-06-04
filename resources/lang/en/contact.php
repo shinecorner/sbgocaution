@@ -6,7 +6,7 @@ return [
     'TOTAL_INVOICES' => 'Invoices',
     'TOTAL_POLICIES' => 'Policies',
     'LINKED_TO_USER' => 'User',
-    'RC_QUOTE_TOOLTIP' => 'Is interested in a PH offer.',
+    'RC_POLICY_TOOLTIP' => 'Is interested in a PH offer.',
     'CALL_LEAD_SOURCE_TOOLTIP' => 'Call center',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offer by post',
     'ADD_NEW_POLICY' => 'New Policy',
@@ -43,7 +43,36 @@ return [
         'REJECTED' => 'Rejected',
         'DISSOLVED_IMMEDIATELY' => 'Dissolved after Inscription',
         'RESOLVED' => 'Resolved',
-        'QUOTE_WAITING' => 'Waiting for processing'
+        'POLICY_WAITING' => 'Waiting for processing'
     ],
-    'INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST' => ":POLICY_NUMS gehören zu Lichtenstein"
+    'INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST' => ":POLICY_NUMS gehören zu Lichtenstein",
+    'company_type' => [
+        'PUBLIC_LIMITED_COMPANY' => "PUBLIC LIMITED COMPANY",
+        'LIMITED_LIABILITY_COMPANY' => "limited liability company",
+        'SIMPLE_PARTNERSHIP' => "Einfache Gesellschaft",
+        'SOLE_PROPRIETORSHIP' => "sole proprietorship",
+        'cooperative' => "cooperative",
+        'collective_society' => "collective society",
+        'limited_partnership' => "limited partnership",
+        'stock_company' => "Limited partnership",
+        'institute_of_public_law' => "Institute of Public Law",
+        'club' => "club",
+        'endowment' => "endowment"
+    ],
+    'company_branch' => [
+        'CAR_TRAFFIC' => "Car & Traffic",
+        'BAUEN_RENOVIEREN' => "Building & Renovating",
+        'AUTHORITIES_ASSOCIATIONS' => "Authorities and associations",
+        'EDUCATION_SCIENCE' => "Education and Science",
+        'COMPUTERS_ELECTRONICS' => "Computers & Electronics",
+        'SERVICE' => "service",
+        'LEISURE_TRAVEL' => "Leisure & Travel",
+        'FINANCIAL_SERVICE' => "financial service",
+        'HEALTH_WELLNESS' => "Health and Wellness",
+        'WHOLESALE_RETAIL' => "Wholesale & Retail",
+        'IMMOBILIEN' => "real estate",
+        'HOTEL_GASTRONOMIE' => "Hotel & Gastronomy",
+        'LIVING_FURNISHING' => "Living & Furnishing",
+        'SONSTIGE' => "Other"
+    ]    
 ];

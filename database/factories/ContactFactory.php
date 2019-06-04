@@ -14,17 +14,17 @@ $factory->define(Contact::class, function (Faker $faker) {
         $duplicate = 1;
     }
     return [
-        'date' => now(),
         'real_contact_num' => $real_contact_num,
         'user_id' => $faker->randomElement([1,2,3,4,5,6]),
         'contact_num' => getUniqueNum($real_contact_num, 3),
+        'contact_type' => $faker->randomElement([1,2]),
         'salutation' => $faker->randomElement(['mr', 'mrs', 'company']),
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
-        'language' => $faker->randomElement(['de-DE', 'fr-FR', 'it-IT', 'en-EN']),
+        'language' => $faker->randomElement(['de', 'en', 'fr', 'it']),
         'email' => $email,
         'status' => $faker->randomElement(array_keys(getContactStatus())),
-        'rc_quote' => $faker->randomElement(['Yes', 'No']),
+        'rc_policy' => $faker->randomElement(['Yes', 'No']),
         'lead_source' => $faker->randomElement(array_keys(getLeadSource())),
         'is_duplicate' => $duplicate
     ];

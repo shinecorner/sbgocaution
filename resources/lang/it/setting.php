@@ -3,7 +3,7 @@ return [
     'SETTING' => 'Impostazione',
     'SETTINGS' => 'Impostazioni',
     'INVOICE_NUMBER_FORMAT' => "Formato del numero di fattura",
-    'QUOTE_NUMBER_FORMAT' => "Formato del numero del preventivo",
+    'POLICY_NUMBER_FORMAT' => "Formato del numero del preventivo",
     'CONTACT_NUMBER_FORMAT' => "Formato del numero di contatto",
     'INVOICE_DATE_FORMAT' => "Formato della data di fatturazione",
     'ITEMS_PER_PAGE' => "Limite liste predefinito",

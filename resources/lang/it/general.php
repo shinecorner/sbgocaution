@@ -13,7 +13,7 @@ return [
     'CLEAR' => 'Chiaro',
     'RESET' => 'reset',
     'EDIT' => 'Edita',
-    'QUOTES' => 'Policen',
+    'POLICIES' => 'Policen',
     'SUCCESS' => 'riuscita',
     'ERROR' => 'sbaglio',
     'SAVE_SUCCESSFULLY' => 'Dati salvati con successo',   

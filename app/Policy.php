@@ -19,5 +19,15 @@ class Policy extends Model
     {
     	return $this->hasOne('App\PolicyAddress');
     }
+
+    /**
+     * Get related preconfirmations collection object.
+     * 
+     * @return Relationship Object
+     */
+    public function garants() 
+    {
+        return $this->hasMany('App\Garant');
+    }
 	
 }

@@ -27,7 +27,7 @@ class ConfigsTableSeeder extends Seeder
             	'value' => 'RE-[yyyy]150[num]'
             ],
             [
-            	'option' => 'crm.quote_num_format',
+            	'option' => 'crm.policy_num_format',
             	'value' => 'MK-[yyyy]950[num]'
             ],
             [
