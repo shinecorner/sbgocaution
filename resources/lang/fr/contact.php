@@ -5,7 +5,7 @@ return [
     'ID'=> 'Numéro de client',
     'TOTAL_INVOICES' => 'Factures',
     'LINKED_TO_USER' => 'User',    
-    'RC_QUOTE_TOOLTIP' => 'Est intéressé par une offre PH.',
+    'RC_POLICY_TOOLTIP' => 'Est intéressé par une offre PH.',
     'CALL_LEAD_SOURCE_TOOLTIP' => 'centre d\'appels',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offre par courrier',
     'ADD_NEW_POLICY' => 'Police(n)',
@@ -42,7 +42,36 @@ return [
         'REJECTED' => 'Rejected',
         'DISSOLVED_IMMEDIATELY' => 'Dissous après l\'achèvement',
         'RESOLVED' => 'Résigné',
-        'QUOTE_WAITING' => 'En validation'
+        'POLICY_WAITING' => 'En validation'
     ],
-    'INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST' => ":POLICY_NUMS gehören zu Lichtenstein"
+    'INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST' => ":POLICY_NUMS gehören zu Lichtenstein",
+    'company_type' => [
+        'PUBLIC_LIMITED_COMPANY' => "SOCIÉTÉ ANONYME",
+        'LIMITED_LIABILITY_COMPANY' => "société à responsabilité limitée",
+        'SIMPLE_PARTNERSHIP' => "Partenariat simple",
+        'SOLE_PROPRIETORSHIP' => "entreprise individuelle",
+        'cooperative' => "coopératif",
+        'collective_society' => "société collective",
+        'limited_partnership' => "société en commandite",
+        'stock_company' => "Société en commandite",
+        'institute_of_public_law' => "Institut de droit public",
+        'club' => "boîte de nuit",
+        'endowment' => "fonds de dotation"
+    ],
+    'company_branch' => [
+        'CAR_TRAFFIC' => "Voiture et circulation",
+        'BAUEN_RENOVIEREN' => "Bâtiment & Rénovation",
+        'AUTHORITIES_ASSOCIATIONS' => "Autorités et associations",
+        'EDUCATION_SCIENCE' => "Enseignement et science",
+        'COMPUTERS_ELECTRONICS' => "Ordinateurs et électronique",
+        'SERVICE' => "messe",
+        'LEISURE_TRAVEL' => "Loisirs et voyages",
+        'FINANCIAL_SERVICE' => "service financier",
+        'HEALTH_WELLNESS' => "Santé et bien-être",
+        'WHOLESALE_RETAIL' => "Commerce de gros et de détail",
+        'IMMOBILIEN' => "biens immobiliers",
+        'HOTEL_GASTRONOMIE' => "Hôtellerie & Gastronomie",
+        'LIVING_FURNISHING' => "Séjour & Ameublement",
+        'SONSTIGE' => "Autre"
+    ]    
 ];

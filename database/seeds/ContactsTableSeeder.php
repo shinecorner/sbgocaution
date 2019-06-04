@@ -14,18 +14,31 @@ class ContactsTableSeeder extends Seeder
     public function run()
     {
         Schema::disableForeignKeyConstraints();
-        DB::table('contacts')->truncate();
+        DB::table('garants')->truncate();
         DB::table('policies')->truncate();
         DB::table('invoices')->truncate();
+        DB::table('addresses')->truncate();
+        DB::table('contacts_companies')->truncate();
+        DB::table('contacts')->truncate();
 	    factory(App\Contact::class, 100)->create()->each(function ($contact) {
             $contact->addresses()->save(factory(App\Address::class)->create());
-            for($i = mt_rand(1,6); $i < 6; $i++){
+
+            if($contact->contact_type == 2) {
+                $contact->companies()->save(factory(App\ContactCompany::class)->create());
+            }
+
+            for($i = mt_rand(1,6); $i < 6; $i++) {
                 $policy = factory(App\Policy::class)->create();
                 $policy_address = factory(App\PolicyAddress::class)->create();
                 $policy->policy_address()->save($policy_address);
-                $contact->policies()->save($policy); 
+                for($j = mt_rand(1,3); $j <= 3; $j++) {
+                    $garant = factory(App\Garant::class)->create();
+                    $policy->garants()->save($garant);
+                }
                 $policy->invoices()->save(factory(App\Invoice::class)->create());
+                $contact->policies()->save($policy); 
             }
+
         });
         Schema::enableForeignKeyConstraints();
     }

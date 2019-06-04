@@ -5,7 +5,7 @@ return [
     'ID'=> 'Kunden ID',
     'TOTAL_INVOICES' => 'Rechnung(en)',
     'LINKED_TO_USER' => 'User',
-    'RC_QUOTE_TOOLTIP' => 'Ist an einer PH-Offerte interessiert.',
+    'RC_POLICY_TOOLTIP' => 'Ist an einer PH-Offerte interessiert.',
     'CALL_LEAD_SOURCE_TOOLTIP' => 'Call-Center',    
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offerte per Post',
     'ADD_NEW_POLICY' => "Police(n)",
@@ -42,7 +42,36 @@ return [
         'REJECTED' => "Abgelehnt",
         'DISSOLVED_IMMEDIATELY' => "Aufgelöst nach Abschluss",
         'RESOLVED' => "Gekündigt",
-        'QUOTE_WAITING' => "Warten auf Prüfung"
+        'POLICY_WAITING' => "Warten auf Prüfung"
     ],
-    'INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST' => ":POLICY_NUMS gehören zu Lichtenstein"
+    'INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST' => ":POLICY_NUMS gehören zu Lichtenstein",
+    'company_type' => [
+        'PUBLIC_LIMITED_COMPANY' => "AG",
+        'LIMITED_LIABILITY_COMPANY' => "GmbH",
+        'SIMPLE_PARTNERSHIP' => "Einfache Gesellschaft",
+        'SOLE_PROPRIETORSHIP' => "Einzelfirma",
+        'cooperative' => "Genossenschaft",
+        'collective_society' => "Kollektivgesellschaft",
+        'limited_partnership' => "Kommanditgesellschaft",
+        'stock_company' => "Kommandit Aktiengesellschaft",
+        'institute_of_public_law' => "Institut des öffentl. Rechts",
+        'club' => "Verein",
+        'endowment' => "Stiftung"
+    ],
+    'company_branch' => [
+        'CAR_TRAFFIC' => "Auto & Verkehr",
+        'BAUEN_RENOVIEREN' => "Bauen & Renovieren",
+        'AUTHORITIES_ASSOCIATIONS' => "Behörden und Verbände",
+        'EDUCATION_SCIENCE' => "Bildung und Wissenschaft",
+        'COMPUTERS_ELECTRONICS' => "Computer & Elektronik",
+        'SERVICE' => "Dienstleistung",
+        'LEISURE_TRAVEL' => "Freizeit & Reisen",
+        'FINANCIAL_SERVICE' => "Finanzdienstleistung",
+        'HEALTH_WELLNESS' => "Gesundheit und Wellness",
+        'WHOLESALE_RETAIL' => "Gross- & Einzelhandel",
+        'IMMOBILIEN' => "Immobilien",
+        'HOTEL_GASTRONOMIE' => "Hotel & Gastronomie",
+        'LIVING_FURNISHING' => "Wohnen & Einrichten",
+        'SONSTIGE' => "Sonstige"
+    ]
 ];

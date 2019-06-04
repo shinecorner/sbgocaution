@@ -3,7 +3,7 @@ return [
     'SETTING' => 'Réglage de',
     'SETTINGS' => 'Réglages',
     'INVOICE_NUMBER_FORMAT' => "Format du numéro de facture",
-    'QUOTE_NUMBER_FORMAT' => "Format du numéro de citation",
+    'POLICY_NUMBER_FORMAT' => "Format du numéro de citation",
     'CONTACT_NUMBER_FORMAT' => "Format du numéro de contact",
     'INVOICE_DATE_FORMAT' => "Format de la date de facturation",
     'ITEMS_PER_PAGE' => "Longueur des listes",

@@ -10,7 +10,7 @@ class Contact extends Model
 {
 
     protected $fillable = [
-        'id', 'date', 'real_contact_num', 'user_id', 'salutation', 'name', 'firstname', 'language', 'address', 'contact_formate', 'status', 'rc_quote', 'zip', 'city'
+        'id', 'date', 'real_contact_num', 'user_id', 'salutation', 'first_name', 'last_name', 'language', 'address', 'contact_formate', 'status', 'rc_policy', 'zip', 'city'
     ];
 
     /**
@@ -21,6 +21,15 @@ class Contact extends Model
      */
     public function getDateAttribute($value) {
         return Carbon::parse($value)->format(config('crm.display_date_format'));
+    }
+
+    /**
+     * Get related companies collection.
+     * 
+     * @return Relationship Object
+     */
+    public function companies() {
+        return $this->hasMany('App\ContactCompany');
     }
 
     /**

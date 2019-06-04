@@ -13,7 +13,7 @@ return [
     'CLEAR' => 'Clair',
     'RESET' => 'réinitialiser',
     'EDIT' => 'Éditer',
-    'QUOTES' => 'Polices',
+    'POLICIES' => 'Polices',
     'SUCCESS' => 'Succès',
     'ERROR' => 'Erreur',    
     'INVOICES' => 'Factures',

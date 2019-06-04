@@ -3,7 +3,7 @@ return [
     'SETTING' => 'Einstellung',
     'SETTINGS' => 'Einstellungen',
     'INVOICE_NUMBER_FORMAT' => "Format der Rechnungsnummer",
-    'QUOTE_NUMBER_FORMAT' => "Format der Angebotsnummer",
+    'POLICY_NUMBER_FORMAT' => "Format der Angebotsnummer",
     'CONTACT_NUMBER_FORMAT' => "Format der Kontaktnummer",
     'INVOICE_DATE_FORMAT' => "Format des Rechnungsdatums",
     'ITEMS_PER_PAGE' => "Standard Listenlänge",

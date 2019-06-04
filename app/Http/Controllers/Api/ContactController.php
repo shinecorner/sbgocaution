@@ -20,7 +20,9 @@ class ContactController extends Controller
     {
         $contact_statuses = [
             'contact_statuslist',
-            'contactPDF_statuslist'
+            'contactPDF_statuslist',
+            'policy_statuslist',
+            'invoice_statuslist'
         ];
         
         $data = [];
@@ -29,7 +31,7 @@ class ContactController extends Controller
         }
 
         $data['helpers']['navbar_contacts_count'] = Contact::whereIn('status', [
-            "new", "status_quote_waiting", "pre_confirmation_pending"
+            "new", "status_policy_waiting", "pre_confirmation_pending"
         ])->count();
 
         $configs = Config::all();
@@ -40,7 +42,18 @@ class ContactController extends Controller
 
         $data['helpers']['configs'] = $config_data;
 
-        return ContactResource::collection(Contact::latest()->paginate($request->per_page))->additional($data);
+        $query = Contact::latest();
+
+        if($request->has('search')) {
+            $this->search($request, $query);
+        }
+
+        if($request->has('filters')) {
+            $this->filters($request, $query, ['status', 'contact_type', 'policies', 'language', 'cont_start', 'cont_end', 'birthdate', 'salutation', 'leadsource', 'rc_policy', 'promo', 'duplicate', 'duplicate_email', 'incorrect_address', 'order', 'order_dir', 'limit']);
+        }
+        $contacts = $query->paginate($request->per_page);
+
+        return ContactResource::collection($contacts)->additional($data);
     }
 
     /**
@@ -124,21 +137,90 @@ class ContactController extends Controller
         $languages = config('app.languages');
         switch ($status) {
             case 'contact_statuslist':
-                foreach($languages as $language) {
-                    App::setLocale($language);
-                    $data['helpers'][$language][$status] = getContactStatus();
-                }
+                $data['helpers'][$status] = getContactStatus(1);
                 break;
             case 'contactPDF_statuslist':
-                foreach($languages as $language) {
-                    App::setLocale($language);
-                    $data['helpers'][$language][$status] = getContactPDF();
-                }
+                $data['helpers'][$status] = getContactPDF(1);
+                break;
+            case 'policy_statuslist':
+                $data['helpers'][$status] = getPolicyStatus(1);
+                break;
+            case 'invoice_statuslist':
+                $data['helpers'][$status] = getInvoiceStatus(1);
                 break;
         }
-        $local = (request()->hasHeader('X-localization')) ? request()->header('X-localization') : 'de';
-        app()->setLocale($local);
     }
 
+    private function search($request, $query) {
+        $searchWildcard = '%' . $request->search . '%';
+
+        $query->where(function($query) use($searchWildcard) {
+            $fields = ['first_name', 'last_name', 'email', 'contact_num', 'ip_user', 'phone', 'mobile', 'birthdate'];
+            foreach($fields as $field) {
+                if($field == 'birthdate') {
+                    $query->orWhere($field, '=', date('Y-m-d', strtotime(str_replace(".", "-", request()->search))));
+                } else {
+                    $query->orWhere($field, 'LIKE', $searchWildcard);
+                }
+            }
+        });
+
+        $query->orWhereHas('addresses', function($query) use($searchWildcard) {
+            $query->where('is_primary', 1);
+            $query->where('address', 'LIKE', $searchWildcard); 
+        });
+
+        $query->orWhereHas('companies', function($query) use($searchWildcard) {
+            $query->where('phone', 'LIKE', $searchWildcard);
+        });
+
+        $query->orWhereHas('policies.garants', function($query) use($searchWildcard) {
+            $query->where('first_name', 'LIKE', $searchWildcard);
+            $query->orWhere('last_name', 'LIKE', $searchWildcard);                
+        });
+    }
+
+    private function filters($request, $query, $fields) {
+        foreach($request->filters as $key => $value) {
+            if($request->has('filters.'.$key) && in_array($key, $fields)) {
+                if($key == 'policies')
+                {
+                    if($value == 0) { //Contacts status accepted with 0 policies
+                        $query->has('policies', '=', 0);
+                        $query->where('status', '=', 'accepted');
+                    } else if($value == 1) {
+                        $query->has('policies', '=', 1);
+                    } else if($value == 2) {
+                        $query->has('policies', '=', 2);
+                    } else if($value == 3) {
+                        $query->has('policies', '=', 3);
+                    } else if($value == 4) {
+                        $query->has('policies', '>=', 4);
+                    } else if($value == 5) { //Check Login Details
+                        $query->where('user_id', '=', 0);
+                        $query->where('status', '=', 'accepted');
+                    }
+                } else if($key == 'cont_start') {
+                    $query->where('created_at', '>=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
+                } else if($key == 'cont_end') {
+                    $query->where('created_at', '<=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
+                } else if($key == 'birthdate') {
+                    $query->where('created_at', '<=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
+                } else if($key == 'duplicate') {
+                    $query->where('is_duplicate', '=', 1);
+                } else if($key == 'duplicate_email') {
+                    $query->whereIn('id', function($query) {
+                        $query->select('id')->from('contacts')->groupBy('email')->havingRaw('count(email)>1');
+                    });
+                } else if($key == 'incorrect_address') {
+                    $query->whereHas('addresses', function($query) {
+                        $query->where('not_correct', '=', 1);
+                    });
+                } else {
+                    $query->where($key, '=', $value);
+                }
+            }
+        }
+    }
 
 }

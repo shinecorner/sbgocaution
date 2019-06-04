@@ -43,10 +43,10 @@ class ContactResource extends JsonResource
 
         $this->policyAndInvoiceStatusCounts($data);
 
-        if($this->rc_quote == "Yes")
-            $data['rc_quote'] = 1;
-        elseif($this->rc_quote == "No")
-            $data['rc_quote'] = 0;
+        if($this->rc_policy == "Yes")
+            $data['rc_policy'] = 1;
+        elseif($this->rc_policy == "No")
+            $data['rc_policy'] = 0;
 
         if($this->lead_source == "Call_centre")
             $data['call_lead_source'] = 1;
@@ -137,7 +137,7 @@ class ContactResource extends JsonResource
             }
         }
         if(count($LichtensteinMK) > 0){
-            $data['LichtensteinZipCodesResult'] = __('contact.INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST', [ 'POLICY_NUMS' => implode(", ", $LichtensteinMK)]);
+            $data['LichtensteinZipCodesResult'] = __('contact.INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST', [ 'POLICY_NUMS' => implode(", ", $LichtensteinMK)]);
         }
         $data['count_invoices'] = $invoice_count;
         $data['invoice_total'] = format($invoice_total,__('general.CHF'));
