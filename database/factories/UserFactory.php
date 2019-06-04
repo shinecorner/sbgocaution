@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 $factory->define(App\User::class, function (Faker $faker) {
-	static $emails = ['ib@gocaution.ch', 'sb@gocaution.ch', 'rk@gocaution.ch', 'ym@gocaution.ch', 'sandeep.p@gocaution.ch', 'saiyedirshad777@gmail.com'];
+	static $emails = ['ib@gocaution.ch', 'sb@gocaution.ch', 'rk@gocaution.ch', 'ym@gocaution.ch', 'pg@gocaution.ch', 'sandeep.p@gocaution.ch', 'saiyedirshad777@gmail.com'];
     return [
         'name' => $faker->name,
         'email' => array_shift($emails),
