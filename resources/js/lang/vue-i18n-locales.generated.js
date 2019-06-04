@@ -221,6 +221,7 @@ export default {
             "CONTACT": "Kunde",
             "ID": "Kunden ID",
             "TOTAL_INVOICES": "Rechnung(en)",
+            "TOTAL_POLICIES": "Policen",
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call-Center",
@@ -316,6 +317,7 @@ export default {
             "QUOTES": "Policen",
             "SUCCESS": "Erfolg",
             "ERROR": "Fehler",
+            "SAVE_SUCCESSFULLY": "Daten erfolgreich gespeichert",
             "INVOICES": "Rechnungen",
             "langugae": {
                 "DE": "Deutsch",
@@ -330,7 +332,8 @@ export default {
             "YES": "Ja",
             "NO": "Nein",
             "AUTH_LOGIN_SUCCESS": "Erfolgreich angemeldet.",
-            "AUTH_LOGIN_FAIL": "Die Anmeldung ist fehlgeschlagen."
+            "AUTH_LOGIN_FAIL": "Die Anmeldung ist fehlgeschlagen.",
+            "CONFIG_SUCCESS": "Konfiguration erfolgreich aktualisiert!"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -615,6 +618,7 @@ export default {
             "CONTACT": "Contact",
             "ID": "Contact Id",
             "TOTAL_INVOICES": "Invoices",
+            "TOTAL_POLICIES": "Policies",
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "Is interested in a PH offer.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
@@ -710,6 +714,7 @@ export default {
             "QUOTES": "Polices",
             "SUCCESS": "Success",
             "ERROR": "Error",
+            "SAVE_SUCCESSFULLY": "Data saved successfully",
             "INVOICES": "Invoices",
             "language": {
                 "DE": "Deutsch",
@@ -724,7 +729,8 @@ export default {
             "YES": "Yes",
             "NO": "No",
             "AUTH_LOGIN_SUCCESS": "Logged in Successfully.",
-            "AUTH_LOGIN_FAIL": "Logged in failed."
+            "AUTH_LOGIN_FAIL": "Logged in failed.",
+            "CONFIG_SUCCESS": "Config updated successfully!"
         },
         "login": {
             "LOGIN": "Log in",
@@ -1009,6 +1015,7 @@ export default {
             "CONTACT": "Contact",
             "ID": "Numéro de client",
             "TOTAL_INVOICES": "Factures",
+            "TOTAL_POLICIES": "Politiques",
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "Est intéressé par une offre PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "centre d'appels",
@@ -1104,6 +1111,7 @@ export default {
             "QUOTES": "Polices",
             "SUCCESS": "Succès",
             "ERROR": "Erreur",
+            "SAVE_SUCCESSFULLY": "Données sauvegardées avec succès",
             "INVOICES": "Factures",
             "language": {
                 "DE": "Deutsch",
@@ -1118,7 +1126,8 @@ export default {
             "YES": "Oui",
             "NO": "Non",
             "AUTH_LOGIN_SUCCESS": "Connecté avec succès.",
-            "AUTH_LOGIN_FAIL": "La connexion a échoué."
+            "AUTH_LOGIN_FAIL": "La connexion a échoué.",
+            "CONFIG_SUCCESS": "Config mis à jour avec succès !"
         },
         "login": {
             "LOGIN": "Connexion",
@@ -1403,6 +1412,7 @@ export default {
             "CONTACT": "Kunde",
             "ID": "Numero cliente",
             "TOTAL_INVOICES": "Rechnung(en)",
+            "TOTAL_POLICIES": "politiche",
             "LINKED_TO_USER": "User",
             "RC_QUOTE_TOOLTIP": "È interessato a un'offerta PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
@@ -1498,6 +1508,7 @@ export default {
             "QUOTES": "Policen",
             "SUCCESS": "riuscita",
             "ERROR": "sbaglio",
+            "SAVE_SUCCESSFULLY": "Dati salvati con successo",
             "INVOICES": "Rechnungen",
             "language": {
                 "DE": "Deutsch",
@@ -1512,7 +1523,8 @@ export default {
             "YES": "Sì",
             "NO": "No",
             "AUTH_LOGIN_SUCCESS": "Effettuato l'accesso con successo.",
-            "AUTH_LOGIN_FAIL": "Loggato fallito."
+            "AUTH_LOGIN_FAIL": "Loggato fallito.",
+            "CONFIG_SUCCESS": "Config aggiornato con successo!"
         },
         "login": {
             "LOGIN": "Accedi",

@@ -107,7 +107,7 @@
                                 </template>
                                 <template slot="c_invoices" slot-scope="props">
                                     <span class="amount-div">{{ 'CHF 94.50' }}</span>
-                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('message.contact.ADD_NEW_POLICY') }}</span>
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('message.contact.TOTAL_POLICIES') }}</span>
                                     <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('message.contact.TOTAL_INVOICES') }}</span>                                    
                                 </template>
                                 <template slot="c_statusdropdown" slot-scope="props">
