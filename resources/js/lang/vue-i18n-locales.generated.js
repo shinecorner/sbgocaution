@@ -193,7 +193,7 @@ export default {
             "SETTING": "Einstellung",
             "SETTINGS": "Einstellungen",
             "INVOICE_NUMBER_FORMAT": "Format der Rechnungsnummer",
-            "QUOTE_NUMBER_FORMAT": "Format der Angebotsnummer",
+            "POLICY_NUMBER_FORMAT": "Format der Angebotsnummer",
             "CONTACT_NUMBER_FORMAT": "Format der Kontaktnummer",
             "INVOICE_DATE_FORMAT": "Format des Rechnungsdatums",
             "ITEMS_PER_PAGE": "Standard Listenlänge",
@@ -223,15 +223,15 @@ export default {
             "TOTAL_INVOICES": "Rechnung(en)",
             "TOTAL_POLICIES": "Policen",
             "LINKED_TO_USER": "User",
-            "RC_QUOTE_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
+            "RC_POLICY_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call-Center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offerte per Post",
             "ADD_NEW_POLICY": "Police(n)",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
                 "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNERVERWALTUNG": "Partnerverwaltung",
-                "PARTNERLOGIN": "Vermieter-Login",
+                "PARTNER_MANAGEMENT": "Partnerverwaltung",
+                "PARTNER_LOGIN": "Vermieter-Login",
                 "CALLCENTRE": "Callcenter VG",
                 "PDF_CLS": "CLS PDF Antrag",
                 "PDF_MKS": "MKS PDF Antrag",
@@ -260,9 +260,49 @@ export default {
                 "REJECTED": "Abgelehnt",
                 "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
                 "RESOLVED": "Gekündigt",
-                "QUOTE_WAITING": "Warten auf Prüfung"
+                "POLICY_WAITING": "Warten auf Prüfung"
             },
-            "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "AG",
+                "LIMITED_LIABILITY_COMPANY": "GmbH",
+                "SIMPLE_PARTNERSHIP": "Einfache Gesellschaft",
+                "SOLE_PROPRIETORSHIP": "Einzelfirma",
+                "COOPERATIVE": "Genossenschaft",
+                "COLLECTIVE_SOCIETY": "Kollektivgesellschaft",
+                "LIMITED_PARTNERSHIP": "Kommanditgesellschaft",
+                "STOCK_COMPANY": "Kommandit Aktiengesellschaft",
+                "INSTITUTE_OF_PUBLIC_LAW": "Institut des öffentl. Rechts",
+                "CLUB": "Verein",
+                "ENDOWMENT": "Stiftung"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Auto & Verkehr",
+                "BUILD_RENOVATE": "Bauen & Renovieren",
+                "AUTHORITIES_ASSOCIATIONS": "Behörden und Verbände",
+                "EDUCATION_SCIENCE": "Bildung und Wissenschaft",
+                "COMPUTERS_ELECTRONICS": "Computer & Elektronik",
+                "SERVICE": "Dienstleistung",
+                "LEISURE_TRAVEL": "Freizeit & Reisen",
+                "FINANCIAL_SERVICE": "Finanzdienstleistung",
+                "HEALTH_WELLNESS": "Gesundheit und Wellness",
+                "WHOLESALE_RETAIL": "Gross- & Einzelhandel",
+                "REAL_ESTATE": "Immobilien",
+                "HOTEL_GASTRONOMY": "Hotel & Gastronomie",
+                "LIVING_FURNISHING": "Wohnen & Einrichten",
+                "OTHER": "Sonstige"
+            },
+            "filter": {
+                "FILTER_MORE_THAN_ONE_POLICY": "Diverse Filter",
+                "SALUTATION": "Anrede",
+                "BIRTH_DATE": "Geburtsdatum",
+                "LEAD_SOURCES": "Leadquelle",
+                "FILTER_RC_POLICY": "Zusatzgeschäfte",
+                "PROMO_FILTER": "Promo erfolgt",
+                "DUPLICATE_CONTACT": "Duplikate",
+                "DUPLICATE_CONTACT_EMAIL": "Duplikate E-Mail",
+                "NOT_CORRECT_ADDRESS_FILTER": "Adresse nicht korrekt"
+            }
         },
         "pagination": {
             "previous": "« Previous",
@@ -314,7 +354,7 @@ export default {
             "CLEAR": "Löschen",
             "RESET": "zurücksetzen",
             "EDIT": "Öffnen",
-            "QUOTES": "Policen",
+            "POLICIES": "Policen",
             "SUCCESS": "Erfolg",
             "ERROR": "Fehler",
             "SAVE_SUCCESSFULLY": "Daten erfolgreich gespeichert",
@@ -333,7 +373,18 @@ export default {
             "NO": "Nein",
             "AUTH_LOGIN_SUCCESS": "Erfolgreich angemeldet.",
             "AUTH_LOGIN_FAIL": "Die Anmeldung ist fehlgeschlagen.",
-            "CONFIG_SUCCESS": "Konfiguration erfolgreich aktualisiert!"
+            "CONFIG_SUCCESS": "Konfiguration erfolgreich aktualisiert!",
+            "filter": {
+                "TYPE_TO_SEARCH": "Tippe um zu suchen...",
+                "SELECT_STATUS": "Status wählen",
+                "SELECT_PRODUCTTYPE": "Kundentyp wählen",
+                "CREATE_FROM": "Erstellt vom",
+                "CREATE_TO": "Erstellt bis",
+                "LANGUAGE": "Sprache",
+                "SEARCH": "Suchen",
+                "RESET": "Leeren"
+            },
+            "ROWS": "Einträge"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -590,7 +641,7 @@ export default {
             "SETTING": "Setting",
             "SETTINGS": "Settings",
             "INVOICE_NUMBER_FORMAT": "Invoice number format",
-            "QUOTE_NUMBER_FORMAT": "Quote number format",
+            "POLICY_NUMBER_FORMAT": "Policy number format",
             "CONTACT_NUMBER_FORMAT": "Contact number format",
             "INVOICE_DATE_FORMAT": "Invoice date format",
             "ITEMS_PER_PAGE": "Default List Limit",
@@ -620,15 +671,15 @@ export default {
             "TOTAL_INVOICES": "Invoices",
             "TOTAL_POLICIES": "Policies",
             "LINKED_TO_USER": "User",
-            "RC_QUOTE_TOOLTIP": "Is interested in a PH offer.",
+            "RC_POLICY_TOOLTIP": "Is interested in a PH offer.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offer by post",
             "ADD_NEW_POLICY": "New Policy",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
                 "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNERVERWALTUNG": "Partnerverwaltung",
-                "PARTNERLOGIN": "Partner-Login",
+                "PARTNER_MANAGEMENT": "Partner Management",
+                "PARTNER_LOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
                 "PDF_CLS": "CLS PDF Antrag",
                 "PDF_MKS": "MKS PDF Antrag",
@@ -657,9 +708,49 @@ export default {
                 "REJECTED": "Rejected",
                 "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
                 "RESOLVED": "Resolved",
-                "QUOTE_WAITING": "Waiting for processing"
+                "POLICY_WAITING": "Waiting for processing"
             },
-            "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "PUBLIC LIMITED COMPANY",
+                "LIMITED_LIABILITY_COMPANY": "limited liability company",
+                "SIMPLE_PARTNERSHIP": "Einfache Gesellschaft",
+                "SOLE_PROPRIETORSHIP": "sole proprietorship",
+                "COOPERATIVE": "cooperative",
+                "COLLECTIVE_SOCIETY": "collective society",
+                "LIMITED_PARTNERSHIP": "limited partnership",
+                "STOCK_COMPANY": "Limited partnership",
+                "INSTITUTE_OF_PUBLIC_LAW": "Institute of Public Law",
+                "CLUB": "club",
+                "ENDOWMENT": "endowment"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Car & Traffic",
+                "BUILD_RENOVATE": "Building & Renovating",
+                "AUTHORITIES_ASSOCIATIONS": "Authorities and associations",
+                "EDUCATION_SCIENCE": "Education and Science",
+                "COMPUTERS_ELECTRONICS": "Computers & Electronics",
+                "SERVICE": "service",
+                "LEISURE_TRAVEL": "Leisure & Travel",
+                "FINANCIAL_SERVICE": "financial service",
+                "HEALTH_WELLNESS": "Health and Wellness",
+                "WHOLESALE_RETAIL": "Wholesale & Retail",
+                "REAL_ESTATE": "real estate",
+                "HOTEL_GASTRONOMY": "Hotel & Gastronomy",
+                "LIVING_FURNISHING": "Living & Furnishing",
+                "OTHER": "Other"
+            },
+            "filter": {
+                "FILTER_MORE_THAN_ONE_POLICY": "Contacts / Quotes",
+                "SALUTATION": "salutation",
+                "BIRTH_DATE": "Birthdate",
+                "LEAD_SOURCES": "Lead source",
+                "FILTER_RC_POLICY": "PH offer",
+                "PROMO_FILTER": "Promo",
+                "DUPLICATE_CONTACT": "Duplicate",
+                "DUPLICATE_CONTACT_EMAIL": "Duplicate email",
+                "NOT_CORRECT_ADDRESS_FILTER": "Address not correct"
+            }
         },
         "pagination": {
             "previous": "« Previous",
@@ -678,6 +769,23 @@ export default {
                 "JOINT_GUARANTEE": "Joint surety pending",
                 "REJECTED_CLIENT": "Rejected by client",
                 "PENDING_CANCEL": "Resolution reported"
+            },
+            "filter": {
+                "SELECT_INVOICE_COUNT": "Filter by number of invoices",
+                "SELECT_LANGUAGE": "",
+                "ORGANIZATION": "",
+                "SELECT_INVOICE_STATUS": "",
+                "SELECT_CONTACT_STATUS": "",
+                "QUOTE_STARTDATE_FROM": "",
+                "QUOTE_STARTDATE_TO": "",
+                "FILTER_INSURE_ADDRESS": "",
+                "FILTER_INSURE_PLZ": "",
+                "FILTER_INSURE_ORT": "",
+                "QUOTES_WITH_ORG": "",
+                "QUOTES_FILTER_NO_EMP": "",
+                "QUOTES_FILTER_EMP_WITH_NO_MAIL": "",
+                "SHOW_QUOTES_HAVING_FINAL_INVOICE_OR_CANCEL_IN_YEAR": "",
+                "SHOW_QUOTES_WITH_DAMAGE": ""
             }
         },
         "invoice": {
@@ -711,7 +819,7 @@ export default {
             "CLEAR": "Clear",
             "RESET": "Reset",
             "EDIT": "Edit",
-            "QUOTES": "Polices",
+            "POLICIES": "Polices",
             "SUCCESS": "Success",
             "ERROR": "Error",
             "SAVE_SUCCESSFULLY": "Data saved successfully",
@@ -730,7 +838,17 @@ export default {
             "NO": "No",
             "AUTH_LOGIN_SUCCESS": "Logged in Successfully.",
             "AUTH_LOGIN_FAIL": "Logged in failed.",
-            "CONFIG_SUCCESS": "Config updated successfully!"
+            "CONFIG_SUCCESS": "Config updated successfully!",
+            "filter": {
+                "TYPE_TO_SEARCH": "Type to search...",
+                "SELECT_STATUS": "Select status",
+                "SELECT_PRODUCTTYPE": "Select type",
+                "CREATE_FROM": "Created from",
+                "CREATE_TO": "Created to",
+                "SEARCH": "Search",
+                "RESET": "Reset"
+            },
+            "ROWS": "Rows"
         },
         "login": {
             "LOGIN": "Log in",
@@ -987,7 +1105,7 @@ export default {
             "SETTING": "Réglage de",
             "SETTINGS": "Réglages",
             "INVOICE_NUMBER_FORMAT": "Format du numéro de facture",
-            "QUOTE_NUMBER_FORMAT": "Format du numéro de citation",
+            "POLICY_NUMBER_FORMAT": "Format du numéro de citation",
             "CONTACT_NUMBER_FORMAT": "Format du numéro de contact",
             "INVOICE_DATE_FORMAT": "Format de la date de facturation",
             "ITEMS_PER_PAGE": "Longueur des listes",
@@ -1017,15 +1135,15 @@ export default {
             "TOTAL_INVOICES": "Factures",
             "TOTAL_POLICIES": "Politiques",
             "LINKED_TO_USER": "User",
-            "RC_QUOTE_TOOLTIP": "Est intéressé par une offre PH.",
+            "RC_POLICY_TOOLTIP": "Est intéressé par une offre PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "centre d'appels",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offre par courrier",
             "ADD_NEW_POLICY": "Police(n)",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
                 "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNERVERWALTUNG": "Partnerverwaltung",
-                "PARTNERLOGIN": "Partner-Login",
+                "PARTNER_MANAGEMENT": "Gestion des partenaires",
+                "PARTNER_LOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
                 "PDF_CLS": "PDF domande CLS",
                 "PDF_MKS": "PDF domande MKS",
@@ -1054,9 +1172,49 @@ export default {
                 "REJECTED": "Rejected",
                 "DISSOLVED_IMMEDIATELY": "Dissous après l'achèvement",
                 "RESOLVED": "Résigné",
-                "QUOTE_WAITING": "En validation"
+                "POLICY_WAITING": "En validation"
             },
-            "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "SOCIÉTÉ ANONYME",
+                "LIMITED_LIABILITY_COMPANY": "société à responsabilité limitée",
+                "SIMPLE_PARTNERSHIP": "Partenariat simple",
+                "SOLE_PROPRIETORSHIP": "entreprise individuelle",
+                "COOPERATIVE": "coopératif",
+                "COLLECTIVE_SOCIETY": "société collective",
+                "LIMITED_PARTNERSHIP": "société en commandite",
+                "STOCK_COMPANY": "Société en commandite",
+                "INSTITUTE_OF_PUBLIC_LAW": "Institut de droit public",
+                "CLUB": "boîte de nuit",
+                "ENDOWMENT": "fonds de dotation"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Voiture et circulation",
+                "BUILD_RENOVATE": "Bâtiment & Rénovation",
+                "AUTHORITIES_ASSOCIATIONS": "Autorités et associations",
+                "EDUCATION_SCIENCE": "Enseignement et science",
+                "COMPUTERS_ELECTRONICS": "Ordinateurs et électronique",
+                "SERVICE": "messe",
+                "LEISURE_TRAVEL": "Loisirs et voyages",
+                "FINANCIAL_SERVICE": "service financier",
+                "HEALTH_WELLNESS": "Santé et bien-être",
+                "WHOLESALE_RETAIL": "Commerce de gros et de détail",
+                "REAL_ESTATE": "biens immobiliers",
+                "HOTEL_GASTRONOMY": "Hôtellerie & Gastronomie",
+                "LIVING_FURNISHING": "Séjour & Ameublement",
+                "OTHER": "Autre"
+            },
+            "filter": {
+                "FILTER_MORE_THAN_ONE_POLICY": "Diverse Filter",
+                "SALUTATION": "Titre",
+                "BIRTH_DATE": "Date de naissance",
+                "LEAD_SOURCES": "Source de client",
+                "FILTER_RC_POLICY": "Offre RC",
+                "PROMO_FILTER": "Promo done",
+                "DUPLICATE_CONTACT": "Doubles par nom",
+                "DUPLICATE_CONTACT_EMAIL": "Doubles par email",
+                "NOT_CORRECT_ADDRESS_FILTER": "Adresse incorrecte"
+            }
         },
         "pagination": {
             "previous": "« Previous",
@@ -1108,7 +1266,7 @@ export default {
             "CLEAR": "Clair",
             "RESET": "réinitialiser",
             "EDIT": "Éditer",
-            "QUOTES": "Polices",
+            "POLICIES": "Polices",
             "SUCCESS": "Succès",
             "ERROR": "Erreur",
             "SAVE_SUCCESSFULLY": "Données sauvegardées avec succès",
@@ -1127,7 +1285,17 @@ export default {
             "NO": "Non",
             "AUTH_LOGIN_SUCCESS": "Connecté avec succès.",
             "AUTH_LOGIN_FAIL": "La connexion a échoué.",
-            "CONFIG_SUCCESS": "Config mis à jour avec succès !"
+            "CONFIG_SUCCESS": "Config mis à jour avec succès !",
+            "filter": {
+                "TYPE_TO_SEARCH": "type de recherche...",
+                "SELECT_STATUS": "Choisir le statut",
+                "SELECT_PRODUCTTYPE": "Choisir le type de client",
+                "CREATE_FROM": "Créer de",
+                "CREATE_TO": "Créer jusqu'à",
+                "SEARCH": "Chercher",
+                "RESET": "Vider"
+            },
+            "ROWS": "Rangs"
         },
         "login": {
             "LOGIN": "Connexion",
@@ -1384,7 +1552,7 @@ export default {
             "SETTING": "Impostazione",
             "SETTINGS": "Impostazioni",
             "INVOICE_NUMBER_FORMAT": "Formato del numero di fattura",
-            "QUOTE_NUMBER_FORMAT": "Formato del numero del preventivo",
+            "POLICY_NUMBER_FORMAT": "Formato del numero del preventivo",
             "CONTACT_NUMBER_FORMAT": "Formato del numero di contatto",
             "INVOICE_DATE_FORMAT": "Formato della data di fatturazione",
             "ITEMS_PER_PAGE": "Limite liste predefinito",
@@ -1412,17 +1580,17 @@ export default {
             "CONTACT": "Kunde",
             "ID": "Numero cliente",
             "TOTAL_INVOICES": "Rechnung(en)",
-            "TOTAL_POLICIES": "politiche",
+            "TOTAL_POLICIES": "Politiche",
             "LINKED_TO_USER": "User",
-            "RC_QUOTE_TOOLTIP": "È interessato a un'offerta PH.",
+            "RC_POLICY_TOOLTIP": "È interessato a un'offerta PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offerte per Post",
             "ADD_NEW_POLICY": "Police(n)",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
                 "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNERVERWALTUNG": "Partnerverwaltung",
-                "PARTNERLOGIN": "Partner-Login",
+                "PARTNER_MANAGEMENT": "Gestione dei partner",
+                "PARTNER_LOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
                 "PDF_CLS": "CLS PDF Antrag",
                 "PDF_MKS": "MKS PDF Antrag",
@@ -1451,9 +1619,49 @@ export default {
                 "REJECTED": "Abgelehnt",
                 "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
                 "RESOLVED": "Gekündigt",
-                "QUOTE_WAITING": "Warten auf Prüfung"
+                "POLICY_WAITING": "Warten auf Prüfung"
             },
-            "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "SOCIETÀ PER AZIONI",
+                "LIMITED_LIABILITY_COMPANY": "società a responsabilità limitata",
+                "SIMPLE_PARTNERSHIP": "Partenariato semplice",
+                "SOLE_PROPRIETORSHIP": "ditta individuale",
+                "COOPERATIVE": "collaborativo",
+                "COLLECTIVE_SOCIETY": "società collettiva",
+                "LIMITED_PARTNERSHIP": "società in accomandita",
+                "STOCK_COMPANY": "Società in accomandita",
+                "INSTITUTE_OF_PUBLIC_LAW": "Istituto di diritto pubblico",
+                "CLUB": "locale notturno",
+                "ENDOWMENT": "dote"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Auto & Traffico",
+                "BUILD_RENOVATE": "Costruire & Ristrutturare",
+                "AUTHORITIES_ASSOCIATIONS": "Autorità e associazioni",
+                "EDUCATION_SCIENCE": "Educazione e scienza",
+                "COMPUTERS_ELECTRONICS": "Computer & Elettronica",
+                "SERVICE": "prestazione",
+                "LEISURE_TRAVEL": "Tempo libero e viaggi",
+                "FINANCIAL_SERVICE": "servizio finanziario",
+                "HEALTH_WELLNESS": "Salute e benessere",
+                "WHOLESALE_RETAIL": "Commercio all'ingrosso e al dettaglio",
+                "REAL_ESTATE": "beni immobili",
+                "HOTEL_GASTRONOMY": "Hotel & Gastronomia",
+                "LIVING_FURNISHING": "Abitare & Arredamento",
+                "OTHER": "Altro"
+            },
+            "filter": {
+                "FILTER_MORE_THAN_ONE_POLICY": "Filtri vari",
+                "SALUTATION": "Titolo",
+                "BIRTH_DATE": "Data di nascita",
+                "LEAD_SOURCES": "Fonte di piombo",
+                "FILTER_RC_POLICY": "Zusatzgeschäfte",
+                "PROMO_FILTER": "Promozione effettuata",
+                "DUPLICATE_CONTACT": "Duplicati",
+                "DUPLICATE_CONTACT_EMAIL": "Doppio via e-mail",
+                "NOT_CORRECT_ADDRESS_FILTER": "Indirizzo non corretto"
+            }
         },
         "pagination": {
             "previous": "« Previous",
@@ -1505,7 +1713,7 @@ export default {
             "CLEAR": "Chiaro",
             "RESET": "reset",
             "EDIT": "Edita",
-            "QUOTES": "Policen",
+            "POLICIES": "Policen",
             "SUCCESS": "riuscita",
             "ERROR": "sbaglio",
             "SAVE_SUCCESSFULLY": "Dati salvati con successo",
@@ -1524,7 +1732,17 @@ export default {
             "NO": "No",
             "AUTH_LOGIN_SUCCESS": "Effettuato l'accesso con successo.",
             "AUTH_LOGIN_FAIL": "Loggato fallito.",
-            "CONFIG_SUCCESS": "Config aggiornato con successo!"
+            "CONFIG_SUCCESS": "Config aggiornato con successo!",
+            "filter": {
+                "TYPE_TO_SEARCH": "Tippe um zu suchen...",
+                "SELECT_STATUS": "Status wählen",
+                "SELECT_PRODUCTTYPE": "Kundentyp wählen",
+                "CREATE_FROM": "Creato da",
+                "CREATE_TO": "Creato per",
+                "SEARCH": "Ricerca",
+                "RESET": "Resettato"
+            },
+            "ROWS": "Ranghi"
         },
         "login": {
             "LOGIN": "Accedi",

@@ -15,13 +15,13 @@ export default {
         component: ContactList,
         meta: {
             requiresAuth: true,
-            title: 'message.contact.CONTACTS',
+            title: 'contact.CONTACTS',
              breadcrumb: [
               {
-                breadcrumbInactive: 'message.general.CRM'
+                breadcrumbInactive: 'general.CRM'
               },
               {
-                breadcrumbActive: 'message.contact.CONTACTS'
+                breadcrumbActive: 'contact.CONTACTS'
               }
             ]
         }
@@ -31,13 +31,13 @@ export default {
         component: SettingPage,
         meta: {
             requiresAuth: true,
-            title: 'message.setting.OPTIONS',
+            title: 'setting.OPTIONS',
             breadcrumb: [
               {
-                breadcrumbInactive: 'message.general.CRM'
+                breadcrumbInactive: 'general.CRM'
               },
               {
-                breadcrumbActive: 'message.setting.OPTIONS'
+                breadcrumbActive: 'setting.OPTIONS'
               }
             ]
         }

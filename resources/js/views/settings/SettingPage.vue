@@ -28,8 +28,8 @@
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
                                             <v-text-field
-                                                :label="$t('message.setting.INVOICE_DATE_FORMAT')"
-                                                :data-vv-as="$t('message.setting.INVOICE_DATE_FORMAT')"
+                                                :label="$t('setting.INVOICE_DATE_FORMAT')"
+                                                :data-vv-as="$t('setting.INVOICE_DATE_FORMAT')"
                                                 v-model="configs['crm.display_date_format']"
                                                 data-vv-name="display_date_format"
                                                 v-validate="'required'"
@@ -37,14 +37,14 @@
                                                 required></v-text-field>
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
-                                                    <v-select v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('message.setting.ITEMS_PER_PAGE')"></v-select>
+                                                    <v-select v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('setting.ITEMS_PER_PAGE')"></v-select>
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
                                                         type="number"
-                                                        :label="$t('message.setting.DECIMALS')"
+                                                        :label="$t('setting.DECIMALS')"
                                                         v-model="configs['crm.decimals']"
-                                                        :data-vv-as="$t('message.setting.DECIMALS')"
+                                                        :data-vv-as="$t('setting.DECIMALS')"
                                                         data-vv-name="decimals"
                                                         v-validate="'required'"
                                                         :error="errors.has('decimals')"
@@ -55,9 +55,9 @@
                                         <v-layout row wrap>
                                             <v-flex sm6 md4 lg4>
                                               <v-text-field
-                                                    :label="$t('message.setting.INVOICE_NUMBER_FORMAT')"
+                                                    :label="$t('setting.INVOICE_NUMBER_FORMAT')"
                                                     v-model="configs['crm.invoice_num_format']"
-                                                    :data-vv-as="$t('message.setting.INVOICE_NUMBER_FORMAT')"
+                                                    :data-vv-as="$t('setting.INVOICE_NUMBER_FORMAT')"
                                                     data-vv-name="invoice_num_format"
                                                     v-validate="'required'"
                                                     :error="errors.has('invoice_num_format')"
@@ -66,9 +66,9 @@
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                    :label="$t('message.setting.QUOTE_NUMBER_FORMAT')"
+                                                    :label="$t('setting.POLICY_NUMBER_FORMAT')"
                                                     v-model="configs['crm.quote_num_format']" 
-                                                    :data-vv-as="$t('message.setting.QUOTE_NUMBER_FORMAT')"
+                                                    :data-vv-as="$t('setting.POLICY_NUMBER_FORMAT')"
                                                     data-vv-name="quote_num_format"
                                                     v-validate="'required'"
                                                     :error="errors.has('quote_num_format')"
@@ -77,9 +77,9 @@
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                    :label="$t('message.setting.CONTACT_NUMBER_FORMAT')"
+                                                    :label="$t('setting.CONTACT_NUMBER_FORMAT')"
                                                     v-model="configs['crm.contact_num_format']"
-                                                    :data-vv-as="$t('message.setting.CONTACT_NUMBER_FORMAT')"
+                                                    :data-vv-as="$t('setting.CONTACT_NUMBER_FORMAT')"
                                                     data-vv-name="contact_num_format"
                                                     v-validate="'required'"
                                                     :error="errors.has('contact_num_format')"
@@ -90,9 +90,9 @@
                                         <v-layout row wrap>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                    :label="$t('message.setting.THOUSANDS')"
+                                                    :label="$t('setting.THOUSANDS')"
                                                     v-model="configs['crm.thousands']"
-                                                    :data-vv-as="$t('message.setting.THOUSANDS')"
+                                                    :data-vv-as="$t('setting.THOUSANDS')"
                                                     data-vv-name="thousands"
                                                     v-validate="'required'"
                                                     :error="errors.has('thousands')"
@@ -101,9 +101,9 @@
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                      :label="$t('message.setting.DECPOINTS')"
+                                                      :label="$t('setting.DECPOINTS')"
                                                       v-model="configs['crm.decpoint']"
-                                                      :data-vv-as="$t('message.setting.DECPOINTS')"
+                                                      :data-vv-as="$t('setting.DECPOINTS')"
                                                       data-vv-name="decpoint"
                                                       v-validate="'required'"
                                                       :error="errors.has('decpoint')"
@@ -113,9 +113,9 @@
                                             <v-flex sm6 md4 lg4>
                                               <v-text-field
                                                     type="number"
-                                                    :label="$t('message.setting.INVOICE_NUM_DIGITS')"
+                                                    :label="$t('setting.INVOICE_NUM_DIGITS')"
                                                     v-model="configs['crm.invoice_number_digits']"
-                                                    :data-vv-as="$t('message.setting.INVOICE_NUM_DIGITS')"
+                                                    :data-vv-as="$t('setting.INVOICE_NUM_DIGITS')"
                                                     data-vv-name="invoice_number_digits"
                                                     v-validate="'required'"
                                                     :error="errors.has('invoice_number_digits')"
@@ -127,13 +127,13 @@
                                 <template v-if="index=='email'" ref="email">
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
-                                            <v-select hide-details v-bind:items="mail_options" :label="$t('message.setting.SEND_MAILS')" v-model="configs['mail.driver']"></v-select>
+                                            <v-select hide-details v-bind:items="mail_options" :label="$t('setting.SEND_MAILS')" v-model="configs['mail.driver']"></v-select>
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                        :label="$t('message.setting.FROM_NAME_ON_EMAILS')"
+                                                        :label="$t('setting.FROM_NAME_ON_EMAILS')"
                                                         v-model="configs['mail.from.name']"
-                                                        :data-vv-as="$t('message.setting.FROM_NAME_ON_EMAILS')"
+                                                        :data-vv-as="$t('setting.FROM_NAME_ON_EMAILS')"
                                                         data-vv-name="from_name"
                                                         v-validate="'required'"
                                                         :error="errors.has('from_name')"
@@ -141,9 +141,9 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                        :label="$t('message.setting.FROM_EMAIL_ON_EMAILS')"
+                                                        :label="$t('setting.FROM_EMAIL_ON_EMAILS')"
                                                         v-model="configs['mail.from.address']"
-                                                        :data-vv-as="$t('message.setting.FROM_EMAIL_ON_EMAILS')"
+                                                        :data-vv-as="$t('setting.FROM_EMAIL_ON_EMAILS')"
                                                         data-vv-name="from_address"
                                                         v-validate="'required|email'"
                                                         :error="errors.has('from_address')"
@@ -153,9 +153,9 @@
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                        :label="$t('message.setting.REPLY_ADDRESS')"
+                                                        :label="$t('setting.REPLY_ADDRESS')"
                                                         v-model="configs['mail.reply_to.address']"
-                                                        :data-vv-as="$t('message.setting.REPLY_ADDRESS')"
+                                                        :data-vv-as="$t('setting.REPLY_ADDRESS')"
                                                         data-vv-name="reply_to_address"
                                                         v-validate="'required|email'"
                                                         :error="errors.has('reply_to_address')"
@@ -163,9 +163,9 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                        :label="$t('message.setting.REPLY_NAME')"
+                                                        :label="$t('setting.REPLY_NAME')"
                                                         v-model="configs['mail.reply_to.name']"
-                                                        :data-vv-as="$t('message.setting.REPLY_NAME')"
+                                                        :data-vv-as="$t('setting.REPLY_NAME')"
                                                         data-vv-name="reply_to_name"
                                                         v-validate="'required'"
                                                         :error="errors.has('reply_to_name')"											
@@ -173,9 +173,9 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                        :label="$t('message.setting.PORT')"
+                                                        :label="$t('setting.PORT')"
                                                         v-model="configs['mail.port']"
-                                                        :data-vv-as="$t('message.setting.PORT')"
+                                                        :data-vv-as="$t('setting.PORT')"
                                                         data-vv-name="port"
                                                         v-validate="'required'"
                                                         :error="errors.has('port')"	
@@ -185,9 +185,9 @@
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>										
                                                 <v-text-field
-                                                        :label="$t('message.setting.SMTP_HOST')"
+                                                        :label="$t('setting.SMTP_HOST')"
                                                         v-model="configs['mail.host']"
-                                                        :data-vv-as="$t('message.setting.SMTP_HOST')"
+                                                        :data-vv-as="$t('setting.SMTP_HOST')"
                                                         data-vv-name="host"
                                                         v-validate="'required'"
                                                         :error="errors.has('host')"											
@@ -195,9 +195,9 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
-                                                        :label="$t('message.setting.SMTP_USER')"
+                                                        :label="$t('setting.SMTP_USER')"
                                                         v-model="configs['mail.username']"
-                                                        :data-vv-as="$t('message.setting.SMTP_USER')"
+                                                        :data-vv-as="$t('setting.SMTP_USER')"
                                                         data-vv-name="username"
                                                         v-validate="'required'"
                                                         :error="errors.has('username')"											
@@ -206,9 +206,9 @@
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
                                                         type="password"
-                                                        :label="$t('message.setting.SMTP_PASSWORD')"
+                                                        :label="$t('setting.SMTP_PASSWORD')"
                                                         v-model="configs['mail.password']"
-                                                        :data-vv-as="$t('message.setting.SMTP_PASSWORD')"
+                                                        :data-vv-as="$t('setting.SMTP_PASSWORD')"
                                                         data-vv-name="password"
                                                         v-validate="'required'"
                                                         :error="errors.has('password')"
@@ -217,11 +217,11 @@
                                     </v-layout>
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
-                                            <v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('message.setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
+                                            <v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
                                         </v-flex>        
                                         <v-flex sm6 md4 lg4>
                                             <v-switch 
-                                                :label="$t('message.setting.SMTP_AUTHENTICATION')"
+                                                :label="$t('setting.SMTP_AUTHENTICATION')"
                                                 v-model="configs['mail.authentication']"
                                                 color="success"
                                                 value="Yes">
@@ -230,7 +230,7 @@
                                     </v-layout>								
                                 </template>
                                 <v-btn type="submit" color="success">
-                                    {{$t("message.general.SUBMIT")}}
+                                    {{$t("general.SUBMIT")}}
                                 </v-btn>
                                 </v-form>
                                 </v-card-text>                                        
@@ -281,7 +281,7 @@ export default {
 	},
 	created() {
 		this.setConfigs(),
-                this.$store.dispatch("setHeaderTitle", 'message.setting.OPTIONS');    
+                this.$store.dispatch("setHeaderTitle", 'setting.OPTIONS');    
 	},
 	methods: {
 		...mapActions(["setConfigs", "saveConfig"]),

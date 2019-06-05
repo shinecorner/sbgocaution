@@ -33,4 +33,15 @@ return [
     'AUTH_LOGIN_SUCCESS' => 'Erfolgreich angemeldet.',
     'AUTH_LOGIN_FAIL' => 'Die Anmeldung ist fehlgeschlagen.',
     'CONFIG_SUCCESS' => 'Konfiguration erfolgreich aktualisiert!',
+    'filter' => [
+        'TYPE_TO_SEARCH' => 'Tippe um zu suchen...',
+        'SELECT_STATUS' => 'Status wählen',
+        'SELECT_PRODUCTTYPE' => 'Kundentyp wählen',
+        'CREATE_FROM' => 'Erstellt vom',
+        'CREATE_TO' => 'Erstellt bis',
+        'LANGUAGE' => 'Sprache',
+        'SEARCH' => 'Suchen',
+        'RESET' => 'Leeren',
+    ],
+    'ROWS' => 'Einträge',
 ];
