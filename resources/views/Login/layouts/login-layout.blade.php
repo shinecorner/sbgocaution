@@ -20,8 +20,8 @@
 
 </head>
 <body class="login-main">
-    <div class="t3-wrapper t3-login-wrap">
-        <div class="t3-login ">
+    <div class="page-wrapper">
+        <div class="login-inner-wrapper">
             <div class="@if(Request::path() == app()->getLocale()) row login-grid @else row login-grid forgot-grid @endif">
                 <div class="column-fixed Site">
                     <div class="login-header-block visible-xs">
