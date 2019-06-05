@@ -3,7 +3,7 @@ return [
     'SETTING' => 'Setting',
     'SETTINGS' => 'Settings',
     'INVOICE_NUMBER_FORMAT' => "Invoice number format",
-    'QUOTE_NUMBER_FORMAT' => "Quote number format",
+    'POLICY_NUMBER_FORMAT' => "Policy number format",
     'CONTACT_NUMBER_FORMAT' => "Contact number format",
     'INVOICE_DATE_FORMAT' => "Invoice date format",
     'ITEMS_PER_PAGE' => "Default List Limit",

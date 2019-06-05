@@ -11,7 +11,7 @@ if (!function_exists('getUniqueNum')) {
      * */
     function getUniqueNum($real_invoice_num, $type = 1) {
         if($type == 1) $format = config('crm.invoice_num_format');
-        elseif($type == 2) $format = config('crm.quote_num_format');
+        elseif($type == 2) $format = config('crm.policy_num_format');
         elseif($type == 3) $format = config('crm.contact_num_format');
 
         $real_invoice_num = str_pad($real_invoice_num, config('crm.invoice_number_digits'), '0', STR_PAD_LEFT);
@@ -38,10 +38,10 @@ if (!function_exists('render_status_class')) {
             case "paid": case "payed": case "accepted": case "accepted_client":case "contacted":
             $status_class = "success" ;
             break;
-            case "pending":case "partial_paid":case "waiting_for_payment":case "predeclared": case "invoice_status_nopayment":case 'status_quote_waiting': case 'claim_pending': case "quote_status_joint_guarantee": case 'pending_cancel': case 'online_payment_waiting': case 'online_payment_invalid': case "pre_confirmation_pending":
+            case "pending":case "partial_paid":case "waiting_for_payment":case "predeclared": case "invoice_status_nopayment":case 'policy_waiting': case 'claim_pending': case "joint_guarantee": case 'pending_cancel': case 'online_payment_waiting': case 'online_payment_invalid': case "pre_confirmation_pending":
             $status_class = "warning" ;
             break;
-            case "pastdue": case "rejected": case "dissolved_with_claims":case "not_contacted": case "dissolved_without_claims": case "rejected_client":case "dissolved_immediately": case "refunded": case "partial_refunded":case 'reminder':case 'warning1':case 'warning2': case 'collection':case 'status_resolved':case 'debt_enforcement':case 'command':case 'follow':case 'loss':case 'seizure': case 'invoice_status_collection':
+            case "pastdue": case "rejected": case "dissolved_with_claims":case "not_contacted": case "dissolved_without_claims": case "rejected_client":case "dissolved_immediately": case "refunded": case "partial_refunded":case 'reminder':case 'warning1':case 'warning2': case 'collection':case 'resolved':case 'debt_enforcement':case 'command':case 'follow':case 'loss':case 'seizure': case 'invoice_status_collection':
             $status_class = "danger" ;
             break;
             case "cancelled": case "expired":
@@ -76,14 +76,14 @@ if (!function_exists('get_language_flag')) {
      * @param  string $language
      * @return string $language_flag
      */
-    function get_language_flag($language){
-        if($language == "it-IT")
+    function get_language_flag($language) {
+        if($language == "it")
             $language_flag = asset('/static/flag-icons/it.png');
-        elseif($language == "fr-FR")
+        elseif($language == "fr")
             $language_flag = asset('/static/flag-icons/fr.png');
-        elseif($language == "de-DE")
+        elseif($language == "de")
             $language_flag = asset('/static/flag-icons/de.png');
-        elseif($language == "en-EN")
+        elseif($language == "en")
             $language_flag = asset('/static/flag-icons/en.png');
         return $language_flag;
     }
@@ -97,23 +97,30 @@ if (!function_exists('getContactStatus')) {
      * 
      * @return array $status
      */
-    function getContactStatus(){
-        $status = array();
+    function getContactStatus($plain = 0) {
 
-        $status["new"] = __('contact.status.NEW');
-        $status["offer"] = __('contact.status.OFFER');
-        $status["in_clarification"] = __('contact.status.IN_CLARIFICATION');
-        $status["pending"] = __('contact.status.PENDING');
-        $status["accepted"] = __('contact.status.ACCEPTED');
-        $status["pre_confirmation_pending"] = __('contact.status.PRE_CONFIRMATION_PENDING');
-        $status["pre_confirmation_sent"] = __('contact.status.PRE_CONFIRMATION_SENT');
-        $status["cancelled"] = __('contact.status.CANCELLED');
-        $status["rejected"] = __('contact.status.REJECTED');
-//      $status[] = "waiting_for_payment";
-        $status["dissolved_immediately"] = __('contact.status.DISSOLVED_IMMEDIATELY');
-        $status["resolved"] = __('contact.status.RESOLVED');
-        $status["quote_waiting"] = __('contact.status.QUOTE_WAITING');
-        return $status;
+        $statuses = [
+            "new" => 'contact.status.NEW',
+            "offer" => 'contact.status.OFFER',
+            "in_clarification" => 'contact.status.IN_CLARIFICATION',
+            "pending" => 'contact.status.PENDING',
+            "accepted" => 'contact.status.ACCEPTED',
+            "pre_confirmation_pending" => 'contact.status.PRE_CONFIRMATION_PENDING',
+            "pre_confirmation_sent" => 'contact.status.PRE_CONFIRMATION_SENT',
+            "cancelled" => 'contact.status.CANCELLED',
+            "rejected" => 'contact.status.REJECTED',
+            "dissolved_immediately" => 'contact.status.DISSOLVED_IMMEDIATELY',
+            "resolved" => 'contact.status.RESOLVED',
+            "policy_waiting" => 'contact.status.POLICY_WAITING'
+        ];
+
+        if(!$plain) {
+            foreach($statuses as $key => $value) {
+                $statuses[$key] = __($value);
+            }
+        }
+
+        return $statuses;
     }
 
 }
@@ -124,28 +131,29 @@ if(!function_exists('getPolicyStatus')) {
      * 
      * @return array $status
      */
-    function getPolicyStatus() {
-        $status = array();
+    function getPolicyStatus($plain = 0) {
 
-        $status["waiting"] = __('policy.status.WAITING');
-        $status["predeclared"] = __('policy.status.PREDECLARED');
-        $status["accepted"] = __('policy.status.ACCEPTED');
-        $status["cancellation_with_claim_pending"] = __('policy.status.CANCELLATION_WITH_CLIAM_PENDING');
-        $status["cancellation_without_claim_pending"] = __('policy.status.CANCELLATION_WITHOUT_CLIAM_PENDING');
-        $status["dissolved_with_claims"] = __('policy.status.DISSOLVED_WITH_CLAIMS');
-        $status["dissolved_without_claims"] = __('policy.status.DISSOLVED_WITHOUT_CLAIMS');
-        $status["dissolved_immediately"] = __('policy.status.DISSOLVED_IMMEDIATELY');
-        $status["joint_guarantee"] = __('policy.status.JOINT_GUARANTEE');
-        $status["rejected_client"] = __('policy.status.REJECTED_CLIENT');
-       // $status[] = "collection";
-        $status["pending_cancel"] = __('policy.status.PENDING_CANCEL');
-        
-        //$status[] = "accepted_client";
-        //$status[] = "rejected";
-        //$status[] = "claims_reported";
-        //$status[] = "claims_in_processing";
-        //$status[] = "expired";
-        return $status;
+        $statuses = [
+            "waiting" => 'policy.status.WAITING',
+            "predeclared" => 'policy.status.PREDECLARED',
+            "accepted" => 'policy.status.ACCEPTED',
+            "cancellation_with_claim_pending" => 'policy.status.CANCELLATION_WITH_CLIAM_PENDING',
+            "cancellation_without_claim_pending" => 'policy.status.CANCELLATION_WITHOUT_CLIAM_PENDING',
+            "dissolved_with_claims" => 'policy.status.DISSOLVED_WITH_CLAIMS',
+            "dissolved_without_claims" => 'policy.status.DISSOLVED_WITHOUT_CLAIMS',
+            "dissolved_immediately" => 'policy.status.DISSOLVED_IMMEDIATELY',
+            "joint_guarantee" => 'policy.status.JOINT_GUARANTEE',
+            "rejected_client" => 'policy.status.REJECTED_CLIENT',
+            "pending_cancel" => 'policy.status.PENDING_CANCEL'
+        ];
+
+        if(!$plain) {
+            foreach($statuses as $key => $value) {
+                $statuses[$key] = __($value);
+            }
+        }
+
+        return $statuses;
     }
 }
 
@@ -155,32 +163,34 @@ if(!function_exists('getInvoiceStatus')) {
      * 
      * @return array $status
      */
-    function getInvoiceStatus(){
-        $status = array();
-        $status['waiting_for_payment'] = __('invoice.status.WAITING_FOR_PAYMENT');
-        $status['partial_paid'] = __('invoice.status.PARTIAL_PAID');
-        $status['paid'] = __('invoice.status.PAID');
-        $status['pastdue'] = __('invoice.status.PASTDUE');
-        $status['refunded'] = __('invoice.status.REFUNDED');
-        $status['partial_refunded'] = __('invoice.status.PARTIAL_REFUNDED');
-        $status['reminder'] = __('invoice.status.REMINDER');
-        $status['warning1'] = __('invoice.status.WARNING1');
-        $status['warning2'] = __('invoice.status.WARNING2');
-        $status['collection'] = __('invoice.status.COLLECTION');
-        $status['online_payment_waiting'] = __('invoice.status.ONLINE_PAYMENT_WAITING');
-        $status['online_payment_invalid'] = __('invoice.status.ONLINE_PAYMENT_INVALID');
-        $status['debt_enforcement'] = __('invoice.status.DEBT_ENFORCEMENT');
-       /* $status[] = "command";
-        $status[] = "follow";
-        $status[] = "loss";
-        $status[] = "seizure";*/
+    function getInvoiceStatus($plain = 0){
+        $statuses = [
+            'waiting_for_payment' => 'invoice.status.WAITING_FOR_PAYMENT',
+            'partial_paid' => 'invoice.status.PARTIAL_PAID',
+            'paid' => 'invoice.status.PAID',
+            'pastdue' => 'invoice.status.PASTDUE',
+            'refunded' => 'invoice.status.REFUNDED',
+            'partial_refunded' => 'invoice.status.PARTIAL_REFUNDED',
+            'reminder' => 'invoice.status.REMINDER',
+            'warning1' => 'invoice.status.WARNING1',
+            'warning2' => 'invoice.status.WARNING2',
+            'collection' => 'invoice.status.COLLECTION',
+            'online_payment_waiting' => 'invoice.status.ONLINE_PAYMENT_WAITING',
+            'online_payment_invalid' => 'invoice.status.ONLINE_PAYMENT_INVALID',
+            'debt_enforcement' => 'invoice.status.DEBT_ENFORCEMENT'
+        ];
 
-        return $status;
+        if(!$plain) {
+            foreach($statuses as $key => $value) {
+                $statuses[$key] = __($value);
+            }
+        }
+
+        return $statuses;
     }
 }
 
 if(!function_exists('roundTo5')){
-
     /**
      * Returns decimal number which is round to 5.
      * 
@@ -195,7 +205,6 @@ if(!function_exists('roundTo5')){
 }
 
 if(!function_exists('format')){
-
     /**
      * Returns formatted decimal number.
      * 
@@ -204,7 +213,7 @@ if(!function_exists('format')){
      * @param  string $after
      * @return string
      */
-    function format($number, $before = "", $after = ""){
+    function format($number, $before = "", $after = "") {
         $decpoint = config('crm.decpoint');
         $thousands = config('crm.thousands');
         $decimals = config('crm.decimals');
@@ -214,27 +223,31 @@ if(!function_exists('format')){
 
 }
 
-if(!function_exists('getContactPDF')){
-    
+if(!function_exists('getContactPDF')) {
     /**
      * Returns Contact PDF related statues.
      * 
      * @return array $status
      */
-    function getContactPDF(){
-        $status = array();
+    function getContactPDF($plain = 0) {
+        $statuses = [
+            'content_pdf_img' => 'contact.pdf.PRECONFIRMATION_IMG',
+            'content_pdf1' => 'contact.pdf.REJECTED',
+            'offer_print' => 'contact.pdf.OFFER_PRINT_LETTER'
+        ];
 
-       // $status['content_pdf']  = "CONTACT_PDF_PRECONFIRMATION";
-        $status['content_pdf_img'] = __('contact.pdf.PRECONFIRMATION_IMG');
-        $status['content_pdf1'] = __('contact.pdf.REJECTED');
-       // $status['refund']       = "CONTACT_PDF_OFFER";
-        $status['offer_print'] = __('contact.pdf.OFFER_PRINT_LETTER');
-        return $status;
+        if(!$plain) {
+            foreach($statuses as $key => $value) {
+                $statuses[$key] = __($value);
+            }
+        }
+
+        return $statuses;
     }
 
 }
 
-if(!function_exists('get_salutation')){
+if(!function_exists('get_salutation')) {
 
     /**
      * Returns translated salutation.
@@ -242,7 +255,7 @@ if(!function_exists('get_salutation')){
      * @param string $salutation
      * @return string translated salutation
      */
-    function get_salutation($salutation){
+    function get_salutation($salutation) {
         switch($salutation) {
             case 'mr': 
                 return __('general.MR'); 
@@ -258,9 +271,9 @@ if(!function_exists('get_salutation')){
 
 }
 
-if(!function_exists('getLeadSource')){
+if(!function_exists('getLeadSource')) {
 
-    function getLeadSource(){
+    function getLeadSource() {
         $leadsource = array();
 
         $leadsource['online_registration'] = __('contact.leadsource.ONLINE_REGISTRATION');
@@ -269,7 +282,6 @@ if(!function_exists('getLeadSource')){
         $leadsource['other'] = __('contact.leadsource.ANDERE');
         $leadsource['partner_login'] = __('contact.leadsource.PARTNERLOGIN');
         $leadsource['call_centre'] = __('contact.leadsource.CALLCENTRE');
-
         $leadsource['pdf_cls'] = __('contact.leadsource.PDF_CLS');
         $leadsource['pdf_mks'] = __('contact.leadsource.PDF_MKS');
         $leadsource['pdf_go'] = __('contact.leadsource.PDF_GO');
@@ -285,13 +297,64 @@ if(!function_exists('getLeadSource')){
 
 }
 
-if(!function_exists('getLichtensteinZipCodes')){
+if(!function_exists('getLichtensteinZipCodes')) {
     /**
      * returns all Lichtenstein Zip codes.
      * @return array
      */
     function getLichtensteinZipCodes(){
         return config('app.lichtenstein_zip_codes');
+    }
+}
+
+if(!function_exists('getCompanyTypes')) {
+    /**
+     * returns all company types.
+     * @return array
+     */
+    function getCompanyTypes() {
+        $company_type = [];
+
+        $company_type["public_limited_company"] = __('contact.company_type.PUBLIC_LIMITED_COMPANY');
+        $company_type["limited_liability_company"] = __('contact.company_type.LIMITED_LIABILITY_COMPANY');
+        $company_type["simple_partnership"] = __('contact.company_type.SIMPLE_PARTNERSHIP');
+        $company_type["sole_proprietorship"] = __('contact.company_type.SOLE_PROPRIETORSHIP');
+        $company_type["cooperative"] = __('contact.company_type.COOPERATIVE');
+        $company_type["collective_society"] = __('contact.company_type.COLLECTIVE_SOCIETY');
+        $company_type["limited_partnership"] = __('contact.company_type.LIMITED_PARTNERSHIP');
+        $company_type["stock_company"] = __('contact.company_type.STOCK_COMPANY');
+        $company_type["institute_of_public_law"] = __('contact.company_type.INSTITUTE_OF_PUBLIC_LAW');
+        $company_type["club"] = __('contact.company_type.CLUB');
+        $company_type["endowment"] = __('contact.company_type.ENDOWMENT');
+
+        return $company_type;
+    }
+}
+
+if(!function_exists('getCompanyBranches')) {
+    /**
+     * returns all company branches.
+     * @return array
+     */
+    function getCompanyBranches() {
+        $company_branch = [];
+
+        $company_branch["car_traffic"] = __('contact.company_branch.CAR_TRAFFIC');
+        $company_branch["bauen_renovieren"] = __('contact.company_branch.BAUEN_RENOVIEREN');
+        $company_branch["authorities_associations"] = __('contact.company_branch.AUTHORITIES_ASSOCIATIONS');
+        $company_branch["education_science"] = __('contact.company_branch.EDUCATION_SCIENCE');
+        $company_branch["computers_electronics"] = __('contact.company_branch.COMPUTERS_ELECTRONICS');
+        $company_branch["service"] = __('contact.company_branch.SERVICE');
+        $company_branch["leisure_travel"] = __('contact.company_branch.LEISURE_TRAVEL');
+        $company_branch["financial_service"] = __('contact.company_branch.FINANCIAL_SERVICE');
+        $company_branch["health_wellness"] = __('contact.company_branch.HEALTH_WELLNESS');
+        $company_branch["wholesale_retail"] = __('contact.company_branch.WHOLESALE_RETAIL');
+        $company_branch["immobilien"] = __('contact.company_branch.IMMOBILIEN');
+        $company_branch["hotel_gastronomie"] = __('contact.company_branch.HOTEL_GASTRONOMIE');
+        $company_branch["living_furnishing"] = __('contact.company_branch.LIVING_FURNISHING');
+        $company_branch["sonstige"] = __('contact.company_branch.SONSTIGE');
+
+        return $company_branch;
     }
 }
 

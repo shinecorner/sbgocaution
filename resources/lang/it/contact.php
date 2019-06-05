@@ -4,8 +4,9 @@ return [
     'CONTACT' => 'Kunde',    
     'ID'=> 'Numero cliente',
     'TOTAL_INVOICES' => 'Rechnung(en)',
+    'TOTAL_POLICIES' => 'Politiche',
     'LINKED_TO_USER' => 'User',
-    'RC_QUOTE_TOOLTIP' => 'È interessato a un\'offerta PH.',
+    'RC_POLICY_TOOLTIP' => 'È interessato a un\'offerta PH.',
     'CALL_LEAD_SOURCE_TOOLTIP' => 'Call center',
     'SEND_OFFER_BY_POST_TOOLTIP' => 'Offerte per Post', 
     'ADD_NEW_POLICY' => 'Police(n)', 
@@ -42,7 +43,36 @@ return [
         'REJECTED' => 'Abgelehnt',
         'DISSOLVED_IMMEDIATELY' => 'Aufgelöst nach Abschluss',
         'RESOLVED' => 'Gekündigt',
-        'QUOTE_WAITING' => 'Warten auf Prüfung'
+        'POLICY_WAITING' => 'Warten auf Prüfung'
     ],
-    'INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST' => ":POLICY_NUMS gehören zu Lichtenstein"
+    'INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST' => ":POLICY_NUMS gehören zu Lichtenstein",
+    'company_type' => [
+        'PUBLIC_LIMITED_COMPANY' => "SOCIETÀ PER AZIONI",
+        'LIMITED_LIABILITY_COMPANY' => "società a responsabilità limitata",
+        'SIMPLE_PARTNERSHIP' => "Partenariato semplice",
+        'SOLE_PROPRIETORSHIP' => "ditta individuale",
+        'cooperative' => "collaborativo",
+        'collective_society' => "società collettiva",
+        'limited_partnership' => "società in accomandita",
+        'stock_company' => "Società in accomandita",
+        'institute_of_public_law' => "Istituto di diritto pubblico",
+        'club' => "locale notturno",
+        'endowment' => "dote"
+    ],
+    'company_branch' => [
+        'CAR_TRAFFIC' => "Auto & Traffico",
+        'BAUEN_RENOVIEREN' => "Costruire & Ristrutturare",
+        'AUTHORITIES_ASSOCIATIONS' => "Autorità e associazioni",
+        'EDUCATION_SCIENCE' => "Educazione e scienza",
+        'COMPUTERS_ELECTRONICS' => "Computer & Elettronica",
+        'SERVICE' => "prestazione",
+        'LEISURE_TRAVEL' => "Tempo libero e viaggi",
+        'FINANCIAL_SERVICE' => "servizio finanziario",
+        'HEALTH_WELLNESS' => "Salute e benessere",
+        'WHOLESALE_RETAIL' => "Commercio all'ingrosso e al dettaglio",
+        'IMMOBILIEN' => "beni immobili",
+        'HOTEL_GASTRONOMIE' => "Hotel & Gastronomia",
+        'LIVING_FURNISHING' => "Abitare & Arredamento",
+        'SONSTIGE' => "Altro"
+    ]    
 ];
