@@ -4,6 +4,7 @@ return [
     'CONTACT' => 'Kunde',
     'ID'=> 'Kunden ID',
     'TOTAL_INVOICES' => 'Rechnung(en)',
+    'TOTAL_POLICIES' => 'Policen',
     'LINKED_TO_USER' => 'User',
     'RC_POLICY_TOOLTIP' => 'Ist an einer PH-Offerte interessiert.',
     'CALL_LEAD_SOURCE_TOOLTIP' => 'Call-Center',    
