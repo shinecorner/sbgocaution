@@ -147,20 +147,22 @@ class ContactResource extends JsonResource
             foreach($policy_statuses as $policy_status) {
                 $count = $policies->where('status', $policy_status)->count();
                 if($count > 0){
-                    $data['count_policy_by_status'][$policy_status] = $count;
+                    $data['count_policy_by_status'][$policy_status]['status_count'] = $count;
+                    $data['count_policy_by_status'][$policy_status]['status_class'] = render_status_class($policy_status);
                 }
             }
 
             $invoice_statuses = array_keys(getInvoiceStatus());
-            foreach($policies as $policy){
-                foreach($invoice_statuses as $invoice_status) {
+            foreach($invoice_statuses as $invoice_status) {
+                foreach($policies as $policy) {
                     $count = $policy->invoices->where('status', $invoice_status)->count();
                     if($count > 0) {
                         if(isset($data['count_invoice_by_status'][$invoice_status])){
-                            $data['count_invoice_by_status'][$invoice_status]++;
+                            $data['count_invoice_by_status'][$invoice_status]['status_count']++;
                         } else {
-                            $data['count_invoice_by_status'][$invoice_status] = $count;
+                            $data['count_invoice_by_status'][$invoice_status]['status_count'] = $count;
                         }
+                        $data['count_invoice_by_status'][$invoice_status]['status_class'] = render_status_class($invoice_status);
                     }
                 }
             }
