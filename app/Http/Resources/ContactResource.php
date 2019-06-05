@@ -137,7 +137,7 @@ class ContactResource extends JsonResource
             $data['LichtensteinZipCodesResult'] = __('contact.INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST', [ 'POLICY_NUMS' => implode(", ", $LichtensteinMK)]);
         }
         $data['count_invoices'] = $invoice_count;
-        $data['invoice_total'] = format($invoice_total,__('general.CHF'));
+        $data['invoice_total'] = format($invoice_total);
         if($policies->isNotEmpty()) {
 
             $policy_statuses = array_keys(getPolicyStatus());

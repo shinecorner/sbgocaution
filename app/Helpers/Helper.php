@@ -213,12 +213,18 @@ if(!function_exists('format')){
      * @param  string $after
      * @return string
      */
-    function format($number, $before = "", $after = "") {
-        $decpoint = config('crm.decpoint');
-        $thousands = config('crm.thousands');
-        $decimals = config('crm.decimals');
+    function format($number, $override_config = false, $elements = []){
+        if($override_config) {
+            $decpoint = $elements['decpoint'];
+            $thousands = $elements['thousands'];
+            $decimals = $elements['decimals'];    
+        } else {
+            $decpoint = config('crm.decpoint');
+            $thousands = config('crm.thousands');
+            $decimals = config('crm.decimals');
+        }
         $number = roundTo5($number);
-        return $before  . number_format($number, $decimals, $decpoint, $thousands)  . $after ;
+        return  number_format($number, $decimals, $decpoint, $thousands);
     }
 
 }
