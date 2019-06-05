@@ -2,15 +2,15 @@
   return [
 
     'LOGIN' => 'Connexion',
-    'USERNAME' => 'Identifiant',
+    'EMAIL' => 'Courriel',
     'PASSWORD' => 'Mot de passe',
-    'LANGUAGE' => 'La langue',
+    'LANGUAGE' => 'Langue',
     'DE' => 'Deutsch',
     'FR' => 'Français',
     'IT' => 'Italienisch',
     'EN' => 'English',
     'LOGIN_REMEMBER_ME' => 'Se rappeler de moi',
-    'TITLE' => 'goCaution® Ouverture de session du propriétaire',
+    'TITLE' => 'goCaution® Espace bailleurs | La gestion numérique des garanties - goCaution® Vermieter-Login | Die digitale Verwaltung von Bürgschaften',
     'LOGIN_TITLE' => 'goCaution® Espace bailleurs',
     'FORGET_PASSWORD' => 'Mot de passe oublié ?',
     'GET_RESET_LINK' => 'Obtenir le lien de réinitialisation',
@@ -35,7 +35,7 @@
     'NEW_PASSWORD' => "nouveau mot de passe",
     'CONFIRM_PASSWORD' => 'Confirmez le mot de passe',
     'RESET' => 'réinitialiser',
-    'USERNAME_REQUIRED' => "Veuillez fournir un nom d'utilisateur valide.",
+    'EMAIL_REQUIRED' => "Veuillez fournir une adresse électronique valide.",
     'PASSWORD_REQUIRED' => "Veuillez fournir un mot de passe valide.",
     'CONFIRM_PASSWORD_REQUIRED' => 'Veuillez fournir un mot de passe de confirmation valide.',
     'CONTACT' => '0800 461 461',
@@ -59,4 +59,5 @@
     'ERROR' => 'Abus',
     '404_ERROR' => "Désolé ! La page que vous cherchiez n'existe pas.",
     'GO_BACK_HOME' => 'Retour à la maison',
+    'FORGOT_PASSWORD_NOTE'=>'Veuillez saisir l\'adresse e-mail associée à votre compte d\'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe',
   ];

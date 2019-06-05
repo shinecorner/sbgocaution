@@ -4,7 +4,7 @@
   <div class="login-wrap border-bot ">
     <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'login.routes.PASSWORD_EMAIL')) }}" method="post" novalidate>
       <a class="users-back-button" href="javascript:history.go(-1)"><i class="fa fa-long-arrow-left"></i> Zurück</a>
-				<p>Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.</p>
+				<p>{{ __('login.forgot_password_note') }}</p>
         @csrf
         @if (session('status'))
             <div class="alert alert-success" role="alert">
@@ -15,14 +15,14 @@
           <span class="red-alert">{{ $errors->first('email') }}</span>
         @endif
         <div class="input-wrapper">
-            <label for="validationTooltipUsername">{{ __('login.identifier') }}<span class="star">&#160;*</span></label>
+            <label for="validationTooltipEmail">{{ __('login.email') }}<span class="star">&#160;*</span></label>
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <span class="input-group-text" id="validationTooltipEmailPrepend"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                 </div>
-                <input type="text" class="form-control" name="email" id="validationTooltipUsername" placeholder="{{ __('login.identifier') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
+                <input type="text" class="form-control" name="email" id="validationTooltipEmail" placeholder="{{ __('login.email') }}" aria-describedby="validationTooltipEmail" required="">
                 <div class="invalid-feedback">
-                    {{ __('login.username_required') }}
+                    {{ __('login.email_required') }}
                 </div>
             </div>
         </div>

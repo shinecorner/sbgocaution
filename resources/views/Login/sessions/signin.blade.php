@@ -27,7 +27,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="validationTooltipPasswordPrepend"><i class="fa fa-key" aria-hidden="true"></i></span>
                     </div>
-                    <input type="password" name="password" class="form-control" id="validationTooltipPasswordPrepend" placeholder="{{ __('login.password') }}" aria-describedby="validationTooltipPasswordPrepend" required="">
+                    <input type="password" name="password" class="form-control" id="validationTooltipPassword" placeholder="{{ __('login.password') }}" aria-describedby="validationTooltipPassword" required="">
                     <div class="invalid-feedback">
                         {{ __('login.password_required') }}
                     </div>

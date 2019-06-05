@@ -5,52 +5,52 @@ a:hover, a:focus{
   color: #066938;
 }
 
-.login-main .t3-login .login-form-module .other-links {
+.login-main .login_column .login-form-module .other-links {
   margin-bottom: 0;
 }
 
-.login-main .t3-login .login-form-module .other-links::before,
-.login-main .t3-login .login-form-module .other-links::after {
+.login-main .login_column .login-form-module .other-links::before,
+.login-main .login_column .login-form-module .other-links::after {
   content: " ";
   display: table;
 }
 
-.login-main .t3-login .login-form-module .other-links ul {
+.login-main .login_column .login-form-module .other-links ul {
   padding-left: 0;
   list-style: none;
 }
 
-.login-main .t3-login .login-form-module .other-links ul {
+.login-main .login_column .login-form-module .other-links ul {
   list-style: none;
 }
 
-.login-main div.t3-wrapper {
+.login-main div.page_wrapper{
   padding-top: 180px;
   position: inherit;
 }
 
-.login-main div.t3-wrapper.t3-login-wrap {
+.login-main div.page_wrapper.login_panel{
   padding-top: 0;
 }
 
-.login-main .t3-login {
+.login-main .login_column {
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
-.login-main .t3-login > div {
+.login-main .login_column > div {
   float: none;
   margin-left: auto;
   margin-right: auto;
 }
 
-.login-main .t3-login .login-form-module .login-wrap,
-.login-main .t3-login .login-form-module .remind,
-.login-main .t3-login .login-form-module .reset,
-.login-main .t3-login .login-form-module .registration fieldset,
-.login-main .t3-login .login-form-module .profile,
-.login-main .t3-login .login-form-module .logout,
-.login-main .t3-login .login-form-module .profile-edit {
+.login-main .login_column .login-form-module .login-wrap,
+.login-main .login_column .login-form-module .remind,
+.login-main .login_column .login-form-module .reset,
+.login-main .login_column .login-form-module .registration fieldset,
+.login-main .login_column .login-form-module .profile,
+.login-main .login_column .login-form-module .logout,
+.login-main .login_column .login-form-module .profile-edit {
   padding: 20px;
   background: #ffffff;
   border-radius: 0px 0px 5px 5px;
@@ -92,14 +92,14 @@ a:hover, a:focus{
   border: 0;
   border-top: 1px solid #ebeef0;
 }
-.login-main .t3-login .login-form-module .form-horizontal .form-group {
+.login-main .login_column .login-form-module .form-horizontal .form-group {
   margin-right: 0;
   margin-left: 0;
 }
 .login-main .form-group {
   margin-bottom: 0px;
 }
-.login-main .t3-login .login-form-module .form-horizontal .form-group .control-label {
+.login-main .login_column .login-form-module .form-horizontal .form-group .control-label {
   text-align: left;
   width: 100%;
   padding-left: 0;
@@ -108,7 +108,7 @@ a:hover, a:focus{
 .login-main .star {
   color: #ffcc00;
 }
-.login-main .t3-login .login-form-module .form-horizontal .form-group .control-label + div {
+.login-main .login_column .login-form-module .form-horizontal .form-group .control-label + div {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
@@ -129,15 +129,15 @@ a:hover, a:focus{
   font-size: 11px;
   font-weight: bold;
 }
-html, body, div.t3-wrapper.t3-login-wrap, .t3-login {
+html, body, div.page_wrapper.login_panel, .login_column {
     height: 100%;
     background: #ffffff;
     min-height: 700px;
 }
-.login-main .t3-login {
+.login-main .login_column {
   padding: 0;
 }
-.login-main .t3-login .login-form-module .login-wrap {
+.login-main .login_column .login-form-module .login-wrap {
   border-radius: 0px;
   padding: 0 0 100px;
   background: transparent;
@@ -178,19 +178,8 @@ html, body, div.t3-wrapper.t3-login-wrap, .t3-login {
   left: auto;
   right: 0;
 }
-.login-main .t3-login .modal-header {
-  background: #056937;
-  border-radius: 5px 5px 0 0;
-}
-.login-main .t3-login .modal-header .close {
-  padding: 3px 7px;
-  border-radius: 20px;
-  background: #8ebf43;
-  position: absolute;
-  right: 10px;
-}
-.login-main .t3-login .login-form-module .reset,
-.login-main .t3-login .login-form-module .remind {
+.login-main .login_column .login-form-module .reset,
+.login-main .login_column .login-form-module .remind {
   background: transparent;
   padding: 0 0 100px;
 }
@@ -199,9 +188,17 @@ html, body, div.t3-wrapper.t3-login-wrap, .t3-login {
   margin-bottom: 20px;
 }
 .login-main .reset .form-validate p,
-.login-main .remind .form-validate p {
+.login-main .remind .form-validate p{
   background: #455a64;
   color: #FFFFFF;
+}
+.login-wrap.border-bot p{
+  border: 1px solid #ebeef0;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background: #455a64;
+  color: #FFFFFF
 }
 .login-main h3.login-top-title {
   color: #ffffff;
@@ -210,9 +207,6 @@ html, body, div.t3-wrapper.t3-login-wrap, .t3-login {
   margin-top: 80px;
   font-size: 13px;
   text-align: center;
-}
-.login-main .t3-login .modal-title {
-  color: #ffffff;
 }
 .login-main .red-alert {
   color: #ff0000;
@@ -266,25 +260,6 @@ html, body, div.t3-wrapper.t3-login-wrap, .t3-login {
   opacity: 1;
 }
 
-.login-main .modal.fade .modal-dialog {
-  -webkit-transform: translate(0, -25%);
-  transform: translate(0, -25%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  transition: -webkit-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-}
-
-.login-main .modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
-.login-main .modal-backdrop.in {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
-}
-
 .login-main .help-block {
   color: #a4a5a6;
 }
@@ -294,10 +269,6 @@ html, body, div.t3-wrapper.t3-login-wrap, .t3-login {
   margin-top: 5px;
   margin-bottom: 10px;
   color: #a4a5a6;
-}
-
-.login-main .modal-open {
-  overflow: hidden;
 }
 
 .fade {
@@ -491,17 +462,6 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   opacity: 1;
 }
 
-.popover-body {
-  padding: 0.5rem 0.75rem;
-  color: #646566;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-h3.popover-header {
-  margin: 0;
-}
-
 .login-main .login-support p.log-support {
   margin-bottom: 0;
 }
@@ -530,7 +490,7 @@ h3.popover-header {
   content: " ";
   display: table;
 }
-.t3-login .logo-image {
+.login_column .logo-image {
   background-color: #8dbf43;
   height: 80px;
   line-height: 80px;
@@ -543,7 +503,7 @@ h3.popover-header {
 .logo-image small {
   display: none;
 }
-.t3-login .logo-image {
+.login_column .logo-image {
     background: transparent;
     width: auto;
     border-radius: 0;
@@ -559,28 +519,13 @@ h3.popover-header {
     flex-direction: column;
 
 }
-.login-main .login-form-module .login-wrap.border-bot p{
-    background: #455a64;
-    color: #FFFFFF;
-    border: 1px solid #ebeef0;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    border-radius: 4px;
-}
-.login-main .login-wrap.border-bot{
-  margin-top: 25px;
-}
 
 @media (max-width: 1199px){
-div.t3-wrapper {
+div.page_wrapper {
     padding-top: 60px;
 }
 }
 @media (min-width: 768px) {
-  .login-main .modal-dialog {
-    width: 600px;
-    margin: 30px auto;
-  }
   .login-main .login-grid {
     display: flex;
     flex-wrap: inherit;
@@ -631,15 +576,15 @@ div.t3-wrapper {
     align-items: center;
   }
 
-  .login-main .t3-login .login-form-module .login-wrap {
+  .login-main .login_column .login-form-module .login-wrap {
     min-width: 254px;
   }
 
-  .login-main .t3-login .login-form-module .reset {
+  .login-main .login_column .login-form-module .reset {
     margin-top: 40px;
   }
 
-  .login-main .t3-login #system-message-container .alert {
+  .login-main .login_column #system-message-container .alert {
     margin: 50px 5px 5px;
     width: 254px;
     font-size: 11px;
@@ -656,7 +601,7 @@ div.t3-wrapper {
     display: none;
   }
   .login-main .column-flexible {
-    padding: 20px 20px 0;
+    padding: 20px 23px 0;
     }
 
   .position-absolute a.btn.dropdown-toggle {
@@ -701,12 +646,12 @@ div.t3-wrapper {
     position: relative;
   }
 
-  .login-main .t3-login .login-form-module .login-wrap {
+  .login-main .login_column .login-form-module .login-wrap {
     padding: 25px 20px 10px;
   }
 
-  .login-main .t3-login .login-form-module .reset,
-  .login-main .t3-login .login-form-module .remind {
+  .login-main .login_column .login-form-module .reset,
+  .login-main .login_column .login-form-module .remind {
     padding: 25px 20px 20px;
     background: #8cbf413d;
   }
@@ -726,24 +671,12 @@ div.t3-wrapper {
     background: #8ebf43;
     padding: 5px 20px;
   }
-  .t3-header .logo-image,
-  .t3-mainnav .logo-image {
-    height: 40px;
-    line-height: 40px;
-    width: 40px;
-  }
-  .t3-header .logo-image img,
-  .t3-mainnav .logo-image img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .t3-login .login-header-block .logo-image {
+
+  .login_column .login-header-block .logo-image {
     line-height: 45px;
     height: auto;
   }
-  .login-main .login-wrap.border-bot{
-    margin-top: 0px;
-  }
+
 }
 
 @media only screen and (max-width: 568px)  {

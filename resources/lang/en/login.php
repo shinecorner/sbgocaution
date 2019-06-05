@@ -35,7 +35,7 @@
     'NEW_PASSWORD' => "New Password",
     'CONFIRM_PASSWORD' => 'Confirm Password',
     'RESET' => 'Reset',
-    'EMAIL_REQUIRED' => 'Please provide a valid email.',
+    'EMAIL_REQUIRED' => 'Please provide a valid email address.',
     'PASSWORD_REQUIRED' => 'Please provide a valid password.',
     'CONFIRM_PASSWORD_REQUIRED' => 'Please provide a valid confirm password.',
     'CONTACT' => '0800 461 461',
@@ -59,4 +59,5 @@
     'ERROR' => 'Error',
     '404_ERROR' => "Sorry! The page you were looking for doesn't exist.",
     'GO_BACK_HOME' => 'Go back to home',
+    'FORGOT_PASSWORD_NOTE' => "Please enter an e-mail address for the user account. A confirmation code will then be sent to you. As soon as the code is available, a new password for the user account can be set.",
   ];
