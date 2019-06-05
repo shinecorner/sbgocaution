@@ -5,52 +5,51 @@ a:hover, a:focus{
   color: #066938;
 }
 
-.login-main .login_column .login-form-module .other-links {
+.login-main .login-inner-wrapper .login-form-module .other-links {
   margin-bottom: 0;
 }
 
-.login-main .login_column .login-form-module .other-links::before,
-.login-main .login_column .login-form-module .other-links::after {
+.login-main .login-inner-wrapper .login-form-module .other-links::before,
+.login-main .login-inner-wrapper .login-form-module .other-links::after {
   content: " ";
   display: table;
 }
 
-.login-main .login_column .login-form-module .other-links ul {
+.login-main .login-inner-wrapper .login-form-module .other-links ul {
   padding-left: 0;
   list-style: none;
 }
 
-.login-main .login_column .login-form-module .other-links ul {
+.login-main .login-inner-wrapper .login-form-module .other-links ul {
   list-style: none;
 }
 
-.login-main div.page_wrapper{
-  padding-top: 180px;
+.login-main div.page-wrapper{
   position: inherit;
 }
 
-.login-main div.page_wrapper.login_panel{
+.login-main div.page-wrapper{
   padding-top: 0;
 }
 
-.login-main .login_column {
+.login-main .login-inner-wrapper {
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
-.login-main .login_column > div {
+.login-main .login-inner-wrapper > div {
   float: none;
   margin-left: auto;
   margin-right: auto;
 }
 
-.login-main .login_column .login-form-module .login-wrap,
-.login-main .login_column .login-form-module .remind,
-.login-main .login_column .login-form-module .reset,
-.login-main .login_column .login-form-module .registration fieldset,
-.login-main .login_column .login-form-module .profile,
-.login-main .login_column .login-form-module .logout,
-.login-main .login_column .login-form-module .profile-edit {
+.login-main .login-inner-wrapper .login-form-module .login-wrap,
+.login-main .login-inner-wrapper .login-form-module .remind,
+.login-main .login-inner-wrapper .login-form-module .reset,
+.login-main .login-inner-wrapper .login-form-module .registration fieldset,
+.login-main .login-inner-wrapper .login-form-module .profile,
+.login-main .login-inner-wrapper .login-form-module .logout,
+.login-main .login-inner-wrapper .login-form-module .profile-edit {
   padding: 20px;
   background: #ffffff;
   border-radius: 0px 0px 5px 5px;
@@ -92,14 +91,14 @@ a:hover, a:focus{
   border: 0;
   border-top: 1px solid #ebeef0;
 }
-.login-main .login_column .login-form-module .form-horizontal .form-group {
+.login-main .login-inner-wrapper .login-form-module .form-horizontal .form-group {
   margin-right: 0;
   margin-left: 0;
 }
 .login-main .form-group {
   margin-bottom: 0px;
 }
-.login-main .login_column .login-form-module .form-horizontal .form-group .control-label {
+.login-main .login-inner-wrapper .login-form-module .form-horizontal .form-group .control-label {
   text-align: left;
   width: 100%;
   padding-left: 0;
@@ -108,7 +107,7 @@ a:hover, a:focus{
 .login-main .star {
   color: #ffcc00;
 }
-.login-main .login_column .login-form-module .form-horizontal .form-group .control-label + div {
+.login-main .login-inner-wrapper .login-form-module .form-horizontal .form-group .control-label + div {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
@@ -129,15 +128,15 @@ a:hover, a:focus{
   font-size: 11px;
   font-weight: bold;
 }
-html, body, div.page_wrapper.login_panel, .login_column {
-    height: 100%;
-    background: #ffffff;
-    min-height: 700px;
+html, body, div.page-wrapper.login_panel, .login-inner-wrapper {
+  height: 100%;
+  background: #ffffff;
+  min-height: 700px;
 }
-.login-main .login_column {
+.login-main .login-inner-wrapper {
   padding: 0;
 }
-.login-main .login_column .login-form-module .login-wrap {
+.login-main .login-inner-wrapper .login-form-module .login-wrap {
   border-radius: 0px;
   padding: 0 0 100px;
   background: transparent;
@@ -178,8 +177,8 @@ html, body, div.page_wrapper.login_panel, .login_column {
   left: auto;
   right: 0;
 }
-.login-main .login_column .login-form-module .reset,
-.login-main .login_column .login-form-module .remind {
+.login-main .login-inner-wrapper .login-form-module .reset,
+.login-main .login-inner-wrapper .login-form-module .remind {
   background: transparent;
   padding: 0 0 100px;
 }
@@ -469,8 +468,8 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   margin-bottom: 15px;
 }
 .btn-success {
-    background-color: #8dbf43;
-    border-color: #8dbf43;
+  background-color: #8dbf43;
+  border-color: #8dbf43;
 }
 .btn-success:hover{
   border-color: #066938;
@@ -490,7 +489,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   content: " ";
   display: table;
 }
-.login_column .logo-image {
+.login-inner-wrapper .logo-image {
   background-color: #8dbf43;
   height: 80px;
   line-height: 80px;
@@ -503,27 +502,27 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 .logo-image small {
   display: none;
 }
-.login_column .logo-image {
-    background: transparent;
-    width: auto;
-    border-radius: 0;
+.login-inner-wrapper .logo-image {
+  background: transparent;
+  width: auto;
+  border-radius: 0;
 }
 .logo a {
-    display: inline-block;
-    line-height: 1;
-    margin: 0;
+  display: inline-block;
+  line-height: 1;
+  margin: 0;
 }
 .Site {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 
 }
 
 @media (max-width: 1199px){
-div.page_wrapper {
+  div.page-wrapper {
     padding-top: 60px;
-}
+  }
 }
 @media (min-width: 768px) {
   .login-main .login-grid {
@@ -576,15 +575,15 @@ div.page_wrapper {
     align-items: center;
   }
 
-  .login-main .login_column .login-form-module .login-wrap {
+  .login-main .login-inner-wrapper .login-form-module .login-wrap {
     min-width: 254px;
   }
 
-  .login-main .login_column .login-form-module .reset {
+  .login-main .login-inner-wrapper .login-form-module .reset {
     margin-top: 40px;
   }
 
-  .login-main .login_column #system-message-container .alert {
+  .login-main .login-inner-wrapper #system-message-container .alert {
     margin: 50px 5px 5px;
     width: 254px;
     font-size: 11px;
@@ -602,7 +601,7 @@ div.page_wrapper {
   }
   .login-main .column-flexible {
     padding: 20px 23px 0;
-    }
+  }
 
   .position-absolute a.btn.dropdown-toggle {
     padding: 5px 3px;
@@ -646,12 +645,12 @@ div.page_wrapper {
     position: relative;
   }
 
-  .login-main .login_column .login-form-module .login-wrap {
+  .login-main .login-inner-wrapper .login-form-module .login-wrap {
     padding: 25px 20px 10px;
   }
 
-  .login-main .login_column .login-form-module .reset,
-  .login-main .login_column .login-form-module .remind {
+  .login-main .login-inner-wrapper .login-form-module .reset,
+  .login-main .login-inner-wrapper .login-form-module .remind {
     padding: 25px 20px 20px;
     background: #8cbf413d;
   }
@@ -672,7 +671,7 @@ div.page_wrapper {
     padding: 5px 20px;
   }
 
-  .login_column .login-header-block .logo-image {
+  .login-inner-wrapper .login-header-block .logo-image {
     line-height: 45px;
     height: auto;
   }
@@ -695,10 +694,10 @@ div.page_wrapper {
   }
 }
 @media only screen
-  and (min-device-width: 640px)
-  and (max-device-width: 731px)
-  and (orientation: landscape) {
-    .login-bottom-block .logo .logo-image {
-      line-height: 78px;
-    }
+and (min-device-width: 640px)
+and (max-device-width: 731px)
+and (orientation: landscape) {
+  .login-bottom-block .logo .logo-image {
+    line-height: 78px;
+  }
 }

@@ -20,8 +20,8 @@
 
 </head>
 <body class="login-main">
-    <div class="page_wrapper login_panel">
-        <div class="login_column">
+    <div class="page-wrapper">
+        <div class="login-inner-wrapper">
             <div class="@if(Request::path() == app()->getLocale()) row login-grid @else row login-grid forgot-grid @endif">
                 <div class="column-fixed Site">
                     <div class="login-header-block visible-xs">
