@@ -54,29 +54,31 @@ class ContactResource extends JsonResource
             $data['send_offer_by_post'] = 0;
 
         if ($this->is_duplicate) {
-            $draws = Contact::where('is_duplicate', '=', 1)
+            $this->getContactDuplicate($data);
+        }
+
+        $this->getContactEmailDuplicate($data);
+
+        return $data;
+    }
+
+    private function getContactDuplicate(&$data) {
+        $draws = Contact::where('is_duplicate', '=', 0)
             ->where('first_name', '=', $this->first_name)
             ->where('last_name', '=', $this->last_name)
             ->where('id', '!=', $this->id)
             ->groupBy('id')
             ->orderBy('id', 'asc')->get();
 
-            $data['duplicate'] = '';
+        $data['duplicate'] = '';
 
-            if (!empty($draws)) {
-                foreach ($draws as $key => $draw) {
-                    $data['duplicate'] .= "(" .$draw->contact_num .") ";
-                    $data['duplicate'] .= $draw->first_name. " ";
-                    $data['duplicate'] .= $draw->last_name;
-                    if(($key+1) != count($draws))
-                        $data['duplicate'] .= "<br/>";
-                }
-            }
+        foreach ($draws as $key => $draw) {
+            $data['duplicate'] .= "(" .$draw->contact_num .") ";
+            $data['duplicate'] .= $draw->first_name. " ";
+            $data['duplicate'] .= $draw->last_name;
+            if(($key+1) != count($draws))
+                $data['duplicate'] .= "<br/>";
         }
-
-        $this->getContactEmailDuplicate($data);
-
-        return $data;
     }
 
     /**
