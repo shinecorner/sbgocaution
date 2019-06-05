@@ -19,10 +19,10 @@ class ContactController extends Controller
     public function index(Request $request)
     {
         $contact_statuses = [
-            'contact_statuslist',
-            'contactPDF_statuslist',
-            'policy_statuslist',
-            'invoice_statuslist'
+            'contact',
+            //'contactPDF',
+            'policy',
+            'invoice'
         ];
         
         $data = [];
@@ -136,17 +136,17 @@ class ContactController extends Controller
     private function getStatusList(&$data, $status){
         $languages = config('app.languages');
         switch ($status) {
-            case 'contact_statuslist':
-                $data['helpers'][$status] = getContactStatus(1);
+            case 'contact':
+                $data['helpers']['statuses'][$status] = getContactStatus(1);
                 break;
-            case 'contactPDF_statuslist':
-                $data['helpers'][$status] = getContactPDF(1);
+            case 'contactPDF':
+                $data['helpers']['statuses'][$status] = getContactPDF(1);
                 break;
-            case 'policy_statuslist':
-                $data['helpers'][$status] = getPolicyStatus(1);
+            case 'policy':
+                $data['helpers']['statuses'][$status] = getPolicyStatus(1);
                 break;
-            case 'invoice_statuslist':
-                $data['helpers'][$status] = getInvoiceStatus(1);
+            case 'invoice':
+                $data['helpers']['statuses'][$status] = getInvoiceStatus(1);
                 break;
         }
     }
