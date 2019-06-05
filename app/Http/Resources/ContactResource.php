@@ -43,11 +43,6 @@ class ContactResource extends JsonResource
 
         $this->policyAndInvoiceStatusCounts($data);
 
-        if($this->rc_policy == "Yes")
-            $data['rc_policy'] = 1;
-        elseif($this->rc_policy == "No")
-            $data['rc_policy'] = 0;
-
         if($this->lead_source == "Call_centre")
             $data['call_lead_source'] = 1;
         else
@@ -146,23 +141,28 @@ class ContactResource extends JsonResource
             $policy_statuses = array_keys(getPolicyStatus());
             foreach($policy_statuses as $policy_status) {
                 $count = $policies->where('status', $policy_status)->count();
-                if($count > 0){
-                    $data['count_policy_by_status'][$policy_status]['count'] = $count;
-                    $data['count_policy_by_status'][$policy_status]['class'] = render_status_class($policy_status);
+                if($count > 0) {
+                    $count_class = [
+                        'count' => $count,
+                        'class' => render_status_class($policy_status)
+                    ];
+                    $data['count_policy_by_status'][$policy_status] = $count_class;
                 }
             }
 
             $invoice_statuses = array_keys(getInvoiceStatus());
+            $count_class['count'] = 0;
             foreach($invoice_statuses as $invoice_status) {
                 foreach($policies as $policy) {
                     $count = $policy->invoices->where('status', $invoice_status)->count();
                     if($count > 0) {
                         if(isset($data['count_invoice_by_status'][$invoice_status])){
-                            $data['count_invoice_by_status'][$invoice_status]['count']++;
+                            $count_class['count']++;
                         } else {
-                            $data['count_invoice_by_status'][$invoice_status]['count'] = $count;
+                            $count_class['count'] = $count;
                         }
-                        $data['count_invoice_by_status'][$invoice_status]['class'] = render_status_class($invoice_status);
+                        $count_class['class'] = render_status_class($invoice_status);
+                        $data['count_invoice_by_status'][$invoice_status] = $count_class;
                     }
                 }
             }

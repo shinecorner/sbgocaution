@@ -49,9 +49,22 @@ class ContactController extends Controller
         }
 
         if($request->has('filters')) {
-            $this->filters($request, $query, ['status', 'contact_type', 'policies', 'language', 'cont_start', 'cont_end', 'birthdate', 'salutation', 'leadsource', 'rc_policy', 'promo', 'duplicate', 'duplicate_email', 'incorrect_address', 'order', 'order_dir', 'limit']);
+            $this->filters($request, $query, ['status', 'diverse', 'language', 'created_from', 'created_to', 'birthdate', 'salutation', 'lead_source', 'rc_policy', 'promo_code', 'duplicate', 'duplicate_email', 'incorrect_address']);
         }
-        $contacts = $query->paginate($request->per_page);
+
+        if($request->has('order_by')) {
+            $query->orderBy($request->order_by);
+        }
+
+        if($request->has('order_by') && $request->has('order')) {
+            $query->orderBy($request->order_by, $request->order);
+        }
+
+        if($request->has('limit')) {
+            $contacts = $query->paginate($request->limit);
+        } else {
+            $contacts = $query->paginate($request->per_page);
+        }
 
         return ContactResource::collection($contacts)->additional($data);
     }
@@ -183,7 +196,7 @@ class ContactController extends Controller
     private function filters($request, $query, $fields) {
         foreach($request->filters as $key => $value) {
             if($request->has('filters.'.$key) && in_array($key, $fields)) {
-                if($key == 'policies')
+                if($key == 'diverse')
                 {
                     if($value == 0) { //Contacts status accepted with 0 policies
                         $query->has('policies', '=', 0);
@@ -200,12 +213,12 @@ class ContactController extends Controller
                         $query->where('user_id', '=', 0);
                         $query->where('status', '=', 'accepted');
                     }
-                } else if($key == 'cont_start') {
+                } else if($key == 'created_from') {
                     $query->where('created_at', '>=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
-                } else if($key == 'cont_end') {
+                } else if($key == 'created_to') {
                     $query->where('created_at', '<=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
                 } else if($key == 'birthdate') {
-                    $query->where('created_at', '<=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
+                    $query->where('birthdate', '=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
                 } else if($key == 'duplicate') {
                     $query->where('is_duplicate', '=', 1);
                 } else if($key == 'duplicate_email') {
