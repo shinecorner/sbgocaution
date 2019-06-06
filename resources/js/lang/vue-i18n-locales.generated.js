@@ -195,8 +195,8 @@ export default {
                 "DUPLICATE_CONTACT_EMAIL": "Duplikate E-Mail",
                 "NOT_CORRECT_ADDRESS_FILTER": "Adresse nicht korrekt"
             },
-            "CONTACT_STATUS_CHANGE_SUCCESS": "Der Kontaktstatus wurde erfolgreich geändert.",
-            "CONTACT_STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut."
+            "STATUS_CHANGE_SUCCESS": "Der Kontaktstatus wurde erfolgreich geändert.",
+            "STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut."
         },
         "pagination": {
             "previous": "« Previous",
@@ -216,8 +216,8 @@ export default {
                 "REJECTED_CLIENT": "Annulliert durch Kunden",
                 "PENDING_CANCEL": "Auflösung gemeldet"
             },
-            "POLICY_STATUS_CHANGE_SUCCESS": "Der Richtlinienstatus wurde erfolgreich geändert.",
-            "POLICY_STATUS_CHANGE_FAIL": "Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut."
+            "STATUS_CHANGE_SUCCESS": "Der Richtlinienstatus wurde erfolgreich geändert.",
+            "STATUS_CHANGE_FAIL": "Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut."
         },
         "invoice": {
             "status": {
@@ -235,8 +235,8 @@ export default {
                 "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
                 "DEBT_ENFORCEMENT": "Betreibungsverfahren"
             },
-            "INVOICE_STATUS_CHANGE_SUCCESS": "Der Status der Rechnung wurde erfolgreich geändert.",
-            "INVOICE_STATUS_CHANGE_FAIL": "Leider wurde der Rechnungsstatus nicht geändert, versuchen Sie es erneut."
+            "STATUS_CHANGE_SUCCESS": "Der Status der Rechnung wurde erfolgreich geändert.",
+            "STATUS_CHANGE_FAIL": "Leider wurde der Rechnungsstatus nicht geändert, versuchen Sie es erneut."
         },
         "general": {
             "CRM": "CRM",
@@ -542,8 +542,8 @@ export default {
                 "DUPLICATE_CONTACT_EMAIL": "Duplicate email",
                 "NOT_CORRECT_ADDRESS_FILTER": "Address not correct"
             },
-            "CONTACT_STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
-            "CONTACT_STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again."
+            "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again."
         },
         "pagination": {
             "previous": "« Previous",
@@ -563,8 +563,8 @@ export default {
                 "REJECTED_CLIENT": "Rejected by client",
                 "PENDING_CANCEL": "Resolution reported"
             },
-            "POLICY_STATUS_CHANGE_SUCCESS": "Policy status has been changed successfully.",
-            "POLICY_STATUS_CHANGE_FAIL": "Unfortunately, policy status has not been changed, try again."
+            "STATUS_CHANGE_SUCCESS": "Policy status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, policy status has not been changed, try again."
         },
         "invoice": {
             "status": {
@@ -582,8 +582,8 @@ export default {
                 "ONLINE_PAYMENT_INVALID": "Invalid online payment",
                 "DEBT_ENFORCEMENT": "Debt enforcement proceedings"
             },
-            "INVOICE_STATUS_CHANGE_SUCCESS": "Invoice status has been changed successfully.",
-            "INVOICE_STATUS_CHANGE_FAIL": "Unfortunately, invoice status has not been changed, try again."
+            "STATUS_CHANGE_SUCCESS": "Invoice status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, invoice status has not been changed, try again."
         },
         "general": {
             "CRM": "CRM",
@@ -888,8 +888,8 @@ export default {
                 "DUPLICATE_CONTACT_EMAIL": "Doubles par email",
                 "NOT_CORRECT_ADDRESS_FILTER": "Adresse incorrecte"
             },
-            "CONTACT_STATUS_CHANGE_SUCCESS": "Le statut du contact a été modifié avec succès.",
-            "CONTACT_STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez."
+            "STATUS_CHANGE_SUCCESS": "Le statut du contact a été modifié avec succès.",
+            "STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez."
         },
         "pagination": {
             "previous": "« Previous",
@@ -909,8 +909,8 @@ export default {
                 "REJECTED_CLIENT": "Annulées par les clients",
                 "PENDING_CANCEL": "Résolution/Mouvement rapportée"
             },
-            "POLICY_STATUS_CHANGE_SUCCESS": "L'état de la police a été modifié avec succès.",
-            "POLICY_STATUS_CHANGE_FAIL": "Malheureusement, l'état de la politique n'a pas été modifié, réessayez."
+            "STATUS_CHANGE_SUCCESS": "L'état de la police a été modifié avec succès.",
+            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la politique n'a pas été modifié, réessayez."
         },
         "invoice": {
             "status": {
@@ -928,8 +928,8 @@ export default {
                 "ONLINE_PAYMENT_INVALID": "Paiement en ligne non valable",
                 "DEBT_ENFORCEMENT": "procédures d'exécution forcée"
             },
-            "INVOICE_STATUS_CHANGE_SUCCESS": "Le statut de facture a été modifié avec succès.",
-            "INVOICE_STATUS_CHANGE_FAIL": "Malheureusement, l'état de la facture n'a pas été modifié, essayez à nouveau."
+            "STATUS_CHANGE_SUCCESS": "Le statut de facture a été modifié avec succès.",
+            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la facture n'a pas été modifié, essayez à nouveau."
         },
         "general": {
             "CRM": "CRM",
@@ -1234,8 +1234,8 @@ export default {
                 "DUPLICATE_CONTACT_EMAIL": "Doppio via e-mail",
                 "NOT_CORRECT_ADDRESS_FILTER": "Indirizzo non corretto"
             },
-            "CONTACT_STATUS_CHANGE_SUCCESS": "Lo stato dei contatti è stato modificato con successo.",
-            "CONTACT_STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare."
+            "STATUS_CHANGE_SUCCESS": "Lo stato dei contatti è stato modificato con successo.",
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare."
         },
         "pagination": {
             "previous": "« Previous",
@@ -1255,8 +1255,8 @@ export default {
                 "REJECTED_CLIENT": "Annullato dai clienti",
                 "PENDING_CANCEL": "Risoluzione segnalata"
             },
-            "POLICY_STATUS_CHANGE_SUCCESS": "Lo stato della polizza è stato modificato con successo.",
-            "POLICY_STATUS_CHANGE_FAIL": "Purtroppo, lo status politico non è stato cambiato, riprovaci."
+            "STATUS_CHANGE_SUCCESS": "Lo stato della polizza è stato modificato con successo.",
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo status politico non è stato cambiato, riprovaci."
         },
         "invoice": {
             "status": {
@@ -1274,8 +1274,8 @@ export default {
                 "ONLINE_PAYMENT_INVALID": "Pagamento online non valido",
                 "DEBT_ENFORCEMENT": "procedure di esecuzione"
             },
-            "INVOICE_STATUS_CHANGE_SUCCESS": "Lo stato della fattura è stato modificato con successo.",
-            "INVOICE_STATUS_CHANGE_FAIL": "Purtroppo, lo stato della fattura non è stato modificato, riprovare."
+            "STATUS_CHANGE_SUCCESS": "Lo stato della fattura è stato modificato con successo.",
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo stato della fattura non è stato modificato, riprovare."
         },
         "general": {
             "CRM": "CRM",

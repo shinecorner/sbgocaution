@@ -87,6 +87,6 @@ return [
         'NOT_CORRECT_ADDRESS_FILTER' => 'Adresse nicht korrekt'
         
     ],
-    'CONTACT_STATUS_CHANGE_SUCCESS' => 'Der Kontaktstatus wurde erfolgreich geändert.',
-    'CONTACT_STATUS_CHANGE_FAIL' => 'Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.',
+    'STATUS_CHANGE_SUCCESS' => 'Der Kontaktstatus wurde erfolgreich geändert.',
+    'STATUS_CHANGE_FAIL' => 'Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.',
 ];

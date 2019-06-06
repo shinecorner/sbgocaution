@@ -86,6 +86,6 @@ return [
         'DUPLICATE_CONTACT_EMAIL' => 'Doppio via e-mail',
         'NOT_CORRECT_ADDRESS_FILTER' => 'Indirizzo non corretto',        
     ],
-    'CONTACT_STATUS_CHANGE_SUCCESS' => 'Lo stato dei contatti è stato modificato con successo.',
-    'CONTACT_STATUS_CHANGE_FAIL' => 'Purtroppo, lo stato dei contatti non è stato modificato, riprovare.',
+    'STATUS_CHANGE_SUCCESS' => 'Lo stato dei contatti è stato modificato con successo.',
+    'STATUS_CHANGE_FAIL' => 'Purtroppo, lo stato dei contatti non è stato modificato, riprovare.',
 ];

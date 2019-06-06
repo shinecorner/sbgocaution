@@ -13,6 +13,6 @@ return [
 		'REJECTED_CLIENT' => "Annulliert durch Kunden",
 		'PENDING_CANCEL' => "Auflösung gemeldet"
 	],
-    'POLICY_STATUS_CHANGE_SUCCESS' => 'Der Richtlinienstatus wurde erfolgreich geändert.',
-    'POLICY_STATUS_CHANGE_FAIL' => 'Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut.',
+    'STATUS_CHANGE_SUCCESS' => 'Der Richtlinienstatus wurde erfolgreich geändert.',
+    'STATUS_CHANGE_FAIL' => 'Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut.',
 ];

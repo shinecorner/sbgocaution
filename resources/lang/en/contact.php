@@ -86,6 +86,6 @@ return [
         'DUPLICATE_CONTACT_EMAIL' => 'Duplicate email',
         'NOT_CORRECT_ADDRESS_FILTER' => 'Address not correct'        
     ],
-    'CONTACT_STATUS_CHANGE_SUCCESS' => 'Contact status has been changed successfully.',
-    'CONTACT_STATUS_CHANGE_FAIL' => 'Unfortunately, contact status has not been changed, try again.'
+    'STATUS_CHANGE_SUCCESS' => 'Contact status has been changed successfully.',
+    'STATUS_CHANGE_FAIL' => 'Unfortunately, contact status has not been changed, try again.'
 ];

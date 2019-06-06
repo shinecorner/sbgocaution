@@ -13,6 +13,6 @@ return [
 		'REJECTED_CLIENT' => "Rejected by client",
 		'PENDING_CANCEL' => "Resolution reported"
 	],
-    'POLICY_STATUS_CHANGE_SUCCESS' => 'Policy status has been changed successfully.',
-    'POLICY_STATUS_CHANGE_FAIL' => 'Unfortunately, policy status has not been changed, try again.',
+    'STATUS_CHANGE_SUCCESS' => 'Policy status has been changed successfully.',
+    'STATUS_CHANGE_FAIL' => 'Unfortunately, policy status has not been changed, try again.',
 ];

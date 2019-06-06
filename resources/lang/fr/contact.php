@@ -86,6 +86,6 @@ return [
         'DUPLICATE_CONTACT_EMAIL' => 'Doubles par email',
         'NOT_CORRECT_ADDRESS_FILTER' => 'Adresse incorrecte'        
     ],
-    'CONTACT_STATUS_CHANGE_SUCCESS' => 'Le statut du contact a été modifié avec succès.',
-    'CONTACT_STATUS_CHANGE_FAIL' => 'Malheureusement, le statut du contact n\'a pas été modifié, réessayez.',
+    'STATUS_CHANGE_SUCCESS' => 'Le statut du contact a été modifié avec succès.',
+    'STATUS_CHANGE_FAIL' => 'Malheureusement, le statut du contact n\'a pas été modifié, réessayez.',
 ];

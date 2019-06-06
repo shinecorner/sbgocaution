@@ -13,6 +13,6 @@ return [
 		'REJECTED_CLIENT' => "Annulées par les clients",
 		'PENDING_CANCEL' => "Résolution/Mouvement rapportée"
 	],
-    'POLICY_STATUS_CHANGE_SUCCESS' => 'L\'état de la police a été modifié avec succès.',
-    'POLICY_STATUS_CHANGE_FAIL' => 'Malheureusement, l\'état de la politique n\'a pas été modifié, réessayez.',
+    'STATUS_CHANGE_SUCCESS' => 'L\'état de la police a été modifié avec succès.',
+    'STATUS_CHANGE_FAIL' => 'Malheureusement, l\'état de la politique n\'a pas été modifié, réessayez.',
 ];
