@@ -17,6 +17,6 @@ return [
     'reset' => 'Your password has been reset!',
     'SENT' => 'Abbiamo inviato per e-mail il tuo link per la reimpostazione della password!',
     'token' => 'This password reset token is invalid.',
-    'USER' => "Non possiamo trovare un utente con quell'indirizzo e-mail.",
+    'USER' => "Non riusciamo a trovare un utente con quell'indirizzo e-mail.",
 
 ];

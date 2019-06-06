@@ -19,7 +19,7 @@
     <!--=======================js=============================-->
 
 </head>
-<body class="login-main">
+<body class="login-wrapper">
     <div class="page-wrapper">
         <div class="login-inner-wrapper">
             <div class="@if(Request::path() == app()->getLocale()) row login-grid @else row login-grid forgot-grid @endif">

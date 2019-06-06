@@ -8,7 +8,8 @@
         @csrf
         @if (session('status'))
             <div class="alert alert-success" role="alert">
-                {{ session('status') }}
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <p>{{ session('status') }}</p>
             </div>
         @endif
         @if ($errors->has('email'))
