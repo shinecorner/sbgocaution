@@ -14,5 +14,7 @@ return [
 		'ONLINE_PAYMENT_WAITING' => "Paiement en ligne en attente",
 		'ONLINE_PAYMENT_INVALID' => "Paiement en ligne non valable",
 		'DEBT_ENFORCEMENT' =>  "procédures d'exécution forcée"
-	]
+	],
+    'INVOICE_STATUS_CHANGE_SUCCESS' => "Le statut de facture a été modifié avec succès.",
+    'INVOICE_STATUS_CHANGE_FAIL' => "Malheureusement, l'état de la facture n'a pas été modifié, essayez à nouveau.",
 ];

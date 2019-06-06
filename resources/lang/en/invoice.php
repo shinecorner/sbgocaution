@@ -14,5 +14,7 @@ return [
 		'ONLINE_PAYMENT_WAITING' => "Online payment waiting",
 		'ONLINE_PAYMENT_INVALID' => "Invalid online payment",
 		'DEBT_ENFORCEMENT' =>  "Debt enforcement proceedings"
-	]
+	],
+    'INVOICE_STATUS_CHANGE_SUCCESS' => 'Invoice status has been changed successfully.',
+    'INVOICE_STATUS_CHANGE_FAIL' => 'Unfortunately, invoice status has not been changed, try again.',
 ];

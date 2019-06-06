@@ -12,5 +12,7 @@ return [
 		'JOINT_GUARANTEE' => "Fideiussione congiunta pendente",
 		'REJECTED_CLIENT' => "Annullato dai clienti",
 		'PENDING_CANCEL' => "Risoluzione segnalata"
-	]
+	],
+    'POLICY_STATUS_CHANGE_SUCCESS' => 'Lo stato della polizza è stato modificato con successo.',
+    'POLICY_STATUS_CHANGE_FAIL' => 'Purtroppo, lo status politico non è stato cambiato, riprovaci.',
 ];

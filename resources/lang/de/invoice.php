@@ -14,5 +14,7 @@ return [
 		'ONLINE_PAYMENT_WAITING' => "Online-Zahlung wartend",
 		'ONLINE_PAYMENT_INVALID' => "Online-Zahlung ungültig",
 		'DEBT_ENFORCEMENT' =>  "Betreibungsverfahren"
-	]
+	],
+    'INVOICE_STATUS_CHANGE_SUCCESS' => 'Der Status der Rechnung wurde erfolgreich geändert.',
+    'INVOICE_STATUS_CHANGE_FAIL' => 'Leider wurde der Rechnungsstatus nicht geändert, versuchen Sie es erneut.',
 ];
