@@ -133,13 +133,13 @@
                                         
                                         <div>
                                             <v-tooltip top v-for="(policy_detail,policy_status, policy_index) in props.rowData.count_policy_by_status" v-bind:key="policy_index"> 
-                                                <v-chip slot="activator" small dark color="orange" :class="policy_detail.class" text-color="white">{{policy_detail.count}}</v-chip>
+                                                <v-chip slot="activator" small :class="'label-status-' + policy_detail.class" text-color="white">{{policy_detail.count}}</v-chip>
                                                 <span>{{$t('general.POLICIES')}}:&nbsp;{{tConverted('policy.status.'+policy_status)}}</span>
                                             </v-tooltip>
                                         </div>
                                         <div>
                                             <v-tooltip top v-for="(invoice_detail,invoice_status, invoice_index) in props.rowData.count_invoice_by_status" v-bind:key="invoice_index"> 
-                                                <v-chip slot="activator" small dark color="orange" :class="invoice_detail.class" text-color="white">{{invoice_detail.count}}</v-chip>
+                                                <v-chip slot="activator" small :class="'label-status-' + invoice_detail.class" text-color="white">{{invoice_detail.count}}</v-chip>
                                                 <span>{{$t('general.INVOICES')}}:&nbsp;{{tConverted('invoice.status.'+invoice_status)}}</span>
                                             </v-tooltip>
                                         </div>
