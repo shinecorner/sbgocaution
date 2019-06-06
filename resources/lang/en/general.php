@@ -33,4 +33,14 @@ return [
     'AUTH_LOGIN_SUCCESS' => 'Logged in Successfully.',
     'AUTH_LOGIN_FAIL' => 'Logged in failed.',
     'CONFIG_SUCCESS' => 'Config updated successfully!',
+    'filter' => [
+        'TYPE_TO_SEARCH' => 'Type to search...',
+        'SELECT_STATUS' => 'Select status',
+        'SELECT_PRODUCTTYPE' => 'Select type',
+        'CREATE_FROM' => 'Created from',
+        'CREATE_TO' => 'Created to',
+        'SEARCH' => 'Search',
+        'RESET' => 'Reset',
+    ],            
+    'ROWS' => 'Rows',
 ];

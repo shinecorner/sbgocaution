@@ -1,9 +1,9 @@
 // Sidebar Routers
 export const menus = {
-    'message.general.CRM': [	
+    'general.CRM': [	
 		{
 			action: 'zmdi-accounts',
-			title: 'message.contact.CONTACTS',
+			title: 'contact.CONTACTS',
 			active: true,
 			label: 'contact',
                         path: '/contacts',
@@ -11,10 +11,10 @@ export const menus = {
                         exact: true
 		}			
     ],
-    'message.setting.OPTIONS':[
+    'setting.OPTIONS':[
         {
             action: 'zmdi-wrench',
-            title: 'message.setting.OPTIONS',
+            title: 'setting.OPTIONS',
             active: false,
             label: 'option_item',
             path: '/settings',

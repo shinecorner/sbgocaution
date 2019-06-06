@@ -13,7 +13,7 @@
 				<v-toolbar-title>{{$t('message.themeOptions')}}</v-toolbar-title>
 			</v-toolbar>
 			<v-tabs grow>
-				<v-tab>{{$t('message.general')}}</v-tab>
+				<v-tab>{{$t('general')}}</v-tab>
 				<v-tab>{{$t('message.advance')}}</v-tab>
 				<v-tab-item>
 					<vue-perfect-scrollbar class="customizer-scroll-area" :settings="settings">

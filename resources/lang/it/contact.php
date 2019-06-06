@@ -13,8 +13,8 @@ return [
     'leadsource' => [
         'ONLINE_REGISTRATION' => "Online Registrierung",
         'AFFILIATE_MARKETNG' => "Affiliate Marketing",
-        'PARTNERVERWALTUNG' => "Partnerverwaltung",
-        'PARTNERLOGIN' => "Partner-Login",
+        'PARTNER_MANAGEMENT' => "Gestione dei partner",
+        'PARTNER_LOGIN' => "Partner-Login",
         'CALLCENTRE' => "Callcenter VG",
         'PDF_CLS' => "CLS PDF Antrag",
         'PDF_MKS'=> "MKS PDF Antrag",
@@ -51,17 +51,17 @@ return [
         'LIMITED_LIABILITY_COMPANY' => "società a responsabilità limitata",
         'SIMPLE_PARTNERSHIP' => "Partenariato semplice",
         'SOLE_PROPRIETORSHIP' => "ditta individuale",
-        'cooperative' => "collaborativo",
-        'collective_society' => "società collettiva",
-        'limited_partnership' => "società in accomandita",
-        'stock_company' => "Società in accomandita",
-        'institute_of_public_law' => "Istituto di diritto pubblico",
-        'club' => "locale notturno",
-        'endowment' => "dote"
+        'COOPERATIVE' => "collaborativo",
+        'COLLECTIVE_SOCIETY' => "società collettiva",
+        'LIMITED_PARTNERSHIP' => "società in accomandita",
+        'STOCK_COMPANY' => "Società in accomandita",
+        'INSTITUTE_OF_PUBLIC_LAW' => "Istituto di diritto pubblico",
+        'CLUB' => "locale notturno",
+        'ENDOWMENT' => "dote"
     ],
     'company_branch' => [
         'CAR_TRAFFIC' => "Auto & Traffico",
-        'BAUEN_RENOVIEREN' => "Costruire & Ristrutturare",
+        'BUILD_RENOVATE' => "Costruire & Ristrutturare",
         'AUTHORITIES_ASSOCIATIONS' => "Autorità e associazioni",
         'EDUCATION_SCIENCE' => "Educazione e scienza",
         'COMPUTERS_ELECTRONICS' => "Computer & Elettronica",
@@ -70,9 +70,20 @@ return [
         'FINANCIAL_SERVICE' => "servizio finanziario",
         'HEALTH_WELLNESS' => "Salute e benessere",
         'WHOLESALE_RETAIL' => "Commercio all'ingrosso e al dettaglio",
-        'IMMOBILIEN' => "beni immobili",
-        'HOTEL_GASTRONOMIE' => "Hotel & Gastronomia",
+        'REAL_ESTATE' => "beni immobili",
+        'HOTEL_GASTRONOMY' => "Hotel & Gastronomia",
         'LIVING_FURNISHING' => "Abitare & Arredamento",
-        'SONSTIGE' => "Altro"
-    ]    
+        'OTHER' => "Altro"
+    ],
+    'filter' => [
+        'FILTER_MORE_THAN_ONE_POLICY' => 'Filtri vari',
+        'SALUTATION' => 'Titolo',
+        'BIRTH_DATE' => 'Data di nascita',
+        'LEAD_SOURCES' => 'Fonte di piombo',
+        'FILTER_RC_POLICY' => 'Zusatzgeschäfte',
+        'PROMO_FILTER' => 'Promozione effettuata',
+        'DUPLICATE_CONTACT' => 'Duplicati',
+        'DUPLICATE_CONTACT_EMAIL' => 'Doppio via e-mail',
+        'NOT_CORRECT_ADDRESS_FILTER' => 'Indirizzo non corretto',        
+    ],
 ];

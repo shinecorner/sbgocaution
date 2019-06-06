@@ -33,4 +33,14 @@ return [
     'AUTH_LOGIN_SUCCESS' => 'Effettuato l\'accesso con successo.',
     'AUTH_LOGIN_FAIL' => 'Loggato fallito.',
     'CONFIG_SUCCESS' => 'Config aggiornato con successo!',
+    'filter' => [
+        'TYPE_TO_SEARCH' => 'Tippe um zu suchen...',
+        'SELECT_STATUS' => 'Status wählen',
+        'SELECT_PRODUCTTYPE' => 'Kundentyp wählen',
+        'CREATE_FROM' => 'Creato da',
+        'CREATE_TO' => 'Creato per',
+        'SEARCH' => 'Ricerca',
+        'RESET' => 'Resettato',
+    ], 
+    'ROWS' => 'Ranghi',
 ];

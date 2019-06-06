@@ -20,8 +20,7 @@ const state = {
 	horizontalLayoutSidebar: false,                        // horizontal layout sidebar
 	languages,                                             // languages
 	selectedLocale: localStorage.getItem('selectedLocale') || 'de', //selected locale
-        serverHelpers: localStorage.getItem('serverHelpers') || "{}",
-        currentLanguageHelpers: "{}",
+        serverHelpers: localStorage.getItem('serverHelpers') || "{}",        
 	sidebarBackgroundImages,                               // sidebar backgorund images
 	selectedSidebarBgImage: sidebarBackgroundImages[0],    // selected sidebar background image
 	sidebarFilters,                                        // sidebar filters
@@ -41,15 +40,7 @@ const state = {
 const getters = {
         serverHelpers: state => {                
             return JSON.parse(state.serverHelpers);
-	},
-        currentLanguageHelpers: (state, getters) => {            
-            if(_.isEmpty(getters.serverHelpers)){
-                return JSON.parse("{}");
-            }
-            else{
-                return getters.serverHelpers[state.selectedLocale];
-            }            
-	},
+	},        
 	darkMode: state => {
 		return state.darkMode;
 	},
@@ -137,7 +128,6 @@ const actions = {
 	},
 	changeLanguage(context, payload) {                
             context.commit('changeLanguageHandler', payload);
-//            context.commit('changeCurrentLanguageHelpersHandler', payload);
 	},        
 	changeBackgroundImage(context, payload) {
 		context.commit('changeBackgroundImageHandler', payload);
@@ -216,15 +206,7 @@ const mutations = {
 		} else {
 			state.rtlLayout = false;
 		}
-	},
-        changeCurrentLanguageHelpersHandler(state, languagecode) {
-            if(_.isEmpty(JSON.parse(state.serverHelpers))){
-                state.currentLanguageHelpers = JSON.parse("{}");
-            }
-            else{
-                state.currentLanguageHelpers = JSON.parse(state.serverHelpers[languagecode]);
-            }
-	},
+	},        
 	changeBackgroundImageHandler(state, image) {
 		state.selectedSidebarBgImage = image;
 	},

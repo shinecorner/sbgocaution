@@ -19,11 +19,11 @@
          <v-list class="dropdown-list">            
                <v-list-tile :to="getMenuLink('/users/user-profile')">
                   <i class="ti-user mr-3 primary--text"></i>
-                  <span>{{$t('message.user.EDIT_ACCOUNT')}}</span>
+                  <span>{{$t('user.EDIT_ACCOUNT')}}</span>
                </v-list-tile>                        
                <v-list-tile @click="logoutUser">
                   <i class="ti-power-off mr-3 error--text"></i>
-                  <span>{{$t('message.login.routes.LOGOUT')}}</span>
+                  <span>{{$t('login.routes.LOGOUT')}}</span>
                </v-list-tile>
             
          </v-list>
