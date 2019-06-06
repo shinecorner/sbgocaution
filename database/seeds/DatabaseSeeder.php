@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         Artisan::call('passport:install');
         $this->call(ConfigsTableSeeder::class);
+        $this->call(RolesAndPermissionsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(ContactsTableSeeder::class);
         $this->call(RealestateAgenciesTableSeeder::class);
