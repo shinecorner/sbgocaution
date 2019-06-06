@@ -33,4 +33,14 @@ return [
     'AUTH_LOGIN_SUCCESS' => 'Connecté avec succès.',
     'AUTH_LOGIN_FAIL' => 'La connexion a échoué.',
     'CONFIG_SUCCESS' => 'Config mis à jour avec succès !',
+    'filter' => [
+        'TYPE_TO_SEARCH' => 'type de recherche...',
+        'SELECT_STATUS' => 'Choisir le statut',
+        'SELECT_PRODUCTTYPE' => 'Choisir le type de client',
+        'CREATE_FROM' => 'Créer de',
+        'CREATE_TO' => 'Créer jusqu\'à',
+        'SEARCH' => 'Chercher',
+        'RESET' => 'Vider',
+    ], 
+    'ROWS' => 'Rangs',
 ];

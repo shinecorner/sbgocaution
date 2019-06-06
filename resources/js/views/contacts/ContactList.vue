@@ -7,10 +7,10 @@
                         <app-card                                
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12 search-content"
-                        >                                
+                        >                            
                             <v-flex xs3 md1 lg1 offset-xs9 offset-md11 offset-lg11>                            
                                 <v-select solo class="perpage_selectbox" hide-details v-bind:items="perPageItems"  v-model.number="perPage" single-line  menu-props="bottom" ></v-select>
-                            </v-flex>
+                                    </v-flex>                                    
                         </app-card>
                     </v-layout>                    
                     <v-layout row wrap>
@@ -20,7 +20,7 @@
                         >                                      
                                 <div class="v-table__overflow list-table-container">
 				<vuetable ref="vuetable"
-                                    :no-data-template="$t('message.general.DATA_LOADING')"
+                                    :no-data-template="$t('general.DATA_LOADING')"
                                     api-url="api/contacts"
                                     :http-fetch="contactFetch"
                                     :fields="fields"           
@@ -40,7 +40,7 @@
                                 </template>  
                                 <template slot="c_contactformate" slot-scope="props">                                  
                                   <span class="primary-text">{{ props.rowData.contact_num }}</span>                                  
-                                  <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.date }}</span>
+                                  <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.created_at_formatted }}</span>
                                   <div class="column_icon_container">
                                     <v-tooltip top v-if="props.rowData.is_duplicate">                                        
                                         <v-icon color="orange darken-2" size="18" slot="activator">zmdi-alert-triangle</v-icon>
@@ -50,17 +50,17 @@
                                         <v-icon color="red darken-2" size="18" slot="activator">zmdi-email</v-icon>
                                         <span v-html="props.rowData.duplicateEmail"></span>
                                     </v-tooltip>
-                                    <v-tooltip top v-if="props.rowData.rc_quote">
+                                    <v-tooltip top v-if="props.rowData.rc_policy">
                                         <v-icon color="green darken-2" size="18" slot="activator">zmdi-check-square</v-icon>
-                                        <span>{{$t('message.contact.RC_QUOTE_TOOLTIP')}}</span>
+                                        <span>{{$t('contact.RC_POLICY_TOOLTIP')}}</span>
                                     </v-tooltip>
                                     <v-tooltip top v-if="props.rowData.call_lead_source">                                    
                                         <v-icon color="purple darken-2" size="18" slot="activator">zmdi-phone</v-icon>
-                                      <span>{{$t('message.contact.CALL_LEAD_SOURCE_TOOLTIP')}}</span>
+                                      <span>{{$t('contact.CALL_LEAD_SOURCE_TOOLTIP')}}</span>
                                     </v-tooltip>
                                     <v-tooltip top v-if="props.rowData.send_offer_by_post">
                                         <v-icon color="blue darken-2" size="18" slot="activator">zmdi-email</v-icon>
-                                        <span>{{$t('message.contact.SEND_OFFER_BY_POST_TOOLTIP')}}</span>
+                                        <span>{{$t('contact.SEND_OFFER_BY_POST_TOOLTIP')}}</span>
                                     </v-tooltip>
                                     <v-tooltip top v-if="props.rowData.language_flag">
                                         <img class="contact_flag" height="12" :src="props.rowData.language_flag" slot="activator"/>
@@ -75,7 +75,7 @@
                                                     <v-icon color="white" small>zmdi zmdi-edit</v-icon>
                                                 </v-avatar>
                                             </a>    
-                                        <span>{{ $t('message.general.EDIT') }}</span>
+                                        <span>{{ $t('general.EDIT') }}</span>
                                     </v-tooltip>
                                 </template>
                                 <template slot="c_name" slot-scope="props">                                    
@@ -83,19 +83,19 @@
                                         <template v-if="props.rowData.salutation === 'company'">
                                             <v-tooltip top>                                                
                                                 <font-awesome-icon :icon="['far', 'building']" slot="activator"/>
-                                                <span>{{$t('message.general.COMPANY')}}</span>
+                                                <span>{{$t('general.COMPANY')}}</span>
                                             </v-tooltip>                                            
                                         </template>
                                         <template v-else-if="props.rowData.salutation === 'mr'">
                                             <v-tooltip top>
                                                 <font-awesome-icon :icon="['fas', 'mars']" slot="activator"/>
-                                                <span>{{$t('message.general.MR')}}</span>                                                
+                                                <span>{{$t('general.MR')}}</span>                                                
                                             </v-tooltip>   
                                         </template>                                                                                
                                         <template v-else-if="props.rowData.salutation === 'mrs'">                                            
                                             <v-tooltip top>
                                                 <font-awesome-icon :icon="['fas', 'venus']" slot="activator"/>
-                                                <span>{{$t('message.general.MRS')}}</span>
+                                                <span>{{$t('general.MRS')}}</span>
                                             </v-tooltip>    
                                         </template>                                                                                
                                     </span>
@@ -106,9 +106,9 @@
                                     <span class="primary-text secondary-text">{{ props.rowData.zip }} {{ props.rowData.city }}</span>                                    
                                 </template>
                                 <template slot="c_invoices" slot-scope="props">
-                                    <span class="amount-div">{{ 'CHF 94.50' }}</span>
-                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('message.contact.TOTAL_POLICIES') }}</span>
-                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('message.contact.TOTAL_INVOICES') }}</span>                                    
+                                    <span class="amount-div">{{ props.rowData.invoice_total}}</span>
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('contact.TOTAL_POLICIES') }}</span>
+                                    <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('contact.TOTAL_INVOICES') }}</span>                                    
                                 </template>
                                 <template slot="c_statusdropdown" slot-scope="props">
                                     <v-menu offset-y>
@@ -122,7 +122,7 @@
                                               :key="index"
                                               @click="changeStatus(index,props.rowData.id)"
                                             >
-                                            <v-list-tile-title>{{ qs }}</v-list-tile-title>
+                                            <v-list-tile-title>{{ $t(qs) }}</v-list-tile-title>
                                             </v-list-tile>
                                       </v-list>
                                     </v-menu>
@@ -132,15 +132,15 @@
                                         <v-chip small :id="'c_status_chip_'+props.rowData.id" :chipclass="props.rowData.status_class" :class="props.rowData.status_class" text-color="white">{{props.rowData.status}}</v-chip>
                                         
                                         <div>
-                                            <v-tooltip top v-for="(quote_count,quote_status, quote_index) in props.rowData.count_policy_by_status" v-bind:key="quote_index"> 
-                                                <v-chip slot="activator" small dark color="orange" text-color="white">{{quote_count}}</v-chip>
-                                                <span>{{$t('message.general.QUOTES')}}:&nbsp;{{tConverted('message.policy.status.'+quote_status)}}</span>
+                                            <v-tooltip top v-for="(policy_detail,policy_status, policy_index) in props.rowData.count_policy_by_status" v-bind:key="policy_index"> 
+                                                <v-chip slot="activator" small :class="'label-status-' + policy_detail.class" text-color="white">{{policy_detail.count}}</v-chip>
+                                                <span>{{$t('general.POLICIES')}}:&nbsp;{{tConverted('policy.status.'+policy_status)}}</span>
                                             </v-tooltip>
                                         </div>
                                         <div>
-                                            <v-tooltip top v-for="(invoice_count,invoice_status, invoice_index) in props.rowData.count_invoice_by_status" v-bind:key="invoice_index"> 
-                                                <v-chip slot="activator" small dark color="orange" text-color="white">{{invoice_count}}</v-chip>
-                                                <span>{{$t('message.general.INVOICES')}}:&nbsp;{{tConverted('message.invoice.status.'+invoice_status)}}</span>
+                                            <v-tooltip top v-for="(invoice_detail,invoice_status, invoice_index) in props.rowData.count_invoice_by_status" v-bind:key="invoice_index"> 
+                                                <v-chip slot="activator" small :class="'label-status-' + invoice_detail.class" text-color="white">{{invoice_detail.count}}</v-chip>
+                                                <span>{{$t('general.INVOICES')}}:&nbsp;{{tConverted('invoice.status.'+invoice_status)}}</span>
                                             </v-tooltip>
                                         </div>
                                     </div>
@@ -167,14 +167,14 @@
                                       </v-list>
                                     </v-menu>
                                 </template>-->
-                                <template slot="c_addquote" slot-scope="props">
+                                <template slot="c_addpolicy" slot-scope="props">
                                     <v-tooltip top>
                                             <a href="#" slot="activator">
                                                 <v-avatar size="26" class="round-badge-success">
                                                     <v-icon color="white" small>zmdi zmdi-plus</v-icon>
                                                 </v-avatar>
                                             </a>    
-                                        <span>{{ $t('message.contact.ADD_NEW_POLICY') }}</span>
+                                        <span>{{ $t('contact.ADD_NEW_POLICY') }}</span>
                                     </v-tooltip>                                    
                                 </template>
                             </vuetable>
@@ -209,12 +209,13 @@ export default {
     watch: {
         selectedLocale: function(newVal, oldVal){
             //console.log(newVal);
-            //console.log(this.$t('message.contact.ID'));
+            //console.log(this.$t('contact.ID'));
             this.$refs.vuetable.refresh();
             this.reinitializeFields();
       }
     },
      data() {
+        console.log(this.$store.getters.serverHelpers);
         return {
             loading: true,
             currentPerPage: '',
@@ -227,16 +228,16 @@ export default {
             checkedRows: [],
             fields: [  
                 {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
-                { title: this.$t('message.contact.ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
+                { title: this.$t('contact.ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
                 { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
-                { title: this.$t('message.general.NAME'), name: "c_name" },
-                { title: this.$t('message.general.ADDRESS'), name: "c_address" },
-                { title: this.$t('message.contact.TOTAL_INVOICES'), name: "c_invoices" },                
+                { title: this.$t('general.NAME'), name: "c_name" },
+                { title: this.$t('general.ADDRESS'), name: "c_address" },
+                { title: this.$t('contact.TOTAL_INVOICES'), name: "c_invoices" },                
                 { title: "", name: "c_statusdropdown", dataClass: 'statusdropdown_column', titleClass:'statusdropdown_column' },
-                { title: this.$t('message.general.STATUS'), name: "c_status", dataClass: 'status_quote_column', titleClass:'status_quote_column'},
+                { title: this.$t('general.STATUS'), name: "c_status", dataClass: 'status_policy_column', titleClass:'status_policy_column'},
                 { title: "", name: "c_userlink", dataClass: 'userid_link'},
                 //{ title: "", name: "c_action" },
-                { title: "", name: "c_addquote",  dataClass: 'add_policy_btn'},
+                { title: "", name: "c_addpolicy",  dataClass: 'add_policy_btn'},
             ],
             css: {
                 table: {
@@ -266,16 +267,16 @@ export default {
      computed:{
      ...mapGetters(["selectedLocale"]),
      contactstatus: function(){
-        if(this.$store.getters.currentLanguageHelpers.hasOwnProperty('contact_statuslist')){            
-            return this.$store.getters.currentLanguageHelpers.contact_statuslist;        
+        if(this.$store.getters.serverHelpers.statuses.hasOwnProperty('contact')){            
+            return this.$store.getters.serverHelpers.statuses.contact;
         }
         else{
             return {};
         }        
     },
     contactofferactions: function(){
-        if(this.$store.getters.currentLanguageHelpers.hasOwnProperty('CONTACT_PDF_OFFER_PRINT_LETTER')){
-            return this.$store.getters.currentLanguageHelpers.CONTACT_PDF_OFFER_PRINT_LETTER;        
+        if(this.$store.getters.serverHelpers.hasOwnProperty('contactPDF_statuslist')){
+            return this.$store.getters.serverHelpers.contactPDF_statuslist;        
         }
         else{
             return {};
@@ -285,17 +286,18 @@ export default {
       methods: {        
         reinitializeFields(){
             this.$nextTick(()=>{                            
-              this.$refs.vuetable.fields[1].title = this.$t('message.contact.ID');
-              this.$refs.vuetable.fields[3].title = this.$t('message.general.NAME');
-              this.$refs.vuetable.fields[4].title = this.$t('message.general.ADDRESS');  
-              this.$refs.vuetable.fields[5].title = this.$t('message.contact.TOTAL_INVOICES');  
-              this.$refs.vuetable.fields[7].title = this.$t('message.general.STATUS');                
+              this.$refs.vuetable.fields[1].title = this.$t('contact.ID');
+              this.$refs.vuetable.fields[3].title = this.$t('general.NAME');
+              this.$refs.vuetable.fields[4].title = this.$t('general.ADDRESS');  
+              this.$refs.vuetable.fields[5].title = this.$t('contact.TOTAL_INVOICES');  
+              this.$refs.vuetable.fields[7].title = this.$t('general.STATUS');                
               this.$refs.vuetable.normalizeFields();
            });
         },
         changeStatus(val,id){
-            let that = this;
-            api.put('/api/contacts/change_status/'+id, {status: val}) .then(function (response) {
+            let that = this;            
+            this.loading = true;
+            api.put('/api/contacts/change_status/'+id, {status: val}) .then(function (response) {                
                 if((typeof response.data.data !== "undefined") && (response.data.data.hasOwnProperty('id'))){                    
                     let row_id = response.data.data.id;
                     
@@ -312,9 +314,11 @@ export default {
                     $('#c_status_chip_'+row_id).addClass(new_chipclass);
 
                     $('#c_status_chip_'+row_id+' .v-chip__content').html(response.data.data.status);
-                    Vue.prototype.$eventHub.$emit('fireSuccess', that.$t('message.general.SAVE_SUCCESSFULLY')); 
+                    that.loading = false;
+                    Vue.prototype.$eventHub.$emit('fireSuccess', that.$t('general.SAVE_SUCCESSFULLY')); 
                 }
             }).catch(function (error) {
+                that.loading = false;
                 console.log(error);
             });
         },
@@ -363,7 +367,7 @@ export default {
   },
     created() {
         this.currentPerPage = this.perPage;
-        this.$store.dispatch("setHeaderTitle", 'message.contact.CONTACTS');    
+        this.$store.dispatch("setHeaderTitle", 'contact.CONTACTS');    
     }
 };
 </script>

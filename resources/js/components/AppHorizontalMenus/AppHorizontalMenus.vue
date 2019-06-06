@@ -45,7 +45,7 @@ export default {
     return {
       categories: 
         {
-         'message.general': "zmdi zmdi-view-dashboard",
+         'general': "zmdi zmdi-view-dashboard",
          'message.modules': "zmdi zmdi-widgets",
          'message.components':"zmdi zmdi-view-carousel",
          'message.applications': "zmdi zmdi-assignment-check",

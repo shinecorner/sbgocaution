@@ -1,113 +1,5 @@
 export default {
     "de": {
-        "validation": {
-            "accepted": "The {attribute} must be accepted.",
-            "active_url": "The {attribute} is not a valid URL.",
-            "after": "The {attribute} must be a date after {date}.",
-            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
-            "alpha": "The {attribute} may only contain letters.",
-            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
-            "alpha_num": "The {attribute} may only contain letters and numbers.",
-            "array": "The {attribute} must be an array.",
-            "before": "The {attribute} must be a date before {date}.",
-            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
-            "between": {
-                "numeric": "The {attribute} must be between {min} and {max}.",
-                "file": "The {attribute} must be between {min} and {max} kilobytes.",
-                "string": "The {attribute} must be between {min} and {max} characters.",
-                "array": "The {attribute} must have between {min} and {max} items."
-            },
-            "boolean": "The {attribute} field must be true or false.",
-            "confirmed": "The {attribute} confirmation does not match.",
-            "date": "The {attribute} is not a valid date.",
-            "date_format": "The {attribute} does not match the format {format}.",
-            "different": "The {attribute} and {other} must be different.",
-            "digits": "The {attribute} must be {digits} digits.",
-            "digits_between": "The {attribute} must be between {min} and {max} digits.",
-            "dimensions": "The {attribute} has invalid image dimensions.",
-            "distinct": "The {attribute} field has a duplicate value.",
-            "email": "Das Attribut {attribute} muss eine gültige E-Mail-Adresse sein.",
-            "exists": "The selected {attribute} is invalid.",
-            "file": "The {attribute} must be a file.",
-            "filled": "The {attribute} field must have a value.",
-            "gt": {
-                "numeric": "The {attribute} must be greater than {value}.",
-                "file": "The {attribute} must be greater than {value} kilobytes.",
-                "string": "The {attribute} must be greater than {value} characters.",
-                "array": "The {attribute} must have more than {value} items."
-            },
-            "gte": {
-                "numeric": "The {attribute} must be greater than or equal {value}.",
-                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
-                "string": "The {attribute} must be greater than or equal {value} characters.",
-                "array": "The {attribute} must have {value} items or more."
-            },
-            "image": "The {attribute} must be an image.",
-            "in": "The selected {attribute} is invalid.",
-            "in_array": "The {attribute} field does not exist in {other}.",
-            "integer": "The {attribute} must be an integer.",
-            "ip": "The {attribute} must be a valid IP address.",
-            "ipv4": "The {attribute} must be a valid IPv4 address.",
-            "ipv6": "The {attribute} must be a valid IPv6 address.",
-            "json": "The {attribute} must be a valid JSON string.",
-            "lt": {
-                "numeric": "The {attribute} must be less than {value}.",
-                "file": "The {attribute} must be less than {value} kilobytes.",
-                "string": "The {attribute} must be less than {value} characters.",
-                "array": "The {attribute} must have less than {value} items."
-            },
-            "lte": {
-                "numeric": "The {attribute} must be less than or equal {value}.",
-                "file": "The {attribute} must be less than or equal {value} kilobytes.",
-                "string": "The {attribute} must be less than or equal {value} characters.",
-                "array": "The {attribute} must not have more than {value} items."
-            },
-            "max": {
-                "numeric": "The {attribute} may not be greater than {max}.",
-                "file": "The {attribute} may not be greater than {max} kilobytes.",
-                "string": "The {attribute} may not be greater than {max} characters.",
-                "array": "The {attribute} may not have more than {max} items."
-            },
-            "mimes": "The {attribute} must be a file of type: {values}.",
-            "mimetypes": "The {attribute} must be a file of type: {values}.",
-            "min": {
-                "numeric": "The {attribute} must be at least {min}.",
-                "file": "The {attribute} must be at least {min} kilobytes.",
-                "string": "The {attribute} must be at least {min} characters.",
-                "array": "The {attribute} must have at least {min} items."
-            },
-            "not_in": "The selected {attribute} is invalid.",
-            "not_regex": "The {attribute} format is invalid.",
-            "numeric": "The {attribute} must be a number.",
-            "present": "The {attribute} field must be present.",
-            "regex": "The {attribute} format is invalid.",
-            "invalid": "Das {attribute} ist ungültig.",
-            "required": "Das {attribute} ist erforderlich.",
-            "required_if": "The {attribute} field is required when {other} is {value}.",
-            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
-            "required_with": "The {attribute} field is required when {values} is present.",
-            "required_with_all": "The {attribute} field is required when {values} is present.",
-            "required_without": "The {attribute} field is required when {values} is not present.",
-            "required_without_all": "The {attribute} field is required when none of {values} are present.",
-            "same": "The {attribute} and {other} must match.",
-            "size": {
-                "numeric": "The {attribute} must be {size}.",
-                "file": "The {attribute} must be {size} kilobytes.",
-                "string": "The {attribute} must be {size} characters.",
-                "array": "The {attribute} must contain {size} items."
-            },
-            "string": "The {attribute} must be a string.",
-            "timezone": "The {attribute} must be a valid zone.",
-            "unique": "The {attribute} has already been taken.",
-            "uploaded": "The {attribute} failed to upload.",
-            "url": "The {attribute} format is invalid.",
-            "custom": {
-                "attribute-name": {
-                    "rule-name": "custom-message"
-                }
-            },
-            "attributes": []
-        },
         "passwords": {
             "PASSWORD": "Passwords must be at least six characters and match the confirmation.",
             "RESET": "Your password has been reset!",
@@ -193,7 +85,7 @@ export default {
             "SETTING": "Einstellung",
             "SETTINGS": "Einstellungen",
             "INVOICE_NUMBER_FORMAT": "Format der Rechnungsnummer",
-            "QUOTE_NUMBER_FORMAT": "Format der Angebotsnummer",
+            "POLICY_NUMBER_FORMAT": "Format der Angebotsnummer",
             "CONTACT_NUMBER_FORMAT": "Format der Kontaktnummer",
             "INVOICE_DATE_FORMAT": "Format des Rechnungsdatums",
             "ITEMS_PER_PAGE": "Standard Listenlänge",
@@ -223,15 +115,15 @@ export default {
             "TOTAL_INVOICES": "Rechnung(en)",
             "TOTAL_POLICIES": "Policen",
             "LINKED_TO_USER": "User",
-            "RC_QUOTE_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
+            "RC_POLICY_TOOLTIP": "Ist an einer PH-Offerte interessiert.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call-Center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offerte per Post",
             "ADD_NEW_POLICY": "Police(n)",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
                 "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNERVERWALTUNG": "Partnerverwaltung",
-                "PARTNERLOGIN": "Vermieter-Login",
+                "PARTNER_MANAGEMENT": "Partnerverwaltung",
+                "PARTNER_LOGIN": "Vermieter-Login",
                 "CALLCENTRE": "Callcenter VG",
                 "PDF_CLS": "CLS PDF Antrag",
                 "PDF_MKS": "MKS PDF Antrag",
@@ -260,9 +152,51 @@ export default {
                 "REJECTED": "Abgelehnt",
                 "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
                 "RESOLVED": "Gekündigt",
-                "QUOTE_WAITING": "Warten auf Prüfung"
+                "POLICY_WAITING": "Warten auf Prüfung"
             },
-            "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "AG",
+                "LIMITED_LIABILITY_COMPANY": "GmbH",
+                "SIMPLE_PARTNERSHIP": "Einfache Gesellschaft",
+                "SOLE_PROPRIETORSHIP": "Einzelfirma",
+                "COOPERATIVE": "Genossenschaft",
+                "COLLECTIVE_SOCIETY": "Kollektivgesellschaft",
+                "LIMITED_PARTNERSHIP": "Kommanditgesellschaft",
+                "STOCK_COMPANY": "Kommandit Aktiengesellschaft",
+                "INSTITUTE_OF_PUBLIC_LAW": "Institut des öffentl. Rechts",
+                "CLUB": "Verein",
+                "ENDOWMENT": "Stiftung"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Auto & Verkehr",
+                "BUILD_RENOVATE": "Bauen & Renovieren",
+                "AUTHORITIES_ASSOCIATIONS": "Behörden und Verbände",
+                "EDUCATION_SCIENCE": "Bildung und Wissenschaft",
+                "COMPUTERS_ELECTRONICS": "Computer & Elektronik",
+                "SERVICE": "Dienstleistung",
+                "LEISURE_TRAVEL": "Freizeit & Reisen",
+                "FINANCIAL_SERVICE": "Finanzdienstleistung",
+                "HEALTH_WELLNESS": "Gesundheit und Wellness",
+                "WHOLESALE_RETAIL": "Gross- & Einzelhandel",
+                "REAL_ESTATE": "Immobilien",
+                "HOTEL_GASTRONOMY": "Hotel & Gastronomie",
+                "LIVING_FURNISHING": "Wohnen & Einrichten",
+                "OTHER": "Sonstige"
+            },
+            "filter": {
+                "FILTER_MORE_THAN_ONE_POLICY": "Diverse Filter",
+                "SALUTATION": "Anrede",
+                "BIRTH_DATE": "Geburtsdatum",
+                "LEAD_SOURCES": "Leadquelle",
+                "FILTER_RC_POLICY": "Zusatzgeschäfte",
+                "PROMO_FILTER": "Promo erfolgt",
+                "DUPLICATE_CONTACT": "Duplikate",
+                "DUPLICATE_CONTACT_EMAIL": "Duplikate E-Mail",
+                "NOT_CORRECT_ADDRESS_FILTER": "Adresse nicht korrekt"
+            },
+            "STATUS_CHANGE_SUCCESS": "Der Kontaktstatus wurde erfolgreich geändert.",
+            "STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut."
         },
         "pagination": {
             "previous": "« Previous",
@@ -281,7 +215,9 @@ export default {
                 "JOINT_GUARANTEE": "Solidarbürgschaft hängig",
                 "REJECTED_CLIENT": "Annulliert durch Kunden",
                 "PENDING_CANCEL": "Auflösung gemeldet"
-            }
+            },
+            "STATUS_CHANGE_SUCCESS": "Der Richtlinienstatus wurde erfolgreich geändert.",
+            "STATUS_CHANGE_FAIL": "Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut."
         },
         "invoice": {
             "status": {
@@ -298,7 +234,9 @@ export default {
                 "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
                 "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
                 "DEBT_ENFORCEMENT": "Betreibungsverfahren"
-            }
+            },
+            "STATUS_CHANGE_SUCCESS": "Der Status der Rechnung wurde erfolgreich geändert.",
+            "STATUS_CHANGE_FAIL": "Leider wurde der Rechnungsstatus nicht geändert, versuchen Sie es erneut."
         },
         "general": {
             "CRM": "CRM",
@@ -314,7 +252,7 @@ export default {
             "CLEAR": "Löschen",
             "RESET": "zurücksetzen",
             "EDIT": "Öffnen",
-            "QUOTES": "Policen",
+            "POLICIES": "Policen",
             "SUCCESS": "Erfolg",
             "ERROR": "Fehler",
             "SAVE_SUCCESSFULLY": "Daten erfolgreich gespeichert",
@@ -333,11 +271,22 @@ export default {
             "NO": "Nein",
             "AUTH_LOGIN_SUCCESS": "Erfolgreich angemeldet.",
             "AUTH_LOGIN_FAIL": "Die Anmeldung ist fehlgeschlagen.",
-            "CONFIG_SUCCESS": "Konfiguration erfolgreich aktualisiert!"
+            "CONFIG_SUCCESS": "Konfiguration erfolgreich aktualisiert!",
+            "filter": {
+                "TYPE_TO_SEARCH": "Tippe um zu suchen...",
+                "SELECT_STATUS": "Status wählen",
+                "SELECT_PRODUCTTYPE": "Kundentyp wählen",
+                "CREATE_FROM": "Erstellt vom",
+                "CREATE_TO": "Erstellt bis",
+                "LANGUAGE": "Sprache",
+                "SEARCH": "Suchen",
+                "RESET": "Leeren"
+            },
+            "ROWS": "Einträge"
         },
         "login": {
             "LOGIN": "Anmelden",
-            "USERNAME": "Benutzername",
+            "EMAIL": "E-Mail",
             "PASSWORD": "Passwort",
             "LANGUAGE": "Sprache",
             "DE": "Deutsch",
@@ -354,7 +303,7 @@ export default {
             "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
             "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
             "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-            "LOGIN_PAGE_DESCRIPTION_LINE_TWO": " und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
+            "LOGIN_PAGE_DESCRIPTION_LINE_TWO": "und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
             "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
             "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
             "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
@@ -370,7 +319,7 @@ export default {
             "NEW_PASSWORD": "Neues Kennwort",
             "CONFIRM_PASSWORD": "Passwort bestätigen",
             "RESET": "zurücksetzen",
-            "USERNAME_REQUIRED": "Bitte geben Sie einen gültigen Benutzernamen an.",
+            "EMAIL_REQUIRED": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
             "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
             "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
             "CONTACT": "0800 461 461",
@@ -393,118 +342,11 @@ export default {
             },
             "ERROR": "Fehler",
             "404_ERROR": "Entschuldigung! Die Seite, die Sie gesucht haben, existiert nicht.",
-            "GO_BACK_HOME": "Gehen Sie zurück nach Hause."
+            "GO_BACK_HOME": "Gehen Sie zurück nach Hause.",
+            "FORGOT_PASSWORD_NOTE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden."
         }
     },
     "en": {
-        "validation": {
-            "accepted": "The {attribute} must be accepted.",
-            "active_url": "The {attribute} is not a valid URL.",
-            "after": "The {attribute} must be a date after {date}.",
-            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
-            "alpha": "The {attribute} may only contain letters.",
-            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
-            "alpha_num": "The {attribute} may only contain letters and numbers.",
-            "array": "The {attribute} must be an array.",
-            "before": "The {attribute} must be a date before {date}.",
-            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
-            "between": {
-                "numeric": "The {attribute} must be between {min} and {max}.",
-                "file": "The {attribute} must be between {min} and {max} kilobytes.",
-                "string": "The {attribute} must be between {min} and {max} characters.",
-                "array": "The {attribute} must have between {min} and {max} items."
-            },
-            "boolean": "The {attribute} field must be true or false.",
-            "confirmed": "The {attribute} confirmation does not match.",
-            "date": "The {attribute} is not a valid date.",
-            "date_format": "The {attribute} does not match the format {format}.",
-            "different": "The {attribute} and {other} must be different.",
-            "digits": "The {attribute} must be {digits} digits.",
-            "digits_between": "The {attribute} must be between {min} and {max} digits.",
-            "dimensions": "The {attribute} has invalid image dimensions.",
-            "distinct": "The {attribute} field has a duplicate value.",
-            "email": "The {attribute} must be a valid email address.",
-            "exists": "The selected {attribute} is invalid.",
-            "file": "The {attribute} must be a file.",
-            "filled": "The {attribute} field must have a value.",
-            "gt": {
-                "numeric": "The {attribute} must be greater than {value}.",
-                "file": "The {attribute} must be greater than {value} kilobytes.",
-                "string": "The {attribute} must be greater than {value} characters.",
-                "array": "The {attribute} must have more than {value} items."
-            },
-            "gte": {
-                "numeric": "The {attribute} must be greater than or equal {value}.",
-                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
-                "string": "The {attribute} must be greater than or equal {value} characters.",
-                "array": "The {attribute} must have {value} items or more."
-            },
-            "image": "The {attribute} must be an image.",
-            "in": "The selected {attribute} is invalid.",
-            "in_array": "The {attribute} field does not exist in {other}.",
-            "integer": "The {attribute} must be an integer.",
-            "ip": "The {attribute} must be a valid IP address.",
-            "ipv4": "The {attribute} must be a valid IPv4 address.",
-            "ipv6": "The {attribute} must be a valid IPv6 address.",
-            "json": "The {attribute} must be a valid JSON string.",
-            "lt": {
-                "numeric": "The {attribute} must be less than {value}.",
-                "file": "The {attribute} must be less than {value} kilobytes.",
-                "string": "The {attribute} must be less than {value} characters.",
-                "array": "The {attribute} must have less than {value} items."
-            },
-            "lte": {
-                "numeric": "The {attribute} must be less than or equal {value}.",
-                "file": "The {attribute} must be less than or equal {value} kilobytes.",
-                "string": "The {attribute} must be less than or equal {value} characters.",
-                "array": "The {attribute} must not have more than {value} items."
-            },
-            "max": {
-                "numeric": "The {attribute} may not be greater than {max}.",
-                "file": "The {attribute} may not be greater than {max} kilobytes.",
-                "string": "The {attribute} may not be greater than {max} characters.",
-                "array": "The {attribute} may not have more than {max} items."
-            },
-            "mimes": "The {attribute} must be a file of type: {values}.",
-            "mimetypes": "The {attribute} must be a file of type: {values}.",
-            "min": {
-                "numeric": "The {attribute} must be at least {min}.",
-                "file": "The {attribute} must be at least {min} kilobytes.",
-                "string": "The {attribute} must be at least {min} characters.",
-                "array": "The {attribute} must have at least {min} items."
-            },
-            "not_in": "The selected {attribute} is invalid.",
-            "not_regex": "The {attribute} format is invalid.",
-            "numeric": "The {attribute} must be a number.",
-            "present": "The {attribute} field must be present.",
-            "regex": "The {attribute} format is invalid.",
-            "invalid": "The {attribute} is invalid.",
-            "required": "The {attribute} is required.",
-            "required_if": "The {attribute} field is required when {other} is {value}.",
-            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
-            "required_with": "The {attribute} field is required when {values} is present.",
-            "required_with_all": "The {attribute} field is required when {values} is present.",
-            "required_without": "The {attribute} field is required when {values} is not present.",
-            "required_without_all": "The {attribute} field is required when none of {values} are present.",
-            "same": "The {attribute} and {other} must match.",
-            "size": {
-                "numeric": "The {attribute} must be {size}.",
-                "file": "The {attribute} must be {size} kilobytes.",
-                "string": "The {attribute} must be {size} characters.",
-                "array": "The {attribute} must contain {size} items."
-            },
-            "string": "The {attribute} must be a string.",
-            "timezone": "The {attribute} must be a valid zone.",
-            "unique": "The {attribute} has already been taken.",
-            "uploaded": "The {attribute} failed to upload.",
-            "url": "The {attribute} format is invalid.",
-            "custom": {
-                "attribute-name": {
-                    "rule-name": "custom-message"
-                }
-            },
-            "attributes": []
-        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
@@ -590,7 +432,7 @@ export default {
             "SETTING": "Setting",
             "SETTINGS": "Settings",
             "INVOICE_NUMBER_FORMAT": "Invoice number format",
-            "QUOTE_NUMBER_FORMAT": "Quote number format",
+            "POLICY_NUMBER_FORMAT": "Policy number format",
             "CONTACT_NUMBER_FORMAT": "Contact number format",
             "INVOICE_DATE_FORMAT": "Invoice date format",
             "ITEMS_PER_PAGE": "Default List Limit",
@@ -620,15 +462,15 @@ export default {
             "TOTAL_INVOICES": "Invoices",
             "TOTAL_POLICIES": "Policies",
             "LINKED_TO_USER": "User",
-            "RC_QUOTE_TOOLTIP": "Is interested in a PH offer.",
+            "RC_POLICY_TOOLTIP": "Is interested in a PH offer.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offer by post",
             "ADD_NEW_POLICY": "New Policy",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
                 "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNERVERWALTUNG": "Partnerverwaltung",
-                "PARTNERLOGIN": "Partner-Login",
+                "PARTNER_MANAGEMENT": "Partner Management",
+                "PARTNER_LOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
                 "PDF_CLS": "CLS PDF Antrag",
                 "PDF_MKS": "MKS PDF Antrag",
@@ -657,9 +499,51 @@ export default {
                 "REJECTED": "Rejected",
                 "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
                 "RESOLVED": "Resolved",
-                "QUOTE_WAITING": "Waiting for processing"
+                "POLICY_WAITING": "Waiting for processing"
             },
-            "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "PUBLIC LIMITED COMPANY",
+                "LIMITED_LIABILITY_COMPANY": "limited liability company",
+                "SIMPLE_PARTNERSHIP": "Einfache Gesellschaft",
+                "SOLE_PROPRIETORSHIP": "sole proprietorship",
+                "COOPERATIVE": "cooperative",
+                "COLLECTIVE_SOCIETY": "collective society",
+                "LIMITED_PARTNERSHIP": "limited partnership",
+                "STOCK_COMPANY": "Limited partnership",
+                "INSTITUTE_OF_PUBLIC_LAW": "Institute of Public Law",
+                "CLUB": "club",
+                "ENDOWMENT": "endowment"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Car & Traffic",
+                "BUILD_RENOVATE": "Building & Renovating",
+                "AUTHORITIES_ASSOCIATIONS": "Authorities and associations",
+                "EDUCATION_SCIENCE": "Education and Science",
+                "COMPUTERS_ELECTRONICS": "Computers & Electronics",
+                "SERVICE": "service",
+                "LEISURE_TRAVEL": "Leisure & Travel",
+                "FINANCIAL_SERVICE": "financial service",
+                "HEALTH_WELLNESS": "Health and Wellness",
+                "WHOLESALE_RETAIL": "Wholesale & Retail",
+                "REAL_ESTATE": "real estate",
+                "HOTEL_GASTRONOMY": "Hotel & Gastronomy",
+                "LIVING_FURNISHING": "Living & Furnishing",
+                "OTHER": "Other"
+            },
+            "filter": {
+                "FILTER_MORE_THAN_ONE_POLICY": "Contacts / Quotes",
+                "SALUTATION": "salutation",
+                "BIRTH_DATE": "Birthdate",
+                "LEAD_SOURCES": "Lead source",
+                "FILTER_RC_POLICY": "PH offer",
+                "PROMO_FILTER": "Promo",
+                "DUPLICATE_CONTACT": "Duplicate",
+                "DUPLICATE_CONTACT_EMAIL": "Duplicate email",
+                "NOT_CORRECT_ADDRESS_FILTER": "Address not correct"
+            },
+            "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again."
         },
         "pagination": {
             "previous": "« Previous",
@@ -678,7 +562,9 @@ export default {
                 "JOINT_GUARANTEE": "Joint surety pending",
                 "REJECTED_CLIENT": "Rejected by client",
                 "PENDING_CANCEL": "Resolution reported"
-            }
+            },
+            "STATUS_CHANGE_SUCCESS": "Policy status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, policy status has not been changed, try again."
         },
         "invoice": {
             "status": {
@@ -695,7 +581,9 @@ export default {
                 "ONLINE_PAYMENT_WAITING": "Online payment waiting",
                 "ONLINE_PAYMENT_INVALID": "Invalid online payment",
                 "DEBT_ENFORCEMENT": "Debt enforcement proceedings"
-            }
+            },
+            "STATUS_CHANGE_SUCCESS": "Invoice status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, invoice status has not been changed, try again."
         },
         "general": {
             "CRM": "CRM",
@@ -711,7 +599,7 @@ export default {
             "CLEAR": "Clear",
             "RESET": "Reset",
             "EDIT": "Edit",
-            "QUOTES": "Polices",
+            "POLICIES": "Polices",
             "SUCCESS": "Success",
             "ERROR": "Error",
             "SAVE_SUCCESSFULLY": "Data saved successfully",
@@ -730,11 +618,21 @@ export default {
             "NO": "No",
             "AUTH_LOGIN_SUCCESS": "Logged in Successfully.",
             "AUTH_LOGIN_FAIL": "Logged in failed.",
-            "CONFIG_SUCCESS": "Config updated successfully!"
+            "CONFIG_SUCCESS": "Config updated successfully!",
+            "filter": {
+                "TYPE_TO_SEARCH": "Type to search...",
+                "SELECT_STATUS": "Select status",
+                "SELECT_PRODUCTTYPE": "Select type",
+                "CREATE_FROM": "Created from",
+                "CREATE_TO": "Created to",
+                "SEARCH": "Search",
+                "RESET": "Reset"
+            },
+            "ROWS": "Rows"
         },
         "login": {
             "LOGIN": "Log in",
-            "USERNAME": "Username",
+            "EMAIL": "Email",
             "PASSWORD": "Password",
             "LANGUAGE": "Language",
             "DE": "Deutsch",
@@ -767,7 +665,7 @@ export default {
             "NEW_PASSWORD": "New Password",
             "CONFIRM_PASSWORD": "Confirm Password",
             "RESET": "Reset",
-            "USERNAME_REQUIRED": "Please provide a valid username.",
+            "EMAIL_REQUIRED": "Please provide a valid email address.",
             "PASSWORD_REQUIRED": "Please provide a valid password.",
             "CONFIRM_PASSWORD_REQUIRED": "Please provide a valid confirm password.",
             "CONTACT": "0800 461 461",
@@ -790,118 +688,11 @@ export default {
             },
             "ERROR": "Error",
             "404_ERROR": "Sorry! The page you were looking for doesn't exist.",
-            "GO_BACK_HOME": "Go back to home"
+            "GO_BACK_HOME": "Go back to home",
+            "FORGOT_PASSWORD_NOTE": "Please enter an e-mail address for the user account. A confirmation code will then be sent to you. As soon as the code is available, a new password for the user account can be set."
         }
     },
     "fr": {
-        "validation": {
-            "accepted": "The {attribute} must be accepted.",
-            "active_url": "The {attribute} is not a valid URL.",
-            "after": "The {attribute} must be a date after {date}.",
-            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
-            "alpha": "The {attribute} may only contain letters.",
-            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
-            "alpha_num": "The {attribute} may only contain letters and numbers.",
-            "array": "The {attribute} must be an array.",
-            "before": "The {attribute} must be a date before {date}.",
-            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
-            "between": {
-                "numeric": "The {attribute} must be between {min} and {max}.",
-                "file": "The {attribute} must be between {min} and {max} kilobytes.",
-                "string": "The {attribute} must be between {min} and {max} characters.",
-                "array": "The {attribute} must have between {min} and {max} items."
-            },
-            "boolean": "The {attribute} field must be true or false.",
-            "confirmed": "The {attribute} confirmation does not match.",
-            "date": "The {attribute} is not a valid date.",
-            "date_format": "The {attribute} does not match the format {format}.",
-            "different": "The {attribute} and {other} must be different.",
-            "digits": "The {attribute} must be {digits} digits.",
-            "digits_between": "The {attribute} must be between {min} and {max} digits.",
-            "dimensions": "The {attribute} has invalid image dimensions.",
-            "distinct": "The {attribute} field has a duplicate value.",
-            "email": "L'attribut {attribute} être une adresse email valide.",
-            "exists": "The selected {attribute} is invalid.",
-            "file": "The {attribute} must be a file.",
-            "filled": "The {attribute} field must have a value.",
-            "gt": {
-                "numeric": "The {attribute} must be greater than {value}.",
-                "file": "The {attribute} must be greater than {value} kilobytes.",
-                "string": "The {attribute} must be greater than {value} characters.",
-                "array": "The {attribute} must have more than {value} items."
-            },
-            "gte": {
-                "numeric": "The {attribute} must be greater than or equal {value}.",
-                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
-                "string": "The {attribute} must be greater than or equal {value} characters.",
-                "array": "The {attribute} must have {value} items or more."
-            },
-            "image": "The {attribute} must be an image.",
-            "in": "The selected {attribute} is invalid.",
-            "in_array": "The {attribute} field does not exist in {other}.",
-            "integer": "The {attribute} must be an integer.",
-            "ip": "The {attribute} must be a valid IP address.",
-            "ipv4": "The {attribute} must be a valid IPv4 address.",
-            "ipv6": "The {attribute} must be a valid IPv6 address.",
-            "json": "The {attribute} must be a valid JSON string.",
-            "lt": {
-                "numeric": "The {attribute} must be less than {value}.",
-                "file": "The {attribute} must be less than {value} kilobytes.",
-                "string": "The {attribute} must be less than {value} characters.",
-                "array": "The {attribute} must have less than {value} items."
-            },
-            "lte": {
-                "numeric": "The {attribute} must be less than or equal {value}.",
-                "file": "The {attribute} must be less than or equal {value} kilobytes.",
-                "string": "The {attribute} must be less than or equal {value} characters.",
-                "array": "The {attribute} must not have more than {value} items."
-            },
-            "max": {
-                "numeric": "The {attribute} may not be greater than {max}.",
-                "file": "The {attribute} may not be greater than {max} kilobytes.",
-                "string": "The {attribute} may not be greater than {max} characters.",
-                "array": "The {attribute} may not have more than {max} items."
-            },
-            "mimes": "The {attribute} must be a file of type: {values}.",
-            "mimetypes": "The {attribute} must be a file of type: {values}.",
-            "min": {
-                "numeric": "The {attribute} must be at least {min}.",
-                "file": "The {attribute} must be at least {min} kilobytes.",
-                "string": "The {attribute} must be at least {min} characters.",
-                "array": "The {attribute} must have at least {min} items."
-            },
-            "not_in": "The selected {attribute} is invalid.",
-            "not_regex": "The {attribute} format is invalid.",
-            "numeric": "The {attribute} must be a number.",
-            "present": "The {attribute} field must be present.",
-            "regex": "The {attribute} format is invalid.",
-            "invalid": "L'{attribute} n'est pas valide.",
-            "required": "L'{attribute} est requis.",
-            "required_if": "The {attribute} field is required when {other} is {value}.",
-            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
-            "required_with": "The {attribute} field is required when {values} is present.",
-            "required_with_all": "The {attribute} field is required when {values} is present.",
-            "required_without": "The {attribute} field is required when {values} is not present.",
-            "required_without_all": "The {attribute} field is required when none of {values} are present.",
-            "same": "The {attribute} and {other} must match.",
-            "size": {
-                "numeric": "The {attribute} must be {size}.",
-                "file": "The {attribute} must be {size} kilobytes.",
-                "string": "The {attribute} must be {size} characters.",
-                "array": "The {attribute} must contain {size} items."
-            },
-            "string": "The {attribute} must be a string.",
-            "timezone": "The {attribute} must be a valid zone.",
-            "unique": "The {attribute} has already been taken.",
-            "uploaded": "The {attribute} failed to upload.",
-            "url": "The {attribute} format is invalid.",
-            "custom": {
-                "attribute-name": {
-                    "rule-name": "custom-message"
-                }
-            },
-            "attributes": []
-        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
@@ -987,7 +778,7 @@ export default {
             "SETTING": "Réglage de",
             "SETTINGS": "Réglages",
             "INVOICE_NUMBER_FORMAT": "Format du numéro de facture",
-            "QUOTE_NUMBER_FORMAT": "Format du numéro de citation",
+            "POLICY_NUMBER_FORMAT": "Format du numéro de citation",
             "CONTACT_NUMBER_FORMAT": "Format du numéro de contact",
             "INVOICE_DATE_FORMAT": "Format de la date de facturation",
             "ITEMS_PER_PAGE": "Longueur des listes",
@@ -1017,15 +808,15 @@ export default {
             "TOTAL_INVOICES": "Factures",
             "TOTAL_POLICIES": "Politiques",
             "LINKED_TO_USER": "User",
-            "RC_QUOTE_TOOLTIP": "Est intéressé par une offre PH.",
+            "RC_POLICY_TOOLTIP": "Est intéressé par une offre PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "centre d'appels",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offre par courrier",
             "ADD_NEW_POLICY": "Police(n)",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
                 "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNERVERWALTUNG": "Partnerverwaltung",
-                "PARTNERLOGIN": "Partner-Login",
+                "PARTNER_MANAGEMENT": "Gestion des partenaires",
+                "PARTNER_LOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
                 "PDF_CLS": "PDF domande CLS",
                 "PDF_MKS": "PDF domande MKS",
@@ -1054,9 +845,51 @@ export default {
                 "REJECTED": "Rejected",
                 "DISSOLVED_IMMEDIATELY": "Dissous après l'achèvement",
                 "RESOLVED": "Résigné",
-                "QUOTE_WAITING": "En validation"
+                "POLICY_WAITING": "En validation"
             },
-            "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "SOCIÉTÉ ANONYME",
+                "LIMITED_LIABILITY_COMPANY": "société à responsabilité limitée",
+                "SIMPLE_PARTNERSHIP": "Partenariat simple",
+                "SOLE_PROPRIETORSHIP": "entreprise individuelle",
+                "COOPERATIVE": "coopératif",
+                "COLLECTIVE_SOCIETY": "société collective",
+                "LIMITED_PARTNERSHIP": "société en commandite",
+                "STOCK_COMPANY": "Société en commandite",
+                "INSTITUTE_OF_PUBLIC_LAW": "Institut de droit public",
+                "CLUB": "boîte de nuit",
+                "ENDOWMENT": "fonds de dotation"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Voiture et circulation",
+                "BUILD_RENOVATE": "Bâtiment & Rénovation",
+                "AUTHORITIES_ASSOCIATIONS": "Autorités et associations",
+                "EDUCATION_SCIENCE": "Enseignement et science",
+                "COMPUTERS_ELECTRONICS": "Ordinateurs et électronique",
+                "SERVICE": "messe",
+                "LEISURE_TRAVEL": "Loisirs et voyages",
+                "FINANCIAL_SERVICE": "service financier",
+                "HEALTH_WELLNESS": "Santé et bien-être",
+                "WHOLESALE_RETAIL": "Commerce de gros et de détail",
+                "REAL_ESTATE": "biens immobiliers",
+                "HOTEL_GASTRONOMY": "Hôtellerie & Gastronomie",
+                "LIVING_FURNISHING": "Séjour & Ameublement",
+                "OTHER": "Autre"
+            },
+            "filter": {
+                "FILTER_MORE_THAN_ONE_POLICY": "Diverse Filter",
+                "SALUTATION": "Titre",
+                "BIRTH_DATE": "Date de naissance",
+                "LEAD_SOURCES": "Source de client",
+                "FILTER_RC_POLICY": "Offre RC",
+                "PROMO_FILTER": "Promo done",
+                "DUPLICATE_CONTACT": "Doubles par nom",
+                "DUPLICATE_CONTACT_EMAIL": "Doubles par email",
+                "NOT_CORRECT_ADDRESS_FILTER": "Adresse incorrecte"
+            },
+            "STATUS_CHANGE_SUCCESS": "Le statut du contact a été modifié avec succès.",
+            "STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez."
         },
         "pagination": {
             "previous": "« Previous",
@@ -1075,7 +908,9 @@ export default {
                 "JOINT_GUARANTEE": "Attente cautionnement solidaire",
                 "REJECTED_CLIENT": "Annulées par les clients",
                 "PENDING_CANCEL": "Résolution/Mouvement rapportée"
-            }
+            },
+            "STATUS_CHANGE_SUCCESS": "L'état de la police a été modifié avec succès.",
+            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la politique n'a pas été modifié, réessayez."
         },
         "invoice": {
             "status": {
@@ -1092,7 +927,9 @@ export default {
                 "ONLINE_PAYMENT_WAITING": "Paiement en ligne en attente",
                 "ONLINE_PAYMENT_INVALID": "Paiement en ligne non valable",
                 "DEBT_ENFORCEMENT": "procédures d'exécution forcée"
-            }
+            },
+            "STATUS_CHANGE_SUCCESS": "Le statut de facture a été modifié avec succès.",
+            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la facture n'a pas été modifié, essayez à nouveau."
         },
         "general": {
             "CRM": "CRM",
@@ -1108,7 +945,7 @@ export default {
             "CLEAR": "Clair",
             "RESET": "réinitialiser",
             "EDIT": "Éditer",
-            "QUOTES": "Polices",
+            "POLICIES": "Polices",
             "SUCCESS": "Succès",
             "ERROR": "Erreur",
             "SAVE_SUCCESSFULLY": "Données sauvegardées avec succès",
@@ -1127,19 +964,29 @@ export default {
             "NO": "Non",
             "AUTH_LOGIN_SUCCESS": "Connecté avec succès.",
             "AUTH_LOGIN_FAIL": "La connexion a échoué.",
-            "CONFIG_SUCCESS": "Config mis à jour avec succès !"
+            "CONFIG_SUCCESS": "Config mis à jour avec succès !",
+            "filter": {
+                "TYPE_TO_SEARCH": "type de recherche...",
+                "SELECT_STATUS": "Choisir le statut",
+                "SELECT_PRODUCTTYPE": "Choisir le type de client",
+                "CREATE_FROM": "Créer de",
+                "CREATE_TO": "Créer jusqu'à",
+                "SEARCH": "Chercher",
+                "RESET": "Vider"
+            },
+            "ROWS": "Rangs"
         },
         "login": {
             "LOGIN": "Connexion",
-            "USERNAME": "Identifiant",
+            "EMAIL": "Courriel",
             "PASSWORD": "Mot de passe",
-            "LANGUAGE": "La langue",
+            "LANGUAGE": "Langue",
             "DE": "Deutsch",
             "FR": "Français",
             "IT": "Italienisch",
             "EN": "English",
             "LOGIN_REMEMBER_ME": "Se rappeler de moi",
-            "TITLE": "goCaution® Ouverture de session du propriétaire",
+            "TITLE": "goCaution® Espace bailleurs | La gestion numérique des garanties - goCaution® Vermieter-Login | Die digitale Verwaltung von Bürgschaften",
             "LOGIN_TITLE": "goCaution® Espace bailleurs",
             "FORGET_PASSWORD": "Mot de passe oublié ?",
             "GET_RESET_LINK": "Obtenir le lien de réinitialisation",
@@ -1164,7 +1011,7 @@ export default {
             "NEW_PASSWORD": "nouveau mot de passe",
             "CONFIRM_PASSWORD": "Confirmez le mot de passe",
             "RESET": "réinitialiser",
-            "USERNAME_REQUIRED": "Veuillez fournir un nom d'utilisateur valide.",
+            "EMAIL_REQUIRED": "Veuillez fournir une adresse électronique valide.",
             "PASSWORD_REQUIRED": "Veuillez fournir un mot de passe valide.",
             "CONFIRM_PASSWORD_REQUIRED": "Veuillez fournir un mot de passe de confirmation valide.",
             "CONTACT": "0800 461 461",
@@ -1187,118 +1034,11 @@ export default {
             },
             "ERROR": "Abus",
             "404_ERROR": "Désolé ! La page que vous cherchiez n'existe pas.",
-            "GO_BACK_HOME": "Retour à la maison"
+            "GO_BACK_HOME": "Retour à la maison",
+            "FORGOT_PASSWORD_NOTE": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe"
         }
     },
     "it": {
-        "validation": {
-            "accepted": "The {attribute} must be accepted.",
-            "active_url": "The {attribute} is not a valid URL.",
-            "after": "The {attribute} must be a date after {date}.",
-            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
-            "alpha": "The {attribute} may only contain letters.",
-            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
-            "alpha_num": "The {attribute} may only contain letters and numbers.",
-            "array": "The {attribute} must be an array.",
-            "before": "The {attribute} must be a date before {date}.",
-            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
-            "between": {
-                "numeric": "The {attribute} must be between {min} and {max}.",
-                "file": "The {attribute} must be between {min} and {max} kilobytes.",
-                "string": "The {attribute} must be between {min} and {max} characters.",
-                "array": "The {attribute} must have between {min} and {max} items."
-            },
-            "boolean": "The {attribute} field must be true or false.",
-            "confirmed": "The {attribute} confirmation does not match.",
-            "date": "The {attribute} is not a valid date.",
-            "date_format": "The {attribute} does not match the format {format}.",
-            "different": "The {attribute} and {other} must be different.",
-            "digits": "The {attribute} must be {digits} digits.",
-            "digits_between": "The {attribute} must be between {min} and {max} digits.",
-            "dimensions": "The {attribute} has invalid image dimensions.",
-            "distinct": "The {attribute} field has a duplicate value.",
-            "email": "L'attributo {attribute} essere un indirizzo email valido.",
-            "exists": "The selected {attribute} is invalid.",
-            "file": "The {attribute} must be a file.",
-            "filled": "The {attribute} field must have a value.",
-            "gt": {
-                "numeric": "The {attribute} must be greater than {value}.",
-                "file": "The {attribute} must be greater than {value} kilobytes.",
-                "string": "The {attribute} must be greater than {value} characters.",
-                "array": "The {attribute} must have more than {value} items."
-            },
-            "gte": {
-                "numeric": "The {attribute} must be greater than or equal {value}.",
-                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
-                "string": "The {attribute} must be greater than or equal {value} characters.",
-                "array": "The {attribute} must have {value} items or more."
-            },
-            "image": "The {attribute} must be an image.",
-            "in": "The selected {attribute} is invalid.",
-            "in_array": "The {attribute} field does not exist in {other}.",
-            "integer": "The {attribute} must be an integer.",
-            "ip": "The {attribute} must be a valid IP address.",
-            "ipv4": "The {attribute} must be a valid IPv4 address.",
-            "ipv6": "The {attribute} must be a valid IPv6 address.",
-            "json": "The {attribute} must be a valid JSON string.",
-            "lt": {
-                "numeric": "The {attribute} must be less than {value}.",
-                "file": "The {attribute} must be less than {value} kilobytes.",
-                "string": "The {attribute} must be less than {value} characters.",
-                "array": "The {attribute} must have less than {value} items."
-            },
-            "lte": {
-                "numeric": "The {attribute} must be less than or equal {value}.",
-                "file": "The {attribute} must be less than or equal {value} kilobytes.",
-                "string": "The {attribute} must be less than or equal {value} characters.",
-                "array": "The {attribute} must not have more than {value} items."
-            },
-            "max": {
-                "numeric": "The {attribute} may not be greater than {max}.",
-                "file": "The {attribute} may not be greater than {max} kilobytes.",
-                "string": "The {attribute} may not be greater than {max} characters.",
-                "array": "The {attribute} may not have more than {max} items."
-            },
-            "mimes": "The {attribute} must be a file of type: {values}.",
-            "mimetypes": "The {attribute} must be a file of type: {values}.",
-            "min": {
-                "numeric": "The {attribute} must be at least {min}.",
-                "file": "The {attribute} must be at least {min} kilobytes.",
-                "string": "The {attribute} must be at least {min} characters.",
-                "array": "The {attribute} must have at least {min} items."
-            },
-            "not_in": "The selected {attribute} is invalid.",
-            "not_regex": "The {attribute} format is invalid.",
-            "numeric": "The {attribute} must be a number.",
-            "present": "The {attribute} field must be present.",
-            "regex": "The {attribute} format is invalid.",
-            "invalid": "L'{attribute} non è valido.",
-            "required": "L'{attribute} è richiesto.",
-            "required_if": "The {attribute} field is required when {other} is {value}.",
-            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
-            "required_with": "The {attribute} field is required when {values} is present.",
-            "required_with_all": "The {attribute} field is required when {values} is present.",
-            "required_without": "The {attribute} field is required when {values} is not present.",
-            "required_without_all": "The {attribute} field is required when none of {values} are present.",
-            "same": "The {attribute} and {other} must match.",
-            "size": {
-                "numeric": "The {attribute} must be {size}.",
-                "file": "The {attribute} must be {size} kilobytes.",
-                "string": "The {attribute} must be {size} characters.",
-                "array": "The {attribute} must contain {size} items."
-            },
-            "string": "The {attribute} must be a string.",
-            "timezone": "The {attribute} must be a valid zone.",
-            "unique": "The {attribute} has already been taken.",
-            "uploaded": "The {attribute} failed to upload.",
-            "url": "The {attribute} format is invalid.",
-            "custom": {
-                "attribute-name": {
-                    "rule-name": "custom-message"
-                }
-            },
-            "attributes": []
-        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
@@ -1384,7 +1124,7 @@ export default {
             "SETTING": "Impostazione",
             "SETTINGS": "Impostazioni",
             "INVOICE_NUMBER_FORMAT": "Formato del numero di fattura",
-            "QUOTE_NUMBER_FORMAT": "Formato del numero del preventivo",
+            "POLICY_NUMBER_FORMAT": "Formato del numero del preventivo",
             "CONTACT_NUMBER_FORMAT": "Formato del numero di contatto",
             "INVOICE_DATE_FORMAT": "Formato della data di fatturazione",
             "ITEMS_PER_PAGE": "Limite liste predefinito",
@@ -1412,17 +1152,17 @@ export default {
             "CONTACT": "Kunde",
             "ID": "Numero cliente",
             "TOTAL_INVOICES": "Rechnung(en)",
-            "TOTAL_POLICIES": "politiche",
+            "TOTAL_POLICIES": "Politiche",
             "LINKED_TO_USER": "User",
-            "RC_QUOTE_TOOLTIP": "È interessato a un'offerta PH.",
+            "RC_POLICY_TOOLTIP": "È interessato a un'offerta PH.",
             "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
             "SEND_OFFER_BY_POST_TOOLTIP": "Offerte per Post",
             "ADD_NEW_POLICY": "Police(n)",
             "leadsource": {
                 "ONLINE_REGISTRATION": "Online Registrierung",
                 "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNERVERWALTUNG": "Partnerverwaltung",
-                "PARTNERLOGIN": "Partner-Login",
+                "PARTNER_MANAGEMENT": "Gestione dei partner",
+                "PARTNER_LOGIN": "Partner-Login",
                 "CALLCENTRE": "Callcenter VG",
                 "PDF_CLS": "CLS PDF Antrag",
                 "PDF_MKS": "MKS PDF Antrag",
@@ -1451,9 +1191,51 @@ export default {
                 "REJECTED": "Abgelehnt",
                 "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
                 "RESOLVED": "Gekündigt",
-                "QUOTE_WAITING": "Warten auf Prüfung"
+                "POLICY_WAITING": "Warten auf Prüfung"
             },
-            "INSURE_QUOTE_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein"
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "SOCIETÀ PER AZIONI",
+                "LIMITED_LIABILITY_COMPANY": "società a responsabilità limitata",
+                "SIMPLE_PARTNERSHIP": "Partenariato semplice",
+                "SOLE_PROPRIETORSHIP": "ditta individuale",
+                "COOPERATIVE": "collaborativo",
+                "COLLECTIVE_SOCIETY": "società collettiva",
+                "LIMITED_PARTNERSHIP": "società in accomandita",
+                "STOCK_COMPANY": "Società in accomandita",
+                "INSTITUTE_OF_PUBLIC_LAW": "Istituto di diritto pubblico",
+                "CLUB": "locale notturno",
+                "ENDOWMENT": "dote"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Auto & Traffico",
+                "BUILD_RENOVATE": "Costruire & Ristrutturare",
+                "AUTHORITIES_ASSOCIATIONS": "Autorità e associazioni",
+                "EDUCATION_SCIENCE": "Educazione e scienza",
+                "COMPUTERS_ELECTRONICS": "Computer & Elettronica",
+                "SERVICE": "prestazione",
+                "LEISURE_TRAVEL": "Tempo libero e viaggi",
+                "FINANCIAL_SERVICE": "servizio finanziario",
+                "HEALTH_WELLNESS": "Salute e benessere",
+                "WHOLESALE_RETAIL": "Commercio all'ingrosso e al dettaglio",
+                "REAL_ESTATE": "beni immobili",
+                "HOTEL_GASTRONOMY": "Hotel & Gastronomia",
+                "LIVING_FURNISHING": "Abitare & Arredamento",
+                "OTHER": "Altro"
+            },
+            "filter": {
+                "FILTER_MORE_THAN_ONE_POLICY": "Filtri vari",
+                "SALUTATION": "Titolo",
+                "BIRTH_DATE": "Data di nascita",
+                "LEAD_SOURCES": "Fonte di piombo",
+                "FILTER_RC_POLICY": "Zusatzgeschäfte",
+                "PROMO_FILTER": "Promozione effettuata",
+                "DUPLICATE_CONTACT": "Duplicati",
+                "DUPLICATE_CONTACT_EMAIL": "Doppio via e-mail",
+                "NOT_CORRECT_ADDRESS_FILTER": "Indirizzo non corretto"
+            },
+            "STATUS_CHANGE_SUCCESS": "Lo stato dei contatti è stato modificato con successo.",
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare."
         },
         "pagination": {
             "previous": "« Previous",
@@ -1472,7 +1254,9 @@ export default {
                 "JOINT_GUARANTEE": "Fideiussione congiunta pendente",
                 "REJECTED_CLIENT": "Annullato dai clienti",
                 "PENDING_CANCEL": "Risoluzione segnalata"
-            }
+            },
+            "STATUS_CHANGE_SUCCESS": "Lo stato della polizza è stato modificato con successo.",
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo status politico non è stato cambiato, riprovaci."
         },
         "invoice": {
             "status": {
@@ -1489,7 +1273,9 @@ export default {
                 "ONLINE_PAYMENT_WAITING": "Pagamento online in attesa di pagamento",
                 "ONLINE_PAYMENT_INVALID": "Pagamento online non valido",
                 "DEBT_ENFORCEMENT": "procedure di esecuzione"
-            }
+            },
+            "STATUS_CHANGE_SUCCESS": "Lo stato della fattura è stato modificato con successo.",
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo stato della fattura non è stato modificato, riprovare."
         },
         "general": {
             "CRM": "CRM",
@@ -1505,7 +1291,7 @@ export default {
             "CLEAR": "Chiaro",
             "RESET": "reset",
             "EDIT": "Edita",
-            "QUOTES": "Policen",
+            "POLICIES": "Policen",
             "SUCCESS": "riuscita",
             "ERROR": "sbaglio",
             "SAVE_SUCCESSFULLY": "Dati salvati con successo",
@@ -1524,21 +1310,31 @@ export default {
             "NO": "No",
             "AUTH_LOGIN_SUCCESS": "Effettuato l'accesso con successo.",
             "AUTH_LOGIN_FAIL": "Loggato fallito.",
-            "CONFIG_SUCCESS": "Config aggiornato con successo!"
+            "CONFIG_SUCCESS": "Config aggiornato con successo!",
+            "filter": {
+                "TYPE_TO_SEARCH": "Tippe um zu suchen...",
+                "SELECT_STATUS": "Status wählen",
+                "SELECT_PRODUCTTYPE": "Kundentyp wählen",
+                "CREATE_FROM": "Creato da",
+                "CREATE_TO": "Creato per",
+                "SEARCH": "Ricerca",
+                "RESET": "Resettato"
+            },
+            "ROWS": "Ranghi"
         },
         "login": {
             "LOGIN": "Accedi",
-            "USERNAME": "Nome utente",
+            "EMAIL": "E-Mail",
             "PASSWORD": "Password",
-            "LANGUAGE": "linguaggio",
+            "LANGUAGE": "Lingua",
             "DE": "Deutsch",
             "FR": "Français",
             "IT": "Italienisch",
             "EN": "English",
-            "LOGIN_REMEMBER_ME": "Ricordami",
+            "LOGIN_REMEMBER_ME": "Ricordati di me",
             "TITLE": "goCaution® Login Proprietario",
             "LOGIN_TITLE": "goCaution® LARALOGIN",
-            "FORGET_PASSWORD": "dimenticare la password",
+            "FORGET_PASSWORD": "Password dimenticata?",
             "GET_RESET_LINK": "Ottieni il link di reset",
             "BACK_TO_LOGIN": "Torna al login?",
             "SUPPORT": "SUPPORT",
@@ -1561,7 +1357,7 @@ export default {
             "NEW_PASSWORD": "Nuova password",
             "CONFIRM_PASSWORD": "conferma password",
             "RESET": "reset",
-            "USERNAME_REQUIRED": "Si prega di fornire un nome utente valido.",
+            "EMAIL_REQUIRED": "Indicare un indirizzo e-mail valido.",
             "PASSWORD_REQUIRED": "Si prega di fornire una password valida.",
             "CONFIRM_PASSWORD_REQUIRED": "Si prega di fornire una password di conferma valida.",
             "CONTACT": "0800 461 461",
@@ -1584,7 +1380,8 @@ export default {
             },
             "ERROR": "Sbaglio",
             "404_ERROR": "Scusate! La pagina che stavi cercando non esiste.",
-            "GO_BACK_HOME": "Torna a casa"
+            "GO_BACK_HOME": "Torna a casa",
+            "FORGOT_PASSWORD_NOTE": "Inserire un indirizzo e-mail per l'account utente. Verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente"
         }
     }
 }

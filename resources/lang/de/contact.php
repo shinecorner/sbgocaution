@@ -13,8 +13,8 @@ return [
     'leadsource' => [
         'ONLINE_REGISTRATION' => "Online Registrierung",
         'AFFILIATE_MARKETNG' => "Affiliate Marketing",
-        'PARTNERVERWALTUNG' => "Partnerverwaltung",
-        'PARTNERLOGIN' => "Vermieter-Login",
+        'PARTNER_MANAGEMENT' => "Partnerverwaltung",
+        'PARTNER_LOGIN' => "Vermieter-Login",
         'CALLCENTRE' => "Callcenter VG",
         'PDF_CLS' => "CLS PDF Antrag",
         'PDF_MKS' => "MKS PDF Antrag",
@@ -51,17 +51,17 @@ return [
         'LIMITED_LIABILITY_COMPANY' => "GmbH",
         'SIMPLE_PARTNERSHIP' => "Einfache Gesellschaft",
         'SOLE_PROPRIETORSHIP' => "Einzelfirma",
-        'cooperative' => "Genossenschaft",
-        'collective_society' => "Kollektivgesellschaft",
-        'limited_partnership' => "Kommanditgesellschaft",
-        'stock_company' => "Kommandit Aktiengesellschaft",
-        'institute_of_public_law' => "Institut des öffentl. Rechts",
-        'club' => "Verein",
-        'endowment' => "Stiftung"
+        'COOPERATIVE' => "Genossenschaft",
+        'COLLECTIVE_SOCIETY' => "Kollektivgesellschaft",
+        'LIMITED_PARTNERSHIP' => "Kommanditgesellschaft",
+        'STOCK_COMPANY' => "Kommandit Aktiengesellschaft",
+        'INSTITUTE_OF_PUBLIC_LAW' => "Institut des öffentl. Rechts",
+        'CLUB' => "Verein",
+        'ENDOWMENT' => "Stiftung"
     ],
     'company_branch' => [
         'CAR_TRAFFIC' => "Auto & Verkehr",
-        'BAUEN_RENOVIEREN' => "Bauen & Renovieren",
+        'BUILD_RENOVATE' => "Bauen & Renovieren",
         'AUTHORITIES_ASSOCIATIONS' => "Behörden und Verbände",
         'EDUCATION_SCIENCE' => "Bildung und Wissenschaft",
         'COMPUTERS_ELECTRONICS' => "Computer & Elektronik",
@@ -70,9 +70,23 @@ return [
         'FINANCIAL_SERVICE' => "Finanzdienstleistung",
         'HEALTH_WELLNESS' => "Gesundheit und Wellness",
         'WHOLESALE_RETAIL' => "Gross- & Einzelhandel",
-        'IMMOBILIEN' => "Immobilien",
-        'HOTEL_GASTRONOMIE' => "Hotel & Gastronomie",
+        'REAL_ESTATE' => "Immobilien",
+        'HOTEL_GASTRONOMY' => "Hotel & Gastronomie",
         'LIVING_FURNISHING' => "Wohnen & Einrichten",
-        'SONSTIGE' => "Sonstige"
-    ]
+        'OTHER' => "Sonstige"
+    ],
+    'filter' => [
+        'FILTER_MORE_THAN_ONE_POLICY' => 'Diverse Filter',
+        'SALUTATION' => 'Anrede',
+        'BIRTH_DATE' => 'Geburtsdatum',
+        'LEAD_SOURCES' => 'Leadquelle',
+        'FILTER_RC_POLICY' => 'Zusatzgeschäfte',
+        'PROMO_FILTER' => 'Promo erfolgt',
+        'DUPLICATE_CONTACT' => 'Duplikate',
+        'DUPLICATE_CONTACT_EMAIL' => 'Duplikate E-Mail',
+        'NOT_CORRECT_ADDRESS_FILTER' => 'Adresse nicht korrekt'
+        
+    ],
+    'STATUS_CHANGE_SUCCESS' => 'Der Kontaktstatus wurde erfolgreich geändert.',
+    'STATUS_CHANGE_FAIL' => 'Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.',
 ];

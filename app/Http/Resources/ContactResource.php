@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Contact;
+use Carbon\Carbon;
 use App;
 
 class ContactResource extends JsonResource
@@ -20,7 +21,8 @@ class ContactResource extends JsonResource
 
         $data['status'] = __('contact.status.' . $this->status);
         $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
-
+        $data['created_at_formatted'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
+        
         if($this->user_id && property_exists($this, 'username')) 
             $data['joomlauser'] = $this->username;
         else 
@@ -31,7 +33,7 @@ class ContactResource extends JsonResource
 
         $address = $this->addresses->where('is_primary', 1)->first();
 
-        if($address){
+        if($address) {
             $data['address'] = $address->address;
             $data['zip'] = $address->zip;
             $data['city'] = $address->city;
@@ -42,11 +44,6 @@ class ContactResource extends JsonResource
         }
 
         $this->policyAndInvoiceStatusCounts($data);
-
-        if($this->rc_policy == "Yes")
-            $data['rc_policy'] = 1;
-        elseif($this->rc_policy == "No")
-            $data['rc_policy'] = 0;
 
         if($this->lead_source == "Call_centre")
             $data['call_lead_source'] = 1;
@@ -59,29 +56,32 @@ class ContactResource extends JsonResource
             $data['send_offer_by_post'] = 0;
 
         if ($this->is_duplicate) {
-            $draws = Contact::where('is_duplicate', '=', 1)
+            $this->getContactDuplicate($data);
+        }
+
+        $this->getContactEmailDuplicate($data);
+
+        return $data;
+    }
+
+    private function getContactDuplicate(&$data) 
+    {
+        $draws = Contact::where('is_duplicate', '=', 0)
             ->where('first_name', '=', $this->first_name)
             ->where('last_name', '=', $this->last_name)
             ->where('id', '!=', $this->id)
             ->groupBy('id')
             ->orderBy('id', 'asc')->get();
 
-            $data['duplicate'] = '';
+        $data['duplicate'] = '';
 
-            if (!empty($draws)) {
-                foreach ($draws as $key => $draw) {
-                    $data['duplicate'] .= "(" .$draw->contact_num .") ";
-                    $data['duplicate'] .= $draw->first_name. " ";
-                    $data['duplicate'] .= $draw->last_name;
-                    if(($key+1) != count($draws))
-                        $data['duplicate'] .= "<br/>";
-                }
-            }
+        foreach ($draws as $key => $draw) {
+            $data['duplicate'] .= "(" .$draw->contact_num .") ";
+            $data['duplicate'] .= $draw->first_name. " ";
+            $data['duplicate'] .= $draw->last_name;
+            if(($key+1) != count($draws))
+                $data['duplicate'] .= "<br/>";
         }
-
-        $this->getContactEmailDuplicate($data);
-
-        return $data;
     }
 
     /**
@@ -120,7 +120,8 @@ class ContactResource extends JsonResource
 
     }
 
-    private function policyAndInvoiceStatusCounts(&$data){
+    private function policyAndInvoiceStatusCounts(&$data) 
+    {
         $policies = $this->policies;
         $data['count_policies'] = $policies->count();
         $invoice_count = 0;
@@ -140,27 +141,34 @@ class ContactResource extends JsonResource
             $data['LichtensteinZipCodesResult'] = __('contact.INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST', [ 'POLICY_NUMS' => implode(", ", $LichtensteinMK)]);
         }
         $data['count_invoices'] = $invoice_count;
-        $data['invoice_total'] = format($invoice_total,__('general.CHF'));
+        $data['invoice_total'] = format($invoice_total);
         if($policies->isNotEmpty()) {
 
             $policy_statuses = array_keys(getPolicyStatus());
             foreach($policy_statuses as $policy_status) {
                 $count = $policies->where('status', $policy_status)->count();
-                if($count > 0){
-                    $data['count_policy_by_status'][$policy_status] = $count;
+                if($count > 0) {
+                    $count_class = [
+                        'count' => $count,
+                        'class' => render_status_class($policy_status)
+                    ];
+                    $data['count_policy_by_status'][$policy_status] = $count_class;
                 }
             }
 
             $invoice_statuses = array_keys(getInvoiceStatus());
-            foreach($policies as $policy){
-                foreach($invoice_statuses as $invoice_status) {
+            $count_class['count'] = 0;
+            foreach($invoice_statuses as $invoice_status) {
+                foreach($policies as $policy) {
                     $count = $policy->invoices->where('status', $invoice_status)->count();
                     if($count > 0) {
                         if(isset($data['count_invoice_by_status'][$invoice_status])){
-                            $data['count_invoice_by_status'][$invoice_status]++;
+                            $count_class['count']++;
                         } else {
-                            $data['count_invoice_by_status'][$invoice_status] = $count;
+                            $count_class['count'] = $count;
                         }
+                        $count_class['class'] = render_status_class($invoice_status);
+                        $data['count_invoice_by_status'][$invoice_status] = $count_class;
                     }
                 }
             }

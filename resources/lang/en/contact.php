@@ -13,8 +13,8 @@ return [
     'leadsource' => [
         'ONLINE_REGISTRATION' => "Online Registrierung",
         'AFFILIATE_MARKETNG' => "Affiliate Marketing",
-        'PARTNERVERWALTUNG' => "Partnerverwaltung",
-        'PARTNERLOGIN' => "Partner-Login",
+        'PARTNER_MANAGEMENT' => "Partner Management",
+        'PARTNER_LOGIN' => "Partner-Login",
         'CALLCENTRE' => "Callcenter VG",
         'PDF_CLS' => "CLS PDF Antrag",
         'PDF_MKS'=> "MKS PDF Antrag",
@@ -51,17 +51,17 @@ return [
         'LIMITED_LIABILITY_COMPANY' => "limited liability company",
         'SIMPLE_PARTNERSHIP' => "Einfache Gesellschaft",
         'SOLE_PROPRIETORSHIP' => "sole proprietorship",
-        'cooperative' => "cooperative",
-        'collective_society' => "collective society",
-        'limited_partnership' => "limited partnership",
-        'stock_company' => "Limited partnership",
-        'institute_of_public_law' => "Institute of Public Law",
-        'club' => "club",
-        'endowment' => "endowment"
+        'COOPERATIVE' => "cooperative",
+        'COLLECTIVE_SOCIETY' => "collective society",
+        'LIMITED_PARTNERSHIP' => "limited partnership",
+        'STOCK_COMPANY' => "Limited partnership",
+        'INSTITUTE_OF_PUBLIC_LAW' => "Institute of Public Law",
+        'CLUB' => "club",
+        'ENDOWMENT' => "endowment"
     ],
     'company_branch' => [
         'CAR_TRAFFIC' => "Car & Traffic",
-        'BAUEN_RENOVIEREN' => "Building & Renovating",
+        'BUILD_RENOVATE' => "Building & Renovating",
         'AUTHORITIES_ASSOCIATIONS' => "Authorities and associations",
         'EDUCATION_SCIENCE' => "Education and Science",
         'COMPUTERS_ELECTRONICS' => "Computers & Electronics",
@@ -70,9 +70,22 @@ return [
         'FINANCIAL_SERVICE' => "financial service",
         'HEALTH_WELLNESS' => "Health and Wellness",
         'WHOLESALE_RETAIL' => "Wholesale & Retail",
-        'IMMOBILIEN' => "real estate",
-        'HOTEL_GASTRONOMIE' => "Hotel & Gastronomy",
+        'REAL_ESTATE' => "real estate",
+        'HOTEL_GASTRONOMY' => "Hotel & Gastronomy",
         'LIVING_FURNISHING' => "Living & Furnishing",
-        'SONSTIGE' => "Other"
-    ]    
+        'OTHER' => "Other"
+    ],
+    'filter' => [
+        'FILTER_MORE_THAN_ONE_POLICY' => 'Contacts / Quotes',
+        'SALUTATION' => 'salutation',
+        'BIRTH_DATE' => 'Birthdate',
+        'LEAD_SOURCES' => 'Lead source',
+        'FILTER_RC_POLICY' => 'PH offer',
+        'PROMO_FILTER' => 'Promo',
+        'DUPLICATE_CONTACT' => 'Duplicate',
+        'DUPLICATE_CONTACT_EMAIL' => 'Duplicate email',
+        'NOT_CORRECT_ADDRESS_FILTER' => 'Address not correct'        
+    ],
+    'STATUS_CHANGE_SUCCESS' => 'Contact status has been changed successfully.',
+    'STATUS_CHANGE_FAIL' => 'Unfortunately, contact status has not been changed, try again.'
 ];

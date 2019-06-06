@@ -12,5 +12,7 @@ return [
 		'JOINT_GUARANTEE' => "Solidarbürgschaft hängig",
 		'REJECTED_CLIENT' => "Annulliert durch Kunden",
 		'PENDING_CANCEL' => "Auflösung gemeldet"
-	]
+	],
+    'STATUS_CHANGE_SUCCESS' => 'Der Richtlinienstatus wurde erfolgreich geändert.',
+    'STATUS_CHANGE_FAIL' => 'Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut.',
 ];

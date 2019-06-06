@@ -23,13 +23,13 @@ export default {
             } else{                
                 msgHTML += ('<li>' + msg + '<\/li>')
             }            
-            this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('message.general.ERROR')+`</div> <div class="snotifyToast__body"> <ul>`+ msgHTML +` </ul><div class="snotify-icon snotify-icon--error"></div>`,{                
+            this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('general.ERROR')+`</div> <div class="snotifyToast__body"> <ul>`+ msgHTML +` </ul><div class="snotify-icon snotify-icon--error"></div>`,{                
                 type: 'error'                
             });
         },
         
         fireSuccess(msg){                                    
-            this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('message.general.SUCCESS')+`</div> <div class="snotifyToast__body"> <ul><li>`+ msg +` </li></ul><div class="snotify-icon snotify-icon--success"></div>`,{                
+            this.$snotify.html(`<div class="snotifyToast__title">`+this.$t('general.SUCCESS')+`</div> <div class="snotifyToast__body"> <ul><li>`+ msg +` </li></ul><div class="snotify-icon snotify-icon--success"></div>`,{                
                 type: 'success'
             });
         }

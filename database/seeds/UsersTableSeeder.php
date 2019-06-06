@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class UsersTableSeeder extends Seeder
 {
@@ -12,6 +13,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
     	DB::table('users')->truncate();
-        factory(App\User::class, 6)->create();
+        factory(App\User::class, 6)->create()->each(function ($user) {
+            $user->assignRole('super-users');
+        });
     }
 }
