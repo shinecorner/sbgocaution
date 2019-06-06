@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Contact;
+use Carbon\Carbon;
 use App;
 
 class ContactResource extends JsonResource
@@ -20,7 +21,8 @@ class ContactResource extends JsonResource
 
         $data['status'] = __('contact.status.' . $this->status);
         $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
-
+        $data['created_at_format'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
+        
         if($this->user_id && property_exists($this, 'username')) 
             $data['joomlauser'] = $this->username;
         else 
@@ -31,7 +33,7 @@ class ContactResource extends JsonResource
 
         $address = $this->addresses->where('is_primary', 1)->first();
 
-        if($address){
+        if($address) {
             $data['address'] = $address->address;
             $data['zip'] = $address->zip;
             $data['city'] = $address->city;
@@ -62,7 +64,8 @@ class ContactResource extends JsonResource
         return $data;
     }
 
-    private function getContactDuplicate(&$data) {
+    private function getContactDuplicate(&$data) 
+    {
         $draws = Contact::where('is_duplicate', '=', 0)
             ->where('first_name', '=', $this->first_name)
             ->where('last_name', '=', $this->last_name)
@@ -117,7 +120,8 @@ class ContactResource extends JsonResource
 
     }
 
-    private function policyAndInvoiceStatusCounts(&$data){
+    private function policyAndInvoiceStatusCounts(&$data) 
+    {
         $policies = $this->policies;
         $data['count_policies'] = $policies->count();
         $invoice_count = 0;
