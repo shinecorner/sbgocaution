@@ -7,10 +7,10 @@
                         <app-card                                
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12 search-content"
-                        >                                
+                        >                            
                             <v-flex xs3 md1 lg1 offset-xs9 offset-md11 offset-lg11>                            
                                 <v-select solo class="perpage_selectbox" hide-details v-bind:items="perPageItems"  v-model.number="perPage" single-line  menu-props="bottom" ></v-select>
-                            </v-flex>      
+                                    </v-flex>                                    
                         </app-card>
                     </v-layout>                    
                     <v-layout row wrap>
@@ -267,8 +267,8 @@ export default {
      computed:{
      ...mapGetters(["selectedLocale"]),
      contactstatus: function(){
-        if(this.$store.getters.serverHelpers.hasOwnProperty('contact_statuslist')){            
-            return this.$store.getters.serverHelpers.contact_statuslist;        
+        if(this.$store.getters.serverHelpers.statuses.hasOwnProperty('contact')){            
+            return this.$store.getters.serverHelpers.statuses.contact;
         }
         else{
             return {};
