@@ -10,7 +10,7 @@ $factory->define(App\Invoice::class, function (Faker $faker) {
          'invoice_num' => getUniqueNum($real_invoice_num, 1),
          'real_invoice_num' => 0,
          'added' => $faker->dateTime(),
-         'computed_total' => $faker->randomFloat(),
+         'computed_total' => $faker->randomFloat(2, 95, 4000),
          'status' => $faker->randomElement(array_keys(getInvoiceStatus())),
          'date' => $faker->dateTime(),
          'startdate' => date('Y-m-d', strtotime( '+'.mt_rand(1,5).' days')),
