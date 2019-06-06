@@ -14,14 +14,14 @@
           @endif
           <input type="hidden" name="token" value="{{ $token }}">
                 <div class="input-wrapper">
-                    <label for="validationTooltipUsername">{{ __('login.username') }}<span class="star">&#160;*</span></label>
+                    <label for="validationTooltipEmail">{{ __('login.email') }}<span class="star">&#160;*</span></label>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span class="input-group-text" id="validationTooltipEmailPrepend"><i class="fa fa-user" aria-hidden="true"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="email" id="validationTooltipUsername" placeholder="{{ __('login.username') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
+                        <input type="text" class="form-control" name="email" id="validationTooltipEmail" placeholder="{{ __('login.username') }}" aria-describedby="validationTooltipEmail" required="">
                         <div class="invalid-feedback">
-                            {{ __('login.USERNAME_REQUIRED') }}
+                            {{ __('login.EMAIL_REQUIRED') }}
                         </div>
                     </div>
                 </div>

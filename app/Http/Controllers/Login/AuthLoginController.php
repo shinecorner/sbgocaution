@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Login;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
-
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use Mail;
 use Cookie;
@@ -14,6 +13,8 @@ use Cookie;
 
 class AuthLoginController extends controller
 {
+
+    use SendsPasswordResetEmails;
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -26,7 +27,6 @@ class AuthLoginController extends controller
     */
 
     protected $loginInstance;
-    protected $ForgotPasswordInstance;
     protected $ResetPasswordInstance;
 
     /**
@@ -35,7 +35,6 @@ class AuthLoginController extends controller
 
     public function __construct(){
       $this->loginInstance = new LoginController();
-      $this->ForgotPasswordInstance = new ForgotPasswordController();
       $this->ResetPasswordInstance = new ResetPasswordController();
 
     }
@@ -116,7 +115,7 @@ class AuthLoginController extends controller
      */
 
     public function sendResetPasswordLinkEmail(Request $request){
-      return $this->ForgotPasswordInstance->sendResetLinkEmail($request);
+      return $this->sendResetLinkEmail($request);
     }
 
     /**
@@ -131,4 +130,21 @@ class AuthLoginController extends controller
       return $this->ResetPasswordInstance->reset($request);
     }
 
+    /**
+     * Reset user's password
+     *
+     * @param  Request
+     *
+     * @return success
+     */
+
+
+    protected function guard()
+    {
+        return \Auth::guard('login');
+    }
+
+    protected function broker() {
+        return \Password::broker('login');
+    }
 }
