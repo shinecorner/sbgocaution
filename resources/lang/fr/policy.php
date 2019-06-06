@@ -12,5 +12,7 @@ return [
 		'JOINT_GUARANTEE' => "Attente cautionnement solidaire",
 		'REJECTED_CLIENT' => "Annulées par les clients",
 		'PENDING_CANCEL' => "Résolution/Mouvement rapportée"
-	]
+	],
+    'STATUS_CHANGE_SUCCESS' => 'L\'état de la police a été modifié avec succès.',
+    'STATUS_CHANGE_FAIL' => 'Malheureusement, l\'état de la politique n\'a pas été modifié, réessayez.',
 ];

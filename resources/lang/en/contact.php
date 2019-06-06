@@ -84,7 +84,8 @@ return [
         'PROMO_FILTER' => 'Promo',
         'DUPLICATE_CONTACT' => 'Duplicate',
         'DUPLICATE_CONTACT_EMAIL' => 'Duplicate email',
-        'NOT_CORRECT_ADDRESS_FILTER' => 'Address not correct'
-        
+        'NOT_CORRECT_ADDRESS_FILTER' => 'Address not correct'        
     ],
+    'STATUS_CHANGE_SUCCESS' => 'Contact status has been changed successfully.',
+    'STATUS_CHANGE_FAIL' => 'Unfortunately, contact status has not been changed, try again.'
 ];

@@ -84,7 +84,8 @@ return [
         'PROMO_FILTER' => 'Promo done',
         'DUPLICATE_CONTACT' => 'Doubles par nom',
         'DUPLICATE_CONTACT_EMAIL' => 'Doubles par email',
-        'NOT_CORRECT_ADDRESS_FILTER' => 'Adresse incorrecte'
-        
+        'NOT_CORRECT_ADDRESS_FILTER' => 'Adresse incorrecte'        
     ],
+    'STATUS_CHANGE_SUCCESS' => 'Le statut du contact a été modifié avec succès.',
+    'STATUS_CHANGE_FAIL' => 'Malheureusement, le statut du contact n\'a pas été modifié, réessayez.',
 ];
