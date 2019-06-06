@@ -21,7 +21,7 @@ class ContactResource extends JsonResource
 
         $data['status'] = __('contact.status.' . $this->status);
         $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
-        $data['created_at_format'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
+        $data['created_at_formatted'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
         
         if($this->user_id && property_exists($this, 'username')) 
             $data['joomlauser'] = $this->username;
