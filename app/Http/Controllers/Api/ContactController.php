@@ -214,11 +214,11 @@ class ContactController extends Controller
                         $query->where('status', '=', 'accepted');
                     }
                 } else if($key == 'created_from') {
-                    $query->where('created_at', '>=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
+                    $query->where('created_at', '>=', date('Y-m-d', strtotime($value)));
                 } else if($key == 'created_to') {
-                    $query->where('created_at', '<=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
+                    $query->where('created_at', '<=', date('Y-m-d', strtotime($value)));
                 } else if($key == 'birthdate') {
-                    $query->where('birthdate', '=', date('Y-m-d', strtotime(str_replace(".", "-", $value))));
+                    $query->where('birthdate', '=', date('Y-m-d', strtotime($value)));
                 } else if($key == 'duplicate') {
                     $query->where('is_duplicate', '=', 1);
                 } else if($key == 'duplicate_email') {
