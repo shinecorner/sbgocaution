@@ -18,8 +18,8 @@ class ContactResource extends JsonResource
     public function toArray($request)
     {
         $data = parent::toArray($request);
-
-        $data['status'] = __('contact.status.' . $this->status);
+        $contact_statuses = getContactStatus();
+        $data['status_formatted'] = __($contact_statuses[$this->status]);
         $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
         $data['created_at_formatted'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
         
