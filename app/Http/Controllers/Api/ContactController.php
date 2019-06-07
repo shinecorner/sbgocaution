@@ -133,8 +133,15 @@ class ContactController extends Controller
 
     public function change_status(Request $request, $id){
         $contact = Contact::find($id);
+        $result = $contact->changeStatus();
+        if($result) {
+            $message = __('contact.STATUS_CHANGE_SUCCESS');
+        } else {
+            $message = __('contact.STATUS_CHANGE_FAIL');
+        }
         return response()->json([
-            "api_status" => $contact->changeStatus(),
+            "api_status" => $result,
+            "message" => $message,
             "data" => new ContactResource($contact)
         ], 200);
     }
@@ -146,7 +153,8 @@ class ContactController extends Controller
      * @param string $status
      * @return void
      */
-    private function getStatusList(&$data, $status){
+    private function getStatusList(&$data, $status) 
+    {
         $languages = config('app.languages');
         switch ($status) {
             case 'contact':
@@ -164,7 +172,8 @@ class ContactController extends Controller
         }
     }
 
-    private function search($request, $query) {
+    private function search($request, $query) 
+    {
         $searchWildcard = '%' . $request->search . '%';
 
         $query->where(function($query) use($searchWildcard) {
@@ -193,7 +202,8 @@ class ContactController extends Controller
         });
     }
 
-    private function filters($request, $query, $fields) {
+    private function filters($request, $query, $fields) 
+    {
         foreach($request->filters as $key => $value) {
             if($request->has('filters.'.$key) && in_array($key, $fields)) {
                 if($key == 'diverse')
