@@ -25,6 +25,8 @@ class RolesAndPermissionsTableSeeder extends Seeder
         Role::create(['name' => 'squad']);
         Role::create(['name' => 'collection-department']);
         Role::create(['name' => 'back-office-staff']);
+        Role::create(['name' => 'landlords']);
+        Role::create(['name' => 'customers']);
 
     }
 }
