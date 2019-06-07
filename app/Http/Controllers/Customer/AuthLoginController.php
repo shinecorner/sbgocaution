@@ -41,7 +41,7 @@ class AuthLoginController extends controller
     }
 
     public function loginForm(){
-      return view('Customer.sessions.signin');
+      return view('customer.sessions.signin');
     }
 
     /**
@@ -53,7 +53,7 @@ class AuthLoginController extends controller
      */
 
     public function showForgetPasswordForm(Request $request, $token = null){
-        return view('Customer.sessions.forgot');
+        return view('customer.sessions.forgot');
     }
 
     /**
@@ -66,7 +66,7 @@ class AuthLoginController extends controller
 
     public function showResetPasswordForm(Request $request, $token = null)
     {
-        return view('Customer.sessions.reset')->with(
+        return view('customer.sessions.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );
     }

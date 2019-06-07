@@ -41,7 +41,7 @@ class AuthLoginController extends controller
 
     public function loginForm(){
         //dd(app()->getLocale());
-      return view('Landlord.sessions.signin');
+      return view('landlord.sessions.signin');
     }
 
     /**
@@ -53,7 +53,7 @@ class AuthLoginController extends controller
      */
 
     public function showForgetPasswordForm(Request $request, $token = null){
-        return view('Landlord.sessions.forgot');
+        return view('landlord.sessions.forgot');
     }
 
     /**
@@ -66,7 +66,7 @@ class AuthLoginController extends controller
 
     public function showResetPasswordForm(Request $request, $token = null)
     {
-        return view('Landlord.sessions.reset')->with(
+        return view('landlord.sessions.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );
     }

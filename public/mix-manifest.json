@@ -1,13 +1,13 @@
 {
-    "/Landlord/assets/js/laravel/app.js": "/Landlord/assets/js/laravel/app.js",
-    "/Landlord/assets/js/script.js": "/Landlord/assets/js/script.js",
     "/js/main.js": "/js/main.js",
     "/css/app.css": "/css/app.css",
-    "/Landlord/assets/styles/css/themes/lite-green-plain.min.css": "/Landlord/assets/styles/css/themes/lite-green-plain.min.css",
-    "/Landlord/assets/styles/css/themes/custom.min.css": "/Landlord/assets/styles/css/themes/custom.min.css",
-    "/Customer/assets/styles/css/themes/custom-my.min.css": "/Customer/assets/styles/css/themes/custom-my.min.css",
-    "/Landlord/assets/styles/css/themes/lite-green.min.css": "/Landlord/assets/styles/css/themes/lite-green.min.css",
-    "/Landlord/assets/js/common-bundle-script.js": "/Landlord/assets/js/common-bundle-script.js",
-    "/Customer/assets/styles/css/themes/lite-green.min.css": "/Customer/assets/styles/css/themes/lite-green.min.css",
-    "/Customer/assets/js/common-bundle-script.js": "/Customer/assets/js/common-bundle-script.js"
+    "/landlord/assets/styles/css/themes/lite-green-plain.min.css": "/landlord/assets/styles/css/themes/lite-green-plain.min.css",
+    "/landlord/assets/styles/css/themes/custom.min.css": "/landlord/assets/styles/css/themes/custom.min.css",
+    "/customer/assets/styles/css/themes/custom-my.min.css": "/customer/assets/styles/css/themes/custom-my.min.css",
+    "/landlord/assets/js/laravel/app.js": "/landlord/assets/js/laravel/app.js",
+    "/landlord/assets/js/script.js": "/landlord/assets/js/script.js",
+    "/landlord/assets/styles/css/themes/lite-green.min.css": "/landlord/assets/styles/css/themes/lite-green.min.css",
+    "/landlord/assets/js/common-bundle-script.js": "/landlord/assets/js/common-bundle-script.js",
+    "/customer/assets/styles/css/themes/lite-green.min.css": "/customer/assets/styles/css/themes/lite-green.min.css",
+    "/customer/assets/js/common-bundle-script.js": "/customer/assets/js/common-bundle-script.js"
 }
