@@ -67,11 +67,11 @@
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
                                                     :label="$t('setting.POLICY_NUMBER_FORMAT')"
-                                                    v-model="configs['crm.quote_num_format']" 
+                                                    v-model="configs['crm.policy_num_format']" 
                                                     :data-vv-as="$t('setting.POLICY_NUMBER_FORMAT')"
-                                                    data-vv-name="quote_num_format"
+                                                    data-vv-name="policy_num_format"
                                                     v-validate="'required'"
-                                                    :error="errors.has('quote_num_format')"
+                                                    :error="errors.has('policy_num_format')"
                                                     required>
                                                 </v-text-field>
                                             </v-flex>

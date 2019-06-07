@@ -240,3 +240,21 @@
     width: 65px;    
 }
 button:focus{outline:none;}
+
+.search-content .v-text-field .v-label{
+    font-size: 13px;
+    max-width: 95%;
+}
+.search-content .v-text-field{
+    padding-top: 4px;
+    margin-top: 4px
+}
+.search-content .v-input__control{
+    height: 25px;
+}
+.search-content .v-input{
+    font-size: 13px;
+}
+.container.search-content{
+    max-width: 100%;
+}

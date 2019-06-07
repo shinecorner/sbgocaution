@@ -8,7 +8,7 @@ $factory->define(App\Policy::class, function (Faker $faker) {
     return [
         'real_policy_num' => $real_policy_num,
         'policy_num' => getUniqueNum($real_policy_num, 2),
-        'computed_total' => $faker->randomFloat(2, 95, 4000),
+        'computed_total' => roundTo5($faker->randomFloat(2, 95, 4000)),
         'status' => $faker->randomElement(array_keys(getPolicyStatus())),
         'date' => $faker->dateTime(),
         'startdate' => date('Y-m-d', strtotime( '+'.mt_rand(1,5).' days')),
