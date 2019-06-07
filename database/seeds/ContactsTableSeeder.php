@@ -35,7 +35,10 @@ class ContactsTableSeeder extends Seeder
                     $garant = factory(App\Garant::class)->create();
                     $policy->garants()->save($garant);
                 }
-                $policy->invoices()->save(factory(App\Invoice::class)->create());
+                $invoice = factory(App\Invoice::class)->create();
+                $invoice->computed_total = $policy->computed_total;
+                $invoice->save();
+                $policy->invoices()->save($invoice);
                 $contact->policies()->save($policy); 
             }
 
