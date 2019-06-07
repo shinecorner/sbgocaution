@@ -37,9 +37,9 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapLoginRoutes();
+        $this->mapLandlordRoutes();
 
-        $this->mapMyRoutes();
+        $this->mapCustomerRoutes();
 
         $this->mapWebRoutes();
     }
@@ -89,12 +89,12 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapLoginRoutes()
+    protected function mapLandlordRoutes()
     {
         Route::domain($this->baseDomain('laralogin'))
              ->middleware('web')
-             ->namespace($this->namespace.'\Login')
-             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'login.php'));
+             ->namespace($this->namespace.'\Landlord')
+             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'landlord.php'));
     }
 
     /**
@@ -104,12 +104,12 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapMyRoutes()
+    protected function mapCustomerRoutes()
     {
         Route::domain($this->baseDomain('laramy'))
              ->middleware('web')
-             ->namespace($this->namespace.'\My')
-             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'my.php'));
+             ->namespace($this->namespace.'\Customer')
+             ->group(base_path('routes'.DIRECTORY_SEPARATOR.'customer.php'));
     }
 
 }

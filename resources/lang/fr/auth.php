@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'FAILED' => "Ces informations d'identification ne correspondent pas à nos enregistrements.",
+    'failed' => "Ces informations d'identification ne correspondent pas à nos enregistrements.",
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];
