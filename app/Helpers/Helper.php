@@ -33,12 +33,12 @@ if (!function_exists('render_status_class')) {
      * @param string $status
      * @return string $status_class
      */
-    function render_status_class($status){
+    function render_status_class($status) {
         switch($status){
             case "paid": case "payed": case "accepted": case "accepted_client":case "contacted":
             $status_class = "success" ;
             break;
-            case "pending":case "partial_paid":case "waiting_for_payment":case "predeclared": case "invoice_status_nopayment":case 'policy_waiting': case 'claim_pending': case "joint_guarantee": case 'pending_cancel': case 'online_payment_waiting': case 'online_payment_invalid': case "pre_confirmation_pending":
+            case "pending":case "partial_paid":case "waiting_for_payment":case "predeclared": case "invoice_status_nopayment":case 'policy_waiting':case 'waiting': case 'claim_pending': case "joint_guarantee": case 'pending_cancel': case 'online_payment_waiting': case 'online_payment_invalid': case "pre_confirmation_pending": case "cancellation_with_claim_pending": case "cancellation_without_claim_pending":
             $status_class = "warning" ;
             break;
             case "pastdue": case "rejected": case "dissolved_with_claims":case "not_contacted": case "dissolved_without_claims": case "rejected_client":case "dissolved_immediately": case "refunded": case "partial_refunded":case 'reminder':case 'warning1':case 'warning2': case 'collection':case 'resolved':case 'debt_enforcement':case 'command':case 'follow':case 'loss':case 'seizure': case 'collection':
@@ -63,7 +63,6 @@ if (!function_exists('render_status_class')) {
             $status_class = "default" ;
             break;
         }
-
         return $status_class;
     }
 }
