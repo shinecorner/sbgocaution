@@ -6,13 +6,30 @@
                     <v-layout row wrap>
                         <app-card                                
                                 :fullBlock="true"
-                                colClasses="xl12 lg12 md12 sm12 xs12 search-content"
+                                colClasses="xl12 lg12 md12 sm12 xs12"
                         >                            
-                            <v-flex xs3 md1 lg1 offset-xs9 offset-md11 offset-lg11>                            
-                                <v-select solo class="perpage_selectbox" hide-details v-bind:items="perPageItems"  v-model.number="perPage" single-line  menu-props="bottom" ></v-select>
+                            <v-container search-content>
+                                <v-layout row wrap>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-text-field
+                                            :label="$t('general.filter.TYPE_TO_SEARCH')"
+                                            :height="20"
+                                        ></v-text-field>                                
                                     </v-flex>                                    
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-select :items="contactstatus"  
+                                            item-text="text"
+                                            item-value="title"
+                                            :label="$t('general.filter.SELECT_STATUS')">
+                                        </v-select>
+                                    </v-flex>                                    
+                                    <v-flex xs12 sm6 md4 lg2 xl2>                            
+                                        <v-select class="perpage_selectbox" v-bind:items="perPageItems"  v-model.number="perPage" menu-props="bottom" ></v-select>
+                                    </v-flex>
+                                </v-layout>                            
+                            </v-container>
                         </app-card>
-                    </v-layout>                    
+                    </v-layout>                              
                     <v-layout row wrap>
                         <app-card                                
                                 :fullBlock="true"
@@ -119,17 +136,17 @@
                                             <v-list-tile
                                               class="status_dropdown"
                                               v-for="(qs, index) in contactstatus"
-                                              :key="index"
-                                              @click="changeStatus(index,props.rowData.id)"
+                                              :key="qs.title"
+                                              @click="changeStatus(qs.title,props.rowData.id)"
                                             >
-                                            <v-list-tile-title>{{ $t(qs) }}</v-list-tile-title>
+                                            <v-list-tile-title>{{ qs.text }}</v-list-tile-title>
                                             </v-list-tile>
                                       </v-list>
                                     </v-menu>
                                 </template>
                                 <template slot="c_status" slot-scope="props">
                                     <div :columnclass="props.rowData.status_class.replace('label-status','column')" :class="props.rowData.status_class.replace('label-status','column') + ' status-chips'" :id="'c_status_'+props.rowData.id">
-                                        <v-chip small :id="'c_status_chip_'+props.rowData.id" :chipclass="props.rowData.status_class" :class="props.rowData.status_class" text-color="white">{{props.rowData.status}}</v-chip>
+                                        <v-chip small :id="'c_status_chip_'+props.rowData.id" :chipclass="props.rowData.status_class" :class="props.rowData.status_class" text-color="white">{{tConverted('contact.status.' + props.rowData.status)}}</v-chip>
                                         
                                         <div>
                                             <v-tooltip top v-for="(policy_detail,policy_status, policy_index) in props.rowData.count_policy_by_status" v-bind:key="policy_index"> 
@@ -214,8 +231,7 @@ export default {
             this.reinitializeFields();
       }
     },
-     data() {
-        console.log(this.$store.getters.serverHelpers);
+     data() {        
         return {
             loading: true,
             currentPerPage: '',
@@ -267,12 +283,14 @@ export default {
      computed:{
      ...mapGetters(["selectedLocale"]),
      contactstatus: function(){
+        let c_status = [];
+        let that = this;
         if(this.$store.getters.serverHelpers.statuses.hasOwnProperty('contact')){            
-            return this.$store.getters.serverHelpers.statuses.contact;
-        }
-        else{
-            return {};
+            _.forOwn(this.$store.getters.serverHelpers.statuses.contact, function(title, key) { 
+                c_status.push({'title': key, 'text': that.$i18n.t(title)})
+            });            
         }        
+        return c_status;
     },
     contactofferactions: function(){
         if(this.$store.getters.serverHelpers.hasOwnProperty('contactPDF_statuslist')){
@@ -313,9 +331,9 @@ export default {
                     $('#c_status_chip_'+row_id).attr('chipclass', new_chipclass);
                     $('#c_status_chip_'+row_id).addClass(new_chipclass);
 
-                    $('#c_status_chip_'+row_id+' .v-chip__content').html(response.data.data.status);
+                    $('#c_status_chip_'+row_id+' .v-chip__content').html(that.tConverted('contact.status.'+ response.data.data.status));
                     that.loading = false;
-                    Vue.prototype.$eventHub.$emit('fireSuccess', that.$t('general.SAVE_SUCCESSFULLY')); 
+                    Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message); 
                 }
             }).catch(function (error) {
                 that.loading = false;
