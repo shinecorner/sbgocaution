@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Notifications\Landlord\ResetPasswordNotification;
+use App\Notifications\Login\ResetPasswordNotification;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;

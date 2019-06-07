@@ -30,7 +30,7 @@
                         <div class="logo">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('my.title') }}">
-                                    <img class="logo-img" src="{{ asset('Customer/assets/images/logo-w.png') }}" alt="{{ __('login.title') }}" /> </a>
+                                    <img class="logo-img" src="{{ asset('Login/assets/images/logo-w.png') }}" alt="{{ __('login.title') }}" /> </a>
                             </div>
                         </div>
                     </div>

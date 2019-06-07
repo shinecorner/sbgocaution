@@ -40,6 +40,7 @@ class AuthLoginController extends controller
     }
 
     public function loginForm(){
+        //dd(app()->getLocale());
       return view('Landlord.sessions.signin');
     }
 
@@ -79,7 +80,7 @@ class AuthLoginController extends controller
      */
 
     public function login(Request $request){
-      return $this->loginInstance->login($request);
+      return $this->loginInstance->Login($request);
     }
 
     /**

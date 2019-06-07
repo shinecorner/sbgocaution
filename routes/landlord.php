@@ -1,4 +1,5 @@
 <?php
+//dd(app()->getLocale());
 
 Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
@@ -16,7 +17,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
         Route::post(LaravelLocalization::transRoute("login.routes.LOGOUT"), 'AuthLoginController@logout');
     });
     Route::any('/{any}',function(){
-        return  view('Login.others.notFound');
+        return  view('Landlord.others.notFound');
     })->where('any','.*')->name('any');
 });
 

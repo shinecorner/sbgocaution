@@ -1,4 +1,4 @@
-@extends('Login.layouts.master')
+@extends('Landlord.layouts.master')
 @section('before-css')
 <link rel="stylesheet" href="{{asset('Login/assets/styles/vendor/smart.wizard/smart_wizard.min.css')}}">
 <link rel="stylesheet" href="{{asset('Login/assets/styles/vendor/smart.wizard/smart_wizard_theme_arrows.min.css')}}">

@@ -1,4 +1,4 @@
-@extends('Login.layouts.master')
+@extends('Landlord.layouts.master')
 
 @section('page-css')
  <link rel="stylesheet" href="{{asset('Login/assets/styles/vendor/datatables.min.css')}}">

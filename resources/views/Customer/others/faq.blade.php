@@ -1,4 +1,4 @@
-@extends('My.layouts.master')
+@extends('Customer.layouts.master')
 @section('page-css')
 
 @endsection

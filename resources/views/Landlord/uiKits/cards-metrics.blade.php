@@ -1,4 +1,4 @@
-@extends('Login.layouts.master')
+@extends('Landlord.layouts.master')
 
 @section('main-content')
            <div class="breadcrumb">

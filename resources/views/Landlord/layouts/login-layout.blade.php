@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>{{ __('login.login') }}</title>
+    <title>{{ __('login.LOGIN') }}</title>
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
 
     <!--=======================CSS=============================-->
@@ -27,8 +27,8 @@
                     <div class="login-header-block visible-xs">
                         <div class="logo">
                             <div class="logo-image">
-                                <a href="#" title="{{ __('login.title') }}">
-                                    <img class="logo-img" src="{{ asset('Login/assets/images/'.__('login.responsive_logo')) }}" alt="{{ __('login.title') }}" /> </a>
+                                <a href="#" title="{{ __('login.TITLE') }}">
+                                    <img class="logo-img" src="{{ asset('Landlord/assets/images/'.__('login.RESPONSIVE_LOGO')) }}" alt="{{ __('login.TITLE') }}" /> </a>
                             </div>
                         </div>
                     </div>
@@ -41,53 +41,53 @@
 
                     <div class="login-bottom-block hidden-xs">
                         <br/>
-                        <div class="login-support"> <p class="log-support">{{ __('login.support') }}</p>
-                            <b>{{ __('login.contact') }}</b></div>
+                        <div class="login-support"> <p class="log-support">{{ __('login.SUPPORT') }}</p>
+                            <b>{{ __('login.CONTACT') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
-                                <a href="#" title="{{ __('login.title') }}">
-                                    <img class="logo-img" src="{{ asset('Landlord/images/'.__('login.logo_img')) }}" alt="{{ __('login.title') }}" />
-                                    <span>{{ __('login.login_title') }}</span>
+                                <a href="#" title="{{ __('login.TITLE') }}">
+                                    <img class="logo-img" src="{{ asset('Landlord/images/'.__('login.LOGO_IMG')) }}" alt="{{ __('login.TITLE') }}" />
+                                    <span>{{ __('login.LOGIN_TITLE') }}</span>
                                 </a>
-                                <small class="site-slogan">{{ __('login.login_title') }}</small>
+                                <small class="site-slogan">{{ __('login.LOGIN_TITLE') }}</small>
                             </div>
                         </div>
                         <div class="address-content">
-                            {{__('login.support_address')}}</div>
+                            {{__('login.SUPPORT_ADDRESS')}}</div>
                     </div>
                 </div>
 
                   <div class="column-flexible">
                     <div class="promo-inner">
                         <div class="custom">
-                            <h1>{{ __('login.login_page_description_title') }}</h1>
-                            <p>{{ __('login.login_page_description_line_one') }}
-                                <br class="hidden-xs">{{ __('login.login_page_description_line_two') }}</p>
-                            <p class="section-text">{{ __('login.login_page_description_line_three') }}
-                                <br class="hidden-xs">{{ __('login.login_page_description_line_four') }}</p>
+                            <h1>{{ __('login.LOGIN_PAGE_DESCRIPTION_TITLE') }}</h1>
+                            <p>{{ __('login.LOGIN_PAGE_DESCRIPTION_LINE_ONE') }}
+                                <br class="hidden-xs">{{ __('login.LOGIN_PAGE_DESCRIPTION_LINE_TWO') }}</p>
+                            <p class="section-text">{{ __('login.LOGIN_PAGE_DESCRIPTION_LINE_THREE') }}
+                                <br class="hidden-xs">{{ __('login.LOGIN_PAGE_DESCRIPTION_LINE_FOUR') }}</p>
                         </div>
                         <div class="clearfix form-group">
-                            <button type="button" class="btn btn-raised btn-raised-secondary color-triplet" data-toggle="modal" data-target=".new-account-request"> {{ __('login.request_access') }}</button>
+                            <button type="button" class="btn btn-raised btn-raised-secondary color-triplet" data-toggle="modal" data-target=".new-account-request"> {{ __('login.REQUEST_ACCESS') }}</button>
                         </div>
                     </div>
                     <span class="fixed-response">
-                      <img src="{{ asset('Login/images/'.__('login.LOGIN_IMG')) }}">
+                      <img src="{{ asset('Landlord/images/'.__('login.LOGIN_IMG')) }}">
                     </span>
                     <div class="login-bottom-block visible-xs clearfix">
                         <br/>
                         <div class="login-support">
-                          {{ __('login.support') }}<br>
-                          <b>{{ __('login.contact') }}</b></div>
+                          {{ __('login.SUPPORT') }}<br>
+                          <b>{{ __('login.CONTACT') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
-                                <a href="#" title="{{ __('login.title') }}">
-                                    <img class="logo-img" src="{{ asset('Login/assets/images/'.__('login.logo_img')) }}" alt="{{ __('login.title') }}" />
-                                    <span>{{ __('login.login_title') }}</span>
+                                <a href="#" title="{{ __('login.TITLE') }}">
+                                    <img class="logo-img" src="{{ asset('Landlord/assets/images/'.__('login.LOGO_IMG')) }}" alt="{{ __('login.TITLE') }}" />
+                                    <span>{{ __('login.LOGIN_TITLE') }}</span>
                                 </a>
-                                <small class="site-slogan">{{ __('login.login_title') }}</small>
+                                <small class="site-slogan">{{ __('login.LOGIN_TITLE') }}</small>
                             </div>
                         </div>
-                        <div class="mb-shift">{{ __('login.support_address') }}</div>
+                        <div class="mb-shift">{{ __('login.SUPPORT_ADDRESS') }}</div>
                     </div>
 
 

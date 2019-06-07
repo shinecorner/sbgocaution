@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications\Landlord;
+namespace App\Notifications\Login;
 use LaravelLocalization;
 use Illuminate\Notifications\Messages\MailMessage;
 

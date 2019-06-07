@@ -1,4 +1,4 @@
-@extends('My.layouts.master')
+@extends('Customer.layouts.master')
 @section('page-css')
 <link rel="stylesheet" href="{{asset('My/assets/styles/vendor/ladda-themeless.min.css')}}">
 @endsection
