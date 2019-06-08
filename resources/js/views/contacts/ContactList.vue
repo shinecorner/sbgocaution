@@ -11,7 +11,7 @@
                             <v-container search-content>
                                 <v-layout row wrap>
                                     <v-flex xs12 sm6 md4 lg2 xl2>
-                                        <v-text-field
+                                        <v-text-field                                            
                                             :label="$t('general.filter.TYPE_TO_SEARCH')"
                                             :height="20"
                                         ></v-text-field>                                
@@ -22,10 +22,66 @@
                                             item-value="title"
                                             :label="$t('general.filter.SELECT_STATUS')">
                                         </v-select>
-                                    </v-flex>                                    
-                                    <v-flex xs12 sm6 md4 lg2 xl2>                            
-                                        <v-select class="perpage_selectbox" v-bind:items="perPageItems"  v-model.number="perPage" menu-props="bottom" ></v-select>
                                     </v-flex>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-select :items="miscellaneous_filter_option"                                              
+                                            :label="$t('contact.filter.FILTER_MORE_THAN_ONE_POLICY')">
+                                        </v-select>
+                                    </v-flex>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-select :items="salutation_filter_option"
+                                            :label="$t('contact.filter.SALUTATION')">
+                                        </v-select>
+                                    </v-flex>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-select :items="language_filter_option"
+                                            :label="$t('general.filter.LANGUAGE')">
+                                        </v-select>
+                                    </v-flex>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-select :items="lead_source_option"
+                                            :label="$t('contact.filter.LEAD_SOURCES')">
+                                        </v-select>
+                                    </v-flex>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-select :items="rc_policy_filter_option"
+                                            :label="$t('contact.filter.FILTER_RC_POLICY')">
+                                        </v-select>
+                                    </v-flex>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-select :items="promo_filter_option"
+                                            :label="$t('contact.filter.PROMO_FILTER')">
+                                        </v-select>
+                                    </v-flex>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-checkbox  indigo 
+                                            v-model="filters.duplicate" 
+                                            class="filter_chkbox"
+                                            :label="$t('contact.filter.DUPLICATE_CONTACT')">
+                                        </v-checkbox>    
+                                    </v-flex>
+                                    <v-flex xs12 sm6 md4 lg2 xl2>
+                                        <v-checkbox  indigo 
+                                            v-model="filters.duplicate_email" 
+                                            class="filter_chkbox"
+                                            :label="$t('contact.filter.DUPLICATE_CONTACT_EMAIL')">
+                                        </v-checkbox>    
+                                    </v-flex>                                    
+                                    <v-flex xs12 sm6 md4 lg3 xl3>
+                                        <v-checkbox indigo 
+                                            v-model="filters.incorrect_address" 
+                                            class="filter_chkbox"
+                                            :label="$t('contact.filter.NOT_CORRECT_ADDRESS')">
+                                        </v-checkbox>    
+                                    </v-flex>
+                                    <v-flex xs12 sm12 md3 lg1 xl1>
+                                        <v-select class="perpage_selectbox left" v-bind:items="perPageItems"  v-model.number="perPage" menu-props="bottom" ></v-select>
+                                    </v-flex>
+                                    <v-flex xs12 sm12 md12 lg9 xl9 style="display: block;"> 
+                                        <v-btn color="success left"><v-icon>search</v-icon>{{$t('general.filter.SEARCH')}}</v-btn>                                    
+                                        <v-btn color="success left">{{$t('general.filter.RESET')}}</v-btn>                                    
+                                        <v-btn color="download success left"><v-icon>mdi-download</v-icon></v-btn>                                        
+                                    </v-flex>                                    
                                 </v-layout>                            
                             </v-container>
                         </app-card>
@@ -277,7 +333,35 @@ export default {
                     last: '',
                   },
                 }
-            }
+            },
+            filters:{
+                duplicate: false,
+                duplicate_email: false,
+                incorrect_address: false,
+            },
+            miscellaneous_filter_option: [
+                {text: this.$t('contact.filter.CONTACT_POLICY_1'), value: 1},
+                {text: this.$t('contact.filter.CONTACT_POLICY_2'), value: 2},
+                {text: this.$t('contact.filter.CONTACT_POLICY_3'), value: 3},
+                {text: this.$t('contact.filter.CONTACT_POLICY_4_PLUS'), value: 4},
+                {text: this.$t('contact.filter.ACCEPTED_CONTACTS_WITH_NO_POLICY'), value: 0},
+                {text: this.$t('contact.filter.ACCEPTED_CONTACTS_WITH_NO_LINKED_USER'), value: 5}
+            ],
+            salutation_filter_option:[
+                {text: this.$t('general.MR'), value: 'mr'},
+                {text: this.$t('general.MRS'), value: 'mrs'},
+                {text: this.$t('general.COMPANY'), value: 'company'},
+                {text: this.$t('general.filter.NOT_SELECTED_OPTION'), value: 'not_selected'}
+            ],
+            rc_policy_filter_option:[
+                {text: this.$t('general.YES'), value: '1'},
+                {text: this.$t('general.NO'), value: '0'},
+                {text: this.$t('general.filter.NOT_SELECTED_OPTION'), value: 'not_selected'}
+            ],
+            promo_filter_option:[
+                {text: this.$t('general.YES'), value: '1'},
+                {text: this.$t('general.NO'), value: '0'},
+            ]           
         }
      },     
      computed:{
@@ -291,6 +375,25 @@ export default {
             });            
         }        
         return c_status;
+    },
+    lead_source_option: function(){
+        let ls_option = [];
+        let that = this;
+        if(this.$store.getters.serverHelpers.hasOwnProperty('lead_source_options')){            
+            _.forOwn(this.$store.getters.serverHelpers.lead_source_options, function(title, key) { 
+                ls_option.push({'title': key, 'text': that.$i18n.t(title)})
+            });            
+        }        
+        return ls_option;
+    },
+    language_filter_option:function(){
+        let that = this;
+        let language_option = [];
+        let mix_lang = process.env.MIX_LANGUAGE_OPTIONS.split(',');
+        _.forEach(mix_lang, function(title, key) { 
+            language_option.push({'title': title, 'text': that.tConverted('general.language.'+title)})
+        }); 
+        return language_option;
     },
     contactofferactions: function(){
         if(this.$store.getters.serverHelpers.hasOwnProperty('contactPDF_statuslist')){

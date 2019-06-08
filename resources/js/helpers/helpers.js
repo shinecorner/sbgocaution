@@ -63,7 +63,7 @@ let globalFunction = {
         tConverted: function(caption_key){
             let k_array = _.split(caption_key,'.');
 	        if(!_.isEmpty(k_array)){				
-		        return this.$t(_.replace(caption_key, _.last(k_array), _.toUpper(_.last(k_array))));
+		        return this.$t(_.replace(caption_key, '.'+_.last(k_array), '.'+_.toUpper(_.last(k_array))));
 	        }
 	        return this.$t(caption_key);
         }

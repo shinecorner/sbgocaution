@@ -39,8 +39,10 @@ return [
         'SELECT_PRODUCTTYPE' => 'Choisir le type de client',
         'CREATE_FROM' => 'Créer de',
         'CREATE_TO' => 'Créer jusqu\'à',
+        'LANGUAGE' => 'Langue',
         'SEARCH' => 'Chercher',
-        'RESET' => 'Vider',
+        'RESET' => 'Vider',        
+        'NOT_SELECTED_OPTION' => 'Non sélectionné',
     ], 
     'ROWS' => 'Rangs',
 ];
