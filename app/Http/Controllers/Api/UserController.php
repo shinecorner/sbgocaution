@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\User;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -35,13 +36,19 @@ class UserController extends Controller
             'digital_signature' => 'required'
         ]);
 
-        return new UserResource(User::create([
+        $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'signature' => $request->signature,
             'digital_signature' => $request->digital_signature
-        ]));
+        ]);
+
+        if($request->has('roles')) {
+            $user->syncRoles($request->roles);
+        }
+
+        return new UserResource($user);
     }
 
     /**
@@ -72,6 +79,11 @@ class UserController extends Controller
             'digital_signature' => 'required'
         ]);
         $user = User::find($id);
+
+        if($request->has('roles')) {
+            $user->syncRoles($request->roles);
+        }
+        
         return response()->json([
             "api_status" => $user->update([
                 'name' => $request->name,
