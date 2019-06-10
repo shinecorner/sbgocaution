@@ -18,7 +18,7 @@ return [
     'ERROR' => 'Fehler',
     'SAVE_SUCCESSFULLY' => 'Daten erfolgreich gespeichert',
     'INVOICES' => 'Rechnungen',
-    'langugae' => [
+    'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',
         'IT' => 'Italienisch',
