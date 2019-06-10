@@ -38707,7 +38707,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   margin: 0;
 }
 
-.Site {
+.100vh {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -38792,7 +38792,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   }
 
   .login-wrapper .column-flexible {
-    padding: 20px 23px 0;
+    padding: 20px 20px 0;
   }
 
   .position-absolute a.btn.dropdown-toggle {

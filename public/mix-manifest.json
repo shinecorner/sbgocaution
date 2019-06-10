@@ -3,7 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/landlord/assets/styles/css/themes/lite-green-plain.min.css": "/landlord/assets/styles/css/themes/lite-green-plain.min.css",
     "/landlord/assets/styles/css/themes/custom.min.css": "/landlord/assets/styles/css/themes/custom.min.css",
-    "/customer/assets/styles/css/themes/custom-my.min.css": "/customer/assets/styles/css/themes/custom-my.min.css",
+    "/customer/assets/styles/css/themes/custom-customer.min.css": "/customer/assets/styles/css/themes/custom-customer.min.css",
     "/landlord/assets/js/laravel/app.js": "/landlord/assets/js/laravel/app.js",
     "/landlord/assets/js/script.js": "/landlord/assets/js/script.js",
     "/landlord/assets/styles/css/themes/lite-green.min.css": "/landlord/assets/styles/css/themes/lite-green.min.css",

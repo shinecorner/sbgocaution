@@ -10,7 +10,7 @@
             <span class="red-alert">{{ $errors->first('email') }}</span>
           @endif
           @if ($errors->has('password'))
-            <div class="error" class="red-alert">{{ $errors->first('password') }}</div>
+            <div class="red-alert">{{ $errors->first('password') }}</div>
           @endif
           <input type="hidden" name="token" value="{{ $token }}">
                 <div class="input-wrapper">
@@ -63,7 +63,7 @@
 
     <div class="other-links form-group">
         <ul>
-          <li><a href="{{ url(app()->getLocale()) }}" >@lang('login.BACK_TO_LOGIN')</a></li>
+          <li><a href="{{ url(app()->getLocale()) }}" >@lang('landlord.BACK_TO_LOGIN')</a></li>
         </ul>
     </div>
 </div>
