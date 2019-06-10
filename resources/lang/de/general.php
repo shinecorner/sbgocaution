@@ -18,7 +18,7 @@ return [
     'ERROR' => 'Fehler',
     'SAVE_SUCCESSFULLY' => 'Daten erfolgreich gespeichert',
     'INVOICES' => 'Rechnungen',
-    'langugae' => [
+    'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',
         'IT' => 'Italienisch',
@@ -41,7 +41,8 @@ return [
         'CREATE_TO' => 'Erstellt bis',
         'LANGUAGE' => 'Sprache',
         'SEARCH' => 'Suchen',
-        'RESET' => 'Leeren',
+        'RESET' => 'Leeren',        
+        'NOT_SELECTED_OPTION' => 'Nicht ausgewählt'
     ],
     'ROWS' => 'Einträge',
 ];

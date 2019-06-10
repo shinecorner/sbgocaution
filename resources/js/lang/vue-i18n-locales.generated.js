@@ -193,7 +193,13 @@ export default {
                 "PROMO_FILTER": "Promo erfolgt",
                 "DUPLICATE_CONTACT": "Duplikate",
                 "DUPLICATE_CONTACT_EMAIL": "Duplikate E-Mail",
-                "NOT_CORRECT_ADDRESS_FILTER": "Adresse nicht korrekt"
+                "NOT_CORRECT_ADDRESS": "Adresse nicht korrekt",
+                "CONTACT_POLICY_1": "Mit 1 Police",
+                "CONTACT_POLICY_2": "Mit 2 Police",
+                "CONTACT_POLICY_3": "Mit 3 Police",
+                "CONTACT_POLICY_4_PLUS": "Mit 4+ Policen",
+                "ACCEPTED_CONTACTS_WITH_NO_POLICY": "Laufende Kunden mit 0 Policen",
+                "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "Login-Daten überprüfen"
             },
             "STATUS_CHANGE_SUCCESS": "Der Kontaktstatus wurde erfolgreich geändert.",
             "STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut."
@@ -257,7 +263,7 @@ export default {
             "ERROR": "Fehler",
             "SAVE_SUCCESSFULLY": "Daten erfolgreich gespeichert",
             "INVOICES": "Rechnungen",
-            "langugae": {
+            "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
                 "IT": "Italienisch",
@@ -280,7 +286,8 @@ export default {
                 "CREATE_TO": "Erstellt bis",
                 "LANGUAGE": "Sprache",
                 "SEARCH": "Suchen",
-                "RESET": "Leeren"
+                "RESET": "Leeren",
+                "NOT_SELECTED_OPTION": "Nicht ausgewählt"
             },
             "ROWS": "Einträge"
         },
@@ -540,7 +547,13 @@ export default {
                 "PROMO_FILTER": "Promo",
                 "DUPLICATE_CONTACT": "Duplicate",
                 "DUPLICATE_CONTACT_EMAIL": "Duplicate email",
-                "NOT_CORRECT_ADDRESS_FILTER": "Address not correct"
+                "NOT_CORRECT_ADDRESS": "Address not correct",
+                "CONTACT_POLICY_1": "With 1 policy",
+                "CONTACT_POLICY_2": "With 2 policy",
+                "CONTACT_POLICY_3": "With 3 policy",
+                "CONTACT_POLICY_4_PLUS": "With 4+ policy",
+                "ACCEPTED_CONTACTS_WITH_NO_POLICY": "Acc. contacts with 0 policy",
+                "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "Check login detail"
             },
             "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
             "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again."
@@ -625,8 +638,10 @@ export default {
                 "SELECT_PRODUCTTYPE": "Select type",
                 "CREATE_FROM": "Created from",
                 "CREATE_TO": "Created to",
+                "LANGUAGE": "Language",
                 "SEARCH": "Search",
-                "RESET": "Reset"
+                "RESET": "Reset",
+                "NOT_SELECTED_OPTION": "Not selected"
             },
             "ROWS": "Rows"
         },
@@ -886,7 +901,13 @@ export default {
                 "PROMO_FILTER": "Promo done",
                 "DUPLICATE_CONTACT": "Doubles par nom",
                 "DUPLICATE_CONTACT_EMAIL": "Doubles par email",
-                "NOT_CORRECT_ADDRESS_FILTER": "Adresse incorrecte"
+                "NOT_CORRECT_ADDRESS": "Adresse incorrecte",
+                "CONTACT_POLICY_1": "Avec 1 police",
+                "CONTACT_POLICY_2": "Avec 2 police",
+                "CONTACT_POLICY_3": "Avec 3 police",
+                "CONTACT_POLICY_4_PLUS": "Avec 4+ police",
+                "ACCEPTED_CONTACTS_WITH_NO_POLICY": "contact avec 0 politique",
+                "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "vérifier les détails de connexion"
             },
             "STATUS_CHANGE_SUCCESS": "Le statut du contact a été modifié avec succès.",
             "STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez."
@@ -971,8 +992,10 @@ export default {
                 "SELECT_PRODUCTTYPE": "Choisir le type de client",
                 "CREATE_FROM": "Créer de",
                 "CREATE_TO": "Créer jusqu'à",
+                "LANGUAGE": "Langue",
                 "SEARCH": "Chercher",
-                "RESET": "Vider"
+                "RESET": "Vider",
+                "NOT_SELECTED_OPTION": "Non sélectionné"
             },
             "ROWS": "Rangs"
         },
@@ -1044,7 +1067,7 @@ export default {
             "reset": "Your password has been reset!",
             "SENT": "Abbiamo inviato per e-mail il tuo link per la reimpostazione della password!",
             "token": "This password reset token is invalid.",
-            "USER": "Non possiamo trovare un utente con quell'indirizzo e-mail."
+            "USER": "Non riusciamo a trovare un utente con quell'indirizzo e-mail."
         },
         "auth": {
             "FAILED": "Queste credenziali non corrispondono ai nostri record.",
@@ -1232,7 +1255,13 @@ export default {
                 "PROMO_FILTER": "Promozione effettuata",
                 "DUPLICATE_CONTACT": "Duplicati",
                 "DUPLICATE_CONTACT_EMAIL": "Doppio via e-mail",
-                "NOT_CORRECT_ADDRESS_FILTER": "Indirizzo non corretto"
+                "NOT_CORRECT_ADDRESS": "Indirizzo non corretto",
+                "CONTACT_POLICY_1": "Con 1 polizza",
+                "CONTACT_POLICY_2": "Con 2 polizze",
+                "CONTACT_POLICY_3": "Con 3 polizze",
+                "CONTACT_POLICY_4_PLUS": "Con 4+ polizze",
+                "ACCEPTED_CONTACTS_WITH_NO_POLICY": "contatto con la polizza 0",
+                "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "controlla i dati di accesso"
             },
             "STATUS_CHANGE_SUCCESS": "Lo stato dei contatti è stato modificato con successo.",
             "STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare."
@@ -1317,8 +1346,10 @@ export default {
                 "SELECT_PRODUCTTYPE": "Kundentyp wählen",
                 "CREATE_FROM": "Creato da",
                 "CREATE_TO": "Creato per",
+                "LANGUAGE": "Lingua",
                 "SEARCH": "Ricerca",
-                "RESET": "Resettato"
+                "RESET": "Resettato",
+                "NOT_SELECTED_OPTION": "Non selezionato"
             },
             "ROWS": "Ranghi"
         },

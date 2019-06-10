@@ -39,8 +39,10 @@ return [
         'SELECT_PRODUCTTYPE' => 'Kundentyp wählen',
         'CREATE_FROM' => 'Creato da',
         'CREATE_TO' => 'Creato per',
+        'LANGUAGE' => 'Lingua',
         'SEARCH' => 'Ricerca',
         'RESET' => 'Resettato',
+        'NOT_SELECTED_OPTION' => 'Non selezionato'
     ], 
     'ROWS' => 'Ranghi',
 ];

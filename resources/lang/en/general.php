@@ -39,8 +39,10 @@ return [
         'SELECT_PRODUCTTYPE' => 'Select type',
         'CREATE_FROM' => 'Created from',
         'CREATE_TO' => 'Created to',
+        'LANGUAGE' => 'Language',
         'SEARCH' => 'Search',
-        'RESET' => 'Reset',
+        'RESET' => 'Reset',        
+        'NOT_SELECTED_OPTION' => 'Not selected'
     ],            
     'ROWS' => 'Rows',
 ];
