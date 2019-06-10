@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Events\UserLoggedIn;
 use App\User;
+use App\Config;
+use App\Contact;
 use DB;
 use Validator;
 use App;
@@ -81,6 +83,40 @@ class AuthController extends Controller
             $data['name'] = $user->name;
             $data['email'] = $user->email;
             $data['premium_amount'] = format(177.23);
+            $statuses = [
+                'contact',
+                //'contactPDF',
+                'policy',
+                'invoice'
+            ];
+            foreach ($statuses as $status) {
+                switch ($status) {
+                    case 'contact':
+                        $data['helpers']['statuses'][$status] = getContactStatus(1);
+                        break;
+                    case 'contactPDF':
+                        $data['helpers']['statuses'][$status] = getContactPDF(1);
+                        break;
+                    case 'policy':
+                        $data['helpers']['statuses'][$status] = getPolicyStatus(1);
+                        break;
+                    case 'invoice':
+                        $data['helpers']['statuses'][$status] = getInvoiceStatus(1);
+                        break;
+                }
+            }
+
+            $data['helpers']['navbar_contacts_count'] = Contact::whereIn('status', [
+                "new", "status_policy_waiting", "pre_confirmation_pending"
+            ])->count();
+
+            $configs = Config::all();
+            $config_data = $configs->reduce(function ($configLookup, $config) {
+                $configLookup[$config['option']] = $config['value'];
+                return $configLookup;
+            }, []);
+
+            $data['helpers']['configs'] = $config_data;
             return response()->json(['response'=> $data ],200); 
         } 
         else

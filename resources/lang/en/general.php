@@ -45,4 +45,7 @@ return [
         'NOT_SELECTED_OPTION' => 'Not selected'
     ],            
     'ROWS' => 'Rows',
+    'PDF_MR' => 'Dear Sir {nachname}',
+    'PDF_MRS' => 'Dear Madam {nachname}',
+    'PDF_COMPANY' => 'Dear Ladies and Gentlemen'
 ];
