@@ -155,7 +155,6 @@ class ContactController extends Controller
      */
     private function getStatusList(&$data, $status) 
     {
-        $languages = config('app.languages');
         switch ($status) {
             case 'contact':
                 $data['helpers']['statuses'][$status] = getContactStatus(1);
