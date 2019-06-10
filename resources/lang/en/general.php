@@ -43,4 +43,7 @@ return [
         'RESET' => 'Reset',
     ],            
     'ROWS' => 'Rows',
+    'PDF_MR' => 'Dear Sir {nachname}',
+    'PDF_MRS' => 'Dear Madam {nachname}',
+    'PDF_COMPANY' => 'Dear Ladies and Gentlemen'
 ];
