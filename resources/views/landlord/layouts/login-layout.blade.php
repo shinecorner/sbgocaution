@@ -23,7 +23,7 @@
     <div class="page-wrapper">
         <div class="login-inner-wrapper">
             <div class="@if(Request::path() == app()->getLocale()) row login-grid @else row login-grid forgot-grid @endif">
-                <div class="column-fixed Site">
+                <div class="column-fixed 100vh">
                     <div class="login-header-block visible-xs">
                         <div class="logo">
                             <div class="logo-image">
@@ -41,8 +41,8 @@
 
                     <div class="login-bottom-block hidden-xs">
                         <br/>
-                        <div class="login-support"> <p class="log-support">{{ __('landlord.SUPPORT') }}</p>
-                            <b>{{ __('landlord.CONTACT') }}</b></div>
+                        <div class="login-support"> <p class="log-support">{{ __('landlord.SUPPORT.SUPPORT') }}</p>
+                            <b>{{ __('landlord.SUPPORT.MOBILE') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('landlord.TITLE') }}">
@@ -53,18 +53,18 @@
                             </div>
                         </div>
                         <div class="address-content">
-                            {{__('landlord.SUPPORT_ADDRESS')}}</div>
+                            {{__('landlord.SUPPORT.SUPPORT_ADDRESS')}}</div>
                     </div>
                 </div>
 
                   <div class="column-flexible">
                     <div class="promo-inner">
                         <div class="custom">
-                            <h1>{{ __('landlord.LOGIN_PAGE_DESCRIPTION_TITLE') }}</h1>
-                            <p>{{ __('landlord.LOGIN_PAGE_DESCRIPTION_LINE_ONE') }}
-                                <br class="hidden-xs">{{ __('landlord.LOGIN_PAGE_DESCRIPTION_LINE_TWO') }}</p>
-                            <p class="section-text">{{ __('landlord.LOGIN_PAGE_DESCRIPTION_LINE_THREE') }}
-                                <br class="hidden-xs">{{ __('landlord.LOGIN_PAGE_DESCRIPTION_LINE_FOUR') }}</p>
+                            <h1>{{ __('landlord.LOGIN_PAGE_DESCRIPTION.TITLE') }}</h1>
+                            <p>{{ __('landlord.LOGIN_PAGE_DESCRIPTION.LINE_ONE') }}
+                                <br class="hidden-xs">{{ __('landlord.LOGIN_PAGE_DESCRIPTION.LINE_TWO') }}</p>
+                            <p class="section-text">{{ __('landlord.LOGIN_PAGE_DESCRIPTION.LINE_THREE') }}
+                                <br class="hidden-xs">{{ __('landlord.LOGIN_PAGE_DESCRIPTION.LINE_FOUR') }}</p>
                         </div>
                         <div class="clearfix form-group">
                             <button type="button" class="btn btn-raised btn-raised-secondary color-triplet" data-toggle="modal" data-target=".new-account-request"> {{ __('landlord.REQUEST_ACCESS') }}</button>
@@ -76,8 +76,8 @@
                     <div class="login-bottom-block visible-xs clearfix">
                         <br/>
                         <div class="login-support">
-                          {{ __('landlord.SUPPORT') }}<br>
-                          <b>{{ __('landlord.CONTACT') }}</b></div>
+                          {{ __('landlord.SUPPORT.SUPPORT') }}<br>
+                          <b>{{ __('landlord.SUPPORT.MOBILE') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('landlord.TITLE') }}">
@@ -87,7 +87,7 @@
                                 <small class="site-slogan">{{ __('landlord.LOGIN_TITLE') }}</small>
                             </div>
                         </div>
-                        <div class="mb-shift">{{ __('landlord.SUPPORT_ADDRESS') }}</div>
+                        <div class="mb-shift">{{ __('landlord.SUPPORT.SUPPORT_ADDRESS') }}</div>
                     </div>
 
 
