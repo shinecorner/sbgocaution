@@ -25,7 +25,7 @@
                                     </v-flex>
                                     <v-flex xs12 sm6 md4 lg2 xl2>
                                         <v-select :items="miscellaneous_filter_option"                                              
-                                            :label="$t('contact.filter.FILTER_MORE_THAN_ONE_POLICY')">
+                                            :label="$t('contact.filter.MORE_THAN_ONE_POLICY')">
                                         </v-select>
                                     </v-flex>
                                     <v-flex xs12 sm6 md4 lg2 xl2>
@@ -45,12 +45,12 @@
                                     </v-flex>
                                     <v-flex xs12 sm6 md4 lg2 xl2>
                                         <v-select :items="rc_policy_filter_option"
-                                            :label="$t('contact.filter.FILTER_RC_POLICY')">
+                                            :label="$t('contact.filter.RC_POLICY')">
                                         </v-select>
                                     </v-flex>
                                     <v-flex xs12 sm6 md4 lg2 xl2>
                                         <v-select :items="promo_filter_option"
-                                            :label="$t('contact.filter.PROMO_FILTER')">
+                                            :label="$t('contact.filter.PROMO')">
                                         </v-select>
                                     </v-flex>
                                     <v-flex xs12 sm6 md4 lg2 xl2>
@@ -368,7 +368,7 @@ export default {
      ...mapGetters(["selectedLocale"]),
      contactstatus: function(){
         let c_status = [];
-        let that = this;
+        let that = this;        
         if(this.$store.getters.serverHelpers.statuses.hasOwnProperty('contact')){            
             _.forOwn(this.$store.getters.serverHelpers.statuses.contact, function(title, key) { 
                 c_status.push({'title': key, 'text': that.$i18n.t(title)})
@@ -404,7 +404,7 @@ export default {
         }        
     }    
    },   
-      methods: {        
+      methods: {
         reinitializeFields(){
             this.$nextTick(()=>{                            
               this.$refs.vuetable.fields[1].title = this.$t('contact.ID');

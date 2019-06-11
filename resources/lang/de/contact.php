@@ -76,12 +76,12 @@ return [
         'OTHER' => "Sonstige"
     ],
     'filter' => [
-        'FILTER_MORE_THAN_ONE_POLICY' => 'Diverse Filter',
+        'MORE_THAN_ONE_POLICY' => 'Diverse Filter',
         'SALUTATION' => 'Anrede',
         'BIRTH_DATE' => 'Geburtsdatum',
         'LEAD_SOURCES' => 'Leadquelle',
-        'FILTER_RC_POLICY' => 'Zusatzgeschäfte',
-        'PROMO_FILTER' => 'Promo erfolgt',
+        'RC_POLICY' => 'Zusatzgeschäfte',
+        'PROMO' => 'Promo erfolgt',
         'DUPLICATE_CONTACT' => 'Duplikate',
         'DUPLICATE_CONTACT_EMAIL' => 'Duplikate E-Mail',
         'NOT_CORRECT_ADDRESS' => 'Adresse nicht korrekt',

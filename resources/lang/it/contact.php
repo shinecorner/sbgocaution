@@ -76,12 +76,12 @@ return [
         'OTHER' => "Altro"
     ],
     'filter' => [
-        'FILTER_MORE_THAN_ONE_POLICY' => 'Filtri vari',
+        'MORE_THAN_ONE_POLICY' => 'Filtri vari',
         'SALUTATION' => 'Titolo',
         'BIRTH_DATE' => 'Data di nascita',
         'LEAD_SOURCES' => 'Fonte di piombo',
-        'FILTER_RC_POLICY' => 'Zusatzgeschäfte',
-        'PROMO_FILTER' => 'Promozione effettuata',
+        'RC_POLICY' => 'Zusatzgeschäfte',
+        'PROMO' => 'Promozione effettuata',
         'DUPLICATE_CONTACT' => 'Duplicati',
         'DUPLICATE_CONTACT_EMAIL' => 'Doppio via e-mail',
         'NOT_CORRECT_ADDRESS' => 'Indirizzo non corretto',
