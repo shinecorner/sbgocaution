@@ -117,18 +117,16 @@ class AuthController extends Controller
             }, []);
 
             $data['helpers']['configs'] = $config_data;
-            return response()->json(['response'=> $data ],200); 
+            return response()->json($data, 200); 
         } 
         else
         {
             App::setLocale($request->lang); 
-            return response()->json(['response'=>
-                                        [
+            return response()->json([
                                         'api_status'=>0,
                                         'code'=>200,
                                         'message'=> __('general.AUTH_LOGIN_FAIL')
-                                        ]
-                                ],200); 
+                                    ], 200); 
         }
     }
 }
