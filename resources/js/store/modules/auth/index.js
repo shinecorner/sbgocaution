@@ -35,7 +35,7 @@ const actions = {
     signupUserWithLaravelPassport(context, payload){
         webServices.post('/signup', JSON.stringify(payload.userDetail),{ headers: {'Content-Type':'application/json'}})
         .then(response => {
-                if(response.data.response.api_status){
+                if(response.data.api_status){
                     context.commit('signUpUser');
                     Nprogress.done();
                     setTimeout(() => {
@@ -55,18 +55,18 @@ const actions = {
         context.commit('loginUser');        
         webServices.post('/login', JSON.stringify(user), { headers: {'Content-Type':'application/json'}})
             .then(response => {
-                if(response.data.response.api_status){                    
-                    const access_token = response.data.response.access_token;
-                    const message = response.data.response.message;
+                if(response.data.api_status){                    
+                    const access_token = response.data.access_token;
+                    const message = response.data.message;
                     
-                    //const serverhelpers = response.data.response.helpers;
+                    //const serverhelpers = response.data.helpers;
                     Nprogress.done();
                     setTimeout(() => {
                         //if ((typeof serverhelpers !== "undefined") && (Object.keys(serverhelpers).length)) {                            
                             //context.commit('serverHelpersHandler',{serverhelpers});
                             //setServerHelpers({ commit, dispatch },{serverhelpers});                            
                             //context.dispatch('setServerHelpers',{serverhelpers});
-                        //}                        
+                        //}                            
                         context.commit('loginUserSuccess', {user, access_token, message});
                     }, 500);
                 }else{

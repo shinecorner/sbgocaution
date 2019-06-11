@@ -76,12 +76,12 @@ return [
         'OTHER' => "Other"
     ],
     'filter' => [
-        'FILTER_MORE_THAN_ONE_POLICY' => 'Contacts / Quotes',
+        'MORE_THAN_ONE_POLICY' => 'Contacts / Quotes',
         'SALUTATION' => 'salutation',
         'BIRTH_DATE' => 'Birthdate',
         'LEAD_SOURCES' => 'Lead source',
-        'FILTER_RC_POLICY' => 'PH offer',
-        'PROMO_FILTER' => 'Promo',
+        'RC_POLICY' => 'PH offer',
+        'PROMO' => 'Promo',
         'DUPLICATE_CONTACT' => 'Duplicate',
         'DUPLICATE_CONTACT_EMAIL' => 'Duplicate email',
         'NOT_CORRECT_ADDRESS' => 'Address not correct',

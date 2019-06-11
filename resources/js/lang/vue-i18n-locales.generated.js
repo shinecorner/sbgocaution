@@ -185,12 +185,12 @@ export default {
                 "OTHER": "Sonstige"
             },
             "filter": {
-                "FILTER_MORE_THAN_ONE_POLICY": "Diverse Filter",
+                "MORE_THAN_ONE_POLICY": "Diverse Filter",
                 "SALUTATION": "Anrede",
                 "BIRTH_DATE": "Geburtsdatum",
                 "LEAD_SOURCES": "Leadquelle",
-                "FILTER_RC_POLICY": "Zusatzgeschäfte",
-                "PROMO_FILTER": "Promo erfolgt",
+                "RC_POLICY": "Zusatzgeschäfte",
+                "PROMO": "Promo erfolgt",
                 "DUPLICATE_CONTACT": "Duplikate",
                 "DUPLICATE_CONTACT_EMAIL": "Duplikate E-Mail",
                 "NOT_CORRECT_ADDRESS": "Adresse nicht korrekt",
@@ -539,12 +539,12 @@ export default {
                 "OTHER": "Other"
             },
             "filter": {
-                "FILTER_MORE_THAN_ONE_POLICY": "Contacts / Quotes",
+                "MORE_THAN_ONE_POLICY": "Contacts / Quotes",
                 "SALUTATION": "salutation",
                 "BIRTH_DATE": "Birthdate",
                 "LEAD_SOURCES": "Lead source",
-                "FILTER_RC_POLICY": "PH offer",
-                "PROMO_FILTER": "Promo",
+                "RC_POLICY": "PH offer",
+                "PROMO": "Promo",
                 "DUPLICATE_CONTACT": "Duplicate",
                 "DUPLICATE_CONTACT_EMAIL": "Duplicate email",
                 "NOT_CORRECT_ADDRESS": "Address not correct",
@@ -893,12 +893,12 @@ export default {
                 "OTHER": "Autre"
             },
             "filter": {
-                "FILTER_MORE_THAN_ONE_POLICY": "Diverse Filter",
+                "MORE_THAN_ONE_POLICY": "Diverse Filter",
                 "SALUTATION": "Titre",
                 "BIRTH_DATE": "Date de naissance",
                 "LEAD_SOURCES": "Source de client",
-                "FILTER_RC_POLICY": "Offre RC",
-                "PROMO_FILTER": "Promo done",
+                "RC_POLICY": "Offre RC",
+                "PROMO": "Promo done",
                 "DUPLICATE_CONTACT": "Doubles par nom",
                 "DUPLICATE_CONTACT_EMAIL": "Doubles par email",
                 "NOT_CORRECT_ADDRESS": "Adresse incorrecte",
@@ -1247,12 +1247,12 @@ export default {
                 "OTHER": "Altro"
             },
             "filter": {
-                "FILTER_MORE_THAN_ONE_POLICY": "Filtri vari",
+                "MORE_THAN_ONE_POLICY": "Filtri vari",
                 "SALUTATION": "Titolo",
                 "BIRTH_DATE": "Data di nascita",
                 "LEAD_SOURCES": "Fonte di piombo",
-                "FILTER_RC_POLICY": "Zusatzgeschäfte",
-                "PROMO_FILTER": "Promozione effettuata",
+                "RC_POLICY": "Zusatzgeschäfte",
+                "PROMO": "Promozione effettuata",
                 "DUPLICATE_CONTACT": "Duplicati",
                 "DUPLICATE_CONTACT_EMAIL": "Doppio via e-mail",
                 "NOT_CORRECT_ADDRESS": "Indirizzo non corretto",
