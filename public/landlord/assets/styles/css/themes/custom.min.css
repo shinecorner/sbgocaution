@@ -552,7 +552,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   margin: 0;
 }
 
-.100vh {
+.login-wrapper .vh-min-100 {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
