@@ -45,5 +45,6 @@ return [
     'ROWS' => 'Rows',
     'PDF_MR' => 'Dear Sir {nachname}',
     'PDF_MRS' => 'Dear Madam {nachname}',
-    'PDF_COMPANY' => 'Dear Ladies and Gentlemen'
+    'PDF_COMPANY' => 'Dear Ladies and Gentlemen',
+    'UNAUTHORIZED' => 'User does not have the right permissions.'
 ];
