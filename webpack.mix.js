@@ -38,7 +38,7 @@ mix.js('resources/js/main.js', 'public/js')
    .js('resources/laravel/js/app.js', 'public/landlord/assets/js/laravel/app.js')
    .sass('resources/gull/assets/styles/sass/themes/lite-green.scss', 'public/landlord/assets/styles/css/themes/lite-green-plain.min.css')
    .sass('resources/gull/assets/styles/sass/themes/custom-landlord.scss', 'public/landlord/assets/styles/css/themes/custom.min.css')
-   .sass('resources/gull/assets/styles/sass/themes/custom-customer.scss', 'public/customer/assets/styles/css/themes/custom-customer.min.css');
+   .sass('resources/gull/assets/styles/sass/themes/custom-customer.scss', 'public/customer/assets/styles/css/themes/custom.min.css');
 
    mix.combine([
     'public/landlord/assets/styles/css/themes/lite-green-plain.min.css',
@@ -54,7 +54,7 @@ mix.js('resources/js/main.js', 'public/js')
 
     mix.combine([
         'public/landlord/assets/styles/css/themes/lite-green-plain.min.css',
-        'public/customer/assets/styles/css/themes/custom-customer.min.css',
+        'public/customer/assets/styles/css/themes/custom.min.css',
     ], 'public/customer/assets/styles/css/themes/lite-green.min.css');
 
     mix.combine([
