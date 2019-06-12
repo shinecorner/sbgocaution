@@ -94,4 +94,9 @@ return [
     ],
     'STATUS_CHANGE_SUCCESS' => 'Der Kontaktstatus wurde erfolgreich geändert.',
     'STATUS_CHANGE_FAIL' => 'Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.',
+    'offer' => [
+        'FILE_NAME' => 'offerte',
+        'CREATE_SUCCESS' => 'Angebot erfolgreich erstellt!',
+        'CREATE_FAILURE' => 'Angebotserstellung fehlgeschlagen!'
+    ]
 ];

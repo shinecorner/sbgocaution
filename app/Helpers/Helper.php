@@ -276,6 +276,38 @@ if(!function_exists('get_salutation')) {
 
 }
 
+if(!function_exists('getPDFSalutation')) {
+
+    function getPDFSalutation($salutation) {
+        switch ($salutation) {
+            case 'mrs':
+                $salutation = __('general.PDF_MRS');
+                break;
+            case 'mr':
+                $salutation = __('general.PDF_MR');
+                break;
+            case 'company':
+                $salutation = __('general.PDF_COMPANY');
+                break;
+            default:
+                $salutation = '';
+                break;
+        }
+        return $salutation;
+    }
+
+}
+
+if(!function_exists('writePDFContent')) {
+    function writePDFContent($data, $ln = true, $fill = 0, $reseth = false, $cell = false, $align = '') {
+        foreach($data as $element){
+            $content = array_shift($element);
+            PDF::SetXY($element['x'], $element['y'], '');
+            PDF::writeHTML($content, $ln, $fill, $reseth, $cell, $align);
+        }
+    }
+}
+
 if(!function_exists('getLeadSource')) {
 
     function getLeadSource() {
@@ -360,6 +392,23 @@ if(!function_exists('getCompanyBranches')) {
         $company_branch["sonstige"] = __('contact.company_branch.SONSTIGE');
 
         return $company_branch;
+    }
+}
+
+if(!function_exists('getPremiumAmount')) {
+    function getPremiumAmount($deposit_amount, $private = 0) {
+        if($private) {
+            if($deposit_amount <= 2000) {
+                $subtotal = ((2000 * 0.045) * (1+5/100));
+            } else {
+                $subtotal = (($deposit_amount * 0.045) * (1+5/100));
+            }
+        }
+        else
+        {
+            //@TODO
+        }
+        return $subtotal;
     }
 }
 

@@ -94,4 +94,9 @@ return [
     ],
     'STATUS_CHANGE_SUCCESS' => 'Lo stato dei contatti è stato modificato con successo.',
     'STATUS_CHANGE_FAIL' => 'Purtroppo, lo stato dei contatti non è stato modificato, riprovare.',
+    'offer' => [
+        'FILE_NAME' => 'offerta',
+        'CREATE_SUCCESS' => 'Offerta creata con successo!',
+        'CREATE_FAILURE' => 'La creazione dell\'offerta non è riuscita!'
+    ]
 ];
