@@ -3,30 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
+use App;
 use App\Http\Controllers\Controller;
 use App\Contact;
 use App\ContactOffer;
 use App\Http\Resources\OfferResource;
 use Illuminate\Support\Facades\Storage;
-
-class MYPDF extends \TCPDF {
-    //Page header
-    public function Header() {
-        // get the current page break margin
-        $bMargin = $this->getBreakMargin();
-        // get current auto-page-break mode
-        $auto_page_break = $this->AutoPageBreak;
-        // disable auto-page-break
-        $this->SetAutoPageBreak(false, 0);
-        // set bacground image
-        $img_file = public_path('offer_it.png');
-        $this->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
-        // restore auto-page-break status
-        $this->SetAutoPageBreak($auto_page_break, $bMargin);
-        // set the starting point for the page content
-        $this->setPageMark();
-    }
-}
+use PDF;
 
 class OfferController extends Controller
 {
@@ -64,220 +47,103 @@ class OfferController extends Controller
     {
         $request->validate([
             'contact_id' => 'required|integer',
-            'deposite_amount' => 'required|numeric'
+            'deposit_amount' => 'required|numeric'
         ]);
 
         $contact = Contact::find($request->contact_id);
 
-        // create new PDF document
-        $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-
-        $pdf->mylang = 'de';
-
-        if($contact->language) {
-            $pdf->mylang = $contact->language; 
-        }
-
         // set document information
-        $pdf->SetCreator(PDF_CREATOR);
-        $pdf->SetAuthor('goCaution');
-        $pdf->SetTitle('Offerte');
-        $pdf->SetSubject('Offerte');
+
+        $language = $contact->language;
+
+        PDF::setHeaderCallback(function($pdf) use($language) {
+            // get the current page break margin
+            $bMargin = $pdf->getBreakMargin();
+            // get current auto-page-break mode
+            $auto_page_break = $pdf->getAutoPageBreak();
+            // disable auto-page-break
+            $pdf->SetAutoPageBreak(false, 0);
+            // set bacground image
+            $img_file = Storage::disk('public')->path('offer_' . $language . '.png');
+            $pdf->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
+            // restore auto-page-break status
+            $pdf->SetAutoPageBreak($auto_page_break, $bMargin);
+            // set the starting point for the page content
+            $pdf->setPageMark();
+        });
+
+        PDF::SetTitle('Offerte');
+        PDF::SetAuthor('goCaution');
+        PDF::SetCreator(PDF_CREATOR);
+        PDF::SetSubject('Offerte');
 
         // set header and footer fonts
-        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        PDF::setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 
         // set default monospaced font
-        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        PDF::SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
         // set margins
-        $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-        $pdf->SetHeaderMargin(0);
-        $pdf->SetFooterMargin(0);
+        PDF::SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+        PDF::SetHeaderMargin(0);
+        PDF::SetFooterMargin(0);
 
         // remove default footer
-        $pdf->setPrintFooter(false);
+        PDF::setPrintFooter(false);
 
         // set auto page breaks
-        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+        PDF::SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
         // set image scale factor
-        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+        PDF::setImageScale(PDF_IMAGE_SCALE_RATIO);
 
         // set font
-        $pdf->SetFont('times', '', 9);
+        PDF::SetFont('times', '', 9);
 
-        $pdf->SetTextColor(0, 0, 0, 100);
+        PDF::SetTextColor(0, 0, 0, 100);
 
         // add a page
-        $pdf->AddPage();
+        PDF::AddPage();
 
-        // Print a text
-        switch ($contact->salutation) {
-            case 'mrs':
-                $salutation = __('general.PDF_MRS');
-                $salutation = str_replace("{nachname}", $contact->last_name, $salutation);
-                break;
-            case 'mr':
-                $salutation = __('general.PDF_MR');
-                $salutation = str_replace("{nachname}", $contact->last_name, $salutation);
-                break;
-            case 'company':
-                $salutation = __('general.PDF_COMPANY');
-                $salutation = str_replace("{nachname}", $contact->last_name, $salutation);
-                break;
-            default:
-                $salutation = '';
-                break;
-        }
-
-        if($pdf->mylang=="de")
+        if($contact->language == "de")
         {
-            $html = $contact->nachname." ".$contact->vorname;
-
-            $pdf->SetXY(25.5,55,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            
-            $html = $contact->addresses()->where('is_primary', 1)->first()->address;
-
-            $pdf->SetXY(25.5,60,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            
-            $html = $contact->addresses()->where('is_primary', 1)->first()->zip." ".$contact->addresses()->where('is_primary',1)->first()->city;
-
-            $pdf->SetXY(25.5,65,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            
-            $html = $contact->addresses()->where('is_primary', 1)->first()->ort;
-
-            $pdf->SetXY(33,65,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-
-            $html = $salutation;
-
-            $pdf->SetXY(25.5,118,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-
-            $html = format($request->deposit_amount);
-
-            $pdf->SetXY(32,155.5,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            if($request->deposit_amount <= 2000) {
-                $subtotal = ((2000 * 0.045) * (1+5/100));
-            } else {
-                $subtotal = (($request->deposit_amount * 0.045) * (1+5/100));
-            }
-
-            $html = format($subtotal);
-
-            $pdf->SetXY(67,155.5,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');   
-
-        } elseif($pdf->mylang=="fr") {
-
-            $html = $contact->nachname." ".$contact->vorname;
-
-            $pdf->SetXY(26,55,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            $html = $contact->addresses()->where('is_primary',1)->first()->address;
-
-            $pdf->SetXY(26,60,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            $html = $contact->addresses()->where('is_primary',1)->first()->zip." ".$contact->addresses()->where('is_primary',1)->first()->city;
-
-            $pdf->SetXY(26,65,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-            
-
-            $html = $salutation;
-
-            $pdf->SetXY(26,117,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            
-            $html = format($request->deposit_amount);
-
-            $pdf->SetXY(32,155.5,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            if($request->deposit_amount <= 2000) {
-                $subtotal = ((2000 * 0.045) * (1+5/100));
-            } else {
-                $subtotal = (($request->deposit_amount * 0.045) * (1+5/100));
-            }
-
-            $html = format($subtotal);
-
-            $pdf->SetXY(71,155.5,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-        } elseif($pdf->mylang=="it") {
-
-            $html = $contact->nachname . " " . $contact->vorname;
-
-            $pdf->SetXY(26,55,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            $html = $contact->addresses()->where('is_primary',1)->first()->address;
-
-            $pdf->SetXY(26,60,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            $html = $contact->addresses()->where('is_primary',1)->first()->zip." ".$contact->addresses()->where('is_primary',1)->first()->city;
-
-            $pdf->SetXY(26,65,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            $html = $salutation;
-
-            $pdf->SetXY(26,117,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            $html = format($request->deposit_amount);
-
-            $pdf->SetXY(33.5,155.5,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
-            if($request->deposit_amount <= 2000){
-                $subtotal = ((2000 * 0.045) * (1+5/100));
-            } else {
-                $subtotal = (($request->deposit_amount * 0.045) * (1+5/100));
-            }
-
-            $html = format($subtotal);
-
-            $pdf->SetXY(66,155.5,'');
-
-            $pdf->writeHTML($html, true, false, true, false, '');
-
+            $this->writePDF($contact);
+        } 
+        elseif($contact->language == "fr") 
+        {
+            $this->writePDF($contact);
+        } 
+        elseif($contact->language == "it")
+        {
+            $this->writePDF($contact);
         }
-        $pdf->Output('offer.pdf', 'I');
+
+        $directory_kundendatenbank = config('app.customer_data');
+        if(!Storage::disk('public')->exists($directory_kundendatenbank . DS . 'offer' . DS . $contact->id)){
+            Storage::disk('public')->makeDirectory($directory_kundendatenbank . DS . 'offer' . DS . $contact->id);
+        }
+
+        $file_name = __("contact.offer.FILE_NAME") . '_' . $contact->contact_num . '_' . time() . '.pdf';
+
+        PDF::Output(Storage::disk('public')->path($directory_kundendatenbank . DS . 'offer' . DS . $contact->id. DS . $file_name), 'F');
+
+        $contact->deposit_amount = $request->deposit_amount;
+
+        $offer = new ContactOffer();
+        $offer->file_name = $file_name;
+        $offer->sent_by = 0;
+        $offer->created_by = auth()->user()->id;
+        $offer->created_at = now();
+
+        if($contact->offers()->save($offer)) {
+            $message = __('contact.offer.CREATE_SUCCESS');
+        } else {
+            $message = __('contact.offer.CREATE_FAILURE');
+        }
+
+        return response()->json([
+            'message' => $message
+        ]);
     }
 
     /**
@@ -325,5 +191,53 @@ class OfferController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function writePDF($contact) {
+        $locale = App::getLocale();
+        App::setLocale($contact->language);
+
+        $salutation = getPDFSalutation($contact->salutation);
+        $salutation = str_replace("{nachname}", $contact->last_name, $salutation);
+
+        $subtotal = getPremiumAmount(request()->deposit_amount, 1);
+        $subtotal = format($subtotal);
+
+        $data = [
+            [   
+                'contact_name' => $contact->last_name." ".$contact->first_name, 
+                'x' => 25.5, 
+                'y' => 55 
+            ],
+            [ 
+                'address' => $contact->addresses()->where('is_primary', 1)->first()->address, 
+                'x' => 25.5, 
+                'y' => 60 
+            ],
+            [ 
+                'zip_city' => $contact->addresses()->where('is_primary', 1)->first()->zip." ".$contact->addresses()->where('is_primary',1)->first()->city, 
+                'x' => 25.5, 
+                'y' => 65 
+            ],
+            [ 
+                'salutation' => $salutation, 
+                'x' => 25.5, 
+                'y' => 118 
+            ],
+            [ 
+                'deposit_amount' => format(request()->deposit_amount), 
+                'x' => 32, 
+                'y' => 155.5 
+            ],
+            [ 
+                'subtotal' => $subtotal, 
+                'x' => 67, 
+                'y' => 155.5 
+            ]
+        ];
+
+        writePDFContent($data);
+
+        App::setLocale($locale);
     }
 }

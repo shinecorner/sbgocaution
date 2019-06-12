@@ -47,5 +47,6 @@ return [
     'ROWS' => 'Ranghi',
     'PDF_MR' => 'Caro signore {nachname}',
     'PDF_MRS' => 'Cara donna {nachname}',
-    'PDF_COMPANY' => 'Cari signori e signore e signori'
+    'PDF_COMPANY' => 'Cari signori e signore e signori',
+    'UNAUTHORIZED' => 'L\'utente non ha i permessi giusti.'
 ];
