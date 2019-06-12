@@ -93,5 +93,10 @@ return [
         'ACCEPTED_CONTACTS_WITH_NO_LINKED_USER' => 'Check login detail',
     ],
     'STATUS_CHANGE_SUCCESS' => 'Contact status has been changed successfully.',
-    'STATUS_CHANGE_FAIL' => 'Unfortunately, contact status has not been changed, try again.'
+    'STATUS_CHANGE_FAIL' => 'Unfortunately, contact status has not been changed, try again.',
+    'offer' => [
+        'FILE_NAME' => 'offer',
+        'CREATE_SUCCESS' => 'Offer created successfully!',
+        'CREATE_FAILURE' => 'Offer creation failed!'
+    ]
 ];

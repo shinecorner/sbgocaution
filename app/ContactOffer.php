@@ -13,6 +13,8 @@ class ContactOffer extends Model
      */
     protected $table = 'contacts_offers';
 
+    public $timestamps = false;
+
     public function contact()
     {
         return $this->belongsTo('App\Contact');
