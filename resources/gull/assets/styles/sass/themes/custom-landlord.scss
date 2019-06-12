@@ -477,9 +477,6 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
     display: block;
   }
 
-  .login-wrapper br.hidden-xs {
-    display: none;
-  }
   .login-wrapper .column-flexible {
     padding: 20px 20px 0;
   }
@@ -497,10 +494,6 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   .login-wrapper .mx-15 {
     max-width: 18px;
     margin-right: 5px;
-  }
-
-  .login-bottom-block.hidden-xs {
-    display: none;
   }
 
   .login-wrapper .other-links.form-group.pt-25 {
@@ -540,7 +533,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
     color: #646566;
     margin: 20px -20px 0;
   }
-  .login-wrapper .login-header-block.visible-xs {
+  .login-wrapper .login-header-block.mob-header{
     background: #8ebf43;
     padding: 5px 20px;
   }
