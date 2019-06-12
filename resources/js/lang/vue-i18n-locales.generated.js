@@ -1,20 +1,186 @@
 export default {
     "de": {
+        "validation": {
+            "accepted": "The {attribute} must be accepted.",
+            "active_url": "The {attribute} is not a valid URL.",
+            "after": "The {attribute} must be a date after {date}.",
+            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
+            "alpha": "The {attribute} may only contain letters.",
+            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
+            "alpha_num": "The {attribute} may only contain letters and numbers.",
+            "array": "The {attribute} must be an array.",
+            "before": "The {attribute} must be a date before {date}.",
+            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
+            "between": {
+                "numeric": "The {attribute} must be between {min} and {max}.",
+                "file": "The {attribute} must be between {min} and {max} kilobytes.",
+                "string": "The {attribute} must be between {min} and {max} characters.",
+                "array": "The {attribute} must have between {min} and {max} items."
+            },
+            "boolean": "The {attribute} field must be true or false.",
+            "confirmed": "Die Passwort-Bestätigung stimmt nicht überein.",
+            "date": "The {attribute} is not a valid date.",
+            "date_format": "The {attribute} does not match the format {format}.",
+            "different": "The {attribute} and {other} must be different.",
+            "digits": "The {attribute} must be {digits} digits.",
+            "digits_between": "The {attribute} must be between {min} and {max} digits.",
+            "dimensions": "The {attribute} has invalid image dimensions.",
+            "distinct": "The {attribute} field has a duplicate value.",
+            "email": "Das Attribut {attribute} muss eine gültige EMailAdresse sein.",
+            "exists": "The selected {attribute} is invalid.",
+            "file": "The {attribute} must be a file.",
+            "filled": "The {attribute} field must have a value.",
+            "gt": {
+                "numeric": "The {attribute} must be greater than {value}.",
+                "file": "The {attribute} must be greater than {value} kilobytes.",
+                "string": "The {attribute} must be greater than {value} characters.",
+                "array": "The {attribute} must have more than {value} items."
+            },
+            "gte": {
+                "numeric": "The {attribute} must be greater than or equal {value}.",
+                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
+                "string": "The {attribute} must be greater than or equal {value} characters.",
+                "array": "The {attribute} must have {value} items or more."
+            },
+            "image": "The {attribute} must be an image.",
+            "in": "The selected {attribute} is invalid.",
+            "in_array": "The {attribute} field does not exist in {other}.",
+            "integer": "The {attribute} must be an integer.",
+            "ip": "The {attribute} must be a valid IP address.",
+            "ipv4": "The {attribute} must be a valid IPv4 address.",
+            "ipv6": "The {attribute} must be a valid IPv6 address.",
+            "json": "The {attribute} must be a valid JSON string.",
+            "lt": {
+                "numeric": "The {attribute} must be less than {value}.",
+                "file": "The {attribute} must be less than {value} kilobytes.",
+                "string": "The {attribute} must be less than {value} characters.",
+                "array": "The {attribute} must have less than {value} items."
+            },
+            "lte": {
+                "numeric": "The {attribute} must be less than or equal {value}.",
+                "file": "The {attribute} must be less than or equal {value} kilobytes.",
+                "string": "The {attribute} must be less than or equal {value} characters.",
+                "array": "The {attribute} must not have more than {value} items."
+            },
+            "max": {
+                "numeric": "The {attribute} may not be greater than {max}.",
+                "file": "The {attribute} may not be greater than {max} kilobytes.",
+                "string": "The {attribute} may not be greater than {max} characters.",
+                "array": "The {attribute} may not have more than {max} items."
+            },
+            "mimes": "The {attribute} must be a file of type: {values}.",
+            "mimetypes": "The {attribute} must be a file of type: {values}.",
+            "min": {
+                "numeric": "The {attribute} must be at least {min}.",
+                "file": "The {attribute} must be at least {min} kilobytes.",
+                "string": "The {attribute} must be at least {min} characters.",
+                "array": "The {attribute} must have at least {min} items."
+            },
+            "not_in": "The selected {attribute} is invalid.",
+            "not_regex": "The {attribute} format is invalid.",
+            "numeric": "The {attribute} must be a number.",
+            "present": "The {attribute} field must be present.",
+            "regex": "The {attribute} format is invalid.",
+            "invalid": "Das {attribute} ist ungültig.",
+            "required": "Das {attribute} ist erforderlich.",
+            "required_if": "The {attribute} field is required when {other} is {value}.",
+            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
+            "required_with": "The {attribute} field is required when {values} is present.",
+            "required_with_all": "The {attribute} field is required when {values} is present.",
+            "required_without": "The {attribute} field is required when {values} is not present.",
+            "required_without_all": "The {attribute} field is required when none of {values} are present.",
+            "same": "The {attribute} and {other} must match.",
+            "size": {
+                "numeric": "The {attribute} must be {size}.",
+                "file": "The {attribute} must be {size} kilobytes.",
+                "string": "The {attribute} must be {size} characters.",
+                "array": "The {attribute} must contain {size} items."
+            },
+            "string": "The {attribute} must be a string.",
+            "timezone": "The {attribute} must be a valid zone.",
+            "unique": "The {attribute} has already been taken.",
+            "uploaded": "The {attribute} failed to upload.",
+            "url": "The {attribute} format is invalid.",
+            "custom": {
+                "attribute-name": {
+                    "rule-name": "custom-message"
+                }
+            },
+            "attributes": []
+        },
         "passwords": {
             "PASSWORD": "Passwords must be at least six characters and match the confirmation.",
             "RESET": "Your password has been reset!",
-            "SENT": "Wir haben Ihren Link zum Zurücksetzen des Passworts per E-Mail gesendet!",
+            "sent": "Wir haben Ihren Link zum Zurücksetzen des Passworts per E-Mail gesendet!",
             "TOKEN": "This password reset token is invalid.",
-            "USER": "Wir können keinen Benutzer mit dieser E-Mail-Adresse finden."
+            "user": "Wir können keinen Benutzer mit dieser E-Mail-Adresse finden."
+        },
+        "landlord": {
+            "LOGIN": "Anmelden",
+            "EMAIL": "E-Mail",
+            "PASSWORD": "Passwort",
+            "LANGUAGE": "Sprache",
+            "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
+            "TITLE": "goCaution® Vermieter-Login",
+            "LOGIN_TITLE": "goCaution® Vermieter-Login",
+            "FORGET_PASSWORD": "Passwort vergessen?",
+            "GET_RESET_LINK": "Link zurücksetzen",
+            "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
+            "SUPPORT": {
+                "MOBILE": "0800 461 461",
+                "SUPPORT": "SUPPORT",
+                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
+            },
+            "LOGIN_PAGE_DESCRIPTION": {
+                "TITLE": "Mietkautionen online verwalten",
+                "LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
+                "LINE_TWO": "und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
+                "LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
+                "LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert."
+            },
+            "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
+            "REQUEST_ACCESS": "Zugang anfordern",
+            "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
+            "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
+            "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
+            "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
+            "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
+            "USED_LINK": "Link bereits verwendet",
+            "INVALID_USER_ID": "Ungültige Benutzer-Id",
+            "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
+            "NEW_PASSWORD": "Neues Kennwort",
+            "CONFIRM_PASSWORD": "Passwort bestätigen",
+            "RESET": "zurücksetzen",
+            "EMAIL_REQUIRED": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+            "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
+            "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
+            "LOGO_IMG": "logo_de.png",
+            "LOGIN_IMG": "vermieter-login-app.png",
+            "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
+            "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
+            "IDENTIFIER": "E-Mail-Adresse",
+            "BACK": "Zurück",
+            "SEND_FORGOT_MAIL": "Senden",
+            "RESPONSIVE_LOGO": "logo-w-de.png",
+            "routes": {
+                "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
+                "LOGIN": "anmelden",
+                "DASHBOARD": "instrumentenbord",
+                "PASSWORD_RESET": "passwortRucksetzen",
+                "PASSWORD_EMAIL": "passwort_email",
+                "PASSWORD_UPDATE": "passwort_aktualisierung",
+                "LOGOUT": "abmeldung"
+            },
+            "ERROR": "Fehler",
+            "404_ERROR": "Entschuldigung! Die Seite, die Sie gesucht haben, existiert nicht.",
+            "GO_BACK_HOME": "Gehen Sie zurück nach Hause.",
+            "FORGOT_PASSWORD_NOTE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden."
         },
         "auth": {
-            "FAILED": "Diese Anmeldeinformationen stimmen nicht mit unseren Aufzeichnungen überein.",
+            "failed": "Diese Anmeldeinformationen stimmen nicht mit unseren Aufzeichnungen überein.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
-        "user": {
-            "EDIT_ACCOUNT": "Profil bearbeiten"
-        },
-        "my": {
+        "customer": {
             "LOGIN": "Anmelden",
             "USERNAME": "Benutzername",
             "PASSWORD": "Passwort",
@@ -80,6 +246,9 @@ export default {
                 "PASSWORD_UPDATE": "passwort_aktualisierung",
                 "LOGOUT": "abmeldung"
             }
+        },
+        "user": {
+            "EDIT_ACCOUNT": "Profil bearbeiten"
         },
         "setting": {
             "SETTING": "Einstellung",
@@ -202,7 +371,12 @@ export default {
                 "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "Login-Daten überprüfen"
             },
             "STATUS_CHANGE_SUCCESS": "Der Kontaktstatus wurde erfolgreich geändert.",
-            "STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut."
+            "STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.",
+            "offer": {
+                "FILE_NAME": "offerte",
+                "CREATE_SUCCESS": "Angebot erfolgreich erstellt!",
+                "CREATE_FAILURE": "Angebotserstellung fehlgeschlagen!"
+            }
         },
         "pagination": {
             "previous": "« Previous",
@@ -289,86 +463,195 @@ export default {
                 "RESET": "Leeren",
                 "NOT_SELECTED_OPTION": "Nicht ausgewählt"
             },
-            "ROWS": "Einträge"
-        },
-        "login": {
-            "LOGIN": "Anmelden",
-            "EMAIL": "E-Mail",
-            "PASSWORD": "Passwort",
-            "LANGUAGE": "Sprache",
-            "DE": "Deutsch",
-            "FR": "Français",
-            "IT": "Italienisch",
-            "EN": "English",
-            "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
-            "TITLE": "goCaution® Vermieter-Login",
-            "LOGIN_TITLE": "goCaution® Vermieter-Login",
-            "FORGET_PASSWORD": "Passwort vergessen?",
-            "GET_RESET_LINK": "Link zurücksetzen",
-            "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
-            "SUPPORT": "SUPPORT",
-            "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
-            "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
-            "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-            "LOGIN_PAGE_DESCRIPTION_LINE_TWO": "und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
-            "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
-            "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
-            "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
-            "REQUEST_ACCESS": "Zugang anfordern",
-            "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
-            "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
-            "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
-            "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
-            "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
-            "USED_LINK": "Link bereits verwendet",
-            "INVALID_USER_ID": "Ungültige Benutzer-Id",
-            "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
-            "NEW_PASSWORD": "Neues Kennwort",
-            "CONFIRM_PASSWORD": "Passwort bestätigen",
-            "RESET": "zurücksetzen",
-            "EMAIL_REQUIRED": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-            "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
-            "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
-            "CONTACT": "0800 461 461",
-            "LOGO_IMG": "logo_de.png",
-            "LOGIN_IMG": "vermieter-login-app.png",
-            "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-            "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
-            "IDENTIFIER": "E-Mail-Adresse",
-            "BACK": "Zurück",
-            "SEND_FORGOT_MAIL": "Senden",
-            "RESPONSIVE_LOGO": "logo-w-de.png",
-            "routes": {
-                "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
-                "LOGIN": "anmelden",
-                "DASHBOARD": "instrumentenbord",
-                "PASSWORD_RESET": "passwortRucksetzen",
-                "PASSWORD_EMAIL": "passwort_email",
-                "PASSWORD_UPDATE": "passwort_aktualisierung",
-                "LOGOUT": "abmeldung"
-            },
-            "ERROR": "Fehler",
-            "404_ERROR": "Entschuldigung! Die Seite, die Sie gesucht haben, existiert nicht.",
-            "GO_BACK_HOME": "Gehen Sie zurück nach Hause.",
-            "FORGOT_PASSWORD_NOTE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden."
+            "ROWS": "Einträge",
+            "PDF_MR": "Sehr geehrter Herr {nachname}",
+            "PDF_MRS": "Sehr geehrte Frau {nachname}",
+            "PDF_COMPANY": "Sehr geehrte Damen und Herren",
+            "UNAUTHORIZED": "Der Benutzer hat nicht die richtigen Berechtigungen."
         }
     },
     "en": {
+        "validation": {
+            "accepted": "The {attribute} must be accepted.",
+            "active_url": "The {attribute} is not a valid URL.",
+            "after": "The {attribute} must be a date after {date}.",
+            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
+            "alpha": "The {attribute} may only contain letters.",
+            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
+            "alpha_num": "The {attribute} may only contain letters and numbers.",
+            "array": "The {attribute} must be an array.",
+            "before": "The {attribute} must be a date before {date}.",
+            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
+            "between": {
+                "numeric": "The {attribute} must be between {min} and {max}.",
+                "file": "The {attribute} must be between {min} and {max} kilobytes.",
+                "string": "The {attribute} must be between {min} and {max} characters.",
+                "array": "The {attribute} must have between {min} and {max} items."
+            },
+            "boolean": "The {attribute} field must be true or false.",
+            "confirmed": "The {attribute} confirmation does not match.",
+            "date": "The {attribute} is not a valid date.",
+            "date_format": "The {attribute} does not match the format {format}.",
+            "different": "The {attribute} and {other} must be different.",
+            "digits": "The {attribute} must be {digits} digits.",
+            "digits_between": "The {attribute} must be between {min} and {max} digits.",
+            "dimensions": "The {attribute} has invalid image dimensions.",
+            "distinct": "The {attribute} field has a duplicate value.",
+            "email": "The {attribute} must be a valid email address.",
+            "exists": "The selected {attribute} is invalid.",
+            "file": "The {attribute} must be a file.",
+            "filled": "The {attribute} field must have a value.",
+            "gt": {
+                "numeric": "The {attribute} must be greater than {value}.",
+                "file": "The {attribute} must be greater than {value} kilobytes.",
+                "string": "The {attribute} must be greater than {value} characters.",
+                "array": "The {attribute} must have more than {value} items."
+            },
+            "gte": {
+                "numeric": "The {attribute} must be greater than or equal {value}.",
+                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
+                "string": "The {attribute} must be greater than or equal {value} characters.",
+                "array": "The {attribute} must have {value} items or more."
+            },
+            "image": "The {attribute} must be an image.",
+            "in": "The selected {attribute} is invalid.",
+            "in_array": "The {attribute} field does not exist in {other}.",
+            "integer": "The {attribute} must be an integer.",
+            "ip": "The {attribute} must be a valid IP address.",
+            "ipv4": "The {attribute} must be a valid IPv4 address.",
+            "ipv6": "The {attribute} must be a valid IPv6 address.",
+            "json": "The {attribute} must be a valid JSON string.",
+            "lt": {
+                "numeric": "The {attribute} must be less than {value}.",
+                "file": "The {attribute} must be less than {value} kilobytes.",
+                "string": "The {attribute} must be less than {value} characters.",
+                "array": "The {attribute} must have less than {value} items."
+            },
+            "lte": {
+                "numeric": "The {attribute} must be less than or equal {value}.",
+                "file": "The {attribute} must be less than or equal {value} kilobytes.",
+                "string": "The {attribute} must be less than or equal {value} characters.",
+                "array": "The {attribute} must not have more than {value} items."
+            },
+            "max": {
+                "numeric": "The {attribute} may not be greater than {max}.",
+                "file": "The {attribute} may not be greater than {max} kilobytes.",
+                "string": "The {attribute} may not be greater than {max} characters.",
+                "array": "The {attribute} may not have more than {max} items."
+            },
+            "mimes": "The {attribute} must be a file of type: {values}.",
+            "mimetypes": "The {attribute} must be a file of type: {values}.",
+            "min": {
+                "numeric": "The {attribute} must be at least {min}.",
+                "file": "The {attribute} must be at least {min} kilobytes.",
+                "string": "The {attribute} must be at least {min} characters.",
+                "array": "The {attribute} must have at least {min} items."
+            },
+            "not_in": "The selected {attribute} is invalid.",
+            "not_regex": "The {attribute} format is invalid.",
+            "numeric": "The {attribute} must be a number.",
+            "present": "The {attribute} field must be present.",
+            "regex": "The {attribute} format is invalid.",
+            "invalid": "The {attribute} is invalid.",
+            "required": "The {attribute} is required.",
+            "required_if": "The {attribute} field is required when {other} is {value}.",
+            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
+            "required_with": "The {attribute} field is required when {values} is present.",
+            "required_with_all": "The {attribute} field is required when {values} is present.",
+            "required_without": "The {attribute} field is required when {values} is not present.",
+            "required_without_all": "The {attribute} field is required when none of {values} are present.",
+            "same": "The {attribute} and {other} must match.",
+            "size": {
+                "numeric": "The {attribute} must be {size}.",
+                "file": "The {attribute} must be {size} kilobytes.",
+                "string": "The {attribute} must be {size} characters.",
+                "array": "The {attribute} must contain {size} items."
+            },
+            "string": "The {attribute} must be a string.",
+            "timezone": "The {attribute} must be a valid zone.",
+            "unique": "The {attribute} has already been taken.",
+            "uploaded": "The {attribute} failed to upload.",
+            "url": "The {attribute} format is invalid.",
+            "custom": {
+                "attribute-name": {
+                    "rule-name": "custom-message"
+                }
+            },
+            "attributes": []
+        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
-            "SENT": "We have e-mailed your password reset link!",
+            "sent": "We have e-mailed your password reset link!",
             "token": "This password reset token is invalid.",
-            "USER": "We can't find a user with that e-mail address."
+            "user": "We can't find a user with that e-mail address."
+        },
+        "landlord": {
+            "LOGIN": "Log in",
+            "EMAIL": "Email",
+            "PASSWORD": "Password",
+            "LANGUAGE": "Language",
+            "LOGIN_REMEMBER_ME": "Remember me",
+            "TITLE": "goCaution® Landlord Login",
+            "LOGIN_TITLE": "goCaution® Landlord Login",
+            "FORGET_PASSWORD": "Forget Password ?",
+            "GET_RESET_LINK": "Get Reset Link",
+            "BACK_TO_LOGIN": "Back to Login?",
+            "SUPPORT": {
+                "MOBILE": "0800 461 461",
+                "SUPPORT": "SUPPORT",
+                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
+            },
+            "LOGIN_PAGE_DESCRIPTION": {
+                "TITLE": "Manage rental deposits online",
+                "LINE_ONE": "With our landlord login, you always have an overview of the rental deposit guarantees of your tenants",
+                "LINE_TWO": "and can take care of all the necessary steps - from opening to mutations, right up to resolution - digitally.",
+                "LINE_THREE": "The web-based application can be used immediately, is intuitively understandable",
+                "LINE_FOUR": "and based on the life cycle of a bail."
+            },
+            "LOGIN_PAGE_REQUEST_POLICY": "Request your access and manage the tenant policies online.",
+            "REQUEST_ACCESS": "Request access",
+            "ERROR_USER_DOESNOT_EXISTS": "User doesnot exists",
+            "ERROR_INVALID_PASSWORD": "Invalid password",
+            "RESET_LINK_SENT": "Password reset Link has been sent on your email, please check",
+            "UNREGISTERED_EMAIL": "Email is not registered with us",
+            "RESET_TOKEN_MISSMATCH": "Password reset token missmatched",
+            "USED_LINK": "Link already used",
+            "INVALID_USER_ID": "Invalid Userid",
+            "PASSWORD_RESET_SUCCESS": "Password updated, to continue please login",
+            "NEW_PASSWORD": "New Password",
+            "CONFIRM_PASSWORD": "Confirm Password",
+            "RESET": "Reset",
+            "EMAIL_REQUIRED": "Please provide a valid email address.",
+            "PASSWORD_REQUIRED": "Please provide a valid password.",
+            "CONFIRM_PASSWORD_REQUIRED": "Please provide a valid confirm password.",
+            "LOGO_IMG": "logo_de.png",
+            "LOGIN_IMG": "vermieter-login-app.png",
+            "FORGOT_TEXT": "Please enter the email address associated with your account. The username will then be sent to this email address.",
+            "POPOVER_DATA": "Please enter the email address associated with your user account. A verification code will be sent to you. When you receive it, you will be able to choose a new password.",
+            "IDENTIFIER": "Identifier",
+            "BACK": "back",
+            "SEND_FORGOT_MAIL": "sending",
+            "RESPONSIVE_LOGO": "logo-w-de.png",
+            "routes": {
+                "FORGOT_PASSWORD_LINK": "registration/password-forgotten",
+                "LOGIN": "login",
+                "DASHBOARD": "dashboard",
+                "PASSWORD_RESET": "passwordReset",
+                "PASSWORD_EMAIL": "password_email",
+                "PASSWORD_UPDATE": "password_update",
+                "LOGOUT": "logout"
+            },
+            "ERROR": "Error",
+            "404_ERROR": "Sorry! The page you were looking for doesn't exist.",
+            "GO_BACK_HOME": "Go back to home",
+            "FORGOT_PASSWORD_NOTE": "Please enter an e-mail address for the user account. A confirmation code will then be sent to you. As soon as the code is available, a new password for the user account can be set."
         },
         "auth": {
-            "FAILED": "These credentials do not match our records.",
+            "failed": "These credentials do not match our records.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
-        "user": {
-            "EDIT_ACCOUNT": "Edit profile"
-        },
-        "my": {
+        "customer": {
             "LOGIN": "Anmelden",
             "USERNAME": "Benutzername",
             "PASSWORD": "Passwort",
@@ -434,6 +717,9 @@ export default {
                 "PASSWORD_UPDATE": "passwort_aktualisierung",
                 "LOGOUT": "abmeldung"
             }
+        },
+        "user": {
+            "EDIT_ACCOUNT": "Edit profile"
         },
         "setting": {
             "SETTING": "Setting",
@@ -556,7 +842,12 @@ export default {
                 "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "Check login detail"
             },
             "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
-            "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again."
+            "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again.",
+            "offer": {
+                "FILE_NAME": "offer",
+                "CREATE_SUCCESS": "Offer created successfully!",
+                "CREATE_FAILURE": "Offer creation failed!"
+            }
         },
         "pagination": {
             "previous": "« Previous",
@@ -643,86 +934,195 @@ export default {
                 "RESET": "Reset",
                 "NOT_SELECTED_OPTION": "Not selected"
             },
-            "ROWS": "Rows"
-        },
-        "login": {
-            "LOGIN": "Log in",
-            "EMAIL": "Email",
-            "PASSWORD": "Password",
-            "LANGUAGE": "Language",
-            "DE": "Deutsch",
-            "FR": "Français",
-            "IT": "Italienisch",
-            "EN": "English",
-            "LOGIN_REMEMBER_ME": "Remember me",
-            "TITLE": "goCaution® Landlord Login",
-            "LOGIN_TITLE": "goCaution® LARALOGIN",
-            "FORGET_PASSWORD": "Forget Password ?",
-            "GET_RESET_LINK": "Get Reset Link",
-            "BACK_TO_LOGIN": "Back to Login?",
-            "SUPPORT": "SUPPORT",
-            "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
-            "LOGIN_PAGE_DESCRIPTION_TITLE": "Manage rental deposits online",
-            "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "With our landlord login, you always have an overview of the rental deposit guarantees of your tenants",
-            "LOGIN_PAGE_DESCRIPTION_LINE_TWO": "and can take care of all the necessary steps - from opening to mutations, right up to resolution - digitally.",
-            "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "The web-based application can be used immediately, is intuitively understandable",
-            "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "and based on the life cycle of a bail.",
-            "LOGIN_PAGE_REQUEST_POLICY": "Request your access and manage the tenant policies online.",
-            "REQUEST_ACCESS": "Request access",
-            "ERROR_USER_DOESNOT_EXISTS": "User doesnot exists",
-            "ERROR_INVALID_PASSWORD": "Invalid password",
-            "RESET_LINK_SENT": "Password reset Link has been sent on your email, please check",
-            "UNREGISTERED_EMAIL": "Email is not registered with us",
-            "RESET_TOKEN_MISSMATCH": "Password reset token missmatched",
-            "USED_LINK": "Link already used",
-            "INVALID_USER_ID": "Invalid Userid",
-            "PASSWORD_RESET_SUCCESS": "Password updated, to continue please login",
-            "NEW_PASSWORD": "New Password",
-            "CONFIRM_PASSWORD": "Confirm Password",
-            "RESET": "Reset",
-            "EMAIL_REQUIRED": "Please provide a valid email address.",
-            "PASSWORD_REQUIRED": "Please provide a valid password.",
-            "CONFIRM_PASSWORD_REQUIRED": "Please provide a valid confirm password.",
-            "CONTACT": "0800 461 461",
-            "LOGO_IMG": "logo_de.png",
-            "LOGIN_IMG": "vermieter-login-app.png",
-            "FORGOT_TEXT": "Please enter the email address associated with your account. The username will then be sent to this email address.",
-            "POPOVER_DATA": "Please enter the email address associated with your user account. A verification code will be sent to you. When you receive it, you will be able to choose a new password.",
-            "IDENTIFIER": "Identifier",
-            "BACK": "back",
-            "SEND_FORGOT_MAIL": "sending",
-            "RESPONSIVE_LOGO": "logo-w-de.png",
-            "routes": {
-                "FORGOT_PASSWORD_LINK": "registration/password-forgotten",
-                "LOGIN": "login",
-                "DASHBOARD": "dashboard",
-                "PASSWORD_RESET": "passwordReset",
-                "PASSWORD_EMAIL": "password_email",
-                "PASSWORD_UPDATE": "password_update",
-                "LOGOUT": "logout"
-            },
-            "ERROR": "Error",
-            "404_ERROR": "Sorry! The page you were looking for doesn't exist.",
-            "GO_BACK_HOME": "Go back to home",
-            "FORGOT_PASSWORD_NOTE": "Please enter an e-mail address for the user account. A confirmation code will then be sent to you. As soon as the code is available, a new password for the user account can be set."
+            "ROWS": "Rows",
+            "PDF_MR": "Dear Sir {nachname}",
+            "PDF_MRS": "Dear Madam {nachname}",
+            "PDF_COMPANY": "Dear Ladies and Gentlemen",
+            "UNAUTHORIZED": "User does not have the right permissions."
         }
     },
     "fr": {
+        "validation": {
+            "accepted": "The {attribute} must be accepted.",
+            "active_url": "The {attribute} is not a valid URL.",
+            "after": "The {attribute} must be a date after {date}.",
+            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
+            "alpha": "The {attribute} may only contain letters.",
+            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
+            "alpha_num": "The {attribute} may only contain letters and numbers.",
+            "array": "The {attribute} must be an array.",
+            "before": "The {attribute} must be a date before {date}.",
+            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
+            "between": {
+                "numeric": "The {attribute} must be between {min} and {max}.",
+                "file": "The {attribute} must be between {min} and {max} kilobytes.",
+                "string": "The {attribute} must be between {min} and {max} characters.",
+                "array": "The {attribute} must have between {min} and {max} items."
+            },
+            "boolean": "The {attribute} field must be true or false.",
+            "confirmed": "La confirmation du mot de passe ne correspond pas.",
+            "date": "The {attribute} is not a valid date.",
+            "date_format": "The {attribute} does not match the format {format}.",
+            "different": "The {attribute} and {other} must be different.",
+            "digits": "The {attribute} must be {digits} digits.",
+            "digits_between": "The {attribute} must be between {min} and {max} digits.",
+            "dimensions": "The {attribute} has invalid image dimensions.",
+            "distinct": "The {attribute} field has a duplicate value.",
+            "email": "L'attribut {attribute} être une adresse email valide.",
+            "exists": "The selected {attribute} is invalid.",
+            "file": "The {attribute} must be a file.",
+            "filled": "The {attribute} field must have a value.",
+            "gt": {
+                "numeric": "The {attribute} must be greater than {value}.",
+                "file": "The {attribute} must be greater than {value} kilobytes.",
+                "string": "The {attribute} must be greater than {value} characters.",
+                "array": "The {attribute} must have more than {value} items."
+            },
+            "gte": {
+                "numeric": "The {attribute} must be greater than or equal {value}.",
+                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
+                "string": "The {attribute} must be greater than or equal {value} characters.",
+                "array": "The {attribute} must have {value} items or more."
+            },
+            "image": "The {attribute} must be an image.",
+            "in": "The selected {attribute} is invalid.",
+            "in_array": "The {attribute} field does not exist in {other}.",
+            "integer": "The {attribute} must be an integer.",
+            "ip": "The {attribute} must be a valid IP address.",
+            "ipv4": "The {attribute} must be a valid IPv4 address.",
+            "ipv6": "The {attribute} must be a valid IPv6 address.",
+            "json": "The {attribute} must be a valid JSON string.",
+            "lt": {
+                "numeric": "The {attribute} must be less than {value}.",
+                "file": "The {attribute} must be less than {value} kilobytes.",
+                "string": "The {attribute} must be less than {value} characters.",
+                "array": "The {attribute} must have less than {value} items."
+            },
+            "lte": {
+                "numeric": "The {attribute} must be less than or equal {value}.",
+                "file": "The {attribute} must be less than or equal {value} kilobytes.",
+                "string": "The {attribute} must be less than or equal {value} characters.",
+                "array": "The {attribute} must not have more than {value} items."
+            },
+            "max": {
+                "numeric": "The {attribute} may not be greater than {max}.",
+                "file": "The {attribute} may not be greater than {max} kilobytes.",
+                "string": "The {attribute} may not be greater than {max} characters.",
+                "array": "The {attribute} may not have more than {max} items."
+            },
+            "mimes": "The {attribute} must be a file of type: {values}.",
+            "mimetypes": "The {attribute} must be a file of type: {values}.",
+            "min": {
+                "numeric": "The {attribute} must be at least {min}.",
+                "file": "The {attribute} must be at least {min} kilobytes.",
+                "string": "The {attribute} must be at least {min} characters.",
+                "array": "The {attribute} must have at least {min} items."
+            },
+            "not_in": "The selected {attribute} is invalid.",
+            "not_regex": "The {attribute} format is invalid.",
+            "numeric": "The {attribute} must be a number.",
+            "present": "The {attribute} field must be present.",
+            "regex": "The {attribute} format is invalid.",
+            "invalid": "L'{attribute} n'est pas valide.",
+            "required": "L'{attribute} est requis.",
+            "required_if": "The {attribute} field is required when {other} is {value}.",
+            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
+            "required_with": "The {attribute} field is required when {values} is present.",
+            "required_with_all": "The {attribute} field is required when {values} is present.",
+            "required_without": "The {attribute} field is required when {values} is not present.",
+            "required_without_all": "The {attribute} field is required when none of {values} are present.",
+            "same": "The {attribute} and {other} must match.",
+            "size": {
+                "numeric": "The {attribute} must be {size}.",
+                "file": "The {attribute} must be {size} kilobytes.",
+                "string": "The {attribute} must be {size} characters.",
+                "array": "The {attribute} must contain {size} items."
+            },
+            "string": "The {attribute} must be a string.",
+            "timezone": "The {attribute} must be a valid zone.",
+            "unique": "The {attribute} has already been taken.",
+            "uploaded": "The {attribute} failed to upload.",
+            "url": "The {attribute} format is invalid.",
+            "custom": {
+                "attribute-name": {
+                    "rule-name": "custom-message"
+                }
+            },
+            "attributes": []
+        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
-            "SENT": "Nous avons envoyé votre lien de réinitialisation de mot de passe par e-mail!",
+            "sent": "Nous avons envoyé votre lien de réinitialisation de mot de passe par e-mail!",
             "token": "This password reset token is invalid.",
-            "USER": "Nous ne pouvons pas trouver un utilisateur avec cette adresse e-mail."
+            "user": "Nous ne pouvons pas trouver un utilisateur avec cette adresse e-mail."
+        },
+        "landlord": {
+            "LOGIN": "Connexion",
+            "EMAIL": "Courriel",
+            "PASSWORD": "Mot de passe",
+            "LANGUAGE": "Langue",
+            "LOGIN_REMEMBER_ME": "Se rappeler de moi",
+            "TITLE": "goCaution® Espace bailleurs | La gestion numérique des garanties - goCaution® Vermieter-Login | Die digitale Verwaltung von Bürgschaften",
+            "LOGIN_TITLE": "goCaution® Espace bailleurs",
+            "FORGET_PASSWORD": "Mot de passe oublié ?",
+            "GET_RESET_LINK": "Obtenir le lien de réinitialisation",
+            "BACK_TO_LOGIN": "Retour connexion?",
+            "SUPPORT": {
+                "MOBILE": "0800 461 461",
+                "SUPPORT": "SUPPORT",
+                "SUPPORT_ADDRESS": "goCaution SA - Freiburgstrasse 574 - 3172 Niederwangen"
+            },
+            "LOGIN_PAGE_DESCRIPTION": {
+                "TITLE": "Gérer les cautions de loyer en ligne",
+                "LINE_ONE": "goCaution a mis en place un Espace bailleurs qui vous permettra d'avoir une visualisation et une gestion complète de vos garanties de loyer.",
+                "LINE_TWO": "Ainsi, vous pourrez gérer l'établissement d'un certificat jusqu'à la résiliation avec ou sans sinistre.",
+                "LINE_THREE": "Notre application web est simple de manipulation et rapide. Adapté à la philosophie de goCaution,",
+                "LINE_FOUR": "qui est le traitement 100% en ligne, celui-ci vous permettra un gain de temps considérable."
+            },
+            "LOGIN_PAGE_REQUEST_POLICY": "Demandez votre accès et gérez les politiques de locataire en ligne.",
+            "REQUEST_ACCESS": "Demande d'accès",
+            "ERROR_USER_DOESNOT_EXISTS": "L'utilisateur n'existe pas",
+            "ERROR_INVALID_PASSWORD": "Mot de passe incorrect",
+            "RESET_LINK_SENT": "Le lien de réinitialisation de mot de passe a été envoyé sur votre email, s'il vous plaît vérifier",
+            "UNREGISTERED_EMAIL": "Email n'est pas enregistré avec nous",
+            "RESET_TOKEN_MISSMATCH": "Le jeton de réinitialisation de mot de passe ne correspond pas",
+            "USED_LINK": "Lien déjà utilisé",
+            "INVALID_USER_ID": "Identifiant invalide",
+            "PASSWORD_RESET_SUCCESS": "Mot de passe mis à jour, pour continuer, veuillez vous connecter",
+            "NEW_PASSWORD": "nouveau mot de passe",
+            "CONFIRM_PASSWORD": "Confirmez le mot de passe",
+            "RESET": "réinitialiser",
+            "EMAIL_REQUIRED": "Veuillez fournir une adresse électronique valide.",
+            "PASSWORD_REQUIRED": "Veuillez fournir un mot de passe valide.",
+            "CONFIRM_PASSWORD_REQUIRED": "Veuillez fournir un mot de passe de confirmation valide.",
+            "LOGO_IMG": "logo_fr.png",
+            "LOGIN_IMG": "landlord-login-app.png",
+            "FORGOT_TEXT": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
+            "POPOVER_DATA": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur.&lt;br /&gt;Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe.",
+            "IDENTIFIER": "Adresse e-mail",
+            "BACK": "Retour",
+            "SEND_FORGOT_MAIL": "Envoyer",
+            "RESPONSIVE_LOGO": "logo-w-fr.png",
+            "routes": {
+                "FORGOT_PASSWORD_LINK": "anmeldung/forgot-password",
+                "LOGIN": "connexion",
+                "DASHBOARD": "tableau_de_bord",
+                "PASSWORD_RESET": "reinitialiser_mot_de_passe",
+                "PASSWORD_EMAIL": "mot_de_passe_email",
+                "PASSWORD_UPDATE": "mot_de_passe_update",
+                "LOGOUT": "deconnexion"
+            },
+            "ERROR": "Abus",
+            "404_ERROR": "Désolé ! La page que vous cherchiez n'existe pas.",
+            "GO_BACK_HOME": "Retour à la maison",
+            "FORGOT_PASSWORD_NOTE": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe"
         },
         "auth": {
-            "FAILED": "Ces informations d'identification ne correspondent pas à nos enregistrements.",
+            "failed": "Ces informations d'identification ne correspondent pas à nos enregistrements.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
-        "user": {
-            "EDIT_ACCOUNT": "Modifier le profil"
-        },
-        "my": {
+        "customer": {
             "LOGIN": "Anmelden",
             "USERNAME": "Benutzername",
             "PASSWORD": "Passwort",
@@ -788,6 +1188,9 @@ export default {
                 "PASSWORD_UPDATE": "passwort_aktualisierung",
                 "LOGOUT": "abmeldung"
             }
+        },
+        "user": {
+            "EDIT_ACCOUNT": "Modifier le profil"
         },
         "setting": {
             "SETTING": "Réglage de",
@@ -910,7 +1313,12 @@ export default {
                 "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "vérifier les détails de connexion"
             },
             "STATUS_CHANGE_SUCCESS": "Le statut du contact a été modifié avec succès.",
-            "STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez."
+            "STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez.",
+            "offer": {
+                "FILE_NAME": "proposition",
+                "CREATE_SUCCESS": "Offre créée avec succès !",
+                "CREATE_FAILURE": "La création d'offres a échoué !"
+            }
         },
         "pagination": {
             "previous": "« Previous",
@@ -997,86 +1405,195 @@ export default {
                 "RESET": "Vider",
                 "NOT_SELECTED_OPTION": "Non sélectionné"
             },
-            "ROWS": "Rangs"
-        },
-        "login": {
-            "LOGIN": "Connexion",
-            "EMAIL": "Courriel",
-            "PASSWORD": "Mot de passe",
-            "LANGUAGE": "Langue",
-            "DE": "Deutsch",
-            "FR": "Français",
-            "IT": "Italienisch",
-            "EN": "English",
-            "LOGIN_REMEMBER_ME": "Se rappeler de moi",
-            "TITLE": "goCaution® Espace bailleurs | La gestion numérique des garanties - goCaution® Vermieter-Login | Die digitale Verwaltung von Bürgschaften",
-            "LOGIN_TITLE": "goCaution® Espace bailleurs",
-            "FORGET_PASSWORD": "Mot de passe oublié ?",
-            "GET_RESET_LINK": "Obtenir le lien de réinitialisation",
-            "BACK_TO_LOGIN": "Retour connexion?",
-            "SUPPORT": "SUPPORT",
-            "SUPPORT_ADDRESS": "goCaution SA - Freiburgstrasse 574 - 3172 Niederwangen",
-            "LOGIN_PAGE_DESCRIPTION_TITLE": "Gérer les cautions de loyer en ligne",
-            "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "goCaution a mis en place un Espace bailleurs qui vous permettra d'avoir une visualisation et une gestion complète de vos garanties de loyer.",
-            "LOGIN_PAGE_DESCRIPTION_LINE_TWO": "Ainsi, vous pourrez gérer l'établissement d'un certificat jusqu'à la résiliation avec ou sans sinistre.",
-            "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Notre application web est simple de manipulation et rapide. Adapté à la philosophie de goCaution,",
-            "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "qui est le traitement 100% en ligne, celui-ci vous permettra un gain de temps considérable.",
-            "LOGIN_PAGE_REQUEST_POLICY": "Demandez votre accès et gérez les politiques de locataire en ligne.",
-            "REQUEST_ACCESS": "Demande d'accès",
-            "ERROR_USER_DOESNOT_EXISTS": "L'utilisateur n'existe pas",
-            "ERROR_INVALID_PASSWORD": "Mot de passe incorrect",
-            "RESET_LINK_SENT": "Le lien de réinitialisation de mot de passe a été envoyé sur votre email, s'il vous plaît vérifier",
-            "UNREGISTERED_EMAIL": "Email n'est pas enregistré avec nous",
-            "RESET_TOKEN_MISSMATCH": "Le jeton de réinitialisation de mot de passe ne correspond pas",
-            "USED_LINK": "Lien déjà utilisé",
-            "INVALID_USER_ID": "Identifiant invalide",
-            "PASSWORD_RESET_SUCCESS": "Mot de passe mis à jour, pour continuer, veuillez vous connecter",
-            "NEW_PASSWORD": "nouveau mot de passe",
-            "CONFIRM_PASSWORD": "Confirmez le mot de passe",
-            "RESET": "réinitialiser",
-            "EMAIL_REQUIRED": "Veuillez fournir une adresse électronique valide.",
-            "PASSWORD_REQUIRED": "Veuillez fournir un mot de passe valide.",
-            "CONFIRM_PASSWORD_REQUIRED": "Veuillez fournir un mot de passe de confirmation valide.",
-            "CONTACT": "0800 461 461",
-            "LOGO_IMG": "logo_fr.png",
-            "LOGIN_IMG": "landlord-login-app.png",
-            "FORGOT_TEXT": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
-            "POPOVER_DATA": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur.&lt;br /&gt;Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe.",
-            "IDENTIFIER": "Adresse e-mail",
-            "BACK": "Retour",
-            "SEND_FORGOT_MAIL": "Envoyer",
-            "RESPONSIVE_LOGO": "logo-w-fr.png",
-            "routes": {
-                "FORGOT_PASSWORD_LINK": "anmeldung/forgot-password",
-                "LOGIN": "connexion",
-                "DASHBOARD": "tableau_de_bord",
-                "PASSWORD_RESET": "reinitialiser_mot_de_passe",
-                "PASSWORD_EMAIL": "mot_de_passe_email",
-                "PASSWORD_UPDATE": "mot_de_passe_update",
-                "LOGOUT": "deconnexion"
-            },
-            "ERROR": "Abus",
-            "404_ERROR": "Désolé ! La page que vous cherchiez n'existe pas.",
-            "GO_BACK_HOME": "Retour à la maison",
-            "FORGOT_PASSWORD_NOTE": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe"
+            "ROWS": "Rangs",
+            "PDF_MR": "Cher Monsieur {nachname}",
+            "PDF_MRS": "Chère femme {nachname}",
+            "PDF_COMPANY": "Mesdames et Messieurs, Mesdames et Messieurs",
+            "UNAUTHORIZED": "L'utilisateur n'a pas les bonnes permissions."
         }
     },
     "it": {
+        "validation": {
+            "accepted": "The {attribute} must be accepted.",
+            "active_url": "The {attribute} is not a valid URL.",
+            "after": "The {attribute} must be a date after {date}.",
+            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
+            "alpha": "The {attribute} may only contain letters.",
+            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
+            "alpha_num": "The {attribute} may only contain letters and numbers.",
+            "array": "The {attribute} must be an array.",
+            "before": "The {attribute} must be a date before {date}.",
+            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
+            "between": {
+                "numeric": "The {attribute} must be between {min} and {max}.",
+                "file": "The {attribute} must be between {min} and {max} kilobytes.",
+                "string": "The {attribute} must be between {min} and {max} characters.",
+                "array": "The {attribute} must have between {min} and {max} items."
+            },
+            "boolean": "The {attribute} field must be true or false.",
+            "confirmed": "La conferma della password non corrisponde.",
+            "date": "The {attribute} is not a valid date.",
+            "date_format": "The {attribute} does not match the format {format}.",
+            "different": "The {attribute} and {other} must be different.",
+            "digits": "The {attribute} must be {digits} digits.",
+            "digits_between": "The {attribute} must be between {min} and {max} digits.",
+            "dimensions": "The {attribute} has invalid image dimensions.",
+            "distinct": "The {attribute} field has a duplicate value.",
+            "email": "L'attributo {attribute} essere un indirizzo email valido.",
+            "exists": "The selected {attribute} is invalid.",
+            "file": "The {attribute} must be a file.",
+            "filled": "The {attribute} field must have a value.",
+            "gt": {
+                "numeric": "The {attribute} must be greater than {value}.",
+                "file": "The {attribute} must be greater than {value} kilobytes.",
+                "string": "The {attribute} must be greater than {value} characters.",
+                "array": "The {attribute} must have more than {value} items."
+            },
+            "gte": {
+                "numeric": "The {attribute} must be greater than or equal {value}.",
+                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
+                "string": "The {attribute} must be greater than or equal {value} characters.",
+                "array": "The {attribute} must have {value} items or more."
+            },
+            "image": "The {attribute} must be an image.",
+            "in": "The selected {attribute} is invalid.",
+            "in_array": "The {attribute} field does not exist in {other}.",
+            "integer": "The {attribute} must be an integer.",
+            "ip": "The {attribute} must be a valid IP address.",
+            "ipv4": "The {attribute} must be a valid IPv4 address.",
+            "ipv6": "The {attribute} must be a valid IPv6 address.",
+            "json": "The {attribute} must be a valid JSON string.",
+            "lt": {
+                "numeric": "The {attribute} must be less than {value}.",
+                "file": "The {attribute} must be less than {value} kilobytes.",
+                "string": "The {attribute} must be less than {value} characters.",
+                "array": "The {attribute} must have less than {value} items."
+            },
+            "lte": {
+                "numeric": "The {attribute} must be less than or equal {value}.",
+                "file": "The {attribute} must be less than or equal {value} kilobytes.",
+                "string": "The {attribute} must be less than or equal {value} characters.",
+                "array": "The {attribute} must not have more than {value} items."
+            },
+            "max": {
+                "numeric": "The {attribute} may not be greater than {max}.",
+                "file": "The {attribute} may not be greater than {max} kilobytes.",
+                "string": "The {attribute} may not be greater than {max} characters.",
+                "array": "The {attribute} may not have more than {max} items."
+            },
+            "mimes": "The {attribute} must be a file of type: {values}.",
+            "mimetypes": "The {attribute} must be a file of type: {values}.",
+            "min": {
+                "numeric": "The {attribute} must be at least {min}.",
+                "file": "The {attribute} must be at least {min} kilobytes.",
+                "string": "The {attribute} must be at least {min} characters.",
+                "array": "The {attribute} must have at least {min} items."
+            },
+            "not_in": "The selected {attribute} is invalid.",
+            "not_regex": "The {attribute} format is invalid.",
+            "numeric": "The {attribute} must be a number.",
+            "present": "The {attribute} field must be present.",
+            "regex": "The {attribute} format is invalid.",
+            "invalid": "L'{attribute} non è valido.",
+            "required": "L'{attribute} è richiesto.",
+            "required_if": "The {attribute} field is required when {other} is {value}.",
+            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
+            "required_with": "The {attribute} field is required when {values} is present.",
+            "required_with_all": "The {attribute} field is required when {values} is present.",
+            "required_without": "The {attribute} field is required when {values} is not present.",
+            "required_without_all": "The {attribute} field is required when none of {values} are present.",
+            "same": "The {attribute} and {other} must match.",
+            "size": {
+                "numeric": "The {attribute} must be {size}.",
+                "file": "The {attribute} must be {size} kilobytes.",
+                "string": "The {attribute} must be {size} characters.",
+                "array": "The {attribute} must contain {size} items."
+            },
+            "string": "The {attribute} must be a string.",
+            "timezone": "The {attribute} must be a valid zone.",
+            "unique": "The {attribute} has already been taken.",
+            "uploaded": "The {attribute} failed to upload.",
+            "url": "The {attribute} format is invalid.",
+            "custom": {
+                "attribute-name": {
+                    "rule-name": "custom-message"
+                }
+            },
+            "attributes": []
+        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
-            "SENT": "Abbiamo inviato per e-mail il tuo link per la reimpostazione della password!",
+            "sent": "Abbiamo inviato per e-mail il tuo link per la reimpostazione della password!",
             "token": "This password reset token is invalid.",
-            "USER": "Non riusciamo a trovare un utente con quell'indirizzo e-mail."
+            "user": "Non riusciamo a trovare un utente con quell'indirizzo e-mail."
+        },
+        "landlord": {
+            "LOGIN": "Accedi",
+            "EMAIL": "E-Mail",
+            "PASSWORD": "Password",
+            "LANGUAGE": "Lingua",
+            "LOGIN_REMEMBER_ME": "Ricordati di me",
+            "TITLE": "goCaution® Login Proprietario",
+            "LOGIN_TITLE": "goCaution® Login Proprietario",
+            "FORGET_PASSWORD": "Password dimenticata?",
+            "GET_RESET_LINK": "Ottieni il link di reset",
+            "BACK_TO_LOGIN": "Torna al login?",
+            "SUPPORT": {
+                "MOBILE": "0800 461 461",
+                "SUPPORT": "SUPPORT",
+                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
+            },
+            "LOGIN_PAGE_DESCRIPTION": {
+                "TITLE": "Gestire online i depositi per gli affitti",
+                "LINE_ONE": "Con il nostro login padrone di casa, avete sempre una panoramica delle garanzie di cauzione dei vostri inquilini.",
+                "LINE_TWO": "e può occuparsi di tutti i passi necessari - dall'apertura alle mutazioni, fino alla risoluzione - in digitale.",
+                "LINE_THREE": "L'applicazione web-based può essere utilizzata immediatamente, è intuitivamente comprensibile",
+                "LINE_FOUR": "e basato sul ciclo di vita di una cauzione."
+            },
+            "LOGIN_PAGE_REQUEST_POLICY": "Richiedi il tuo accesso e gestisci online le politiche degli inquilini.",
+            "REQUEST_ACCESS": "Richiedi accesso",
+            "ERROR_USER_DOESNOT_EXISTS": "L'utente non esiste",
+            "ERROR_INVALID_PASSWORD": "Password non valida",
+            "RESET_LINK_SENT": "Ripristino della password Il link è stato inviato nella tua e-mail, per favore controlla",
+            "UNREGISTERED_EMAIL": "L'e-mail non è registrata presso di noi",
+            "RESET_TOKEN_MISSMATCH": "Password non valida",
+            "USED_LINK": "Link già utilizzato",
+            "INVALID_USER_ID": "Userid non valido",
+            "PASSWORD_RESET_SUCCESS": "Password aggiornata, per continuare ad effettuare il login",
+            "NEW_PASSWORD": "Nuova password",
+            "CONFIRM_PASSWORD": "conferma password",
+            "RESET": "reset",
+            "EMAIL_REQUIRED": "Indicare un indirizzo e-mail valido.",
+            "PASSWORD_REQUIRED": "Si prega di fornire una password valida.",
+            "CONFIRM_PASSWORD_REQUIRED": "Si prega di fornire una password di conferma valida.",
+            "LOGO_IMG": "logo_de.png",
+            "LOGIN_IMG": "vermieter-login-app.png",
+            "FORGOT_TEXT": "Inserisci un indirizzo e-mail per l'account utente. Ti verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente.",
+            "POPOVER_DATA": "Inserisci l'indirizzo e-mail associato al tuo account utente. Ti verrà inviato un codice di verifica. Quando lo ricevete, potrete scegliere una nuova password.",
+            "IDENTIFIER": "Identificatore",
+            "BACK": "dorso",
+            "SEND_FORGOT_MAIL": "invio",
+            "RESPONSIVE_LOGO": "logo-w-de.png",
+            "routes": {
+                "FORGOT_PASSWORD_LINK": "registrazione/password-dimenticata",
+                "LOGIN": "accedi",
+                "DASHBOARD": "plancia",
+                "PASSWORD_RESET": "passwordRipristina",
+                "PASSWORD_EMAIL": "passwordEmail",
+                "PASSWORD_UPDATE": "aggiornamento_password",
+                "LOGOUT": "uscita"
+            },
+            "ERROR": "Sbaglio",
+            "404_ERROR": "Scusate! La pagina che stavi cercando non esiste.",
+            "GO_BACK_HOME": "Torna a casa",
+            "FORGOT_PASSWORD_NOTE": "Inserire un indirizzo e-mail per l'account utente. Verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente"
         },
         "auth": {
-            "FAILED": "Queste credenziali non corrispondono ai nostri record.",
+            "failed": "Queste credenziali non corrispondono ai nostri record.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
-        "user": {
-            "EDIT_ACCOUNT": "Modifica profilo"
-        },
-        "my": {
+        "customer": {
             "LOGIN": "Anmelden",
             "USERNAME": "Benutzername",
             "PASSWORD": "Passwort",
@@ -1142,6 +1659,9 @@ export default {
                 "PASSWORD_UPDATE": "passwort_aktualisierung",
                 "LOGOUT": "abmeldung"
             }
+        },
+        "user": {
+            "EDIT_ACCOUNT": "Modifica profilo"
         },
         "setting": {
             "SETTING": "Impostazione",
@@ -1264,7 +1784,12 @@ export default {
                 "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "controlla i dati di accesso"
             },
             "STATUS_CHANGE_SUCCESS": "Lo stato dei contatti è stato modificato con successo.",
-            "STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare."
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare.",
+            "offer": {
+                "FILE_NAME": "offerta",
+                "CREATE_SUCCESS": "Offerta creata con successo!",
+                "CREATE_FAILURE": "La creazione dell'offerta non è riuscita!"
+            }
         },
         "pagination": {
             "previous": "« Previous",
@@ -1351,68 +1876,11 @@ export default {
                 "RESET": "Resettato",
                 "NOT_SELECTED_OPTION": "Non selezionato"
             },
-            "ROWS": "Ranghi"
-        },
-        "login": {
-            "LOGIN": "Accedi",
-            "EMAIL": "E-Mail",
-            "PASSWORD": "Password",
-            "LANGUAGE": "Lingua",
-            "DE": "Deutsch",
-            "FR": "Français",
-            "IT": "Italienisch",
-            "EN": "English",
-            "LOGIN_REMEMBER_ME": "Ricordati di me",
-            "TITLE": "goCaution® Login Proprietario",
-            "LOGIN_TITLE": "goCaution® LARALOGIN",
-            "FORGET_PASSWORD": "Password dimenticata?",
-            "GET_RESET_LINK": "Ottieni il link di reset",
-            "BACK_TO_LOGIN": "Torna al login?",
-            "SUPPORT": "SUPPORT",
-            "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
-            "LOGIN_PAGE_DESCRIPTION_TITLE": "Gestire online i depositi per gli affitti",
-            "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Con il nostro login padrone di casa, avete sempre una panoramica delle garanzie di cauzione dei vostri inquilini.",
-            "LOGIN_PAGE_DESCRIPTION_LINE_TWO": "e può occuparsi di tutti i passi necessari - dall'apertura alle mutazioni, fino alla risoluzione - in digitale.",
-            "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "L'applicazione web-based può essere utilizzata immediatamente, è intuitivamente comprensibile",
-            "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "e basato sul ciclo di vita di una cauzione.",
-            "LOGIN_PAGE_REQUEST_POLICY": "Richiedi il tuo accesso e gestisci online le politiche degli inquilini.",
-            "REQUEST_ACCESS": "Richiedi accesso",
-            "ERROR_USER_DOESNOT_EXISTS": "L'utente non esiste",
-            "ERROR_INVALID_PASSWORD": "Password non valida",
-            "RESET_LINK_SENT": "Ripristino della password Il link è stato inviato nella tua e-mail, per favore controlla",
-            "UNREGISTERED_EMAIL": "L'e-mail non è registrata presso di noi",
-            "RESET_TOKEN_MISSMATCH": "Password non valida",
-            "USED_LINK": "Link già utilizzato",
-            "INVALID_USER_ID": "Userid non valido",
-            "PASSWORD_RESET_SUCCESS": "Password aggiornata, per continuare ad effettuare il login",
-            "NEW_PASSWORD": "Nuova password",
-            "CONFIRM_PASSWORD": "conferma password",
-            "RESET": "reset",
-            "EMAIL_REQUIRED": "Indicare un indirizzo e-mail valido.",
-            "PASSWORD_REQUIRED": "Si prega di fornire una password valida.",
-            "CONFIRM_PASSWORD_REQUIRED": "Si prega di fornire una password di conferma valida.",
-            "CONTACT": "0800 461 461",
-            "LOGO_IMG": "logo_de.png",
-            "LOGIN_IMG": "vermieter-login-app.png",
-            "FORGOT_TEXT": "Inserisci un indirizzo e-mail per l'account utente. Ti verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente.",
-            "POPOVER_DATA": "Inserisci l'indirizzo e-mail associato al tuo account utente. Ti verrà inviato un codice di verifica. Quando lo ricevete, potrete scegliere una nuova password.",
-            "IDENTIFIER": "Identificatore",
-            "BACK": "dorso",
-            "SEND_FORGOT_MAIL": "invio",
-            "RESPONSIVE_LOGO": "logo-w-de.png",
-            "routes": {
-                "FORGOT_PASSWORD_LINK": "registrazione/password-dimenticata",
-                "LOGIN": "accedi",
-                "DASHBOARD": "plancia",
-                "PASSWORD_RESET": "passwordRipristina",
-                "PASSWORD_EMAIL": "passwordEmail",
-                "PASSWORD_UPDATE": "aggiornamento_password",
-                "LOGOUT": "uscita"
-            },
-            "ERROR": "Sbaglio",
-            "404_ERROR": "Scusate! La pagina che stavi cercando non esiste.",
-            "GO_BACK_HOME": "Torna a casa",
-            "FORGOT_PASSWORD_NOTE": "Inserire un indirizzo e-mail per l'account utente. Verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente"
+            "ROWS": "Ranghi",
+            "PDF_MR": "Caro signore {nachname}",
+            "PDF_MRS": "Cara donna {nachname}",
+            "PDF_COMPANY": "Cari signori e signore e signori",
+            "UNAUTHORIZED": "L'utente non ha i permessi giusti."
         }
     }
 }

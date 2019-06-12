@@ -8,7 +8,7 @@
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12"
                         >                            
-                            <filter-data @changePage="changePageHandler"></filter-data>
+                            <filters @changePage="changePageHandler"></filters>
                         </app-card>
                     </v-layout>                              
                     <v-layout row wrap>
@@ -197,14 +197,14 @@ import api from "Api";
 import { mapGetters } from "vuex";
 import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
 import globalFunction from "Helpers/helpers";
-import FilterData from "./FilterData";
+import Filters from "./Filters";
 export default {
     mixins: [globalFunction],
     components: {
         Vuetable,
         VuetablePagination,        
         VuetablePaginationInfo,
-        FilterData        
+        Filters        
     }, 
     watch: {
         selectedLocale: function(newVal, oldVal){

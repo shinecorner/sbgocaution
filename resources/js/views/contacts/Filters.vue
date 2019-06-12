@@ -2,10 +2,10 @@
     <v-container search-content>
         <v-layout row wrap>
             <v-flex xs12 sm6 md4 lg2 xl2>
-                <type-to-search></type-to-search>
+                <keyword-search></keyword-search>
             </v-flex>                                    
             <v-flex xs12 sm6 md4 lg2 xl2>
-                <contact-status></contact-status>
+                <status></status>
             </v-flex>
             <v-flex xs12 sm6 md4 lg2 xl2>
                 <v-select :items="miscellaneous_filter_option"                                              
@@ -31,10 +31,10 @@
                 <lead-source></lead-source>
             </v-flex>
             <v-flex xs12 sm6 md4 lg2 xl2>
-                <rc-policy></rc-policy>
+                <yes-no-dropdown :label="$t('contact.filter.PROMO')"></yes-no-dropdown>
             </v-flex>
             <v-flex xs12 sm6 md4 lg2 xl2>
-                <is-promo></is-promo>
+                <yes-no-dropdown :label="$t('contact.filter.RC_POLICY')"></yes-no-dropdown>
             </v-flex>
             <v-flex xs12 sm6 md4 lg2 xl2>
                 <v-checkbox  indigo 
@@ -72,14 +72,14 @@
 <script>
 import globalFunction from "Helpers/helpers";
 
-import TypeToSearch from "Components/Crm/General/TypeToSearch";
-import ContactStatus from "Components/Crm/General/ContactStatus";
-import IsPromo from "Components/Crm/General/IsPromo";
-import RcPolicy from "Components/Crm/General/RcPolicy";
+import KeywordSearch from "Components/Crm/General/KeywordSearch";
+
+import YesNoDropdown from "Components/Crm/General/YesNoDropdown";
 import Language from "Components/Crm/General/Language";
 import CreatedFrom from "Components/Crm/General/CreatedFrom";
 import CreatedTo from "Components/Crm/General/CreatedTo";
 
+import Status from "Components/Crm/Contact/Status";
 import Salutation from "Components/Crm/Contact/Salutation";
 import LeadSource from "Components/Crm/Contact/LeadSource";
 import BirthDate from "Components/Crm/Contact/BirthDate";
@@ -87,11 +87,10 @@ import BirthDate from "Components/Crm/Contact/BirthDate";
 export default{
     mixins: [globalFunction],
     components: {
-        TypeToSearch,
-        ContactStatus,
+        KeywordSearch,
+        Status,
         Salutation,
-        IsPromo,
-        RcPolicy,
+        YesNoDropdown,        
         LeadSource,
         Language,
         CreatedFrom,

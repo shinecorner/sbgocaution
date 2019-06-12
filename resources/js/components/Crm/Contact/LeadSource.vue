@@ -12,8 +12,8 @@ export default{
         lead_source_option: function(){
             let ls_option = [];
             let that = this;
-            if(this.$store.getters.serverHelpers.hasOwnProperty('lead_source_options')){            
-                _.forOwn(this.$store.getters.serverHelpers.lead_source_options, function(title, key) { 
+            if(this.$store.getters.serverHelpers.hasOwnProperty('lead_sources')){            
+                _.forOwn(this.$store.getters.serverHelpers.lead_sources, function(title, key) { 
                     ls_option.push({'title': key, 'text': that.$i18n.t(title)})
                 });            
             }        
