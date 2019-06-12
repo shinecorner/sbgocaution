@@ -310,24 +310,30 @@ if(!function_exists('writePDFContent')) {
 
 if(!function_exists('getLeadSource')) {
 
-    function getLeadSource() {
+    function getLeadSource($plain = 0) {
         $leadsource = array();
 
-        $leadsource['online_registration'] = __('contact.leadsource.ONLINE_REGISTRATION');
-        $leadsource['affiliate_marketing'] = __('contact.leadsource.AFFILIATE_MARKETNG');
-        $leadsource['partner_management'] = __('contact.leadsource.PARTNERVERWALTUNG');
-        $leadsource['other'] = __('contact.leadsource.ANDERE');
-        $leadsource['partner_login'] = __('contact.leadsource.PARTNERLOGIN');
-        $leadsource['call_centre'] = __('contact.leadsource.CALLCENTRE');
-        $leadsource['pdf_cls'] = __('contact.leadsource.PDF_CLS');
-        $leadsource['pdf_mks'] = __('contact.leadsource.PDF_MKS');
-        $leadsource['pdf_go'] = __('contact.leadsource.PDF_GO');
-        $leadsource['form_offer'] = __('contact.leadsource.PDF_OFFER');
-        $leadsource['form_preconfirmation'] = __('contact.leadsource.PDF_PRECONFIRMATION');
-        $leadsource['mks_gocaution'] = __('contact.leadsource.MKS_GOCAUTION');
-        $leadsource['mks_offer'] = __('contact.leadsource.MKS');
-        $leadsource['cls_offer'] = __('contact.leadsource.CLS');
-        $leadsource['ca_offer'] = __('contact.leadsource.CA');
+        $leadsource['online_registration'] = 'contact.leadsource.ONLINE_REGISTRATION';
+        $leadsource['affiliate_marketing'] = 'contact.leadsource.AFFILIATE_MARKETNG';
+        $leadsource['partner_management'] = 'contact.leadsource.PARTNERVERWALTUNG';
+        $leadsource['other'] = 'contact.leadsource.ANDERE';
+        $leadsource['partner_login'] = 'contact.leadsource.PARTNERLOGIN';
+        $leadsource['call_centre'] = 'contact.leadsource.CALLCENTRE';
+        $leadsource['pdf_cls'] = 'contact.leadsource.PDF_CLS';
+        $leadsource['pdf_mks'] = 'contact.leadsource.PDF_MKS';
+        $leadsource['pdf_go'] = 'contact.leadsource.PDF_GO';
+        $leadsource['form_offer'] = 'contact.leadsource.PDF_OFFER';
+        $leadsource['form_preconfirmation'] = 'contact.leadsource.PDF_PRECONFIRMATION';
+        $leadsource['mks_gocaution'] = 'contact.leadsource.MKS_GOCAUTION';
+        $leadsource['mks_offer'] = 'contact.leadsource.MKS';
+        $leadsource['cls_offer'] = 'contact.leadsource.CLS';
+        $leadsource['ca_offer'] = 'contact.leadsource.CA';
+
+        if(!$plain) {
+            foreach($leadsource as $key => $value) {
+                $leadsource[$key] = __($value);
+            }
+        }
 
         return $leadsource;
     }
