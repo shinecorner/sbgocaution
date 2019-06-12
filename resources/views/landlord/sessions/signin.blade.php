@@ -15,7 +15,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                     </div>
-                    <input type="text" class="form-control" name="email" id="validationTooltipEmail" placeholder="{{ __('landlord.EMAIL') }}" aria-describedby="validationTooltipEmail" required="">
+                    <input type="text" class="form-control" name="email" id="validationTooltipEmail" aria-describedby="validationTooltipEmail" required="">
                     <div class="invalid-feedback">
                         {{ __('landlord.EMAIL_REQUIRED') }}
                     </div>
@@ -27,7 +27,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="validationTooltipPasswordPrepend"><i class="fa fa-key" aria-hidden="true"></i></span>
                     </div>
-                    <input type="password" name="password" class="form-control" id="validationTooltipPassword" placeholder="{{ __('landlord.PASSWORD') }}" aria-describedby="validationTooltipPassword" required="">
+                    <input type="password" name="password" class="form-control" id="validationTooltipPassword" aria-describedby="validationTooltipPassword" required="">
                     <div class="invalid-feedback">
                         {{ __('landlord.PASSWORD_REQUIRED') }}
                     </div>

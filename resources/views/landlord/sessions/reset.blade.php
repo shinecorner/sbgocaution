@@ -19,7 +19,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="validationTooltipEmailPrepend"><i class="fa fa-user" aria-hidden="true"></i></span>
                         </div>
-                        <input type="text" class="form-control" name="email" id="validationTooltipEmail" placeholder="{{ __('landlord.EMAIL') }}" aria-describedby="validationTooltipEmail" required="">
+                        <input type="text" class="form-control" name="email" id="validationTooltipEmail" aria-describedby="validationTooltipEmail" required="">
                         <div class="invalid-feedback">
                             {{ __('landlord.EMAIL_REQUIRED') }}
                         </div>
@@ -32,7 +32,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-key" aria-hidden="true"></i></span>
                         </div>
-                        <input type="password" class="form-control" name="password" id="validationTooltipUsername" placeholder="{{ __('landlord.NEW_PASSWORD') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
+                        <input type="password" class="form-control" name="password" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required="">
                         <div class="invalid-feedback">
                             {{ __('landlord.PASSWORD_REQUIRED') }}
                         </div>
@@ -45,7 +45,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-key" aria-hidden="true"></i></span>
                         </div>
-                        <input type="password" class="form-control" name="password_confirmation" placeholder="{{ __('landlord.CONFIRM_PASSWORD') }}" aria-describedby="validationTooltipUsernamePrepend" required="">
+                        <input type="password" class="form-control" name="password_confirmation" aria-describedby="validationTooltipUsernamePrepend" required="">
                         <div class="invalid-feedback">
                             {{ __('landlord.CONFIRM_PASSWORD_REQUIRED') }}
                         </div>
