@@ -41,6 +41,7 @@ class ContactController extends Controller
         }, []);
 
         $data['helpers']['configs'] = $config_data;
+        $data['helpers']['lead_sources'] = getLeadSource();
 
         $query = Contact::latest();
 
@@ -49,12 +50,10 @@ class ContactController extends Controller
         }
 
         if($request->has('filters')) {
-            $this->filters($request, $query, ['status', 'diverse', 'language', 'created_from', 'created_to', 'birthdate', 'salutation', 'lead_source', 'rc_policy', 'promo_code', 'duplicate', 'duplicate_email', 'incorrect_address']);
+            $this->filters($request, $query, ['status', 'diverse', 'language', 'created_from', 'created_to', 'birthdate', 'salutation', 'lead_source', 'rc_policy', 'filter_promo', 'duplicate', 'duplicate_email', 'incorrect_address']);
         }
 
-        if($request->has('order_by')) {
-            $query->orderBy($request->order_by);
-        }
+        $query->orderBy('created_at');
 
         if($request->has('order_by') && $request->has('order')) {
             $query->orderBy($request->order_by, $request->order);
@@ -230,6 +229,8 @@ class ContactController extends Controller
                     $query->where('birthdate', '=', date('Y-m-d', strtotime($value)));
                 } else if($key == 'duplicate') {
                     $query->where('is_duplicate', '=', 1);
+                } else if($key == 'filter_promo') {
+                    $query->where('promo_success', '=', $request->filter_promo);
                 } else if($key == 'duplicate_email') {
                     $query->whereIn('id', function($query) {
                         $query->select('id')->from('contacts')->groupBy('email')->havingRaw('count(email)>1');

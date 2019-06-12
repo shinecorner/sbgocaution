@@ -117,6 +117,7 @@ class AuthController extends Controller
             }, []);
 
             $data['helpers']['configs'] = $config_data;
+            $data['helpers']['lead_sources'] = getLeadSource();
             return response()->json($data, 200); 
         } 
         else
