@@ -24,7 +24,7 @@
         <div class="login-inner-wrapper">
             <div class="@if(Request::path() == app()->getLocale()) row login-grid @else row login-grid forgot-grid @endif">
                 <div class="column-fixed vh-min-100">
-                    <div class="login-header-block visible-xs">
+                    <div class="login-header-block d-block d-sm-none mob-header">
                         <div class="logo">
                             <div class="logo-image">
                                 <a href="#" title="{{ __('landlord.TITLE') }}">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
 
-                    <div class="login-bottom-block hidden-xs">
+                    <div class="login-bottom-block d-none d-md-block">
                         <br/>
                         <div class="login-support"> <p class="log-support">{{ __('landlord.SUPPORT.SUPPORT') }}</p>
                             <b>{{ __('landlord.SUPPORT.MOBILE') }}</b></div>

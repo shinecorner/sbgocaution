@@ -3,6 +3,7 @@
 
     'LOGIN' => 'Accedi',
     'EMAIL' => 'E-Mail',
+    'EMAIL_ADDRESS' => 'indirizzo e-mail',
     'PASSWORD' => 'Password',
     'LANGUAGE' => 'Lingua',
     'LOGIN_REMEMBER_ME' => 'Ricordati di me',
