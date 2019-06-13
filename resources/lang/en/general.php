@@ -48,5 +48,6 @@ return [
     'PDF_MR' => 'Dear Sir {nachname}',
     'PDF_MRS' => 'Dear Madam {nachname}',
     'PDF_COMPANY' => 'Dear Ladies and Gentlemen',
-    'UNAUTHORIZED' => 'User does not have the right permissions.'
+    'UNAUTHORIZED' => 'User does not have the right permissions.',
+    'NO_MORE_ENTRIES' => 'No more entries to show...',
 ];

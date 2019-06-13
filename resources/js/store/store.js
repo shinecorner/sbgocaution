@@ -8,6 +8,7 @@ import settings from './modules/settings';
 import ecommerce from './modules/ecommerce';
 import mail from './modules/mail';
 import sidebar from './modules/sidebar';
+import crm from './modules/crm';
 
 Vue.use(Vuex);
 
@@ -18,6 +19,7 @@ export const store = new Vuex.Store({
         settings,
         ecommerce,
         mail,
-        sidebar
+        sidebar,
+        crm
     }
 })
