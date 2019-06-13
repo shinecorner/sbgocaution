@@ -48,5 +48,6 @@ return [
     'PDF_MR' => 'Cher Monsieur {nachname}',
     'PDF_MRS' => 'Chère femme {nachname}',
     'PDF_COMPANY' => 'Mesdames et Messieurs, Mesdames et Messieurs',
-    'UNAUTHORIZED' => 'L\'utilisateur n\'a pas les bonnes permissions.'
+    'UNAUTHORIZED' => 'L\'utilisateur n\'a pas les bonnes permissions.',
+    'NO_MORE_ENTRIES' => "Plus d'entrées à afficher",
 ];

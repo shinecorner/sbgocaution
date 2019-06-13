@@ -13,7 +13,7 @@
         <template v-slot:activator="{ on }">
           <v-text-field
             v-model="dateFormatted"
-            :label="$t('general.filter.CREATE_FROM')"                      
+            :label="$t('general.filter.CREATE_TO')"                      
             persistent-hint
             prepend-icon="event"
             @input="changeDate"
@@ -25,11 +25,18 @@
 </template>
 
 <script>
+import moment from 'moment'
 export default{
+    props: {
+        is_reset_form: {
+            type: Boolean,
+            default: false
+        },
+    },
     data() {
         return {
-            date: new Date().toISOString().substr(0, 10),
-            dateFormatted: this.formatDate(new Date().toISOString().substr(0, 10)),
+            date: "",
+            dateFormatted: "",
             is_popup: false,
         }
     },
@@ -40,13 +47,24 @@ export default{
     },
     watch: {
         date (val) {
-            this.dateFormatted = this.formatDate(this.date)
-        },
+            this.dateFormatted = this.formatDate(this.date);
+            this.$store.dispatch("addInputItem", {fieldname: 'created_to', fieldvalue: this.dateFormatted});
+        }, 
+        is_reset_form(val){
+            if(val === true){
+                this.dateFormatted = "";
+                this.date = "";
+            }
+        }
     },
     methods:{
-        changeDate: function(val){
-            if(val.length == 10){
-                this.date = this.parseDate(this.dateFormatted);
+        changeDate: function(val){            
+            this.$store.dispatch("deleteInputItem", {fieldname: 'created_to'});
+            if((typeof val !== "undefined") && (val.length == 10)){
+                if(moment(val,"DD.MM.YYYY").isValid()){
+                    this.date = this.parseDate(val);
+                    this.$store.dispatch("addInputItem", {fieldname: 'created_to', fieldvalue: val});
+                }                
             }            
         },
         formatDate (date) {
@@ -56,8 +74,7 @@ export default{
             return `${day}.${month}.${year}`
         },
         parseDate (date) {
-            if (!date) return null
-            console.log(date);
+            if (!date) return null            
             const [day, month, year] = date.split('.')
             return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
         }, 

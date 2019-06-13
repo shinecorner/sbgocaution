@@ -48,5 +48,6 @@ return [
     'PDF_MR' => 'Sehr geehrter Herr {nachname}',
     'PDF_MRS' => 'Sehr geehrte Frau {nachname}',
     'PDF_COMPANY' => 'Sehr geehrte Damen und Herren',
-    'UNAUTHORIZED' => 'Der Benutzer hat nicht die richtigen Berechtigungen.'
+    'UNAUTHORIZED' => 'Der Benutzer hat nicht die richtigen Berechtigungen.',
+    'NO_MORE_ENTRIES' => 'Keine weiteren Einträge vorhanden...',
 ];

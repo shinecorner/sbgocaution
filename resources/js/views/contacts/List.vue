@@ -8,7 +8,7 @@
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12"
                         >                            
-                            <filters @changePage="changePageHandler"></filters>
+                            <filters @filterData="onFilterData" @resetData="onResetFilter" @changePage="changePageHandler"></filters>
                         </app-card>
                     </v-layout>                              
                     <v-layout row wrap>
@@ -18,7 +18,7 @@
                         >                                      
                                 <div class="v-table__overflow list-table-container">
 				<vuetable ref="vuetable"
-                                    :no-data-template="$t('general.DATA_LOADING')"
+                                    :no-data-template="noDataMessage"
                                     api-url="api/contacts"
                                     :http-fetch="contactFetch"
                                     :fields="fields"           
@@ -216,6 +216,7 @@ export default {
     },
      data() {        
         return {
+            noDataMessage: this.$i18n.t('general.DATA_LOADING'),
             loading: true,
             currentPerPage: '',                        
             perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),            
@@ -363,32 +364,49 @@ export default {
         onLoaded() {
           this.loading = false; 
         },
-        transform: function(data) {        
-        let transformed = {}
-        let pg_meta = data.meta
-        let pg_links = data.links
+        transform: function(data) {
+            if(data.data.length == 0){
+                this.noDataMessage = this.$i18n.t('general.NO_MORE_ENTRIES');
+            }
+            let transformed = {}
+            let pg_meta = data.meta
+            let pg_links = data.links
 
-        transformed.pagination = {
-          total: pg_meta.total,
-          per_page: pg_meta.per_page,
-          current_page: pg_meta.current_page,
-          last_page: pg_meta.last_page,
-          next_page_url: pg_links.next ? pg_links.next : null,
-          prev_page_url: pg_links.prev ? pg_links.prev : null,
-          from: pg_meta.from,
-          to: pg_meta.to,
-        }
-        transformed.mydata = [];
-        transformed.mydata = data.data
-        return transformed
+            transformed.pagination = {
+              total: pg_meta.total,
+              per_page: pg_meta.per_page,
+              current_page: pg_meta.current_page,
+              last_page: pg_meta.last_page,
+              next_page_url: pg_links.next ? pg_links.next : null,
+              prev_page_url: pg_links.prev ? pg_links.prev : null,
+              from: pg_meta.from,
+              to: pg_meta.to,
+            }
+            transformed.mydata = [];
+            transformed.mydata = data.data
+            return transformed
       },
-
-
+      onFilterData(){ 
+        let that = this;
+        that.moreParams = {};
+        _.forOwn(this.$store.getters.inputItems, function(filter_value, filter_name) { 
+            that.moreParams['filters['+filter_name+']'] = filter_value;
+        });            
+        Vue.nextTick(() => this.$refs.vuetable.refresh());
+      },
+      onResetFilter(){ 
+        this.$store.dispatch("clearInputItems");
+        this.moreParams = {};        
+        Vue.nextTick(() => this.$refs.vuetable.refresh());
+      }
 
   },
     created() {
         this.currentPerPage = this.perPage;
         this.$store.dispatch("setHeaderTitle", 'contact.CONTACTS');    
+    },
+    destroyed(){
+        this.$store.dispatch("clearInputItems");    
     }
 };
 </script>

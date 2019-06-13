@@ -1,7 +1,6 @@
 <template>
     <v-select :items="contactstatus"  
-        item-text="text"
-        item-value="title"
+        v-model="status"
         :label="$t('general.filter.SELECT_STATUS')">
     </v-select>
 </template>
@@ -14,10 +13,23 @@ export default{
             let that = this;        
             if(this.$store.getters.serverHelpers.statuses.hasOwnProperty('contact')){            
                 _.forOwn(this.$store.getters.serverHelpers.statuses.contact, function(title, key) { 
-                    c_status.push({'title': key, 'text': that.$i18n.t(title)})
+                    c_status.push({'value': key, 'text': that.$i18n.t(title)})
                 });            
             }        
             return c_status;
+        },
+        status: {
+            get () {
+                if(this.$store.getters.inputItems.hasOwnProperty('status')){
+                    return this.$store.getters.inputItems.status;
+                }
+                else{
+                    return '';
+                }
+            },
+            set (value) {
+              this.$store.dispatch("addInputItem", {fieldname: 'status', fieldvalue: value});
+            }
         }
     }
 }

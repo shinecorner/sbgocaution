@@ -1,6 +1,8 @@
 <template>
     <v-select :items="language_filter_option"
-        :label="$t('general.filter.LANGUAGE')">
+        :label="$t('general.filter.LANGUAGE')"
+        v-model="language"
+    >
     </v-select>
 </template>
 
@@ -17,9 +19,22 @@ export default{
             let language_option = [];
             let mix_lang = process.env.MIX_LANGUAGE_OPTIONS.split(',');
             _.forEach(mix_lang, function(title, key) { 
-                language_option.push({'title': title, 'text': that.tConverted('general.language.'+title)})
+                language_option.push({'value': title, 'text': that.tConverted('general.language.'+title)})
             }); 
             return language_option;
+        },
+        language: {
+            get () {
+                if(this.$store.getters.inputItems.hasOwnProperty('language')){
+                    return this.$store.getters.inputItems.language;
+                }
+                else{
+                    return '';
+                }
+            },
+            set (value) {
+              this.$store.dispatch("addInputItem", {fieldname: 'language', fieldvalue: value});
+            }
         }
     }
 };

@@ -467,7 +467,8 @@ export default {
             "PDF_MR": "Sehr geehrter Herr {nachname}",
             "PDF_MRS": "Sehr geehrte Frau {nachname}",
             "PDF_COMPANY": "Sehr geehrte Damen und Herren",
-            "UNAUTHORIZED": "Der Benutzer hat nicht die richtigen Berechtigungen."
+            "UNAUTHORIZED": "Der Benutzer hat nicht die richtigen Berechtigungen.",
+            "NO_MORE_ENTRIES": "Keine weiteren Einträge vorhanden..."
         }
     },
     "en": {
@@ -938,7 +939,8 @@ export default {
             "PDF_MR": "Dear Sir {nachname}",
             "PDF_MRS": "Dear Madam {nachname}",
             "PDF_COMPANY": "Dear Ladies and Gentlemen",
-            "UNAUTHORIZED": "User does not have the right permissions."
+            "UNAUTHORIZED": "User does not have the right permissions.",
+            "NO_MORE_ENTRIES": "No more entries to show..."
         }
     },
     "fr": {
@@ -1409,7 +1411,8 @@ export default {
             "PDF_MR": "Cher Monsieur {nachname}",
             "PDF_MRS": "Chère femme {nachname}",
             "PDF_COMPANY": "Mesdames et Messieurs, Mesdames et Messieurs",
-            "UNAUTHORIZED": "L'utilisateur n'a pas les bonnes permissions."
+            "UNAUTHORIZED": "L'utilisateur n'a pas les bonnes permissions.",
+            "NO_MORE_ENTRIES": "Plus d'entrées à afficher"
         }
     },
     "it": {
@@ -1880,7 +1883,8 @@ export default {
             "PDF_MR": "Caro signore {nachname}",
             "PDF_MRS": "Cara donna {nachname}",
             "PDF_COMPANY": "Cari signori e signore e signori",
-            "UNAUTHORIZED": "L'utente non ha i permessi giusti."
+            "UNAUTHORIZED": "L'utente non ha i permessi giusti.",
+            "NO_MORE_ENTRIES": "Non ci sono più voci da mostrare"
         }
     }
 }
