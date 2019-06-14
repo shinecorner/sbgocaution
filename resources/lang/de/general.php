@@ -50,4 +50,30 @@ return [
     'PDF_COMPANY' => 'Sehr geehrte Damen und Herren',
     'UNAUTHORIZED' => 'Der Benutzer hat nicht die richtigen Berechtigungen.',
     'NO_MORE_ENTRIES' => 'Keine weiteren Einträge vorhanden...',
+    'role' => [
+        'CREATE_SUCCESS' => 'Die Rolle wurde erstellt!',
+        'CREATE_FAILURE' => 'Es ist nicht möglich, eine Rolle zu erstellen!',
+        'UPDATE_SUCCESS' => 'Die Rolle wurde aktualisiert!',
+        'UPDATE_FAILURE' => 'Die Rolle kann nicht aktualisiert werden!',
+        'DELETE_SUCCESS' => 'Die Rolle wurde gelöscht!',
+        'DELETE_FAILURE' => 'Die Rolle kann nicht gelöscht werden!',
+        'ASSIGNMENT_SUCCESS' => 'Die Rolle wurde zugewiesen!',
+        'ASSIGNMENT_FAILURE' => 'Es ist nicht möglich, eine Rolle zuzuweisen!',
+    ],
+    'permission' => [
+        'CREATE_SUCCESS' => 'Die Berechtigung wurde erstellt!',
+        'CREATE_FAILURE' => 'Berechtigung kann nicht erstellt werden!',
+        'UPDATE_SUCCESS' => 'Die Berechtigung wurde aktualisiert!',
+        'UPDATE_FAILURE' => 'Die Berechtigung kann nicht aktualisiert werden!',
+        'DELETE_SUCCESS' => 'Die Berechtigung wurde gelöscht!',
+        'DELETE_FAILURE' => 'Die Berechtigung zum Löschen kann nicht gelöscht werden!',
+        'ASSIGNMENT_SUCCESS' => 'Die Berechtigung wurde erteilt!',
+        'ASSIGNMENT_FAILURE' => 'Berechtigung kann nicht vergeben werden!',
+    ],
+    'user' => [
+        'CREATE_SUCCESS' => 'Benutzer wurde angelegt!',
+        'CREATE_FAILURE' => 'Benutzer kann nicht angelegt werden!',
+        'UPDATE_SUCCESS' => 'Der Benutzer wurde aktualisiert!',
+        'UPDATE_FAILURE' => 'Es ist nicht möglich, den Benutzer zu aktualisieren!',
+    ]
 ];

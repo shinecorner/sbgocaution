@@ -48,7 +48,20 @@ class UserController extends Controller
             $user->syncRoles($request->roles);
         }
 
-        return new UserResource($user);
+        if($user) 
+        {
+            $message = __('general.user.CREATE_SUCCESS');
+        }
+        else
+        {
+            $message = __('general.user.CREATE_FAILURE');
+        }
+
+        return response()->json([
+            'message' => $message,
+            'data' => new UserResource($user)
+        ], 200);
+
     }
 
     /**
@@ -83,15 +96,26 @@ class UserController extends Controller
         if($request->has('roles')) {
             $user->syncRoles($request->roles);
         }
-        
-        return response()->json([
-            "api_status" => $user->update([
+
+        $status = $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
                 'signature' => $request->signature,
                 'digital_signature' => $request->digital_signature
-            ]),
+        ]);
+
+        if($status) 
+        {
+            $message = __('general.user.UPDATE_SUCCESS');
+        }
+        else
+        {
+            $message = __('general.user.UPDATE_FAILURE');
+        }
+        
+        return response()->json([
+            "message" => $message,
             "data" => new UserResource($user)
         ], 200);
     }
