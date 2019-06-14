@@ -10,13 +10,7 @@
     'FORGET_PASSWORD' => 'Passwort vergessen?',
     'GET_RESET_LINK' => 'Link zurücksetzen',
     'BACK_TO_LOGIN' => 'Zurück zur Anmeldung?',        
-    'routes' => [
-        'FORGOT_PASSWORD_LINK' => 'anmeldung/passwort-vergessen',
-        'LOGIN' => 'anmelden',
-        'DASHBOARD' => 'instrumentenbord',
-        'PASSWORD_RESET' => 'passwortRucksetzen',
-        'PASSWORD_EMAIL' => 'passwort_email',
-        'PASSWORD_UPDATE' => 'passwort_aktualisierung',
+    'routes' => [        
         'LOGOUT' => 'abmeldung',
     ],    
   ];

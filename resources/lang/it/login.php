@@ -11,13 +11,7 @@
     'FORGET_PASSWORD' => 'Password dimenticata?',
     'GET_RESET_LINK' => 'Ottieni il link di reset',
     'BACK_TO_LOGIN' => 'Torna al login?',    
-    'routes' => [
-        'FORGOT_PASSWORD_LINK' => 'registrazione/password-dimenticata',
-        'LOGIN' => 'accedi',
-        'DASHBOARD' => 'plancia',
-        'PASSWORD_RESET' => 'passwordRipristina',
-        'PASSWORD_EMAIL' => 'passwordEmail',
-        'PASSWORD_UPDATE' => 'aggiornamento_password',
+    'routes' => [        
         'LOGOUT' => 'uscita',
     ],   
   ];
