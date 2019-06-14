@@ -190,14 +190,6 @@ html, body, div.page-wrapper.login_panel, .login-inner-wrapper {
   padding-left: 0;
 }
 
-
-.login-wrapper .visible-xs,
-.login-wrapper .visible-sm,
-.login-wrapper .visible-md,
-.login-wrapper .visible-lg {
-  display: none;
-}
-
 .login-wrapper .fade:not(.show) {
   opacity: 1;
 }
@@ -473,9 +465,6 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 }
 
 @media (max-width: 767px) {
-  .login-wrapper .visible-xs {
-    display: block;
-  }
 
   .login-wrapper .column-flexible {
     padding: 20px 20px 0;
@@ -528,11 +517,11 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   .login-wrapper h3.login-top-title {
     margin-top: 0;
   }
-  .login-wrapper .login-bottom-block.visible-xs {
+  .login-wrapper .login-bottom-block.d-block {
     background: #ffffff;
     color: #646566;
     margin: 20px -20px 0;
-  }
+    }
   .login-wrapper .login-header-block.mob-header{
     background: #8ebf43;
     padding: 5px 20px;
