@@ -50,4 +50,30 @@ return [
     'PDF_COMPANY' => 'Mesdames et Messieurs, Mesdames et Messieurs',
     'UNAUTHORIZED' => 'L\'utilisateur n\'a pas les bonnes permissions.',
     'NO_MORE_ENTRIES' => "Plus d'entrées à afficher",
+    'role' => [
+        'CREATE_SUCCESS' => 'Le rôle a été créé !',
+        'CREATE_FAILURE' => 'Incapable de créer un rôle !',
+        'UPDATE_SUCCESS' => 'Le rôle a été mis à jour !',
+        'UPDATE_FAILURE' => 'Impossible de mettre à jour le rôle !',
+        'DELETE_SUCCESS' => 'Le rôle a été supprimé !',
+        'DELETE_FAILURE' => 'Impossible de supprimer le rôle !',
+        'ASSIGNMENT_SUCCESS' => 'Le rôle a été assigné !',
+        'ASSIGNMENT_FAILURE' => 'Impossible d\'assigner un rôle !',
+    ],
+    'permission' => [
+        'CREATE_SUCCESS' => 'La permission a été créée !',
+        'CREATE_FAILURE' => 'Impossible de créer une permission !',
+        'UPDATE_SUCCESS' => 'La permission a été mise à jour !',
+        'UPDATE_FAILURE' => 'Impossible de mettre à jour la permission !',
+        'DELETE_SUCCESS' => 'L\'autorisation a été supprimée !',
+        'DELETE_FAILURE' => 'Impossible de supprimer la permission !',
+        'ASSIGNMENT_SUCCESS' => 'L\'autorisation a été accordée !',
+        'ASSIGNMENT_FAILURE' => 'Impossible d\'assigner une permission !',
+    ],
+    'user' => [
+        'CREATE_SUCCESS' => 'L\'utilisateur a été créé !',
+        'CREATE_FAILURE' => 'incapable de créer un utilisateur !',
+        'UPDATE_SUCCESS' => 'L\'utilisateur a été mis à jour !',
+        'UPDATE_FAILURE' => 'Impossible de mettre à jour l\'utilisateur !',
+    ]
 ];

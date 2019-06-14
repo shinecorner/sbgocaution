@@ -38,7 +38,21 @@ class PermissionController extends Controller
             'name' => 'required|alpha_dash|unique:permissions,name',
         ]);
 
-        return new PermissionResource(Permission::create($request->all()));
+        $permission = Permission::create($request->all());
+
+        if($permission) 
+        {
+            $message = __('general.permission.CREATE_SUCCESS');
+        }
+        else
+        {
+            $message = __('general.permission.CREATE_FAILURE');
+        }
+
+        return response()->json([
+            'message' => $message,
+            'data' => new PermissionResource($permission)
+        ], 200);
     }
 
     /**
@@ -68,8 +82,17 @@ class PermissionController extends Controller
 
         $permission = Permission::find($id);
 
+        if($permission->update($request->all())) 
+        {
+            $message = __('general.permission.UPDATE_SUCCESS');
+        }
+        else
+        {
+            $message = __('general.permission.UPDATE_FAILURE');
+        }
+
         return response()->json([
-            "api_status" => $permission->update($request->all()),
+            "message" => $message,
             "data" => $permission
         ], 200);
     }
@@ -84,14 +107,17 @@ class PermissionController extends Controller
     {
         $permission = Permission::find($id);
 
-        if(is_null($permission)) {
-            return response()->json([
-                "api_status" => false
-            ], 404);
+        if($permission->delete()) 
+        {
+            $message = __('general.permission.DELETE_SUCCESS');
+        }
+        else
+        {
+            $message = __('general.permission.DELETE_FAILURE');
         }
 
         return response()->json([
-            "api_status" => $permission->delete()
+            "message" => $message
         ], 200);
     }
 
@@ -106,14 +132,17 @@ class PermissionController extends Controller
     public function assignment(Request $request) {
         $role = Role::find($request->role_id);
         $permission = Permission::find($request->permission_id);
-        if(is_null($role) || is_null($permission)){
-            return response()->json([
-                "api_status" => false
-            ], 404);            
+
+        if($role->givePermissionTo($permission))
+        {
+            $message = __('general.permission.ASSIGNMENT_SUCCESS');
         }
-        $role->givePermissionTo($permission);
+        else
+        {
+            $message = __('general.permission.ASSIGNMENT_FAILURE');
+        }
         return response()->json([
-            "api_status" => true
+            "message" => $message
         ], 200);
     }
 

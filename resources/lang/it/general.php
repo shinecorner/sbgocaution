@@ -50,4 +50,30 @@ return [
     'PDF_COMPANY' => 'Cari signori e signore e signori',
     'UNAUTHORIZED' => 'L\'utente non ha i permessi giusti.',
     'NO_MORE_ENTRIES' => "Non ci sono più voci da mostrare",
+    'role' => [
+        'CREATE_SUCCESS' => 'Il ruolo è stato creato!',
+        'CREATE_FAILURE' => 'Impossibile creare un ruolo!',
+        'UPDATE_SUCCESS' => 'Il ruolo è stato aggiornato!',
+        'UPDATE_FAILURE' => 'Impossibile aggiornare il ruolo!',
+        'DELETE_SUCCESS' => 'Il ruolo è stato cancellato!',
+        'DELETE_FAILURE' => 'Impossibile cancellare il ruolo!',
+        'ASSIGNMENT_SUCCESS' => 'Il ruolo è stato assegnato!',
+        'ASSIGNMENT_FAILURE' => 'Impossibile assegnare un ruolo!',
+    ],
+    'permission' => [
+        'CREATE_SUCCESS' => 'La permission a été créée !',
+        'CREATE_FAILURE' => 'Impossible de créer une permission !',
+        'UPDATE_SUCCESS' => 'La permission a été mise à jour !',
+        'UPDATE_FAILURE' => 'Impossible de mettre à jour la permission !',
+        'DELETE_SUCCESS' => 'L\'autorisation a été supprimée !',
+        'DELETE_FAILURE' => 'Impossible de supprimer la permission !',
+        'ASSIGNMENT_SUCCESS' => 'L\'autorisation a été accordée !',
+        'ASSIGNMENT_FAILURE' => 'Impossible d\'assigner une permission !',
+    ],
+    'user' => [
+        'CREATE_SUCCESS' => 'L\'utente è stato creato!',
+        'CREATE_FAILURE' => 'incapace di creare un utente!',
+        'UPDATE_SUCCESS' => 'L\'utente è stato aggiornato!',
+        'UPDATE_FAILURE' => 'Impossibile aggiornare l\'utente!',
+    ]
 ];

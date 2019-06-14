@@ -17,7 +17,7 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->has('per_page')){
+        if($request->has('per_page')) {
             $per_page = $request->per_page;
         } else {
             $per_page = config('general.items_per_page');
@@ -38,7 +38,21 @@ class RoleController extends Controller
             'name' => 'required|alpha_dash|unique:roles,name',
         ]);
 
-        return new RoleResource(Role::create($request->all()));
+        $role = Role::create($request->all());
+
+        if($role) 
+        {
+            $message = __('general.role.CREATE_SUCCESS');
+        }
+        else
+        {
+            $message = __('general.role.CREATE_FAILURE');
+        }
+
+        return response()->json([
+            'message' => $message,
+            'data' => new RoleResource($role)
+        ], 200);
     }
 
     /**
@@ -68,8 +82,17 @@ class RoleController extends Controller
 
         $role = Role::find($id);
 
+        if($role->update($request->all())) 
+        {
+            $message = __('general.role.UPDATE_SUCCESS');
+        }
+        else
+        {
+            $message = __('general.role.UPDATE_FAILURE');
+        }
+
         return response()->json([
-            "api_status" => $role->update($request->all()),
+            "message" => $message,
             "data" => $role
         ], 200);
     }
@@ -84,14 +107,17 @@ class RoleController extends Controller
     {
         $role = Role::find($id);
 
-        if(is_null($role)) {
-            return response()->json([
-                "api_status" => false
-            ], 404);
+        if($role->delete()) 
+        {
+            $message = __('general.role.DELETE_SUCCESS');
+        }
+        else
+        {
+            $message = __('general.role.DELETE_FAILURE');
         }
 
         return response()->json([
-            "api_status" => $role->delete()
+            "message" => $message
         ], 200);
     }
 
@@ -106,14 +132,16 @@ class RoleController extends Controller
     public function assignment(Request $request) {
         $user = User::find($request->user_id);
         $role = Role::find($request->role_id);
-        if(is_null($user) || is_null($role)){
-            return response()->json([
-                "api_status" => false
-            ], 404);            
+        if($user->assignRole($role))
+        {
+            $message = __('general.role.ASSIGNMENT_SUCCESS');
         }
-        $user->assignRole($role);
+        else
+        {
+            $message = __('general.role.ASSIGNMENT_FAILURE');
+        }
         return response()->json([
-            "api_status" => true
+            "message" => $message
         ], 200);
     }
 

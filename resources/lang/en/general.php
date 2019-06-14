@@ -50,4 +50,30 @@ return [
     'PDF_COMPANY' => 'Dear Ladies and Gentlemen',
     'UNAUTHORIZED' => 'User does not have the right permissions.',
     'NO_MORE_ENTRIES' => 'No more entries to show...',
+    'role' => [
+        'CREATE_SUCCESS' => 'Role has been created!',
+        'CREATE_FAILURE' => 'Unable to create role!',
+        'UPDATE_SUCCESS' => 'Role has been updated!',
+        'UPDATE_FAILURE' => 'Unable to update role!',
+        'DELETE_SUCCESS' => 'Role has been deleted!',
+        'DELETE_FAILURE' => 'Unable to delete role!',
+        'ASSIGNMENT_SUCCESS' => 'Role has been assigned!',
+        'ASSIGNMENT_FAILURE' => 'Unable to assign role!',
+    ],
+    'permission' => [
+        'CREATE_SUCCESS' => 'Permission has been created!',
+        'CREATE_FAILURE' => 'Unable to create permission!',
+        'UPDATE_SUCCESS' => 'Permission has been updated!',
+        'UPDATE_FAILURE' => 'Unable to update permission!',
+        'DELETE_SUCCESS' => 'Permission has been deleted!',
+        'DELETE_FAILURE' => 'Unable to delete permission!',
+        'ASSIGNMENT_SUCCESS' => 'Permission has been assigned!',
+        'ASSIGNMENT_FAILURE' => 'Unable to assign permission!',
+    ],
+    'user' => [
+        'CREATE_SUCCESS' => 'User has been created!',
+        'CREATE_FAILURE' => 'unable to create user!',
+        'UPDATE_SUCCESS' => 'User has been updated!',
+        'UPDATE_FAILURE' => 'Unable to update user!',
+    ]
 ];
