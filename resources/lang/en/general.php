@@ -75,5 +75,11 @@ return [
         'CREATE_FAILURE' => 'unable to create user!',
         'UPDATE_SUCCESS' => 'User has been updated!',
         'UPDATE_FAILURE' => 'Unable to update user!',
+    ],
+    'template' => [
+        'CREATE_SUCCESS' => 'Template has been created!',
+        'CREATE_FAILURE' => 'unable to create template!',
+        'UPDATE_SUCCESS' => 'Template has been updated!',
+        'UPDATE_FAILURE' => 'Unable to update template!',
     ]
 ];

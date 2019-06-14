@@ -75,5 +75,11 @@ return [
         'CREATE_FAILURE' => 'Benutzer kann nicht angelegt werden!',
         'UPDATE_SUCCESS' => 'Der Benutzer wurde aktualisiert!',
         'UPDATE_FAILURE' => 'Es ist nicht möglich, den Benutzer zu aktualisieren!',
+    ],
+    'template' => [
+        'CREATE_SUCCESS' => 'Die Vorlage wurde erstellt!',
+        'CREATE_FAILURE' => 'Vorlage kann nicht erstellt werden!',
+        'UPDATE_SUCCESS' => 'Die Vorlage wurde aktualisiert!',
+        'UPDATE_FAILURE' => 'Die Vorlage kann nicht aktualisiert werden!',
     ]
 ];

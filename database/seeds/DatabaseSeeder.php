@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CountriesTableSeeder::class);
         $this->call(CantonsTableSeeder::class);
         $this->call(CantonsZipTableSeeder::class);
+        $this->call(TemplatesTableSeeder::class);
     }
 }
