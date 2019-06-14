@@ -46,9 +46,9 @@ return [
             'provider' => 'users',
         ],
 
-        'login' => [
+        'landlord' => [
             'driver' => 'session',
-            'provider' => 'login',
+            'provider' => 'landlord',
         ],
     ],
 
@@ -75,9 +75,9 @@ return [
             'model' => App\User::class,
         ],
 
-        'login' => [
+        'landlord' => [
             'driver' => 'eloquent',
-            'model' => App\Login::class,
+            'model' => App\Landlord::class,
         ],
 
         // 'users' => [
@@ -107,8 +107,8 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'login' => [
-            'provider' => 'login',
+        'landlord' => [
+            'provider' => 'landlord',
             'table' => 'password_resets',
             'expire' => 60,
         ],

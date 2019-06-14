@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\Events\UserLoggedIn;
 use App\User;
+use App\Config;
+use App\Contact;
 use DB;
 use Validator;
 use App;
@@ -66,7 +68,7 @@ class AuthController extends Controller
 
     public function login(Request $request)
     { 
-        if(Auth::attempt(['email' => request('email'), 'password' => request('password')]))
+        if(Auth::attempt(['email' => request('email'), 'password' => request('password'), 'status' => 1]))
         { 
             $user = Auth::user(); 
             $name = $user->name;
@@ -81,18 +83,51 @@ class AuthController extends Controller
             $data['name'] = $user->name;
             $data['email'] = $user->email;
             $data['premium_amount'] = format(177.23);
-            return response()->json(['response'=> $data ],200); 
+            $statuses = [
+                'contact',
+                //'contactPDF',
+                'policy',
+                'invoice'
+            ];
+            foreach ($statuses as $status) {
+                switch ($status) {
+                    case 'contact':
+                        $data['helpers']['statuses'][$status] = getContactStatus(1);
+                        break;
+                    case 'contactPDF':
+                        $data['helpers']['statuses'][$status] = getContactPDF(1);
+                        break;
+                    case 'policy':
+                        $data['helpers']['statuses'][$status] = getPolicyStatus(1);
+                        break;
+                    case 'invoice':
+                        $data['helpers']['statuses'][$status] = getInvoiceStatus(1);
+                        break;
+                }
+            }
+
+            $data['helpers']['navbar_contacts_count'] = Contact::whereIn('status', [
+                "new", "status_policy_waiting", "pre_confirmation_pending"
+            ])->count();
+
+            $configs = Config::all();
+            $config_data = $configs->reduce(function ($configLookup, $config) {
+                $configLookup[$config['option']] = $config['value'];
+                return $configLookup;
+            }, []);
+
+            $data['helpers']['configs'] = $config_data;
+            $data['helpers']['lead_sources'] = getLeadSource(1);
+            return response()->json($data, 200); 
         } 
         else
         {
             App::setLocale($request->lang); 
-            return response()->json(['response'=>
-                                        [
+            return response()->json([
                                         'api_status'=>0,
                                         'code'=>200,
                                         'message'=> __('general.AUTH_LOGIN_FAIL')
-                                        ]
-                                ],200); 
+                                    ], 200); 
         }
     }
 }

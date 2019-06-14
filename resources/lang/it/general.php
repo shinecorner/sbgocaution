@@ -39,8 +39,15 @@ return [
         'SELECT_PRODUCTTYPE' => 'Kundentyp wählen',
         'CREATE_FROM' => 'Creato da',
         'CREATE_TO' => 'Creato per',
+        'LANGUAGE' => 'Lingua',
         'SEARCH' => 'Ricerca',
         'RESET' => 'Resettato',
+        'NOT_SELECTED_OPTION' => 'Non selezionato'
     ], 
     'ROWS' => 'Ranghi',
+    'PDF_MR' => 'Caro signore {nachname}',
+    'PDF_MRS' => 'Cara donna {nachname}',
+    'PDF_COMPANY' => 'Cari signori e signore e signori',
+    'UNAUTHORIZED' => 'L\'utente non ha i permessi giusti.',
+    'NO_MORE_ENTRIES' => "Non ci sono più voci da mostrare",
 ];

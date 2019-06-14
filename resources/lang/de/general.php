@@ -18,7 +18,7 @@ return [
     'ERROR' => 'Fehler',
     'SAVE_SUCCESSFULLY' => 'Daten erfolgreich gespeichert',
     'INVOICES' => 'Rechnungen',
-    'langugae' => [
+    'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',
         'IT' => 'Italienisch',
@@ -41,7 +41,13 @@ return [
         'CREATE_TO' => 'Erstellt bis',
         'LANGUAGE' => 'Sprache',
         'SEARCH' => 'Suchen',
-        'RESET' => 'Leeren',
+        'RESET' => 'Leeren',        
+        'NOT_SELECTED_OPTION' => 'Nicht ausgewählt'
     ],
     'ROWS' => 'Einträge',
+    'PDF_MR' => 'Sehr geehrter Herr {nachname}',
+    'PDF_MRS' => 'Sehr geehrte Frau {nachname}',
+    'PDF_COMPANY' => 'Sehr geehrte Damen und Herren',
+    'UNAUTHORIZED' => 'Der Benutzer hat nicht die richtigen Berechtigungen.',
+    'NO_MORE_ENTRIES' => 'Keine weiteren Einträge vorhanden...',
 ];

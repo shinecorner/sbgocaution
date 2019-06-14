@@ -76,16 +76,27 @@ return [
         'OTHER' => "Other"
     ],
     'filter' => [
-        'FILTER_MORE_THAN_ONE_POLICY' => 'Contacts / Quotes',
+        'MORE_THAN_ONE_POLICY' => 'Contacts / Quotes',
         'SALUTATION' => 'salutation',
         'BIRTH_DATE' => 'Birthdate',
         'LEAD_SOURCES' => 'Lead source',
-        'FILTER_RC_POLICY' => 'PH offer',
-        'PROMO_FILTER' => 'Promo',
+        'RC_POLICY' => 'PH offer',
+        'PROMO' => 'Promo',
         'DUPLICATE_CONTACT' => 'Duplicate',
         'DUPLICATE_CONTACT_EMAIL' => 'Duplicate email',
-        'NOT_CORRECT_ADDRESS_FILTER' => 'Address not correct'        
+        'NOT_CORRECT_ADDRESS' => 'Address not correct',
+        'CONTACT_POLICY_1' => 'With 1 policy',
+        'CONTACT_POLICY_2' => 'With 2 policy',
+        'CONTACT_POLICY_3' => 'With 3 policy',
+        'CONTACT_POLICY_4_PLUS' => 'With 4+ policy',
+        'ACCEPTED_CONTACTS_WITH_NO_POLICY' => 'Acc. contacts with 0 policy',
+        'ACCEPTED_CONTACTS_WITH_NO_LINKED_USER' => 'Check login detail',
     ],
     'STATUS_CHANGE_SUCCESS' => 'Contact status has been changed successfully.',
-    'STATUS_CHANGE_FAIL' => 'Unfortunately, contact status has not been changed, try again.'
+    'STATUS_CHANGE_FAIL' => 'Unfortunately, contact status has not been changed, try again.',
+    'offer' => [
+        'FILE_NAME' => 'offer',
+        'CREATE_SUCCESS' => 'Offer created successfully!',
+        'CREATE_FAILURE' => 'Offer creation failed!'
+    ]
 ];

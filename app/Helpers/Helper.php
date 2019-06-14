@@ -276,26 +276,64 @@ if(!function_exists('get_salutation')) {
 
 }
 
+if(!function_exists('getPDFSalutation')) {
+
+    function getPDFSalutation($salutation) {
+        switch ($salutation) {
+            case 'mrs':
+                $salutation = __('general.PDF_MRS');
+                break;
+            case 'mr':
+                $salutation = __('general.PDF_MR');
+                break;
+            case 'company':
+                $salutation = __('general.PDF_COMPANY');
+                break;
+            default:
+                $salutation = '';
+                break;
+        }
+        return $salutation;
+    }
+
+}
+
+if(!function_exists('writePDFContent')) {
+    function writePDFContent($data, $ln = true, $fill = 0, $reseth = false, $cell = false, $align = '') {
+        foreach($data as $element){
+            $content = array_shift($element);
+            PDF::SetXY($element['x'], $element['y'], '');
+            PDF::writeHTML($content, $ln, $fill, $reseth, $cell, $align);
+        }
+    }
+}
+
 if(!function_exists('getLeadSource')) {
 
-    function getLeadSource() {
+    function getLeadSource($plain = 0) {
         $leadsource = array();
 
-        $leadsource['online_registration'] = __('contact.leadsource.ONLINE_REGISTRATION');
-        $leadsource['affiliate_marketing'] = __('contact.leadsource.AFFILIATE_MARKETNG');
-        $leadsource['partner_management'] = __('contact.leadsource.PARTNERVERWALTUNG');
-        $leadsource['other'] = __('contact.leadsource.ANDERE');
-        $leadsource['partner_login'] = __('contact.leadsource.PARTNERLOGIN');
-        $leadsource['call_centre'] = __('contact.leadsource.CALLCENTRE');
-        $leadsource['pdf_cls'] = __('contact.leadsource.PDF_CLS');
-        $leadsource['pdf_mks'] = __('contact.leadsource.PDF_MKS');
-        $leadsource['pdf_go'] = __('contact.leadsource.PDF_GO');
-        $leadsource['form_offer'] = __('contact.leadsource.PDF_OFFER');
-        $leadsource['form_preconfirmation'] = __('contact.leadsource.PDF_PRECONFIRMATION');
-        $leadsource['mks_gocaution'] = __('contact.leadsource.MKS_GOCAUTION');
-        $leadsource['mks_offer'] = __('contact.leadsource.MKS');
-        $leadsource['cls_offer'] = __('contact.leadsource.CLS');
-        $leadsource['ca_offer'] = __('contact.leadsource.CA');
+        $leadsource['online_registration'] = 'contact.leadsource.ONLINE_REGISTRATION';
+        $leadsource['affiliate_marketing'] = 'contact.leadsource.AFFILIATE_MARKETNG';
+        $leadsource['partner_management'] = 'contact.leadsource.PARTNERVERWALTUNG';
+        $leadsource['other'] = 'contact.leadsource.ANDERE';
+        $leadsource['partner_login'] = 'contact.leadsource.PARTNERLOGIN';
+        $leadsource['call_centre'] = 'contact.leadsource.CALLCENTRE';
+        $leadsource['pdf_cls'] = 'contact.leadsource.PDF_CLS';
+        $leadsource['pdf_mks'] = 'contact.leadsource.PDF_MKS';
+        $leadsource['pdf_go'] = 'contact.leadsource.PDF_GO';
+        $leadsource['form_offer'] = 'contact.leadsource.PDF_OFFER';
+        $leadsource['form_preconfirmation'] = 'contact.leadsource.PDF_PRECONFIRMATION';
+        $leadsource['mks_gocaution'] = 'contact.leadsource.MKS_GOCAUTION';
+        $leadsource['mks_offer'] = 'contact.leadsource.MKS';
+        $leadsource['cls_offer'] = 'contact.leadsource.CLS';
+        $leadsource['ca_offer'] = 'contact.leadsource.CA';
+
+        if(!$plain) {
+            foreach($leadsource as $key => $value) {
+                $leadsource[$key] = __($value);
+            }
+        }
 
         return $leadsource;
     }
@@ -360,6 +398,23 @@ if(!function_exists('getCompanyBranches')) {
         $company_branch["sonstige"] = __('contact.company_branch.SONSTIGE');
 
         return $company_branch;
+    }
+}
+
+if(!function_exists('getPremiumAmount')) {
+    function getPremiumAmount($deposit_amount, $private = 0) {
+        if($private) {
+            if($deposit_amount <= 2000) {
+                $subtotal = ((2000 * 0.045) * (1+5/100));
+            } else {
+                $subtotal = (($deposit_amount * 0.045) * (1+5/100));
+            }
+        }
+        else
+        {
+            //@TODO
+        }
+        return $subtotal;
     }
 }
 

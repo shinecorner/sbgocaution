@@ -13,8 +13,9 @@
 /public/js/chunks
 /public/js/main.js
 /public/storage
-/public/Login/assets/js/
-/public/Login/assets/styles/
+/public/landlord/assets/js/
+/public/landlord/assets/styles/
+
 /storage/*.key
 /vendor
 /.idea
@@ -27,5 +28,5 @@ yarn-error.log
 .env
 .phpunit.result.cache
 /gocaution_crm/nbproject/private/
-/public/My/assets/js/
-/public/My/assets/styles/
+/public/customer/assets/js/
+/public/customer/assets/styles/

@@ -76,17 +76,27 @@ return [
         'OTHER' => "Sonstige"
     ],
     'filter' => [
-        'FILTER_MORE_THAN_ONE_POLICY' => 'Diverse Filter',
+        'MORE_THAN_ONE_POLICY' => 'Diverse Filter',
         'SALUTATION' => 'Anrede',
         'BIRTH_DATE' => 'Geburtsdatum',
         'LEAD_SOURCES' => 'Leadquelle',
-        'FILTER_RC_POLICY' => 'Zusatzgeschäfte',
-        'PROMO_FILTER' => 'Promo erfolgt',
+        'RC_POLICY' => 'Zusatzgeschäfte',
+        'PROMO' => 'Promo erfolgt',
         'DUPLICATE_CONTACT' => 'Duplikate',
         'DUPLICATE_CONTACT_EMAIL' => 'Duplikate E-Mail',
-        'NOT_CORRECT_ADDRESS_FILTER' => 'Adresse nicht korrekt'
-        
+        'NOT_CORRECT_ADDRESS' => 'Adresse nicht korrekt',
+        'CONTACT_POLICY_1' => 'Mit 1 Police',
+        'CONTACT_POLICY_2' => 'Mit 2 Police',
+        'CONTACT_POLICY_3' => 'Mit 3 Police',
+        'CONTACT_POLICY_4_PLUS' => 'Mit 4+ Policen',
+        'ACCEPTED_CONTACTS_WITH_NO_POLICY' => 'Laufende Kunden mit 0 Policen',
+        'ACCEPTED_CONTACTS_WITH_NO_LINKED_USER' => 'Login-Daten überprüfen'
     ],
     'STATUS_CHANGE_SUCCESS' => 'Der Kontaktstatus wurde erfolgreich geändert.',
     'STATUS_CHANGE_FAIL' => 'Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.',
+    'offer' => [
+        'FILE_NAME' => 'offerte',
+        'CREATE_SUCCESS' => 'Angebot erfolgreich erstellt!',
+        'CREATE_FAILURE' => 'Angebotserstellung fehlgeschlagen!'
+    ]
 ];

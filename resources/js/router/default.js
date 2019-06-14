@@ -1,7 +1,7 @@
 import Full from 'Container/Full'
 import AppConfig from "Constants/AppConfig";
 
-const ContactList = () => import('Views/contacts/ContactList');
+const ContactList = () => import('Views/contacts/List');
 const SettingPage = () => import('Views/settings/SettingPage');
 const DemoPage = () => import('Views/demo/DemoPage');
 

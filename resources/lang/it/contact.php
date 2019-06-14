@@ -76,16 +76,27 @@ return [
         'OTHER' => "Altro"
     ],
     'filter' => [
-        'FILTER_MORE_THAN_ONE_POLICY' => 'Filtri vari',
+        'MORE_THAN_ONE_POLICY' => 'Filtri vari',
         'SALUTATION' => 'Titolo',
         'BIRTH_DATE' => 'Data di nascita',
         'LEAD_SOURCES' => 'Fonte di piombo',
-        'FILTER_RC_POLICY' => 'Zusatzgeschäfte',
-        'PROMO_FILTER' => 'Promozione effettuata',
+        'RC_POLICY' => 'Zusatzgeschäfte',
+        'PROMO' => 'Promozione effettuata',
         'DUPLICATE_CONTACT' => 'Duplicati',
         'DUPLICATE_CONTACT_EMAIL' => 'Doppio via e-mail',
-        'NOT_CORRECT_ADDRESS_FILTER' => 'Indirizzo non corretto',        
+        'NOT_CORRECT_ADDRESS' => 'Indirizzo non corretto',
+        'CONTACT_POLICY_1' => 'Con 1 polizza',
+        'CONTACT_POLICY_2' => 'Con 2 polizze',
+        'CONTACT_POLICY_3' => 'Con 3 polizze',
+        'CONTACT_POLICY_4_PLUS' => 'Con 4+ polizze',
+        'ACCEPTED_CONTACTS_WITH_NO_POLICY' => 'contatto con la polizza 0',
+        'ACCEPTED_CONTACTS_WITH_NO_LINKED_USER' => 'controlla i dati di accesso',
     ],
     'STATUS_CHANGE_SUCCESS' => 'Lo stato dei contatti è stato modificato con successo.',
     'STATUS_CHANGE_FAIL' => 'Purtroppo, lo stato dei contatti non è stato modificato, riprovare.',
+    'offer' => [
+        'FILE_NAME' => 'offerta',
+        'CREATE_SUCCESS' => 'Offerta creata con successo!',
+        'CREATE_FAILURE' => 'La creazione dell\'offerta non è riuscita!'
+    ]
 ];

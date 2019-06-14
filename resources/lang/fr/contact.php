@@ -76,16 +76,27 @@ return [
         'OTHER' => "Autre"
     ]    ,
     'filter' => [
-        'FILTER_MORE_THAN_ONE_POLICY' => 'Diverse Filter',
+        'MORE_THAN_ONE_POLICY' => 'Diverse Filter',
         'SALUTATION' => 'Titre',
         'BIRTH_DATE' => 'Date de naissance',
         'LEAD_SOURCES' => 'Source de client',
-        'FILTER_RC_POLICY' => 'Offre RC',
-        'PROMO_FILTER' => 'Promo done',
+        'RC_POLICY' => 'Offre RC',
+        'PROMO' => 'Promo done',
         'DUPLICATE_CONTACT' => 'Doubles par nom',
         'DUPLICATE_CONTACT_EMAIL' => 'Doubles par email',
-        'NOT_CORRECT_ADDRESS_FILTER' => 'Adresse incorrecte'        
+        'NOT_CORRECT_ADDRESS' => 'Adresse incorrecte',
+        'CONTACT_POLICY_1' => 'Avec 1 police',
+        'CONTACT_POLICY_2' => 'Avec 2 police',
+        'CONTACT_POLICY_3' => 'Avec 3 police',
+        'CONTACT_POLICY_4_PLUS' => 'Avec 4+ police',
+        'ACCEPTED_CONTACTS_WITH_NO_POLICY' => 'contact avec 0 politique',
+        'ACCEPTED_CONTACTS_WITH_NO_LINKED_USER' => 'vérifier les détails de connexion',
     ],
     'STATUS_CHANGE_SUCCESS' => 'Le statut du contact a été modifié avec succès.',
     'STATUS_CHANGE_FAIL' => 'Malheureusement, le statut du contact n\'a pas été modifié, réessayez.',
+    'offer' => [
+        'FILE_NAME' => 'proposition',
+        'CREATE_SUCCESS' => 'Offre créée avec succès !',
+        'CREATE_FAILURE' => 'La création d\'offres a échoué !'
+    ]
 ];
