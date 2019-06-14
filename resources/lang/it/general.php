@@ -75,5 +75,11 @@ return [
         'CREATE_FAILURE' => 'incapace di creare un utente!',
         'UPDATE_SUCCESS' => 'L\'utente è stato aggiornato!',
         'UPDATE_FAILURE' => 'Impossibile aggiornare l\'utente!',
+    ],
+    'template' => [
+        'CREATE_SUCCESS' => 'Il modello è stato creato!',
+        'CREATE_FAILURE' => 'non è in grado di creare un modello!',
+        'UPDATE_SUCCESS' => 'Il template è stato aggiornato!',
+        'UPDATE_FAILURE' => 'Impossibile aggiornare il modello!',
     ]
 ];
