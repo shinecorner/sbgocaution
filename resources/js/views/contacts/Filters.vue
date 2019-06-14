@@ -2,13 +2,13 @@
     <v-container search-content>
         <v-form ref="filterForm" @submit.prevent="$emit('filterData')">
             <v-layout row wrap>            
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <keyword-search></keyword-search>
                 </v-flex>                                    
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg3 xl3>
                     <status></status>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg3 xl3>
                     <v-select :items="miscellaneous_filter_option"
                         v-model="diverse"
                         :label="$t('contact.filter.MORE_THAN_ONE_POLICY')">
@@ -18,6 +18,9 @@
                     <salutation></salutation>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
+                    <language></language>
+                </v-flex>
+                <v-flex xs12 sm6 md4 lg2 xl2>
                     <created-from :is_reset_form="isResetForm"></created-from>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
@@ -25,11 +28,8 @@
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
                     <birth-date :is_reset_form="isResetForm"></birth-date>
-                </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
-                    <language></language>
-                </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                </v-flex>                
+                <v-flex xs12 sm6 md6 lg3 xl3>
                     <lead-source></lead-source>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
@@ -38,7 +38,7 @@
                 <v-flex xs12 sm6 md4 lg2 xl2>
                     <promo :label="$t('contact.filter.PROMO')"></promo>                
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex shrink d-inline-block>
                     <v-checkbox  indigo 
                         v-model="duplicate"
                         input-value="duplicate"
@@ -48,7 +48,7 @@
                         :label="$t('contact.filter.DUPLICATE_CONTACT')">
                     </v-checkbox>    
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex shrink d-inline-block>
                     <v-checkbox  indigo 
                         v-model="duplicate_email" 
                         class="filter_chkbox"
@@ -57,7 +57,7 @@
                         :label="$t('contact.filter.DUPLICATE_CONTACT_EMAIL')">
                     </v-checkbox>    
                 </v-flex>                                    
-                <v-flex xs12 sm6 md4 lg3 xl3>
+                <v-flex shrink d-inline-block>
                     <v-checkbox indigo 
                         v-model="incorrect_address" 
                         class="filter_chkbox"
@@ -65,17 +65,19 @@
                         false-value="0"
                         :label="$t('contact.filter.NOT_CORRECT_ADDRESS')">
                     </v-checkbox>    
-                </v-flex>
-                <v-flex xs12 sm12 md3 lg1 xl1>
-                    <v-select class="perpage_selectbox left" v-bind:items="perPageItems"  v-model.number="perPage" menu-props="bottom" ></v-select>
-                </v-flex>
-                <v-flex xs12 sm12 md12 lg9 xl9 style="display: block;"> 
-                    <v-btn type="submit" color="success left" @click="$emit('filterData')"><v-icon>search</v-icon>{{$t('general.filter.SEARCH')}}</v-btn>
-                    <v-btn color="success left" @click="resetData">{{$t('general.filter.RESET')}}</v-btn>                                    
-                    <v-btn color="download success left"><v-icon>mdi-download</v-icon></v-btn>                                        
-                </v-flex>            
+                </v-flex> 
             </v-layout>   
         </v-form>
+        <v-layout row wrap>
+            <v-flex shrink d-inline-block> 
+                <v-btn type="submit" color="success left" @click.prevent="$emit('filterData')"><v-icon>search</v-icon>{{$t('general.filter.SEARCH')}}</v-btn>
+                <v-btn color="success left" @click="resetData">{{$t('general.filter.RESET')}}</v-btn>                                    
+                <v-btn color="download success left"><v-icon>mdi-download</v-icon></v-btn>                                        
+            </v-flex>                        
+            <v-flex shrink d-inline-block>
+                <v-select class="perpage_selectbox left" v-bind:items="perPageItems"  v-model.number="perPage" menu-props="bottom" ></v-select>
+            </v-flex>
+        </v-layout>
     </v-container>
 </template>
 
@@ -213,7 +215,7 @@ export default{
             this.$store.dispatch("clearInputItems");
             this.$refs.filterForm.reset();
             this.isResetForm = true;
-            this.perPage = ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20);
+            //this.perPage = ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20);
             this.$emit('resetData');
         }
     }
