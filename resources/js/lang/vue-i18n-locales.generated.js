@@ -483,12 +483,6 @@ export default {
             "GET_RESET_LINK": "Link zurücksetzen",
             "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
             "routes": {
-                "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
-                "LOGIN": "anmelden",
-                "DASHBOARD": "instrumentenbord",
-                "PASSWORD_RESET": "passwortRucksetzen",
-                "PASSWORD_EMAIL": "passwort_email",
-                "PASSWORD_UPDATE": "passwort_aktualisierung",
                 "LOGOUT": "abmeldung"
             }
         }
@@ -977,12 +971,6 @@ export default {
             "GET_RESET_LINK": "Get Reset Link",
             "BACK_TO_LOGIN": "Back to Login?",
             "routes": {
-                "FORGOT_PASSWORD_LINK": "registration/password-forgotten",
-                "LOGIN": "login",
-                "DASHBOARD": "dashboard",
-                "PASSWORD_RESET": "passwordReset",
-                "PASSWORD_EMAIL": "password_email",
-                "PASSWORD_UPDATE": "password_update",
                 "LOGOUT": "logout"
             }
         }
@@ -1471,12 +1459,6 @@ export default {
             "GET_RESET_LINK": "Obtenir le lien de réinitialisation",
             "BACK_TO_LOGIN": "Retour connexion?",
             "routes": {
-                "FORGOT_PASSWORD_LINK": "anmeldung/forgot-password",
-                "LOGIN": "connexion",
-                "DASHBOARD": "tableau_de_bord",
-                "PASSWORD_RESET": "reinitialiser_mot_de_passe",
-                "PASSWORD_EMAIL": "mot_de_passe_email",
-                "PASSWORD_UPDATE": "mot_de_passe_update",
                 "LOGOUT": "deconnexion"
             }
         }
@@ -1965,12 +1947,6 @@ export default {
             "GET_RESET_LINK": "Ottieni il link di reset",
             "BACK_TO_LOGIN": "Torna al login?",
             "routes": {
-                "FORGOT_PASSWORD_LINK": "registrazione/password-dimenticata",
-                "LOGIN": "accedi",
-                "DASHBOARD": "plancia",
-                "PASSWORD_RESET": "passwordRipristina",
-                "PASSWORD_EMAIL": "passwordEmail",
-                "PASSWORD_UPDATE": "aggiornamento_password",
                 "LOGOUT": "uscita"
             }
         }
