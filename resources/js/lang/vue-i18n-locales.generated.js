@@ -118,6 +118,7 @@ export default {
         "landlord": {
             "LOGIN": "Anmelden",
             "EMAIL": "E-Mail",
+            "EMAIL_ADDRESS": "E-Mail-Adresse",
             "PASSWORD": "Passwort",
             "LANGUAGE": "Sprache",
             "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
@@ -469,6 +470,27 @@ export default {
             "PDF_COMPANY": "Sehr geehrte Damen und Herren",
             "UNAUTHORIZED": "Der Benutzer hat nicht die richtigen Berechtigungen.",
             "NO_MORE_ENTRIES": "Keine weiteren Einträge vorhanden..."
+        },
+        "login": {
+            "LOGIN": "Anmelden",
+            "EMAIL": "E-Mail",
+            "EMAIL_ADDRESS": "E-Mail-Adresse",
+            "PASSWORD": "Passwort",
+            "LANGUAGE": "Sprache",
+            "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
+            "TITLE": "goCaution® CRM",
+            "FORGET_PASSWORD": "Passwort vergessen?",
+            "GET_RESET_LINK": "Link zurücksetzen",
+            "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
+            "routes": {
+                "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
+                "LOGIN": "anmelden",
+                "DASHBOARD": "instrumentenbord",
+                "PASSWORD_RESET": "passwortRucksetzen",
+                "PASSWORD_EMAIL": "passwort_email",
+                "PASSWORD_UPDATE": "passwort_aktualisierung",
+                "LOGOUT": "abmeldung"
+            }
         }
     },
     "en": {
@@ -590,6 +612,7 @@ export default {
         "landlord": {
             "LOGIN": "Log in",
             "EMAIL": "Email",
+            "EMAIL_ADDRESS": "Email address",
             "PASSWORD": "Password",
             "LANGUAGE": "Language",
             "LOGIN_REMEMBER_ME": "Remember me",
@@ -941,6 +964,27 @@ export default {
             "PDF_COMPANY": "Dear Ladies and Gentlemen",
             "UNAUTHORIZED": "User does not have the right permissions.",
             "NO_MORE_ENTRIES": "No more entries to show..."
+        },
+        "login": {
+            "LOGIN": "Log in",
+            "EMAIL": "Email",
+            "EMAIL_ADDRESS": "Email address",
+            "PASSWORD": "Password",
+            "LANGUAGE": "Language",
+            "LOGIN_REMEMBER_ME": "Remember me",
+            "TITLE": "goCaution® CRM",
+            "FORGET_PASSWORD": "Forget Password ?",
+            "GET_RESET_LINK": "Get Reset Link",
+            "BACK_TO_LOGIN": "Back to Login?",
+            "routes": {
+                "FORGOT_PASSWORD_LINK": "registration/password-forgotten",
+                "LOGIN": "login",
+                "DASHBOARD": "dashboard",
+                "PASSWORD_RESET": "passwordReset",
+                "PASSWORD_EMAIL": "password_email",
+                "PASSWORD_UPDATE": "password_update",
+                "LOGOUT": "logout"
+            }
         }
     },
     "fr": {
@@ -1062,6 +1106,7 @@ export default {
         "landlord": {
             "LOGIN": "Connexion",
             "EMAIL": "Courriel",
+            "EMAIL_ADDRESS": "Adresse e-mai",
             "PASSWORD": "Mot de passe",
             "LANGUAGE": "Langue",
             "LOGIN_REMEMBER_ME": "Se rappeler de moi",
@@ -1413,6 +1458,27 @@ export default {
             "PDF_COMPANY": "Mesdames et Messieurs, Mesdames et Messieurs",
             "UNAUTHORIZED": "L'utilisateur n'a pas les bonnes permissions.",
             "NO_MORE_ENTRIES": "Plus d'entrées à afficher"
+        },
+        "login": {
+            "LOGIN": "Connexion",
+            "EMAIL": "Courriel",
+            "EMAIL_ADDRESS": "Adresse e-mai",
+            "PASSWORD": "Mot de passe",
+            "LANGUAGE": "Langue",
+            "LOGIN_REMEMBER_ME": "Se rappeler de moi",
+            "TITLE": "goCaution® CRM",
+            "FORGET_PASSWORD": "Mot de passe oublié ?",
+            "GET_RESET_LINK": "Obtenir le lien de réinitialisation",
+            "BACK_TO_LOGIN": "Retour connexion?",
+            "routes": {
+                "FORGOT_PASSWORD_LINK": "anmeldung/forgot-password",
+                "LOGIN": "connexion",
+                "DASHBOARD": "tableau_de_bord",
+                "PASSWORD_RESET": "reinitialiser_mot_de_passe",
+                "PASSWORD_EMAIL": "mot_de_passe_email",
+                "PASSWORD_UPDATE": "mot_de_passe_update",
+                "LOGOUT": "deconnexion"
+            }
         }
     },
     "it": {
@@ -1534,6 +1600,7 @@ export default {
         "landlord": {
             "LOGIN": "Accedi",
             "EMAIL": "E-Mail",
+            "EMAIL_ADDRESS": "indirizzo e-mail",
             "PASSWORD": "Password",
             "LANGUAGE": "Lingua",
             "LOGIN_REMEMBER_ME": "Ricordati di me",
@@ -1885,6 +1952,27 @@ export default {
             "PDF_COMPANY": "Cari signori e signore e signori",
             "UNAUTHORIZED": "L'utente non ha i permessi giusti.",
             "NO_MORE_ENTRIES": "Non ci sono più voci da mostrare"
+        },
+        "login": {
+            "LOGIN": "Accedi",
+            "EMAIL": "E-Mail",
+            "EMAIL_ADDRESS": "indirizzo e-mail",
+            "PASSWORD": "Password",
+            "LANGUAGE": "Lingua",
+            "LOGIN_REMEMBER_ME": "Ricordati di me",
+            "TITLE": "goCaution® CRM",
+            "FORGET_PASSWORD": "Password dimenticata?",
+            "GET_RESET_LINK": "Ottieni il link di reset",
+            "BACK_TO_LOGIN": "Torna al login?",
+            "routes": {
+                "FORGOT_PASSWORD_LINK": "registrazione/password-dimenticata",
+                "LOGIN": "accedi",
+                "DASHBOARD": "plancia",
+                "PASSWORD_RESET": "passwordRipristina",
+                "PASSWORD_EMAIL": "passwordEmail",
+                "PASSWORD_UPDATE": "aggiornamento_password",
+                "LOGOUT": "uscita"
+            }
         }
     }
 }

@@ -70,7 +70,7 @@
                     <v-select class="perpage_selectbox left" v-bind:items="perPageItems"  v-model.number="perPage" menu-props="bottom" ></v-select>
                 </v-flex>
                 <v-flex xs12 sm12 md12 lg9 xl9 style="display: block;"> 
-                    <v-btn color="success left" @click="$emit('filterData')"><v-icon>search</v-icon>{{$t('general.filter.SEARCH')}}</v-btn>                                    
+                    <v-btn type="submit" color="success left" @click="$emit('filterData')"><v-icon>search</v-icon>{{$t('general.filter.SEARCH')}}</v-btn>
                     <v-btn color="success left" @click="resetData">{{$t('general.filter.RESET')}}</v-btn>                                    
                     <v-btn color="download success left"><v-icon>mdi-download</v-icon></v-btn>                                        
                 </v-flex>            

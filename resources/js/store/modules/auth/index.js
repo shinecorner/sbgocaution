@@ -42,7 +42,7 @@ const actions = {
                         context.commit('signUpUserSuccess', payload);
                     }, 500);
                 }else{
-                    context.commit('signUpUserFailure', response.data.response);
+                    context.commit('signUpUserFailure', response.data);
                 }
         })
         .catch(error => {
@@ -71,7 +71,7 @@ const actions = {
                     }, 500);
                 }else{
                     localStorage.removeItem('accessToken');
-                    context.commit('loginUserFailure', response.data.response);
+                    context.commit('loginUserFailure', response.data);
                 }
         })
         .catch(error => {
