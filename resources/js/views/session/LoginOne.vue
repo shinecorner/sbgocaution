@@ -10,7 +10,7 @@
 						:src="appLogo"
 						class="img-responsive mb-3" 						
 					/>					
-					<p class="fs-14">{{$t('login.LOGIN_TITLE')}}</p>
+					<p class="fs-14">{{$t('login.TITLE')}}</p>
 					<v-form @submit.prevent="signInWithLaravelPassport()" class="mb-4">
 						<v-text-field 
 							:label="$t('general.EMAIL')" 
@@ -107,10 +107,10 @@ export default {
       brand: AppConfig.brand,
       fetchLanguage: localStorage.getItem('selectedLocale') || 'de',
       languageItems: [
-             { name: this.$t('login.DE'), locale: 'de', flag: '/static/flag-icons/de.png' },
-             { name: this.$t('login.FR'), locale: 'fr', flag: '/static/flag-icons/fr.png' },
-             { name: this.$t('login.IT'), locale: 'it', flag: '/static/flag-icons/it.png' },
-             { name: this.$t('login.EN'), locale: 'en', flag: '/static/flag-icons/en.png' },                          
+             { name: this.$t('general.language.DE'), locale: 'de', flag: '/static/flag-icons/de.png' },
+             { name: this.$t('general.language.FR'), locale: 'fr', flag: '/static/flag-icons/fr.png' },
+             { name: this.$t('general.language.IT'), locale: 'it', flag: '/static/flag-icons/it.png' },
+             { name: this.$t('general.language.EN'), locale: 'en', flag: '/static/flag-icons/en.png' },                          
         ]
     };
   },

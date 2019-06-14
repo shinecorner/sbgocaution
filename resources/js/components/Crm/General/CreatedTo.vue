@@ -20,12 +20,13 @@
             v-on="on"
           ></v-text-field>
         </template>
-        <v-date-picker v-model="date" no-title @input="is_popup = false"></v-date-picker>
+        <v-date-picker :locale="selectedLocale" v-model="date" no-title @input="is_popup = false"></v-date-picker>
       </v-menu>   
 </template>
 
 <script>
 import moment from 'moment'
+import { mapGetters } from "vuex";
 export default{
     props: {
         is_reset_form: {
@@ -41,6 +42,7 @@ export default{
         }
     },
     computed: {
+        ...mapGetters(["selectedLocale"]),
         computedDateFormatted () {
             return this.formatDate(this.date)
         }
