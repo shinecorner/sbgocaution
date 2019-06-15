@@ -1,35 +1,36 @@
 <template>
     <v-select 
-        :items="rc_policy_option"
+        :items="options"
         :label="label"
-        v-model="rc_policy"
+        :name="name"
+        v-model="selected_option"
     >
     </v-select>
 </template>
 
 <script>
 export default{
-    props: ['label'],
+    props: ['label','name'],
     data() {
         return {
-            rc_policy_option:[
+            options:[
                 {text: this.$t('general.YES'), value: '1'},
                 {text: this.$t('general.NO'), value: '0'},
             ]  
         }
     },
     computed:{        
-        rc_policy: {
+        selected_option: {
             get () {
-                if(this.$store.getters.inputItems.hasOwnProperty('rc_policy')){
-                    return this.$store.getters.inputItems.rc_policy;
+                if(this.$store.getters.inputItems.hasOwnProperty(this.name)){
+                    return this.$store.getters.inputItems[this.name];
                 }
                 else{
                     return '';
                 }
             },
             set (value) {
-              this.$store.dispatch("addInputItem", {fieldname: 'rc_policy', fieldvalue: value});
+              this.$store.dispatch("addInputItem", {fieldname: this.name, fieldvalue: value});
             }
         }
     },
