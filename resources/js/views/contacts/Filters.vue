@@ -32,11 +32,11 @@
                 <v-flex xs12 sm6 md6 lg3 xl3>
                     <lead-source></lead-source>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
-                    <rc-policy :label="$t('contact.filter.RC_POLICY')"></rc-policy>
+                <v-flex xs12 sm6 md4 lg2 xl2>                    
+                    <yes-no-dropdown name="rc_policy" :label="$t('contact.filter.RC_POLICY')"></yes-no-dropdown>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
-                    <promo :label="$t('contact.filter.PROMO')"></promo>                
+                    <yes-no-dropdown name="promo_success" :label="$t('contact.filter.PROMO')"></yes-no-dropdown>                    
                 </v-flex>
                 <v-flex shrink d-inline-block>
                     <v-checkbox  indigo 
@@ -93,8 +93,7 @@ import Status from "Components/Crm/Contact/Status";
 import Salutation from "Components/Crm/Contact/Salutation";
 import LeadSource from "Components/Crm/Contact/LeadSource";
 import BirthDate from "Components/Crm/Contact/BirthDate";
-import RcPolicy from "Components/Crm/Contact/RcPolicy";
-import Promo from "Components/Crm/Contact/Promo";
+import YesNoDropdown from "Components/Crm/Contact/YesNoDropdown";
 
 export default{
     mixins: [globalFunction],
@@ -102,8 +101,7 @@ export default{
         KeywordSearch,
         Status,
         Salutation,
-        RcPolicy,
-        Promo,
+        YesNoDropdown,
         LeadSource,
         Language,
         CreatedFrom,
