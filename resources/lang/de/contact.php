@@ -97,6 +97,8 @@ return [
     'offer' => [
         'FILE_NAME' => 'offerte',
         'CREATE_SUCCESS' => 'Angebot erfolgreich erstellt!',
-        'CREATE_FAILURE' => 'Angebotserstellung fehlgeschlagen!'
+        'CREATE_FAILURE' => 'Angebotserstellung fehlgeschlagen!',
+        'SEND_SUCCESS' => 'Offerte erfolgreich per E-Mail gesendet',
+        'SEND_FAILURE' => 'Offerte konnte nicht gesendet werden, da keine E-Mail Adresse erfasst wurde'
     ]
 ];
