@@ -7,8 +7,11 @@ use App;
 use App\Http\Controllers\Controller;
 use App\Contact;
 use App\ContactOffer;
+use App\Template;
+use App\Mail\BaseEmail;
 use App\Http\Resources\OfferResource;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
 use PDF;
 
 class OfferController extends Controller
@@ -179,6 +182,48 @@ class OfferController extends Controller
     {
         $request->validate([
             'id' => 'required'
+        ]);
+        $contactOffer = ContactOffer::find($id);
+        $contact = $contactOffer->contact;
+        $directory_kundendatenbank = config('app.customer_data');
+        $file = Storage::disk('public')->path($directory_kundendatenbank . DS . 'offer' . DS . $contact->id. DS . $contactOffer->file_name);
+        $template = Template::where([
+                                'section' => 'contacts',
+                                'template_key' => 'offer_email' 
+                            ])->first();
+        $offerEmailContent = $template->template_desc;
+        
+        $locale = App::getLocale();
+        App::setLocale($contact->language);
+        
+        $pattern = '/\[\[(.*?)\]\]/' ;
+        $matches = array();
+        preg_match_all($pattern, $offerEmailContent, $matches);
+        foreach($matches[1] as $value) {
+            if($value == 'REGARDS') {
+                $offerEmailContent = str_replace("[[".$value."]]", __('general.'.$value), $offerEmailContent);
+            } else {
+                $offerEmailContent = str_replace("[[".$value."]]", __('general.offer_email.'.$value), $offerEmailContent);
+            }
+        }
+        $greetings = getPDFSalutation($contact->salutation);
+        $greetings = str_replace('{nachname}', $contact->last_name, $greetings);
+        $offerEmailContent = str_replace("{mr/mrs}", $greetings, $offerEmailContent);
+        $offerEmailContent = str_replace("{deposit_amount}", format($contact->deposit_amount), $offerEmailContent);
+        Mail::to($contact->email)->send(new BaseEmail($contact, $offerEmailContent));
+        $contactOffer->sent = 1;
+        $contactOffer->sent_by = auth()->user()->id;
+        $contactOffer->save();
+        App::setLocale($locale);
+
+        if($contact->offers()->save($contactOffer)) {
+            $message = __('contact.offer.SEND_SUCCESS');
+        } else {
+            $message = __('contact.offer.SEND_FAILURE');
+        }
+
+        return response()->json([
+            'message' => $message
         ]);
     }
 
