@@ -315,8 +315,8 @@ if(!function_exists('getLeadSource')) {
 
         $leadsource['online_registration'] = 'contact.leadsource.ONLINE_REGISTRATION';
         $leadsource['affiliate_marketing'] = 'contact.leadsource.AFFILIATE_MARKETNG';
-        $leadsource['partner_management'] = 'contact.leadsource.PARTNERVERWALTUNG';
-        $leadsource['other'] = 'contact.leadsource.ANDERE';
+        $leadsource['partner_management'] = 'contact.leadsource.PARTNER_MANAGEMENT';
+        $leadsource['other'] = 'contact.leadsource.OTHER';
         $leadsource['partner_login'] = 'contact.leadsource.PARTNERLOGIN';
         $leadsource['call_centre'] = 'contact.leadsource.CALLCENTRE';
         $leadsource['pdf_cls'] = 'contact.leadsource.PDF_CLS';
