@@ -45,12 +45,8 @@ class ContactController extends Controller
 
         $query = Contact::latest();
 
-        if($request->has('search')) {
-            $this->search($request, $query);
-        }
-
         if($request->has('filters')) {
-            $this->filters($request, $query, ['status', 'diverse', 'language', 'created_from', 'created_to', 'birthdate', 'salutation', 'lead_source', 'rc_policy', 'promo_success', 'duplicate', 'duplicate_email', 'incorrect_address']);
+            $this->filters($request, $query, ['keyword_search' ,'status', 'diverse', 'language', 'created_from', 'created_to', 'birthdate', 'salutation', 'lead_source', 'rc_policy', 'promo_success', 'duplicate', 'duplicate_email', 'incorrect_address']);
         }
 
         $query->orderBy('created_at');
@@ -170,9 +166,9 @@ class ContactController extends Controller
         }
     }
 
-    private function search($request, $query) 
+    private function search($keyword, $query) 
     {
-        $searchWildcard = '%' . $request->search . '%';
+        $searchWildcard = '%' . request()->{'filters.'.$keyword} . '%';
 
         $query->where(function($query) use($searchWildcard) {
             $fields = ['first_name', 'last_name', 'email', 'contact_num', 'ip_user', 'phone', 'mobile', 'birthdate'];
@@ -239,6 +235,8 @@ class ContactController extends Controller
                     $query->whereHas('addresses', function($query) {
                         $query->where('not_correct', '=', 1);
                     });
+                } else if($key == 'keyword_search') {
+                    $this->search($key, $query);
                 } else {
                     $query->where($key, '=', $value);
                 }
