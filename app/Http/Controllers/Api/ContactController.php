@@ -7,6 +7,7 @@ use App\Config;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContactResource;
 use App\Http\Controllers\Controller;
+use App\Events\ContactStatusChange;
 use App;
 
 class ContactController extends Controller
@@ -133,6 +134,7 @@ class ContactController extends Controller
     public function change_status(Request $request, $id){
         $contact = Contact::find($id);
         $result = $contact->changeStatus();
+        event(new ContactStatusChange(['event_data' => $contact]));
         if($result) {
             $message = __('contact.STATUS_CHANGE_SUCCESS');
         } else {

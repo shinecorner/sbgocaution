@@ -3,7 +3,6 @@ import AppConfig from "Constants/AppConfig";
 
 const ContactList = () => import('Views/contacts/List');
 const SettingPage = () => import('Views/settings/SettingPage');
-const DemoPage = () => import('Views/demo/DemoPage');
 
 export default {
    path: '/mini',
@@ -38,22 +37,6 @@ export default {
               },
               {
                 breadcrumbActive: 'setting.OPTIONS'
-              }
-            ]
-        }
-      },
-      {
-        path: '/mini/demo',
-        component: DemoPage,
-        meta: {
-            requiresAuth: true,
-            title: 'Demo',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'CRM'
-              },
-              {
-                breadcrumbActive: 'Demo'
               }
             ]
         }
