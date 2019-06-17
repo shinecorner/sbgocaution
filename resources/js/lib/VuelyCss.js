@@ -8,10 +8,10 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 
-import 'vue-tour/dist/vue-tour.css'
+//import 'vue-tour/dist/vue-tour.css'
 
 // Drag And Drop Css
-import 'vue2-dragula/styles/dragula.css'
+//import 'vue2-dragula/styles/dragula.css'
 
 // nprogress
 import 'nprogress/nprogress.css'
@@ -24,8 +24,8 @@ import '../assets/themify-icons/themify-icons.css'
 import 'leaflet/dist/leaflet.css'
 
 // Slick Slider
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+//import "slick-carousel/slick/slick.css";
+//import "slick-carousel/slick/slick-theme.css";
 
 // animate css
 import '../assets/animate.css';
@@ -34,8 +34,8 @@ import '../assets/animate.css';
 import '../assets/scss/_style.scss'
 
 // Video Player CSS
-import 'video.js/dist/video-js.css'
-import 'vue-video-player/src/custom-theme.css'
+//import 'video.js/dist/video-js.css'
+//import 'vue-video-player/src/custom-theme.css'
 
 // Image Croppa CSS
-import 'vue-croppa/dist/vue-croppa.css';
+//import 'vue-croppa/dist/vue-croppa.css';

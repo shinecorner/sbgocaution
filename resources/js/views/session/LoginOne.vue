@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import { mapGetters } from "vuex";
 import SessionSliderWidget from "Components/Widgets/SessionSlider";
 import AppConfig from "Constants/AppConfig";
@@ -118,7 +118,7 @@ export default {
 		...mapGetters(["selectedLocale", "languages"])
     },
   methods: {
-    submit() {
+    /*submit() {
       const user = {
         email: this.email,
         password: this.password,
@@ -127,7 +127,7 @@ export default {
       this.$store.dispatch("signinUserInFirebase", {
         user
       });
-    },
+    },*/
     signInWithLaravelPassport(){
       this.$validator.validateAll().then((result) => {                    
           if (result) {
