@@ -15,6 +15,7 @@ class CreateBrokersTable extends Migration
     {
         Schema::create('brokers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('policy_id');
             $table->string('company_name');
             $table->tinyInteger('title');
             $table->string('first_name',100);
@@ -24,7 +25,6 @@ class CreateBrokersTable extends Migration
             $table->string('city');
             $table->string('email');
             $table->string('website');
-            $table->integer('policy_id');
             $table->integer('real_broker_num');
             $table->string('number',50);
             $table->string('mobile');

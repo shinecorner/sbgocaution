@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Policy extends Model
 {
-	public function contact(){
+	public function contact() {
 		return $this->belongsTo('App\Contact');
 	}
+
+    public function broker() {
+        return $this->belongsTo('App\Broker');
+    }
 
     public function invoices()
     {
