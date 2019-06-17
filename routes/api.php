@@ -32,6 +32,8 @@ Route::group([
     Route::resource('offers', 'OfferController');
     Route::put('contacts/change_status/{id}', 'ContactController@change_status');
     Route::resource('contacts', 'ContactController');
+    Route::resource('houseowners', 'HouseOwnerController');
+    Route::resource('brokers', 'BrokerController');
     Route::put('configs/all','ConfigController@updateAll');
     Route::resource('configs', 'ConfigController');
     Route::resource('roles', 'RoleController');

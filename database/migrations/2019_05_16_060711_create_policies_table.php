@@ -15,6 +15,11 @@ class CreatePoliciesTable extends Migration
     {
         Schema::create('policies', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('realestate_agency_id');
+            $table->integer('employee_id');
+            $table->integer('privatelandlord_id');
+            $table->integer('houseowner_id');
+            $table->integer('broker_id');
             $table->string('policy_num');
             $table->integer('real_policy_num');
             $table->integer('contact_id');
@@ -27,11 +32,6 @@ class CreatePoliciesTable extends Migration
             $table->datetime('last_sent');
             $table->mediumText('certificate_send_details');
             $table->datetime('last_sent_date_certificate');
-            $table->integer('realestate_agency_id');
-            $table->integer('employee_id');
-            $table->integer('privatelandlord_id');
-            $table->integer('houseowner_id');
-            $table->integer('broker_id');
             $table->text('notes');
             $table->string('policy_type');
             $table->string('talked_to_landlord');
