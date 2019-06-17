@@ -2,8 +2,8 @@ import Full from 'Container/Full'
 import AppConfig from "Constants/AppConfig";
 
 const ContactList = () => import('Views/contacts/List');
+const SocketDemo = () => import('Views/contacts/ListSocket');
 const SettingPage = () => import('Views/settings/SettingPage');
-const DemoPage = () => import('Views/demo/DemoPage');
 
 export default {
    path: '/',
@@ -13,6 +13,22 @@ export default {
       {
         path: '/contacts',
         component: ContactList,
+        meta: {
+            requiresAuth: true,
+            title: 'contact.CONTACTS',
+             breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'contact.CONTACTS'
+              }
+            ]
+        }
+      },
+      {
+        path: '/socket-demo',
+        component: SocketDemo,
         meta: {
             requiresAuth: true,
             title: 'contact.CONTACTS',
@@ -38,22 +54,6 @@ export default {
               },
               {
                 breadcrumbActive: 'setting.OPTIONS'
-              }
-            ]
-        }
-      },
-      {
-        path: '/demo',
-        component: DemoPage,
-        meta: {
-            requiresAuth: true,
-            title: 'Demo',
-            breadcrumb: [
-              {
-                breadcrumbInactive: 'CRM'
-              },
-              {
-                breadcrumbActive: 'Demo'
               }
             ]
         }
