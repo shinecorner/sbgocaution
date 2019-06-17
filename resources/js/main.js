@@ -46,10 +46,10 @@ import primaryTheme from './themes/primaryTheme';
 import { store } from './store/store';
 
 // firebase
-import './firebase'
+//import './firebase'
 
 // include script file
-import './lib/VuelyScript'
+//import './lib/VuelyScript'
 
 // include all css files
 import './lib/VuelyCss'

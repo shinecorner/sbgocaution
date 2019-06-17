@@ -3,7 +3,7 @@
  */
 import VuePerfectScrollbar from "vue-perfect-scrollbar";
 import AppSectionLoader from "Components/AppSectionLoader/AppSectionLoader";
-import { RotateSquare2 } from "vue-loading-spinner";
+//import { RotateSquare2 } from "vue-loading-spinner";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
@@ -35,7 +35,7 @@ const GlobalComponents = {
       Vue.component('vuePerfectScrollbar', VuePerfectScrollbar);
       Vue.component('appSectionLoader', AppSectionLoader);
       Vue.component('pageTitleBar', PageTitleBar);
-      Vue.component('rotateSquare2', RotateSquare2);
+      //Vue.component('rotateSquare2', RotateSquare2);
       Vue.component('font-awesome-icon', FontAwesomeIcon);  
       Vue.component('toast-notify',ToastNotify);  
    }

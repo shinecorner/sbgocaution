@@ -4,15 +4,15 @@
 import Vue from 'vue'
 import webServices from 'WebServices'
 import api from '../../../api';
-import firebase from 'firebase/app';
+//import firebase from 'firebase/app';
 import Nprogress from 'nprogress';
 import router from '../../../router';
-import {
+/*import {
     facebookAuthProvider,
     googleAuthProvider,
     twitterAuthProvider,
     githubAuthProvider
-} from '../../../firebase';
+} from '../../../firebase';*/
 
 const state = {
     user: localStorage.getItem('user'),
@@ -80,7 +80,7 @@ const actions = {
             console.log("Failed");
         })
      },
-    signinUserInFirebase(context, payload) {
+    /*signinUserInFirebase(context, payload) {
         const { user } = payload;
         context.commit('loginUser');
         firebase.auth().signInWithEmailAndPassword(user.email, user.password)
@@ -93,10 +93,11 @@ const actions = {
             .catch(error => {
                 context.commit('loginUserFailure', error);
             });
-    },
+    },*/
     logoutUserFromFirebase(context) {
         Nprogress.start();
-        firebase.auth().signOut()
+        context.commit('logoutUser');
+        /*firebase.auth().signOut()
             .then(() => {
                 Nprogress.done();
                 setTimeout(() => {
@@ -105,9 +106,9 @@ const actions = {
             })
             .catch(error => {
                 context.commit('loginUserFailure', error);
-            })
+            })*/
     },
-    signinUserWithFacebook(context) {
+    /*signinUserWithFacebook(context) {
         context.commit('loginUser');
         firebase.auth().signInWithPopup(facebookAuthProvider).then((result) => {
             Nprogress.done();
@@ -180,7 +181,7 @@ const actions = {
     },
     invalidEmail(context){
         context.commit('invalidEmailSent');
-    }
+    }*/
 }
 
 // mutations

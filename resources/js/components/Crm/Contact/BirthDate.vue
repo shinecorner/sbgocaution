@@ -17,6 +17,7 @@
             persistent-hint
             prepend-icon="event"
             @input="changeDate"
+            @focus="is_popup = true"
             v-on="on"
           ></v-text-field>
         </template>
