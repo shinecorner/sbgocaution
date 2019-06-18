@@ -15,9 +15,10 @@
             v-model="dateFormatted"
             :label="$t('general.filter.CREATE_TO')"                      
             persistent-hint
-            prepend-icon="event"
+            append-outer-icon="event"
             @input="changeDate"
             @focus="is_popup = true"
+            @click:append-outer="is_popup = true"
             v-on="on"
           ></v-text-field>
         </template>
