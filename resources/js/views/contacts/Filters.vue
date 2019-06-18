@@ -1,6 +1,6 @@
 <template>
     <v-container search-content>
-        <v-form ref="filterForm" @submit.prevent="$emit('filterData')">
+        <v-form ref="filterForm" @keyup.native.enter="$emit('filterData')" @submit.prevent="$emit('filterData')">
             <v-layout row wrap>            
                 <v-flex xs12 sm6 md6 lg2 xl2>
                     <keyword-search></keyword-search>
