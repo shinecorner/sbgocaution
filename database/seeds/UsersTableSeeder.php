@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
     	DB::table('users')->truncate();
-        factory(App\User::class, 6)->create()->each(function ($user) {
+        factory(App\User::class, 8)->create()->each(function ($user) {
             $user->assignRole('super-users');
         });
     }

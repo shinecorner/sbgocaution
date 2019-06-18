@@ -15,9 +15,9 @@ class CreatePrivateLandlordsTable extends Migration
     {
         Schema::create('private_landlords', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->integer('real_privatelandlord_num');
             $table->string('privatelandlord_num');
-            $table->integer('user_id');
             $table->tinyInteger('is_duplicate')->default(0);
             $table->string('number');
             $table->string('salutation');
