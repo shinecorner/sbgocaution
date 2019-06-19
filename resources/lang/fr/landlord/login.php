@@ -61,4 +61,16 @@
     '404_ERROR' => "Désolé ! La page que vous cherchiez n'existe pas.",
     'GO_BACK_HOME' => 'Retour à la maison',
     'FORGOT_PASSWORD_NOTE'=>'Veuillez saisir l\'adresse e-mail associée à votre compte d\'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe',
+    'REGISTER' => [
+        'TITLE'=>'Demandez votre accès et gérez vos cautions de location en ligne',
+        'HEADLINE'=>'L\'accès est disponible pour toutes les gérances, même si vous n\'avez pas d\'activité pour l\'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d\'un entretien.',
+        'SOCIETY'=>'Société',
+        'NAME'=>'Nom',
+        'FIRST_NAME'=>'Prénom',
+        'ADDRESS'=>'Adresse',
+        'P_CODE_LOCATION'=>'NPA et Lieu',
+        'PHONE_MOBILE'=>'Téléphone / Mobile',
+        'EMAIL'=>'E-Mail',
+        'TO_SEND'=>'envoyer'
+    ]
   ];

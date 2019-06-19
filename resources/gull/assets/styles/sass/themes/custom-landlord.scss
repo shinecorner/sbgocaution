@@ -315,7 +315,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 .fade.show {
   opacity: 1;
 }
-
+.modal-backdrop.fade.show{opacity:0.5;}
 .login-wrapper .login-support p.log-support {
   margin-bottom: 0;
 }
@@ -392,6 +392,83 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
 
     }
 }
+.account-request{
+  .modal-header {
+    background: #056937;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    .close{
+      padding: 3px 7px;
+      border-radius: 20px;
+      background: #8DBF42;
+      position: absolute;
+      right: 10px;
+      margin:-2px 0 0;
+    }
+    .modal-title{
+      color:#fff;
+      width:100%;
+      .fa{font-size:3em;margin-bottom:5px;}
+    }
+  }
+  .modal-dialog{
+      max-width:600px;
+    .modal-body{
+      position: relative;
+      padding: 20px;
+      .card-header{
+        padding:0;
+        border:none;
+        p{
+          color:#8dbf43;
+        }
+      }
+      .card-body{
+        padding:0;
+      }
+      .card{
+        box-shadow:none;
+        border-radius:0;
+      }
+    }
+    .form-group{
+      margin-bottom:15px;
+      .input-group-text{
+        width:40px;align-items:center;justify-align:center;
+      }
+      label{
+        color:#646464;
+        flex:0 0 100%;
+      }
+    }
+  }
+  .modal-content{
+    border:none;border-radius:5px;
+    box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  .modal-footer{
+    justify-content:flex-start;
+    padding:0 15px 15px;
+    border:none;
+  }
+  .alert-success{
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    display: none;
+  }
+  .was-validated {
+    .form-control:valid, .form-control, .is-valid{
+      background-image: none!important;
+    }
+    .form-control:invalid, .form-control, .is-invalid{
+      background-image: none!important;
+    }
+
+  }
+}
+
 @media (max-width: 1199px){
   div.page-wrapper {
     padding-top: 60px;

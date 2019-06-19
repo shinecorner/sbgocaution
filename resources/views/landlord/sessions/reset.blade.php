@@ -2,7 +2,7 @@
 @section('login')
 <div class="login-wrap">
     <div class="login">
-        <h3 class="login-top-title">{{ __('landlord.LOGIN_TITLE') }}</h3>
+        <h3 class="login-top-title">{{ __('landlord/login.LOGIN_TITLE') }}</h3>
         <hr />
         <form class="needs-validation no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'landlord.routes.PASSWORD_UPDATE')) }}" method="post" novalidate>
           @csrf
@@ -14,7 +14,7 @@
           @endif
           <input type="hidden" name="token" value="{{ $token }}">
                 <div class="input-wrapper">
-                    <label for="validationTooltipEmail">{{ __('landlord.EMAIL') }}<span class="star">&#160;*</span></label>
+                    <label for="validationTooltipEmail">{{ __('landlord/login.EMAIL') }}<span class="star">&#160;*</span></label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="validationTooltipEmailPrepend"><i class="fa fa-user" aria-hidden="true"></i></span>

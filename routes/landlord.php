@@ -1,20 +1,21 @@
 <?php
 //dd(app()->getLocale());
-
+\Log::info(LaravelLocalization::transRoute("landlord/regrequest.routes.REGISTER_REQUEST"));
 Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
 {
     Route::get('/test', 'AuthLoginController@loginForm')->name('login');
   	Route::get('/', 'AuthLoginController@loginForm')->name('login');
-    Route::get(LaravelLocalization::transRoute("landlord.routes.FORGOT_PASSWORD_LINK"), 'AuthLoginController@showForgetPasswordForm');
-    Route::get(LaravelLocalization::transRoute("landlord.routes.PASSWORD_RESET").'/{token}','AuthLoginController@showResetPasswordForm');
-    Route::post(LaravelLocalization::transRoute("landlord.routes.LOGIN"),'AuthLoginController@login');
-    Route::post(LaravelLocalization::transRoute("landlord.routes.PASSWORD_EMAIL"), 'AuthLoginController@sendResetPasswordLinkEmail');
-    Route::post(LaravelLocalization::transRoute("landlord.routes.PASSWORD_UPDATE"), 'AuthLoginController@reset');
+    Route::get(LaravelLocalization::transRoute("landlord/login.routes.FORGOT_PASSWORD_LINK"), 'AuthLoginController@showForgetPasswordForm');
+    Route::get(LaravelLocalization::transRoute("landlord/login.routes.PASSWORD_RESET").'/{token}','AuthLoginController@showResetPasswordForm');
+    Route::post(LaravelLocalization::transRoute("landlord/login.routes.LOGIN"),'AuthLoginController@login');
+    Route::post(LaravelLocalization::transRoute("landlord/login.routes.PASSWORD_EMAIL"), 'AuthLoginController@sendResetPasswordLinkEmail');
+    Route::post(LaravelLocalization::transRoute("landlord/login.routes.PASSWORD_UPDATE"), 'AuthLoginController@reset');
+    Route::post(LaravelLocalization::transRoute("landlord/regrequest.routes.REGISTER_REQUEST"),'RegrequestController@store');
 
     Route::middleware(['auth'])->group(function () {
         Route::get('dashboard', function () { return view('landlord.dashboard.dashboardv1'); })->name('dashboard');
-        Route::post(LaravelLocalization::transRoute("landlord.routes.LOGOUT"), 'AuthLoginController@logout');
+        Route::post(LaravelLocalization::transRoute("landlord/login.routes.LOGOUT"), 'AuthLoginController@logout');
     });
     Route::any('/{any}',function(){
         return  view('landlord.others.notFound');
