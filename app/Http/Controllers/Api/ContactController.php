@@ -19,30 +19,21 @@ class ContactController extends Controller
      */
     public function index(Request $request)
     {
-        $contact_statuses = [
-            'contact',
-            //'contactPDF',
-            'policy',
-            'invoice'
-        ];
-        
         $data = [];
-        foreach ($contact_statuses as $contact_status) {
-            $this->getStatusList($data, $contact_status);
-        }
 
-        $data['helpers']['navbar_contacts_count'] = Contact::whereIn('status', [
-            "new", "status_policy_waiting", "pre_confirmation_pending"
-        ])->count();
+        $helpers = [
+            'statuses' => [
+                'contact',
+                //'contactPDF',
+                'policy',
+                'invoice'
+            ],
+            'other' => [
+                'lead_sources'
+            ]
+        ];
 
-        $configs = Config::all();
-        $config_data = $configs->reduce(function ($configLookup, $config) {
-            $configLookup[$config['option']] = $config['value'];
-            return $configLookup;
-        }, []);
-
-        $data['helpers']['configs'] = $config_data;
-        $data['helpers']['lead_sources'] = getLeadSource(1);
+        $this->responseHelper($data, $helpers);
 
         $query = Contact::latest();
 
@@ -141,31 +132,6 @@ class ContactController extends Controller
             "message" => $message,
             "data" => new ContactResource($contact)
         ], 200);
-    }
-
-    /**
-     * Returns the translated statues.
-     * 
-     * @param reference array of $data
-     * @param string $status
-     * @return void
-     */
-    private function getStatusList(&$data, $status) 
-    {
-        switch ($status) {
-            case 'contact':
-                $data['helpers']['statuses'][$status] = getContactStatus(1);
-                break;
-            case 'contactPDF':
-                $data['helpers']['statuses'][$status] = getContactPDF(1);
-                break;
-            case 'policy':
-                $data['helpers']['statuses'][$status] = getPolicyStatus(1);
-                break;
-            case 'invoice':
-                $data['helpers']['statuses'][$status] = getInvoiceStatus(1);
-                break;
-        }
     }
 
     private function search($keyword, $query) 

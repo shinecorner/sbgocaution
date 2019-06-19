@@ -54,7 +54,7 @@ class AuthController extends Controller
             $input = $request->all(); 
             $input['password'] = bcrypt($input['password']); 
             $user = User::create($input);
-            $token =  $user->createToken('Personal Access Token')-> accessToken; 
+            $token =  $user->createToken('Personal Access Token')->accessToken; 
             $name =  $user->name;
             $email = $user->email;
             return response()->json(['response' => [
@@ -83,41 +83,18 @@ class AuthController extends Controller
             $data['name'] = $user->name;
             $data['email'] = $user->email;
             $data['premium_amount'] = format(177.23);
-            $statuses = [
-                'contact',
-                //'contactPDF',
-                'policy',
-                'invoice'
+            $helpers = [
+                'statuses' => [
+                    'contact',
+                    //'contactPDF',
+                    'policy',
+                    'invoice'
+                ],
+                'other' => [
+                    'lead_sources'
+                ]
             ];
-            foreach ($statuses as $status) {
-                switch ($status) {
-                    case 'contact':
-                        $data['helpers']['statuses'][$status] = getContactStatus(1);
-                        break;
-                    case 'contactPDF':
-                        $data['helpers']['statuses'][$status] = getContactPDF(1);
-                        break;
-                    case 'policy':
-                        $data['helpers']['statuses'][$status] = getPolicyStatus(1);
-                        break;
-                    case 'invoice':
-                        $data['helpers']['statuses'][$status] = getInvoiceStatus(1);
-                        break;
-                }
-            }
-
-            $data['helpers']['navbar_contacts_count'] = Contact::whereIn('status', [
-                "new", "status_policy_waiting", "pre_confirmation_pending"
-            ])->count();
-
-            $configs = Config::all();
-            $config_data = $configs->reduce(function ($configLookup, $config) {
-                $configLookup[$config['option']] = $config['value'];
-                return $configLookup;
-            }, []);
-
-            $data['helpers']['configs'] = $config_data;
-            $data['helpers']['lead_sources'] = getLeadSource(1);
+            $this->responseHelper($data, $helpers);
             return response()->json($data, 200); 
         } 
         else
