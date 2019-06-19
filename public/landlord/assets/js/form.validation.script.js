@@ -12,4 +12,21 @@ $(document).ready(function () {
             form.classList.add('was-validated');
         }, false);
     });
+
+
 });
+
+function customValidateForm(id) {
+    var customform = document.getElementById(id);
+    customform.addEventListener('isFormValid', function (event) {
+        if (customform.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            customform.classList.add('was-validated');
+        } else {
+            customform.classList.remove('was-validated');
+        }
+
+    }, false);
+
+}

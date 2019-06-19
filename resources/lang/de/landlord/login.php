@@ -60,5 +60,9 @@
     'ERROR' => 'Fehler',
     '404_ERROR' => "Entschuldigung! Die Seite, die Sie gesucht haben, existiert nicht.",
     'GO_BACK_HOME' => 'Gehen Sie zurück nach Hause.',
-    'FORGOT_PASSWORD_NOTE'=>'Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.'
+    'FORGOT_PASSWORD_NOTE'=>'Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.',
+    'REGISTER' => [
+        'TITLE'=>'Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.',
+        'HEADLINE'=>'Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.'
+    ]
   ];

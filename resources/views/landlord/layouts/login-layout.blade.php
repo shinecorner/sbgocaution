@@ -67,7 +67,7 @@
                                 <br class="hidden-xs">{{ __('landlord/login.LOGIN_PAGE_DESCRIPTION.LINE_FOUR') }}</p>
                         </div>
                         <div class="clearfix form-group">
-                            <button type="button" class="btn btn-raised btn-raised-secondary color-triplet" data-toggle="modal" data-target=".new-account-request"> {{ __('landlord/login.REQUEST_ACCESS') }}</button>
+                            <button type="button" class="btn btn-raised btn-raised-secondary color-triplet" data-toggle="modal" data-target="#new-account-request"> {{ __('landlord/login.REQUEST_ACCESS') }}</button>
                         </div>
                     </div>
                     <span class="fixed-response">
@@ -90,12 +90,288 @@
                         <div class="mb-shift">{{ __('landlordlogin.SUPPORT.SUPPORT_ADDRESS') }}</div>
                     </div>
 
+                      <!-- Modal -->
+                      <div class="modal fade account-request" id="new-account-request" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle-2" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                      <h4 class="modal-title text-center">
+                                          <p class="mb-0"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
+                                          <p class="mb-1">{{ __('landlord/regrequest.TITLE') }}</p>
+                                      </h4>
+                                  </div>
+                                  <form class=" no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'landlord/regrequest.routes.REGISTER_REQUEST')) }}"
+                                        method="post"
+                                        novalidate
+                                        id="regrequest"
+                                        onsubmit="regrequest(event,'regrequest')">
 
-                @extends('landlord.layouts.language-dropdown')
+                                      @csrf
+                                      <div class="modal-body">
+                                          <span class="red-alert"></span>
+                                          <span class="alert-success"></span>
+                                          <!-- start card 2 Columns Horizontal Form Layout-->
+                                          <div class="card">
+                                              <div class="card-header bg-transparent">
+                                                  <p>{{ __('landlord/regrequest.HEADLINE') }}</p>
+                                              </div>
+
+                                              <div class="card-body">
+                                                  <div class="form-row">
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <label>{{ __('landlord/regrequest.SOCIETY') }}</label>
+                                                              <input type="text" class="form-control" name="society" placeholder="{{ __('landlord/regrequest.SOCIETY') }}">
+
+                                                          </div>
+                                                      </div>
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <label>{{ __('landlord/regrequest.NAME') }} *</label>
+                                                              <input type="text" class="form-control" name="name" placeholder="{{ __('landlord/regrequest.NAME') }} *" required>
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.NAME') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-row">
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <label>{{ __('landlord/regrequest.FIRST_NAME') }} *</label>
+                                                              <input type="text" class="form-control" name="first_name" placeholder="{{ __('landlord/regrequest.FIRST_NAME') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.FIRST_NAME') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <label>{{ __('landlord/regrequest.ADDRESS') }} *</label>
+                                                              <input type="text" class="form-control" name="address" placeholder="{{ __('landlord/regrequest.ADDRESS') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.ADDRESS') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-row">
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <label>{{ __('landlord/regrequest.P_CODE_LOCATION') }} *</label>
+                                                              <input type="text" class="form-control" name="location" placeholder="{{ __('landlord/regrequest.P_CODE_LOCATION') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.P_CODE_LOCATION') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <label>{{ __('landlord/regrequest.PHONE_MOBILE') }} *</label>
+                                                              <input type="text" class="form-control" name="phone" placeholder="{{ __('landlord/regrequest.PHONE_MOBILE') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.PHONE_MOBILE') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-row">
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <label>{{ __('landlord/regrequest.EMAIL') }} *</label>
+                                                              <input type="text" class="form-control" name="email" placeholder="{{ __('landlord/regrequest.EMAIL') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.EMAIL') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                          </div>
+                                          <!-- end card 2 Columns Horizontal Form Layout-->
+
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="submit"  class="btn btn-success text-uppercase">{{ __('landlord/regrequest.TO_SEND') }}</button>
+                                  </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      {{--<div class="modal fade account-request" id="new-account-request" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle-2" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                      <h4 class="modal-title text-center">
+                                          <p class="mb-0"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
+                                          <p class="mb-1">{{ __('landlord/regrequest.TITLE') }}</p>
+                                      </h4>
+                                  </div>
+                                  <form class=" no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'landlord/regrequest.routes.REGISTER_REQUEST')) }}"
+                                        method="post"
+                                        novalidate
+                                        id="regrequest"
+                                        onsubmit="regrequest(event,'regrequest')">
+
+                                      @csrf
+                                      <div class="modal-body">
+
+                                          <!-- start card 2 Columns Horizontal Form Layout-->
+                                          <div class="card">
+                                              <div class="card-header bg-transparent">
+                                                  <p>{{ __('landlord/regrequest.HEADLINE') }}</p>
+                                              </div>
+                                              <span class="red-alert"></span>
+                                              <span class="alert-success"></span>
+                                              <div class="card-body">
+                                                  <div class="form-row">
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <div class="input-group-prepend">
+                                                                  <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                                              </div>
+                                                              <input type="text" class="form-control" name="society" placeholder="{{ __('landlord/regrequest.SOCIETY') }}">
+
+                                                          </div>
+                                                      </div>
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <div class="input-group-prepend">
+                                                                  <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                              </div>
+                                                              <input type="text" class="form-control" name="name" placeholder="{{ __('landlord/regrequest.NAME') }} *" required>
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.NAME') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-row">
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <div class="input-group-prepend">
+                                                                  <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                                              </div>
+                                                              <input type="text" class="form-control" name="first_name" placeholder="{{ __('landlord/regrequest.FIRST_NAME') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.FIRST_NAME') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <div class="input-group-prepend">
+                                                                  <span class="input-group-text"><i class="fa fa-address-card" aria-hidden="true"></i></span>
+                                                              </div>
+                                                              <input type="text" class="form-control" name="address" placeholder="{{ __('landlord/regrequest.ADDRESS') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.ADDRESS') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-row">
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <div class="input-group-prepend">
+                                                                  <span class="input-group-text"><i class="fa fa-map-pin" aria-hidden="true"></i></span>
+                                                              </div>
+                                                              <input type="text" class="form-control" name="location" placeholder="{{ __('landlord/regrequest.P_CODE_LOCATION') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.P_CODE_LOCATION') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <div class="input-group-prepend">
+                                                                  <span class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                                              </div>
+                                                              <input type="text" class="form-control" name="phone" placeholder="{{ __('landlord/regrequest.PHONE_MOBILE') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.PHONE_MOBILE') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-row">
+                                                      <div class="form-group col-md-6">
+                                                          <div class="input-group">
+                                                              <div class="input-group-prepend">
+                                                                  <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                                              </div>
+                                                              <input type="text" class="form-control" name="email" placeholder="{{ __('landlord/regrequest.EMAIL') }} *" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.EMAIL') }}
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                          </div>
+                                          <!-- end card 2 Columns Horizontal Form Layout-->
+
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="submit"  class="btn btn-primary text-uppercase">{{ __('landlord/regrequest.TO_SEND') }}</button>
+                                  </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>--}}
+                      <!-- Verify Modal content -->
+
+                    @extends('landlord.layouts.language-dropdown')
                 </div>
             </div>
         </div>
     </div>
 </body>
- <script src="{{asset('landlord/assets/js/form.validation.script.js')}}"></script>
+    <script src="{{asset('landlord/assets/js/form.validation.script.js')}}"></script>
+    <script>
+        $(document).ready(function () {
+            customValidateForm("regrequest");
+        });
+
+        function regrequest(e,id){
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            var  form    = document.getElementById('regrequest');
+            var  event   = new CustomEvent('isFormValid');
+            form.dispatchEvent(event);
+
+            if(!$("#"+id).hasClass('was-validated')){
+
+                $.ajax({
+                    url: $("#"+id).attr('action'),
+                    data: $("#"+id).serialize(),
+                    method: "POST",
+                    success: function(data) {
+                       $('#'+id+' .alert-success' ).text(data.message).show().delay(8000).fadeOut();
+                       document.getElementById(id).reset();
+                    },
+                    error: function(xhr, status, error) {
+
+                        var errors = JSON.parse(xhr.responseText);
+                        $('#'+id+' .red-alert' ).text(errors.error).show().delay(5000).fadeOut();
+                    }
+                });
+            }
+
+        }
+
+       
+    </script>
 </html>
