@@ -124,6 +124,14 @@ if (!function_exists('getContactStatus')) {
 
 }
 
+if (!function_exists('getContactStatusPlain')) {
+
+    function getContactStatusPlain() {
+        return getContactStatus(1);
+    }
+
+}
+
 if(!function_exists('getPolicyStatus')) {
     /**
      * Returns translated policy statuses.
@@ -154,6 +162,14 @@ if(!function_exists('getPolicyStatus')) {
 
         return $statuses;
     }
+}
+
+if(!function_exists('getPolicyStatusPlain')) {
+
+    function getPolicyStatusPlain() {
+        return getPolicyStatus(1);
+    }
+
 }
 
 if(!function_exists('getInvoiceStatus')) {
@@ -187,6 +203,14 @@ if(!function_exists('getInvoiceStatus')) {
 
         return $statuses;
     }
+}
+
+if(!function_exists('getInvoiceStatusPlain')) {
+
+    function getInvoiceStatusPlain() {
+        return getInvoiceStatus(1);
+    }
+
 }
 
 if(!function_exists('roundTo5')){

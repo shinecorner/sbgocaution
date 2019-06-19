@@ -43,7 +43,8 @@ class Kernel extends HttpKernel
             'bindings',
             'localization',
             //\Barryvdh\Cors\HandleCors::class,
-            'Pagination'
+            'Pagination',
+            'responseMeta'
         ],
     ];
 
@@ -73,6 +74,7 @@ class Kernel extends HttpKernel
         'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
         'localeViewPath' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
-        'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class
+        'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+        'responseMeta' => \App\Http\Middleware\ResponseMetaMiddleware::class
     ];
 }
