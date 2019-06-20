@@ -4,6 +4,6 @@ export default {
    accent: '#82B1FF',
    error: '#FF3739',
    info: '#5D92F4',
-   success: '#00D014',
+   success: '#91c545',
    warning: '#FFB70F'
 }

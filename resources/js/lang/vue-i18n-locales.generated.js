@@ -363,6 +363,34 @@ export default {
             "STATUS_CHANGE_FAIL": "Leider wurde der Rechnungsstatus nicht geändert, versuchen Sie es erneut."
         },
         "landlord": {
+            "regrequest": {
+                "TITLE": "Fordern Sie Ihren Zugang an und verwalten Sie die Mieter-Policen online.",
+                "HEADLINE": "Gerne vereinbaren wir mit Ihnen einen telefonischen Termin und führen Sie mittels Bildschirmübertragung durch die Applikation, unabhängig davon, ob bereits Mieterinnen von Ihnen eine Kautionspolice bei uns abgeschlossen haben oder nicht.",
+                "SOCIETY": "Firmenname",
+                "NAME": "Name",
+                "FIRST_NAME": "Vorname",
+                "ADDRESS": "Adresse",
+                "P_CODE_LOCATION": "Postleitzahl und Ort",
+                "PHONE_MOBILE": "Telefon/Mobile",
+                "EMAIL": "E-Mail",
+                "TO_SEND": "Senden",
+                "THANK_YOU": "Vielen Dank für Ihre Anfrage",
+                "ADMIN_EMAIL_SUBJECT": "Vermieter-Login | Zugangsdaten angefordert",
+                "REG_REQUEST_HEADLINE": "Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.",
+                "VALIDATION": {
+                    "NAME": "Please let us know your name.",
+                    "FIRST_NAME": "Invalid Input.",
+                    "ADDRESS": "Bitten geben Sie Ihre Adresse ein",
+                    "P_CODE_LOCATION": "Bitten geben Sie Ihre PLZ und den Ort ein.",
+                    "PHONE_MOBILE": "Invalid Input",
+                    "EMAIL": "Please let us know your email address.",
+                    "EMAIL_UNIQUE": "This email already in used!",
+                    "EMAIL_VALID": "Die E-Mail-Adresse muss eine gültige E-Mail-Adresse sein."
+                },
+                "routes": {
+                    "REGISTER_REQUEST": "registre-demande"
+                }
+            },
             "login": {
                 "LOGIN": "Anmelden",
                 "EMAIL": "E-Mail",
@@ -423,7 +451,11 @@ export default {
                 "ERROR": "Fehler",
                 "404_ERROR": "Entschuldigung! Die Seite, die Sie gesucht haben, existiert nicht.",
                 "GO_BACK_HOME": "Gehen Sie zurück nach Hause.",
-                "FORGOT_PASSWORD_NOTE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden."
+                "FORGOT_PASSWORD_NOTE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
+                "REGISTER": {
+                    "TITLE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
+                    "HEADLINE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden."
+                }
             }
         },
         "general": {
@@ -529,7 +561,10 @@ export default {
                 "PAYMENT_INFO": "Nach erfolgter Anmeldung und Annahme Ihres Antrages senden wir Ihnen die Rechnung zur Zahlung der erste Jahresprämie zu, welche notwendig ist, um Ihre Police zu aktivieren. Nach Zahlungseingang der Prämie senden wir die originale Bürgschaftsurkunde auf dem Postweg an Ihren Vermieter. Mit dieser Urkunde garantieren wir Ihrem Vermieter die geforderte Mietkaution. Sie erhalten ebenfalls eine Kopie der Bürgschaftsurkunde im PDF-Format per E-Mail für Ihre Unterlagen.",
                 "HELP": "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung."
             },
-            "REGARDS": "Freundliche Grüsse<br />Ihr goCaution-Team"
+            "REGARDS": "Freundliche Grüsse<br />Ihr goCaution-Team",
+            "NEW": "Neu",
+            "MERGE": "Zusammenführen",
+            "DELETE": "Löschen"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -911,6 +946,33 @@ export default {
             "STATUS_CHANGE_FAIL": "Unfortunately, invoice status has not been changed, try again."
         },
         "landlord": {
+            "regrequest": {
+                "TITLE": "Request your access and manage your tenant policies online.",
+                "HEADLINE": "We will be happy to arrange an appointment with you by telephone and guide you through the application via screen transmission, regardless of whether or not tenants of yours have already concluded a deposit policy with us.",
+                "SOCIETY": "Company's name",
+                "NAME": "Name",
+                "FIRST_NAME": "First name",
+                "ADDRESS": "Address",
+                "P_CODE_LOCATION": "Postcode and city",
+                "PHONE_MOBILE": "Phone/Mobile",
+                "EMAIL": "Email",
+                "TO_SEND": "Send",
+                "THANK_YOU": "Thank you very much for your inquiry.",
+                "ADMIN_EMAIL_SUBJECT": "Landlord login | Access data requested",
+                "REG_REQUEST_HEADLINE": "A customer has requested a landlord to have access to the landlord-login.",
+                "VALIDATION": {
+                    "NAME": "Please let us know your name.",
+                    "FIRST_NAME": "Invalid Input.",
+                    "ADDRESS": "Please enter your address",
+                    "P_CODE_LOCATION": "Please enter your postcode and city.",
+                    "PHONE_MOBILE": "Invalid Input",
+                    "EMAIL": "Please let us know your email address.",
+                    "EMAIL_VALID": "The e-mail address must be a valid e-mail address."
+                },
+                "routes": {
+                    "REGISTER_REQUEST": "register-request"
+                }
+            },
             "login": {
                 "LOGIN": "Log in",
                 "EMAIL": "Email",
@@ -1077,7 +1139,10 @@ export default {
                 "PAYMENT_INFO": "Nach erfolgter Anmeldung und Annahme Ihres Antrages senden wir Ihnen die Rechnung zur Zahlung der erste Jahresprämie zu, welche notwendig ist, um Ihre Police zu aktivieren. Nach Zahlungseingang der Prämie senden wir die originale Bürgschaftsurkunde auf dem Postweg an Ihren Vermieter. Mit dieser Urkunde garantieren wir Ihrem Vermieter die geforderte Mietkaution. Sie erhalten ebenfalls eine Kopie der Bürgschaftsurkunde im PDF-Format per E-Mail für Ihre Unterlagen.",
                 "HELP": "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung."
             },
-            "REGARDS": "Freundliche Grüsse<br />Ihr goCaution-Team"
+            "REGARDS": "Freundliche Grüsse<br />Ihr goCaution-Team",
+            "NEW": "New",
+            "MERGE": "Merge",
+            "DELETE": "Delete"
         },
         "login": {
             "LOGIN": "Log in",
@@ -1459,6 +1524,34 @@ export default {
             "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la facture n'a pas été modifié, essayez à nouveau."
         },
         "landlord": {
+            "regrequest": {
+                "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
+                "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
+                "SOCIETY": "Société",
+                "NAME": "Nom",
+                "FIRST_NAME": "Prénom",
+                "ADDRESS": "Adresse",
+                "P_CODE_LOCATION": "NPA et Lieu",
+                "PHONE_MOBILE": "Téléphone / Mobile",
+                "EMAIL": "E-Mail",
+                "TO_SEND": "envoyer",
+                "THANK_YOU": "Vielen Dank für Ihre Anfrage.",
+                "ADMIN_EMAIL_SUBJECT": "Connexion propriétaire | Données d'accès demandées",
+                "REG_REQUEST_HEADLINE": "Un client a demandé à un propriétaire d'avoir accès à son identifiant propriétaire.",
+                "VALIDATION": {
+                    "NAME": "Please let us know your name.",
+                    "FIRST_NAME": "Invalid Input.",
+                    "ADDRESS": "Bitten geben Sie Ihre Adresse ein",
+                    "P_CODE_LOCATION": "Bitten geben Sie Ihre PLZ und den Ort ein.",
+                    "PHONE_MOBILE": "Invalid Input",
+                    "EMAIL": "Please let us know your email address.",
+                    "EMAIL_UNIQUE": "Cet e-mail est déjà utilisé.",
+                    "EMAIL_VALID": "L'adresse électronique doit être une adresse électronique valide."
+                },
+                "routes": {
+                    "REGISTER_REQUEST": "registre-demande"
+                }
+            },
             "login": {
                 "LOGIN": "Connexion",
                 "EMAIL": "Courriel",
@@ -1519,7 +1612,19 @@ export default {
                 "ERROR": "Abus",
                 "404_ERROR": "Désolé ! La page que vous cherchiez n'existe pas.",
                 "GO_BACK_HOME": "Retour à la maison",
-                "FORGOT_PASSWORD_NOTE": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe"
+                "FORGOT_PASSWORD_NOTE": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
+                "REGISTER": {
+                    "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
+                    "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
+                    "SOCIETY": "Société",
+                    "NAME": "Nom",
+                    "FIRST_NAME": "Prénom",
+                    "ADDRESS": "Adresse",
+                    "P_CODE_LOCATION": "NPA et Lieu",
+                    "PHONE_MOBILE": "Téléphone / Mobile",
+                    "EMAIL": "E-Mail",
+                    "TO_SEND": "envoyer"
+                }
             }
         },
         "general": {
@@ -1625,7 +1730,10 @@ export default {
                 "PAYMENT_INFO": "Une fois votre inscription terminée, nous vous ferons parvenir une facture pour le paiement de la première prime annuelle, qui est nécessaire pour activer votre police. Après réception du paiement de la prime, nous enverrons l'original du certificat à votre bailleur par la poste. Avec ce certificat, nous garantissons à votre bailleur la garantie de loyer requis. Vous recevrez également une copie du certificat de garantie en format PDF par e-mail pour vos dossiers.",
                 "HELP": "Nous espérons avoir été en mesure de vous aider avec cette information et sommes à votre disposition pour de plus amples conseils par e-mail ou par téléphone."
             },
-            "REGARDS": "Nos salutations les meilleures,<br />Votre équipe goCaution"
+            "REGARDS": "Nos salutations les meilleures,<br />Votre équipe goCaution",
+            "NEW": "Nouveau",
+            "MERGE": "Fusion de clients",
+            "DELETE": "Supprimer"
         },
         "login": {
             "LOGIN": "Connexion",
@@ -2007,6 +2115,33 @@ export default {
             "STATUS_CHANGE_FAIL": "Purtroppo, lo stato della fattura non è stato modificato, riprovare."
         },
         "landlord": {
+            "regrequest": {
+                "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
+                "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
+                "SOCIETY": "Société",
+                "NAME": "Nom",
+                "FIRST_NAME": "Prénom",
+                "ADDRESS": "Adresse",
+                "P_CODE_LOCATION": "NPA et Lieu",
+                "PHONE_MOBILE": "Téléphone / Mobile",
+                "EMAIL": "E-Mail",
+                "TO_SEND": "envoyer",
+                "THANK_YOU": "La ringrazio molto per la sua richiesta.",
+                "ADMIN_EMAIL_SUBJECT": "Login del proprietario | Dati di accesso richiesti",
+                "REG_REQUEST_HEADLINE": "Un cliente ha chiesto al locatore di avere accesso al logo del proprietario.",
+                "VALIDATION": {
+                    "NAME": "Please let us know your name.",
+                    "FIRST_NAME": "Invalid Input.",
+                    "ADDRESS": "Inserisci il tuo indirizzo",
+                    "P_CODE_LOCATION": "Inserisci il tuo codice postale e la città.",
+                    "PHONE_MOBILE": "Invalid Input",
+                    "EMAIL": "Please let us know your email address.",
+                    "EMAIL_VALID": "L'e-mail deve essere un indirizzo e-mail valido."
+                },
+                "routes": {
+                    "REGISTER_REQUEST": "registrazione-richiesta"
+                }
+            },
             "login": {
                 "LOGIN": "Accedi",
                 "EMAIL": "E-Mail",
@@ -2173,7 +2308,10 @@ export default {
                 "HELP": "Ci auguriamo di essere stati in grado di aiutarvi con queste informazioni e siamo a vostra disposizione via e-mail o per telefono per qualsiasi ulteriore consiglio.",
                 "ONLINE_LINK": "<p class=\"text-center\" style=\"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;\"><a style=\"color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;\" href=\"https://www.gocaution.ch/it/garanzia-di-affitto/iscrizione-on-line\">Vai al modulo online</a></p>"
             },
-            "REGARDS": "Cordiali saluti,<br />Il vostro team di goCaution"
+            "REGARDS": "Cordiali saluti,<br />Il vostro team di goCaution",
+            "NEW": "Nuova",
+            "MERGE": "Accorpamento",
+            "DELETE": "Cancellare"
         },
         "login": {
             "LOGIN": "Accedi",

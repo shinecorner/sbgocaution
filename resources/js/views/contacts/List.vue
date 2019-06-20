@@ -28,13 +28,14 @@
                                     data-path="mydata"
                                     :append-params="moreParams"    
                                     :per-page="perPage" 
+                                    :row-class="onRowClass"
                                     track-by="id"
                                     @vuetable:pagination-data="onPaginationData"
                                     @vuetable:loading="onLoading"        
                                     @vuetable:loaded="onLoaded"
                                   >                                                                     
                                 <template slot="prettycheck" slot-scope="props">
-                                    <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
+                                    <v-checkbox color="success" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                                 </template>  
                                 <template slot="c_contactformate" slot-scope="props">                                  
                                   <span class="primary-text">{{ props.rowData.contact_num }}</span>                                  
@@ -198,8 +199,9 @@ import { mapGetters } from "vuex";
 import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
 import globalFunction from "Helpers/helpers";
 import Filters from "./Filters";
+import {TableFields} from "./TableFields";
 export default {
-    mixins: [globalFunction],
+    mixins: [globalFunction, TableFields],
     components: {
         Vuetable,
         VuetablePagination,        
@@ -210,8 +212,7 @@ export default {
         selectedLocale: function(newVal, oldVal){
             //console.log(newVal);
             //console.log(this.$t('contact.ID'));
-            this.$refs.vuetable.refresh();
-            this.reinitializeFields();
+            this.$refs.vuetable.refresh();            
       }
     },
      data() {        
@@ -223,20 +224,7 @@ export default {
             moreParams: {},
             paginationComponent: 'vuetable-pagination',
             httpOptions: { headers: { Authorization: 'Bearer '+localStorage.getItem('accessToken') } },
-            checkedRows: [],
-            fields: [  
-                {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
-                { title: this.$t('contact.ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
-                { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
-                { title: this.$t('general.NAME'), name: "c_name" },
-                { title: this.$t('general.ADDRESS'), name: "c_address" },
-                { title: this.$t('contact.TOTAL_INVOICES'), name: "c_invoices" },                
-                { title: "", name: "c_statusdropdown", dataClass: 'statusdropdown_column', titleClass:'statusdropdown_column' },
-                { title: this.$t('general.STATUS'), name: "c_status", dataClass: 'status_policy_column', titleClass:'status_policy_column'},
-                { title: "", name: "c_userlink", dataClass: 'userid_link'},
-                //{ title: "", name: "c_action" },
-                { title: "", name: "c_addpolicy",  dataClass: 'add_policy_btn'},
-            ],
+            checkedRows: [],            
             css: {
                 table: {
                   tableClass: 'v-datatable v-table theme--light',
@@ -302,17 +290,7 @@ export default {
         }        
     }    
    },   
-      methods: {
-        reinitializeFields(){
-            this.$nextTick(()=>{                            
-              this.$refs.vuetable.fields[1].title = this.$t('contact.ID');
-              this.$refs.vuetable.fields[3].title = this.$t('general.NAME');
-              this.$refs.vuetable.fields[4].title = this.$t('general.ADDRESS');  
-              this.$refs.vuetable.fields[5].title = this.$t('contact.TOTAL_INVOICES');  
-              this.$refs.vuetable.fields[7].title = this.$t('general.STATUS');                
-              this.$refs.vuetable.normalizeFields();
-           });
-        },
+      methods: {       
         changePageHandler(val){
             this.perPage = val;
         },
@@ -398,7 +376,10 @@ export default {
         this.$store.dispatch("clearInputItems");
         this.moreParams = {};        
         Vue.nextTick(() => this.$refs.vuetable.refresh());
-      }
+      },
+    onRowClass(dataItem, index) {            
+        return ((dataItem.contact_type) == '2' ? 'row-business': 'row-personal');
+    }
 
   },
     created() {

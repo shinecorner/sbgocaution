@@ -33,7 +33,8 @@ const state = {
 	activeHeaderFilter: headerFilters[1],                  // selected header filter
 	mobileSearchForm: false,								   // Is Mobile Search Form Open
         headerTitle: "",
-	configs: []
+	configs: [],
+        currentRoute: ""
 }
 
 // getters
@@ -100,7 +101,10 @@ const getters = {
 	},
 	mobileSearchForm: state => {
 		return state.mobileSearchForm;
-	}
+	},
+        currentRoute: state => {                
+		return state.currentRoute;
+	},
 }
 
 // actions
@@ -153,6 +157,9 @@ const actions = {
 	toggleSearchForm(context) {
 		context.commit('toggleSearchFormHandler');
 	},
+        setCurrentRouter(context, payload) {           
+            context.commit('currentRouterHandler', payload);
+	},  
 	setConfigs(context){
 		api.get('/api/configs').then(response => context.commit('configs', response.data.data))
 	},
@@ -206,7 +213,10 @@ const mutations = {
 		} else {
 			state.rtlLayout = false;
 		}
-	},        
+	},
+        currentRouterHandler(state, path){
+            state.currentRoute = path;
+        },
 	changeBackgroundImageHandler(state, image) {
 		state.selectedSidebarBgImage = image;
 	},

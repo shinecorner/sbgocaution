@@ -44,7 +44,7 @@ import primaryTheme from './themes/primaryTheme';
 
 // store
 import { store } from './store/store';
-
+import { sync } from 'vuex-router-sync'
 // firebase
 //import './firebase'
 
@@ -146,7 +146,7 @@ const i18n = new VueI18n({
 	locale: store.getters.selectedLocale, // set locale
 	messages, // set locale messages
 })
-
+const unsync = sync(store, router);
 Vue.use(VeeValidate, {
    fieldsBagName: 'formFields', 
    i18nRootKey: 'validations', // customize the root path for validation messages.

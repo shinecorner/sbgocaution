@@ -102,5 +102,8 @@ return [
         'PAYMENT_INFO' => "Nach erfolgter Anmeldung und Annahme Ihres Antrages senden wir Ihnen die Rechnung zur Zahlung der erste Jahresprämie zu, welche notwendig ist, um Ihre Police zu aktivieren. Nach Zahlungseingang der Prämie senden wir die originale Bürgschaftsurkunde auf dem Postweg an Ihren Vermieter. Mit dieser Urkunde garantieren wir Ihrem Vermieter die geforderte Mietkaution. Sie erhalten ebenfalls eine Kopie der Bürgschaftsurkunde im PDF-Format per E-Mail für Ihre Unterlagen.",
         'HELP' => "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung."
     ],
-    'REGARDS' => "Freundliche Grüsse<br />Ihr goCaution-Team"
+    'REGARDS' => "Freundliche Grüsse<br />Ihr goCaution-Team",
+    'NEW' => 'New',
+    'MERGE' => 'Merge',
+    'DELETE' => 'Delete',
 ];
