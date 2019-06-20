@@ -34,7 +34,7 @@
                                     @vuetable:loaded="onLoaded"
                                   >                                                                     
                                 <template slot="prettycheck" slot-scope="props">
-                                    <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
+                                    <v-checkbox color="" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                                 </template>  
                                 <template slot="c_contactformate" slot-scope="props">                                  
                                   <span class="primary-text">{{ props.rowData.contact_num }}</span>                                  

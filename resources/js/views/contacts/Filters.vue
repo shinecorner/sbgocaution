@@ -39,7 +39,8 @@
                     <yes-no-dropdown name="promo_success" :label="$t('contact.filter.PROMO')"></yes-no-dropdown>                    
                 </v-flex>
                 <v-flex shrink d-inline-block>
-                    <v-checkbox  indigo 
+                    <v-checkbox 
+                        color="success"
                         v-model="duplicate"
                         input-value="duplicate"
                         class="filter_chkbox"
@@ -49,7 +50,8 @@
                     </v-checkbox>    
                 </v-flex>
                 <v-flex shrink d-inline-block>
-                    <v-checkbox  indigo 
+                    <v-checkbox  
+                        color="success"
                         v-model="duplicate_email" 
                         class="filter_chkbox"
                         true-value="1"
@@ -58,7 +60,8 @@
                     </v-checkbox>    
                 </v-flex>                                    
                 <v-flex shrink d-inline-block>
-                    <v-checkbox indigo 
+                    <v-checkbox  
+                        color="success"
                         v-model="incorrect_address" 
                         class="filter_chkbox"
                         true-value="1"

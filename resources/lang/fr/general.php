@@ -102,5 +102,8 @@ return [
         'PAYMENT_INFO' => "Une fois votre inscription terminée, nous vous ferons parvenir une facture pour le paiement de la première prime annuelle, qui est nécessaire pour activer votre police. Après réception du paiement de la prime, nous enverrons l'original du certificat à votre bailleur par la poste. Avec ce certificat, nous garantissons à votre bailleur la garantie de loyer requis. Vous recevrez également une copie du certificat de garantie en format PDF par e-mail pour vos dossiers.",
         'HELP' => "Nous espérons avoir été en mesure de vous aider avec cette information et sommes à votre disposition pour de plus amples conseils par e-mail ou par téléphone.",
     ],
-    'REGARDS' => "Nos salutations les meilleures,<br />Votre équipe goCaution"
+    'REGARDS' => "Nos salutations les meilleures,<br />Votre équipe goCaution",
+    'NEW' => 'Nouveau',
+    'MERGE' => 'Fusion de clients',
+    'DELETE' => 'Supprimer',
 ];

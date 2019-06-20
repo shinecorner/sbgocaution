@@ -6,7 +6,7 @@ export const ChartConfig = {
       'primary': '#5D92F4',
       'warning': '#FFB70F',
       'danger': '#FF3739',
-      'success': '#00D014',
+      'success': '#91c545',
       'info': '#00D0BD',
       'white': '#fff',
       'lightGrey': '#E8ECEE'

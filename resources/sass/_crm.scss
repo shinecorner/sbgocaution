@@ -14,7 +14,7 @@
 }
 .column-success{
     border-left: 3px solid;
-    border-color: #449d44;
+    border-color: #91c545;
     height: 100%;
 }
 
@@ -73,7 +73,7 @@
         background-color: #286090;
     }
     &.label-status-success {
-        background-color: #449d44;
+        background-color: #91c545;
     }
     &.label-status-success[href]:hover, &.label-success[href]:focus {
         background-color: #449d44;
@@ -276,4 +276,24 @@ button:focus{outline:none;}
     .v-btn__content .v-icon{
         font-size: 16px;
     }
+}
+.top-actions{
+    .v-btn{
+        text-transform: none;
+    }
+    .v-btn__content .v-icon{
+        font-size: 16px;
+    }
+}
+table.vuetable tbody.vuetable-body tr:not(:nth-child(1)) td{
+    border-top: 1px solid #ddd;
+}
+table.vuetable tbody.vuetable-body tr.row-personal{
+    background-color: #ffffff;
+}
+table.vuetable tbody.vuetable-body tr.row-personal:hover{
+    background-color: #eeeeee;
+}
+table.vuetable tbody.vuetable-body tr.row-business,table.vuetable tbody.vuetable-body tr.row-business:hover{
+    background-color: #ffffff;
 }
