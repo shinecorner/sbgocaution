@@ -27,12 +27,13 @@ class Regrequest extends FormRequest
     public function rules()
     {
         return [
-            'email'     =>'required|email|unique:landlord_registrations',
-            'name'      =>'required',
-            'first_name'=>'required',
-            'address'   =>'required',
-            'location'  =>'required',
-            'phone'     =>'required'
+            'email'             =>'required|email|unique:landlord_registrations',
+            'firstname'         =>'required',
+            'lastname'          =>'required',
+            'zip'               =>'required',
+            'city'              =>'required',
+            'address'           =>'required',
+            'telephone'         =>'required'
         ];
     }
 
@@ -48,11 +49,12 @@ class Regrequest extends FormRequest
             'email.required'        => __('landlord/regrequest.VALIDATION.EMAIL'),
             'email.unique'          => __('landlord/regrequest.VALIDATION.EMAIL_UNIQUE'),
             'email.email'           => __('landlord/regrequest.VALIDATION.EMAIL_VALID'),
-            'name.required'         => __('landlord/regrequest.VALIDATION.NAME'),
-            'first_name.required'   => __('landlord/regrequest.VALIDATION.FIRST_NAME'),
+            'firstname.required'    => __('landlord/regrequest.VALIDATION.FIRST_NAME'),
+            'lastname.required'     => __('landlord/regrequest.VALIDATION.LAST_NAME'),
             'address.required'      => __('landlord/regrequest.VALIDATION.ADDRESS'),
-            'location.required'     => __('landlord/regrequest.VALIDATION.P_CODE_LOCATION'),
-            'phone.required'        => __('landlord/regrequest.VALIDATION.PHONE_MOBILE')
+            'zip.required'          => __('landlord/regrequest.VALIDATION.ZIP'),
+            'city.required'         => __('landlord/regrequest.VALIDATION.CITY'),
+            'telephone.required'        => __('landlord/regrequest.VALIDATION.TELEPHONE')
         ];
     }
 

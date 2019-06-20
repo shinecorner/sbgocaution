@@ -11,6 +11,6 @@ class Regrequest extends Model
     protected $table = 'landlord_registrations';
 
     protected $fillable = [
-        'society','name','first_name','address','location','phone','ip_address','email','language'
+        'company','firstname','lastname','address','zip','city','telephone','ip_address','email','language'
     ];
 }
