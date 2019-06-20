@@ -276,6 +276,14 @@ if(!function_exists('getContactPDF')) {
 
 }
 
+if(!function_exists('getContactPDFPlain')) {
+
+    function getContactPDFPlain() {
+        return getContactPDF(1);
+    }
+
+}
+
 if(!function_exists('get_salutation')) {
 
     /**
@@ -323,6 +331,7 @@ if(!function_exists('getPDFSalutation')) {
 }
 
 if(!function_exists('writePDFContent')) {
+
     function writePDFContent($data, $ln = true, $fill = 0, $reseth = false, $cell = false, $align = '') {
         foreach($data as $element){
             $content = array_shift($element);
@@ -330,6 +339,7 @@ if(!function_exists('writePDFContent')) {
             PDF::writeHTML($content, $ln, $fill, $reseth, $cell, $align);
         }
     }
+    
 }
 
 if(!function_exists('getLeadSource')) {
@@ -362,6 +372,14 @@ if(!function_exists('getLeadSource')) {
         return $leadsource;
     }
 
+}
+
+if(!function_exists('getLeadSourcePlain')) {
+
+    function getLeadSourcePlain() {
+        return getLeadSource(1);
+    }
+    
 }
 
 if(!function_exists('getLichtensteinZipCodes')) {
