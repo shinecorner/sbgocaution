@@ -10,7 +10,6 @@
             <span class="red-alert">{{ $errors->first('email') }}</span>
           @endif
             <div class="input-wrapper">
-                <label for="validationTooltipEmail">{{ __('landlord/login.EMAIL') }}<span class="star">&#160;*</span></label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
@@ -22,7 +21,6 @@
                 </div>
             </div>
             <div class="input-wrapper">
-                <label for="validationTooltipPassword">{{ __('landlord/login.PASSWORD') }}<span class="star">&#160;*</span></label>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="validationTooltipPasswordPrepend"><i class="fa fa-key" aria-hidden="true"></i></span>

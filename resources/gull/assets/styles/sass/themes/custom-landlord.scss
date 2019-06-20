@@ -99,7 +99,7 @@ a:hover, a:focus{
 html, body, div.page-wrapper.login_panel, .login-inner-wrapper {
   height: 100%;
   background: #ffffff;
-  min-height: 700px;
+  min-height:100vh;
 }
 .login-wrapper .login-inner-wrapper {
   padding: 0;
@@ -405,11 +405,19 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
       position: absolute;
       right: 10px;
       margin:-2px 0 0;
+      @media screen and (max-width:767px){
+        margin:10px 0 0;
+      }
     }
     .modal-title{
       color:#fff;
       width:100%;
       .fa{font-size:3em;margin-bottom:5px;}
+      .mb-1{
+        @media screen and (max-width:767px){
+          line-height:26px;
+        }
+      }
     }
   }
   .modal-dialog{
@@ -418,10 +426,25 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
       position: relative;
       padding: 20px;
       .card-header{
-        padding:0;
-        border:none;
+        color:#03371d;
+        background-color:#cde1d7;
+        border-color: #b9d5c7;
+        position:relative;
+        padding:0.7rem;
+        margin-bottom:1rem;
+        border:1px solid transparent;
+        border-radius:10px;
         p{
-          color:#8dbf43;
+          color:#333;
+          margin:0;
+          display:inline-block;
+          width:calc(100% - 20px);
+          vertical-align: top;
+        }
+        .fa{
+          display: inline-block;
+          margin-right: 5px;
+          color:#03371d;
         }
       }
       .card-body{
@@ -441,6 +464,9 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
         color:#646464;
         flex:0 0 100%;
       }
+      .form-control{
+        border-radius:0!important;
+      }
     }
   }
   .modal-content{
@@ -449,7 +475,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   }
   .modal-footer{
     justify-content:flex-start;
-    padding:0 15px 15px;
+    padding:0 20px 15px;
     border:none;
   }
   .alert-success{
@@ -467,6 +493,36 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
     }
 
   }
+
+  @media screen and (max-width:767px){
+    padding:0!important;
+  }
+
+}
+.alert-success{
+  display:block;
+  width:100%;
+  color:#03371d;
+  background-color:#cde1d7;
+  border-color: #b9d5c7;
+  position:relative;
+  padding:0.7rem;
+  margin-bottom:1rem;
+  border:1px solid transparent;
+  border-radius:10px;
+  p{
+    color:#333;
+    margin:0;
+    display:inline-block;
+    width:calc(100% - 20px);
+    vertical-align: top;
+  }
+  .fa{
+    display: inline-block;
+    margin-right: 5px;
+    color:#03371d;
+  }
+
 }
 
 @media (max-width: 1199px){

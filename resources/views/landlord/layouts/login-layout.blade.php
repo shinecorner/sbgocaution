@@ -45,7 +45,7 @@
                             <b>{{ __('landlord/login.SUPPORT.MOBILE') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
-                                <a href="#" title="{{ __('landlord/login.TITLE') }}">
+                                <a href="{{ url(app()->getLocale()) }}" title="{{ __('landlord/login.TITLE') }}">
                                     <img class="logo-img" src="{{ asset('landlord/images/'.__('landlord/login.LOGO_IMG')) }}" alt="{{ __('landlord/login.TITLE') }}" />
                                     <span>{{ __('landlord/login.LOGIN_TITLE') }}</span>
                                 </a>
@@ -80,7 +80,7 @@
                           <b>{{ __('landlord/login.SUPPORT.MOBILE') }}</b></div>
                         <div class="logo text-center">
                             <div class="logo-image">
-                                <a href="#" title="{{ __('landlord/login.TITLE') }}">
+                                <a href="{{ url(app()->getLocale()) }}" title="{{ __('landlord/login.TITLE') }}">
                                     <img class="logo-img" src="{{ asset('landlord/assets/images/'.__('landlord/login.LOGO_IMG')) }}" alt="{{ __('landlord/login.TITLE') }}" />
                                     <span>{{ __('landlord/login.LOGIN_TITLE') }}</span>
                                 </a>
@@ -112,10 +112,14 @@
                                       @csrf
                                       <div class="modal-body">
                                           <span class="red-alert"></span>
-                                          <span class="alert-success"></span>
+                                          <span class="alert-success">
+                                              <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                              <p></p>
+                                          </span>
                                           <!-- start card 2 Columns Horizontal Form Layout-->
                                           <div class="card">
-                                              <div class="card-header bg-transparent">
+                                              <div class="card-header">
+                                                  <i class="fa fa-info-circle" aria-hidden="true"></i>
                                                   <p>{{ __('landlord/regrequest.HEADLINE') }}</p>
                                               </div>
 
@@ -123,17 +127,17 @@
                                                   <div class="form-row">
                                                       <div class="form-group col-md-6">
                                                           <div class="input-group">
-                                                              <label>{{ __('landlord/regrequest.SOCIETY') }}</label>
-                                                              <input type="text" class="form-control" name="society" placeholder="{{ __('landlord/regrequest.SOCIETY') }}">
+                                                              <label>{{ __('landlord/regrequest.FORM_FIELDS.COMPANY') }}</label>
+                                                              <input type="text" class="form-control" name="company" >
 
                                                           </div>
                                                       </div>
                                                       <div class="form-group col-md-6">
                                                           <div class="input-group">
-                                                              <label>{{ __('landlord/regrequest.NAME') }} *</label>
-                                                              <input type="text" class="form-control" name="name" placeholder="{{ __('landlord/regrequest.NAME') }} *" required>
+                                                              <label>{{ __('landlord/regrequest.FORM_FIELDS.LAST_NAME') }} *</label>
+                                                              <input type="text" class="form-control" name="lastname"  required>
                                                               <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.NAME') }}
+                                                                  {{ __('landlord/regrequest.VALIDATION.LAST_NAME') }}
                                                               </div>
                                                           </div>
                                                       </div>
@@ -141,8 +145,8 @@
                                                   <div class="form-row">
                                                       <div class="form-group col-md-6">
                                                           <div class="input-group">
-                                                              <label>{{ __('landlord/regrequest.FIRST_NAME') }} *</label>
-                                                              <input type="text" class="form-control" name="first_name" placeholder="{{ __('landlord/regrequest.FIRST_NAME') }} *" required="">
+                                                              <label>{{ __('landlord/regrequest.FORM_FIELDS.FIRST_NAME') }} *</label>
+                                                              <input type="text" class="form-control" name="firstname"  required="">
                                                               <div class="invalid-feedback">
                                                                   {{ __('landlord/regrequest.VALIDATION.FIRST_NAME') }}
                                                               </div>
@@ -150,8 +154,8 @@
                                                       </div>
                                                       <div class="form-group col-md-6">
                                                           <div class="input-group">
-                                                              <label>{{ __('landlord/regrequest.ADDRESS') }} *</label>
-                                                              <input type="text" class="form-control" name="address" placeholder="{{ __('landlord/regrequest.ADDRESS') }} *" required="">
+                                                              <label>{{ __('landlord/regrequest.FORM_FIELDS.ADDRESS') }} *</label>
+                                                              <input type="text" class="form-control" name="address" required="">
                                                               <div class="invalid-feedback">
                                                                   {{ __('landlord/regrequest.VALIDATION.ADDRESS') }}
                                                               </div>
@@ -159,21 +163,36 @@
                                                       </div>
                                                   </div>
                                                   <div class="form-row">
-                                                      <div class="form-group col-md-6">
+
+                                                      <div class="form-group col-md-4">
+
                                                           <div class="input-group">
-                                                              <label>{{ __('landlord/regrequest.P_CODE_LOCATION') }} *</label>
-                                                              <input type="text" class="form-control" name="location" placeholder="{{ __('landlord/regrequest.P_CODE_LOCATION') }} *" required="">
+                                                              <label>{{ __('landlord/regrequest.FORM_FIELDS.ZIP') }} *</label>
+                                                              <input type="text" class="form-control" name="zip" required="">
                                                               <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.P_CODE_LOCATION') }}
+                                                                  {{ __('landlord/regrequest.VALIDATION.ZIP') }}
+                                                              </div>
+                                                          </div>
+
+                                                      </div>
+                                                      <div class="form-group col-md-2">
+
+
+                                                          <div class="input-group">
+                                                              <label>{{ __('landlord/regrequest.FORM_FIELDS.CITY') }} *</label>
+                                                              <input type="text" class="form-control" name="city" required="">
+                                                              <div class="invalid-feedback">
+                                                                  {{ __('landlord/regrequest.VALIDATION.CITY') }}
                                                               </div>
                                                           </div>
                                                       </div>
+
                                                       <div class="form-group col-md-6">
                                                           <div class="input-group">
-                                                              <label>{{ __('landlord/regrequest.PHONE_MOBILE') }} *</label>
-                                                              <input type="text" class="form-control" name="phone" placeholder="{{ __('landlord/regrequest.PHONE_MOBILE') }} *" required="">
+                                                              <label>{{ __('landlord/regrequest.FORM_FIELDS.TELEPHONE') }} *</label>
+                                                              <input type="text" class="form-control" name="telephone"  required="">
                                                               <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.PHONE_MOBILE') }}
+                                                                  {{ __('landlord/regrequest.VALIDATION.TELEPHONE') }}
                                                               </div>
                                                           </div>
                                                       </div>
@@ -181,8 +200,8 @@
                                                   <div class="form-row">
                                                       <div class="form-group col-md-6">
                                                           <div class="input-group">
-                                                              <label>{{ __('landlord/regrequest.EMAIL') }} *</label>
-                                                              <input type="text" class="form-control" name="email" placeholder="{{ __('landlord/regrequest.EMAIL') }} *" required="">
+                                                              <label>{{ __('landlord/regrequest.FORM_FIELDS.EMAIL') }} *</label>
+                                                              <input type="text" class="form-control" name="email" required="">
                                                               <div class="invalid-feedback">
                                                                   {{ __('landlord/regrequest.VALIDATION.EMAIL') }}
                                                               </div>
@@ -196,7 +215,7 @@
 
                                   </div>
                                   <div class="modal-footer">
-                                      <button type="submit"  class="btn btn-success text-uppercase">{{ __('landlord/regrequest.TO_SEND') }}</button>
+                                      <button type="submit"  class="btn btn-success">{{ __('landlord/regrequest.FORM_FIELDS.TO_SEND') }}</button>
                                   </div>
                                   </form>
                               </div>
@@ -359,13 +378,14 @@
                     data: $("#"+id).serialize(),
                     method: "POST",
                     success: function(data) {
-                       $('#'+id+' .alert-success' ).text(data.message).show().delay(8000).fadeOut();
-                       document.getElementById(id).reset();
+                        $('#'+id+'  .alert-success' ).css('display','block').delay(8000).fadeOut();
+                        $('#'+id+' .alert-success p' ).text(data.message);
+                        document.getElementById(id).reset();
                     },
                     error: function(xhr, status, error) {
 
                         var errors = JSON.parse(xhr.responseText);
-                        $('#'+id+' .red-alert' ).text(errors.error).show().delay(5000).fadeOut();
+                        $('#'+id+' .red-alert' ).text(errors.error).css('display','block').delay(5000).fadeOut();
                     }
                 });
             }
