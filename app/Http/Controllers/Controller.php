@@ -22,7 +22,7 @@ class Controller extends BaseController
         		
         		case 'other':
         			foreach($value as $helper) {
-        				$data['helpers'][$helper] = getLeadSource(1);
+        				$data['helpers'][$helper] = getLeadSourcePlain();
         			}
         			break;
         	}
@@ -43,7 +43,7 @@ class Controller extends BaseController
                 $data['helpers']['statuses'][$status] = getContactStatusPlain();
                 break;
             case 'contactPDF':
-                $data['helpers']['statuses'][$status] = getContactPDF(1);
+                $data['helpers']['statuses'][$status] = getContactPDFPlain();
                 break;
             case 'policy':
                 $data['helpers']['statuses'][$status] = getPolicyStatusPlain();
