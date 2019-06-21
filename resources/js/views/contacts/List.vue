@@ -187,12 +187,12 @@ import api from "Api";
 import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
 import globalFunction from "Helpers/helpers";
 import Filters from "./Filters";
-import {TableFields} from "./TableFields";
+import {TableData} from "Helpers/TableData";
 import PolicyCount from "Components/Crm/General/PolicyCount";
 import InvoiceCount from "Components/Crm/General/InvoiceCount";
 
 export default {
-    mixins: [globalFunction, TableFields],
+    mixins: [globalFunction, TableData],
     components: {
         Vuetable,
         VuetablePagination,        

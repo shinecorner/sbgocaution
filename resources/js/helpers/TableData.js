@@ -1,5 +1,5 @@
 import { mapGetters } from "vuex";
-export const TableFields = {
+export const TableData = {
     data(){        
         return {
             noDataMessage: this.$i18n.t('general.DATA_LOADING'),
