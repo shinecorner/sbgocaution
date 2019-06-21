@@ -424,7 +424,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
       max-width:600px;
     .modal-body{
       position: relative;
-      padding: 20px;
+      padding: 20px 20px 5px;
       .card-header{
         color:#03371d;
         background-color:#cde1d7;
@@ -475,7 +475,7 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   }
   .modal-footer{
     justify-content:flex-start;
-    padding:0 20px 15px;
+    padding:0 20px 20px;
     border:none;
   }
   .alert-success{
