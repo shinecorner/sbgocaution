@@ -8,12 +8,14 @@
                 <v-flex xs12 sm6 md6 lg3 xl3>
                     <status></status>
                 </v-flex>
-                <v-flex xs12 sm6 md6 lg3 xl3>
-                    <v-select :items="miscellaneous_filter_option"
-                        v-model="diverse"
-                        :label="$t('contact.filter.MORE_THAN_ONE_POLICY')">
-                    </v-select>
-                </v-flex>            
+                <v-flex xs12 sm6 md6 lg3 xl3>                    
+                        <v-select :items="miscellaneous_filter_option"
+                            v-model="diverse"                                                        
+                            outline
+                            hide-details
+                            :label="$t('contact.filter.MORE_THAN_ONE_POLICY')">
+                        </v-select>                    
+                </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
                     <salutation></salutation>
                 </v-flex>

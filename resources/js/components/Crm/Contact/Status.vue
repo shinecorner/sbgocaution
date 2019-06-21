@@ -1,5 +1,7 @@
 <template>
-    <v-select :items="contactstatus"  
+    <v-select :items="contactstatus"         
+        outline                                                
+        hide-details
         v-model="status"
         :label="$t('general.filter.SELECT_STATUS')">
     </v-select>

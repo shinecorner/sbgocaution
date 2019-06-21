@@ -1,5 +1,7 @@
 <template>
-    <v-select :items="language_filter_option"
+    <v-select :items="language_filter_option"        
+        outline                                                
+        hide-details
         :label="$t('general.filter.LANGUAGE')"
         v-model="language"
     >
