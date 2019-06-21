@@ -1,153 +1,8 @@
 export default {
     "de": {
-        "validation": {
-            "accepted": "The {attribute} must be accepted.",
-            "active_url": "The {attribute} is not a valid URL.",
-            "after": "The {attribute} must be a date after {date}.",
-            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
-            "alpha": "The {attribute} may only contain letters.",
-            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
-            "alpha_num": "The {attribute} may only contain letters and numbers.",
-            "array": "The {attribute} must be an array.",
-            "before": "The {attribute} must be a date before {date}.",
-            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
-            "between": {
-                "numeric": "The {attribute} must be between {min} and {max}.",
-                "file": "The {attribute} must be between {min} and {max} kilobytes.",
-                "string": "The {attribute} must be between {min} and {max} characters.",
-                "array": "The {attribute} must have between {min} and {max} items."
-            },
-            "boolean": "The {attribute} field must be true or false.",
-            "confirmed": "Die Passwort-Bestätigung stimmt nicht überein.",
-            "date": "The {attribute} is not a valid date.",
-            "date_format": "The {attribute} does not match the format {format}.",
-            "different": "The {attribute} and {other} must be different.",
-            "digits": "The {attribute} must be {digits} digits.",
-            "digits_between": "The {attribute} must be between {min} and {max} digits.",
-            "dimensions": "The {attribute} has invalid image dimensions.",
-            "distinct": "The {attribute} field has a duplicate value.",
-            "email": "Das Attribut {attribute} muss eine gültige EMailAdresse sein.",
-            "exists": "The selected {attribute} is invalid.",
-            "file": "The {attribute} must be a file.",
-            "filled": "The {attribute} field must have a value.",
-            "gt": {
-                "numeric": "The {attribute} must be greater than {value}.",
-                "file": "The {attribute} must be greater than {value} kilobytes.",
-                "string": "The {attribute} must be greater than {value} characters.",
-                "array": "The {attribute} must have more than {value} items."
-            },
-            "gte": {
-                "numeric": "The {attribute} must be greater than or equal {value}.",
-                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
-                "string": "The {attribute} must be greater than or equal {value} characters.",
-                "array": "The {attribute} must have {value} items or more."
-            },
-            "image": "The {attribute} must be an image.",
-            "in": "The selected {attribute} is invalid.",
-            "in_array": "The {attribute} field does not exist in {other}.",
-            "integer": "The {attribute} must be an integer.",
-            "ip": "The {attribute} must be a valid IP address.",
-            "ipv4": "The {attribute} must be a valid IPv4 address.",
-            "ipv6": "The {attribute} must be a valid IPv6 address.",
-            "json": "The {attribute} must be a valid JSON string.",
-            "lt": {
-                "numeric": "The {attribute} must be less than {value}.",
-                "file": "The {attribute} must be less than {value} kilobytes.",
-                "string": "The {attribute} must be less than {value} characters.",
-                "array": "The {attribute} must have less than {value} items."
-            },
-            "lte": {
-                "numeric": "The {attribute} must be less than or equal {value}.",
-                "file": "The {attribute} must be less than or equal {value} kilobytes.",
-                "string": "The {attribute} must be less than or equal {value} characters.",
-                "array": "The {attribute} must not have more than {value} items."
-            },
-            "max": {
-                "numeric": "The {attribute} may not be greater than {max}.",
-                "file": "The {attribute} may not be greater than {max} kilobytes.",
-                "string": "The {attribute} may not be greater than {max} characters.",
-                "array": "The {attribute} may not have more than {max} items."
-            },
-            "mimes": "The {attribute} must be a file of type: {values}.",
-            "mimetypes": "The {attribute} must be a file of type: {values}.",
-            "min": {
-                "numeric": "The {attribute} must be at least {min}.",
-                "file": "The {attribute} must be at least {min} kilobytes.",
-                "string": "The {attribute} must be at least {min} characters.",
-                "array": "The {attribute} must have at least {min} items."
-            },
-            "not_in": "The selected {attribute} is invalid.",
-            "not_regex": "The {attribute} format is invalid.",
-            "numeric": "The {attribute} must be a number.",
-            "present": "The {attribute} field must be present.",
-            "regex": "The {attribute} format is invalid.",
-            "invalid": "Das {attribute} ist ungültig.",
-            "required": "Das {attribute} ist erforderlich.",
-            "required_if": "The {attribute} field is required when {other} is {value}.",
-            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
-            "required_with": "The {attribute} field is required when {values} is present.",
-            "required_with_all": "The {attribute} field is required when {values} is present.",
-            "required_without": "The {attribute} field is required when {values} is not present.",
-            "required_without_all": "The {attribute} field is required when none of {values} are present.",
-            "same": "The {attribute} and {other} must match.",
-            "size": {
-                "numeric": "The {attribute} must be {size}.",
-                "file": "The {attribute} must be {size} kilobytes.",
-                "string": "The {attribute} must be {size} characters.",
-                "array": "The {attribute} must contain {size} items."
-            },
-            "string": "The {attribute} must be a string.",
-            "timezone": "The {attribute} must be a valid zone.",
-            "unique": "The {attribute} has already been taken.",
-            "uploaded": "The {attribute} failed to upload.",
-            "url": "The {attribute} format is invalid.",
-            "custom": {
-                "attribute-name": {
-                    "rule-name": "custom-message"
-                }
-            },
-            "attributes": []
-        },
-        "passwords": {
-            "PASSWORD": "Passwords must be at least six characters and match the confirmation.",
-            "RESET": "Your password has been reset!",
-            "sent": "Wir haben Ihren Link zum Zurücksetzen des Passworts per E-Mail gesendet!",
-            "TOKEN": "This password reset token is invalid.",
-            "user": "Wir können keinen Benutzer mit dieser E-Mail-Adresse finden."
-        },
         "auth": {
             "failed": "Diese Anmeldeinformationen stimmen nicht mit unseren Aufzeichnungen überein.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
-        },
-        "user": {
-            "EDIT_ACCOUNT": "Profil bearbeiten"
-        },
-        "setting": {
-            "SETTING": "Einstellung",
-            "SETTINGS": "Einstellungen",
-            "INVOICE_NUMBER_FORMAT": "Format der Rechnungsnummer",
-            "POLICY_NUMBER_FORMAT": "Format der Angebotsnummer",
-            "CONTACT_NUMBER_FORMAT": "Format der Kontaktnummer",
-            "INVOICE_DATE_FORMAT": "Format des Rechnungsdatums",
-            "ITEMS_PER_PAGE": "Standard Listenlänge",
-            "DECPOINTS": "Dezimalpunkt-Symbol",
-            "THOUSANDS": "Tausend-Trennsymbol",
-            "DECIMALS": "Anzahl der Dezimalstellen",
-            "INVOICE_NUM_DIGITS": "Mindestanzahl der Ziffern für die formatierte Rechnungsnummer",
-            "CONFIG_SUCCESS": "Konfiguration erfolgreich aktualisiert!",
-            "FROM_NAME_ON_EMAILS": "Von (Name) in E-Mails",
-            "FROM_EMAIL_ON_EMAILS": "Von (E-Mail) auf E-Mails",
-            "ROBOTS": "Roboter",
-            "SEND_MAILS": "Mails versenden",
-            "REPLY_ADDRESS": "Antwortadresse",
-            "REPLY_NAME": "Antwortname",
-            "PORT": "Hafen",
-            "SMTP_HOST": "SMTP Host",
-            "SMTP_SECURITY": "SMTP-Sicherheit",
-            "SMTP_AUTHENTICATION": "SMTP-Authentifizierung",
-            "SMTP_USER": "Benutzer",
-            "SMTP_PASSWORD": "Passwort",
-            "OPTIONS": "Optionen"
         },
         "contact": {
             "CONTACTS": "Kunden",
@@ -253,10 +108,6 @@ export default {
                 "SEND_FAILURE": "Offerte konnte nicht gesendet werden, da keine E-Mail Adresse erfasst wurde"
             }
         },
-        "pagination": {
-            "previous": "« Previous",
-            "next": "Next »"
-        },
         "customer": {
             "login": {
                 "LOGIN": "Anmelden",
@@ -323,138 +174,6 @@ export default {
                     "PASSWORD_EMAIL": "passwort_email",
                     "PASSWORD_UPDATE": "passwort_aktualisierung",
                     "LOGOUT": "abmeldung"
-                }
-            }
-        },
-        "policy": {
-            "status": {
-                "WAITING": "Warten auf Prüfung",
-                "PREDECLARED": "Vorpoliciert",
-                "ACCEPTED": "Laufend",
-                "CANCELLATION_WITH_CLAIM_PENDING": "Schadensfall in Bearbeitung",
-                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Kündigung in Bearbeitung",
-                "DISSOLVED_WITH_CLAIMS": "Aufgelöst MS",
-                "DISSOLVED_WITHOUT_CLAIMS": "Aufgelöst OS",
-                "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
-                "JOINT_GUARANTEE": "Solidarbürgschaft hängig",
-                "REJECTED_CLIENT": "Annulliert durch Kunden",
-                "PENDING_CANCEL": "Auflösung gemeldet"
-            },
-            "STATUS_CHANGE_SUCCESS": "Der Richtlinienstatus wurde erfolgreich geändert.",
-            "STATUS_CHANGE_FAIL": "Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut."
-        },
-        "invoice": {
-            "status": {
-                "WAITING_FOR_PAYMENT": "Warten auf Zahlung",
-                "PARTIAL_PAID": "Teilweise bezahlt",
-                "PAID": "Bezahlt",
-                "PASTDUE": "Past due date",
-                "REFUNDED": "Rückvergütet",
-                "PARTIAL_REFUNDED": "Rückvergütung in Bearbeitung",
-                "REMINDER": "Zahlungserinnerung",
-                "WARNING1": "Mahnstufe 1",
-                "WARNING2": "Mahnstufe 2",
-                "COLLECTION": "Betreibungsandrohung",
-                "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
-                "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
-                "DEBT_ENFORCEMENT": "Betreibungsverfahren"
-            },
-            "STATUS_CHANGE_SUCCESS": "Der Status der Rechnung wurde erfolgreich geändert.",
-            "STATUS_CHANGE_FAIL": "Leider wurde der Rechnungsstatus nicht geändert, versuchen Sie es erneut."
-        },
-        "landlord": {
-            "regrequest": {
-                "TITLE": "Fordern Sie Ihren Zugang an und verwalten Sie die Mieter-Policen online.",
-                "HEADLINE": "Gerne vereinbaren wir mit Ihnen einen telefonischen Termin und führen Sie mittels Bildschirmübertragung durch die Applikation, unabhängig davon, ob bereits Mieterinnen von Ihnen eine Kautionspolice bei uns abgeschlossen haben oder nicht.",
-                "SOCIETY": "Firmenname",
-                "NAME": "Name",
-                "FIRST_NAME": "Vorname",
-                "ADDRESS": "Adresse",
-                "P_CODE_LOCATION": "Postleitzahl und Ort",
-                "PHONE_MOBILE": "Telefon/Mobile",
-                "EMAIL": "E-Mail",
-                "TO_SEND": "Senden",
-                "THANK_YOU": "Vielen Dank für Ihre Anfrage",
-                "ADMIN_EMAIL_SUBJECT": "Vermieter-Login | Zugangsdaten angefordert",
-                "REG_REQUEST_HEADLINE": "Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.",
-                "VALIDATION": {
-                    "NAME": "Please let us know your name.",
-                    "FIRST_NAME": "Invalid Input.",
-                    "ADDRESS": "Bitten geben Sie Ihre Adresse ein",
-                    "P_CODE_LOCATION": "Bitten geben Sie Ihre PLZ und den Ort ein.",
-                    "PHONE_MOBILE": "Invalid Input",
-                    "EMAIL": "Please let us know your email address.",
-                    "EMAIL_UNIQUE": "This email already in used!",
-                    "EMAIL_VALID": "Die E-Mail-Adresse muss eine gültige E-Mail-Adresse sein."
-                },
-                "routes": {
-                    "REGISTER_REQUEST": "registre-demande"
-                }
-            },
-            "login": {
-                "LOGIN": "Anmelden",
-                "EMAIL": "E-Mail",
-                "EMAIL_ADDRESS": "E-Mail-Adresse",
-                "PASSWORD": "Passwort",
-                "LANGUAGE": "Sprache",
-                "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
-                "TITLE": "goCaution® Vermieter-Login",
-                "LOGIN_TITLE": "goCaution® Vermieter-Login",
-                "FORGET_PASSWORD": "Passwort vergessen?",
-                "GET_RESET_LINK": "Link zurücksetzen",
-                "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
-                "SUPPORT": {
-                    "MOBILE": "0800 461 461",
-                    "SUPPORT": "SUPPORT",
-                    "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
-                },
-                "LOGIN_PAGE_DESCRIPTION": {
-                    "TITLE": "Mietkautionen online verwalten",
-                    "LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-                    "LINE_TWO": "und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
-                    "LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
-                    "LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert."
-                },
-                "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
-                "REQUEST_ACCESS": "Zugang anfordern",
-                "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
-                "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
-                "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
-                "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
-                "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
-                "USED_LINK": "Link bereits verwendet",
-                "INVALID_USER_ID": "Ungültige Benutzer-Id",
-                "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
-                "NEW_PASSWORD": "Neues Kennwort",
-                "CONFIRM_PASSWORD": "Passwort bestätigen",
-                "RESET": "zurücksetzen",
-                "EMAIL_REQUIRED": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-                "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
-                "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
-                "LOGO_IMG": "logo_de.png",
-                "LOGIN_IMG": "vermieter-login-app.png",
-                "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
-                "IDENTIFIER": "E-Mail-Adresse",
-                "BACK": "Zurück",
-                "SEND_FORGOT_MAIL": "Senden",
-                "RESPONSIVE_LOGO": "logo-w-de.png",
-                "routes": {
-                    "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
-                    "LOGIN": "anmelden",
-                    "DASHBOARD": "instrumentenbord",
-                    "PASSWORD_RESET": "passwortRucksetzen",
-                    "PASSWORD_EMAIL": "passwort_email",
-                    "PASSWORD_UPDATE": "passwort_aktualisierung",
-                    "LOGOUT": "abmeldung"
-                },
-                "ERROR": "Fehler",
-                "404_ERROR": "Entschuldigung! Die Seite, die Sie gesucht haben, existiert nicht.",
-                "GO_BACK_HOME": "Gehen Sie zurück nach Hause.",
-                "FORGOT_PASSWORD_NOTE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-                "REGISTER": {
-                    "TITLE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-                    "HEADLINE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden."
                 }
             }
         },
@@ -566,6 +285,121 @@ export default {
             "MERGE": "Zusammenführen",
             "DELETE": "Löschen"
         },
+        "invoice": {
+            "status": {
+                "WAITING_FOR_PAYMENT": "Warten auf Zahlung",
+                "PARTIAL_PAID": "Teilweise bezahlt",
+                "PAID": "Bezahlt",
+                "PASTDUE": "Past due date",
+                "REFUNDED": "Rückvergütet",
+                "PARTIAL_REFUNDED": "Rückvergütung in Bearbeitung",
+                "REMINDER": "Zahlungserinnerung",
+                "WARNING1": "Mahnstufe 1",
+                "WARNING2": "Mahnstufe 2",
+                "COLLECTION": "Betreibungsandrohung",
+                "ONLINE_PAYMENT_WAITING": "Online-Zahlung wartend",
+                "ONLINE_PAYMENT_INVALID": "Online-Zahlung ungültig",
+                "DEBT_ENFORCEMENT": "Betreibungsverfahren"
+            },
+            "STATUS_CHANGE_SUCCESS": "Der Status der Rechnung wurde erfolgreich geändert.",
+            "STATUS_CHANGE_FAIL": "Leider wurde der Rechnungsstatus nicht geändert, versuchen Sie es erneut."
+        },
+        "landlord": {
+            "login": {
+                "LOGIN": "Anmelden",
+                "EMAIL": "E-Mail",
+                "EMAIL_ADDRESS": "E-Mail-Adresse",
+                "PASSWORD": "Passwort",
+                "LANGUAGE": "Sprache",
+                "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
+                "TITLE": "goCaution® Vermieter-Login",
+                "LOGIN_TITLE": "goCaution® Vermieter-Login",
+                "FORGET_PASSWORD": "Passwort vergessen?",
+                "GET_RESET_LINK": "Link zurücksetzen",
+                "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
+                "SUPPORT": {
+                    "MOBILE": "0800 461 461",
+                    "SUPPORT": "SUPPORT",
+                    "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
+                },
+                "LOGIN_PAGE_DESCRIPTION": {
+                    "TITLE": "Mietkautionen online verwalten",
+                    "LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
+                    "LINE_TWO": "und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
+                    "LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
+                    "LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert."
+                },
+                "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
+                "REQUEST_ACCESS": "Zugang anfordern",
+                "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
+                "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
+                "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
+                "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
+                "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
+                "USED_LINK": "Link bereits verwendet",
+                "INVALID_USER_ID": "Ungültige Benutzer-Id",
+                "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
+                "NEW_PASSWORD": "Neues Kennwort",
+                "CONFIRM_PASSWORD": "Passwort bestätigen",
+                "RESET": "zurücksetzen",
+                "EMAIL_REQUIRED": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+                "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
+                "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
+                "LOGO_IMG": "logo_de.png",
+                "LOGIN_IMG": "vermieter-login-app.png",
+                "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
+                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
+                "IDENTIFIER": "E-Mail-Adresse",
+                "BACK": "Zurück",
+                "SEND_FORGOT_MAIL": "Senden",
+                "RESPONSIVE_LOGO": "logo-w-de.png",
+                "routes": {
+                    "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
+                    "LOGIN": "anmelden",
+                    "DASHBOARD": "instrumentenbord",
+                    "PASSWORD_RESET": "passwortRucksetzen",
+                    "PASSWORD_EMAIL": "passwort_email",
+                    "PASSWORD_UPDATE": "passwort_aktualisierung",
+                    "LOGOUT": "abmeldung"
+                },
+                "ERROR": "Fehler",
+                "404_ERROR": "Entschuldigung! Die Seite, die Sie gesucht haben, existiert nicht.",
+                "GO_BACK_HOME": "Gehen Sie zurück nach Hause.",
+                "FORGOT_PASSWORD_NOTE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
+                "REGISTER": {
+                    "TITLE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
+                    "HEADLINE": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden."
+                }
+            },
+            "regrequest": {
+                "TITLE": "Fordern Sie Ihren Zugang an und verwalten Sie die Mieter-Policen online.",
+                "HEADLINE": "Gerne vereinbaren wir mit Ihnen einen telefonischen Termin und führen Sie mittels Bildschirmübertragung durch die Applikation, unabhängig davon, ob bereits Mieterinnen von Ihnen eine Kautionspolice bei uns abgeschlossen haben oder nicht.",
+                "SOCIETY": "Firmenname",
+                "NAME": "Name",
+                "FIRST_NAME": "Vorname",
+                "ADDRESS": "Adresse",
+                "P_CODE_LOCATION": "Postleitzahl und Ort",
+                "PHONE_MOBILE": "Telefon/Mobile",
+                "EMAIL": "E-Mail",
+                "TO_SEND": "Senden",
+                "THANK_YOU": "Vielen Dank für Ihre Anfrage",
+                "ADMIN_EMAIL_SUBJECT": "Vermieter-Login | Zugangsdaten angefordert",
+                "REG_REQUEST_HEADLINE": "Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.",
+                "VALIDATION": {
+                    "NAME": "Please let us know your name.",
+                    "FIRST_NAME": "Invalid Input.",
+                    "ADDRESS": "Bitten geben Sie Ihre Adresse ein",
+                    "P_CODE_LOCATION": "Bitten geben Sie Ihre PLZ und den Ort ein.",
+                    "PHONE_MOBILE": "Invalid Input",
+                    "EMAIL": "Please let us know your email address.",
+                    "EMAIL_UNIQUE": "This email already in used!",
+                    "EMAIL_VALID": "Die E-Mail-Adresse muss eine gültige E-Mail-Adresse sein."
+                },
+                "routes": {
+                    "REGISTER_REQUEST": "registre-demande"
+                }
+            }
+        },
         "login": {
             "LOGIN": "Anmelden",
             "EMAIL": "E-Mail",
@@ -580,9 +414,657 @@ export default {
             "routes": {
                 "LOGOUT": "abmeldung"
             }
+        },
+        "pagination": {
+            "previous": "« Previous",
+            "next": "Next »"
+        },
+        "passwords": {
+            "PASSWORD": "Passwords must be at least six characters and match the confirmation.",
+            "RESET": "Your password has been reset!",
+            "sent": "Wir haben Ihren Link zum Zurücksetzen des Passworts per E-Mail gesendet!",
+            "TOKEN": "This password reset token is invalid.",
+            "user": "Wir können keinen Benutzer mit dieser E-Mail-Adresse finden."
+        },
+        "policy": {
+            "status": {
+                "WAITING": "Warten auf Prüfung",
+                "PREDECLARED": "Vorpoliciert",
+                "ACCEPTED": "Laufend",
+                "CANCELLATION_WITH_CLAIM_PENDING": "Schadensfall in Bearbeitung",
+                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Kündigung in Bearbeitung",
+                "DISSOLVED_WITH_CLAIMS": "Aufgelöst MS",
+                "DISSOLVED_WITHOUT_CLAIMS": "Aufgelöst OS",
+                "DISSOLVED_IMMEDIATELY": "Aufgelöst nach Abschluss",
+                "JOINT_GUARANTEE": "Solidarbürgschaft hängig",
+                "REJECTED_CLIENT": "Annulliert durch Kunden",
+                "PENDING_CANCEL": "Auflösung gemeldet"
+            },
+            "STATUS_CHANGE_SUCCESS": "Der Richtlinienstatus wurde erfolgreich geändert.",
+            "STATUS_CHANGE_FAIL": "Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut."
+        },
+        "privatelandlord": {
+            "PRIVATE_LANDLORD": "Privater Vermieter",
+            "PRIVATE_LANDLORDS": "Private Hauswirte",
+            "CUSTOMER_DETAILS": "Kundendaten",
+            "PRODUCTION": "Produktion",
+            "PRIVATE_HOUSEOWNER_NUM": "Private Hausbesitzer Nummer"
+        },
+        "setting": {
+            "SETTING": "Einstellung",
+            "SETTINGS": "Einstellungen",
+            "INVOICE_NUMBER_FORMAT": "Format der Rechnungsnummer",
+            "POLICY_NUMBER_FORMAT": "Format der Angebotsnummer",
+            "CONTACT_NUMBER_FORMAT": "Format der Kontaktnummer",
+            "INVOICE_DATE_FORMAT": "Format des Rechnungsdatums",
+            "ITEMS_PER_PAGE": "Standard Listenlänge",
+            "DECPOINTS": "Dezimalpunkt-Symbol",
+            "THOUSANDS": "Tausend-Trennsymbol",
+            "DECIMALS": "Anzahl der Dezimalstellen",
+            "INVOICE_NUM_DIGITS": "Mindestanzahl der Ziffern für die formatierte Rechnungsnummer",
+            "CONFIG_SUCCESS": "Konfiguration erfolgreich aktualisiert!",
+            "FROM_NAME_ON_EMAILS": "Von (Name) in E-Mails",
+            "FROM_EMAIL_ON_EMAILS": "Von (E-Mail) auf E-Mails",
+            "ROBOTS": "Roboter",
+            "SEND_MAILS": "Mails versenden",
+            "REPLY_ADDRESS": "Antwortadresse",
+            "REPLY_NAME": "Antwortname",
+            "PORT": "Hafen",
+            "SMTP_HOST": "SMTP Host",
+            "SMTP_SECURITY": "SMTP-Sicherheit",
+            "SMTP_AUTHENTICATION": "SMTP-Authentifizierung",
+            "SMTP_USER": "Benutzer",
+            "SMTP_PASSWORD": "Passwort",
+            "OPTIONS": "Optionen"
+        },
+        "user": {
+            "EDIT_ACCOUNT": "Profil bearbeiten"
+        },
+        "validation": {
+            "accepted": "The {attribute} must be accepted.",
+            "active_url": "The {attribute} is not a valid URL.",
+            "after": "The {attribute} must be a date after {date}.",
+            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
+            "alpha": "The {attribute} may only contain letters.",
+            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
+            "alpha_num": "The {attribute} may only contain letters and numbers.",
+            "array": "The {attribute} must be an array.",
+            "before": "The {attribute} must be a date before {date}.",
+            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
+            "between": {
+                "numeric": "The {attribute} must be between {min} and {max}.",
+                "file": "The {attribute} must be between {min} and {max} kilobytes.",
+                "string": "The {attribute} must be between {min} and {max} characters.",
+                "array": "The {attribute} must have between {min} and {max} items."
+            },
+            "boolean": "The {attribute} field must be true or false.",
+            "confirmed": "Die Passwort-Bestätigung stimmt nicht überein.",
+            "date": "The {attribute} is not a valid date.",
+            "date_format": "The {attribute} does not match the format {format}.",
+            "different": "The {attribute} and {other} must be different.",
+            "digits": "The {attribute} must be {digits} digits.",
+            "digits_between": "The {attribute} must be between {min} and {max} digits.",
+            "dimensions": "The {attribute} has invalid image dimensions.",
+            "distinct": "The {attribute} field has a duplicate value.",
+            "email": "Das Attribut {attribute} muss eine gültige EMailAdresse sein.",
+            "exists": "The selected {attribute} is invalid.",
+            "file": "The {attribute} must be a file.",
+            "filled": "The {attribute} field must have a value.",
+            "gt": {
+                "numeric": "The {attribute} must be greater than {value}.",
+                "file": "The {attribute} must be greater than {value} kilobytes.",
+                "string": "The {attribute} must be greater than {value} characters.",
+                "array": "The {attribute} must have more than {value} items."
+            },
+            "gte": {
+                "numeric": "The {attribute} must be greater than or equal {value}.",
+                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
+                "string": "The {attribute} must be greater than or equal {value} characters.",
+                "array": "The {attribute} must have {value} items or more."
+            },
+            "image": "The {attribute} must be an image.",
+            "in": "The selected {attribute} is invalid.",
+            "in_array": "The {attribute} field does not exist in {other}.",
+            "integer": "The {attribute} must be an integer.",
+            "ip": "The {attribute} must be a valid IP address.",
+            "ipv4": "The {attribute} must be a valid IPv4 address.",
+            "ipv6": "The {attribute} must be a valid IPv6 address.",
+            "json": "The {attribute} must be a valid JSON string.",
+            "lt": {
+                "numeric": "The {attribute} must be less than {value}.",
+                "file": "The {attribute} must be less than {value} kilobytes.",
+                "string": "The {attribute} must be less than {value} characters.",
+                "array": "The {attribute} must have less than {value} items."
+            },
+            "lte": {
+                "numeric": "The {attribute} must be less than or equal {value}.",
+                "file": "The {attribute} must be less than or equal {value} kilobytes.",
+                "string": "The {attribute} must be less than or equal {value} characters.",
+                "array": "The {attribute} must not have more than {value} items."
+            },
+            "max": {
+                "numeric": "The {attribute} may not be greater than {max}.",
+                "file": "The {attribute} may not be greater than {max} kilobytes.",
+                "string": "The {attribute} may not be greater than {max} characters.",
+                "array": "The {attribute} may not have more than {max} items."
+            },
+            "mimes": "The {attribute} must be a file of type: {values}.",
+            "mimetypes": "The {attribute} must be a file of type: {values}.",
+            "min": {
+                "numeric": "The {attribute} must be at least {min}.",
+                "file": "The {attribute} must be at least {min} kilobytes.",
+                "string": "The {attribute} must be at least {min} characters.",
+                "array": "The {attribute} must have at least {min} items."
+            },
+            "not_in": "The selected {attribute} is invalid.",
+            "not_regex": "The {attribute} format is invalid.",
+            "numeric": "The {attribute} must be a number.",
+            "present": "The {attribute} field must be present.",
+            "regex": "The {attribute} format is invalid.",
+            "invalid": "Das {attribute} ist ungültig.",
+            "required": "Das {attribute} ist erforderlich.",
+            "required_if": "The {attribute} field is required when {other} is {value}.",
+            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
+            "required_with": "The {attribute} field is required when {values} is present.",
+            "required_with_all": "The {attribute} field is required when {values} is present.",
+            "required_without": "The {attribute} field is required when {values} is not present.",
+            "required_without_all": "The {attribute} field is required when none of {values} are present.",
+            "same": "The {attribute} and {other} must match.",
+            "size": {
+                "numeric": "The {attribute} must be {size}.",
+                "file": "The {attribute} must be {size} kilobytes.",
+                "string": "The {attribute} must be {size} characters.",
+                "array": "The {attribute} must contain {size} items."
+            },
+            "string": "The {attribute} must be a string.",
+            "timezone": "The {attribute} must be a valid zone.",
+            "unique": "The {attribute} has already been taken.",
+            "uploaded": "The {attribute} failed to upload.",
+            "url": "The {attribute} format is invalid.",
+            "custom": {
+                "attribute-name": {
+                    "rule-name": "custom-message"
+                }
+            },
+            "attributes": []
         }
     },
     "en": {
+        "auth": {
+            "failed": "These credentials do not match our records.",
+            "throttle": "Too many login attempts. Please try again in {seconds} seconds."
+        },
+        "contact": {
+            "CONTACTS": "Contacts",
+            "CONTACT": "Contact",
+            "ID": "Contact Id",
+            "TOTAL_INVOICES": "Invoices",
+            "TOTAL_POLICIES": "Policies",
+            "LINKED_TO_USER": "User",
+            "RC_POLICY_TOOLTIP": "Is interested in a PH offer.",
+            "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
+            "SEND_OFFER_BY_POST_TOOLTIP": "Offer by post",
+            "ADD_NEW_POLICY": "New Policy",
+            "leadsource": {
+                "ONLINE_REGISTRATION": "Online Registrierung",
+                "AFFILIATE_MARKETNG": "Affiliate Marketing",
+                "PARTNER_MANAGEMENT": "Partner Management",
+                "PARTNERLOGIN": "Partner-Login",
+                "OTHER": "Other",
+                "CALLCENTRE": "Callcenter VG",
+                "PDF_CLS": "CLS PDF Antrag",
+                "PDF_MKS": "MKS PDF Antrag",
+                "PDF_GO": "GO PDF Antrag ",
+                "PDF_OFFER": "GO Online-Offerte",
+                "PDF_PRECONFIRMATION": "GO Online-Vorabbestätigung",
+                "MKS_GOCAUTION": "MKS GO Online-Offere",
+                "MKS": "Mietkautionschweiz.ch",
+                "CLS": "CautionLoyerSuisse.ch",
+                "CA": "Cauzione-Affitto.ch"
+            },
+            "pdf": {
+                "PRECONFIRMATION_IMG": "Vorabbestätigung Online",
+                "REJECTED": "Rejected PDF",
+                "OFFER_PRINT_LETTER": "Offerte Begleitschreiben"
+            },
+            "status": {
+                "NEW": "New",
+                "OFFER": "Offer",
+                "IN_CLARIFICATION": "In Clarification",
+                "PENDING": "Pending",
+                "ACCEPTED": "Accepted",
+                "PRE_CONFIRMATION_PENDING": "Pre-confirmation pending",
+                "PRE_CONFIRMATION_SENT": "Pre-confirmation sent",
+                "CANCELLED": "Cancelled",
+                "REJECTED": "Rejected",
+                "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
+                "RESOLVED": "Resolved",
+                "POLICY_WAITING": "Waiting for processing"
+            },
+            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
+            "company_type": {
+                "PUBLIC_LIMITED_COMPANY": "PUBLIC LIMITED COMPANY",
+                "LIMITED_LIABILITY_COMPANY": "limited liability company",
+                "SIMPLE_PARTNERSHIP": "Einfache Gesellschaft",
+                "SOLE_PROPRIETORSHIP": "sole proprietorship",
+                "COOPERATIVE": "cooperative",
+                "COLLECTIVE_SOCIETY": "collective society",
+                "LIMITED_PARTNERSHIP": "limited partnership",
+                "STOCK_COMPANY": "Limited partnership",
+                "INSTITUTE_OF_PUBLIC_LAW": "Institute of Public Law",
+                "CLUB": "club",
+                "ENDOWMENT": "endowment"
+            },
+            "company_branch": {
+                "CAR_TRAFFIC": "Car & Traffic",
+                "BUILD_RENOVATE": "Building & Renovating",
+                "AUTHORITIES_ASSOCIATIONS": "Authorities and associations",
+                "EDUCATION_SCIENCE": "Education and Science",
+                "COMPUTERS_ELECTRONICS": "Computers & Electronics",
+                "SERVICE": "service",
+                "LEISURE_TRAVEL": "Leisure & Travel",
+                "FINANCIAL_SERVICE": "financial service",
+                "HEALTH_WELLNESS": "Health and Wellness",
+                "WHOLESALE_RETAIL": "Wholesale & Retail",
+                "REAL_ESTATE": "real estate",
+                "HOTEL_GASTRONOMY": "Hotel & Gastronomy",
+                "LIVING_FURNISHING": "Living & Furnishing",
+                "OTHER": "Other"
+            },
+            "filter": {
+                "MORE_THAN_ONE_POLICY": "Contacts / Quotes",
+                "SALUTATION": "salutation",
+                "BIRTH_DATE": "Birthdate",
+                "LEAD_SOURCES": "Lead source",
+                "RC_POLICY": "PH offer",
+                "PROMO": "Promo",
+                "DUPLICATE_CONTACT": "Duplicate",
+                "DUPLICATE_CONTACT_EMAIL": "Duplicate email",
+                "NOT_CORRECT_ADDRESS": "Address not correct",
+                "CONTACT_POLICY_1": "With 1 policy",
+                "CONTACT_POLICY_2": "With 2 policy",
+                "CONTACT_POLICY_3": "With 3 policy",
+                "CONTACT_POLICY_4_PLUS": "With 4+ policy",
+                "ACCEPTED_CONTACTS_WITH_NO_POLICY": "Acc. contacts with 0 policy",
+                "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "Check login detail"
+            },
+            "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again.",
+            "offer": {
+                "FILE_NAME": "offer",
+                "CREATE_SUCCESS": "Offer created successfully!",
+                "CREATE_FAILURE": "Offer creation failed!",
+                "SEND_SUCCESS": "Offerte erfolgreich per E-Mail gesendet",
+                "SEND_FAILURE": "Offerte konnte nicht gesendet werden, da keine E-Mail Adresse erfasst wurde"
+            }
+        },
+        "customer": {
+            "login": {
+                "LOGIN": "Anmelden",
+                "USERNAME": "Benutzername",
+                "PASSWORD": "Passwort",
+                "LANGUAGE": "Sprache",
+                "DE": "Deutsch",
+                "FR": "Français",
+                "IT": "Italienisch",
+                "EN": "English",
+                "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
+                "TITLE": "goCaution® Vermieter-Login",
+                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "IHRE MIETKAUTION IMMER IN REICHWEITE",
+                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH_DESCRIPTION": "Die Mietkaution bequem und sicher online verwalten – mit dem goCaution® Kunden-Login behalten Sie den Überblick. Der geschützte Bereich ermöglicht Ihnen einfachen, sofortigen und absolut sicheren Zugang zu allen Daten und Dokumenten in Verbindung mit Ihrer Mietkautionspolice.",
+                "AT_A_GLANCE": "Auf einen Blick",
+                "AT_A_GLANCE_DESCRIPTION": "Behalten Sie den Überblick über Ihre Prämienrechnungen, Policen und Kautionszertifikate.",
+                "REPORT_MOVE": "Umzug melden",
+                "REPORT_MOVE_DESCRIPTION": "Planen Sie einen Umzug? Eröffnen Sie die Mietkaution Ihrer neuen Wohnung in wenigen Schritten bequem online.",
+                "FAST_SUPPORT": "Schneller Support",
+                "FAST_SUPPORT_DESCRIPTION": "Übermitteln Sie uns Ihre Anfragen schnell und einfach über das Kunden-Login mit und Sie erhalten rasch eine Antwort.",
+                "DO_YOU_NEED_HELP": "BRAUCHEN SIE HILFE?",
+                "DO_YOU_NEED_HELP_DESCRIPTION": "Haben Sie Fragen zum goCaution Kunden-Login oder benötigen Sie Unterstützung bei der Anmeldung beziehungsweise Registrierung?",
+                "LOGIN_TITLE": "goCaution® Vermieter-Login",
+                "FORGET_PASSWORD": "Passwort vergessen?",
+                "GET_RESET_LINK": "Link zurücksetzen",
+                "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
+                "SUPPORT": "SUPPORT",
+                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
+                "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
+                "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
+                "LOGIN_PAGE_DESCRIPTION_LINE_TWO": " und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
+                "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
+                "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
+                "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
+                "REQUEST_ACCESS": "Zugang anfordern",
+                "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
+                "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
+                "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
+                "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
+                "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
+                "USED_LINK": "Link bereits verwendet",
+                "INVALID_USER_ID": "Ungültige Benutzer-Id",
+                "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
+                "NEW_PASSWORD": "Neues Kennwort",
+                "CONFIRM_PASSWORD": "Passwort bestätigen",
+                "RESET": "zurücksetzen",
+                "USERNAME_REQUIRED": "Bitte geben Sie einen gültigen Benutzernamen an.",
+                "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
+                "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
+                "CONTACT": "0800 461 461",
+                "LOGO_IMG": "logo_de.png",
+                "LOGIN_IMG": "vermieter-login-app.png",
+                "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
+                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
+                "IDENTIFIER": "E-Mail-Adresse",
+                "BACK": "Zurück",
+                "SEND_FORGOT_MAIL": "Senden",
+                "RESPONSIVE_LOGO": "logo-w-de.png",
+                "routes": {
+                    "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
+                    "LOGIN": "anmelden",
+                    "DASHBOARD": "instrumentenbord",
+                    "PASSWORD_RESET": "passwortRucksetzen",
+                    "PASSWORD_EMAIL": "passwort_email",
+                    "PASSWORD_UPDATE": "passwort_aktualisierung",
+                    "LOGOUT": "abmeldung"
+                }
+            }
+        },
+        "general": {
+            "CRM": "CRM",
+            "NAME": "Name",
+            "ADDRESS": "Address",
+            "STATUS": "Status",
+            "MR": "Mr",
+            "MRS": "Mrs",
+            "COMPANY": "Company",
+            "EMAIL": "E-mail",
+            "CRM_TITLE": "goCaution AG",
+            "SUBMIT": "Submit",
+            "CLEAR": "Clear",
+            "RESET": "Reset",
+            "EDIT": "Edit",
+            "POLICIES": "Polices",
+            "SUCCESS": "Success",
+            "ERROR": "Error",
+            "SAVE_SUCCESSFULLY": "Data saved successfully",
+            "INVOICES": "Invoices",
+            "language": {
+                "DE": "Deutsch",
+                "FR": "Französisch",
+                "IT": "Italienisch",
+                "EN": "English"
+            },
+            "CONTACT_CW": "CW",
+            "ANDERE": "Andere",
+            "CHF": "CHF",
+            "DATA_LOADING": "Please wait while, we're loading data...",
+            "YES": "Yes",
+            "NO": "No",
+            "AUTH_LOGIN_SUCCESS": "Logged in Successfully.",
+            "AUTH_LOGIN_FAIL": "Logged in failed.",
+            "CONFIG_SUCCESS": "Config updated successfully!",
+            "filter": {
+                "TYPE_TO_SEARCH": "Type to search...",
+                "SELECT_STATUS": "Select status",
+                "SELECT_PRODUCTTYPE": "Select type",
+                "CREATE_FROM": "Created from",
+                "CREATE_TO": "Created to",
+                "LANGUAGE": "Language",
+                "SEARCH": "Search",
+                "RESET": "Reset",
+                "NOT_SELECTED_OPTION": "Not selected"
+            },
+            "ROWS": "Rows",
+            "PDF_MR": "Dear Sir {nachname}",
+            "PDF_MRS": "Dear Madam {nachname}",
+            "PDF_COMPANY": "Dear Ladies and Gentlemen",
+            "UNAUTHORIZED": "User does not have the right permissions.",
+            "NO_MORE_ENTRIES": "No more entries to show...",
+            "role": {
+                "CREATE_SUCCESS": "Role has been created!",
+                "CREATE_FAILURE": "Unable to create role!",
+                "UPDATE_SUCCESS": "Role has been updated!",
+                "UPDATE_FAILURE": "Unable to update role!",
+                "DELETE_SUCCESS": "Role has been deleted!",
+                "DELETE_FAILURE": "Unable to delete role!",
+                "ASSIGNMENT_SUCCESS": "Role has been assigned!",
+                "ASSIGNMENT_FAILURE": "Unable to assign role!"
+            },
+            "permission": {
+                "CREATE_SUCCESS": "Permission has been created!",
+                "CREATE_FAILURE": "Unable to create permission!",
+                "UPDATE_SUCCESS": "Permission has been updated!",
+                "UPDATE_FAILURE": "Unable to update permission!",
+                "DELETE_SUCCESS": "Permission has been deleted!",
+                "DELETE_FAILURE": "Unable to delete permission!",
+                "ASSIGNMENT_SUCCESS": "Permission has been assigned!",
+                "ASSIGNMENT_FAILURE": "Unable to assign permission!"
+            },
+            "user": {
+                "CREATE_SUCCESS": "User has been created!",
+                "CREATE_FAILURE": "unable to create user!",
+                "UPDATE_SUCCESS": "User has been updated!",
+                "UPDATE_FAILURE": "Unable to update user!"
+            },
+            "template": {
+                "CREATE_SUCCESS": "Template has been created!",
+                "CREATE_FAILURE": "unable to create template!",
+                "UPDATE_SUCCESS": "Template has been updated!",
+                "UPDATE_FAILURE": "Unable to update template!"
+            },
+            "base_email": {
+                "LOGO": "<a href=\"https://login.gocaution.ch/de\"><img src=\"https://www.gocaution.ch/images/email/logo_de.png\" alt=\"logo gocaution\" width=\"170\" height=\"53\" border=\"0\"></a>",
+                "COPYRIGHT": "Copyright © 2019 goCaution AG. Alle Rechte vorbehalten.",
+                "COMPANY": "<b>goCaution AG</b>",
+                "COMPANY_ADDRESS": "Freiburgstrasse 574",
+                "COMPANY_ZIP_CITY": "3172 Niederwangen",
+                "HOTLINE": "Kostenlose Hotline: 0800 461 461",
+                "MAIL": "E-Mail: <a href=\"mailto:info@gocaution.ch\" style=\"color:#ffffff; text-decoration{none};\">info@gocaution.ch</a>",
+                "MAILTEXT5": "Mo. bis Fr. von 08{30} bis 17{30} Uhr",
+                "OFFER_EMAIL_PREVIEW_TEXT": "<span style='display{none};visibility{hidden};mso-hide{all};font-size{1px};color:#ffffff;line-height{1px};max-height{0px};max-width{0px};opacity{0};overflow{hidden};'>Anbei erhalten Sie die angeforderte Offerte für eine Mietkautionsbürgschaft von goCaution.</span>"
+            },
+            "offer_email": {
+                "SUBJECT": "Offerte für eine goCaution-Mietkautionsbürgschaft",
+                "INTRO": "Vielen Dank für Ihr Interesse an unserer Dienstleistung.<br /><br />Wir haben Ihren Jahresbeitrag anhand des angegebenen Kautionsbetrages berechnet und senden Ihnen eine Offerte für die goCaution® Mietkaution für Privaträume zu.<br /><br />{offer_table}<br /><br />Um Ihre Mietkautionsbürgschaft zu eröffnen stehen Ihnen zwei Möglichkeiten zur Verfügung:<ul><li>Papierlos mittels Online-Formular abschliessen</li><li>Handantrag ausfüllen und per E-Mail oder Post einsenden</li></ul>",
+                "VAR_ONLINE": "Um die Mietkautionsbürgschaft bequem online abzuschliessen, können Sie mit Klick auf den unten stehenden Button zum Online-Registrierungsformular gelangen. Die Registrierung nimmt nur wenige Minuten in Anspruch und es müssen keine Dokumente eingereicht werden. Gehen Sie das Formular Schritt für Schritt durch und stellen Sie sicher, dass die Angaben zum Mietverhältnis korrekt erfasst sind.",
+                "ONLINE_LINK": "<p class=\"text-center\" style=\"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;\"><a style=\"color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cuprsor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;\" href=\"https://www.gocaution.ch/de/privatkunden/online-abschliessen\">Zum Online-Formular gehen</a></p>",
+                "VAR_EMAILPOST": "Um die Mietkautionsbürgschaft auf herkömmlichen Weg abzuschliessen, können Sie uns das angefügte Antragsformular vollständig ausgefüllt und unterschrieben per E-Mail an info@gocaution.ch oder per Post an goCaution AG, Freiburgstrasse 574, 3172 Niederwangen einsenden.<br /><br />Im Anhang finden Sie folgende Unterlagen im PDF-Format:<ul><li>unsere Offerte</li><li>das Antragsformular</li><li>unseren Produktflyer</li></ul>",
+                "PAYMENT_INFO": "Nach erfolgter Anmeldung und Annahme Ihres Antrages senden wir Ihnen die Rechnung zur Zahlung der erste Jahresprämie zu, welche notwendig ist, um Ihre Police zu aktivieren. Nach Zahlungseingang der Prämie senden wir die originale Bürgschaftsurkunde auf dem Postweg an Ihren Vermieter. Mit dieser Urkunde garantieren wir Ihrem Vermieter die geforderte Mietkaution. Sie erhalten ebenfalls eine Kopie der Bürgschaftsurkunde im PDF-Format per E-Mail für Ihre Unterlagen.",
+                "HELP": "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung."
+            },
+            "REGARDS": "Freundliche Grüsse<br />Ihr goCaution-Team",
+            "NEW": "New",
+            "MERGE": "Merge",
+            "DELETE": "Delete"
+        },
+        "invoice": {
+            "status": {
+                "WAITING_FOR_PAYMENT": "Waiting for payment",
+                "PARTIAL_PAID": "Partially paid",
+                "PAID": "Paid",
+                "PASTDUE": "Past due date",
+                "REFUNDED": "Refunded",
+                "PARTIAL_REFUNDED": "Refund in progress",
+                "REMINDER": "Payment reminder",
+                "WARNING1": "Dunning level 1",
+                "WARNING2": "Dunning level 2",
+                "COLLECTION": "Threat of bankruptcy",
+                "ONLINE_PAYMENT_WAITING": "Online payment waiting",
+                "ONLINE_PAYMENT_INVALID": "Invalid online payment",
+                "DEBT_ENFORCEMENT": "Debt enforcement proceedings"
+            },
+            "STATUS_CHANGE_SUCCESS": "Invoice status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, invoice status has not been changed, try again."
+        },
+        "landlord": {
+            "login": {
+                "LOGIN": "Log in",
+                "EMAIL": "Email",
+                "EMAIL_ADDRESS": "Email address",
+                "PASSWORD": "Password",
+                "LANGUAGE": "Language",
+                "LOGIN_REMEMBER_ME": "Remember me",
+                "TITLE": "goCaution® Landlord Login",
+                "LOGIN_TITLE": "goCaution® Landlord Login",
+                "FORGET_PASSWORD": "Forget Password ?",
+                "GET_RESET_LINK": "Get Reset Link",
+                "BACK_TO_LOGIN": "Back to Login?",
+                "SUPPORT": {
+                    "MOBILE": "0800 461 461",
+                    "SUPPORT": "SUPPORT",
+                    "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
+                },
+                "LOGIN_PAGE_DESCRIPTION": {
+                    "TITLE": "Manage rental deposits online",
+                    "LINE_ONE": "With our landlord login, you always have an overview of the rental deposit guarantees of your tenants",
+                    "LINE_TWO": "and can take care of all the necessary steps - from opening to mutations, right up to resolution - digitally.",
+                    "LINE_THREE": "The web-based application can be used immediately, is intuitively understandable",
+                    "LINE_FOUR": "and based on the life cycle of a bail."
+                },
+                "LOGIN_PAGE_REQUEST_POLICY": "Request your access and manage the tenant policies online.",
+                "REQUEST_ACCESS": "Request access",
+                "ERROR_USER_DOESNOT_EXISTS": "User doesnot exists",
+                "ERROR_INVALID_PASSWORD": "Invalid password",
+                "RESET_LINK_SENT": "Password reset Link has been sent on your email, please check",
+                "UNREGISTERED_EMAIL": "Email is not registered with us",
+                "RESET_TOKEN_MISSMATCH": "Password reset token missmatched",
+                "USED_LINK": "Link already used",
+                "INVALID_USER_ID": "Invalid Userid",
+                "PASSWORD_RESET_SUCCESS": "Password updated, to continue please login",
+                "NEW_PASSWORD": "New Password",
+                "CONFIRM_PASSWORD": "Confirm Password",
+                "RESET": "Reset",
+                "EMAIL_REQUIRED": "Please provide a valid email address.",
+                "PASSWORD_REQUIRED": "Please provide a valid password.",
+                "CONFIRM_PASSWORD_REQUIRED": "Please provide a valid confirm password.",
+                "LOGO_IMG": "logo_de.png",
+                "LOGIN_IMG": "vermieter-login-app.png",
+                "FORGOT_TEXT": "Please enter the email address associated with your account. The username will then be sent to this email address.",
+                "POPOVER_DATA": "Please enter the email address associated with your user account. A verification code will be sent to you. When you receive it, you will be able to choose a new password.",
+                "IDENTIFIER": "Identifier",
+                "BACK": "back",
+                "SEND_FORGOT_MAIL": "sending",
+                "RESPONSIVE_LOGO": "logo-w-de.png",
+                "routes": {
+                    "FORGOT_PASSWORD_LINK": "registration/password-forgotten",
+                    "LOGIN": "login",
+                    "DASHBOARD": "dashboard",
+                    "PASSWORD_RESET": "passwordReset",
+                    "PASSWORD_EMAIL": "password_email",
+                    "PASSWORD_UPDATE": "password_update",
+                    "LOGOUT": "logout"
+                },
+                "ERROR": "Error",
+                "404_ERROR": "Sorry! The page you were looking for doesn't exist.",
+                "GO_BACK_HOME": "Go back to home",
+                "FORGOT_PASSWORD_NOTE": "Please enter an e-mail address for the user account. A confirmation code will then be sent to you. As soon as the code is available, a new password for the user account can be set."
+            },
+            "regrequest": {
+                "TITLE": "Request your access and manage your tenant policies online.",
+                "HEADLINE": "We will be happy to arrange an appointment with you by telephone and guide you through the application via screen transmission, regardless of whether or not tenants of yours have already concluded a deposit policy with us.",
+                "SOCIETY": "Company's name",
+                "NAME": "Name",
+                "FIRST_NAME": "First name",
+                "ADDRESS": "Address",
+                "P_CODE_LOCATION": "Postcode and city",
+                "PHONE_MOBILE": "Phone/Mobile",
+                "EMAIL": "Email",
+                "TO_SEND": "Send",
+                "THANK_YOU": "Thank you very much for your inquiry.",
+                "ADMIN_EMAIL_SUBJECT": "Landlord login | Access data requested",
+                "REG_REQUEST_HEADLINE": "A customer has requested a landlord to have access to the landlord-login.",
+                "VALIDATION": {
+                    "NAME": "Please let us know your name.",
+                    "FIRST_NAME": "Invalid Input.",
+                    "ADDRESS": "Please enter your address",
+                    "P_CODE_LOCATION": "Please enter your postcode and city.",
+                    "PHONE_MOBILE": "Invalid Input",
+                    "EMAIL": "Please let us know your email address.",
+                    "EMAIL_VALID": "The e-mail address must be a valid e-mail address."
+                },
+                "routes": {
+                    "REGISTER_REQUEST": "register-request"
+                }
+            }
+        },
+        "login": {
+            "LOGIN": "Log in",
+            "EMAIL": "Email",
+            "EMAIL_ADDRESS": "Email address",
+            "PASSWORD": "Password",
+            "LANGUAGE": "Language",
+            "LOGIN_REMEMBER_ME": "Remember me",
+            "TITLE": "goCaution® CRM",
+            "FORGET_PASSWORD": "Forget Password ?",
+            "GET_RESET_LINK": "Get Reset Link",
+            "BACK_TO_LOGIN": "Back to Login?",
+            "routes": {
+                "LOGOUT": "logout"
+            }
+        },
+        "pagination": {
+            "previous": "« Previous",
+            "next": "Next »"
+        },
+        "passwords": {
+            "password": "Passwords must be at least six characters and match the confirmation.",
+            "reset": "Your password has been reset!",
+            "sent": "We have e-mailed your password reset link!",
+            "token": "This password reset token is invalid.",
+            "user": "We can't find a user with that e-mail address."
+        },
+        "policy": {
+            "status": {
+                "WAITING": "Waiting for processing",
+                "PREDECLARED": "Predeclared",
+                "ACCEPTED": "Accepted",
+                "CANCELLATION_WITH_CLAIM_PENDING": "Claim in progress",
+                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Notice in process",
+                "DISSOLVED_WITH_CLAIMS": "Dissolved with claim",
+                "DISSOLVED_WITHOUT_CLAIMS": "Dissolved without claims",
+                "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
+                "JOINT_GUARANTEE": "Joint surety pending",
+                "REJECTED_CLIENT": "Rejected by client",
+                "PENDING_CANCEL": "Resolution reported"
+            },
+            "STATUS_CHANGE_SUCCESS": "Policy status has been changed successfully.",
+            "STATUS_CHANGE_FAIL": "Unfortunately, policy status has not been changed, try again."
+        },
+        "privatelandlord": {
+            "PRIVATE_LANDLORD": "Private Landlord",
+            "PRIVATE_LANDLORDS": "Private Landlords",
+            "CUSTOMER_DETAILS": "Customer Details",
+            "PRODUCTION": "Production",
+            "PRIVATE_HOUSEOWNER_NUM": "Private Houseowner Num"
+        },
+        "setting": {
+            "SETTING": "Setting",
+            "SETTINGS": "Settings",
+            "INVOICE_NUMBER_FORMAT": "Invoice number format",
+            "POLICY_NUMBER_FORMAT": "Policy number format",
+            "CONTACT_NUMBER_FORMAT": "Contact number format",
+            "INVOICE_DATE_FORMAT": "Invoice date format",
+            "ITEMS_PER_PAGE": "Default List Limit",
+            "DECPOINTS": "Decimal point symbol",
+            "THOUSANDS": "Thousand separator symbol",
+            "DECIMALS": "Number of decimal places",
+            "INVOICE_NUM_DIGITS": "Minimum number of digits for the formatted invoice number",
+            "CONFIG_SUCCESS": "Config updated successfully!",
+            "FROM_NAME_ON_EMAILS": "From (name) on emails",
+            "FROM_EMAIL_ON_EMAILS": "From (email) on emails",
+            "ROBOTS": "Robots",
+            "SEND_MAILS": "Send Mails",
+            "REPLY_ADDRESS": "Reply address",
+            "REPLY_NAME": "Reply name",
+            "PORT": "Port",
+            "SMTP_HOST": "SMTP Host",
+            "SMTP_SECURITY": "SMTP Security",
+            "SMTP_AUTHENTICATION": "SMTP Authentication",
+            "SMTP_USER": "user",
+            "SMTP_PASSWORD": "password",
+            "OPTIONS": "Options"
+        },
+        "user": {
+            "EDIT_ACCOUNT": "Edit profile"
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -690,625 +1172,12 @@ export default {
                 }
             },
             "attributes": []
-        },
-        "passwords": {
-            "password": "Passwords must be at least six characters and match the confirmation.",
-            "reset": "Your password has been reset!",
-            "sent": "We have e-mailed your password reset link!",
-            "token": "This password reset token is invalid.",
-            "user": "We can't find a user with that e-mail address."
-        },
-        "auth": {
-            "failed": "These credentials do not match our records.",
-            "throttle": "Too many login attempts. Please try again in {seconds} seconds."
-        },
-        "user": {
-            "EDIT_ACCOUNT": "Edit profile"
-        },
-        "setting": {
-            "SETTING": "Setting",
-            "SETTINGS": "Settings",
-            "INVOICE_NUMBER_FORMAT": "Invoice number format",
-            "POLICY_NUMBER_FORMAT": "Policy number format",
-            "CONTACT_NUMBER_FORMAT": "Contact number format",
-            "INVOICE_DATE_FORMAT": "Invoice date format",
-            "ITEMS_PER_PAGE": "Default List Limit",
-            "DECPOINTS": "Decimal point symbol",
-            "THOUSANDS": "Thousand separator symbol",
-            "DECIMALS": "Number of decimal places",
-            "INVOICE_NUM_DIGITS": "Minimum number of digits for the formatted invoice number",
-            "CONFIG_SUCCESS": "Config updated successfully!",
-            "FROM_NAME_ON_EMAILS": "From (name) on emails",
-            "FROM_EMAIL_ON_EMAILS": "From (email) on emails",
-            "ROBOTS": "Robots",
-            "SEND_MAILS": "Send Mails",
-            "REPLY_ADDRESS": "Reply address",
-            "REPLY_NAME": "Reply name",
-            "PORT": "Port",
-            "SMTP_HOST": "SMTP Host",
-            "SMTP_SECURITY": "SMTP Security",
-            "SMTP_AUTHENTICATION": "SMTP Authentication",
-            "SMTP_USER": "user",
-            "SMTP_PASSWORD": "password",
-            "OPTIONS": "Options"
-        },
-        "contact": {
-            "CONTACTS": "Contacts",
-            "CONTACT": "Contact",
-            "ID": "Contact Id",
-            "TOTAL_INVOICES": "Invoices",
-            "TOTAL_POLICIES": "Policies",
-            "LINKED_TO_USER": "User",
-            "RC_POLICY_TOOLTIP": "Is interested in a PH offer.",
-            "CALL_LEAD_SOURCE_TOOLTIP": "Call center",
-            "SEND_OFFER_BY_POST_TOOLTIP": "Offer by post",
-            "ADD_NEW_POLICY": "New Policy",
-            "leadsource": {
-                "ONLINE_REGISTRATION": "Online Registrierung",
-                "AFFILIATE_MARKETNG": "Affiliate Marketing",
-                "PARTNER_MANAGEMENT": "Partner Management",
-                "PARTNERLOGIN": "Partner-Login",
-                "OTHER": "Other",
-                "CALLCENTRE": "Callcenter VG",
-                "PDF_CLS": "CLS PDF Antrag",
-                "PDF_MKS": "MKS PDF Antrag",
-                "PDF_GO": "GO PDF Antrag ",
-                "PDF_OFFER": "GO Online-Offerte",
-                "PDF_PRECONFIRMATION": "GO Online-Vorabbestätigung",
-                "MKS_GOCAUTION": "MKS GO Online-Offere",
-                "MKS": "Mietkautionschweiz.ch",
-                "CLS": "CautionLoyerSuisse.ch",
-                "CA": "Cauzione-Affitto.ch"
-            },
-            "pdf": {
-                "PRECONFIRMATION_IMG": "Vorabbestätigung Online",
-                "REJECTED": "Rejected PDF",
-                "OFFER_PRINT_LETTER": "Offerte Begleitschreiben"
-            },
-            "status": {
-                "NEW": "New",
-                "OFFER": "Offer",
-                "IN_CLARIFICATION": "In Clarification",
-                "PENDING": "Pending",
-                "ACCEPTED": "Accepted",
-                "PRE_CONFIRMATION_PENDING": "Pre-confirmation pending",
-                "PRE_CONFIRMATION_SENT": "Pre-confirmation sent",
-                "CANCELLED": "Cancelled",
-                "REJECTED": "Rejected",
-                "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
-                "RESOLVED": "Resolved",
-                "POLICY_WAITING": "Waiting for processing"
-            },
-            "INSURE_POLICY_BELONGS_LICHTENSTEIN_CONTACTSLIST": "{POLICY_NUMS} gehören zu Lichtenstein",
-            "company_type": {
-                "PUBLIC_LIMITED_COMPANY": "PUBLIC LIMITED COMPANY",
-                "LIMITED_LIABILITY_COMPANY": "limited liability company",
-                "SIMPLE_PARTNERSHIP": "Einfache Gesellschaft",
-                "SOLE_PROPRIETORSHIP": "sole proprietorship",
-                "COOPERATIVE": "cooperative",
-                "COLLECTIVE_SOCIETY": "collective society",
-                "LIMITED_PARTNERSHIP": "limited partnership",
-                "STOCK_COMPANY": "Limited partnership",
-                "INSTITUTE_OF_PUBLIC_LAW": "Institute of Public Law",
-                "CLUB": "club",
-                "ENDOWMENT": "endowment"
-            },
-            "company_branch": {
-                "CAR_TRAFFIC": "Car & Traffic",
-                "BUILD_RENOVATE": "Building & Renovating",
-                "AUTHORITIES_ASSOCIATIONS": "Authorities and associations",
-                "EDUCATION_SCIENCE": "Education and Science",
-                "COMPUTERS_ELECTRONICS": "Computers & Electronics",
-                "SERVICE": "service",
-                "LEISURE_TRAVEL": "Leisure & Travel",
-                "FINANCIAL_SERVICE": "financial service",
-                "HEALTH_WELLNESS": "Health and Wellness",
-                "WHOLESALE_RETAIL": "Wholesale & Retail",
-                "REAL_ESTATE": "real estate",
-                "HOTEL_GASTRONOMY": "Hotel & Gastronomy",
-                "LIVING_FURNISHING": "Living & Furnishing",
-                "OTHER": "Other"
-            },
-            "filter": {
-                "MORE_THAN_ONE_POLICY": "Contacts / Quotes",
-                "SALUTATION": "salutation",
-                "BIRTH_DATE": "Birthdate",
-                "LEAD_SOURCES": "Lead source",
-                "RC_POLICY": "PH offer",
-                "PROMO": "Promo",
-                "DUPLICATE_CONTACT": "Duplicate",
-                "DUPLICATE_CONTACT_EMAIL": "Duplicate email",
-                "NOT_CORRECT_ADDRESS": "Address not correct",
-                "CONTACT_POLICY_1": "With 1 policy",
-                "CONTACT_POLICY_2": "With 2 policy",
-                "CONTACT_POLICY_3": "With 3 policy",
-                "CONTACT_POLICY_4_PLUS": "With 4+ policy",
-                "ACCEPTED_CONTACTS_WITH_NO_POLICY": "Acc. contacts with 0 policy",
-                "ACCEPTED_CONTACTS_WITH_NO_LINKED_USER": "Check login detail"
-            },
-            "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
-            "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again.",
-            "offer": {
-                "FILE_NAME": "offer",
-                "CREATE_SUCCESS": "Offer created successfully!",
-                "CREATE_FAILURE": "Offer creation failed!",
-                "SEND_SUCCESS": "Offerte erfolgreich per E-Mail gesendet",
-                "SEND_FAILURE": "Offerte konnte nicht gesendet werden, da keine E-Mail Adresse erfasst wurde"
-            }
-        },
-        "pagination": {
-            "previous": "« Previous",
-            "next": "Next »"
-        },
-        "customer": {
-            "login": {
-                "LOGIN": "Anmelden",
-                "USERNAME": "Benutzername",
-                "PASSWORD": "Passwort",
-                "LANGUAGE": "Sprache",
-                "DE": "Deutsch",
-                "FR": "Français",
-                "IT": "Italienisch",
-                "EN": "English",
-                "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
-                "TITLE": "goCaution® Vermieter-Login",
-                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "IHRE MIETKAUTION IMMER IN REICHWEITE",
-                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH_DESCRIPTION": "Die Mietkaution bequem und sicher online verwalten – mit dem goCaution® Kunden-Login behalten Sie den Überblick. Der geschützte Bereich ermöglicht Ihnen einfachen, sofortigen und absolut sicheren Zugang zu allen Daten und Dokumenten in Verbindung mit Ihrer Mietkautionspolice.",
-                "AT_A_GLANCE": "Auf einen Blick",
-                "AT_A_GLANCE_DESCRIPTION": "Behalten Sie den Überblick über Ihre Prämienrechnungen, Policen und Kautionszertifikate.",
-                "REPORT_MOVE": "Umzug melden",
-                "REPORT_MOVE_DESCRIPTION": "Planen Sie einen Umzug? Eröffnen Sie die Mietkaution Ihrer neuen Wohnung in wenigen Schritten bequem online.",
-                "FAST_SUPPORT": "Schneller Support",
-                "FAST_SUPPORT_DESCRIPTION": "Übermitteln Sie uns Ihre Anfragen schnell und einfach über das Kunden-Login mit und Sie erhalten rasch eine Antwort.",
-                "DO_YOU_NEED_HELP": "BRAUCHEN SIE HILFE?",
-                "DO_YOU_NEED_HELP_DESCRIPTION": "Haben Sie Fragen zum goCaution Kunden-Login oder benötigen Sie Unterstützung bei der Anmeldung beziehungsweise Registrierung?",
-                "LOGIN_TITLE": "goCaution® Vermieter-Login",
-                "FORGET_PASSWORD": "Passwort vergessen?",
-                "GET_RESET_LINK": "Link zurücksetzen",
-                "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
-                "SUPPORT": "SUPPORT",
-                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
-                "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
-                "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-                "LOGIN_PAGE_DESCRIPTION_LINE_TWO": " und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
-                "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
-                "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
-                "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
-                "REQUEST_ACCESS": "Zugang anfordern",
-                "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
-                "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
-                "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
-                "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
-                "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
-                "USED_LINK": "Link bereits verwendet",
-                "INVALID_USER_ID": "Ungültige Benutzer-Id",
-                "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
-                "NEW_PASSWORD": "Neues Kennwort",
-                "CONFIRM_PASSWORD": "Passwort bestätigen",
-                "RESET": "zurücksetzen",
-                "USERNAME_REQUIRED": "Bitte geben Sie einen gültigen Benutzernamen an.",
-                "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
-                "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
-                "CONTACT": "0800 461 461",
-                "LOGO_IMG": "logo_de.png",
-                "LOGIN_IMG": "vermieter-login-app.png",
-                "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
-                "IDENTIFIER": "E-Mail-Adresse",
-                "BACK": "Zurück",
-                "SEND_FORGOT_MAIL": "Senden",
-                "RESPONSIVE_LOGO": "logo-w-de.png",
-                "routes": {
-                    "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
-                    "LOGIN": "anmelden",
-                    "DASHBOARD": "instrumentenbord",
-                    "PASSWORD_RESET": "passwortRucksetzen",
-                    "PASSWORD_EMAIL": "passwort_email",
-                    "PASSWORD_UPDATE": "passwort_aktualisierung",
-                    "LOGOUT": "abmeldung"
-                }
-            }
-        },
-        "policy": {
-            "status": {
-                "WAITING": "Waiting for processing",
-                "PREDECLARED": "Predeclared",
-                "ACCEPTED": "Accepted",
-                "CANCELLATION_WITH_CLAIM_PENDING": "Claim in progress",
-                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Notice in process",
-                "DISSOLVED_WITH_CLAIMS": "Dissolved with claim",
-                "DISSOLVED_WITHOUT_CLAIMS": "Dissolved without claims",
-                "DISSOLVED_IMMEDIATELY": "Dissolved after Inscription",
-                "JOINT_GUARANTEE": "Joint surety pending",
-                "REJECTED_CLIENT": "Rejected by client",
-                "PENDING_CANCEL": "Resolution reported"
-            },
-            "STATUS_CHANGE_SUCCESS": "Policy status has been changed successfully.",
-            "STATUS_CHANGE_FAIL": "Unfortunately, policy status has not been changed, try again."
-        },
-        "invoice": {
-            "status": {
-                "WAITING_FOR_PAYMENT": "Waiting for payment",
-                "PARTIAL_PAID": "Partially paid",
-                "PAID": "Paid",
-                "PASTDUE": "Past due date",
-                "REFUNDED": "Refunded",
-                "PARTIAL_REFUNDED": "Refund in progress",
-                "REMINDER": "Payment reminder",
-                "WARNING1": "Dunning level 1",
-                "WARNING2": "Dunning level 2",
-                "COLLECTION": "Threat of bankruptcy",
-                "ONLINE_PAYMENT_WAITING": "Online payment waiting",
-                "ONLINE_PAYMENT_INVALID": "Invalid online payment",
-                "DEBT_ENFORCEMENT": "Debt enforcement proceedings"
-            },
-            "STATUS_CHANGE_SUCCESS": "Invoice status has been changed successfully.",
-            "STATUS_CHANGE_FAIL": "Unfortunately, invoice status has not been changed, try again."
-        },
-        "landlord": {
-            "regrequest": {
-                "TITLE": "Request your access and manage your tenant policies online.",
-                "HEADLINE": "We will be happy to arrange an appointment with you by telephone and guide you through the application via screen transmission, regardless of whether or not tenants of yours have already concluded a deposit policy with us.",
-                "SOCIETY": "Company's name",
-                "NAME": "Name",
-                "FIRST_NAME": "First name",
-                "ADDRESS": "Address",
-                "P_CODE_LOCATION": "Postcode and city",
-                "PHONE_MOBILE": "Phone/Mobile",
-                "EMAIL": "Email",
-                "TO_SEND": "Send",
-                "THANK_YOU": "Thank you very much for your inquiry.",
-                "ADMIN_EMAIL_SUBJECT": "Landlord login | Access data requested",
-                "REG_REQUEST_HEADLINE": "A customer has requested a landlord to have access to the landlord-login.",
-                "VALIDATION": {
-                    "NAME": "Please let us know your name.",
-                    "FIRST_NAME": "Invalid Input.",
-                    "ADDRESS": "Please enter your address",
-                    "P_CODE_LOCATION": "Please enter your postcode and city.",
-                    "PHONE_MOBILE": "Invalid Input",
-                    "EMAIL": "Please let us know your email address.",
-                    "EMAIL_VALID": "The e-mail address must be a valid e-mail address."
-                },
-                "routes": {
-                    "REGISTER_REQUEST": "register-request"
-                }
-            },
-            "login": {
-                "LOGIN": "Log in",
-                "EMAIL": "Email",
-                "EMAIL_ADDRESS": "Email address",
-                "PASSWORD": "Password",
-                "LANGUAGE": "Language",
-                "LOGIN_REMEMBER_ME": "Remember me",
-                "TITLE": "goCaution® Landlord Login",
-                "LOGIN_TITLE": "goCaution® Landlord Login",
-                "FORGET_PASSWORD": "Forget Password ?",
-                "GET_RESET_LINK": "Get Reset Link",
-                "BACK_TO_LOGIN": "Back to Login?",
-                "SUPPORT": {
-                    "MOBILE": "0800 461 461",
-                    "SUPPORT": "SUPPORT",
-                    "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
-                },
-                "LOGIN_PAGE_DESCRIPTION": {
-                    "TITLE": "Manage rental deposits online",
-                    "LINE_ONE": "With our landlord login, you always have an overview of the rental deposit guarantees of your tenants",
-                    "LINE_TWO": "and can take care of all the necessary steps - from opening to mutations, right up to resolution - digitally.",
-                    "LINE_THREE": "The web-based application can be used immediately, is intuitively understandable",
-                    "LINE_FOUR": "and based on the life cycle of a bail."
-                },
-                "LOGIN_PAGE_REQUEST_POLICY": "Request your access and manage the tenant policies online.",
-                "REQUEST_ACCESS": "Request access",
-                "ERROR_USER_DOESNOT_EXISTS": "User doesnot exists",
-                "ERROR_INVALID_PASSWORD": "Invalid password",
-                "RESET_LINK_SENT": "Password reset Link has been sent on your email, please check",
-                "UNREGISTERED_EMAIL": "Email is not registered with us",
-                "RESET_TOKEN_MISSMATCH": "Password reset token missmatched",
-                "USED_LINK": "Link already used",
-                "INVALID_USER_ID": "Invalid Userid",
-                "PASSWORD_RESET_SUCCESS": "Password updated, to continue please login",
-                "NEW_PASSWORD": "New Password",
-                "CONFIRM_PASSWORD": "Confirm Password",
-                "RESET": "Reset",
-                "EMAIL_REQUIRED": "Please provide a valid email address.",
-                "PASSWORD_REQUIRED": "Please provide a valid password.",
-                "CONFIRM_PASSWORD_REQUIRED": "Please provide a valid confirm password.",
-                "LOGO_IMG": "logo_de.png",
-                "LOGIN_IMG": "vermieter-login-app.png",
-                "FORGOT_TEXT": "Please enter the email address associated with your account. The username will then be sent to this email address.",
-                "POPOVER_DATA": "Please enter the email address associated with your user account. A verification code will be sent to you. When you receive it, you will be able to choose a new password.",
-                "IDENTIFIER": "Identifier",
-                "BACK": "back",
-                "SEND_FORGOT_MAIL": "sending",
-                "RESPONSIVE_LOGO": "logo-w-de.png",
-                "routes": {
-                    "FORGOT_PASSWORD_LINK": "registration/password-forgotten",
-                    "LOGIN": "login",
-                    "DASHBOARD": "dashboard",
-                    "PASSWORD_RESET": "passwordReset",
-                    "PASSWORD_EMAIL": "password_email",
-                    "PASSWORD_UPDATE": "password_update",
-                    "LOGOUT": "logout"
-                },
-                "ERROR": "Error",
-                "404_ERROR": "Sorry! The page you were looking for doesn't exist.",
-                "GO_BACK_HOME": "Go back to home",
-                "FORGOT_PASSWORD_NOTE": "Please enter an e-mail address for the user account. A confirmation code will then be sent to you. As soon as the code is available, a new password for the user account can be set."
-            }
-        },
-        "general": {
-            "CRM": "CRM",
-            "NAME": "Name",
-            "ADDRESS": "Address",
-            "STATUS": "Status",
-            "MR": "Mr",
-            "MRS": "Mrs",
-            "COMPANY": "Company",
-            "EMAIL": "E-mail",
-            "CRM_TITLE": "goCaution AG",
-            "SUBMIT": "Submit",
-            "CLEAR": "Clear",
-            "RESET": "Reset",
-            "EDIT": "Edit",
-            "POLICIES": "Polices",
-            "SUCCESS": "Success",
-            "ERROR": "Error",
-            "SAVE_SUCCESSFULLY": "Data saved successfully",
-            "INVOICES": "Invoices",
-            "language": {
-                "DE": "Deutsch",
-                "FR": "Französisch",
-                "IT": "Italienisch",
-                "EN": "English"
-            },
-            "CONTACT_CW": "CW",
-            "ANDERE": "Andere",
-            "CHF": "CHF",
-            "DATA_LOADING": "Please wait while, we're loading data...",
-            "YES": "Yes",
-            "NO": "No",
-            "AUTH_LOGIN_SUCCESS": "Logged in Successfully.",
-            "AUTH_LOGIN_FAIL": "Logged in failed.",
-            "CONFIG_SUCCESS": "Config updated successfully!",
-            "filter": {
-                "TYPE_TO_SEARCH": "Type to search...",
-                "SELECT_STATUS": "Select status",
-                "SELECT_PRODUCTTYPE": "Select type",
-                "CREATE_FROM": "Created from",
-                "CREATE_TO": "Created to",
-                "LANGUAGE": "Language",
-                "SEARCH": "Search",
-                "RESET": "Reset",
-                "NOT_SELECTED_OPTION": "Not selected"
-            },
-            "ROWS": "Rows",
-            "PDF_MR": "Dear Sir {nachname}",
-            "PDF_MRS": "Dear Madam {nachname}",
-            "PDF_COMPANY": "Dear Ladies and Gentlemen",
-            "UNAUTHORIZED": "User does not have the right permissions.",
-            "NO_MORE_ENTRIES": "No more entries to show...",
-            "role": {
-                "CREATE_SUCCESS": "Role has been created!",
-                "CREATE_FAILURE": "Unable to create role!",
-                "UPDATE_SUCCESS": "Role has been updated!",
-                "UPDATE_FAILURE": "Unable to update role!",
-                "DELETE_SUCCESS": "Role has been deleted!",
-                "DELETE_FAILURE": "Unable to delete role!",
-                "ASSIGNMENT_SUCCESS": "Role has been assigned!",
-                "ASSIGNMENT_FAILURE": "Unable to assign role!"
-            },
-            "permission": {
-                "CREATE_SUCCESS": "Permission has been created!",
-                "CREATE_FAILURE": "Unable to create permission!",
-                "UPDATE_SUCCESS": "Permission has been updated!",
-                "UPDATE_FAILURE": "Unable to update permission!",
-                "DELETE_SUCCESS": "Permission has been deleted!",
-                "DELETE_FAILURE": "Unable to delete permission!",
-                "ASSIGNMENT_SUCCESS": "Permission has been assigned!",
-                "ASSIGNMENT_FAILURE": "Unable to assign permission!"
-            },
-            "user": {
-                "CREATE_SUCCESS": "User has been created!",
-                "CREATE_FAILURE": "unable to create user!",
-                "UPDATE_SUCCESS": "User has been updated!",
-                "UPDATE_FAILURE": "Unable to update user!"
-            },
-            "template": {
-                "CREATE_SUCCESS": "Template has been created!",
-                "CREATE_FAILURE": "unable to create template!",
-                "UPDATE_SUCCESS": "Template has been updated!",
-                "UPDATE_FAILURE": "Unable to update template!"
-            },
-            "base_email": {
-                "LOGO": "<a href=\"https://login.gocaution.ch/de\"><img src=\"https://www.gocaution.ch/images/email/logo_de.png\" alt=\"logo gocaution\" width=\"170\" height=\"53\" border=\"0\"></a>",
-                "COPYRIGHT": "Copyright © 2019 goCaution AG. Alle Rechte vorbehalten.",
-                "COMPANY": "<b>goCaution AG</b>",
-                "COMPANY_ADDRESS": "Freiburgstrasse 574",
-                "COMPANY_ZIP_CITY": "3172 Niederwangen",
-                "HOTLINE": "Kostenlose Hotline: 0800 461 461",
-                "MAIL": "E-Mail: <a href=\"mailto:info@gocaution.ch\" style=\"color:#ffffff; text-decoration{none};\">info@gocaution.ch</a>",
-                "MAILTEXT5": "Mo. bis Fr. von 08{30} bis 17{30} Uhr",
-                "OFFER_EMAIL_PREVIEW_TEXT": "<span style='display{none};visibility{hidden};mso-hide{all};font-size{1px};color:#ffffff;line-height{1px};max-height{0px};max-width{0px};opacity{0};overflow{hidden};'>Anbei erhalten Sie die angeforderte Offerte für eine Mietkautionsbürgschaft von goCaution.</span>"
-            },
-            "offer_email": {
-                "SUBJECT": "Offerte für eine goCaution-Mietkautionsbürgschaft",
-                "INTRO": "Vielen Dank für Ihr Interesse an unserer Dienstleistung.<br /><br />Wir haben Ihren Jahresbeitrag anhand des angegebenen Kautionsbetrages berechnet und senden Ihnen eine Offerte für die goCaution® Mietkaution für Privaträume zu.<br /><br />{offer_table}<br /><br />Um Ihre Mietkautionsbürgschaft zu eröffnen stehen Ihnen zwei Möglichkeiten zur Verfügung:<ul><li>Papierlos mittels Online-Formular abschliessen</li><li>Handantrag ausfüllen und per E-Mail oder Post einsenden</li></ul>",
-                "VAR_ONLINE": "Um die Mietkautionsbürgschaft bequem online abzuschliessen, können Sie mit Klick auf den unten stehenden Button zum Online-Registrierungsformular gelangen. Die Registrierung nimmt nur wenige Minuten in Anspruch und es müssen keine Dokumente eingereicht werden. Gehen Sie das Formular Schritt für Schritt durch und stellen Sie sicher, dass die Angaben zum Mietverhältnis korrekt erfasst sind.",
-                "ONLINE_LINK": "<p class=\"text-center\" style=\"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;\"><a style=\"color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;\" href=\"https://www.gocaution.ch/de/privatkunden/online-abschliessen\">Zum Online-Formular gehen</a></p>",
-                "VAR_EMAILPOST": "Um die Mietkautionsbürgschaft auf herkömmlichen Weg abzuschliessen, können Sie uns das angefügte Antragsformular vollständig ausgefüllt und unterschrieben per E-Mail an info@gocaution.ch oder per Post an goCaution AG, Freiburgstrasse 574, 3172 Niederwangen einsenden.<br /><br />Im Anhang finden Sie folgende Unterlagen im PDF-Format:<ul><li>unsere Offerte</li><li>das Antragsformular</li><li>unseren Produktflyer</li></ul>",
-                "PAYMENT_INFO": "Nach erfolgter Anmeldung und Annahme Ihres Antrages senden wir Ihnen die Rechnung zur Zahlung der erste Jahresprämie zu, welche notwendig ist, um Ihre Police zu aktivieren. Nach Zahlungseingang der Prämie senden wir die originale Bürgschaftsurkunde auf dem Postweg an Ihren Vermieter. Mit dieser Urkunde garantieren wir Ihrem Vermieter die geforderte Mietkaution. Sie erhalten ebenfalls eine Kopie der Bürgschaftsurkunde im PDF-Format per E-Mail für Ihre Unterlagen.",
-                "HELP": "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung."
-            },
-            "REGARDS": "Freundliche Grüsse<br />Ihr goCaution-Team",
-            "NEW": "New",
-            "MERGE": "Merge",
-            "DELETE": "Delete"
-        },
-        "login": {
-            "LOGIN": "Log in",
-            "EMAIL": "Email",
-            "EMAIL_ADDRESS": "Email address",
-            "PASSWORD": "Password",
-            "LANGUAGE": "Language",
-            "LOGIN_REMEMBER_ME": "Remember me",
-            "TITLE": "goCaution® CRM",
-            "FORGET_PASSWORD": "Forget Password ?",
-            "GET_RESET_LINK": "Get Reset Link",
-            "BACK_TO_LOGIN": "Back to Login?",
-            "routes": {
-                "LOGOUT": "logout"
-            }
         }
     },
     "fr": {
-        "validation": {
-            "accepted": "The {attribute} must be accepted.",
-            "active_url": "The {attribute} is not a valid URL.",
-            "after": "The {attribute} must be a date after {date}.",
-            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
-            "alpha": "The {attribute} may only contain letters.",
-            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
-            "alpha_num": "The {attribute} may only contain letters and numbers.",
-            "array": "The {attribute} must be an array.",
-            "before": "The {attribute} must be a date before {date}.",
-            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
-            "between": {
-                "numeric": "The {attribute} must be between {min} and {max}.",
-                "file": "The {attribute} must be between {min} and {max} kilobytes.",
-                "string": "The {attribute} must be between {min} and {max} characters.",
-                "array": "The {attribute} must have between {min} and {max} items."
-            },
-            "boolean": "The {attribute} field must be true or false.",
-            "confirmed": "La confirmation du mot de passe ne correspond pas.",
-            "date": "The {attribute} is not a valid date.",
-            "date_format": "The {attribute} does not match the format {format}.",
-            "different": "The {attribute} and {other} must be different.",
-            "digits": "The {attribute} must be {digits} digits.",
-            "digits_between": "The {attribute} must be between {min} and {max} digits.",
-            "dimensions": "The {attribute} has invalid image dimensions.",
-            "distinct": "The {attribute} field has a duplicate value.",
-            "email": "L'attribut {attribute} être une adresse email valide.",
-            "exists": "The selected {attribute} is invalid.",
-            "file": "The {attribute} must be a file.",
-            "filled": "The {attribute} field must have a value.",
-            "gt": {
-                "numeric": "The {attribute} must be greater than {value}.",
-                "file": "The {attribute} must be greater than {value} kilobytes.",
-                "string": "The {attribute} must be greater than {value} characters.",
-                "array": "The {attribute} must have more than {value} items."
-            },
-            "gte": {
-                "numeric": "The {attribute} must be greater than or equal {value}.",
-                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
-                "string": "The {attribute} must be greater than or equal {value} characters.",
-                "array": "The {attribute} must have {value} items or more."
-            },
-            "image": "The {attribute} must be an image.",
-            "in": "The selected {attribute} is invalid.",
-            "in_array": "The {attribute} field does not exist in {other}.",
-            "integer": "The {attribute} must be an integer.",
-            "ip": "The {attribute} must be a valid IP address.",
-            "ipv4": "The {attribute} must be a valid IPv4 address.",
-            "ipv6": "The {attribute} must be a valid IPv6 address.",
-            "json": "The {attribute} must be a valid JSON string.",
-            "lt": {
-                "numeric": "The {attribute} must be less than {value}.",
-                "file": "The {attribute} must be less than {value} kilobytes.",
-                "string": "The {attribute} must be less than {value} characters.",
-                "array": "The {attribute} must have less than {value} items."
-            },
-            "lte": {
-                "numeric": "The {attribute} must be less than or equal {value}.",
-                "file": "The {attribute} must be less than or equal {value} kilobytes.",
-                "string": "The {attribute} must be less than or equal {value} characters.",
-                "array": "The {attribute} must not have more than {value} items."
-            },
-            "max": {
-                "numeric": "The {attribute} may not be greater than {max}.",
-                "file": "The {attribute} may not be greater than {max} kilobytes.",
-                "string": "The {attribute} may not be greater than {max} characters.",
-                "array": "The {attribute} may not have more than {max} items."
-            },
-            "mimes": "The {attribute} must be a file of type: {values}.",
-            "mimetypes": "The {attribute} must be a file of type: {values}.",
-            "min": {
-                "numeric": "The {attribute} must be at least {min}.",
-                "file": "The {attribute} must be at least {min} kilobytes.",
-                "string": "The {attribute} must be at least {min} characters.",
-                "array": "The {attribute} must have at least {min} items."
-            },
-            "not_in": "The selected {attribute} is invalid.",
-            "not_regex": "The {attribute} format is invalid.",
-            "numeric": "The {attribute} must be a number.",
-            "present": "The {attribute} field must be present.",
-            "regex": "The {attribute} format is invalid.",
-            "invalid": "L'{attribute} n'est pas valide.",
-            "required": "L'{attribute} est requis.",
-            "required_if": "The {attribute} field is required when {other} is {value}.",
-            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
-            "required_with": "The {attribute} field is required when {values} is present.",
-            "required_with_all": "The {attribute} field is required when {values} is present.",
-            "required_without": "The {attribute} field is required when {values} is not present.",
-            "required_without_all": "The {attribute} field is required when none of {values} are present.",
-            "same": "The {attribute} and {other} must match.",
-            "size": {
-                "numeric": "The {attribute} must be {size}.",
-                "file": "The {attribute} must be {size} kilobytes.",
-                "string": "The {attribute} must be {size} characters.",
-                "array": "The {attribute} must contain {size} items."
-            },
-            "string": "The {attribute} must be a string.",
-            "timezone": "The {attribute} must be a valid zone.",
-            "unique": "The {attribute} has already been taken.",
-            "uploaded": "The {attribute} failed to upload.",
-            "url": "The {attribute} format is invalid.",
-            "custom": {
-                "attribute-name": {
-                    "rule-name": "custom-message"
-                }
-            },
-            "attributes": []
-        },
-        "passwords": {
-            "password": "Passwords must be at least six characters and match the confirmation.",
-            "reset": "Your password has been reset!",
-            "sent": "Nous avons envoyé votre lien de réinitialisation de mot de passe par e-mail!",
-            "token": "This password reset token is invalid.",
-            "user": "Nous ne pouvons pas trouver un utilisateur avec cette adresse e-mail."
-        },
         "auth": {
             "failed": "Ces informations d'identification ne correspondent pas à nos enregistrements.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
-        },
-        "user": {
-            "EDIT_ACCOUNT": "Modifier le profil"
-        },
-        "setting": {
-            "SETTING": "Réglage de",
-            "SETTINGS": "Réglages",
-            "INVOICE_NUMBER_FORMAT": "Format du numéro de facture",
-            "POLICY_NUMBER_FORMAT": "Format du numéro de citation",
-            "CONTACT_NUMBER_FORMAT": "Format du numéro de contact",
-            "INVOICE_DATE_FORMAT": "Format de la date de facturation",
-            "ITEMS_PER_PAGE": "Longueur des listes",
-            "DECPOINTS": "Symbole de la virgule décimale",
-            "THOUSANDS": "Symbole du séparateur de milliers",
-            "DECIMALS": "Nombre de décimales",
-            "INVOICE_NUM_DIGITS": "Nombre minimum de chiffres pour le numéro de facture formaté",
-            "CONFIG_SUCCESS": "Config mis à jour avec succès !",
-            "FROM_NAME_ON_EMAILS": "De (nom) sur les courriels",
-            "FROM_EMAIL_ON_EMAILS": "De (courriel) sur les courriels",
-            "ROBOTS": "Robots",
-            "SEND_MAILS": "envoyer des mails",
-            "REPLY_ADDRESS": "Adresse de réponse",
-            "REPLY_NAME": "Nom de la réponse",
-            "PORT": "Port",
-            "SMTP_HOST": "SMTP hôte",
-            "SMTP_SECURITY": "Sécurité SMTP",
-            "SMTP_AUTHENTICATION": "Authentification SMTP",
-            "SMTP_USER": "Utilisateur",
-            "SMTP_PASSWORD": "Mot de passe",
-            "OPTIONS": "Possibilités"
         },
         "contact": {
             "CONTACTS": "Clients",
@@ -1414,10 +1283,6 @@ export default {
                 "SEND_FAILURE": "Offerte konnte nicht gesendet werden, da keine E-Mail Adresse erfasst wurde"
             }
         },
-        "pagination": {
-            "previous": "« Previous",
-            "next": "Next »"
-        },
         "customer": {
             "login": {
                 "LOGIN": "Anmelden",
@@ -1484,146 +1349,6 @@ export default {
                     "PASSWORD_EMAIL": "passwort_email",
                     "PASSWORD_UPDATE": "passwort_aktualisierung",
                     "LOGOUT": "abmeldung"
-                }
-            }
-        },
-        "policy": {
-            "status": {
-                "WAITING": "En validation",
-                "PREDECLARED": "Pre-police",
-                "ACCEPTED": "Actif",
-                "CANCELLATION_WITH_CLAIM_PENDING": "Réclamation en cours",
-                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Résiliation en cours",
-                "DISSOLVED_WITH_CLAIMS": "Dissous avec sinistre",
-                "DISSOLVED_WITHOUT_CLAIMS": "Dissous sans sinistre",
-                "DISSOLVED_IMMEDIATELY": "Dissous après l'achèvement",
-                "JOINT_GUARANTEE": "Attente cautionnement solidaire",
-                "REJECTED_CLIENT": "Annulées par les clients",
-                "PENDING_CANCEL": "Résolution/Mouvement rapportée"
-            },
-            "STATUS_CHANGE_SUCCESS": "L'état de la police a été modifié avec succès.",
-            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la politique n'a pas été modifié, réessayez."
-        },
-        "invoice": {
-            "status": {
-                "WAITING_FOR_PAYMENT": "En attente",
-                "PARTIAL_PAID": "Partiellement payé",
-                "PAID": "Payé",
-                "PASTDUE": "Rappel",
-                "REFUNDED": "Remboursé",
-                "PARTIAL_REFUNDED": "Partially refunded",
-                "REMINDER": "rappel de paiement",
-                "WARNING1": "Niveau de relance 1",
-                "WARNING2": "Niveau de relance 2",
-                "COLLECTION": "menace de faillite",
-                "ONLINE_PAYMENT_WAITING": "Paiement en ligne en attente",
-                "ONLINE_PAYMENT_INVALID": "Paiement en ligne non valable",
-                "DEBT_ENFORCEMENT": "procédures d'exécution forcée"
-            },
-            "STATUS_CHANGE_SUCCESS": "Le statut de facture a été modifié avec succès.",
-            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la facture n'a pas été modifié, essayez à nouveau."
-        },
-        "landlord": {
-            "regrequest": {
-                "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
-                "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
-                "SOCIETY": "Société",
-                "NAME": "Nom",
-                "FIRST_NAME": "Prénom",
-                "ADDRESS": "Adresse",
-                "P_CODE_LOCATION": "NPA et Lieu",
-                "PHONE_MOBILE": "Téléphone / Mobile",
-                "EMAIL": "E-Mail",
-                "TO_SEND": "envoyer",
-                "THANK_YOU": "Vielen Dank für Ihre Anfrage.",
-                "ADMIN_EMAIL_SUBJECT": "Connexion propriétaire | Données d'accès demandées",
-                "REG_REQUEST_HEADLINE": "Un client a demandé à un propriétaire d'avoir accès à son identifiant propriétaire.",
-                "VALIDATION": {
-                    "NAME": "Please let us know your name.",
-                    "FIRST_NAME": "Invalid Input.",
-                    "ADDRESS": "Bitten geben Sie Ihre Adresse ein",
-                    "P_CODE_LOCATION": "Bitten geben Sie Ihre PLZ und den Ort ein.",
-                    "PHONE_MOBILE": "Invalid Input",
-                    "EMAIL": "Please let us know your email address.",
-                    "EMAIL_UNIQUE": "Cet e-mail est déjà utilisé.",
-                    "EMAIL_VALID": "L'adresse électronique doit être une adresse électronique valide."
-                },
-                "routes": {
-                    "REGISTER_REQUEST": "registre-demande"
-                }
-            },
-            "login": {
-                "LOGIN": "Connexion",
-                "EMAIL": "Courriel",
-                "EMAIL_ADDRESS": "Adresse e-mai",
-                "PASSWORD": "Mot de passe",
-                "LANGUAGE": "Langue",
-                "LOGIN_REMEMBER_ME": "Se rappeler de moi",
-                "TITLE": "goCaution® Espace bailleurs | La gestion numérique des garanties - goCaution® Vermieter-Login | Die digitale Verwaltung von Bürgschaften",
-                "LOGIN_TITLE": "goCaution® Espace bailleurs",
-                "FORGET_PASSWORD": "Mot de passe oublié ?",
-                "GET_RESET_LINK": "Obtenir le lien de réinitialisation",
-                "BACK_TO_LOGIN": "Retour connexion?",
-                "SUPPORT": {
-                    "MOBILE": "0800 461 461",
-                    "SUPPORT": "SUPPORT",
-                    "SUPPORT_ADDRESS": "goCaution SA - Freiburgstrasse 574 - 3172 Niederwangen"
-                },
-                "LOGIN_PAGE_DESCRIPTION": {
-                    "TITLE": "Gérer les cautions de loyer en ligne",
-                    "LINE_ONE": "goCaution a mis en place un Espace bailleurs qui vous permettra d'avoir une visualisation et une gestion complète de vos garanties de loyer.",
-                    "LINE_TWO": "Ainsi, vous pourrez gérer l'établissement d'un certificat jusqu'à la résiliation avec ou sans sinistre.",
-                    "LINE_THREE": "Notre application web est simple de manipulation et rapide. Adapté à la philosophie de goCaution,",
-                    "LINE_FOUR": "qui est le traitement 100% en ligne, celui-ci vous permettra un gain de temps considérable."
-                },
-                "LOGIN_PAGE_REQUEST_POLICY": "Demandez votre accès et gérez les politiques de locataire en ligne.",
-                "REQUEST_ACCESS": "Demande d'accès",
-                "ERROR_USER_DOESNOT_EXISTS": "L'utilisateur n'existe pas",
-                "ERROR_INVALID_PASSWORD": "Mot de passe incorrect",
-                "RESET_LINK_SENT": "Le lien de réinitialisation de mot de passe a été envoyé sur votre email, s'il vous plaît vérifier",
-                "UNREGISTERED_EMAIL": "Email n'est pas enregistré avec nous",
-                "RESET_TOKEN_MISSMATCH": "Le jeton de réinitialisation de mot de passe ne correspond pas",
-                "USED_LINK": "Lien déjà utilisé",
-                "INVALID_USER_ID": "Identifiant invalide",
-                "PASSWORD_RESET_SUCCESS": "Mot de passe mis à jour, pour continuer, veuillez vous connecter",
-                "NEW_PASSWORD": "nouveau mot de passe",
-                "CONFIRM_PASSWORD": "Confirmez le mot de passe",
-                "RESET": "réinitialiser",
-                "EMAIL_REQUIRED": "Veuillez fournir une adresse électronique valide.",
-                "PASSWORD_REQUIRED": "Veuillez fournir un mot de passe valide.",
-                "CONFIRM_PASSWORD_REQUIRED": "Veuillez fournir un mot de passe de confirmation valide.",
-                "LOGO_IMG": "logo_fr.png",
-                "LOGIN_IMG": "landlord-login-app.png",
-                "FORGOT_TEXT": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
-                "POPOVER_DATA": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur.&lt;br /&gt;Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe.",
-                "IDENTIFIER": "Adresse e-mail",
-                "BACK": "Retour",
-                "SEND_FORGOT_MAIL": "Envoyer",
-                "RESPONSIVE_LOGO": "logo-w-fr.png",
-                "routes": {
-                    "FORGOT_PASSWORD_LINK": "anmeldung/forgot-password",
-                    "LOGIN": "connexion",
-                    "DASHBOARD": "tableau_de_bord",
-                    "PASSWORD_RESET": "reinitialiser_mot_de_passe",
-                    "PASSWORD_EMAIL": "mot_de_passe_email",
-                    "PASSWORD_UPDATE": "mot_de_passe_update",
-                    "LOGOUT": "deconnexion"
-                },
-                "ERROR": "Abus",
-                "404_ERROR": "Désolé ! La page que vous cherchiez n'existe pas.",
-                "GO_BACK_HOME": "Retour à la maison",
-                "FORGOT_PASSWORD_NOTE": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
-                "REGISTER": {
-                    "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
-                    "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
-                    "SOCIETY": "Société",
-                    "NAME": "Nom",
-                    "FIRST_NAME": "Prénom",
-                    "ADDRESS": "Adresse",
-                    "P_CODE_LOCATION": "NPA et Lieu",
-                    "PHONE_MOBILE": "Téléphone / Mobile",
-                    "EMAIL": "E-Mail",
-                    "TO_SEND": "envoyer"
                 }
             }
         },
@@ -1735,6 +1460,129 @@ export default {
             "MERGE": "Fusion de clients",
             "DELETE": "Supprimer"
         },
+        "invoice": {
+            "status": {
+                "WAITING_FOR_PAYMENT": "En attente",
+                "PARTIAL_PAID": "Partiellement payé",
+                "PAID": "Payé",
+                "PASTDUE": "Rappel",
+                "REFUNDED": "Remboursé",
+                "PARTIAL_REFUNDED": "Partially refunded",
+                "REMINDER": "rappel de paiement",
+                "WARNING1": "Niveau de relance 1",
+                "WARNING2": "Niveau de relance 2",
+                "COLLECTION": "menace de faillite",
+                "ONLINE_PAYMENT_WAITING": "Paiement en ligne en attente",
+                "ONLINE_PAYMENT_INVALID": "Paiement en ligne non valable",
+                "DEBT_ENFORCEMENT": "procédures d'exécution forcée"
+            },
+            "STATUS_CHANGE_SUCCESS": "Le statut de facture a été modifié avec succès.",
+            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la facture n'a pas été modifié, essayez à nouveau."
+        },
+        "landlord": {
+            "login": {
+                "LOGIN": "Connexion",
+                "EMAIL": "Courriel",
+                "EMAIL_ADDRESS": "Adresse e-mai",
+                "PASSWORD": "Mot de passe",
+                "LANGUAGE": "Langue",
+                "LOGIN_REMEMBER_ME": "Se rappeler de moi",
+                "TITLE": "goCaution® Espace bailleurs | La gestion numérique des garanties - goCaution® Vermieter-Login | Die digitale Verwaltung von Bürgschaften",
+                "LOGIN_TITLE": "goCaution® Espace bailleurs",
+                "FORGET_PASSWORD": "Mot de passe oublié ?",
+                "GET_RESET_LINK": "Obtenir le lien de réinitialisation",
+                "BACK_TO_LOGIN": "Retour connexion?",
+                "SUPPORT": {
+                    "MOBILE": "0800 461 461",
+                    "SUPPORT": "SUPPORT",
+                    "SUPPORT_ADDRESS": "goCaution SA - Freiburgstrasse 574 - 3172 Niederwangen"
+                },
+                "LOGIN_PAGE_DESCRIPTION": {
+                    "TITLE": "Gérer les cautions de loyer en ligne",
+                    "LINE_ONE": "goCaution a mis en place un Espace bailleurs qui vous permettra d'avoir une visualisation et une gestion complète de vos garanties de loyer.",
+                    "LINE_TWO": "Ainsi, vous pourrez gérer l'établissement d'un certificat jusqu'à la résiliation avec ou sans sinistre.",
+                    "LINE_THREE": "Notre application web est simple de manipulation et rapide. Adapté à la philosophie de goCaution,",
+                    "LINE_FOUR": "qui est le traitement 100% en ligne, celui-ci vous permettra un gain de temps considérable."
+                },
+                "LOGIN_PAGE_REQUEST_POLICY": "Demandez votre accès et gérez les politiques de locataire en ligne.",
+                "REQUEST_ACCESS": "Demande d'accès",
+                "ERROR_USER_DOESNOT_EXISTS": "L'utilisateur n'existe pas",
+                "ERROR_INVALID_PASSWORD": "Mot de passe incorrect",
+                "RESET_LINK_SENT": "Le lien de réinitialisation de mot de passe a été envoyé sur votre email, s'il vous plaît vérifier",
+                "UNREGISTERED_EMAIL": "Email n'est pas enregistré avec nous",
+                "RESET_TOKEN_MISSMATCH": "Le jeton de réinitialisation de mot de passe ne correspond pas",
+                "USED_LINK": "Lien déjà utilisé",
+                "INVALID_USER_ID": "Identifiant invalide",
+                "PASSWORD_RESET_SUCCESS": "Mot de passe mis à jour, pour continuer, veuillez vous connecter",
+                "NEW_PASSWORD": "nouveau mot de passe",
+                "CONFIRM_PASSWORD": "Confirmez le mot de passe",
+                "RESET": "réinitialiser",
+                "EMAIL_REQUIRED": "Veuillez fournir une adresse électronique valide.",
+                "PASSWORD_REQUIRED": "Veuillez fournir un mot de passe valide.",
+                "CONFIRM_PASSWORD_REQUIRED": "Veuillez fournir un mot de passe de confirmation valide.",
+                "LOGO_IMG": "logo_fr.png",
+                "LOGIN_IMG": "landlord-login-app.png",
+                "FORGOT_TEXT": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
+                "POPOVER_DATA": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur.&lt;br /&gt;Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe.",
+                "IDENTIFIER": "Adresse e-mail",
+                "BACK": "Retour",
+                "SEND_FORGOT_MAIL": "Envoyer",
+                "RESPONSIVE_LOGO": "logo-w-fr.png",
+                "routes": {
+                    "FORGOT_PASSWORD_LINK": "anmeldung/forgot-password",
+                    "LOGIN": "connexion",
+                    "DASHBOARD": "tableau_de_bord",
+                    "PASSWORD_RESET": "reinitialiser_mot_de_passe",
+                    "PASSWORD_EMAIL": "mot_de_passe_email",
+                    "PASSWORD_UPDATE": "mot_de_passe_update",
+                    "LOGOUT": "deconnexion"
+                },
+                "ERROR": "Abus",
+                "404_ERROR": "Désolé ! La page que vous cherchiez n'existe pas.",
+                "GO_BACK_HOME": "Retour à la maison",
+                "FORGOT_PASSWORD_NOTE": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe",
+                "REGISTER": {
+                    "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
+                    "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
+                    "SOCIETY": "Société",
+                    "NAME": "Nom",
+                    "FIRST_NAME": "Prénom",
+                    "ADDRESS": "Adresse",
+                    "P_CODE_LOCATION": "NPA et Lieu",
+                    "PHONE_MOBILE": "Téléphone / Mobile",
+                    "EMAIL": "E-Mail",
+                    "TO_SEND": "envoyer"
+                }
+            },
+            "regrequest": {
+                "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
+                "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
+                "SOCIETY": "Société",
+                "NAME": "Nom",
+                "FIRST_NAME": "Prénom",
+                "ADDRESS": "Adresse",
+                "P_CODE_LOCATION": "NPA et Lieu",
+                "PHONE_MOBILE": "Téléphone / Mobile",
+                "EMAIL": "E-Mail",
+                "TO_SEND": "envoyer",
+                "THANK_YOU": "Vielen Dank für Ihre Anfrage.",
+                "ADMIN_EMAIL_SUBJECT": "Connexion propriétaire | Données d'accès demandées",
+                "REG_REQUEST_HEADLINE": "Un client a demandé à un propriétaire d'avoir accès à son identifiant propriétaire.",
+                "VALIDATION": {
+                    "NAME": "Please let us know your name.",
+                    "FIRST_NAME": "Invalid Input.",
+                    "ADDRESS": "Bitten geben Sie Ihre Adresse ein",
+                    "P_CODE_LOCATION": "Bitten geben Sie Ihre PLZ und den Ort ein.",
+                    "PHONE_MOBILE": "Invalid Input",
+                    "EMAIL": "Please let us know your email address.",
+                    "EMAIL_UNIQUE": "Cet e-mail est déjà utilisé.",
+                    "EMAIL_VALID": "L'adresse électronique doit être une adresse électronique valide."
+                },
+                "routes": {
+                    "REGISTER_REQUEST": "registre-demande"
+                }
+            }
+        },
         "login": {
             "LOGIN": "Connexion",
             "EMAIL": "Courriel",
@@ -1749,9 +1597,72 @@ export default {
             "routes": {
                 "LOGOUT": "deconnexion"
             }
-        }
-    },
-    "it": {
+        },
+        "pagination": {
+            "previous": "« Previous",
+            "next": "Next »"
+        },
+        "passwords": {
+            "password": "Passwords must be at least six characters and match the confirmation.",
+            "reset": "Your password has been reset!",
+            "sent": "Nous avons envoyé votre lien de réinitialisation de mot de passe par e-mail!",
+            "token": "This password reset token is invalid.",
+            "user": "Nous ne pouvons pas trouver un utilisateur avec cette adresse e-mail."
+        },
+        "policy": {
+            "status": {
+                "WAITING": "En validation",
+                "PREDECLARED": "Pre-police",
+                "ACCEPTED": "Actif",
+                "CANCELLATION_WITH_CLAIM_PENDING": "Réclamation en cours",
+                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Résiliation en cours",
+                "DISSOLVED_WITH_CLAIMS": "Dissous avec sinistre",
+                "DISSOLVED_WITHOUT_CLAIMS": "Dissous sans sinistre",
+                "DISSOLVED_IMMEDIATELY": "Dissous après l'achèvement",
+                "JOINT_GUARANTEE": "Attente cautionnement solidaire",
+                "REJECTED_CLIENT": "Annulées par les clients",
+                "PENDING_CANCEL": "Résolution/Mouvement rapportée"
+            },
+            "STATUS_CHANGE_SUCCESS": "L'état de la police a été modifié avec succès.",
+            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la politique n'a pas été modifié, réessayez."
+        },
+        "privatelandlord": {
+            "PRIVATE_LANDLORD": "Seigneur privé du pays",
+            "PRIVATE_LANDLORDS": "Propriétaires privés",
+            "CUSTOMER_DETAILS": "Détails du client",
+            "PRODUCTION": "Production",
+            "PRIVATE_HOUSEOWNER_NUM": "Numéro du propriétaire privé"
+        },
+        "setting": {
+            "SETTING": "Réglage de",
+            "SETTINGS": "Réglages",
+            "INVOICE_NUMBER_FORMAT": "Format du numéro de facture",
+            "POLICY_NUMBER_FORMAT": "Format du numéro de citation",
+            "CONTACT_NUMBER_FORMAT": "Format du numéro de contact",
+            "INVOICE_DATE_FORMAT": "Format de la date de facturation",
+            "ITEMS_PER_PAGE": "Longueur des listes",
+            "DECPOINTS": "Symbole de la virgule décimale",
+            "THOUSANDS": "Symbole du séparateur de milliers",
+            "DECIMALS": "Nombre de décimales",
+            "INVOICE_NUM_DIGITS": "Nombre minimum de chiffres pour le numéro de facture formaté",
+            "CONFIG_SUCCESS": "Config mis à jour avec succès !",
+            "FROM_NAME_ON_EMAILS": "De (nom) sur les courriels",
+            "FROM_EMAIL_ON_EMAILS": "De (courriel) sur les courriels",
+            "ROBOTS": "Robots",
+            "SEND_MAILS": "envoyer des mails",
+            "REPLY_ADDRESS": "Adresse de réponse",
+            "REPLY_NAME": "Nom de la réponse",
+            "PORT": "Port",
+            "SMTP_HOST": "SMTP hôte",
+            "SMTP_SECURITY": "Sécurité SMTP",
+            "SMTP_AUTHENTICATION": "Authentification SMTP",
+            "SMTP_USER": "Utilisateur",
+            "SMTP_PASSWORD": "Mot de passe",
+            "OPTIONS": "Possibilités"
+        },
+        "user": {
+            "EDIT_ACCOUNT": "Modifier le profil"
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -1770,7 +1681,7 @@ export default {
                 "array": "The {attribute} must have between {min} and {max} items."
             },
             "boolean": "The {attribute} field must be true or false.",
-            "confirmed": "La conferma della password non corrisponde.",
+            "confirmed": "La confirmation du mot de passe ne correspond pas.",
             "date": "The {attribute} is not a valid date.",
             "date_format": "The {attribute} does not match the format {format}.",
             "different": "The {attribute} and {other} must be different.",
@@ -1778,7 +1689,7 @@ export default {
             "digits_between": "The {attribute} must be between {min} and {max} digits.",
             "dimensions": "The {attribute} has invalid image dimensions.",
             "distinct": "The {attribute} field has a duplicate value.",
-            "email": "L'attributo {attribute} essere un indirizzo email valido.",
+            "email": "L'attribut {attribute} être une adresse email valide.",
             "exists": "The selected {attribute} is invalid.",
             "file": "The {attribute} must be a file.",
             "filled": "The {attribute} field must have a value.",
@@ -1833,8 +1744,8 @@ export default {
             "numeric": "The {attribute} must be a number.",
             "present": "The {attribute} field must be present.",
             "regex": "The {attribute} format is invalid.",
-            "invalid": "L'{attribute} non è valido.",
-            "required": "L'{attribute} è richiesto.",
+            "invalid": "L'{attribute} n'est pas valide.",
+            "required": "L'{attribute} est requis.",
             "required_if": "The {attribute} field is required when {other} is {value}.",
             "required_unless": "The {attribute} field is required unless {other} is in {values}.",
             "required_with": "The {attribute} field is required when {values} is present.",
@@ -1859,47 +1770,12 @@ export default {
                 }
             },
             "attributes": []
-        },
-        "passwords": {
-            "password": "Passwords must be at least six characters and match the confirmation.",
-            "reset": "Your password has been reset!",
-            "sent": "Abbiamo inviato per e-mail il tuo link per la reimpostazione della password!",
-            "token": "This password reset token is invalid.",
-            "user": "Non riusciamo a trovare un utente con quell'indirizzo e-mail."
-        },
+        }
+    },
+    "it": {
         "auth": {
             "failed": "Queste credenziali non corrispondono ai nostri record.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
-        },
-        "user": {
-            "EDIT_ACCOUNT": "Modifica profilo"
-        },
-        "setting": {
-            "SETTING": "Impostazione",
-            "SETTINGS": "Impostazioni",
-            "INVOICE_NUMBER_FORMAT": "Formato del numero di fattura",
-            "POLICY_NUMBER_FORMAT": "Formato del numero del preventivo",
-            "CONTACT_NUMBER_FORMAT": "Formato del numero di contatto",
-            "INVOICE_DATE_FORMAT": "Formato della data di fatturazione",
-            "ITEMS_PER_PAGE": "Limite liste predefinito",
-            "DECPOINTS": "Simbolo del punto decimale",
-            "THOUSANDS": "Simbolo delle migliaia di separatori",
-            "DECIMALS": "Numero di decimali",
-            "INVOICE_NUM_DIGITS": "Numero minimo di cifre per il numero della fattura formattata",
-            "CONFIG_SUCCESS": "Config aggiornato con successo!",
-            "FROM_NAME_ON_EMAILS": "Da (nome) nelle e-mail",
-            "FROM_EMAIL_ON_EMAILS": "Da (e-mail) su e-mail",
-            "ROBOTS": "Robot",
-            "SEND_MAILS": "inviare e-mail",
-            "REPLY_ADDRESS": "Indirizzo di risposta",
-            "REPLY_NAME": "Nome della risposta",
-            "PORT": "Porto",
-            "SMTP_HOST": "SMTP Host",
-            "SMTP_SECURITY": "Sicurezza SMTP",
-            "SMTP_AUTHENTICATION": "Autenticazione SMTP",
-            "SMTP_USER": "Utente",
-            "SMTP_PASSWORD": "La password",
-            "OPTIONS": "Opzioni"
         },
         "contact": {
             "CONTACTS": "Clientozoooo",
@@ -2005,10 +1881,6 @@ export default {
                 "SEND_FAILURE": "Offerte konnte nicht gesendet werden, da keine E-Mail Adresse erfasst wurde"
             }
         },
-        "pagination": {
-            "previous": "« Previous",
-            "next": "Next »"
-        },
         "customer": {
             "login": {
                 "LOGIN": "Anmelden",
@@ -2076,133 +1948,6 @@ export default {
                     "PASSWORD_UPDATE": "passwort_aktualisierung",
                     "LOGOUT": "abmeldung"
                 }
-            }
-        },
-        "policy": {
-            "status": {
-                "WAITING": "In attesa di ispezione",
-                "PREDECLARED": "Vorpoliciert",
-                "ACCEPTED": "Corsa",
-                "CANCELLATION_WITH_CLAIM_PENDING": "Reclami in corso",
-                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Avviso in attesa",
-                "DISSOLVED_WITH_CLAIMS": "SM risolta",
-                "DISSOLVED_WITHOUT_CLAIMS": "Sistema operativo risolto",
-                "DISSOLVED_IMMEDIATELY": "Disciolto dopo il completamento",
-                "JOINT_GUARANTEE": "Fideiussione congiunta pendente",
-                "REJECTED_CLIENT": "Annullato dai clienti",
-                "PENDING_CANCEL": "Risoluzione segnalata"
-            },
-            "STATUS_CHANGE_SUCCESS": "Lo stato della polizza è stato modificato con successo.",
-            "STATUS_CHANGE_FAIL": "Purtroppo, lo status politico non è stato cambiato, riprovaci."
-        },
-        "invoice": {
-            "status": {
-                "WAITING_FOR_PAYMENT": "In attesa di pagamento",
-                "PARTIAL_PAID": "Parzialmente pagato",
-                "PAID": "Pagato",
-                "PASTDUE": "Scadenza",
-                "REFUNDED": "Rimborsato",
-                "PARTIAL_REFUNDED": "Rimborso in corso",
-                "REMINDER": "sollecito di pagamento",
-                "WARNING1": "Livello di sollecito 1",
-                "WARNING2": "Livello di sollecito 2",
-                "COLLECTION": "minaccia di fallimento",
-                "ONLINE_PAYMENT_WAITING": "Pagamento online in attesa di pagamento",
-                "ONLINE_PAYMENT_INVALID": "Pagamento online non valido",
-                "DEBT_ENFORCEMENT": "procedure di esecuzione"
-            },
-            "STATUS_CHANGE_SUCCESS": "Lo stato della fattura è stato modificato con successo.",
-            "STATUS_CHANGE_FAIL": "Purtroppo, lo stato della fattura non è stato modificato, riprovare."
-        },
-        "landlord": {
-            "regrequest": {
-                "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
-                "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
-                "SOCIETY": "Société",
-                "NAME": "Nom",
-                "FIRST_NAME": "Prénom",
-                "ADDRESS": "Adresse",
-                "P_CODE_LOCATION": "NPA et Lieu",
-                "PHONE_MOBILE": "Téléphone / Mobile",
-                "EMAIL": "E-Mail",
-                "TO_SEND": "envoyer",
-                "THANK_YOU": "La ringrazio molto per la sua richiesta.",
-                "ADMIN_EMAIL_SUBJECT": "Login del proprietario | Dati di accesso richiesti",
-                "REG_REQUEST_HEADLINE": "Un cliente ha chiesto al locatore di avere accesso al logo del proprietario.",
-                "VALIDATION": {
-                    "NAME": "Please let us know your name.",
-                    "FIRST_NAME": "Invalid Input.",
-                    "ADDRESS": "Inserisci il tuo indirizzo",
-                    "P_CODE_LOCATION": "Inserisci il tuo codice postale e la città.",
-                    "PHONE_MOBILE": "Invalid Input",
-                    "EMAIL": "Please let us know your email address.",
-                    "EMAIL_VALID": "L'e-mail deve essere un indirizzo e-mail valido."
-                },
-                "routes": {
-                    "REGISTER_REQUEST": "registrazione-richiesta"
-                }
-            },
-            "login": {
-                "LOGIN": "Accedi",
-                "EMAIL": "E-Mail",
-                "EMAIL_ADDRESS": "indirizzo e-mail",
-                "PASSWORD": "Password",
-                "LANGUAGE": "Lingua",
-                "LOGIN_REMEMBER_ME": "Ricordati di me",
-                "TITLE": "goCaution® Login Proprietario",
-                "LOGIN_TITLE": "goCaution® Login Proprietario",
-                "FORGET_PASSWORD": "Password dimenticata?",
-                "GET_RESET_LINK": "Ottieni il link di reset",
-                "BACK_TO_LOGIN": "Torna al login?",
-                "SUPPORT": {
-                    "MOBILE": "0800 461 461",
-                    "SUPPORT": "SUPPORT",
-                    "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
-                },
-                "LOGIN_PAGE_DESCRIPTION": {
-                    "TITLE": "Gestire online i depositi per gli affitti",
-                    "LINE_ONE": "Con il nostro login padrone di casa, avete sempre una panoramica delle garanzie di cauzione dei vostri inquilini.",
-                    "LINE_TWO": "e può occuparsi di tutti i passi necessari - dall'apertura alle mutazioni, fino alla risoluzione - in digitale.",
-                    "LINE_THREE": "L'applicazione web-based può essere utilizzata immediatamente, è intuitivamente comprensibile",
-                    "LINE_FOUR": "e basato sul ciclo di vita di una cauzione."
-                },
-                "LOGIN_PAGE_REQUEST_POLICY": "Richiedi il tuo accesso e gestisci online le politiche degli inquilini.",
-                "REQUEST_ACCESS": "Richiedi accesso",
-                "ERROR_USER_DOESNOT_EXISTS": "L'utente non esiste",
-                "ERROR_INVALID_PASSWORD": "Password non valida",
-                "RESET_LINK_SENT": "Ripristino della password Il link è stato inviato nella tua e-mail, per favore controlla",
-                "UNREGISTERED_EMAIL": "L'e-mail non è registrata presso di noi",
-                "RESET_TOKEN_MISSMATCH": "Password non valida",
-                "USED_LINK": "Link già utilizzato",
-                "INVALID_USER_ID": "Userid non valido",
-                "PASSWORD_RESET_SUCCESS": "Password aggiornata, per continuare ad effettuare il login",
-                "NEW_PASSWORD": "Nuova password",
-                "CONFIRM_PASSWORD": "conferma password",
-                "RESET": "reset",
-                "EMAIL_REQUIRED": "Indicare un indirizzo e-mail valido.",
-                "PASSWORD_REQUIRED": "Si prega di fornire una password valida.",
-                "CONFIRM_PASSWORD_REQUIRED": "Si prega di fornire una password di conferma valida.",
-                "LOGO_IMG": "logo_de.png",
-                "LOGIN_IMG": "vermieter-login-app.png",
-                "FORGOT_TEXT": "Inserisci un indirizzo e-mail per l'account utente. Ti verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente.",
-                "POPOVER_DATA": "Inserisci l'indirizzo e-mail associato al tuo account utente. Ti verrà inviato un codice di verifica. Quando lo ricevete, potrete scegliere una nuova password.",
-                "IDENTIFIER": "Identificatore",
-                "BACK": "dorso",
-                "SEND_FORGOT_MAIL": "invio",
-                "RESPONSIVE_LOGO": "logo-w-de.png",
-                "routes": {
-                    "FORGOT_PASSWORD_LINK": "registrazione/password-dimenticata",
-                    "LOGIN": "accedi",
-                    "DASHBOARD": "plancia",
-                    "PASSWORD_RESET": "passwordRipristina",
-                    "PASSWORD_EMAIL": "passwordEmail",
-                    "PASSWORD_UPDATE": "aggiornamento_password",
-                    "LOGOUT": "uscita"
-                },
-                "ERROR": "Sbaglio",
-                "404_ERROR": "Scusate! La pagina che stavi cercando non esiste.",
-                "GO_BACK_HOME": "Torna a casa",
-                "FORGOT_PASSWORD_NOTE": "Inserire un indirizzo e-mail per l'account utente. Verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente"
             }
         },
         "general": {
@@ -2313,6 +2058,116 @@ export default {
             "MERGE": "Accorpamento",
             "DELETE": "Cancellare"
         },
+        "invoice": {
+            "status": {
+                "WAITING_FOR_PAYMENT": "In attesa di pagamento",
+                "PARTIAL_PAID": "Parzialmente pagato",
+                "PAID": "Pagato",
+                "PASTDUE": "Scadenza",
+                "REFUNDED": "Rimborsato",
+                "PARTIAL_REFUNDED": "Rimborso in corso",
+                "REMINDER": "sollecito di pagamento",
+                "WARNING1": "Livello di sollecito 1",
+                "WARNING2": "Livello di sollecito 2",
+                "COLLECTION": "minaccia di fallimento",
+                "ONLINE_PAYMENT_WAITING": "Pagamento online in attesa di pagamento",
+                "ONLINE_PAYMENT_INVALID": "Pagamento online non valido",
+                "DEBT_ENFORCEMENT": "procedure di esecuzione"
+            },
+            "STATUS_CHANGE_SUCCESS": "Lo stato della fattura è stato modificato con successo.",
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo stato della fattura non è stato modificato, riprovare."
+        },
+        "landlord": {
+            "login": {
+                "LOGIN": "Accedi",
+                "EMAIL": "E-Mail",
+                "EMAIL_ADDRESS": "indirizzo e-mail",
+                "PASSWORD": "Password",
+                "LANGUAGE": "Lingua",
+                "LOGIN_REMEMBER_ME": "Ricordati di me",
+                "TITLE": "goCaution® Login Proprietario",
+                "LOGIN_TITLE": "goCaution® Login Proprietario",
+                "FORGET_PASSWORD": "Password dimenticata?",
+                "GET_RESET_LINK": "Ottieni il link di reset",
+                "BACK_TO_LOGIN": "Torna al login?",
+                "SUPPORT": {
+                    "MOBILE": "0800 461 461",
+                    "SUPPORT": "SUPPORT",
+                    "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen"
+                },
+                "LOGIN_PAGE_DESCRIPTION": {
+                    "TITLE": "Gestire online i depositi per gli affitti",
+                    "LINE_ONE": "Con il nostro login padrone di casa, avete sempre una panoramica delle garanzie di cauzione dei vostri inquilini.",
+                    "LINE_TWO": "e può occuparsi di tutti i passi necessari - dall'apertura alle mutazioni, fino alla risoluzione - in digitale.",
+                    "LINE_THREE": "L'applicazione web-based può essere utilizzata immediatamente, è intuitivamente comprensibile",
+                    "LINE_FOUR": "e basato sul ciclo di vita di una cauzione."
+                },
+                "LOGIN_PAGE_REQUEST_POLICY": "Richiedi il tuo accesso e gestisci online le politiche degli inquilini.",
+                "REQUEST_ACCESS": "Richiedi accesso",
+                "ERROR_USER_DOESNOT_EXISTS": "L'utente non esiste",
+                "ERROR_INVALID_PASSWORD": "Password non valida",
+                "RESET_LINK_SENT": "Ripristino della password Il link è stato inviato nella tua e-mail, per favore controlla",
+                "UNREGISTERED_EMAIL": "L'e-mail non è registrata presso di noi",
+                "RESET_TOKEN_MISSMATCH": "Password non valida",
+                "USED_LINK": "Link già utilizzato",
+                "INVALID_USER_ID": "Userid non valido",
+                "PASSWORD_RESET_SUCCESS": "Password aggiornata, per continuare ad effettuare il login",
+                "NEW_PASSWORD": "Nuova password",
+                "CONFIRM_PASSWORD": "conferma password",
+                "RESET": "reset",
+                "EMAIL_REQUIRED": "Indicare un indirizzo e-mail valido.",
+                "PASSWORD_REQUIRED": "Si prega di fornire una password valida.",
+                "CONFIRM_PASSWORD_REQUIRED": "Si prega di fornire una password di conferma valida.",
+                "LOGO_IMG": "logo_de.png",
+                "LOGIN_IMG": "vermieter-login-app.png",
+                "FORGOT_TEXT": "Inserisci un indirizzo e-mail per l'account utente. Ti verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente.",
+                "POPOVER_DATA": "Inserisci l'indirizzo e-mail associato al tuo account utente. Ti verrà inviato un codice di verifica. Quando lo ricevete, potrete scegliere una nuova password.",
+                "IDENTIFIER": "Identificatore",
+                "BACK": "dorso",
+                "SEND_FORGOT_MAIL": "invio",
+                "RESPONSIVE_LOGO": "logo-w-de.png",
+                "routes": {
+                    "FORGOT_PASSWORD_LINK": "registrazione/password-dimenticata",
+                    "LOGIN": "accedi",
+                    "DASHBOARD": "plancia",
+                    "PASSWORD_RESET": "passwordRipristina",
+                    "PASSWORD_EMAIL": "passwordEmail",
+                    "PASSWORD_UPDATE": "aggiornamento_password",
+                    "LOGOUT": "uscita"
+                },
+                "ERROR": "Sbaglio",
+                "404_ERROR": "Scusate! La pagina che stavi cercando non esiste.",
+                "GO_BACK_HOME": "Torna a casa",
+                "FORGOT_PASSWORD_NOTE": "Inserire un indirizzo e-mail per l'account utente. Verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente"
+            },
+            "regrequest": {
+                "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
+                "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
+                "SOCIETY": "Société",
+                "NAME": "Nom",
+                "FIRST_NAME": "Prénom",
+                "ADDRESS": "Adresse",
+                "P_CODE_LOCATION": "NPA et Lieu",
+                "PHONE_MOBILE": "Téléphone / Mobile",
+                "EMAIL": "E-Mail",
+                "TO_SEND": "envoyer",
+                "THANK_YOU": "La ringrazio molto per la sua richiesta.",
+                "ADMIN_EMAIL_SUBJECT": "Login del proprietario | Dati di accesso richiesti",
+                "REG_REQUEST_HEADLINE": "Un cliente ha chiesto al locatore di avere accesso al logo del proprietario.",
+                "VALIDATION": {
+                    "NAME": "Please let us know your name.",
+                    "FIRST_NAME": "Invalid Input.",
+                    "ADDRESS": "Inserisci il tuo indirizzo",
+                    "P_CODE_LOCATION": "Inserisci il tuo codice postale e la città.",
+                    "PHONE_MOBILE": "Invalid Input",
+                    "EMAIL": "Please let us know your email address.",
+                    "EMAIL_VALID": "L'e-mail deve essere un indirizzo e-mail valido."
+                },
+                "routes": {
+                    "REGISTER_REQUEST": "registrazione-richiesta"
+                }
+            }
+        },
         "login": {
             "LOGIN": "Accedi",
             "EMAIL": "E-Mail",
@@ -2327,6 +2182,179 @@ export default {
             "routes": {
                 "LOGOUT": "uscita"
             }
+        },
+        "pagination": {
+            "previous": "« Previous",
+            "next": "Next »"
+        },
+        "passwords": {
+            "password": "Passwords must be at least six characters and match the confirmation.",
+            "reset": "Your password has been reset!",
+            "sent": "Abbiamo inviato per e-mail il tuo link per la reimpostazione della password!",
+            "token": "This password reset token is invalid.",
+            "user": "Non riusciamo a trovare un utente con quell'indirizzo e-mail."
+        },
+        "policy": {
+            "status": {
+                "WAITING": "In attesa di ispezione",
+                "PREDECLARED": "Vorpoliciert",
+                "ACCEPTED": "Corsa",
+                "CANCELLATION_WITH_CLAIM_PENDING": "Reclami in corso",
+                "CANCELLATION_WITHOUT_CLAIM_PENDING": "Avviso in attesa",
+                "DISSOLVED_WITH_CLAIMS": "SM risolta",
+                "DISSOLVED_WITHOUT_CLAIMS": "Sistema operativo risolto",
+                "DISSOLVED_IMMEDIATELY": "Disciolto dopo il completamento",
+                "JOINT_GUARANTEE": "Fideiussione congiunta pendente",
+                "REJECTED_CLIENT": "Annullato dai clienti",
+                "PENDING_CANCEL": "Risoluzione segnalata"
+            },
+            "STATUS_CHANGE_SUCCESS": "Lo stato della polizza è stato modificato con successo.",
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo status politico non è stato cambiato, riprovaci."
+        },
+        "privatelandlord": {
+            "PRIVATE_LANDLORD": "Signore del paese privato",
+            "PRIVATE_LANDLORDS": "Proprietari privati",
+            "CUSTOMER_DETAILS": "Dettagli cliente",
+            "PRODUCTION": "Produzione",
+            "PRIVATE_HOUSEOWNER_NUM": "Proprietario privato Num"
+        },
+        "setting": {
+            "SETTING": "Impostazione",
+            "SETTINGS": "Impostazioni",
+            "INVOICE_NUMBER_FORMAT": "Formato del numero di fattura",
+            "POLICY_NUMBER_FORMAT": "Formato del numero del preventivo",
+            "CONTACT_NUMBER_FORMAT": "Formato del numero di contatto",
+            "INVOICE_DATE_FORMAT": "Formato della data di fatturazione",
+            "ITEMS_PER_PAGE": "Limite liste predefinito",
+            "DECPOINTS": "Simbolo del punto decimale",
+            "THOUSANDS": "Simbolo delle migliaia di separatori",
+            "DECIMALS": "Numero di decimali",
+            "INVOICE_NUM_DIGITS": "Numero minimo di cifre per il numero della fattura formattata",
+            "CONFIG_SUCCESS": "Config aggiornato con successo!",
+            "FROM_NAME_ON_EMAILS": "Da (nome) nelle e-mail",
+            "FROM_EMAIL_ON_EMAILS": "Da (e-mail) su e-mail",
+            "ROBOTS": "Robot",
+            "SEND_MAILS": "inviare e-mail",
+            "REPLY_ADDRESS": "Indirizzo di risposta",
+            "REPLY_NAME": "Nome della risposta",
+            "PORT": "Porto",
+            "SMTP_HOST": "SMTP Host",
+            "SMTP_SECURITY": "Sicurezza SMTP",
+            "SMTP_AUTHENTICATION": "Autenticazione SMTP",
+            "SMTP_USER": "Utente",
+            "SMTP_PASSWORD": "La password",
+            "OPTIONS": "Opzioni"
+        },
+        "user": {
+            "EDIT_ACCOUNT": "Modifica profilo"
+        },
+        "validation": {
+            "accepted": "The {attribute} must be accepted.",
+            "active_url": "The {attribute} is not a valid URL.",
+            "after": "The {attribute} must be a date after {date}.",
+            "after_or_equal": "The {attribute} must be a date after or equal to {date}.",
+            "alpha": "The {attribute} may only contain letters.",
+            "alpha_dash": "The {attribute} may only contain letters, numbers, dashes and underscores.",
+            "alpha_num": "The {attribute} may only contain letters and numbers.",
+            "array": "The {attribute} must be an array.",
+            "before": "The {attribute} must be a date before {date}.",
+            "before_or_equal": "The {attribute} must be a date before or equal to {date}.",
+            "between": {
+                "numeric": "The {attribute} must be between {min} and {max}.",
+                "file": "The {attribute} must be between {min} and {max} kilobytes.",
+                "string": "The {attribute} must be between {min} and {max} characters.",
+                "array": "The {attribute} must have between {min} and {max} items."
+            },
+            "boolean": "The {attribute} field must be true or false.",
+            "confirmed": "La conferma della password non corrisponde.",
+            "date": "The {attribute} is not a valid date.",
+            "date_format": "The {attribute} does not match the format {format}.",
+            "different": "The {attribute} and {other} must be different.",
+            "digits": "The {attribute} must be {digits} digits.",
+            "digits_between": "The {attribute} must be between {min} and {max} digits.",
+            "dimensions": "The {attribute} has invalid image dimensions.",
+            "distinct": "The {attribute} field has a duplicate value.",
+            "email": "L'attributo {attribute} essere un indirizzo email valido.",
+            "exists": "The selected {attribute} is invalid.",
+            "file": "The {attribute} must be a file.",
+            "filled": "The {attribute} field must have a value.",
+            "gt": {
+                "numeric": "The {attribute} must be greater than {value}.",
+                "file": "The {attribute} must be greater than {value} kilobytes.",
+                "string": "The {attribute} must be greater than {value} characters.",
+                "array": "The {attribute} must have more than {value} items."
+            },
+            "gte": {
+                "numeric": "The {attribute} must be greater than or equal {value}.",
+                "file": "The {attribute} must be greater than or equal {value} kilobytes.",
+                "string": "The {attribute} must be greater than or equal {value} characters.",
+                "array": "The {attribute} must have {value} items or more."
+            },
+            "image": "The {attribute} must be an image.",
+            "in": "The selected {attribute} is invalid.",
+            "in_array": "The {attribute} field does not exist in {other}.",
+            "integer": "The {attribute} must be an integer.",
+            "ip": "The {attribute} must be a valid IP address.",
+            "ipv4": "The {attribute} must be a valid IPv4 address.",
+            "ipv6": "The {attribute} must be a valid IPv6 address.",
+            "json": "The {attribute} must be a valid JSON string.",
+            "lt": {
+                "numeric": "The {attribute} must be less than {value}.",
+                "file": "The {attribute} must be less than {value} kilobytes.",
+                "string": "The {attribute} must be less than {value} characters.",
+                "array": "The {attribute} must have less than {value} items."
+            },
+            "lte": {
+                "numeric": "The {attribute} must be less than or equal {value}.",
+                "file": "The {attribute} must be less than or equal {value} kilobytes.",
+                "string": "The {attribute} must be less than or equal {value} characters.",
+                "array": "The {attribute} must not have more than {value} items."
+            },
+            "max": {
+                "numeric": "The {attribute} may not be greater than {max}.",
+                "file": "The {attribute} may not be greater than {max} kilobytes.",
+                "string": "The {attribute} may not be greater than {max} characters.",
+                "array": "The {attribute} may not have more than {max} items."
+            },
+            "mimes": "The {attribute} must be a file of type: {values}.",
+            "mimetypes": "The {attribute} must be a file of type: {values}.",
+            "min": {
+                "numeric": "The {attribute} must be at least {min}.",
+                "file": "The {attribute} must be at least {min} kilobytes.",
+                "string": "The {attribute} must be at least {min} characters.",
+                "array": "The {attribute} must have at least {min} items."
+            },
+            "not_in": "The selected {attribute} is invalid.",
+            "not_regex": "The {attribute} format is invalid.",
+            "numeric": "The {attribute} must be a number.",
+            "present": "The {attribute} field must be present.",
+            "regex": "The {attribute} format is invalid.",
+            "invalid": "L'{attribute} non è valido.",
+            "required": "L'{attribute} è richiesto.",
+            "required_if": "The {attribute} field is required when {other} is {value}.",
+            "required_unless": "The {attribute} field is required unless {other} is in {values}.",
+            "required_with": "The {attribute} field is required when {values} is present.",
+            "required_with_all": "The {attribute} field is required when {values} is present.",
+            "required_without": "The {attribute} field is required when {values} is not present.",
+            "required_without_all": "The {attribute} field is required when none of {values} are present.",
+            "same": "The {attribute} and {other} must match.",
+            "size": {
+                "numeric": "The {attribute} must be {size}.",
+                "file": "The {attribute} must be {size} kilobytes.",
+                "string": "The {attribute} must be {size} characters.",
+                "array": "The {attribute} must contain {size} items."
+            },
+            "string": "The {attribute} must be a string.",
+            "timezone": "The {attribute} must be a valid zone.",
+            "unique": "The {attribute} has already been taken.",
+            "uploaded": "The {attribute} failed to upload.",
+            "url": "The {attribute} format is invalid.",
+            "custom": {
+                "attribute-name": {
+                    "rule-name": "custom-message"
+                }
+            },
+            "attributes": []
         }
     }
 }
