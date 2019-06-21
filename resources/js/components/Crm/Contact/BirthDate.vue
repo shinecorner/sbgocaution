@@ -11,14 +11,16 @@
         min-width="290px"
       >
         <template v-slot:activator="{ on }">
-          <v-text-field
+          <v-text-field            
+            outline                                                
+            hide-details
             v-model="dateFormatted"
             :label="$t('contact.filter.BIRTH_DATE')"                      
             persistent-hint
-            append-outer-icon="event"
+            append-icon="event"
             @input="changeDate"
             @focus="is_popup = true"
-            @click:append-outer="is_popup = true"
+            @click:append="is_popup = true"
             v-on="on"
           ></v-text-field>
         </template>

@@ -1,6 +1,8 @@
 <template>
     <v-select 
-        :items="options"
+        :items="options"        
+        outline                                                
+        hide-details
         :label="label"
         :name="name"
         v-model="selected_option"

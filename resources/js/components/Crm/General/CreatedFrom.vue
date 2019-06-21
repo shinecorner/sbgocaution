@@ -1,6 +1,6 @@
 <template>
     <v-menu
-        ref="is_popup"
+        ref="is_popup"        
         v-model="is_popup"
         :close-on-content-click="false"                  
         lazy
@@ -11,14 +11,16 @@
         min-width="290px"
       >
         <template v-slot:activator="{ on }">
-          <v-text-field
+          <v-text-field            
+            outline                                                
+            hide-details
             v-model="dateFormatted"
             :label="$t('general.filter.CREATE_FROM')"                      
             persistent-hint
-            append-outer-icon="event"
+            append-icon="event"
             @input="changeDate"
             @focus="is_popup = true"
-            @click:append-outer="is_popup = true"
+            @click:append="is_popup = true"
             v-on="on"
           ></v-text-field>
         </template>

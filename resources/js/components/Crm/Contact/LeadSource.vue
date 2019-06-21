@@ -1,5 +1,7 @@
 <template>
-    <v-select :items="lead_source_option"
+    <v-select :items="lead_source_option"        
+        outline                                                
+        hide-details
         :label="$t('contact.filter.LEAD_SOURCES')"
         v-model="lead_source"
     >
