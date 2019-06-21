@@ -18,6 +18,10 @@ class BrokerController extends Controller
     {
         $query = Broker::latest();
 
+        if($request->has('filters')) {
+            $this->filters($request, $query, ['keyword_search']);
+        }
+
         if($request->has('limit')) {
             $brokers = $query->paginate($request->limit);
         } else {
@@ -25,16 +29,6 @@ class BrokerController extends Controller
         }
 
         return BrokerResource::collection($brokers);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -55,17 +49,6 @@ class BrokerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
@@ -92,4 +75,28 @@ class BrokerController extends Controller
     {
         //
     }
+
+    private function search($keyword, $query) 
+    {
+        $searchWildcard = '%' . request()->{'filters.'.$keyword} . '%';
+
+        $query->where(function($query) use($searchWildcard) {
+            $fields = ['first_name', 'last_name', 'company_name', 'city', 'address'];
+            foreach($fields as $field) {
+                $query->orWhere($field, 'LIKE', $searchWildcard);
+            }
+        });
+    }
+
+    private function filters($request, $query, $fields) 
+    {
+        foreach($request->filters as $key => $value) {
+            if($request->has('filters.'.$key) && in_array($key, $fields)) {
+                if($key == 'keyword_search') {
+                    $this->search($key, $query);
+                }
+            }
+        }
+    }
+
 }
