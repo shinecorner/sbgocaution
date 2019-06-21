@@ -15,6 +15,8 @@ class ContactsTableSeeder extends Seeder
     {
         Schema::disableForeignKeyConstraints();
         DB::table('garants')->truncate();
+        DB::table('brokers')->truncate();
+        DB::table('private_landlords')->truncate();
         DB::table('policies')->truncate();
         DB::table('invoices')->truncate();
         DB::table('addresses')->truncate();
@@ -29,6 +31,18 @@ class ContactsTableSeeder extends Seeder
 
             for($i = mt_rand(1,6); $i < 6; $i++) {
                 $policy = factory(App\Policy::class)->create();
+                if($i == 1 || $i == 2) {
+                    $broker = factory(App\Broker::class)->create();
+                    $broker->policies()->save($policy);
+                } else if($i == 3 || $i == 4) {
+                    $private_landlord = factory(App\PrivateLandlord::class)->create();
+                    $private_landlord->policies()->save($policy);
+                } else {
+                    $broker = factory(App\Broker::class)->create();
+                    $broker->policies()->save($policy);
+                    $private_landlord = factory(App\PrivateLandlord::class)->create();
+                    $private_landlord->policies()->save($policy);
+                }
                 $policy_address = factory(App\PolicyAddress::class)->create();
                 $policy->policy_address()->save($policy_address);
                 for($j = mt_rand(1,3); $j <= 3; $j++) {
