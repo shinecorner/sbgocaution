@@ -60,7 +60,7 @@ class ConfigsTableSeeder extends Seeder
             ],
             [
                 'option' => 'mail.driver',
-                'value' => 'log'
+                'value' => 'smtp'
             ],
             [
                 'option' => 'mail.reply_to.name',
