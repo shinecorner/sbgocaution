@@ -1,19 +1,87 @@
+import { mapGetters } from "vuex";
 export const TableFields = {
     data(){        
         return {
-            fields: [ 
-                {name: "prettycheck", title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
-                {title: () => this.$i18n.t('contact.ID'), name: "c_contactformate", titleClass: 'contact_id_title', dataClass: 'contact_id_data'},
-                {title: "", name: "c_edit", dataClass: 'edit_data', titleClass: 'edit_column'},
-                {title: () => this.$i18n.t('general.NAME'), name: "c_name"},
-                {title: () => this.$i18n.t('general.ADDRESS'), name: "c_address"},
-                {title: () => this.$i18n.t('contact.TOTAL_INVOICES'), name: "c_invoices"},
-                {title: "", name: "c_statusdropdown", dataClass: 'statusdropdown_column', titleClass: 'statusdropdown_column'},
-                {title: () => this.$i18n.t('general.STATUS'), name: "c_status", dataClass: 'status_policy_column', titleClass: 'status_policy_column'},
-                {title: "", name: "c_userlink", dataClass: 'userid_link'},
-                //{ title: "", name: "c_action" },
-                {title: "", name: "c_addpolicy", dataClass: 'add_policy_btn'},
-            ]
+            noDataMessage: this.$i18n.t('general.DATA_LOADING'),
+            loading: true,
+            currentPerPage: '',                        
+            perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),
+            moreParams: {},
+            paginationComponent: 'vuetable-pagination',
+            httpOptions: { headers: { Authorization: 'Bearer '+localStorage.getItem('accessToken') } },
+            checkedRows: [],
+            css: {
+                table: {
+                  tableClass: 'v-datatable v-table theme--light',
+                  loadingClass: 'loading',
+                  ascendingIcon: 'glyphicon glyphicon-chevron-up',
+                  descendingIcon: 'glyphicon glyphicon-chevron-down',
+                  handleIcon: 'glyphicon glyphicon-menu-hamburger',
+                },
+                pagination: {
+                  infoClass: 'v-datatable__actions__pagination',
+                  wrapperClass: 'v-datatable__actions',
+                  activeClass: 'btn-primary',
+                  disabledClass: 'disabled',
+                  pageClass: 'btn btn-border',
+                  linkClass: 'btn btn-border',
+                  icons: {
+                    first: '',
+                    prev: '',
+                    next: '',
+                    last: '',
+                  },
+                }
+            },
         }
-    }    
+    },
+    computed:{
+        ...mapGetters(["selectedLocale"])
+    },
+    watch: {
+        selectedLocale: function(){
+            this.$refs.vuetable.refresh();            
+      }
+    },
+    methods: {
+        changePageHandler(val){
+            this.perPage = val;
+        },
+        onPaginationData (paginationData) {
+          this.$refs.pagination.setPaginationData(paginationData)
+        },
+        onChangePage (page) {
+          this.$refs.vuetable.changePage(page)
+        },
+        
+        onLoading() {            
+          this.loading = true;
+          if(this.currentPerPage !== this.perPage){                
+                this.currentPerPage = this.perPage;
+                this.$refs.vuetable.currentPage = 1;
+            }          
+        },
+        onLoaded() {
+          this.loading = false; 
+        },
+        onFilterData(){ 
+            let that = this;
+            that.moreParams = {};
+            _.forOwn(this.$store.getters.inputItems, function(filter_value, filter_name) { 
+                that.moreParams['filters['+filter_name+']'] = filter_value;
+            });            
+            Vue.nextTick(() => this.$refs.vuetable.refresh());
+        },
+        onResetFilter(){ 
+            this.$store.dispatch("clearInputItems");
+            this.moreParams = {};        
+            Vue.nextTick(() => this.$refs.vuetable.refresh());
+        },
+    },
+    created() {
+        this.currentPerPage = this.perPage;        
+    },    
+    destroyed(){
+        this.$store.dispatch("clearInputItems");    
+    }
 }

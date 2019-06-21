@@ -98,7 +98,7 @@ import Status from "Components/Crm/Contact/Status";
 import Salutation from "Components/Crm/Contact/Salutation";
 import LeadSource from "Components/Crm/Contact/LeadSource";
 import BirthDate from "Components/Crm/Contact/BirthDate";
-import YesNoDropdown from "Components/Crm/Contact/YesNoDropdown";
+import YesNoDropdown from "Components/Crm/General/YesNoDropdown";
 
 export default{
     mixins: [globalFunction],

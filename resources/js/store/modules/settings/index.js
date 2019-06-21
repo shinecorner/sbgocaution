@@ -183,10 +183,15 @@ const actions = {
 
 // mutations
 const mutations = {        
-    serverHelpersHandler(state, helpers) {                
-        localStorage.setItem('serverHelpers', JSON.stringify(helpers.serverhelpers));
-        state.serverHelpers = JSON.stringify(helpers.serverhelpers);
-	},        
+        serverHelpersHandler(state, helpers) {
+            let pass_helpers = helpers.serverhelpers;
+            let s_helpers = JSON.parse(state.serverHelpers);
+            _.forOwn(pass_helpers, function(helper_value, helper_key) { 
+                  s_helpers[helper_key] = helper_value;
+            });            
+            localStorage.setItem('serverHelpers', JSON.stringify(s_helpers));
+            state.serverHelpers = JSON.stringify(s_helpers);
+	},
 	darkModeHandler(state) {
 		state.darkMode = !state.darkMode;
 	},
