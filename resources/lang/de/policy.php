@@ -15,4 +15,5 @@ return [
 	],
     'STATUS_CHANGE_SUCCESS' => 'Der Richtlinienstatus wurde erfolgreich geändert.',
     'STATUS_CHANGE_FAIL' => 'Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut.',
+    'POLICY_TOTAL' => 'Policen insgesamt'
 ];

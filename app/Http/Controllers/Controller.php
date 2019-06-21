@@ -22,7 +22,19 @@ class Controller extends BaseController
         		
         		case 'other':
         			foreach($value as $helper) {
-        				$data['helpers'][$helper] = getLeadSourcePlain();
+                        switch ($helper) {
+                            case 'lead_sources':
+                                $data['helpers'][$helper] = getLeadSourcePlain();
+                                break;
+                            
+                            case 'kantons':
+                                $data['helpers'][$helper] = getKantons();
+                                break;
+
+                            case 'cities':
+                                $data['helpers'][$helper] = getCities();
+                                break;
+                        }
         			}
         			break;
         	}

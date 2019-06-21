@@ -133,21 +133,10 @@
                                 </tr>
                                 <tr>
                                     <td style="color:#7a7a7a;">
-                                        {{ __('landlord/regrequest.SOCIETY') }} :
+                                        {{ __('landlord/regrequest.FORM_FIELDS.COMPANY') }} :
                                     </td>
                                     <td style="color:#7a7a7a;">
-                                        {{$data['society']}}
-                                    </td>
-                                </tr>
-                                <tr height="10">
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#7a7a7a;">
-                                        {{ __('landlord/regrequest.NAME') }} :
-                                    </td>
-                                    <td style="color:#7a7a7a;">
-                                        {{$data['name']}}
+                                        {{$data['company']}}
                                     </td>
                                 </tr>
                                 <tr height="10">
@@ -155,10 +144,10 @@
                                 </tr>
                                 <tr>
                                     <td style="color:#7a7a7a;">
-                                        {{ __('landlord/regrequest.FIRST_NAME') }} :
+                                        {{ __('landlord/regrequest.FORM_FIELDS.LAST_NAME') }} :
                                     </td>
                                     <td style="color:#7a7a7a;">
-                                        {{$data['first_name']}}
+                                        {{$data['lastname']}}
                                     </td>
                                 </tr>
                                 <tr height="10">
@@ -166,7 +155,18 @@
                                 </tr>
                                 <tr>
                                     <td style="color:#7a7a7a;">
-                                        {{ __('landlord/regrequest.ADDRESS') }} :
+                                        {{ __('landlord/regrequest.FORM_FIELDS.FIRST_NAME') }} :
+                                    </td>
+                                    <td style="color:#7a7a7a;">
+                                        {{$data['firstname']}}
+                                    </td>
+                                </tr>
+                                <tr height="10">
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="color:#7a7a7a;">
+                                        {{ __('landlord/regrequest.FORM_FIELDS.ADDRESS') }} :
                                     </td>
                                     <td style="color:#7a7a7a;">
                                         {{$data['address']}}
@@ -177,21 +177,10 @@
                                 </tr>
                                 <tr>
                                     <td style="color:#7a7a7a;">
-                                        {{ __('landlord/regrequest.P_CODE_LOCATION') }} :
+                                        {{ __('landlord/regrequest.FORM_FIELDS.ZIP') }} :
                                     </td>
                                     <td style="color:#7a7a7a;">
-                                        {{$data['location']}}
-                                    </td>
-                                </tr>
-                                <tr height="10">
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td style="color:#7a7a7a;">
-                                        {{ __('landlord/regrequest.PHONE_MOBILE') }} :
-                                    </td>
-                                    <td style="color:#7a7a7a;">
-                                        {{$data['phone']}}
+                                        {{$data['zip']}}
                                     </td>
                                 </tr>
                                 <tr height="10">
@@ -199,7 +188,29 @@
                                 </tr>
                                 <tr>
                                     <td style="color:#7a7a7a;">
-                                        {{ __('landlord/regrequest.EMAIL') }} :
+                                        {{ __('landlord/regrequest.FORM_FIELDS.CITY') }} :
+                                    </td>
+                                    <td style="color:#7a7a7a;">
+                                        {{$data['city']}}
+                                    </td>
+                                </tr>
+                                <tr height="10">
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="color:#7a7a7a;">
+                                        {{ __('landlord/regrequest.FORM_FIELDS.TELEPHONE') }} :
+                                    </td>
+                                    <td style="color:#7a7a7a;">
+                                        {{$data['telephone']}}
+                                    </td>
+                                </tr>
+                                <tr height="10">
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="color:#7a7a7a;">
+                                        {{ __('landlord/regrequest.FORM_FIELDS.EMAIL') }} :
                                     </td>
                                     <td style="color:#7a7a7a;">
                                         {{$data['email']}}

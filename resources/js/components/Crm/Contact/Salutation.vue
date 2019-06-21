@@ -1,5 +1,7 @@
 <template>
-    <v-select :items="salutation_filter_option"
+    <v-select :items="salutation_filter_option"        
+        outline                                                
+        hide-details
         v-model="salutation"
         :label="$t('contact.filter.SALUTATION')">
     </v-select>

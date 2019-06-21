@@ -15,7 +15,7 @@ $factory->define(Contact::class, function (Faker $faker) {
     }
     return [
         'real_contact_num' => $real_contact_num,
-        'user_id' => $faker->randomElement([1,2,3,4,5,6]),
+        'user_id' => $faker->randomElement([1,2,3,4,5,6,7,8]),
         'contact_num' => getUniqueNum($real_contact_num, 3),
         'contact_type' => $faker->randomElement([1,2]),
         'salutation' => $faker->randomElement(['mr', 'mrs', 'company']),

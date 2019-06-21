@@ -2,6 +2,7 @@ import Full from 'Container/Full'
 import AppConfig from "Constants/AppConfig";
 
 const ContactList = () => import('Views/contacts/List');
+const BrokerList = () => import('Views/brokers/List');
 const SocketDemo = () => import('Views/contacts/ListSocket');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
@@ -28,6 +29,22 @@ export default {
         }
       },
        {
+           path: '/brokers',
+           component: BrokerList,
+           meta: {
+               requiresAuth: true,
+               title: 'broker.BROKERS',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'broker.BROKERS'
+                   }
+               ]
+           }
+       },
+       {
            path: '/privatelandlords',
            component: PrivateLandLordList,
            meta: {
@@ -43,8 +60,7 @@ export default {
                ]
            }
        },
-
-       {
+      {
         path: '/socket-demo',
         component: SocketDemo,
         meta: {

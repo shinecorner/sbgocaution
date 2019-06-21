@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Landlord;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Regrequest;
+use App\Http\Requests\Landlord\RegRequest;
 use App\Regrequest as model;
 use Illuminate\Support\Facades\Mail;
 
 class RegrequestController extends Controller
 {
 
-    public function store(Regrequest $request)
+    public function store(RegRequest $request)
     {
 
         try {
@@ -23,7 +23,7 @@ class RegrequestController extends Controller
             $regRequest->create($data);
 
             Mail::to('rk@gocaution.ch')
-                ->send(new \App\Mail\RegRequest($data));
+                ->send(new \App\Mail\Landlord\RegRequest($data));
 
         } catch (\Exception $e){
             return response()->json(['status'=>1,'error'=>$e->getMessage()]);

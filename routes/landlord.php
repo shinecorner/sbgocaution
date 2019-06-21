@@ -1,6 +1,5 @@
 <?php
-//dd(app()->getLocale());
-\Log::info(LaravelLocalization::transRoute("landlord/regrequest.routes.REGISTER_REQUEST"));
+
 Route::get('/home', function(){ return redirect( app()->getLocale().'/dashboard'); })->name('home');
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function()
 {

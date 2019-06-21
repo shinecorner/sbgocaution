@@ -1,5 +1,7 @@
 <template>
-    <v-text-field                                            
+    <v-text-field         
+        outline                                                
+        hide-details
         :label="$t('general.filter.TYPE_TO_SEARCH')"
         :height="20"
         v-model="keyword_search"

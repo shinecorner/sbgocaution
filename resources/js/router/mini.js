@@ -2,6 +2,7 @@ import MiniSidebarLayout from 'Container/MiniSidebarLayout'
 import AppConfig from "Constants/AppConfig";
 
 const ContactList = () => import('Views/contacts/List');
+const BrokerList = () => import('Views/brokers/List');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
 
@@ -27,6 +28,22 @@ export default {
         }
       },
        {
+           path: '/mini/brokers',
+           component: BrokerList,
+           meta: {
+               requiresAuth: true,
+               title: 'broker.BROKERS',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'broker.BROKERS'
+                   }
+               ]
+           }
+       },
+       {
            path: '/mini/privatelandlords',
            component: PrivateLandLordList,
            meta: {
@@ -42,7 +59,7 @@ export default {
                ]
            }
        },
-       {
+      {
         path: '/mini/settings',
         component: SettingPage,
         meta: {

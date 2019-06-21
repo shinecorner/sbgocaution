@@ -28,6 +28,8 @@
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
                                             <v-text-field
+                                                outline                                                
+                                                hide-details
                                                 :label="$t('setting.INVOICE_DATE_FORMAT')"
                                                 :data-vv-as="$t('setting.INVOICE_DATE_FORMAT')"
                                                 v-model="configs['crm.display_date_format']"
@@ -37,11 +39,13 @@
                                                 required></v-text-field>
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
-                                                    <v-select v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('setting.ITEMS_PER_PAGE')"></v-select>
+                                                    <v-select outline hide-details v-bind:items="length_options" v-model="configs['crm.items_per_page']" :label="$t('setting.ITEMS_PER_PAGE')"></v-select>
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
                                                         type="number"
+                                                        outline 
+                                                        hide-details
                                                         :label="$t('setting.DECIMALS')"
                                                         v-model="configs['crm.decimals']"
                                                         :data-vv-as="$t('setting.DECIMALS')"
@@ -56,6 +60,8 @@
                                             <v-flex sm6 md4 lg4>
                                               <v-text-field
                                                     :label="$t('setting.INVOICE_NUMBER_FORMAT')"
+                                                    outline 
+                                                    hide-details
                                                     v-model="configs['crm.invoice_num_format']"
                                                     :data-vv-as="$t('setting.INVOICE_NUMBER_FORMAT')"
                                                     data-vv-name="invoice_num_format"
@@ -66,6 +72,8 @@
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                    outline 
+                                                    hide-details
                                                     :label="$t('setting.POLICY_NUMBER_FORMAT')"
                                                     v-model="configs['crm.policy_num_format']" 
                                                     :data-vv-as="$t('setting.POLICY_NUMBER_FORMAT')"
@@ -77,6 +85,8 @@
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                    outline 
+                                                    hide-details
                                                     :label="$t('setting.CONTACT_NUMBER_FORMAT')"
                                                     v-model="configs['crm.contact_num_format']"
                                                     :data-vv-as="$t('setting.CONTACT_NUMBER_FORMAT')"
@@ -90,6 +100,8 @@
                                         <v-layout row wrap>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                    outline 
+                                                    hide-details
                                                     :label="$t('setting.THOUSANDS')"
                                                     v-model="configs['crm.thousands']"
                                                     :data-vv-as="$t('setting.THOUSANDS')"
@@ -101,6 +113,8 @@
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                      outline 
+                                                      hide-details
                                                       :label="$t('setting.DECPOINTS')"
                                                       v-model="configs['crm.decpoint']"
                                                       :data-vv-as="$t('setting.DECPOINTS')"
@@ -112,6 +126,8 @@
                                             </v-flex>
                                             <v-flex sm6 md4 lg4>
                                               <v-text-field
+                                                    outline 
+                                                    hide-details
                                                     type="number"
                                                     :label="$t('setting.INVOICE_NUM_DIGITS')"
                                                     v-model="configs['crm.invoice_number_digits']"
@@ -127,10 +143,12 @@
                                 <template v-if="index=='email'" ref="email">
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
-                                            <v-select hide-details v-bind:items="mail_options" :label="$t('setting.SEND_MAILS')" v-model="configs['mail.driver']"></v-select>
+                                            <v-select outline hide-details v-bind:items="mail_options" :label="$t('setting.SEND_MAILS')" v-model="configs['mail.driver']"></v-select>
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                        outline 
+                                                        hide-details
                                                         :label="$t('setting.FROM_NAME_ON_EMAILS')"
                                                         v-model="configs['mail.from.name']"
                                                         :data-vv-as="$t('setting.FROM_NAME_ON_EMAILS')"
@@ -141,6 +159,8 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                        outline 
+                                                        hide-details
                                                         :label="$t('setting.FROM_EMAIL_ON_EMAILS')"
                                                         v-model="configs['mail.from.address']"
                                                         :data-vv-as="$t('setting.FROM_EMAIL_ON_EMAILS')"
@@ -153,6 +173,8 @@
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                        outline 
+                                                        hide-details
                                                         :label="$t('setting.REPLY_ADDRESS')"
                                                         v-model="configs['mail.reply_to.address']"
                                                         :data-vv-as="$t('setting.REPLY_ADDRESS')"
@@ -163,6 +185,8 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                        outline 
+                                                        hide-details
                                                         :label="$t('setting.REPLY_NAME')"
                                                         v-model="configs['mail.reply_to.name']"
                                                         :data-vv-as="$t('setting.REPLY_NAME')"
@@ -173,6 +197,8 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                        outline 
+                                                        hide-details
                                                         :label="$t('setting.PORT')"
                                                         v-model="configs['mail.port']"
                                                         :data-vv-as="$t('setting.PORT')"
@@ -185,6 +211,8 @@
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>										
                                                 <v-text-field
+                                                        outline 
+                                                        hide-details
                                                         :label="$t('setting.SMTP_HOST')"
                                                         v-model="configs['mail.host']"
                                                         :data-vv-as="$t('setting.SMTP_HOST')"
@@ -195,6 +223,8 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                        outline 
+                                                        hide-details
                                                         :label="$t('setting.SMTP_USER')"
                                                         v-model="configs['mail.username']"
                                                         :data-vv-as="$t('setting.SMTP_USER')"
@@ -205,6 +235,8 @@
                                         </v-flex>
                                         <v-flex sm6 md4 lg4>
                                                 <v-text-field
+                                                        outline 
+                                                        hide-details
                                                         type="password"
                                                         :label="$t('setting.SMTP_PASSWORD')"
                                                         v-model="configs['mail.password']"
@@ -217,7 +249,7 @@
                                     </v-layout>
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
-                                            <v-select v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
+                                            <v-select outline hide-details v-bind:items="smtp_encryption" v-model="configs['mail.encryption']" :label="$t('setting.SMTP_SECURITY')" item-text="text" item-value="value"></v-select>
                                         </v-flex>        
                                         <v-flex sm6 md4 lg4>
                                             <v-switch 

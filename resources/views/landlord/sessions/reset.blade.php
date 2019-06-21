@@ -14,7 +14,6 @@
           @endif
           <input type="hidden" name="token" value="{{ $token }}">
                 <div class="input-wrapper">
-                    <label for="validationTooltipEmail">{{ __('landlord/login.EMAIL') }}<span class="star">&#160;*</span></label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="validationTooltipEmailPrepend"><i class="fa fa-user" aria-hidden="true"></i></span>
@@ -27,7 +26,6 @@
                 </div>
 
                 <div class="input-wrapper">
-                    <label for="validationTooltipUsername">{{ __('landlord/login.NEW_PASSWORD') }}<span class="star">&#160;*</span></label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="validationTooltipUsernamePrepend"><i class="fa fa-key" aria-hidden="true"></i></span>

@@ -15,4 +15,5 @@ return [
 	],
     'STATUS_CHANGE_SUCCESS' => 'Policy status has been changed successfully.',
     'STATUS_CHANGE_FAIL' => 'Unfortunately, policy status has not been changed, try again.',
+    'POLICY_TOTAL' => 'Total policies'
 ];
