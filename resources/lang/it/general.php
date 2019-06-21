@@ -7,6 +7,7 @@ return [
     'MR' => 'Signor',
     'MRS' => 'Signora',
     'COMPANY' => 'Solido',
+    'FAMILY' => 'familiare',
     'EMAIL' => 'E-Mail',
     'CRM_TITLE' => 'goCaution AG',
     'SUBMIT' => 'Invia',

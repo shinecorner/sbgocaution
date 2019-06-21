@@ -34,6 +34,10 @@ class Controller extends BaseController
                             case 'cities':
                                 $data['helpers'][$helper] = getCities();
                                 break;
+
+                            case 'privatelandlord_salutation':
+                                $data['helpers'][$helper] = privatelandlord_satulationPlain();
+                                break;
                         }
         			}
         			break;

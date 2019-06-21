@@ -498,3 +498,29 @@ if(!function_exists('getCities')) {
     }
     
 }
+
+if(!function_exists('privatelandlord_salutation')) {
+
+    function privatelandlord_satulation($plain = 0) {
+        $salutation = [];
+        $salutation['mr'] = __('general.MR'); 
+        $salutation['mrs'] = __('general.MRS'); 
+        $salutation['family'] = __('general.FAMILY');
+        $salutation['company'] = __('general.COMPANY');
+        if(!$plain) {
+            foreach($salutation as $key => $value) {
+                $salutation[$key] = __($value);
+            }
+        }
+        return $salutation;
+    }
+
+}
+
+if(!function_exists('privatelandlord_salutationPlain')) {
+
+    function privatelandlord_salutationPlain() {
+        return privatelandlord_salutation(1);
+    }
+
+}
