@@ -444,6 +444,7 @@ if(!function_exists('getCompanyBranches')) {
 }
 
 if(!function_exists('getPremiumAmount')) {
+
     function getPremiumAmount($deposit_amount, $private = 0) {
         if($private) {
             if($deposit_amount <= 2000) {
@@ -458,5 +459,42 @@ if(!function_exists('getPremiumAmount')) {
         }
         return $subtotal;
     }
+
 }
 
+if(!function_exists('getKantons')) {
+
+    function getKantons() {
+
+        $lang = app()->getLocale();
+
+        if($lang=='de'){
+            $whichname = 'german';
+        }
+        if($lang=='fr'){
+            $whichname = 'french';
+        }
+        if($lang=='it'){
+            $whichname = 'italian';
+        }
+        if($lang=='en'){
+            $whichname = 'german';
+        }
+
+        $kantons = App\Canton::all()->pluck($whichname, 'shortcode');
+
+        return $kantons;
+    }
+
+}
+
+if(!function_exists('getCities')) {
+
+    function getCities() {
+
+        $cities = App\PrivateLandlord::distinct('city')->pluck('city');
+
+        return $cities;
+    }
+    
+}
