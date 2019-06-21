@@ -6,10 +6,19 @@ export const menus = {
 			title: 'contact.CONTACTS',
 			active: true,
 			label: 'contact',
-                        path: '/contacts',
+            path: '/contacts',
 			items: null,
-                        exact: true
-		}			
+            exact: true
+		},
+        {
+            action: 'zmdi-accounts',
+            title: 'broker.BROKERS',
+            active: false,
+            label: 'broker',
+            path: '/brokers',
+            items: null,
+            exact: true
+        }
     ],
     'setting.OPTIONS':[
         {
