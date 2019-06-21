@@ -5,7 +5,6 @@ use App\Broker;
 
 $factory->define(Broker::class, function (Faker $faker) {
     return [
-    	'policy_id' => 0,
         'company_name' => $faker->company,
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
@@ -15,7 +14,7 @@ $factory->define(Broker::class, function (Faker $faker) {
         'email' => $faker->email,
         'website' => $faker->domainName,
         'real_broker_num' => $faker->randomDigit,
-        'broker_number' => $faker->randomDigit,
+        'broker_num' => $faker->randomDigit,
         'mobile' => $faker->phoneNumber,
         'phone' => $faker->phoneNumber
     ];
