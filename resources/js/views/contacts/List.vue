@@ -129,19 +129,8 @@
                                 <template slot="c_status" slot-scope="props">
                                     <div :columnclass="props.rowData.status_class.replace('label-status','column')" :class="props.rowData.status_class.replace('label-status','column') + ' status-chips'" :id="'c_status_'+props.rowData.id">
                                         <v-chip small :id="'c_status_chip_'+props.rowData.id" :chipclass="props.rowData.status_class" :class="props.rowData.status_class" text-color="white">{{tConverted('contact.status.' + props.rowData.status)}}</v-chip>
-                                        
-                                        <div>
-                                            <v-tooltip top v-for="(policy_detail,policy_status, policy_index) in props.rowData.count_policy_by_status" v-bind:key="policy_index"> 
-                                                <v-chip slot="activator" small :class="'label-status-' + policy_detail.class" text-color="white">{{policy_detail.count}}</v-chip>
-                                                <span>{{$t('general.POLICIES')}}:&nbsp;{{tConverted('policy.status.'+policy_status)}}</span>
-                                            </v-tooltip>
-                                        </div>
-                                        <div>
-                                            <v-tooltip top v-for="(invoice_detail,invoice_status, invoice_index) in props.rowData.count_invoice_by_status" v-bind:key="invoice_index"> 
-                                                <v-chip slot="activator" small :class="'label-status-' + invoice_detail.class" text-color="white">{{invoice_detail.count}}</v-chip>
-                                                <span>{{$t('general.INVOICES')}}:&nbsp;{{tConverted('invoice.status.'+invoice_status)}}</span>
-                                            </v-tooltip>
-                                        </div>
+                                        <policy-count :policy_count_detail="props.rowData.count_policy_by_status"></policy-count>
+                                        <invoice-count :invoice_count_detail="props.rowData.count_invoice_by_status"></invoice-count>
                                     </div>
                                 </template>
                                 <template slot="c_userlink" slot-scope="props">
@@ -200,13 +189,18 @@ import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginatio
 import globalFunction from "Helpers/helpers";
 import Filters from "./Filters";
 import {TableFields} from "./TableFields";
+import PolicyCount from "Components/Crm/General/PolicyCount";
+import InvoiceCount from "Components/Crm/General/InvoiceCount";
+
 export default {
     mixins: [globalFunction, TableFields],
     components: {
         Vuetable,
         VuetablePagination,        
         VuetablePaginationInfo,
-        Filters        
+        Filters,
+        PolicyCount,
+        InvoiceCount
     }, 
     watch: {
         selectedLocale: function(newVal, oldVal){
