@@ -15,4 +15,5 @@ return [
 	],
     'STATUS_CHANGE_SUCCESS' => 'Lo stato della polizza è stato modificato con successo.',
     'STATUS_CHANGE_FAIL' => 'Purtroppo, lo status politico non è stato cambiato, riprovaci.',
+    'POLICY_TOTAL' => 'Totale polizze'
 ];

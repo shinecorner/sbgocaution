@@ -341,7 +341,8 @@ export default {
                 "PENDING_CANCEL": "Auflösung gemeldet"
             },
             "STATUS_CHANGE_SUCCESS": "Der Richtlinienstatus wurde erfolgreich geändert.",
-            "STATUS_CHANGE_FAIL": "Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut."
+            "STATUS_CHANGE_FAIL": "Leider wurde der Richtlinienstatus nicht geändert, versuchen Sie es erneut.",
+            "POLICY_TOTAL": "Policen insgesamt"
         },
         "invoice": {
             "status": {
@@ -928,7 +929,8 @@ export default {
                 "PENDING_CANCEL": "Resolution reported"
             },
             "STATUS_CHANGE_SUCCESS": "Policy status has been changed successfully.",
-            "STATUS_CHANGE_FAIL": "Unfortunately, policy status has not been changed, try again."
+            "STATUS_CHANGE_FAIL": "Unfortunately, policy status has not been changed, try again.",
+            "POLICY_TOTAL": "Total policies"
         },
         "invoice": {
             "status": {
@@ -1510,7 +1512,8 @@ export default {
                 "PENDING_CANCEL": "Résolution/Mouvement rapportée"
             },
             "STATUS_CHANGE_SUCCESS": "L'état de la police a été modifié avec succès.",
-            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la politique n'a pas été modifié, réessayez."
+            "STATUS_CHANGE_FAIL": "Malheureusement, l'état de la politique n'a pas été modifié, réessayez.",
+            "POLICY_TOTAL": "Total des polices"
         },
         "invoice": {
             "status": {
@@ -2105,7 +2108,8 @@ export default {
                 "PENDING_CANCEL": "Risoluzione segnalata"
             },
             "STATUS_CHANGE_SUCCESS": "Lo stato della polizza è stato modificato con successo.",
-            "STATUS_CHANGE_FAIL": "Purtroppo, lo status politico non è stato cambiato, riprovaci."
+            "STATUS_CHANGE_FAIL": "Purtroppo, lo status politico non è stato cambiato, riprovaci.",
+            "POLICY_TOTAL": "Totale polizze"
         },
         "invoice": {
             "status": {

@@ -15,4 +15,5 @@ return [
 	],
     'STATUS_CHANGE_SUCCESS' => 'L\'état de la police a été modifié avec succès.',
     'STATUS_CHANGE_FAIL' => 'Malheureusement, l\'état de la politique n\'a pas été modifié, réessayez.',
+    'POLICY_TOTAL' => 'Total des polices'
 ];
