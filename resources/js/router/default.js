@@ -5,6 +5,7 @@ const ContactList = () => import('Views/contacts/List');
 const BrokerList = () => import('Views/brokers/List');
 const SocketDemo = () => import('Views/contacts/ListSocket');
 const SettingPage = () => import('Views/settings/SettingPage');
+const PrivateLandLordList = () => import('Views/privatelandlords/List');
 
 export default {
    path: '/',
@@ -39,6 +40,22 @@ export default {
                    },
                    {
                        breadcrumbActive: 'broker.BROKERS'
+                   }
+               ]
+           }
+       },
+       {
+           path: '/privatelandlords',
+           component: PrivateLandLordList,
+           meta: {
+               requiresAuth: true,
+               title: 'privatelandlord.PRIVATE_LANDLORDS',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'privatelandlord.PRIVATE_LANDLORDS'
                    }
                ]
            }
