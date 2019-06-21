@@ -10,10 +10,6 @@ class Policy extends Model
 		return $this->belongsTo('App\Contact');
 	}
 
-    public function broker() {
-        return $this->belongsTo('App\Broker');
-    }
-
     public function invoices()
     {
         return $this->hasMany('App\Invoice');

@@ -15,7 +15,7 @@ $factory->define(Broker::class, function (Faker $faker) {
         'email' => $faker->email,
         'website' => $faker->domainName,
         'real_broker_num' => $faker->randomDigit,
-        'number' => $faker->randomDigit,
+        'broker_number' => $faker->randomDigit,
         'mobile' => $faker->phoneNumber,
         'phone' => $faker->phoneNumber
     ];
