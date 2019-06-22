@@ -524,3 +524,12 @@ if(!function_exists('privatelandlord_salutationPlain')) {
     }
 
 }
+
+if(!function_exists('brokers_cities')) {
+
+    function brokers_cities() {
+        $cities = App\Broker::distinct('city')->pluck('city');
+        return $cities;
+    }
+
+}
