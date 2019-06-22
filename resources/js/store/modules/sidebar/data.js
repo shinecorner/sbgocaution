@@ -1,6 +1,6 @@
 // Sidebar Routers
 export const menus = {
-    'general.CRM': [	
+    'general.CRM': [
 		{
 			action: 'zmdi-accounts',
 			title: 'contact.CONTACTS',
@@ -18,7 +18,16 @@ export const menus = {
             path: '/brokers',
             items: null,
             exact: true
-        }
+        },
+        {
+            action: 'zmdi-accounts',
+            title: 'privatelandlord.PRIVATE_LANDLORDS',
+            active: false,
+            label: 'privatelandlord',
+            path: '/privatelandlord',
+            items: null,
+            exact: true
+        },
     ],
     'setting.OPTIONS':[
         {
