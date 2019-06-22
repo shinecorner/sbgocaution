@@ -24,7 +24,7 @@ export const menus = {
             title: 'privatelandlord.PRIVATE_LANDLORDS',
             active: false,
             label: 'privatelandlord',
-            path: '/privatelandlord',
+            path: '/privatelandlords',
             items: null,
             exact: true
         },
