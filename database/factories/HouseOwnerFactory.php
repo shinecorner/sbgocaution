@@ -18,6 +18,7 @@ $factory->define(HouseOwner::class, function (Faker $faker) {
         'payment_recipient_bank' => $faker->phoneNumber,
         'payment_recipient_iban' => $faker->phoneNumber,
         'payment_recipient_post_account' => $faker->phoneNumber,
-        'is_duplicate' => $faker->boolean
+        'is_duplicate' => $faker->boolean,
+        'created_by' => 0
     ];
 });

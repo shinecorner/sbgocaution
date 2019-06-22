@@ -7,6 +7,7 @@ return [
     'MR' => 'Herr',
     'MRS' => 'Frau',
     'COMPANY' => 'Firma',
+    'FAMILY' => 'Familie',
     'EMAIL' => 'E-mail',
     'CRM_TITLE' => 'goCaution AG',
     'SUBMIT' => 'Absenden',

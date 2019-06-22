@@ -31,5 +31,6 @@ $factory->define(PrivateLandlord::class, function (Faker $faker) {
         'payment_recipient_iban' => $faker->iban,
         'payment_recipient_post_account' => $faker->bankAccountNumber,
         'file_names' => $faker->text(5),
+        'created_by' => 0
     ];
 });
