@@ -533,3 +533,19 @@ if(!function_exists('brokers_cities')) {
     }
 
 }
+
+if(!function_exists('__landlord')) {
+
+    function __landlord($key) {
+        __('landlord/'.$key);
+    }
+
+}
+
+if(!function_exists('__customer')) {
+
+    function __customer($key) {
+        __('customer/'.$key);
+    }
+
+}

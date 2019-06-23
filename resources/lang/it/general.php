@@ -101,7 +101,13 @@ return [
         'VAR_EMAILPOST' => "Per concludere la cauzione di affttio nel modo convenzionale, potete inviarci il modulo di domanda allegato compilato integralmente e firmato via e-mail a info@gocaution.ch o per posta a goCaution SA, Freiburgstrasse 574, 3172 Niederwangen.<br /><br /> Nell'appendice troverete i seguenti documenti in formato PDF:<ul><li>la nostra offerta</li><li>il modulo di domanda</li><li>il nostro volantino del prodotto</li></ul>",
         'PAYMENT_INFO' => "Dopo la registrazione e l'accettazione della vostra richiesta, vi invieremo la fattura per il pagamento del primo premio annuale, necessario per l'attivazione della vostra polizza. Dopo aver ricevuto il pagamento del premio, invieremo il certificato di cauzione originale al vostro locatore per posta. Con questo certificato si garantisce al locatore il deposito cauzionale richiesto per l'affitto. Riceverete anche una copia del certificato in formato PDF tramite e-mail.",
         'HELP' => "Ci auguriamo di essere stati in grado di aiutarvi con queste informazioni e siamo a vostra disposizione via e-mail o per telefono per qualsiasi ulteriore consiglio.",
-        'ONLINE_LINK' => '<p class="text-center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;"><a style="color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;" href="https://www.gocaution.ch/it/garanzia-di-affitto/iscrizione-on-line">Vai al modulo online</a></p>'
+        'ONLINE_LINK' => '<p class="text-center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;"><a style="color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;" href="https://www.gocaution.ch/it/garanzia-di-affitto/iscrizione-on-line">Vai al modulo online</a></p>',
+        'PRODUCT' => "Prodotto",
+        'PRODUCT_NAME' => "goCaution® per privati",
+        'DEPOSIT' => "Importo del garanzia",
+        'PREMIUM_PERCENT' => "Tasso di premio",
+        'TOTAL' => "Totale",
+        'TAX' => "Tasse di bollo (5,0 %)"
     ],
     'REGARDS' => "Cordiali saluti,<br />Il vostro team di goCaution"
 ];
