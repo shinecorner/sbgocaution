@@ -160,6 +160,8 @@ Vue.use(VeeValidate, {
 });
 
 Vue.prototype.$eventHub = new Vue();
+Vue.prototype.$routerObj = router;
+Vue.prototype.$storeObj = store;
 /* eslint-disable no-new */
 new Vue({
 	store,
