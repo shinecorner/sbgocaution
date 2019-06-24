@@ -468,6 +468,8 @@ if(!function_exists('getKantons')) {
 
         $lang = app()->getLocale();
 
+        $whichname = 'german';
+
         if($lang=='de'){
             $whichname = 'german';
         }
