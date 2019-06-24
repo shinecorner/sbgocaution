@@ -104,7 +104,7 @@ class BrokerController extends Controller
             if($request->has('filters.'.$key) && in_array($key, $fields)) {
                 if($key == 'keyword_search') {
                     $this->search($key, $query);
-                } elseif($key == 'city_id') {
+                } elseif($key == 'city') {
                     $query->where('city', '=', $value);
                 } else if($key == 'policy_count') {
                     $this->policy_count($query, $value);
@@ -112,55 +112,6 @@ class BrokerController extends Controller
                     $this->policy_count($query, $value, 1);
                 }
             }
-        }
-    }
-
-    private function policy_count($query, $value, $accepted = 0) {
-        if($value == 1) {
-            $query->has('policies', '=', 0);
-        } else if($value == 2) {
-            $query->has('policies', '=', 1);
-        } else if($value == 3) {
-            $query->has('policies', '=', 2);
-        } else if($value == 4) {
-            $query->has('policies', '=', 3);
-        } else if($value == 5) {
-            $query->has('policies', '>=', 4);
-        } else if($value == 6) {
-            $query->has('policies', '>=', 5);
-        } else if($value == 7) {
-            $query->has('policies', '>=', 6);
-            $query->has('policies', '<=', 10);
-        } else if($value == 8) {
-            $query->has('policies', '>=', 11);
-            $query->has('policies', '<=', 20);
-        } else if($value == 9) {
-            $query->has('policies', '>=', 20);
-        } else if($value == 10) {
-            $query->has('policies', '>=', 1);
-        } else if($value == 11) {
-            $query->has('policies', '>=', 2);
-        } else if($value == 12) {
-            $query->has('policies', '>=', 3);
-        } else if($value == 13) {
-            $query->has('policies', '>=', 4);
-        } else if($value == 14) {
-            $query->has('policies', '>=', 5);
-        } else if($value == 15) {
-            $query->has('policies', '>=', 6);
-        } else if($value == 16) {
-            $query->has('policies', '>=', 7);
-        } else if($value == 17) {
-            $query->has('policies', '>=', 8);
-        } else if($value == 18) {
-            $query->has('policies', '>=', 9);
-        } else if($value == 19) {
-            $query->has('policies', '>=', 10);
-        }
-        if($accepted) {
-            $query->whereHas('policies', function($query) {
-                $query->where('status', '=', 'accepted');
-            });
         }
     }
 

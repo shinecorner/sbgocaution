@@ -73,4 +73,27 @@ class Controller extends BaseController
                 break;
         }
     }
+
+    protected function policy_count($query, $value, $accepted = 0) {
+        if(in_array($value, range(1,5))) {
+            $conditions = ['=', '=', '=', '=', '>=', '>='];
+            $query->has('policies', $conditions[$value-1], $value - 1);
+        } else if($value == 7) {
+            $query->has('policies', '>=', 6);
+            $query->has('policies', '<=', 10);
+        } else if($value == 8) {
+            $query->has('policies', '>=', 11);
+            $query->has('policies', '<=', 20);
+        } else if($value == 9) {
+            $query->has('policies', '>=', 20);
+        } else if(in_array($value, range(10,19))) {
+            $query->has('policies', '>=', $value - 9);
+        }
+        if($accepted) {
+            $query->whereHas('policies', function($query) {
+                $query->where('status', '=', 'accepted');
+            });
+        }
+    }
+    
 }
