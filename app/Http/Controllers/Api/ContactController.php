@@ -29,7 +29,8 @@ class ContactController extends Controller
                 'invoice'
             ],
             'other' => [
-                'lead_sources'
+                'lead_sources',
+                'contact_salutation'
             ]
         ];
 

@@ -21,7 +21,8 @@ class PrivateLandlordController extends Controller
         $helpers = [
             'other' => [
                 'kantons',
-                'cities'
+                'cities',
+                'privatelandlord_salutation'
             ]
         ];
 
