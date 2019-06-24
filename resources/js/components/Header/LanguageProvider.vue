@@ -31,6 +31,7 @@
 				this.$i18n.locale = languagecode;
 				this.$store.dispatch("changeLanguage", languagecode);
                                 api.defaults.headers.common['X-localization'] = localStorage.getItem('selectedLocale');
+                                Vue.prototype.$eventHub.$emit('fireSuccess', this.$i18n.t('general.LANGUAGE_CHANGE_SUCCESS')); 
 			}
 		}
 	};
