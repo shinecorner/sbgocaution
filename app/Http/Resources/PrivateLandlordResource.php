@@ -18,7 +18,7 @@ class PrivateLandlordResource extends JsonResource
     {
         $data = parent::toArray($request); 
         $data['created_at_formatted'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
-        $salutations = privatelandlord_satulation();
+        $salutations = privatelandlord_salutation();
         $data['salutation_formatted'] = $salutations[$this->salutation];
         $data['language_flag'] = get_language_flag($this->language);
         $this->policyAndInvoiceStatusCounts($data);

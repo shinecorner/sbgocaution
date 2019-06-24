@@ -27,8 +27,8 @@ class ContactResource extends JsonResource
             $data['joomlauser'] = $this->username;
         else 
             $data['joomlauser'] = __('general.NO');
-
-        $data['saluation_formatted'] = get_salutation($this->salutation);
+        $salutations = get_salutation();
+        $data['saluation_formatted'] = $salutations[$this->salutation];
         $data['language_flag'] = get_language_flag($this->language);
 
         $address = $this->addresses->where('is_primary', 1)->first();

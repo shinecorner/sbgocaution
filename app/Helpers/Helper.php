@@ -292,18 +292,28 @@ if(!function_exists('get_salutation')) {
      * @param string $salutation
      * @return string translated salutation
      */
-    function get_salutation($salutation) {
-        switch($salutation) {
-            case 'mr': 
-                return __('general.MR'); 
-                break;
-            case 'mrs': 
-                return __('general.MRS'); 
-                break;
-            case 'company': 
-                return __('general.COMPANY'); 
-                break;
+    function get_salutation($plain = 0) {
+        $salutations = [];
+        
+        $salutations['mr'] = 'general.MR'; 
+        $salutations['mrs'] = 'general.MRS'; 
+        $salutations['company'] = 'general.COMPANY'; 
+
+        if(!$plain) {
+            foreach($salutations as $key => $value) {
+                $salutations[$key] = __($value);
+            }
         }
+
+        return $salutations;
+    }
+
+}
+
+if(!function_exists('get_salutationPlain')) {
+
+    function get_salutationPlain() {
+        return get_salutation(1);
     }
 
 }
@@ -503,12 +513,12 @@ if(!function_exists('getCities')) {
 
 if(!function_exists('privatelandlord_salutation')) {
 
-    function privatelandlord_satulation($plain = 0) {
+    function privatelandlord_salutation($plain = 0) {
         $salutation = [];
-        $salutation['mr'] = __('general.MR'); 
-        $salutation['mrs'] = __('general.MRS'); 
-        $salutation['family'] = __('general.FAMILY');
-        $salutation['company'] = __('general.COMPANY');
+        $salutation['mr'] = 'general.MR'; 
+        $salutation['mrs'] = 'general.MRS'; 
+        $salutation['family'] = 'general.FAMILY';
+        $salutation['company'] = 'general.COMPANY';
         if(!$plain) {
             foreach($salutation as $key => $value) {
                 $salutation[$key] = __($value);
