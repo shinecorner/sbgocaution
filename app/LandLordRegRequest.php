@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Regrequest extends Model
+class LandLordRegRequest extends Model
 {
     //
 

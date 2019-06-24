@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Landlord;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Landlord\RegRequest;
-use App\Regrequest as model;
+use App\LandLordRegRequest as model;
 use Illuminate\Support\Facades\Mail;
 
 class RegrequestController extends Controller
