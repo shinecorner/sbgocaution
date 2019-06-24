@@ -21,20 +21,21 @@ class PrivateLandlordResource extends JsonResource
         $salutations = privatelandlord_satulation();
         $data['salutation_formatted'] = $salutations[$this->salutation];
         $data['language_flag'] = get_language_flag($this->language);
-        $this->invoiceStatusCountAndAmount($data);
+        $this->policyAndInvoiceStatusCounts($data);
         if ($this->is_duplicate) {
             $this->getPrivateLandlordDuplicate($data);
         }
         return $data;
     }
 
-    private function invoiceStatusCountAndAmount(&$data) {
+    private function policyAndInvoiceStatusCounts(&$data) 
+    {
         $policies = $this->policies;
         $data['count_policies'] = $policies->count();
         $invoice_count = 0;
         $invoice_total = 0;
         foreach($policies as $policy) {
-            foreach($policy->invoices as $invoice) {
+            foreach($policy->invoices as $invoice){
                 $invoice_count++;
                 $invoice_total += $invoice->computed_total;
             }
@@ -42,22 +43,19 @@ class PrivateLandlordResource extends JsonResource
         $data['count_invoices'] = $invoice_count;
         $data['invoice_total'] = format($invoice_total);
         if($policies->isNotEmpty()) {
-            $invoice_statuses = array_keys(getInvoiceStatus());
-            $count_class['count'] = 0;
-            foreach($invoice_statuses as $invoice_status) {
-                foreach($policies as $policy) {
-                    $count = $policy->invoices->where('status', $invoice_status)->count();
-                    if($count > 0) {
-                        if(isset($data['count_invoice_by_status'][$invoice_status])){
-                            $count_class['count']++;
-                        } else {
-                            $count_class['count'] = $count;
-                        }
-                        $count_class['class'] = render_status_class($invoice_status);
-                        $data['count_invoice_by_status'][$invoice_status] = $count_class;
-                    }
+
+            $policy_statuses = array_keys(getPolicyStatus());
+            foreach($policy_statuses as $policy_status) {
+                $count = $policies->where('status', $policy_status)->count();
+                if($count > 0) {
+                    $count_class = [
+                        'count' => $count,
+                        'class' => render_status_class($policy_status)
+                    ];
+                    $data['count_policy_by_status'][$policy_status] = $count_class;
                 }
             }
+
         }
     }
 

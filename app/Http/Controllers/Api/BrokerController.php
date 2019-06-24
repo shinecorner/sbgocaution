@@ -38,7 +38,7 @@ class BrokerController extends Controller
             $brokers = $query->paginate($request->per_page);
         }
 
-        return BrokerResource::collection($brokers);
+        return BrokerResource::collection($brokers)->additional($data);
     }
 
     /**
