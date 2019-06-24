@@ -113,6 +113,6 @@ return [
     'NEW' => 'Neu',
     'MERGE' => 'Zusammenführen',
     'DELETE' => 'Löschen',
-    'LANGUAGE_CHANGE_SUCCESS' => 'Sprachwechsel erfolgreich durchgeführt.',
+    'LANGUAGE_CHANGE_SUCCESS' => 'Die Sprache wurde erfolgreich geändert!',
     
 ];

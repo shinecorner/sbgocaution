@@ -276,7 +276,8 @@
 </template>
 
 <script>
-import { mapState, mapActions  } from "vuex";
+import api from "Api";
+import { mapState } from "vuex";
 export default {
 	data() {
 		return {
@@ -312,15 +313,21 @@ export default {
 			})
 	},
 	created() {
-		this.setConfigs(),
-                this.$store.dispatch("setHeaderTitle", 'setting.OPTIONS');    
+                let that = this;
+		api.get('/api/configs').then(function(response){
+                    that.$store.dispatch('setConfigs', response.data.data);
+                });
+                that.$store.dispatch("setHeaderTitle", 'setting.OPTIONS');    
 	},
-	methods: {
-		...mapActions(["setConfigs", "saveConfig"]),
-		validateForm() {                
-                this.$validator.validateAll().then((result) => {                    
-                  if (result) {
-                    this.saveConfig();
+	methods: {		
+            validateForm() {
+                let that = this;    
+                this.$validator.validateAll().then((result) => {
+                  if (result) {                    
+                    api.put('/api/configs/all', this.configs).then(response => {
+                        Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                        that.$store.dispatch("saveConfig");
+                    })
                   }
                   else{
                     Vue.prototype.$eventHub.$emit('fireError', this.$validator.errors.all());

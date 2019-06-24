@@ -113,5 +113,5 @@ return [
     'NEW' => 'New',
     'MERGE' => 'Merge',
     'DELETE' => 'Delete',
-    'LANGUAGE_CHANGE_SUCCESS' => 'Language changed successfully.',
+    'LANGUAGE_CHANGE_SUCCESS' => 'The language was changed successfully!',
 ];

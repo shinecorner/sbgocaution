@@ -589,7 +589,7 @@ export default {
             "NEW": "Neu",
             "MERGE": "Zusammenführen",
             "DELETE": "Löschen",
-            "LANGUAGE_CHANGE_SUCCESS": "Sprachwechsel erfolgreich durchgeführt."
+            "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -1192,7 +1192,7 @@ export default {
             "NEW": "New",
             "MERGE": "Merge",
             "DELETE": "Delete",
-            "LANGUAGE_CHANGE_SUCCESS": "Language changed successfully."
+            "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!"
         },
         "login": {
             "LOGIN": "Log in",
