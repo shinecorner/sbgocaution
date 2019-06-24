@@ -101,7 +101,13 @@ return [
         'ONLINE_LINK' => '<p class="text-center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;"><a style="color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;" href="https://www.gocaution.ch/de/privatkunden/online-abschliessen">Zum Online-Formular gehen</a></p>',
         'VAR_EMAILPOST' => "Um die Mietkautionsbürgschaft auf herkömmlichen Weg abzuschliessen, können Sie uns das angefügte Antragsformular vollständig ausgefüllt und unterschrieben per E-Mail an info@gocaution.ch oder per Post an goCaution AG, Freiburgstrasse 574, 3172 Niederwangen einsenden.<br /><br />Im Anhang finden Sie folgende Unterlagen im PDF-Format:<ul><li>unsere Offerte</li><li>das Antragsformular</li><li>unseren Produktflyer</li></ul>",
         'PAYMENT_INFO' => "Nach erfolgter Anmeldung und Annahme Ihres Antrages senden wir Ihnen die Rechnung zur Zahlung der erste Jahresprämie zu, welche notwendig ist, um Ihre Police zu aktivieren. Nach Zahlungseingang der Prämie senden wir die originale Bürgschaftsurkunde auf dem Postweg an Ihren Vermieter. Mit dieser Urkunde garantieren wir Ihrem Vermieter die geforderte Mietkaution. Sie erhalten ebenfalls eine Kopie der Bürgschaftsurkunde im PDF-Format per E-Mail für Ihre Unterlagen.",
-        'HELP' => "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung."
+        'HELP' => "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung.",
+        'PRODUCT' => "Produkt",
+        'PRODUCT_NAME' => "goCaution® für Private",
+        'DEPOSIT' => "Kautionsbetrag",
+        'PREMIUM_PERCENT' => "Prämiensatz",
+        'TOTAL' => "Total",
+        'TAX' => "Stempelsteuer (5.0 %)"
     ],
     'REGARDS' => "Freundliche Grüsse<br />Ihr goCaution-Team",
     'NEW' => 'New',

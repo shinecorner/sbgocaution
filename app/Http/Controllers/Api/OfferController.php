@@ -108,18 +108,7 @@ class OfferController extends Controller
         // add a page
         PDF::AddPage();
 
-        if($contact->language == "de")
-        {
-            $this->writePDF($contact);
-        } 
-        elseif($contact->language == "fr") 
-        {
-            $this->writePDF($contact);
-        } 
-        elseif($contact->language == "it")
-        {
-            $this->writePDF($contact);
-        }
+        $this->writePDF($contact);
 
         $directory_kundendatenbank = config('app.customer_data');
         if(!Storage::disk('public')->exists($directory_kundendatenbank . DS . 'offer' . DS . $contact->id)){
@@ -191,26 +180,64 @@ class OfferController extends Controller
                                 'section' => 'contacts',
                                 'template_key' => 'offer_email' 
                             ])->first();
-        $offerEmailContent = $template->template_desc;
+        $emailBody = $template->template_desc;
         
         $locale = App::getLocale();
         App::setLocale($contact->language);
         
         $pattern = '/\[\[(.*?)\]\]/' ;
         $matches = array();
-        preg_match_all($pattern, $offerEmailContent, $matches);
+        preg_match_all($pattern, $emailBody, $matches);
         foreach($matches[1] as $value) {
-            if($value == 'REGARDS') {
-                $offerEmailContent = str_replace("[[".$value."]]", __('general.'.$value), $offerEmailContent);
-            } else {
-                $offerEmailContent = str_replace("[[".$value."]]", __('general.offer_email.'.$value), $offerEmailContent);
-            }
+            $emailBody = str_replace("[[".$value."]]", __($value), $emailBody);
         }
         $greetings = getPDFSalutation($contact->salutation);
         $greetings = str_replace('{nachname}', $contact->last_name, $greetings);
-        $offerEmailContent = str_replace("{mr/mrs}", $greetings, $offerEmailContent);
-        $offerEmailContent = str_replace("{deposit_amount}", format($contact->deposit_amount), $offerEmailContent);
-        Mail::to($contact->email)->send(new BaseEmail($contact, $offerEmailContent));
+        $emailBody = str_replace("{mr/mrs}", $greetings, $emailBody);
+        $emailBody = str_replace("{deposit_amount}", format($contact->deposit_amount), $emailBody);
+        //Offer table starts
+        $deposit_amount_formatted = format($contact->deposit_amount);
+        $subtotal = getPremiumAmount($contact->deposit_amount, 1);
+        $premium_tax = (($subtotal * 0.050));
+        $premium_tax_formatted = format($premium_tax);
+        $premium_total_formatted = format($subtotal+$premium_tax);
+        $premium_formatted = format($premium_total_formatted-$premium_tax_formatted, false);
+        $offer_table = view('api.emails.offer_table', compact('deposit_amount_formatted', 'premium_formatted', 'premium_tax_formatted', 'premium_total_formatted'))->render();
+        $emailBody = str_replace('{offer_table}', $offer_table, $emailBody);
+        switch ($contact->language) {
+            case 'fr':
+                $attachments = [
+                    Storage::disk('public')->path('download'.DS.'fr'.DS."conditions-generales-CGA.pdf"),
+                    Storage::disk('public')->path('download'.DS.'fr'.DS."gocaution-formulaire.pdf"),
+                    Storage::disk('public')->path('download'.DS.'fr'.DS."flyer_locataire.pdf")
+                ];
+                break;
+
+            case 'de':
+                $attachments = [
+                    Storage::disk('public')->path('download'.DS.'de'.DS."allgemeine-versicherungsbedingungen-avb.pdf"),
+                    Storage::disk('public')->path('download'.DS.'de'.DS."gocaution-antrag.pdf"),
+                    Storage::disk('public')->path('download'.DS.'de'.DS."flyer_mieter.pdf")
+                ];
+                break;
+
+            case 'it':
+                $attachments = [
+                    Storage::disk('public')->path('download'.DS.'it'.DS."condizioni-generali-assicurazione-cga.pdf"),
+                    Storage::disk('public')->path('download'.DS.'it'.DS."modulo.pdf"),
+                    Storage::disk('public')->path('download'.DS.'it'.DS."volantino.pdf")
+                ];
+                break;    
+
+            default:
+                $attachments = [
+                    Storage::disk('public')->path('download'.DS.'de'.DS."allgemeine-versicherungsbedingungen-avb.pdf"),
+                    Storage::disk('public')->path('download'.DS.'de'.DS."gocaution-antrag.pdf"),
+                    Storage::disk('public')->path('download'.DS.'de'.DS."flyer_mieter.pdf")
+                ];
+                break;
+        }
+        Mail::to($contact->email)->send(new BaseEmail($contact, $emailBody, $attachments, __('general.offer_email.SUBJECT')));
         $contactOffer->sent = 1;
         $contactOffer->sent_by = auth()->user()->id;
         $contactOffer->save();

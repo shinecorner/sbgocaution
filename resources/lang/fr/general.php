@@ -102,6 +102,12 @@ return [
         'VAR_EMAILPOST' => "Afin de conclure la caution de loyer par des moyens conventionnels, vous pouvez nous envoyer le formulaire de demande ci-joint dûment rempli et signé par e-mail à info@gocaution.ch ou par courrier à goCaution AG, Freiburgstrasse 574, 3172 Niederwangen.<br /><br />Vous trouverez en annexe les documents suivants au format PDF : <br /><br /></ul><li>notre offre</li><li>le formulaire de proposition pour effectuer la demande</li><li>notre brochure de produit</li>",
         'PAYMENT_INFO' => "Une fois votre inscription terminée, nous vous ferons parvenir une facture pour le paiement de la première prime annuelle, qui est nécessaire pour activer votre police. Après réception du paiement de la prime, nous enverrons l'original du certificat à votre bailleur par la poste. Avec ce certificat, nous garantissons à votre bailleur la garantie de loyer requis. Vous recevrez également une copie du certificat de garantie en format PDF par e-mail pour vos dossiers.",
         'HELP' => "Nous espérons avoir été en mesure de vous aider avec cette information et sommes à votre disposition pour de plus amples conseils par e-mail ou par téléphone.",
+        'PRODUCT' => "Produit",
+        'PRODUCT_NAME' => "goCaution® Bail d'habitation",
+        'DEPOSIT' => "Montant du dépôt",
+        'PREMIUM_PERCENT' => "Taux de prime",
+        'TOTAL' => "Total",
+        'TAX' => "Droit de timbre de 5%"
     ],
     'REGARDS' => "Nos salutations les meilleures,<br />Votre équipe goCaution",
     'NEW' => 'Nouveau',

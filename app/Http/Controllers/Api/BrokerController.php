@@ -16,10 +16,20 @@ class BrokerController extends Controller
      */
     public function index(Request $request)
     {
+        $data = [];
+
+        $helpers = [
+            'other' => [
+                'brokers_cities'
+            ]
+        ];
+
+        $this->responseHelper($data, $helpers);
+
         $query = Broker::latest();
 
         if($request->has('filters')) {
-            $this->filters($request, $query, ['keyword_search']);
+            $this->filters($request, $query, ['keyword_search','city_id', 'policy_count', 'accepted_policy_count']);
         }
 
         if($request->has('limit')) {
@@ -94,6 +104,12 @@ class BrokerController extends Controller
             if($request->has('filters.'.$key) && in_array($key, $fields)) {
                 if($key == 'keyword_search') {
                     $this->search($key, $query);
+                } elseif($key == 'city') {
+                    $query->where('city', '=', $value);
+                } else if($key == 'policy_count') {
+                    $this->policy_count($query, $value);
+                } elseif ($key == 'accepted_policy_count') {
+                    $this->policy_count($query, $value, 1);
                 }
             }
         }
