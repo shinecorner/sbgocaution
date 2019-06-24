@@ -3,6 +3,7 @@
  * Vuely comes with built in firebase login feature
  * You Need To Add Your Firsebase App Account Details Here
  */
+/*
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
@@ -34,3 +35,4 @@ export {
     twitterAuthProvider,
     database
 };
+*/

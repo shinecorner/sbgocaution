@@ -115,6 +115,18 @@ export default {
             "TOKEN": "This password reset token is invalid.",
             "user": "Wir können keinen Benutzer mit dieser E-Mail-Adresse finden."
         },
+        "privatelandlord": {
+            "PRIVATE_LANDLORD": "Privater Vermieter",
+            "PRIVATE_LANDLORDS": "Private Hauswirte",
+            "CUSTOMER_DETAILS": "Kundendaten",
+            "PRODUCTION": "Produktion",
+            "PRIVATE_HOUSEOWNER_NUM": "Private Hausbesitzer Nummer"
+        },
+        "broker": {
+            "BROKERS": "Makler",
+            "BROKER": "Vermittler",
+            "ID": "Vermittler ID"
+        },
         "auth": {
             "failed": "Diese Anmeldeinformationen stimmen nicht mit unseren Aufzeichnungen überein.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
@@ -368,15 +380,15 @@ export default {
                 "TITLE": "Fordern Sie Ihren Zugang an und verwalten Sie die Mieter-Policen online.",
                 "HEADLINE": "Gerne vereinbaren wir mit Ihnen einen telefonischen Termin und führen Sie mittels Bildschirmübertragung durch die Applikation, unabhängig davon, ob bereits Mieterinnen von Ihnen eine Kautionspolice bei uns abgeschlossen haben oder nicht.",
                 "FORM_FIELDS": {
-                    "COMPANY": "Unternehmen",
-                    "LAST_NAME": "cognome",
+                    "COMPANY": "Firmenname",
+                    "LAST_NAME": "Name",
                     "FIRST_NAME": "Vorname",
                     "ZIP": "Postleitzahl",
-                    "CITY": "Stadt",
-                    "TELEPHONE": "Telefon",
+                    "CITY": "Ort",
+                    "TELEPHONE": "Telefon/Mobile",
                     "ADDRESS": "Adresse",
                     "EMAIL": "E-Mail",
-                    "TO_SEND": "senden"
+                    "TO_SEND": "Senden"
                 },
                 "VALIDATION": {
                     "LAST_NAME": "Bitte ausfüllen",
@@ -703,6 +715,18 @@ export default {
             "token": "This password reset token is invalid.",
             "user": "We can't find a user with that e-mail address."
         },
+        "privatelandlord": {
+            "PRIVATE_LANDLORD": "Private Landlord",
+            "PRIVATE_LANDLORDS": "Private Landlords",
+            "CUSTOMER_DETAILS": "Customer Details",
+            "PRODUCTION": "Production",
+            "PRIVATE_HOUSEOWNER_NUM": "Private Houseowner Num"
+        },
+        "broker": {
+            "BROKERS": "Brokers",
+            "BROKER": "Broker",
+            "ID": "Broker ID"
+        },
         "auth": {
             "failed": "These credentials do not match our records.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
@@ -956,15 +980,15 @@ export default {
                 "TITLE": "Request your access and manage your tenant policies online.",
                 "HEADLINE": "We will be happy to arrange an appointment with you by telephone and guide you through the application via screen transmission, regardless of whether or not tenants of yours have already concluded a deposit policy with us.",
                 "FORM_FIELDS": {
-                    "COMPANY": "Company",
-                    "LAST_NAME": "Last Name",
+                    "COMPANY": "Company's name",
+                    "LAST_NAME": "Name",
                     "FIRST_NAME": "First Name",
                     "ZIP": "Zip",
                     "CITY": "City",
-                    "TELEPHONE": "Telephone",
+                    "TELEPHONE": "Phone/Mobile",
                     "ADDRESS": "Address",
                     "EMAIL": "Email",
-                    "TO_SEND": "send"
+                    "TO_SEND": "Send"
                 },
                 "VALIDATION": {
                     "LAST_NAME": "Please fill in.",
@@ -1286,6 +1310,18 @@ export default {
             "token": "This password reset token is invalid.",
             "user": "Nous ne pouvons pas trouver un utilisateur avec cette adresse e-mail."
         },
+        "privatelandlord": {
+            "PRIVATE_LANDLORD": "Seigneur privé du pays",
+            "PRIVATE_LANDLORDS": "Propriétaires privés",
+            "CUSTOMER_DETAILS": "Détails du client",
+            "PRODUCTION": "Production",
+            "PRIVATE_HOUSEOWNER_NUM": "Numéro du propriétaire privé"
+        },
+        "broker": {
+            "BROKERS": "Courtiers",
+            "BROKER": "Courtier",
+            "ID": "Courtier ID"
+        },
         "auth": {
             "failed": "Ces informations d'identification ne correspondent pas à nos enregistrements.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
@@ -1539,15 +1575,15 @@ export default {
                 "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
                 "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
                 "FORM_FIELDS": {
-                    "COMPANY": "Unternehmen",
-                    "LAST_NAME": "Nachname",
+                    "COMPANY": "Société",
+                    "LAST_NAME": "Nom",
                     "FIRST_NAME": "Prénom",
-                    "ZIP": "Postleitzahl",
-                    "CITY": "Stadt",
-                    "TELEPHONE": "Telefon",
+                    "ZIP": "NPA",
+                    "CITY": "Lieu",
+                    "TELEPHONE": "Téléphone / Mobile",
                     "ADDRESS": "Adresse",
                     "EMAIL": "E-Mail",
-                    "TO_SEND": "envoyer"
+                    "TO_SEND": "Envoyer"
                 },
                 "VALIDATION": {
                     "LAST_NAME": "Please let us know your name.",
@@ -1882,6 +1918,18 @@ export default {
             "token": "This password reset token is invalid.",
             "user": "Non riusciamo a trovare un utente con quell'indirizzo e-mail."
         },
+        "privatelandlord": {
+            "PRIVATE_LANDLORD": "Signore del paese privato",
+            "PRIVATE_LANDLORDS": "Proprietari privati",
+            "CUSTOMER_DETAILS": "Dettagli cliente",
+            "PRODUCTION": "Produzione",
+            "PRIVATE_HOUSEOWNER_NUM": "Proprietario privato Num"
+        },
+        "broker": {
+            "BROKERS": "Intermediari",
+            "BROKER": "Mediatore",
+            "ID": "Mediatore ID"
+        },
         "auth": {
             "failed": "Queste credenziali non corrispondono ai nostri record.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
@@ -2135,15 +2183,15 @@ export default {
                 "TITLE": "Demandez votre accès et gérez vos cautions de location en ligne",
                 "HEADLINE": "L'accès est disponible pour toutes les gérances, même si vous n'avez pas d'activité pour l'instant chez nous. Nous vous offrons également la possibilité de vous aider à la manipulation de celui-ci par téléphone ou lors d'un entretien.",
                 "FORM_FIELDS": {
-                    "COMPANY": "Azienda",
+                    "COMPANY": "Nome dell'azienda",
                     "LAST_NAME": "Cognome",
-                    "FIRST_NAME": "Come",
-                    "ZIP": "Cerniera",
-                    "CITY": "Cittadino",
-                    "TELEPHONE": "Telefono",
+                    "FIRST_NAME": "Nome",
+                    "ZIP": "Codice postale",
+                    "CITY": "Collocazione",
+                    "TELEPHONE": "Telefono/Cellulare",
                     "ADDRESS": "Indirizzo",
                     "EMAIL": "E-Mail",
-                    "TO_SEND": "inviare"
+                    "TO_SEND": "Inviare"
                 },
                 "VALIDATION": {
                     "LAST_NAME": "Si prega di compilare.",
@@ -2349,12 +2397,5 @@ export default {
                 "LOGOUT": "uscita"
             }
         }
-    },
-    "privatelandlord": {
-        "PRIVATE_LANDLORD": "Privater Vermieter",
-        "PRIVATE_LANDLORDS": "Private Hauswirte",
-        "CUSTOMER_DETAILS": "Kundendaten",
-        "PRODUCTION": "Produktion",
-        "PRIVATE_HOUSEOWNER_NUM": "Private Hausbesitzer Nummer"
-    },
+    }
 }
