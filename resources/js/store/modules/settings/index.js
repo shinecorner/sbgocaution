@@ -2,7 +2,6 @@
  * Settings Module
  */
 import Vue from 'vue'
-import api from 'Api'
 import {
 	languages,
 	sidebarBackgroundImages,
@@ -160,10 +159,10 @@ const actions = {
         setCurrentRouter(context, payload) {           
             context.commit('currentRouterHandler', payload);
 	},  
-	setConfigs(context){
-		api.get('/api/configs').then(response => context.commit('configs', response.data.data))
+	setConfigs(context,payload){
+            context.commit('configs', payload);            
 	},
-	saveConfig(context, payload) {
+	saveConfig(context) {
                 let s_helpers = {};
                 s_helpers['serverhelpers'] = this.getters.serverHelpers;
                 if(s_helpers.serverhelpers.hasOwnProperty('configs')){                    
@@ -174,10 +173,7 @@ const actions = {
                     }                    
 //                    s_helpers.configs = state.configs;
                     context.commit('serverHelpersHandler', s_helpers);
-                }
-		api.put('/api/configs/all', state.configs).then(response => {                        
-                        Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);			
-		})
+                }		
 	}
 }
 
