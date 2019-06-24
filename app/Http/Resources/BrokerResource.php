@@ -17,24 +17,39 @@ class BrokerResource extends JsonResource
     {
         $data = parent::toArray($request);
         $data['created_at_formatted'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
-        $this->policyStatusCount($data);
+        $this->policyAndInvoiceStatusCounts($data);
         return $data;
     }
 
-    private function policyStatusCount(&$data) 
+    private function policyAndInvoiceStatusCounts(&$data) 
     {
         $policies = $this->policies;
         $data['count_policies'] = $policies->count();
-        $policy_statuses = array_keys(getPolicyStatus());
-        foreach($policy_statuses as $policy_status) {
-            $count = $policies->where('status', $policy_status)->count();
-            if($count > 0) {
-                $count_class = [
-                    'count' => $count,
-                    'class' => render_status_class($policy_status)
-                ];
-                $data['count_policy_by_status'][$policy_status] = $count_class;
+        $invoice_count = 0;
+        $invoice_total = 0;
+        foreach($policies as $policy) {
+            foreach($policy->invoices as $invoice){
+                $invoice_count++;
+                $invoice_total += $invoice->computed_total;
             }
         }
+        $data['count_invoices'] = $invoice_count;
+        $data['invoice_total'] = format($invoice_total);
+        if($policies->isNotEmpty()) {
+
+            $policy_statuses = array_keys(getPolicyStatus());
+            foreach($policy_statuses as $policy_status) {
+                $count = $policies->where('status', $policy_status)->count();
+                if($count > 0) {
+                    $count_class = [
+                        'count' => $count,
+                        'class' => render_status_class($policy_status)
+                    ];
+                    $data['count_policy_by_status'][$policy_status] = $count_class;
+                }
+            }
+            
+        }
     }
+
 }
