@@ -31,7 +31,7 @@ class PrivateLandlordController extends Controller
         $query = PrivateLandlord::latest();
 
         if($request->has('filters')) {
-            $this->filters($request, $query, ['keyword_search' ,'city_id', 'state_id', 'language_id', 'anrede_id', 'policy_count', 'accepted_policy_count']);
+            $this->filters($request, $query, ['keyword_search' ,'city', 'state', 'language', 'salutation', 'policy_count', 'accepted_policy_count']);
         }
 
         if($request->has('limit')) {
@@ -104,12 +104,14 @@ class PrivateLandlordController extends Controller
     {
         foreach($request->filters as $key => $value) {
             if($request->has('filters.'.$key) && in_array($key, $fields)) {
-                if($key == 'city_id') {
+                if($key == 'city') {
                     $query->where('city', '=', $value);
-                } else if($key == 'state_id') {
+                } else if($key == 'state') {
                     $query->where('state', '=', $value);
-                } else if($key == 'language_id') {
+                } else if($key == 'language') {
                     $query->where('language', '=', $value);
+                } else if($key == 'salutation') {
+                    $query->where('salutation', '=', $value);
                 } else if($key == 'policy_count') {
                     $this->policy_count($query, $value);
                 } elseif ($key == 'accepted_policy_count') {
