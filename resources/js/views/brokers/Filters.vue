@@ -21,36 +21,10 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
-import KeywordSearch from "Components/Crm/General/KeywordSearch";
+import {FilterMixins} from "Helpers/FilterMixins"
 
 export default{
-    mixins: [globalFunction],
-    components: {
-        KeywordSearch
-    },
-    data() {
-        return {   
-            isResetForm: false,
-            perPageItems: process.env.MIX_PER_PAGE_OPTIONS.split(',').map(Number),
-            perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),            
-        }
-    },
-    watch:{        
-        perPage: function(newVal, oldVal){
-            this.changePerPageOption(newVal);
-        }
-    },
-    methods: {
-        changePerPageOption: function(val){
-            this.$emit('changePage', val);
-        },
-        resetData: function(event){  
-            this.$store.dispatch("clearInputItems");
-            this.$refs.filterForm.reset();
-            this.isResetForm = true;
-            //this.perPage = ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20);
-            this.$emit('resetData');
-        }
-    }
+    mixins: [globalFunction, FilterMixins],
+    
 }
 </script>

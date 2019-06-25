@@ -114,4 +114,6 @@ return [
     'MERGE' => 'Merge',
     'DELETE' => 'Delete',
     'LANGUAGE_CHANGE_SUCCESS' => 'The language was changed successfully!',
+    'ROWS' => 'Entries',
+    'MORE_FILTER' => 'More Filter',
 ];

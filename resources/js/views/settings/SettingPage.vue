@@ -23,7 +23,7 @@
                     >
                     <v-card flat>
                         <v-card-text> 
-                            <v-form @submit.prevent="validateForm">
+                            <v-form @submit.stop.prevent="validateForm">
                                 <template v-if="index=='crm'" ref="crm">
                                     <v-layout row wrap>
                                         <v-flex sm6 md4 lg4>
@@ -260,10 +260,7 @@
                                             </v-switch>
                                         </v-flex>
                                     </v-layout>								
-                                </template>
-                                <v-btn type="submit" color="success">
-                                    {{$t("general.SUBMIT")}}
-                                </v-btn>
+                                </template>                                                              
                                 </v-form>
                                 </v-card-text>                                        
                             </v-card>
@@ -318,6 +315,7 @@ export default {
                     that.$store.dispatch('setConfigs', response.data.data);
                 });
                 that.$store.dispatch("setHeaderTitle", 'setting.OPTIONS');    
+                Vue.prototype.$eventHub.$on('saveSettings', this.validateForm);
 	},
 	methods: {		
             validateForm() {

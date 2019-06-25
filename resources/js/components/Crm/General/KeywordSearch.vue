@@ -24,7 +24,12 @@ export default{
                 }
             },
             set (value) {
-              this.$store.dispatch("addInputItem", {fieldname: 'keyword_search', fieldvalue: value});
+                if(value){
+                    this.$store.dispatch("addInputItem", {fieldname: 'keyword_search', fieldvalue: value});
+                }
+                else{
+                    this.$store.dispatch("deleteInputItem", {fieldname: 'keyword_search'});
+                }
             }
         }
     }

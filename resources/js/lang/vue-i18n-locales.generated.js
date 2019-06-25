@@ -118,14 +118,15 @@ export default {
         "privatelandlord": {
             "PRIVATE_LANDLORD": "Privater Vermieter",
             "PRIVATE_LANDLORDS": "Private Hauswirte",
-            "CUSTOMER_DETAILS": "Kundendaten",
-            "PRODUCTION": "Produktion",
-            "PRIVATE_HOUSEOWNER_NUM": "Private Hausbesitzer Nummer"
+            "CONTACT_DETAILS": "Kundendetails",
+            "INVOICES": "Rechnungen",
+            "PRIVATE_HOUSEOWNER_NUM": "Kontakt-ID"
         },
         "broker": {
-            "BROKERS": "Makler",
+            "BROKERS": "Vermittler",
             "BROKER": "Vermittler",
-            "ID": "Vermittler ID"
+            "ID": "Vermittler ID",
+            "WEBSITE": "Website"
         },
         "auth": {
             "failed": "Diese Anmeldeinformationen stimmen nicht mit unseren Aufzeichnungen überein.",
@@ -589,7 +590,8 @@ export default {
             "NEW": "Neu",
             "MERGE": "Zusammenführen",
             "DELETE": "Löschen",
-            "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!"
+            "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!",
+            "MORE_FILTER": "Mehr Filtern"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -726,14 +728,15 @@ export default {
         "privatelandlord": {
             "PRIVATE_LANDLORD": "Private Landlord",
             "PRIVATE_LANDLORDS": "Private Landlords",
-            "CUSTOMER_DETAILS": "Customer Details",
-            "PRODUCTION": "Production",
+            "CONTACT_DETAILS": "Contact details",
+            "INVOICES": "Invoices",
             "PRIVATE_HOUSEOWNER_NUM": "Private Houseowner Num"
         },
         "broker": {
             "BROKERS": "Brokers",
             "BROKER": "Broker",
-            "ID": "Broker ID"
+            "ID": "Broker ID",
+            "WEBSITE": "Website"
         },
         "auth": {
             "failed": "These credentials do not match our records.",
@@ -1124,7 +1127,7 @@ export default {
                 "RESET": "Reset",
                 "NOT_SELECTED_OPTION": "Not selected"
             },
-            "ROWS": "Rows",
+            "ROWS": "Entries",
             "PDF_MR": "Dear Sir {nachname}",
             "PDF_MRS": "Dear Madam {nachname}",
             "PDF_COMPANY": "Dear Ladies and Gentlemen",
@@ -1192,7 +1195,8 @@ export default {
             "NEW": "New",
             "MERGE": "Merge",
             "DELETE": "Delete",
-            "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!"
+            "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!",
+            "MORE_FILTER": "More Filter"
         },
         "login": {
             "LOGIN": "Log in",
@@ -1329,14 +1333,15 @@ export default {
         "privatelandlord": {
             "PRIVATE_LANDLORD": "Seigneur privé du pays",
             "PRIVATE_LANDLORDS": "Propriétaires privés",
-            "CUSTOMER_DETAILS": "Détails du client",
-            "PRODUCTION": "Production",
-            "PRIVATE_HOUSEOWNER_NUM": "Numéro du propriétaire privé"
+            "CONTACT_DETAILS": "Contact details",
+            "INVOICES": "Factures",
+            "PRIVATE_HOUSEOWNER_NUM": "Private landlord num"
         },
         "broker": {
             "BROKERS": "Courtiers",
             "BROKER": "Courtier",
-            "ID": "Courtier ID"
+            "ID": "Courtier ID",
+            "WEBSITE": "Site ueb"
         },
         "auth": {
             "failed": "Ces informations d'identification ne correspondent pas à nos enregistrements.",
@@ -1740,7 +1745,7 @@ export default {
                 "RESET": "Vider",
                 "NOT_SELECTED_OPTION": "Non sélectionné"
             },
-            "ROWS": "Rangs",
+            "ROWS": "Rangées",
             "PDF_MR": "Cher Monsieur {nachname}",
             "PDF_MRS": "Chère femme {nachname}",
             "PDF_COMPANY": "Mesdames et Messieurs, Mesdames et Messieurs",
@@ -1808,7 +1813,8 @@ export default {
             "NEW": "Nouveau",
             "MERGE": "Fusion de clients",
             "DELETE": "Supprimer",
-            "LANGUAGE_CHANGE_SUCCESS": "La langue a changé avec succès."
+            "LANGUAGE_CHANGE_SUCCESS": "La langue a changé avec succès.",
+            "MORE_FILTER": "Plus de filtre"
         },
         "login": {
             "LOGIN": "Connexion",
@@ -1945,14 +1951,15 @@ export default {
         "privatelandlord": {
             "PRIVATE_LANDLORD": "Signore del paese privato",
             "PRIVATE_LANDLORDS": "Proprietari privati",
-            "CUSTOMER_DETAILS": "Dettagli cliente",
-            "PRODUCTION": "Produzione",
+            "CONTACT_DETAILS": "Dati di contatto",
+            "INVOICES": "Rechnungen",
             "PRIVATE_HOUSEOWNER_NUM": "Proprietario privato Num"
         },
         "broker": {
             "BROKERS": "Intermediari",
             "BROKER": "Mediatore",
-            "ID": "Mediatore ID"
+            "ID": "Mediatore ID",
+            "WEBSITE": "Website"
         },
         "auth": {
             "failed": "Queste credenziali non corrispondono ai nostri record.",
@@ -2344,7 +2351,7 @@ export default {
                 "RESET": "Resettato",
                 "NOT_SELECTED_OPTION": "Non selezionato"
             },
-            "ROWS": "Ranghi",
+            "ROWS": "Righe",
             "PDF_MR": "Caro signore {nachname}",
             "PDF_MRS": "Cara donna {nachname}",
             "PDF_COMPANY": "Cari signori e signore e signori",
@@ -2412,7 +2419,8 @@ export default {
             "NEW": "Nuova",
             "MERGE": "Accorpamento",
             "DELETE": "Cancellare",
-            "LANGUAGE_CHANGE_SUCCESS": "La lingua è cambiata con successo."
+            "LANGUAGE_CHANGE_SUCCESS": "La lingua è cambiata con successo.",
+            "MORE_FILTER": "Più filtro"
         },
         "login": {
             "LOGIN": "Accedi",
