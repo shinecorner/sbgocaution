@@ -25,6 +25,7 @@
           'EMAIL_VALID' => 'L\'adresse électronique doit être une adresse électronique valide.',
       ],
       'THANK_YOU'=>'Vielen Dank für Ihre Anfrage.',
+      'THANK_YOU_TEXT'=>'Merci à vous',
       'ADMIN_EMAIL_SUBJECT'=>'Connexion propriétaire | Données d\'accès demandées',
       'REG_REQUEST_HEADLINE'=>'Un client a demandé à un propriétaire d\'avoir accès à son identifiant propriétaire.',
       'routes' => [
