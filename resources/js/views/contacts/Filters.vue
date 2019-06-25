@@ -96,8 +96,8 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
+import {FilterMixins} from "Helpers/FilterMixins"
 
-import KeywordSearch from "Components/Crm/General/KeywordSearch";
 import Language from "Components/Crm/General/Language";
 import CreatedFrom from "Components/Crm/General/CreatedFrom";
 import CreatedTo from "Components/Crm/General/CreatedTo";
@@ -109,10 +109,9 @@ import BirthDate from "Components/Crm/Contact/BirthDate";
 import YesNoDropdown from "Components/Crm/General/YesNoDropdown";
 
 export default{
-    mixins: [globalFunction],
+    mixins: [globalFunction, FilterMixins],
     props: ['recordCount'],
-    components: {
-        KeywordSearch,
+    components: {        
         Status,
         Salutation,
         YesNoDropdown,
@@ -124,10 +123,7 @@ export default{
     },
     data() {
         return {  
-            showMoreFilter: false,
-            isResetForm: false,
-            perPageItems: process.env.MIX_PER_PAGE_OPTIONS.split(',').map(Number),
-            perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),            
+            showMoreFilter: false,            
             miscellaneous_filter_option: [
                 {text: this.$t('contact.filter.CONTACT_POLICY_1'), value: 1},
                 {text: this.$t('contact.filter.CONTACT_POLICY_2'), value: 2},
@@ -137,12 +133,7 @@ export default{
                 {text: this.$t('contact.filter.ACCEPTED_CONTACTS_WITH_NO_LINKED_USER'), value: 5}
             ],            
         }
-    },
-    watch:{        
-        perPage: function(newVal, oldVal){
-            this.changePerPageOption(newVal);
-        }
-    },
+    },    
     computed:{        
         contactofferactions: function(){
             if(this.$store.getters.serverHelpers.hasOwnProperty('contactPDF_statuslist')){
@@ -219,18 +210,6 @@ export default{
                 }
             }
         },
-    },
-    methods: {
-        changePerPageOption: function(val){
-            this.$emit('changePage', val);
-        },
-        resetData: function(event){  
-            this.$store.dispatch("clearInputItems");
-            this.$refs.filterForm.reset();
-            this.isResetForm = true;
-            //this.perPage = ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20);
-            this.$emit('resetData');
-        }
-    }
+    }   
 }
 </script>
