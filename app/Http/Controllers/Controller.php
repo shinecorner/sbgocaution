@@ -27,24 +27,24 @@ class Controller extends BaseController
                                 $data['helpers'][$helper] = getLeadSourcePlain();
                                 break;
                             
-                            case 'kantons':
-                                $data['helpers'][$helper] = getKantons();
+                            case 'privatelandlord_kantons':
+                                $data['helpers'][$helper] = getPrivatelandlordKantons();
                                 break;
 
-                            case 'cities':
-                                $data['helpers'][$helper] = getCities();
+                            case 'privatelandlord_cities':
+                                $data['helpers'][$helper] = getPrivatelandlordCities();
                                 break;
 
                             case 'contact_salutation':
-                                $data['helpers'][$helper] = get_salutationPlain();
+                                $data['helpers'][$helper] = getSalutationPlain();
                                 break;
 
                             case 'privatelandlord_salutation':
-                                $data['helpers'][$helper] = privatelandlord_salutationPlain();
+                                $data['helpers'][$helper] = privatelandlordSalutationPlain();
                                 break;
 
                             case 'brokers_cities':
-                                $data['helpers'][$helper] = brokers_cities();
+                                $data['helpers'][$helper] = brokersCities();
                                 break;
                         }
         			}

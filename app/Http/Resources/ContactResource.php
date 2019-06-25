@@ -20,16 +20,16 @@ class ContactResource extends JsonResource
         $data = parent::toArray($request);
         $contact_statuses = getContactStatus();
         $data['status_formatted'] = __($contact_statuses[$this->status]);
-        $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
+        $data['status_class'] = "label-status-" . str_replace("_", "-", renderStatusClass($this->status));
         $data['created_at_formatted'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
         
         if($this->user_id && property_exists($this, 'username')) 
             $data['joomlauser'] = $this->username;
         else 
             $data['joomlauser'] = __('general.NO');
-        $salutations = get_salutation();
+        $salutations = getSalutation();
         $data['saluation_formatted'] = $salutations[$this->salutation];
-        $data['language_flag'] = get_language_flag($this->language);
+        $data['language_flag'] = getLanguageFlag($this->language);
 
         $address = $this->addresses->where('is_primary', 1)->first();
 
@@ -150,7 +150,7 @@ class ContactResource extends JsonResource
                 if($count > 0) {
                     $count_class = [
                         'count' => $count,
-                        'class' => render_status_class($policy_status)
+                        'class' => renderStatusClass($policy_status)
                     ];
                     $data['count_policy_by_status'][$policy_status] = $count_class;
                 }
@@ -167,7 +167,7 @@ class ContactResource extends JsonResource
                         } else {
                             $count_class['count'] = $count;
                         }
-                        $count_class['class'] = render_status_class($invoice_status);
+                        $count_class['class'] = renderStatusClass($invoice_status);
                         $data['count_invoice_by_status'][$invoice_status] = $count_class;
                     }
                 }
