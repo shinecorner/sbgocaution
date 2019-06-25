@@ -37,47 +37,55 @@
                 <v-flex xs12 sm6 md4 lg2 xl2>                    
                     <yes-no-dropdown name="rc_policy" :label="$t('contact.filter.RC_POLICY')"></yes-no-dropdown>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
-                    <yes-no-dropdown name="promo_success" :label="$t('contact.filter.PROMO')"></yes-no-dropdown>                    
-                </v-flex>
-                <v-flex shrink d-inline-block>
-                    <v-checkbox 
-                        color="success"
-                        v-model="duplicate"
-                        input-value="duplicate"
-                        class="filter_chkbox"
-                        true-value="1"
-                        false-value="0"
-                        :label="$t('contact.filter.DUPLICATE_CONTACT')">
-                    </v-checkbox>    
-                </v-flex>
-                <v-flex shrink d-inline-block>
-                    <v-checkbox  
-                        color="success"
-                        v-model="duplicate_email" 
-                        class="filter_chkbox"
-                        true-value="1"
-                        false-value="0"
-                        :label="$t('contact.filter.DUPLICATE_CONTACT_EMAIL')">
-                    </v-checkbox>    
-                </v-flex>                                    
-                <v-flex shrink d-inline-block>
-                    <v-checkbox  
-                        color="success"
-                        v-model="incorrect_address" 
-                        class="filter_chkbox"
-                        true-value="1"
-                        false-value="0"
-                        :label="$t('contact.filter.NOT_CORRECT_ADDRESS')">
-                    </v-checkbox>    
-                </v-flex> 
+                <transition name="slide">
+                    <v-flex v-show="showMoreFilter" class="more-filter">
+                        <v-layout row wrap>
+                            <v-flex xs12 sm6 md4 lg2 xl2>
+                                <yes-no-dropdown name="promo_success" :label="$t('contact.filter.PROMO')"></yes-no-dropdown>                    
+                            </v-flex>
+                            <v-flex shrink d-inline-block>
+                                <v-checkbox 
+                                    color="success"
+                                    v-model="duplicate"
+                                    input-value="duplicate"
+                                    class="filter_chkbox"
+                                    true-value="1"
+                                    false-value="0"
+                                    :label="$t('contact.filter.DUPLICATE_CONTACT')">
+                                </v-checkbox>    
+                            </v-flex>
+                            <v-flex shrink d-inline-block>
+                                <v-checkbox  
+                                    color="success"
+                                    v-model="duplicate_email" 
+                                    class="filter_chkbox"
+                                    true-value="1"
+                                    false-value="0"
+                                    :label="$t('contact.filter.DUPLICATE_CONTACT_EMAIL')">
+                                </v-checkbox>    
+                            </v-flex>                                    
+                            <v-flex shrink d-inline-block>
+                                <v-checkbox  
+                                    color="success"
+                                    v-model="incorrect_address" 
+                                    class="filter_chkbox"
+                                    true-value="1"
+                                    false-value="0"
+                                    :label="$t('contact.filter.NOT_CORRECT_ADDRESS')">
+                                </v-checkbox>    
+                            </v-flex> 
+                        </v-layout> 
+                    </v-flex>
+                </transition>
             </v-layout>   
         </v-form>
         <v-layout row wrap>
-            <v-flex shrink d-inline-block> 
+            <v-flex shrink d-inline-block>                                                 
                 <v-btn type="submit" color="success left" @click.prevent="$emit('filterData')"><v-icon>search</v-icon>{{$t('general.filter.SEARCH')}}</v-btn>
-                <v-btn color="success left" @click="resetData">{{$t('general.filter.RESET')}}</v-btn>                                    
-                <v-btn color="download success left"><v-icon>mdi-download</v-icon></v-btn>                                        
+                <v-btn color="success left" @click="resetData">{{$t('general.filter.RESET')}}</v-btn>
+                <v-btn color="success left" @click.stop.prevent="showMoreFilter = !showMoreFilter">{{$t('general.MORE_FILTER')}}</v-btn>
+                <v-btn color="success left" @click.stop.prevent>{{recordCount}}&nbsp;{{$t('general.ROWS')}}</v-btn>
+                <v-btn color="download success left"><v-icon>mdi-download</v-icon></v-btn>
             </v-flex>                        
             <v-flex shrink d-inline-block>
                 <v-select class="perpage_selectbox left" v-bind:items="perPageItems"  v-model.number="perPage" menu-props="bottom" ></v-select>
@@ -102,6 +110,7 @@ import YesNoDropdown from "Components/Crm/General/YesNoDropdown";
 
 export default{
     mixins: [globalFunction],
+    props: ['recordCount'],
     components: {
         KeywordSearch,
         Status,
@@ -114,7 +123,8 @@ export default{
         BirthDate
     },
     data() {
-        return {   
+        return {  
+            showMoreFilter: false,
             isResetForm: false,
             perPageItems: process.env.MIX_PER_PAGE_OPTIONS.split(',').map(Number),
             perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),            

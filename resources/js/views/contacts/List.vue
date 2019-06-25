@@ -8,7 +8,12 @@
                                 :fullBlock="true"
                                 colClasses="xl12 lg12 md12 sm12 xs12"
                         >                            
-                            <filters @filterData="onFilterData" @resetData="onResetFilter" @changePage="changePageHandler"></filters>
+                            <filters 
+                                    @filterData="onFilterData" 
+                                    @resetData="onResetFilter" 
+                                    @changePage="changePageHandler"
+                                    :recordCount="recordCount"
+                            ></filters>
                         </app-card>
                     </v-layout>                              
                     <v-layout row wrap>
@@ -202,7 +207,8 @@ export default {
         InvoiceCount
     },    
      data() {        
-        return {            
+        return {   
+            recordCount: 0,
             fields: [
                 {name: "prettycheck", title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
                 {title: () => this.$i18n.t('contact.ID'), name: "c_contactformate", titleClass: 'contact_id_title', dataClass: 'contact_id_data'},
@@ -285,32 +291,10 @@ export default {
                 that.loading = false;
                 console.log(error);
             });
-        },
+        },       
         contactFetch(apiUrl,httpOptions){
             return api.get(apiUrl, httpOptions);
-        },        
-        transform: function(data) {
-            if(data.data.length == 0){
-                this.noDataMessage = this.$i18n.t('general.NO_MORE_ENTRIES');
-            }
-            let transformed = {}
-            let pg_meta = data.meta
-            let pg_links = data.links
-
-            transformed.pagination = {
-              total: pg_meta.total,
-              per_page: pg_meta.per_page,
-              current_page: pg_meta.current_page,
-              last_page: pg_meta.last_page,
-              next_page_url: pg_links.next ? pg_links.next : null,
-              prev_page_url: pg_links.prev ? pg_links.prev : null,
-              from: pg_meta.from,
-              to: pg_meta.to,
-            }
-            transformed.mydata = [];
-            transformed.mydata = data.data
-            return transformed
-      },      
+        },              
     onRowClass(dataItem, index) {            
         return ((dataItem.contact_type) == '2' ? 'row-business': 'row-personal');
     }

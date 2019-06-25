@@ -5,11 +5,15 @@
     <div v-else-if="route.path == '/brokers'">
         <broker-list-action></broker-list-action>
     </div>
+    <div v-else-if="route.path == '/settings'">
+        <settings-action></settings-action>
+    </div>
 </template>
 <script>
     import { mapState  } from "vuex";
     const ContactListAction = () => import('Views/contacts/ListAction');
     const BrokerListAction = () => import('Views/brokers/ListAction');
+    const SettingsAction = () => import('Views/settings/Action');
 
     export default {
         props: {},
@@ -23,7 +27,8 @@
         methods: {},
         components: {
             ContactListAction,
-            BrokerListAction
+            BrokerListAction,
+            SettingsAction
         }
     }
 </script>

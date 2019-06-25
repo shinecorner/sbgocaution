@@ -114,4 +114,6 @@ return [
     'MERGE' => 'Fusion de clients',
     'DELETE' => 'Supprimer',
     'LANGUAGE_CHANGE_SUCCESS' => 'La langue a changé avec succès.',
+    'ROWS' => 'Rangées',
+    'MORE_FILTER' => 'Plus de filtre',
 ];
