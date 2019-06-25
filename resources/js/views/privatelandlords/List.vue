@@ -35,16 +35,6 @@
                             <template slot="prettycheck" slot-scope="props">
                                 <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                             </template>
-                            <template slot="c_edit" slot-scope="props">
-                                <v-tooltip top v-if="props.rowData.id">
-                                    <a href="#" slot="activator">
-                                        <v-avatar size="26" class="round-badge-success">
-                                            <v-icon color="white" small>zmdi zmdi-edit</v-icon>
-                                        </v-avatar>
-                                    </a>
-                                    <span>{{ $t('general.EDIT') }}</span>
-                                </v-tooltip>
-                            </template>
                             <template slot="c_name" slot-scope="props">
                                     <span class="salute_icon left">
                                         <template v-if="props.rowData.salutation === 'company'">
@@ -68,6 +58,26 @@
                                     </span>
                                 <span class="primary-text left ml-1">{{ props.rowData.first_name + ' ' + props.rowData.last_name}}</span><br/>
                                 <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.created_at }}</span>
+                                <div class="column_icon_container">
+                                    <v-tooltip top v-if="props.rowData.is_duplicate">
+                                        <v-icon color="orange darken-2" size="18" slot="activator">zmdi-alert-triangle</v-icon>
+                                        <span>{{props.rowData.is_duplicate}}</span>
+                                    </v-tooltip>
+                                    <v-tooltip top v-if="props.rowData.language_flag">
+                                        <img class="contact_flag" height="12" :src="props.rowData.language_flag" slot="activator"/>
+                                        <span>{{props.rowData.language}}</span>
+                                    </v-tooltip>
+                                </div>
+                            </template>
+                            <template slot="c_edit" slot-scope="props">
+                                <v-tooltip top v-if="props.rowData.id">
+                                    <a href="#" slot="activator">
+                                        <v-avatar size="26" class="round-badge-success">
+                                            <v-icon color="white" small>zmdi zmdi-edit</v-icon>
+                                        </v-avatar>
+                                    </a>
+                                    <span>{{ $t('general.EDIT') }}</span>
+                                </v-tooltip>
                             </template>
                             <template slot="c_contactformate" slot-scope="props">
                                 <span class="primary-text" v-if="props.rowData.address">{{ props.rowData.address }}</span>
@@ -77,7 +87,13 @@
                                 <span class="primary-text" v-if="props.rowData.phone">{{ props.rowData.phone }}</span>
                                 <span class="grey--text secondary-text">{{ props.rowData.email }} </span>
                             </template>
-                            <template slot="c_production" slot-scope="props">
+                            <template slot="c_invoices" slot-scope="props">
+                                <span class="amount-div">{{ props.rowData.invoice_total}}</span>
+                                <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('contact.TOTAL_POLICIES') }}</span>
+                                <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('contact.TOTAL_INVOICES') }}</span>
+                            </template>
+                            <template slot="c_policy" slot-scope="props">
+                                <policy-count :policy_count_detail="props.rowData.count_policy_by_status"></policy-count>
                             </template>
                         </vuetable>
                     </div>
@@ -101,6 +117,7 @@
     import { mapGetters } from "vuex";
     import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
     import globalFunction from "Helpers/helpers";
+    import PolicyCount from "Components/Crm/General/PolicyCount";
    // import Filters from "./Filters";
 
     export default {
@@ -109,6 +126,7 @@
             Vuetable,
             VuetablePagination,
             VuetablePaginationInfo,
+            PolicyCount
             //Filters
         },
         watch: {
@@ -129,11 +147,12 @@
                 checkedRows: [],
                 fields: [
                     {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
-                    { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
                     { title: this.$t('general.NAME'), name: "c_name" },
+                    { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
                     { title: this.$t('privatelandlord.PRIVATE_HOUSEOWNER_NUM'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
-                    { title: this.$t('privatelandlord.CUSTOMER_DETAILS'), name: "c_details" },
-                    { title: this.$t('privatelandlord.PRODUCTION'), name: "c_production" }
+                    { title: this.$t('privatelandlord.CONTACT_DETAILS'), name: "c_details" },
+                    { title: this.$t('privatelandlord.INVOICES'), name: "c_invoices" },
+                    { title: this.$t('general.POLICIES'), name: "c_policy" }
                 ],
                 css: {
                     table: {
@@ -175,10 +194,11 @@
         methods: {
             reinitializeFields(){
                 this.$nextTick(()=>{
-                    this.$refs.vuetable.fields[2].title = this.$t('general.NAME');
+                    this.$refs.vuetable.fields[1].title = this.$t('general.NAME');
                     this.$refs.vuetable.fields[3].title = this.$t('privatelandlord.PRIVATE_HOUSEOWNER_NUM');
-                    this.$refs.vuetable.fields[4].title = this.$t('privatelandlord.CUSTOMER_DETAILS');
-                    this.$refs.vuetable.fields[5].title = this.$t('privatelandlord.PRODUCTION');
+                    this.$refs.vuetable.fields[4].title = this.$t('privatelandlord.CONTACT_DETAILS');
+                    this.$refs.vuetable.fields[5].title = this.$t('privatelandlord.INVOICES');
+                    this.$refs.vuetable.fields[6].title = this.$t('general.POLICIES');
                     this.$refs.vuetable.normalizeFields();
                 });
             },
@@ -244,22 +264,24 @@
     }
     .privatelandlordlist >>> .list-table-container table.v-table thead th:nth-child(1), .privatelandlordlist >>> .list-table-container table.v-table tbody td:nth-child(1){
         width: 40px;
-        padding-left: 25px;
     }
     .privatelandlordlist >>> .list-table-container table.v-table thead th:nth-child(2), .privatelandlordlist >>> .list-table-container table.v-table tbody td:nth-child(2){
-        width: 40px;
+        width: 150px;
     }
     .privatelandlordlist >>> .list-table-container table.v-table thead th:nth-child(3), .privatelandlordlist >>> .list-table-container table.v-table tbody td:nth-child(3){
-        width: 170px;
-        padding-left: 25px;
+        width: 40px;
     }
     .privatelandlordlist >>> .list-table-container table.v-table thead th:nth-child(4), .privatelandlordlist >>> .list-table-container table.v-table tbody td:nth-child(4){
-        width: 15%;
+        width: 18%;
+        padding-left: 25px;
     }
     .privatelandlordlist >>> .list-table-container table.v-table thead th:nth-child(5), .privatelandlordlist >>> .list-table-container table.v-table tbody td:nth-child(5){
-        width: 16%;
+        width: 20%;
     }
     .privatelandlordlist >>> .list-table-container table.v-table thead th:nth-child(6), .privatelandlordlist >>> .list-table-container table.v-table tbody td:nth-child(6){
-        width: 98px;
+        width: 150px;
+    }
+    .privatelandlordlist >>> .list-table-container table.v-table thead th:nth-child(7), .privatelandlordlist >>> .list-table-container table.v-table tbody td:nth-child(7){
+        width: 200px;
     }
 </style>

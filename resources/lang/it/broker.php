@@ -2,5 +2,6 @@
 return [
     'BROKERS' => 'Intermediari',
     'BROKER' => 'Mediatore',
-    'ID'=> 'Mediatore ID'
+    'ID'=> 'Mediatore ID',
+    'WEBSITE'=> 'Website'
 ];

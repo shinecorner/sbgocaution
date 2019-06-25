@@ -483,6 +483,7 @@ export default {
             "MR": "Herr",
             "MRS": "Frau",
             "COMPANY": "Firma",
+            "FAMILY": "Familie",
             "EMAIL": "E-mail",
             "CRM_TITLE": "goCaution AG",
             "SUBMIT": "Absenden",
@@ -576,12 +577,19 @@ export default {
                 "ONLINE_LINK": "<p class=\"text-center\" style=\"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;\"><a style=\"color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;\" href=\"https://www.gocaution.ch/de/privatkunden/online-abschliessen\">Zum Online-Formular gehen</a></p>",
                 "VAR_EMAILPOST": "Um die Mietkautionsbürgschaft auf herkömmlichen Weg abzuschliessen, können Sie uns das angefügte Antragsformular vollständig ausgefüllt und unterschrieben per E-Mail an info@gocaution.ch oder per Post an goCaution AG, Freiburgstrasse 574, 3172 Niederwangen einsenden.<br /><br />Im Anhang finden Sie folgende Unterlagen im PDF-Format:<ul><li>unsere Offerte</li><li>das Antragsformular</li><li>unseren Produktflyer</li></ul>",
                 "PAYMENT_INFO": "Nach erfolgter Anmeldung und Annahme Ihres Antrages senden wir Ihnen die Rechnung zur Zahlung der erste Jahresprämie zu, welche notwendig ist, um Ihre Police zu aktivieren. Nach Zahlungseingang der Prämie senden wir die originale Bürgschaftsurkunde auf dem Postweg an Ihren Vermieter. Mit dieser Urkunde garantieren wir Ihrem Vermieter die geforderte Mietkaution. Sie erhalten ebenfalls eine Kopie der Bürgschaftsurkunde im PDF-Format per E-Mail für Ihre Unterlagen.",
-                "HELP": "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung."
+                "HELP": "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung.",
+                "PRODUCT": "Produkt",
+                "PRODUCT_NAME": "goCaution® für Private",
+                "DEPOSIT": "Kautionsbetrag",
+                "PREMIUM_PERCENT": "Prämiensatz",
+                "TOTAL": "Total",
+                "TAX": "Stempelsteuer (5.0 %)"
             },
             "REGARDS": "Freundliche Grüsse<br />Ihr goCaution-Team",
             "NEW": "Neu",
             "MERGE": "Zusammenführen",
-            "DELETE": "Löschen"
+            "DELETE": "Löschen",
+            "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -1078,6 +1086,7 @@ export default {
             "MR": "Mr",
             "MRS": "Mrs",
             "COMPANY": "Company",
+            "FAMILY": "Family",
             "EMAIL": "E-mail",
             "CRM_TITLE": "goCaution AG",
             "SUBMIT": "Submit",
@@ -1171,12 +1180,19 @@ export default {
                 "ONLINE_LINK": "<p class=\"text-center\" style=\"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;\"><a style=\"color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;\" href=\"https://www.gocaution.ch/de/privatkunden/online-abschliessen\">Zum Online-Formular gehen</a></p>",
                 "VAR_EMAILPOST": "Um die Mietkautionsbürgschaft auf herkömmlichen Weg abzuschliessen, können Sie uns das angefügte Antragsformular vollständig ausgefüllt und unterschrieben per E-Mail an info@gocaution.ch oder per Post an goCaution AG, Freiburgstrasse 574, 3172 Niederwangen einsenden.<br /><br />Im Anhang finden Sie folgende Unterlagen im PDF-Format:<ul><li>unsere Offerte</li><li>das Antragsformular</li><li>unseren Produktflyer</li></ul>",
                 "PAYMENT_INFO": "Nach erfolgter Anmeldung und Annahme Ihres Antrages senden wir Ihnen die Rechnung zur Zahlung der erste Jahresprämie zu, welche notwendig ist, um Ihre Police zu aktivieren. Nach Zahlungseingang der Prämie senden wir die originale Bürgschaftsurkunde auf dem Postweg an Ihren Vermieter. Mit dieser Urkunde garantieren wir Ihrem Vermieter die geforderte Mietkaution. Sie erhalten ebenfalls eine Kopie der Bürgschaftsurkunde im PDF-Format per E-Mail für Ihre Unterlagen.",
-                "HELP": "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung."
+                "HELP": "Wir hoffen, wir konnten Ihnen mit diesen Informationen vorerst weiterhelfen und stehen Ihnen gerne via E-Mail oder Telefon für weitere Beratung zur Verfügung.",
+                "PRODUCT": "Produkt",
+                "PRODUCT_NAME": "goCaution® für Private",
+                "DEPOSIT": "Kautionsbetrag",
+                "PREMIUM_PERCENT": "Prämiensatz",
+                "TOTAL": "Total",
+                "TAX": "Stempelsteuer (5.0 %)"
             },
             "REGARDS": "Freundliche Grüsse<br />Ihr goCaution-Team",
             "NEW": "New",
             "MERGE": "Merge",
-            "DELETE": "Delete"
+            "DELETE": "Delete",
+            "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!"
         },
         "login": {
             "LOGIN": "Log in",
@@ -1686,6 +1702,7 @@ export default {
             "MR": "Monsieur",
             "MRS": "Madame",
             "COMPANY": "Société",
+            "FAMILY": "Famille",
             "EMAIL": "E-mail",
             "CRM_TITLE": "goCaution AG",
             "SUBMIT": "Soumettre",
@@ -1779,12 +1796,19 @@ export default {
                 "ONLINE_LINK": "<p class=\"text-center\" style=\"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;\"><a style=\"color:#8DBF43;text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 3px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 15px; padding: 10px 30px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;\" href=\"http://www.gocaution.ch/fr/particuliers/caution-de-loyer/inscription-immediate\">Inscription en ligne</a></p>",
                 "VAR_EMAILPOST": "Afin de conclure la caution de loyer par des moyens conventionnels, vous pouvez nous envoyer le formulaire de demande ci-joint dûment rempli et signé par e-mail à info@gocaution.ch ou par courrier à goCaution AG, Freiburgstrasse 574, 3172 Niederwangen.<br /><br />Vous trouverez en annexe les documents suivants au format PDF : <br /><br /></ul><li>notre offre</li><li>le formulaire de proposition pour effectuer la demande</li><li>notre brochure de produit</li>",
                 "PAYMENT_INFO": "Une fois votre inscription terminée, nous vous ferons parvenir une facture pour le paiement de la première prime annuelle, qui est nécessaire pour activer votre police. Après réception du paiement de la prime, nous enverrons l'original du certificat à votre bailleur par la poste. Avec ce certificat, nous garantissons à votre bailleur la garantie de loyer requis. Vous recevrez également une copie du certificat de garantie en format PDF par e-mail pour vos dossiers.",
-                "HELP": "Nous espérons avoir été en mesure de vous aider avec cette information et sommes à votre disposition pour de plus amples conseils par e-mail ou par téléphone."
+                "HELP": "Nous espérons avoir été en mesure de vous aider avec cette information et sommes à votre disposition pour de plus amples conseils par e-mail ou par téléphone.",
+                "PRODUCT": "Produit",
+                "PRODUCT_NAME": "goCaution® Bail d'habitation",
+                "DEPOSIT": "Montant du dépôt",
+                "PREMIUM_PERCENT": "Taux de prime",
+                "TOTAL": "Total",
+                "TAX": "Droit de timbre de 5%"
             },
             "REGARDS": "Nos salutations les meilleures,<br />Votre équipe goCaution",
             "NEW": "Nouveau",
             "MERGE": "Fusion de clients",
-            "DELETE": "Supprimer"
+            "DELETE": "Supprimer",
+            "LANGUAGE_CHANGE_SUCCESS": "La langue a changé avec succès."
         },
         "login": {
             "LOGIN": "Connexion",
@@ -2282,6 +2306,7 @@ export default {
             "MR": "Signor",
             "MRS": "Signora",
             "COMPANY": "Solido",
+            "FAMILY": "familiare",
             "EMAIL": "E-Mail",
             "CRM_TITLE": "goCaution AG",
             "SUBMIT": "Invia",
@@ -2375,12 +2400,19 @@ export default {
                 "VAR_EMAILPOST": "Per concludere la cauzione di affttio nel modo convenzionale, potete inviarci il modulo di domanda allegato compilato integralmente e firmato via e-mail a info@gocaution.ch o per posta a goCaution SA, Freiburgstrasse 574, 3172 Niederwangen.<br /><br /> Nell'appendice troverete i seguenti documenti in formato PDF:<ul><li>la nostra offerta</li><li>il modulo di domanda</li><li>il nostro volantino del prodotto</li></ul>",
                 "PAYMENT_INFO": "Dopo la registrazione e l'accettazione della vostra richiesta, vi invieremo la fattura per il pagamento del primo premio annuale, necessario per l'attivazione della vostra polizza. Dopo aver ricevuto il pagamento del premio, invieremo il certificato di cauzione originale al vostro locatore per posta. Con questo certificato si garantisce al locatore il deposito cauzionale richiesto per l'affitto. Riceverete anche una copia del certificato in formato PDF tramite e-mail.",
                 "HELP": "Ci auguriamo di essere stati in grado di aiutarvi con queste informazioni e siamo a vostra disposizione via e-mail o per telefono per qualsiasi ulteriore consiglio.",
-                "ONLINE_LINK": "<p class=\"text-center\" style=\"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;\"><a style=\"color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;\" href=\"https://www.gocaution.ch/it/garanzia-di-affitto/iscrizione-on-line\">Vai al modulo online</a></p>"
+                "ONLINE_LINK": "<p class=\"text-center\" style=\"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-align: left;\"><a style=\"color:#8DBF43; text-size-adjust: 100%; font-weight: normal; text-decoration: none; border: 2px solid #8DBF43; border-radius: 30px; cursor: pointer; display: inline-block; font-size: 13px; padding: 10px 10px; text-align: center; moz-border-radius: 30px;   khtml-border-radius: 30px;  o-border-radius: 30px;   webkit-border-radius: 30px; ms-border-radius: 30px;\" href=\"https://www.gocaution.ch/it/garanzia-di-affitto/iscrizione-on-line\">Vai al modulo online</a></p>",
+                "PRODUCT": "Prodotto",
+                "PRODUCT_NAME": "goCaution® per privati",
+                "DEPOSIT": "Importo del garanzia",
+                "PREMIUM_PERCENT": "Tasso di premio",
+                "TOTAL": "Totale",
+                "TAX": "Tasse di bollo (5,0 %)"
             },
             "REGARDS": "Cordiali saluti,<br />Il vostro team di goCaution",
             "NEW": "Nuova",
             "MERGE": "Accorpamento",
-            "DELETE": "Cancellare"
+            "DELETE": "Cancellare",
+            "LANGUAGE_CHANGE_SUCCESS": "La lingua è cambiata con successo."
         },
         "login": {
             "LOGIN": "Accedi",

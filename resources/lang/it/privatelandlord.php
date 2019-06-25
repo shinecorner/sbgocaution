@@ -2,7 +2,7 @@
 return [
     'PRIVATE_LANDLORD' => 'Signore del paese privato',
     'PRIVATE_LANDLORDS' => 'Proprietari privati',
-    'CUSTOMER_DETAILS' => 'Dettagli cliente',
-    'PRODUCTION' => 'Produzione',
+    'CONTACT_DETAILS' => 'Dati di contatto',
+    'INVOICES' => 'Rechnungen',
     'PRIVATE_HOUSEOWNER_NUM' => 'Proprietario privato Num'
  ];

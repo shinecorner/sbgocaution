@@ -113,4 +113,5 @@ return [
     'NEW' => 'Nouveau',
     'MERGE' => 'Fusion de clients',
     'DELETE' => 'Supprimer',
+    'LANGUAGE_CHANGE_SUCCESS' => 'La langue a changé avec succès.',
 ];

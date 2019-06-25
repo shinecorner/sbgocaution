@@ -1,7 +1,7 @@
 <?php
 return [
-    'BROKERS' => 'Makler',
+    'BROKERS' => 'Vermittler',
     'BROKER' => 'Vermittler',
     'ID'=> 'Vermittler ID',
-
+    'WEBSITE'=> 'Website'
 ];
