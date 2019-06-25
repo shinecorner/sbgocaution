@@ -112,10 +112,10 @@
                                       @csrf
                                       <div class="modal-body">
                                           <span class="red-alert"></span>
-                                          <span class="alert-success">
+                                          {{--<span class="alert-success">
                                               <i class="fa fa-info-circle" aria-hidden="true"></i>
                                               <p></p>
-                                          </span>
+                                          </span>--}}
                                           <!-- start card 2 Columns Horizontal Form Layout-->
                                           <div class="card">
                                               <div class="card-header">
@@ -215,7 +215,7 @@
 
                                   </div>
                                   <div class="modal-footer">
-                                      <button type="submit"  class="btn btn-success">{{ __('landlord/regrequest.FORM_FIELDS.TO_SEND') }}</button>
+                                      <button type="submit" id="register" class="btn btn-success ladda-button basic-ladda-button mb-3" data-style="expand-right">{{ __('landlord/regrequest.FORM_FIELDS.TO_SEND') }}</button>
                                   </div>
                                   </form>
                               </div>
@@ -223,7 +223,8 @@
                       </div>
 
 
-                      {{--<div class="modal fade account-request" id="new-account-request" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle-2" aria-hidden="true">
+                      <!-- Modal -->
+                      <div class="modal fade account-request" id="success-flash-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle-2" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                   <div class="modal-header">
@@ -231,131 +232,30 @@
                                           <span aria-hidden="true">&times;</span>
                                       </button>
                                       <h4 class="modal-title text-center">
-                                          <p class="mb-0"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
-                                          <p class="mb-1">{{ __('landlord/regrequest.TITLE') }}</p>
+                                          {{--<p class="mb-0"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>--}}
+                                          <p class="mb-1">{{ __('landlord/regrequest.THANK_YOU_TEXT') }}</p>
                                       </h4>
                                   </div>
-                                  <form class=" no-cross" action="{{ url(LaravelLocalization::getURLFromRouteNameTranslated(app()->getLocale(),'landlord/regrequest.routes.REGISTER_REQUEST')) }}"
-                                        method="post"
-                                        novalidate
-                                        id="regrequest"
-                                        onsubmit="regrequest(event,'regrequest')">
 
-                                      @csrf
-                                      <div class="modal-body">
-
-                                          <!-- start card 2 Columns Horizontal Form Layout-->
-                                          <div class="card">
-                                              <div class="card-header bg-transparent">
-                                                  <p>{{ __('landlord/regrequest.HEADLINE') }}</p>
-                                              </div>
-                                              <span class="red-alert"></span>
-                                              <span class="alert-success"></span>
-                                              <div class="card-body">
-                                                  <div class="form-row">
-                                                      <div class="form-group col-md-6">
-                                                          <div class="input-group">
-                                                              <div class="input-group-prepend">
-                                                                  <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" name="society" placeholder="{{ __('landlord/regrequest.SOCIETY') }}">
-
-                                                          </div>
-                                                      </div>
-                                                      <div class="form-group col-md-6">
-                                                          <div class="input-group">
-                                                              <div class="input-group-prepend">
-                                                                  <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" name="name" placeholder="{{ __('landlord/regrequest.NAME') }} *" required>
-                                                              <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.NAME') }}
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-row">
-                                                      <div class="form-group col-md-6">
-                                                          <div class="input-group">
-                                                              <div class="input-group-prepend">
-                                                                  <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" name="first_name" placeholder="{{ __('landlord/regrequest.FIRST_NAME') }} *" required="">
-                                                              <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.FIRST_NAME') }}
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                      <div class="form-group col-md-6">
-                                                          <div class="input-group">
-                                                              <div class="input-group-prepend">
-                                                                  <span class="input-group-text"><i class="fa fa-address-card" aria-hidden="true"></i></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" name="address" placeholder="{{ __('landlord/regrequest.ADDRESS') }} *" required="">
-                                                              <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.ADDRESS') }}
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-row">
-                                                      <div class="form-group col-md-6">
-                                                          <div class="input-group">
-                                                              <div class="input-group-prepend">
-                                                                  <span class="input-group-text"><i class="fa fa-map-pin" aria-hidden="true"></i></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" name="location" placeholder="{{ __('landlord/regrequest.P_CODE_LOCATION') }} *" required="">
-                                                              <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.P_CODE_LOCATION') }}
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                      <div class="form-group col-md-6">
-                                                          <div class="input-group">
-                                                              <div class="input-group-prepend">
-                                                                  <span class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" name="phone" placeholder="{{ __('landlord/regrequest.PHONE_MOBILE') }} *" required="">
-                                                              <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.PHONE_MOBILE') }}
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-row">
-                                                      <div class="form-group col-md-6">
-                                                          <div class="input-group">
-                                                              <div class="input-group-prepend">
-                                                                  <span class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                                              </div>
-                                                              <input type="text" class="form-control" name="email" placeholder="{{ __('landlord/regrequest.EMAIL') }} *" required="">
-                                                              <div class="invalid-feedback">
-                                                                  {{ __('landlord/regrequest.VALIDATION.EMAIL') }}
-                                                              </div>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-
-                                          </div>
-                                          <!-- end card 2 Columns Horizontal Form Layout-->
-
+                                  <div class="modal-body">
+                                      <span class="red-alert"></span>
+                                      <span class="alert-success">
+                                          <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                          <p></p>
+                                      </span>
                                   </div>
-                                  <div class="modal-footer">
-                                      <button type="submit"  class="btn btn-primary text-uppercase">{{ __('landlord/regrequest.TO_SEND') }}</button>
-                                  </div>
-                                  </form>
+
                               </div>
                           </div>
-                      </div>--}}
-                      <!-- Verify Modal content -->
-
+                      </div>
                     @extends('landlord.layouts.language-dropdown')
                 </div>
             </div>
         </div>
     </div>
 </body>
+    <script src="{{asset('landlord/assets/js/spin.min.js')}}"></script>
+    <script src="{{asset('landlord/assets/js/ladda.js')}}"></script>
     <script src="{{asset('landlord/assets/js/form.validation.script.js')}}"></script>
     <script>
         $(document).ready(function () {
@@ -366,26 +266,46 @@
 
             e.preventDefault();
             e.stopPropagation();
-
             var  form    = document.getElementById('regrequest');
             var  event   = new CustomEvent('isFormValid');
             form.dispatchEvent(event);
 
+            var l = Ladda.create(document.getElementById('register'));
+
             if(!$("#"+id).hasClass('was-validated')){
+
+                // Start: Just for email field
+                    $("input").removeClass('is-invalid');
+                 // End: Just for email field
 
                 $.ajax({
                     url: $("#"+id).attr('action'),
                     data: $("#"+id).serialize(),
                     method: "POST",
+                    beforeSend: function () {
+                        l.start();
+                    },
                     success: function(data) {
-                        $('#'+id+'  .alert-success' ).css('display','block').delay(8000).fadeOut();
-                        $('#'+id+' .alert-success p' ).text(data.message);
+                        l.stop();
+                        $('#success-flash-model .alert-success' ).css('display','block');
+                        $('#success-flash-model .alert-success p' ).text(data.message);
+                        $("#new-account-request").modal('hide')
+                        $("#success-flash-model").delay(100).modal('show')
                         document.getElementById(id).reset();
                     },
                     error: function(xhr, status, error) {
 
+                        l.stop();
+
                         var errors = JSON.parse(xhr.responseText);
-                        $('#'+id+' .red-alert' ).text(errors.error).css('display','block').delay(5000).fadeOut();
+
+                        $.each(errors.errors,function (key, val) {
+                            console.log(key,val)
+
+                            $("#"+id+" input[name="+key+"]").addClass('is-invalid');
+                            $("#"+id+" input[name="+key+"]").next('.invalid-feedback').html(val[0]);
+                        })
+
                     }
                 });
             }

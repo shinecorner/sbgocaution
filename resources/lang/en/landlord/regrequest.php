@@ -21,9 +21,11 @@
           'ADDRESS'=>'Please enter your address',
           'TELEPHONE'=>'Please fill in',
           'EMAIL'=>'Please let us know your email address.',
+          'EMAIL_UNIQUE'=>'This e-mail is already in use!',
           'EMAIL_VALID' => 'Please enter a valid e-mail address.',
       ],
       'THANK_YOU'=>'Thank you very much for your inquiry.',
+      'THANK_YOU_TEXT'=>'Thank you',
       'ADMIN_EMAIL_SUBJECT'=>'Landlord login | Access data requested',
       'REG_REQUEST_HEADLINE'=>'A customer has requested a landlord to have access to the landlord-login.',
       'routes' => [

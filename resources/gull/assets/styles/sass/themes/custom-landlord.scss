@@ -499,6 +499,18 @@ form.needs-validation.no-cross.was-validated .form-control:valid {
   }
 
 }
+span.ladda-spinner {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  right: 16px;
+  top: 18px;
+}
+.was-validated .form-control:invalid, .form-control.is-invalid{background-image:none;}
+.btn-success.disabled, .btn-success:disabled {
+  position: relative;
+  padding-right: 35px;
+}
 .alert-success{
   display:block;
   width:100%;

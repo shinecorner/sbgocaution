@@ -25,6 +25,7 @@
           'EMAIL_VALID'=>'L\'e-mail deve essere un indirizzo e-mail valido.',
       ],
       'THANK_YOU'=>'La ringrazio molto per la sua richiesta.',
+      'THANK_YOU_TEXT'=>'Grazie',
       'ADMIN_EMAIL_SUBJECT'=>'Login del proprietario | Dati di accesso richiesti',
       'REG_REQUEST_HEADLINE'=>'Un cliente ha chiesto al locatore di avere accesso al logo del proprietario.',
       'routes' => [
