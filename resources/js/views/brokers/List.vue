@@ -8,6 +8,7 @@
                     :fullBlock="true"
                     colClasses="xl12 lg12 md12 sm12 xs12"
                 >
+                    <filters @filterData="onFilterData" @resetData="onResetFilter" @changePage="changePageHandler"></filters>
                 </app-card>
             </v-layout>
             <v-layout row wrap>
@@ -87,12 +88,14 @@
     import { Vuetable, VuetablePagination, VuetablePaginationInfo} from 'vuetable-2';
     import globalFunction from "Helpers/helpers";
     import {TableData} from "Helpers/TableData";
+    import Filters from "./Filters";
     export default {
         mixins: [globalFunction, TableData],
         components: {
             Vuetable,
             VuetablePagination,
-            VuetablePaginationInfo
+            VuetablePaginationInfo,
+            Filters
         },
         data() {
             return {
