@@ -16,7 +16,7 @@ class HouseOwnerResource extends JsonResource
     {
         $data = parent::toArray($request);
         $policies = $this->policies;
-        $data['status_class'] = "label-status-" . str_replace("_", "-", render_status_class($this->status));
+        $data['status_class'] = "label-status-" . str_replace("_", "-", renderStatusClass($this->status));
         $data['count_policies'] = $policies->count();
         return $data;
     }

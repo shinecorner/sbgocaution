@@ -18,9 +18,9 @@ class PrivateLandlordResource extends JsonResource
     {
         $data = parent::toArray($request); 
         $data['created_at_formatted'] = Carbon::parse($this->created_at)->format(config('crm.display_date_format'));
-        $salutations = privatelandlord_salutation();
+        $salutations = privatelandlordSalutation();
         $data['salutation_formatted'] = $salutations[$this->salutation];
-        $data['language_flag'] = get_language_flag($this->language);
+        $data['language_flag'] = getLanguageFlag($this->language);
         $this->policyAndInvoiceStatusCounts($data);
         if ($this->is_duplicate) {
             $this->getPrivateLandlordDuplicate($data);
@@ -50,7 +50,7 @@ class PrivateLandlordResource extends JsonResource
                 if($count > 0) {
                     $count_class = [
                         'count' => $count,
-                        'class' => render_status_class($policy_status)
+                        'class' => renderStatusClass($policy_status)
                     ];
                     $data['count_policy_by_status'][$policy_status] = $count_class;
                 }
