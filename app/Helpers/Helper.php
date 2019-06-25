@@ -25,7 +25,7 @@ if (!function_exists('getUniqueNum')) {
     }
 }
 
-if (!function_exists('render_status_class')) {
+if (!function_exists('renderStatusClass')) {
 
     /**
      * Returns an appropriate status class from status.
@@ -33,7 +33,7 @@ if (!function_exists('render_status_class')) {
      * @param string $status
      * @return string $status_class
      */
-    function render_status_class($status) {
+    function renderStatusClass($status) {
         switch($status){
             case "paid": case "payed": case "accepted": case "accepted_client":case "contacted":
             $status_class = "success" ;
@@ -67,7 +67,7 @@ if (!function_exists('render_status_class')) {
     }
 }
 
-if (!function_exists('get_language_flag')) {
+if (!function_exists('getLanguageFlag')) {
 
     /**
      * Returns a language flag image path based on language.
@@ -75,7 +75,7 @@ if (!function_exists('get_language_flag')) {
      * @param  string $language
      * @return string $language_flag
      */
-    function get_language_flag($language) {
+    function getLanguageFlag($language) {
         if($language == "it")
             $language_flag = asset('/static/flag-icons/it.png');
         elseif($language == "fr")
@@ -284,7 +284,7 @@ if(!function_exists('getContactPDFPlain')) {
 
 }
 
-if(!function_exists('get_salutation')) {
+if(!function_exists('getSalutation')) {
 
     /**
      * Returns translated salutation.
@@ -292,7 +292,7 @@ if(!function_exists('get_salutation')) {
      * @param string $salutation
      * @return string translated salutation
      */
-    function get_salutation($plain = 0) {
+    function getSalutation($plain = 0) {
         $salutations = [];
         
         $salutations['mr'] = 'general.MR'; 
@@ -310,10 +310,10 @@ if(!function_exists('get_salutation')) {
 
 }
 
-if(!function_exists('get_salutationPlain')) {
+if(!function_exists('getSalutationPlain')) {
 
-    function get_salutationPlain() {
-        return get_salutation(1);
+    function getSalutationPlain() {
+        return getSalutation(1);
     }
 
 }
@@ -472,9 +472,9 @@ if(!function_exists('getPremiumAmount')) {
 
 }
 
-if(!function_exists('getKantons')) {
+if(!function_exists('getPrivatelandlordKantons')) {
 
-    function getKantons() {
+    function getPrivatelandlordKantons() {
 
         $lang = app()->getLocale();
 
@@ -500,9 +500,9 @@ if(!function_exists('getKantons')) {
 
 }
 
-if(!function_exists('getCities')) {
+if(!function_exists('getPrivatelandlordCities')) {
 
-    function getCities() {
+    function getPrivatelandlordCities() {
 
         $cities = App\PrivateLandlord::distinct('city')->pluck('city');
 
@@ -511,9 +511,9 @@ if(!function_exists('getCities')) {
     
 }
 
-if(!function_exists('privatelandlord_salutation')) {
+if(!function_exists('privatelandlordSalutation')) {
 
-    function privatelandlord_salutation($plain = 0) {
+    function privatelandlordSalutation($plain = 0) {
         $salutation = [];
         $salutation['mr'] = 'general.MR'; 
         $salutation['mrs'] = 'general.MRS'; 
@@ -529,17 +529,17 @@ if(!function_exists('privatelandlord_salutation')) {
 
 }
 
-if(!function_exists('privatelandlord_salutationPlain')) {
+if(!function_exists('privatelandlordSalutationPlain')) {
 
-    function privatelandlord_salutationPlain() {
-        return privatelandlord_salutation(1);
+    function privatelandlordSalutationPlain() {
+        return privatelandlordSalutation(1);
     }
 
 }
 
-if(!function_exists('brokers_cities')) {
+if(!function_exists('brokersCities')) {
 
-    function brokers_cities() {
+    function brokersCities() {
         $cities = App\Broker::distinct('city')->pluck('city');
         return $cities;
     }

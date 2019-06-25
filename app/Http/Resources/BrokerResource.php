@@ -43,7 +43,7 @@ class BrokerResource extends JsonResource
                 if($count > 0) {
                     $count_class = [
                         'count' => $count,
-                        'class' => render_status_class($policy_status)
+                        'class' => renderStatusClass($policy_status)
                     ];
                     $data['count_policy_by_status'][$policy_status] = $count_class;
                 }
