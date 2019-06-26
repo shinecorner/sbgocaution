@@ -38,6 +38,15 @@ export const menus = {
             path: '/settings',
             items: null,
             exact: true
+        },
+        {
+            action: 'zmdi-group',
+            title: 'role.ROLES',
+            active: false,
+            label: 'roles',
+            path: '/roles',
+            items: null,
+            exact: true
         }
     ]
 }

@@ -6,6 +6,7 @@ const BrokerList = () => import('Views/brokers/List');
 const SocketDemo = () => import('Views/contacts/ListSocket');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
+const RoleList = () => import('Views/roles/List');
 
 export default {
    path: '/',
@@ -91,6 +92,22 @@ export default {
               }
             ]
         }
-      }
+      },
+      {
+        path: '/roles',
+        component: RoleList,
+        meta: {
+            requiresAuth: true,
+            title: 'role.ROLES',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'role.ROLES'
+              }
+            ]
+        }
+      },
    ]
 }

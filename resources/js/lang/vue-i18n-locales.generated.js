@@ -403,6 +403,7 @@ export default {
                     "EMAIL_VALID": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
                 },
                 "THANK_YOU": "Vielen Dank für Ihre Anfrage",
+                "THANK_YOU_TEXT": "Vielen Dank",
                 "ADMIN_EMAIL_SUBJECT": "Vermieter-Login | Zugangsdaten angefordert",
                 "REG_REQUEST_HEADLINE": "Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.",
                 "routes": {
@@ -592,6 +593,12 @@ export default {
             "DELETE": "Löschen",
             "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!",
             "MORE_FILTER": "Mehr Filtern"
+        },
+        "role": {
+            "ROLES": "Gruppen",
+            "TITLE": "Gruppentitel",
+            "ACTIVE": "Aktiv",
+            "INACTIVE": "Inaktiv"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -1009,9 +1016,11 @@ export default {
                     "ADDRESS": "Please enter your address",
                     "TELEPHONE": "Please fill in",
                     "EMAIL": "Please let us know your email address.",
+                    "EMAIL_UNIQUE": "This e-mail is already in use!",
                     "EMAIL_VALID": "Please enter a valid e-mail address."
                 },
                 "THANK_YOU": "Thank you very much for your inquiry.",
+                "THANK_YOU_TEXT": "Thank you",
                 "ADMIN_EMAIL_SUBJECT": "Landlord login | Access data requested",
                 "REG_REQUEST_HEADLINE": "A customer has requested a landlord to have access to the landlord-login.",
                 "routes": {
@@ -1197,6 +1206,12 @@ export default {
             "DELETE": "Delete",
             "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!",
             "MORE_FILTER": "More Filter"
+        },
+        "role": {
+            "ROLES": "Groups",
+            "TITLE": "Group Title",
+            "ACTIVE": "Active",
+            "INACTIVE": "Inactive"
         },
         "login": {
             "LOGIN": "Log in",
@@ -1618,6 +1633,7 @@ export default {
                     "EMAIL_VALID": "L'adresse électronique doit être une adresse électronique valide."
                 },
                 "THANK_YOU": "Vielen Dank für Ihre Anfrage.",
+                "THANK_YOU_TEXT": "Merci à vous",
                 "ADMIN_EMAIL_SUBJECT": "Connexion propriétaire | Données d'accès demandées",
                 "REG_REQUEST_HEADLINE": "Un client a demandé à un propriétaire d'avoir accès à son identifiant propriétaire.",
                 "routes": {
@@ -1815,6 +1831,12 @@ export default {
             "DELETE": "Supprimer",
             "LANGUAGE_CHANGE_SUCCESS": "La langue a changé avec succès.",
             "MORE_FILTER": "Plus de filtre"
+        },
+        "role": {
+            "ROLES": "Groupes",
+            "TITLE": "Titre du groupe",
+            "ACTIVE": "Actif",
+            "INACTIVE": "Inactif"
         },
         "login": {
             "LOGIN": "Connexion",
@@ -2236,6 +2258,7 @@ export default {
                     "EMAIL_VALID": "L'e-mail deve essere un indirizzo e-mail valido."
                 },
                 "THANK_YOU": "La ringrazio molto per la sua richiesta.",
+                "THANK_YOU_TEXT": "Grazie",
                 "ADMIN_EMAIL_SUBJECT": "Login del proprietario | Dati di accesso richiesti",
                 "REG_REQUEST_HEADLINE": "Un cliente ha chiesto al locatore di avere accesso al logo del proprietario.",
                 "routes": {
@@ -2421,6 +2444,12 @@ export default {
             "DELETE": "Cancellare",
             "LANGUAGE_CHANGE_SUCCESS": "La lingua è cambiata con successo.",
             "MORE_FILTER": "Più filtro"
+        },
+        "role": {
+            "ROLES": "Gruppi",
+            "TITLE": "Titolo gruppo",
+            "ACTIVE": "Attivo",
+            "INACTIVE": "Inattivo"
         },
         "login": {
             "LOGIN": "Accedi",
