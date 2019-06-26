@@ -1,5 +1,5 @@
 <template>
-    <v-select :items="lead_source_option"        
+    <v-select :items="lead_sources"        
         outline                                                
         hide-details
         :label="$t('contact.filter.LEAD_SOURCES')"
@@ -13,7 +13,7 @@ export default{
         return {}
     },
     computed: {
-        lead_source_option: function(){
+        lead_sources: function(){
             let ls_option = [];
             let that = this;
             if(this.$store.getters.serverHelpers.hasOwnProperty('lead_sources')){            

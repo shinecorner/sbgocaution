@@ -1,5 +1,5 @@
 import KeywordSearch from "Components/Crm/General/KeywordSearch";
-export const FilterMixins =  {
+export const TableFilter =  {
     props: ['recordCount'],
     components: {
         KeywordSearch

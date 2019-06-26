@@ -1,5 +1,5 @@
 <template>
-    <v-select :items="salutation_filter_option"        
+    <v-select :items="salutations"        
         outline                                                
         hide-details
         v-model="salutation"
@@ -10,7 +10,7 @@
 export default{
     data(){
         return {
-            salutation_filter_option:[
+            salutations:[
                 {text: this.$t('general.MR'), value: 'mr'},
                 {text: this.$t('general.MRS'), value: 'mrs'},
                 {text: this.$t('general.COMPANY'), value: 'company'},

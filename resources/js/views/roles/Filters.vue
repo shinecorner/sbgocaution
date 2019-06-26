@@ -22,9 +22,9 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
-import {FilterMixins} from "Helpers/FilterMixins"
+import {TableFilter} from "Helpers/TableFilter"
 
 export default{
-    mixins: [globalFunction, FilterMixins]       
+    mixins: [globalFunction, TableFilter]       
 }
 </script>
