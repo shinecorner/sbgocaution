@@ -8,6 +8,7 @@
                     :fullBlock="true"
                     colClasses="xl12 lg12 md12 sm12 xs12"
                 >
+                    <filters @filterData="onFilterData" @resetData="onResetFilter" @changePage="changePageHandler"></filters>
                 </app-card>
             </v-layout>
             <v-layout row wrap>
@@ -93,7 +94,7 @@
                                 <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('contact.TOTAL_INVOICES') }}</span>
                             </template>
                             <template slot="c_policy" slot-scope="props">
-                                <policy-count :policy_count_detail="props.rowData.count_policy_by_status"></policy-count>
+                                <policy-count :total_policy="props.rowData.count_policies" :policy_count_detail="props.rowData.count_policy_by_status"></policy-count>
                             </template>
                         </vuetable>
                     </div>
@@ -114,73 +115,35 @@
 
 <script>
     import api from "Api";
-    import { mapGetters } from "vuex";
     import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
     import globalFunction from "Helpers/helpers";
     import PolicyCount from "Components/Crm/General/PolicyCount";
-   // import Filters from "./Filters";
+    import {TableData} from "Helpers/TableData";
+    import Filters from "./Filters";
 
     export default {
-        mixins: [globalFunction],
+        mixins: [globalFunction, TableData],
         components: {
             Vuetable,
             VuetablePagination,
             VuetablePaginationInfo,
-            PolicyCount
-            //Filters
-        },
-        watch: {
-            selectedLocale: function(newVal, oldVal){
-                this.$refs.vuetable.refresh();
-                this.reinitializeFields();
-            }
+            PolicyCount,
+            Filters
         },
         data() {
             return {
-                noDataMessage: this.$i18n.t('general.DATA_LOADING'),
-                loading: true,
-                currentPerPage: '',
-                perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),
-                moreParams: {},
-                paginationComponent: 'vuetable-pagination',
-                httpOptions: { headers: { Authorization: 'Bearer '+localStorage.getItem('accessToken') } },
-                checkedRows: [],
                 fields: [
                     {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
-                    { title: this.$t('general.NAME'), name: "c_name" },
+                    { title: () => this.$i18n.t('general.NAME'), name: "c_name" },
                     { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
-                    { title: this.$t('privatelandlord.PRIVATE_HOUSEOWNER_NUM'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
-                    { title: this.$t('privatelandlord.CONTACT_DETAILS'), name: "c_details" },
-                    { title: this.$t('privatelandlord.INVOICES'), name: "c_invoices" },
-                    { title: this.$t('general.POLICIES'), name: "c_policy" }
+                    { title: () => this.$i18n.t('privatelandlord.PRIVATE_HOUSEOWNER_NUM'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
+                    { title: () => this.$i18n.t('privatelandlord.CONTACT_DETAILS'), name: "c_details" },
+                    { title: () => this.$i18n.t('privatelandlord.INVOICES'), name: "c_invoices" },
+                    { title: () => this.$i18n.t('general.POLICIES'), name: "c_policy" }
                 ],
-                css: {
-                    table: {
-                        tableClass: 'v-datatable v-table theme--light',
-                        loadingClass: 'loading',
-                        ascendingIcon: 'glyphicon glyphicon-chevron-up',
-                        descendingIcon: 'glyphicon glyphicon-chevron-down',
-                        handleIcon: 'glyphicon glyphicon-menu-hamburger',
-                    },
-                    pagination: {
-                        infoClass: 'v-datatable__actions__pagination',
-                        wrapperClass: 'v-datatable__actions',
-                        activeClass: 'btn-primary',
-                        disabledClass: 'disabled',
-                        pageClass: 'btn btn-border',
-                        linkClass: 'btn btn-border',
-                        icons: {
-                            first: '',
-                            prev: '',
-                            next: '',
-                            last: '',
-                        },
-                    }
-                },
             }
         },
         computed:{
-            ...mapGetters(["selectedLocale"]),
             language_filter_option:function(){
                 let that = this;
                 let language_option = [];
@@ -192,38 +155,8 @@
             },
         },
         methods: {
-            reinitializeFields(){
-                this.$nextTick(()=>{
-                    this.$refs.vuetable.fields[1].title = this.$t('general.NAME');
-                    this.$refs.vuetable.fields[3].title = this.$t('privatelandlord.PRIVATE_HOUSEOWNER_NUM');
-                    this.$refs.vuetable.fields[4].title = this.$t('privatelandlord.CONTACT_DETAILS');
-                    this.$refs.vuetable.fields[5].title = this.$t('privatelandlord.INVOICES');
-                    this.$refs.vuetable.fields[6].title = this.$t('general.POLICIES');
-                    this.$refs.vuetable.normalizeFields();
-                });
-            },
-            changePageHandler(val){
-                this.perPage = val;
-            },
             privatelandlordFetch(apiUrl,httpOptions){
                 return api.get(apiUrl, httpOptions);
-            },
-            onPaginationData (paginationData) {
-                this.$refs.pagination.setPaginationData(paginationData)
-            },
-            onChangePage (page) {
-                this.$refs.vuetable.changePage(page)
-            },
-
-            onLoading() {
-                this.loading = true;
-                if(this.currentPerPage !== this.perPage){
-                    this.currentPerPage = this.perPage;
-                    this.$refs.vuetable.currentPage = 1;
-                }
-            },
-            onLoaded() {
-                this.loading = false;
             },
             transform: function(data) {
                 if(data.data.length == 0){
@@ -249,11 +182,7 @@
             },
         },
         created() {
-            this.currentPerPage = this.perPage;
             this.$store.dispatch("setHeaderTitle", 'privatelandlord.PRIVATE_LANDLORDS');
-        },
-        destroyed(){
-            this.$store.dispatch("clearInputItems");
         }
     };
 </script>
