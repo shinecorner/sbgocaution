@@ -5,6 +5,7 @@ const ContactList = () => import('Views/contacts/List');
 const BrokerList = () => import('Views/brokers/List');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
+const RoleList = () => import('Views/roles/List');
 
 export default {
    path: '/boxed-v2',
@@ -74,6 +75,22 @@ export default {
               }
             ]
         }
-      }
+      },
+      {
+        path: '/boxed-v2/roles',
+        component: RoleList,
+        meta: {
+            requiresAuth: true,
+            title: 'role.ROLES',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'role.ROLES'
+              }
+            ]
+        }
+      },
    ]
 }

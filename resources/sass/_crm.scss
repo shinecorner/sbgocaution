@@ -102,7 +102,16 @@
     }
     &.label-status-partner, &.label-status-pre-confirmation, &.label-status-inverse {
         background-color: #066938;
-    }    
+    }
+    &.badge-activeuser {
+        background-color: #2b542c;
+    }
+    &.badge-inactiveuser {
+        background-color: #843534;
+    }
+    &.badge-nouser {
+        background-color: #999;
+    }
 }
 
 .list-table-container table.v-table tbody td.vuetable-slot .status-chips{
@@ -285,10 +294,11 @@ button:focus{outline:none;}
         font-size: 16px;
     }
 }
+
 table.vuetable tbody.vuetable-body tr:not(:nth-child(1)) td{
     border-top: 1px solid #ddd;
 }
-table.vuetable tbody.vuetable-body tr.row-personal{
+table.vuetable tbody.vuetable-body tr.row-personal, table.vuetable tbody.vuetable-body tr.row-general{
     background-color: #ffffff;
 }
 table.vuetable tbody.vuetable-body tr.row-personal:hover{
@@ -327,8 +337,8 @@ table.vuetable tbody.vuetable-body tr.row-business,table.vuetable tbody.vuetable
 .container .v-select.v-text-field--enclosed:not(.v-text-field--single-line) .v-select__selections {
     padding-top: 15px;
 }
-.container .v-select__selection--comma{
-    margin-bottom: 0px;
+.container .v-text-field--box .v-label, .container .v-text-field--full-width .v-label, .container .v-text-field--outline .v-label{
+    top: 8px;
 }
 
 .container .v-text-field.v-text-field--enclosed .v-input__prepend-outer, .container .v-text-field.v-text-field--enclosed .v-input__prepend-inner, .container .v-text-field.v-text-field--enclosed .v-input__append-inner, .container .v-text-field.v-text-field--enclosed .v-input__append-outer {
