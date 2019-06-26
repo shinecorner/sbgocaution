@@ -96,7 +96,7 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
-import {FilterMixins} from "Helpers/FilterMixins"
+import {TableFilter} from "Helpers/TableFilter"
 
 import Language from "Components/Crm/General/Language";
 import CreatedFrom from "Components/Crm/General/CreatedFrom";
@@ -109,7 +109,7 @@ import BirthDate from "Components/Crm/Contact/BirthDate";
 import YesNoDropdown from "Components/Crm/General/YesNoDropdown";
 
 export default{
-    mixins: [globalFunction, FilterMixins],    
+    mixins: [globalFunction, TableFilter],    
     components: {        
         Status,
         Salutation,

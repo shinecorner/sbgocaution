@@ -36,7 +36,7 @@
                                 <template slot="prettycheck" slot-scope="props">
                                     <v-checkbox color="" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                                 </template>  
-                                <template slot="c_contactformate" slot-scope="props">                                  
+                                <template slot="TableFiltercontactformate" slot-scope="props">                                  
                                   <span class="primary-text">{{ props.rowData.contact_num }}</span>                                  
                                   <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.created_at_formatted }}</span>
                                   <div class="column_icon_container">
@@ -48,7 +48,7 @@
                                         <v-icon color="red darken-2" size="18" slot="activator">zmdi-email</v-icon>
                                         <span v-html="props.rowData.duplicateEmail"></span>
                                     </v-tooltip>
-                                    <v-tooltip top v-if="props.rowData.rc_policy">
+                                    <v-tooltip top v-if="props.rowData.rTableFilterpolicy">
                                         <v-icon color="green darken-2" size="18" slot="activator">zmdi-check-square</v-icon>
                                         <span>{{$t('contact.RC_POLICY_TOOLTIP')}}</span>
                                     </v-tooltip>
@@ -66,7 +66,7 @@
                                     </v-tooltip>
                                   </div>
                                 </template>
-                                <template slot="c_edit" slot-scope="props">
+                                <template slot="TableFilteredit" slot-scope="props">
                                     <v-tooltip top v-if="props.rowData.id">
                                             <a href="#" slot="activator">
                                                 <v-avatar size="26" class="round-badge-success">
@@ -76,7 +76,7 @@
                                         <span>{{ $t('general.EDIT') }}</span>
                                     </v-tooltip>
                                 </template>
-                                <template slot="c_name" slot-scope="props">                                    
+                                <template slot="TableFiltername" slot-scope="props">                                    
                                     <span class="salute_icon left">
                                         <template v-if="props.rowData.salutation === 'company'">
                                             <v-tooltip top>                                                
@@ -99,16 +99,16 @@
                                     </span>
                                     <span class="primary-text left ml-1">{{ props.rowData.first_name + ' ' + props.rowData.last_name}}</span>                                    
                                 </template>
-                                <template slot="c_address" slot-scope="props">                                    
+                                <template slot="TableFilteraddress" slot-scope="props">                                    
                                     <span class="primary-text" v-if="props.rowData.address">{{ props.rowData.address }}</span>
                                     <span class="primary-text secondary-text">{{ props.rowData.zip }} {{ props.rowData.city }}</span>                                    
                                 </template>
-                                <template slot="c_invoices" slot-scope="props">
+                                <template slot="TableFilterinvoices" slot-scope="props">
                                     <span class="amount-div">{{ props.rowData.invoice_total}}</span>
                                     <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('contact.TOTAL_POLICIES') }}</span>
                                     <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('contact.TOTAL_INVOICES') }}</span>                                    
                                 </template>
-                                <template slot="c_statusdropdown" slot-scope="props">
+                                <template slot="TableFilterstatusdropdown" slot-scope="props">
                                     <v-menu offset-y>
                                         <v-btn icon slot="activator" class="ma-0">
                                             <v-icon>more_vert</v-icon>
@@ -125,9 +125,9 @@
                                       </v-list>
                                     </v-menu>
                                 </template>
-                                <template slot="c_status" slot-scope="props">
-                                    <div :columnclass="props.rowData.status_class.replace('label-status','column')" :class="props.rowData.status_class.replace('label-status','column') + ' status-chips'" :id="'c_status_'+props.rowData.id">
-                                        <v-chip small :id="'c_status_chip_'+props.rowData.id" :chipclass="props.rowData.status_class" :class="props.rowData.status_class" text-color="white">{{tConverted('contact.status.' + props.rowData.status)}}</v-chip>
+                                <template slot="TableFilterstatus" slot-scope="props">
+                                    <div :columnclass="props.rowData.status_class.replace('label-status','column')" :class="props.rowData.status_class.replace('label-status','column') + ' status-chips'" :id="'TableFilterstatus_'+props.rowData.id">
+                                        <v-chip small :id="'TableFilterstatus_chip_'+props.rowData.id" :chipclass="props.rowData.status_class" :class="props.rowData.status_class" text-color="white">{{tConverted('contact.status.' + props.rowData.status)}}</v-chip>
                                         
                                         <div>
                                             <v-tooltip top v-for="(policy_detail,policy_status, policy_index) in props.rowData.count_policy_by_status" v-bind:key="policy_index"> 
@@ -143,7 +143,7 @@
                                         </div>
                                     </div>
                                 </template>
-                                <template slot="c_userlink" slot-scope="props">
+                                <template slot="TableFilteruserlink" slot-scope="props">
                                     <v-avatar v-if="props.rowData.user_id" size="26" class="round-badge-success">
                                         <a href="#"><v-icon color="white" small>ti-link</v-icon></a>
                                     </v-avatar>
@@ -151,7 +151,7 @@
                                         <a href="#"><v-icon color="white" small>ti-link</v-icon></a>
                                     </v-avatar>
                                 </template>
-                                <!-- <template slot="c_action" slot-scope="props">
+                                <!-- <template slot="TableFilteraction" slot-scope="props">
                                     <v-menu offset-y>
                                         <v-icon medium slot="activator">zmdi-caret-down-circle</v-icon>
                                       <v-list>
@@ -165,7 +165,7 @@
                                       </v-list>
                                     </v-menu>
                                 </template>-->
-                                <template slot="c_addpolicy" slot-scope="props">
+                                <template slot="TableFilteraddpolicy" slot-scope="props">
                                     <v-tooltip top>
                                             <a href="#" slot="activator">
                                                 <v-avatar size="26" class="round-badge-success">
@@ -226,16 +226,16 @@ export default {
             checkedRows: [],
             fields: [  
                 {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
-                { title: this.$t('contact.ID'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
-                { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
-                { title: this.$t('general.NAME'), name: "c_name" },
-                { title: this.$t('general.ADDRESS'), name: "c_address" },
-                { title: this.$t('contact.TOTAL_INVOICES'), name: "c_invoices" },                
-                { title: "", name: "c_statusdropdown", dataClass: 'statusdropdown_column', titleClass:'statusdropdown_column' },
-                { title: this.$t('general.STATUS'), name: "c_status", dataClass: 'status_policy_column', titleClass:'status_policy_column'},
-                { title: "", name: "c_userlink", dataClass: 'userid_link'},
-                //{ title: "", name: "c_action" },
-                { title: "", name: "c_addpolicy",  dataClass: 'add_policy_btn'},
+                { title: this.$t('contact.ID'), name: "TableFiltercontactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
+                { title: "", name: "TableFilteredit", dataClass: 'edit_data', titleClass:'edit_column' },
+                { title: this.$t('general.NAME'), name: "TableFiltername" },
+                { title: this.$t('general.ADDRESS'), name: "TableFilteraddress" },
+                { title: this.$t('contact.TOTAL_INVOICES'), name: "TableFilterinvoices" },                
+                { title: "", name: "TableFilterstatusdropdown", dataClass: 'statusdropdown_column', titleClass:'statusdropdown_column' },
+                { title: this.$t('general.STATUS'), name: "TableFilterstatus", dataClass: 'status_policy_column', titleClass:'status_policy_column'},
+                { title: "", name: "TableFilteruserlink", dataClass: 'userid_link'},
+                //{ title: "", name: "TableFilteraction" },
+                { title: "", name: "TableFilteraddpolicy",  dataClass: 'add_policy_btn'},
             ],
             css: {
                 table: {
@@ -265,14 +265,14 @@ export default {
      computed:{
      ...mapGetters(["selectedLocale"]),
      contactstatus: function(){
-        let c_status = [];
+        let TableFilterstatus = [];
         let that = this;        
         if(this.$store.getters.serverHelpers.statuses.hasOwnProperty('contact')){            
             _.forOwn(this.$store.getters.serverHelpers.statuses.contact, function(title, key) { 
-                c_status.push({'title': key, 'text': that.$i18n.t(title)})
+                TableFilterstatus.push({'title': key, 'text': that.$i18n.t(title)})
             });            
         }        
-        return c_status;
+        return TableFilterstatus;
     },
     lead_source_option: function(){
         let ls_option = [];
@@ -323,19 +323,19 @@ export default {
                 if((typeof response.data.data !== "undefined") && (response.data.data.hasOwnProperty('id'))){                    
                     let row_id = response.data.data.id;
                     
-                    let columnclass = $('#c_status_'+row_id).attr('columnclass');
+                    let columnclass = $('#TableFilterstatus_'+row_id).attr('columnclass');
                     let new_columnclass = response.data.data.status_class.replace('label-status','column');
-                    $('#c_status_'+row_id).removeClass(columnclass);
-                    $('#c_status_'+row_id).attr('columnclass', new_columnclass);
-                    $('#c_status_'+row_id).addClass(new_columnclass);
+                    $('#TableFilterstatus_'+row_id).removeClass(columnclass);
+                    $('#TableFilterstatus_'+row_id).attr('columnclass', new_columnclass);
+                    $('#TableFilterstatus_'+row_id).addClass(new_columnclass);
                     
-                    let chipclass = $('#c_status_chip_'+row_id).attr('chipclass');
+                    let chipclass = $('#TableFilterstatus_chip_'+row_id).attr('chipclass');
                     let new_chipclass = response.data.data.status_class;
-                    $('#c_status_chip_'+row_id).removeClass(chipclass);
-                    $('#c_status_chip_'+row_id).attr('chipclass', new_chipclass);
-                    $('#c_status_chip_'+row_id).addClass(new_chipclass);
+                    $('#TableFilterstatus_chip_'+row_id).removeClass(chipclass);
+                    $('#TableFilterstatus_chip_'+row_id).attr('chipclass', new_chipclass);
+                    $('#TableFilterstatus_chip_'+row_id).addClass(new_chipclass);
 
-                    $('#c_status_chip_'+row_id+' .v-chip__content').html(that.tConverted('contact.status.'+ response.data.data.status));
+                    $('#TableFilterstatus_chip_'+row_id+' .v-chip__content').html(that.tConverted('contact.status.'+ response.data.data.status));
                     that.loading = false;
                     //Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message); 
                 }
