@@ -1,5 +1,5 @@
 <template>
-    <v-select :items="contactstatus"         
+    <v-select :items="statuses"         
         outline                                                
         hide-details
         v-model="status"
@@ -10,7 +10,7 @@
 <script>
 export default{
     computed:{
-         contactstatus: function(){
+         statuses: function(){
             let TableFilterstatus = [];
             let that = this;        
             if(this.$store.getters.serverHelpers.statuses.hasOwnProperty('contact')){            
