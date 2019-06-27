@@ -14,9 +14,16 @@ class TemplateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return TemplateResource::collection(Template::all());
+        $query = Template::latest();
+
+        if($request->has('limit')) {
+            $templates = $query->paginate($request->limit);
+        } else {
+            $templates = $query->paginate($request->per_page);
+        }
+        return TemplateResource::collection($templates);
     }
 
     /**
