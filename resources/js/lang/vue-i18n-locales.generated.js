@@ -280,6 +280,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Der Kontaktstatus wurde erfolgreich geändert.",
             "STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.",
+            "DELETE_SUCCESS": "Kunde(n) gelöscht!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Diese Kunde hat bezahlte Zahlung(en), so dass sie nicht gelöscht werden können.",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Die Kunden {info_1} und {info_2} können nicht gelöscht werden, da bezahlte Zahlung(en) existieren",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Kontakt {info_1} kann nicht gelöscht werden, da bezahlte Zahlung(en) existieren.",
             "offer": {
                 "FILE_NAME": "offerte",
                 "CREATE_SUCCESS": "Angebot erfolgreich erstellt!",
@@ -925,6 +929,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
             "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again.",
+            "DELETE_SUCCESS": "Customer(s) deleted!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Diese Kunde hat bezahlte Zahlung(en), so dass sie nicht gelöscht werden können.",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Die Kunden {info_1} und {info_2} können nicht gelöscht werden, da bezahlte Zahlung(en) existieren",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Kontakt {info_1} kann nicht gelöscht werden, da bezahlte Zahlung(en) existieren.",
             "offer": {
                 "FILE_NAME": "offer",
                 "CREATE_SUCCESS": "Offer created successfully!",
@@ -1566,6 +1574,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Le statut du contact a été modifié avec succès.",
             "STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez.",
+            "DELETE_SUCCESS": "Client(s) supprimé(s) !",
+            "ERROR_DELETE_SELECTED_CONTACT": "Ce contact a payé le(s) paiement(s) donc vous ne pouvez pas l'effacer",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Contacts {info_1} et {info_2} ne peuvent pas être supprimés parce que des paiements payés existent",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Les {info_1} de contact ne peuvent pas être supprimés car il a effectué le(s) paiement(s)",
             "offer": {
                 "FILE_NAME": "proposition",
                 "CREATE_SUCCESS": "Offre créée avec succès !",
@@ -2219,6 +2231,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Lo stato dei contatti è stato modificato con successo.",
             "STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare.",
+            "DELETE_SUCCESS": "Cliente(i) cancellato(i)!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Questo contatto ha pagato il pagamento(i) in modo da non poterlo cancellare",
+            "ERROR_DELETE_SELECTED_CONTACTS": "I contatti {info_1} e {info_2} non possono essere cancellati perché esistono pagamenti pagati",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Il contatto {info_1} non può essere cancellato perché ha effettuato il pagamento(i)",
             "offer": {
                 "FILE_NAME": "offerta",
                 "CREATE_SUCCESS": "Offerta creata con successo!",

@@ -4,4 +4,5 @@
     'USERS' => 'Users',  
     'LAST_LOGIN' => 'Last Visit Date',
     'REGISTRATION_DATE' => 'Registered Date',  
+    'SELECT_ROLE' => 'Select Group',
   ];

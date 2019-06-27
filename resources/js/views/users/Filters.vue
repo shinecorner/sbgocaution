@@ -2,9 +2,25 @@
     <v-container search-content>
         <v-form ref="filterForm" @keyup.native.enter="$emit('filterData')" @submit.prevent="$emit('filterData')">
             <v-layout row wrap>            
-                <v-flex xs12 sm6 md6 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg3 xl3>
                     <keyword-search></keyword-search>
                 </v-flex>                
+                <v-flex xs12 sm6 md6 lg3 xl3>
+                    <v-select :items="statuses"        
+                        outline                                                
+                        hide-details
+                        v-model="status"
+                        :label="$t('general.SELECT_STATUS')">
+                    </v-select>
+                </v-flex>
+                <v-flex xs12 sm6 md6 lg3 xl3>
+                    <v-select :items="roles"        
+                        outline                                                
+                        hide-details
+                        v-model="role"
+                        :label="$t('user.SELECT_ROLE')">
+                    </v-select>
+                </v-flex>
             </v-layout>   
         </v-form>
         <v-layout row wrap>
@@ -25,6 +41,52 @@ import globalFunction from "Helpers/helpers";
 import {TableFilter} from "Helpers/TableFilter"
 
 export default{
-    mixins: [globalFunction, TableFilter]       
+    mixins: [globalFunction, TableFilter],
+    data() {
+        return {
+            statuses:[
+                {text: this.$t('general.PUBLISHED'), value: '1'},
+                {text: this.$t('general.UNPUBLISHED'), value: '0'},                
+            ]
+        }
+    },
+    computed:{
+        roles: function(){
+            let TableFilterRoles = [];
+            let that = this;        
+            if(this.$store.getters.serverHelpers.hasOwnProperty('roles')){            
+                _.forOwn(this.$store.getters.serverHelpers.roles, function(title, key) { 
+                    TableFilterRoles.push({'value': key, 'text': title})
+                });            
+            }        
+            return TableFilterRoles;
+        },
+        status: {
+            get () {
+                if(this.$store.getters.inputItems.hasOwnProperty('status')){
+                    return this.$store.getters.inputItems.status;
+                }
+                else{
+                    return '';
+                }
+            },
+            set (value) {
+              this.$store.dispatch("addInputItem", {fieldname: 'status', fieldvalue: value});
+            }
+        },
+        role: {
+            get () {
+                if(this.$store.getters.inputItems.hasOwnProperty('role')){
+                    return this.$store.getters.inputItems.role;
+                }
+                else{
+                    return '';
+                }
+            },
+            set (value) {
+              this.$store.dispatch("addInputItem", {fieldname: 'role', fieldvalue: value});
+            }
+        }
+    }
 }
 </script>

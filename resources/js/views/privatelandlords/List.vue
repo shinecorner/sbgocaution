@@ -64,7 +64,7 @@
                                         </template>
                                     </span>
                                 <span class="primary-text left ml-1">{{ props.rowData.first_name + ' ' + props.rowData.last_name}}</span><br/>
-                                <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.created_at }}</span>
+                                <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.created_at_formatted }}</span>
                                 <div class="column_icon_container">
                                     <v-tooltip top v-if="props.rowData.is_duplicate">
                                         <v-icon color="orange darken-2" size="18" slot="activator">zmdi-alert-triangle</v-icon>
@@ -142,7 +142,7 @@
                     {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
                     { title: () => this.$i18n.t('general.NAME'), name: "name" },
                     { title: "", name: "edit", dataClass: 'edit_data', titleClass:'edit_column' },
-                    { title: () => this.$i18n.t('privatelandlord.PRIVATE_HOUSEOWNER_NUM'), name: "contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
+                    { title: () => this.$i18n.t('privatelandlord.PRIVATE_HOUSEOWNER_NUM'), name: "contactformate"},
                     { title: () => this.$i18n.t('privatelandlord.CONTACT_DETAILS'), name: "details" },
                     { title: () => this.$i18n.t('privatelandlord.INVOICES'), name: "invoices" },
                     { title: () => this.$i18n.t('general.POLICIES'), name: "policy" }

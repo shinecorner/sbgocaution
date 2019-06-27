@@ -57,7 +57,7 @@
                                 </template>  
                                 <template slot="enabled" slot-scope="props">
                                     <v-tooltip top v-if="props.rowData.status == '1'">
-                                            <a href="#" slot="activator">
+                                            <a href="#" @click="changeStatus(props.rowData.id)" slot="activator">
                                                 <v-avatar size="26" class="round-badge-success">
                                                     <v-icon color="white" size="18">zmdi zmdi-check</v-icon>
                                                 </v-avatar>
@@ -65,7 +65,7 @@
                                         <span>{{ $t('general.PUBLISHED') }}</span>
                                     </v-tooltip>
                                     <v-tooltip top v-else-if="props.rowData.status == '0'">
-                                            <a href="#" slot="activator">
+                                            <a href="#" @click="changeStatus(props.rowData.id)" slot="activator">
                                                 <v-avatar size="26" class="round-badge-danger">
                                                     <v-icon color="white" size="18">zmdi zmdi-close</v-icon>
                                                 </v-avatar>
@@ -144,7 +144,21 @@ export default {
       methods: {
         userFetch(apiUrl,httpOptions){
             return api.get(apiUrl, httpOptions);
-        },                  
+        },  
+        changeStatus(id){
+            let that = this;            
+            this.loading = true;
+            api.put('/api/users/change_status/'+id) .then(function (response) {
+                if((typeof response.data.data !== "undefined") && (response.data.data.hasOwnProperty('id'))){
+                    let row_id = response.data.data.id;                                        
+                    that.loading = false;
+                    Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message); 
+                }
+            }).catch(function (error) {
+                that.loading = false;
+                console.log(error);
+            });
+        }
   },
     created() {        
         this.$store.dispatch("setHeaderTitle", 'user.USERS');    

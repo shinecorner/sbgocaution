@@ -19,6 +19,8 @@ return [
     'ERROR' => 'Erreur',
     'SAVE_SUCCESSFULLY' => 'Données sauvegardées avec succès',
     'INVOICES' => 'Factures',
+    'PUBLISHED' => 'Publié',
+    'UNPUBLISHED' => 'Non publié',
     'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',
@@ -119,4 +121,5 @@ return [
     'MORE_FILTER' => 'Plus de filtre',
     'ENABLED' => 'Actif',
     'ACTIVATED' => 'Activé',
+    'SELECT_STATUS' => 'Choisir le statut',
 ];
