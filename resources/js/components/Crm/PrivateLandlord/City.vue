@@ -1,21 +1,21 @@
 <template>
-    <v-select :items="privatelandlordcities"
+    <v-select :items="cities"
               outline
               hide-details
               v-model="city"
-              :label="$t('privatelandlord.CITY')">
+              :label="$t('privatelandlord.filter.CITY')">
     </v-select>
 </template>
 
 <script>
     export default{
         computed:{
-            privatelandlordcities: function(){
+            cities: function(){
                 let city = [];
                 let that = this;
                 if(this.$store.getters.serverHelpers.privatelandlord_cities){
                     _.forOwn(this.$store.getters.serverHelpers.privatelandlord_cities, function(title, key) {
-                        city.push({'value': title, 'text': that.$i18n.t(title)})
+                        city.push({'value': title, 'text': title})
                     });
                 }
                 return city;

@@ -3,7 +3,7 @@
               outline
               hide-details
               v-model="policynumber"
-              :label="$t('privatelandlord.POLICY_NUMBER')">
+              :label="$t('privatelandlord.filter.POLICY_NUMBER')">
     </v-select>
 </template>
 <script>

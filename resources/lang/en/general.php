@@ -3,7 +3,7 @@ return [
     'CRM' => 'CRM',
     'NAME' => 'Name',
     'ADDRESS' => 'Address',
-    'STATUS' => 'Status',    
+    'STATUS' => 'Status',
     'MR' => 'Mr',
     'MRS' => 'Mrs',
     'COMPANY' => 'Company',
@@ -16,7 +16,7 @@ return [
     'EDIT' => 'Edit',
     'POLICIES' => 'Polices',
     'SUCCESS' => 'Success',
-    'ERROR' => 'Error',    
+    'ERROR' => 'Error',
     'SAVE_SUCCESSFULLY' => 'Data saved successfully',
     'INVOICES' => 'Invoices',
     'language' => [
@@ -42,9 +42,10 @@ return [
         'CREATE_TO' => 'Created to',
         'LANGUAGE' => 'Language',
         'SEARCH' => 'Search',
-        'RESET' => 'Reset',        
-        'NOT_SELECTED_OPTION' => 'Not selected'
-    ],            
+        'RESET' => 'Reset',
+        'NOT_SELECTED_OPTION' => 'Not selected',
+        'CURRENT_POLICIES' => 'Current Policies'
+    ],
     'ROWS' => 'Rows',
     'PDF_MR' => 'Dear Sir {nachname}',
     'PDF_MRS' => 'Dear Madam {nachname}',

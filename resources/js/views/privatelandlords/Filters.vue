@@ -39,7 +39,7 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
-import KeywordSearch from "Components/Crm/General/KeywordSearch";
+import {TableFilter} from "Helpers/TableFilter"
 import Language from "Components/Crm/General/Language";
 import Salutation from "Components/Crm/PrivateLandlord/Salutation";
 import City from "Components/Crm/PrivateLandlord/City";
@@ -48,9 +48,8 @@ import PolicyNumber from "Components/Crm/General/PolicyNumber";
 import PolicyAcceptedNumber from "Components/Crm/General/PolicyAcceptedNumber";
 
 export default{
-    mixins: [globalFunction],
+    mixins: [globalFunction, TableFilter],
     components: {
-        KeywordSearch,
         Salutation,
         Language,
         City,

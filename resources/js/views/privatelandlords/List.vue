@@ -36,7 +36,7 @@
                             <template slot="prettycheck" slot-scope="props">
                                 <v-checkbox color="indigo" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
                             </template>
-                            <template slot="c_name" slot-scope="props">
+                            <template slot="name" slot-scope="props">
                                     <span class="salute_icon left">
                                         <template v-if="props.rowData.salutation === 'company'">
                                             <v-tooltip top>
@@ -56,6 +56,12 @@
                                                 <span>{{$t('general.MRS')}}</span>
                                             </v-tooltip>
                                         </template>
+                                        <template v-else-if="props.rowData.salutation === 'family'">
+                                            <v-tooltip top>
+                                                <font-awesome-icon :icon="['fas', 'home']" slot="activator"/>
+                                                <span>{{$t('general.FAMILY')}}</span>
+                                            </v-tooltip>
+                                        </template>
                                     </span>
                                 <span class="primary-text left ml-1">{{ props.rowData.first_name + ' ' + props.rowData.last_name}}</span><br/>
                                 <span class="grey--text secondary-text fs-12 d-block">{{ props.rowData.created_at }}</span>
@@ -70,7 +76,7 @@
                                     </v-tooltip>
                                 </div>
                             </template>
-                            <template slot="c_edit" slot-scope="props">
+                            <template slot="edit" slot-scope="props">
                                 <v-tooltip top v-if="props.rowData.id">
                                     <a href="#" slot="activator">
                                         <v-avatar size="26" class="round-badge-success">
@@ -80,20 +86,20 @@
                                     <span>{{ $t('general.EDIT') }}</span>
                                 </v-tooltip>
                             </template>
-                            <template slot="c_contactformate" slot-scope="props">
+                            <template slot="contactformate" slot-scope="props">
                                 <span class="primary-text" v-if="props.rowData.address">{{ props.rowData.address }}</span>
                                 <span class="primary-text secondary-text">{{ props.rowData.zip }} {{ props.rowData.city }}</span>
                             </template>
-                            <template slot="c_details" slot-scope="props">
+                            <template slot="details" slot-scope="props">
                                 <span class="primary-text" v-if="props.rowData.phone">{{ props.rowData.phone }}</span>
                                 <span class="grey--text secondary-text">{{ props.rowData.email }} </span>
                             </template>
-                            <template slot="c_invoices" slot-scope="props">
+                            <template slot="invoices" slot-scope="props">
                                 <span class="amount-div">{{ props.rowData.invoice_total}}</span>
                                 <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_policies}}&nbsp;{{ $t('contact.TOTAL_POLICIES') }}</span>
                                 <span class="grey--text fs-12 secondary-text fw-normal d-block">{{props.rowData.count_invoices}}&nbsp;{{ $t('contact.TOTAL_INVOICES') }}</span>
                             </template>
-                            <template slot="c_policy" slot-scope="props">
+                            <template slot="policy" slot-scope="props">
                                 <policy-count :total_policy="props.rowData.count_policies" :policy_count_detail="props.rowData.count_policy_by_status"></policy-count>
                             </template>
                         </vuetable>
@@ -134,12 +140,12 @@
             return {
                 fields: [
                     {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
-                    { title: () => this.$i18n.t('general.NAME'), name: "c_name" },
-                    { title: "", name: "c_edit", dataClass: 'edit_data', titleClass:'edit_column' },
-                    { title: () => this.$i18n.t('privatelandlord.PRIVATE_HOUSEOWNER_NUM'), name: "c_contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
-                    { title: () => this.$i18n.t('privatelandlord.CONTACT_DETAILS'), name: "c_details" },
-                    { title: () => this.$i18n.t('privatelandlord.INVOICES'), name: "c_invoices" },
-                    { title: () => this.$i18n.t('general.POLICIES'), name: "c_policy" }
+                    { title: () => this.$i18n.t('general.NAME'), name: "name" },
+                    { title: "", name: "edit", dataClass: 'edit_data', titleClass:'edit_column' },
+                    { title: () => this.$i18n.t('privatelandlord.PRIVATE_HOUSEOWNER_NUM'), name: "contactformate", titleClass: 'contact_id_title',dataClass: 'contact_id_data' },
+                    { title: () => this.$i18n.t('privatelandlord.CONTACT_DETAILS'), name: "details" },
+                    { title: () => this.$i18n.t('privatelandlord.INVOICES'), name: "invoices" },
+                    { title: () => this.$i18n.t('general.POLICIES'), name: "policy" }
                 ],
             }
         },
@@ -157,29 +163,7 @@
         methods: {
             privatelandlordFetch(apiUrl,httpOptions){
                 return api.get(apiUrl, httpOptions);
-            },
-            transform: function(data) {
-                if(data.data.length == 0){
-                    this.noDataMessage = this.$i18n.t('general.NO_MORE_ENTRIES');
-                }
-                let transformed = {}
-                let pg_meta = data.meta
-                let pg_links = data.links
-
-                transformed.pagination = {
-                    total: pg_meta.total,
-                    per_page: pg_meta.per_page,
-                    current_page: pg_meta.current_page,
-                    last_page: pg_meta.last_page,
-                    next_page_url: pg_links.next ? pg_links.next : null,
-                    prev_page_url: pg_links.prev ? pg_links.prev : null,
-                    from: pg_meta.from,
-                    to: pg_meta.to,
-                }
-                transformed.mydata = [];
-                transformed.mydata = data.data
-                return transformed
-            },
+            }
         },
         created() {
             this.$store.dispatch("setHeaderTitle", 'privatelandlord.PRIVATE_LANDLORDS');

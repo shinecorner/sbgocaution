@@ -6,9 +6,10 @@ return [
     'INVOICES' => 'Factures',
     'PRIVATE_HOUSEOWNER_NUM' => 'Private landlord num',
     'CONVERT_TO_ORGANIZATIONS' => 'Convertir en régie',
-    'CITY' => 'Ville',
-    'POLICY_ACCEPTED_NUMBER' => 'PVT_FILTER_COUNT_ACCEPTED_QUOTES',
-    'POLICY_NUMBER' => 'Par statut des polices',
-    'KANTON' => 'Canton',
-    'CURRENT_POLICIES' => 'Politiques actuelles'
+    'filter' => [
+                        'CITY' => 'Ville',
+                        'POLICY_ACCEPTED_NUMBER' => 'PVT_FILTER_COUNT_ACCEPTED_QUOTES',
+                        'POLICY_NUMBER' => 'Par statut des polices',
+                        'KANTON' => 'Canton'
+            ]
     ];
