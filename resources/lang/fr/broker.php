@@ -3,5 +3,6 @@ return [
     'BROKERS' => 'Courtiers',
     'BROKER' => 'Courtier',
     'ID'=> 'Courtier ID',
-    'WEBSITE'=> 'Site ueb'
+    'WEBSITE'=> 'Site ueb',
+    'CITY' => 'Ville'
 ];
