@@ -112,10 +112,67 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
+        $ids = explode(",", $id);
+        $success = 0;
+        $failed = 0;
+        $delete_contact = [];
+        $result = false;
+        foreach($ids as $cid) {
+            $contact = Contact::findOrFail($cid);
+            $data = [];
+            $data['id'] = $contact->id;
+            $data['last_name'] = $contact->last_name;
+            $data['first_name']  = $contact->first_name;
+            $data['birthdate'] = $contact->birthdate;
+            $data['new_addresses'] = 0;
+            $data['addresses'] = $contact->addresses->where('is_primary', 1)->first();
+            if(isPaidContactOrPaidInvoice($cid, 'contact'))
+            {
+                $delete_contact[] = $contact->contact_num;
+                $failed++;
+                continue;
+            } else {
+                $success++;
+            }
+
+            if ($dups = checkDuplicateContact(2, $data)) {
+                $this->updateDuplicateContact($dups, 1);                  
+            }
+
+            $contact->delete();
+            //@TODO
+        }
+
+        if($success > 0) {
+            $message = __('contact.DELETE_SUCCESS'); 
+        }
+
+        if($failed > 0) {
+
+            if(count($delete_contact) > 1) {
+                $new_delete_contact = $delete_contact;
+                unset($new_delete_contact[count($delete_contact)-1]);
+                $last = end($delete_contact);
+                $info_1 = implode(",", $new_delete_contact);
+                $info_2 = $last;
+                $message = __('contact.ERROR_DELETE_SELECTED_CONTACTS', ['info_1' => $info_1, 'info_2' => $info_2]);
+            } else {
+                $new_delete_contact = $delete_contact;
+                $info_1 = implode(",", $new_delete_contact);
+                $message = __('contact.ERROR_DELETE_SELECTED_CONTACTS_ONE', ['info_1' => $info_1]);
+            }
+
+            // check if this on edit view 
+            if(count($id) == 1) {
+                $message = __('contact.ERROR_DELETE_SELECTED_CONTACT');
+            }
+
+        }
+
         return response()->json([
-            "api_status" => $contact->delete()
+            "message" => $message
         ], 200);
     }
 
@@ -211,6 +268,29 @@ class ContactController extends Controller
                 }
             }
         }
+    }
+
+    private function updateDuplicateContact($dups, $type = 0)
+    {
+   
+        foreach ($dups as $dup) {            
+            $dup->is_duplicate = 0;
+            
+            switch ($type) {
+                case 1:
+                    if (count($dups) > 1) {
+                        $dup->is_duplicate = 1;
+                    }  
+                    break;                
+                default:
+                    if (count($dups) > 0) {
+                        $dup->is_duplicate = 1;
+                    }  
+                    break;
+            }
+            $dup->save();            
+        }
+        return true;
     }
 
 }

@@ -95,6 +95,10 @@ return [
     ],
     'STATUS_CHANGE_SUCCESS' => 'Der Kontaktstatus wurde erfolgreich geändert.',
     'STATUS_CHANGE_FAIL' => 'Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.',
+    'DELETE_SUCCESS' => 'Kunde(n) gelöscht!',
+    'ERROR_DELETE_SELECTED_CONTACT' => "Diese Kunde hat bezahlte Zahlung(en), so dass sie nicht gelöscht werden können.",
+    'ERROR_DELETE_SELECTED_CONTACTS' => "Die Kunden :info_1 und :info_2 können nicht gelöscht werden, da bezahlte Zahlung(en) existieren",
+    'ERROR_DELETE_SELECTED_CONTACTS_ONE' => "Kontakt :info_1 kann nicht gelöscht werden, da bezahlte Zahlung(en) existieren.",
     'offer' => [
         'FILE_NAME' => 'offerte',
         'CREATE_SUCCESS' => 'Angebot erfolgreich erstellt!',

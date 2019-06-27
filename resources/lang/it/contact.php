@@ -95,6 +95,10 @@ return [
     ],
     'STATUS_CHANGE_SUCCESS' => 'Lo stato dei contatti è stato modificato con successo.',
     'STATUS_CHANGE_FAIL' => 'Purtroppo, lo stato dei contatti non è stato modificato, riprovare.',
+    'DELETE_SUCCESS' => 'Cliente(i) cancellato(i)!',
+    'ERROR_DELETE_SELECTED_CONTACT' => "Questo contatto ha pagato il pagamento(i) in modo da non poterlo cancellare",
+    'ERROR_DELETE_SELECTED_CONTACTS' => "I contatti :info_1 e :info_2 non possono essere cancellati perché esistono pagamenti pagati",
+    'ERROR_DELETE_SELECTED_CONTACTS_ONE' => "Il contatto :info_1 non può essere cancellato perché ha effettuato il pagamento(i)",
     'offer' => [
         'FILE_NAME' => 'offerta',
         'CREATE_SUCCESS' => 'Offerta creata con successo!',

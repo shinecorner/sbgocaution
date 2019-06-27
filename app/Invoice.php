@@ -10,4 +10,9 @@ class Invoice extends Model
 	{
 		return $this->belongsTo('App\Policy');
 	}
+
+	public function payments()
+	{
+		return $this->hasMany('App\Payment');
+	}
 }
