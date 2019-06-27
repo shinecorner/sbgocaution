@@ -2,9 +2,7 @@
 return [
     'TEMPLATES' => 'Vorlagen',
     'TEMPLATE_KEY' => 'Vorlage-Schlüssel',
-    'SECTION' => 'Bereich',
-    'PUBLISHED' => 'Publiziert',
-    'UNPUBLISHED' => 'Unpubliziert',
+    'SECTION' => 'Bereich',    
      'filter' => [
                         'SELECT_TYPE' => 'Tynp auswähle',
                         'PDF' => 'PDF',

@@ -1,5 +1,15 @@
 export default {
     "de": {
+        "template": {
+            "TEMPLATES": "Vorlagen",
+            "TEMPLATE_KEY": "Vorlage-Schlüssel",
+            "SECTION": "Bereich",
+            "filter": {
+                "SELECT_TYPE": "Tynp auswähle",
+                "PDF": "PDF",
+                "EMAIL": "E-Mail"
+            }
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -120,19 +130,21 @@ export default {
             "PRIVATE_LANDLORDS": "Private Hauswirte",
             "CONTACT_DETAILS": "Kundendetails",
             "INVOICES": "Rechnungen",
-            "PRIVATE_HOUSEOWNER_NUM": "Kontakt-ID",
+            "PRIVATE_HOUSEOWNER_NUM": "Private Vermieter Nummer",
             "CONVERT_TO_ORGANIZATIONS": "In Verwaltungen konvertieren",
-            "CITY": "City",
-            "POLICY_ACCEPTED_NUMBER": "Nach Anzahl Policen",
-            "POLICY_NUMBER": "Nach Policen Status",
-            "KANTON": "Kanton",
-            "CURRENT_POLICIES": "Laufende Policen"
+            "filter": {
+                "CITY": "City",
+                "POLICY_ACCEPTED_NUMBER": "Nach Anzahl Policen",
+                "POLICY_NUMBER": "Nach Policen Status",
+                "KANTON": "Kanton"
+            }
         },
         "broker": {
             "BROKERS": "Vermittler",
             "BROKER": "Vermittler",
             "ID": "Vermittler ID",
-            "WEBSITE": "Website"
+            "WEBSITE": "Website",
+            "CITY": "City"
         },
         "auth": {
             "failed": "Diese Anmeldeinformationen stimmen nicht mit unseren Aufzeichnungen überein.",
@@ -142,7 +154,8 @@ export default {
             "EDIT_ACCOUNT": "Profil bearbeiten",
             "USERS": "Benutzer",
             "LAST_LOGIN": "Letzter Besuch",
-            "REGISTRATION_DATE": "Registrierungsdatum"
+            "REGISTRATION_DATE": "Registrierungsdatum",
+            "SELECT_ROLE": "Gruppe wählen"
         },
         "setting": {
             "SETTING": "Einstellung",
@@ -267,6 +280,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Der Kontaktstatus wurde erfolgreich geändert.",
             "STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.",
+            "DELETE_SUCCESS": "Kunde(n) gelöscht!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Diese Kunde hat bezahlte Zahlung(en), so dass sie nicht gelöscht werden können.",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Die Kunden {info_1} und {info_2} können nicht gelöscht werden, da bezahlte Zahlung(en) existieren",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Kontakt {info_1} kann nicht gelöscht werden, da bezahlte Zahlung(en) existieren.",
             "offer": {
                 "FILE_NAME": "offerte",
                 "CREATE_SUCCESS": "Angebot erfolgreich erstellt!",
@@ -506,6 +523,8 @@ export default {
             "ERROR": "Fehler",
             "SAVE_SUCCESSFULLY": "Daten erfolgreich gespeichert",
             "INVOICES": "Rechnungen",
+            "PUBLISHED": "Publiziert",
+            "UNPUBLISHED": "Unpubliziert",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -530,7 +549,8 @@ export default {
                 "LANGUAGE": "Sprache",
                 "SEARCH": "Suchen",
                 "RESET": "Leeren",
-                "NOT_SELECTED_OPTION": "Nicht ausgewählt"
+                "NOT_SELECTED_OPTION": "Nicht ausgewählt",
+                "CURRENT_POLICIES": "Laufende Policen"
             },
             "ROWS": "Einträge",
             "PDF_MR": "Sehr geehrter Herr {nachname}",
@@ -603,7 +623,8 @@ export default {
             "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!",
             "MORE_FILTER": "Mehr Filtern",
             "ENABLED": "Freigegeben",
-            "ACTIVATED": "Aktiviert"
+            "ACTIVATED": "Aktiviert",
+            "SELECT_STATUS": "Status wählen"
         },
         "role": {
             "ROLES": "Gruppen",
@@ -628,6 +649,16 @@ export default {
         }
     },
     "en": {
+        "template": {
+            "TEMPLATES": "Templates",
+            "TEMPLATE_KEY": "Template key",
+            "SECTION": "Section",
+            "filter": {
+                "SELECT_TYPE": "Select Type",
+                "PDF": "PDF",
+                "EMAIL": "E-Mail"
+            }
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -750,17 +781,19 @@ export default {
             "INVOICES": "Invoices",
             "PRIVATE_HOUSEOWNER_NUM": "Private Houseowner Num",
             "CONVERT_TO_ORGANIZATIONS": "Convert To Organizations",
-            "CITY": "City",
-            "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
-            "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
-            "KANTON": "Kanton",
-            "CURRENT_POLICIES": "Current Policies"
+            "filter": {
+                "CITY": "City",
+                "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+                "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
+                "KANTON": "Kanton"
+            }
         },
         "broker": {
             "BROKERS": "Brokers",
             "BROKER": "Broker",
             "ID": "Broker ID",
-            "WEBSITE": "Website"
+            "WEBSITE": "Website",
+            "CITY": "City"
         },
         "auth": {
             "failed": "These credentials do not match our records.",
@@ -770,7 +803,8 @@ export default {
             "EDIT_ACCOUNT": "Edit profile",
             "USERS": "Users",
             "LAST_LOGIN": "Last Visit Date",
-            "REGISTRATION_DATE": "Registered Date"
+            "REGISTRATION_DATE": "Registered Date",
+            "SELECT_ROLE": "Select Group"
         },
         "setting": {
             "SETTING": "Setting",
@@ -895,6 +929,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
             "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again.",
+            "DELETE_SUCCESS": "Customer(s) deleted!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Diese Kunde hat bezahlte Zahlung(en), so dass sie nicht gelöscht werden können.",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Die Kunden {info_1} und {info_2} können nicht gelöscht werden, da bezahlte Zahlung(en) existieren",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Kontakt {info_1} kann nicht gelöscht werden, da bezahlte Zahlung(en) existieren.",
             "offer": {
                 "FILE_NAME": "offer",
                 "CREATE_SUCCESS": "Offer created successfully!",
@@ -1130,6 +1168,8 @@ export default {
             "ERROR": "Error",
             "SAVE_SUCCESSFULLY": "Data saved successfully",
             "INVOICES": "Invoices",
+            "PUBLISHED": "Published",
+            "UNPUBLISHED": "Unpublished",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -1154,7 +1194,8 @@ export default {
                 "LANGUAGE": "Language",
                 "SEARCH": "Search",
                 "RESET": "Reset",
-                "NOT_SELECTED_OPTION": "Not selected"
+                "NOT_SELECTED_OPTION": "Not selected",
+                "CURRENT_POLICIES": "Current Policies"
             },
             "ROWS": "Entries",
             "PDF_MR": "Dear Sir {nachname}",
@@ -1227,7 +1268,8 @@ export default {
             "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!",
             "MORE_FILTER": "More Filter",
             "ENABLED": "Enabled",
-            "ACTIVATED": "Activated"
+            "ACTIVATED": "Activated",
+            "SELECT_STATUS": "Select status"
         },
         "role": {
             "ROLES": "Groups",
@@ -1252,6 +1294,16 @@ export default {
         }
     },
     "fr": {
+        "template": {
+            "TEMPLATES": "Templates",
+            "TEMPLATE_KEY": "Clé de modèle",
+            "SECTION": "Section",
+            "filter": {
+                "SELECT_TYPE": "Sélectionner le type",
+                "PDF": "PDF",
+                "EMAIL": "E-Mail"
+            }
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -1374,17 +1426,19 @@ export default {
             "INVOICES": "Factures",
             "PRIVATE_HOUSEOWNER_NUM": "Private landlord num",
             "CONVERT_TO_ORGANIZATIONS": "Convertir en régie",
-            "CITY": "Ville",
-            "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
-            "POLICY_NUMBER": "Par statut des polices",
-            "KANTON": "Canton",
-            "CURRENT_POLICIES": "Politiques actuelles"
+            "filter": {
+                "CITY": "Ville",
+                "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+                "POLICY_NUMBER": "Par statut des polices",
+                "KANTON": "Canton"
+            }
         },
         "broker": {
             "BROKERS": "Courtiers",
             "BROKER": "Courtier",
             "ID": "Courtier ID",
-            "WEBSITE": "Site ueb"
+            "WEBSITE": "Site ueb",
+            "CITY": "Ville"
         },
         "auth": {
             "failed": "Ces informations d'identification ne correspondent pas à nos enregistrements.",
@@ -1394,7 +1448,8 @@ export default {
             "EDIT_ACCOUNT": "Modifier le profil",
             "USERS": "Utilisateurs",
             "LAST_LOGIN": "Dernière visite",
-            "REGISTRATION_DATE": "Enregistrement"
+            "REGISTRATION_DATE": "Enregistrement",
+            "SELECT_ROLE": "Sélectionner un groupe"
         },
         "setting": {
             "SETTING": "Réglage de",
@@ -1519,6 +1574,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Le statut du contact a été modifié avec succès.",
             "STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez.",
+            "DELETE_SUCCESS": "Client(s) supprimé(s) !",
+            "ERROR_DELETE_SELECTED_CONTACT": "Ce contact a payé le(s) paiement(s) donc vous ne pouvez pas l'effacer",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Contacts {info_1} et {info_2} ne peuvent pas être supprimés parce que des paiements payés existent",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Les {info_1} de contact ne peuvent pas être supprimés car il a effectué le(s) paiement(s)",
             "offer": {
                 "FILE_NAME": "proposition",
                 "CREATE_SUCCESS": "Offre créée avec succès !",
@@ -1766,6 +1825,8 @@ export default {
             "ERROR": "Erreur",
             "SAVE_SUCCESSFULLY": "Données sauvegardées avec succès",
             "INVOICES": "Factures",
+            "PUBLISHED": "Publié",
+            "UNPUBLISHED": "Non publié",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -1790,7 +1851,8 @@ export default {
                 "LANGUAGE": "Langue",
                 "SEARCH": "Chercher",
                 "RESET": "Vider",
-                "NOT_SELECTED_OPTION": "Non sélectionné"
+                "NOT_SELECTED_OPTION": "Non sélectionné",
+                "CURRENT_POLICIES": "Politiques actuelles"
             },
             "ROWS": "Rangées",
             "PDF_MR": "Cher Monsieur {nachname}",
@@ -1863,7 +1925,8 @@ export default {
             "LANGUAGE_CHANGE_SUCCESS": "La langue a changé avec succès.",
             "MORE_FILTER": "Plus de filtre",
             "ENABLED": "Actif",
-            "ACTIVATED": "Activé"
+            "ACTIVATED": "Activé",
+            "SELECT_STATUS": "Choisir le statut"
         },
         "role": {
             "ROLES": "Groupes",
@@ -1888,6 +1951,16 @@ export default {
         }
     },
     "it": {
+        "template": {
+            "TEMPLATES": "Vorlagen",
+            "TEMPLATE_KEY": "Template key",
+            "SECTION": "Sezione",
+            "filter": {
+                "SELECT_TYPE": "Selezionare il tipo",
+                "PDF": "PDF",
+                "EMAIL": "E-Mail"
+            }
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -2010,17 +2083,19 @@ export default {
             "INVOICES": "Rechnungen",
             "PRIVATE_HOUSEOWNER_NUM": "Proprietario privato Num",
             "CONVERT_TO_ORGANIZATIONS": "Converti ad amministrazioni",
-            "CITY": "Città",
-            "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
-            "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
-            "KANTON": "Kanton",
-            "CURRENT_POLICIES": "Politiche attuali"
+            "filter": {
+                "CITY": "Città",
+                "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+                "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
+                "KANTON": "Kanton"
+            }
         },
         "broker": {
             "BROKERS": "Intermediari",
             "BROKER": "Mediatore",
             "ID": "Mediatore ID",
-            "WEBSITE": "Website"
+            "WEBSITE": "Website",
+            "CITY": "Città"
         },
         "auth": {
             "failed": "Queste credenziali non corrispondono ai nostri record.",
@@ -2030,7 +2105,8 @@ export default {
             "EDIT_ACCOUNT": "Modifica profilo",
             "USERS": "Utenti",
             "LAST_LOGIN": "Data ultima visita",
-            "REGISTRATION_DATE": "Data registrazione"
+            "REGISTRATION_DATE": "Data registrazione",
+            "SELECT_ROLE": "Seleziona Gruppo"
         },
         "setting": {
             "SETTING": "Impostazione",
@@ -2155,6 +2231,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Lo stato dei contatti è stato modificato con successo.",
             "STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare.",
+            "DELETE_SUCCESS": "Cliente(i) cancellato(i)!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Questo contatto ha pagato il pagamento(i) in modo da non poterlo cancellare",
+            "ERROR_DELETE_SELECTED_CONTACTS": "I contatti {info_1} e {info_2} non possono essere cancellati perché esistono pagamenti pagati",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Il contatto {info_1} non può essere cancellato perché ha effettuato il pagamento(i)",
             "offer": {
                 "FILE_NAME": "offerta",
                 "CREATE_SUCCESS": "Offerta creata con successo!",
@@ -2390,6 +2470,8 @@ export default {
             "ERROR": "sbaglio",
             "SAVE_SUCCESSFULLY": "Dati salvati con successo",
             "INVOICES": "Rechnungen",
+            "PUBLISHED": "Pubblicato",
+            "UNPUBLISHED": "Inedito",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -2414,7 +2496,8 @@ export default {
                 "LANGUAGE": "Lingua",
                 "SEARCH": "Ricerca",
                 "RESET": "Resettato",
-                "NOT_SELECTED_OPTION": "Non selezionato"
+                "NOT_SELECTED_OPTION": "Non selezionato",
+                "CURRENT_POLICIES": "Politiche attuali"
             },
             "ROWS": "Righe",
             "PDF_MR": "Caro signore {nachname}",
@@ -2487,7 +2570,8 @@ export default {
             "LANGUAGE_CHANGE_SUCCESS": "La lingua è cambiata con successo.",
             "MORE_FILTER": "Più filtro",
             "ENABLED": "Abilitato",
-            "ACTIVATED": "Attivato"
+            "ACTIVATED": "Attivato",
+            "SELECT_STATUS": "Seleziona lo stato"
         },
         "role": {
             "ROLES": "Gruppi",

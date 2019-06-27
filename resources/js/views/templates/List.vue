@@ -60,13 +60,13 @@
                                 <template v-if="props.rowData.status == 1">
                                     <v-tooltip top>
                                         <font-awesome-icon :icon="['fas','check-circle']" class="published" slot="activator"/>
-                                        <span>{{$t('template.PUBLISHED')}}</span>
+                                        <span>{{$t('general.PUBLISHED')}}</span>
                                     </v-tooltip>
                                 </template>
                                 <template v-else>
                                     <v-tooltip top>
                                         <font-awesome-icon :icon="['fas','times-circle']" class="unpublished" slot="activator"/>
-                                        <span>{{$t('template.UNPUBLISHED')}}</span>
+                                        <span>{{$t('general.UNPUBLISHED')}}</span>
                                     </v-tooltip>
                                 </template>
                             </template>

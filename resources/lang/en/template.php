@@ -2,9 +2,7 @@
 return [
     'TEMPLATES' => 'Templates',
     'TEMPLATE_KEY' => 'Template key',
-    'SECTION' => 'Section',
-    'PUBLISHED' => 'Published',
-    'UNPUBLISHED' => 'Unpublished',
+    'SECTION' => 'Section',    
     'filter' => [
                             'SELECT_TYPE' => 'Select Type',
                             'PDF' => 'PDF',

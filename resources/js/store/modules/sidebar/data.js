@@ -49,6 +49,15 @@ export const menus = {
             exact: true
         },
         {
+            action: 'zmdi-accounts',
+            title: 'user.USERS',
+            active: false,
+            label: 'users',
+            path: '/users',
+            items: null,
+            exact: true
+        },
+        {
             action: 'zmdi-format-list-bulleted',
             title: 'template.TEMPLATES',
             active: false,
