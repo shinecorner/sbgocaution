@@ -20,7 +20,7 @@ export const menus = {
             exact: true
         },
         {
-            action: 'zmdi-accounts',
+            action: 'zmdi-account',
             title: 'privatelandlord.PRIVATE_LANDLORDS',
             active: false,
             label: 'privatelandlord',
