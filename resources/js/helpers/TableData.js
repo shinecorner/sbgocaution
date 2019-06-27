@@ -64,6 +64,9 @@ export const TableData = {
         onLoaded() {
           this.loading = false; 
         },
+        handleLoadError(payload, description) {
+            console.log('payload: ' + payload)
+        },    
         transform: function(data) {
             if(data.data.length == 0){
                 this.noDataMessage = this.$i18n.t('general.NO_MORE_ENTRIES');
@@ -71,18 +74,20 @@ export const TableData = {
             let transformed = {}
             let pg_meta = data.meta
             let pg_links = data.links
-
-            transformed.pagination = {
-              total: pg_meta.total,
-              per_page: pg_meta.per_page,
-              current_page: pg_meta.current_page,
-              last_page: pg_meta.last_page,
-              next_page_url: pg_links.next ? pg_links.next : null,
-              prev_page_url: pg_links.prev ? pg_links.prev : null,
-              from: pg_meta.from,
-              to: pg_meta.to,
-            }
-            this.recordCount = pg_meta.total;
+            transformed.pagination = {}
+            if(pg_meta && pg_links){
+                transformed.pagination = {
+                    total: pg_meta.total,
+                    per_page: pg_meta.per_page,
+                    current_page: pg_meta.current_page,
+                    last_page: pg_meta.last_page,
+                    next_page_url: pg_links.next ? pg_links.next : null,
+                    prev_page_url: pg_links.prev ? pg_links.prev : null,
+                    from: pg_meta.from,
+                    to: pg_meta.to,
+                }
+                this.recordCount = pg_meta.total;
+            }            
             transformed.mydata = [];
             transformed.mydata = data.data
             return transformed

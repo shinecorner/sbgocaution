@@ -120,7 +120,13 @@ export default {
             "PRIVATE_LANDLORDS": "Private Hauswirte",
             "CONTACT_DETAILS": "Kundendetails",
             "INVOICES": "Rechnungen",
-            "PRIVATE_HOUSEOWNER_NUM": "Kontakt-ID"
+            "PRIVATE_HOUSEOWNER_NUM": "Kontakt-ID",
+            "CONVERT_TO_ORGANIZATIONS": "In Verwaltungen konvertieren",
+            "CITY": "City",
+            "POLICY_ACCEPTED_NUMBER": "Nach Anzahl Policen",
+            "POLICY_NUMBER": "Nach Policen Status",
+            "KANTON": "Kanton",
+            "CURRENT_POLICIES": "Laufende Policen"
         },
         "broker": {
             "BROKERS": "Vermittler",
@@ -133,7 +139,10 @@ export default {
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "user": {
-            "EDIT_ACCOUNT": "Profil bearbeiten"
+            "EDIT_ACCOUNT": "Profil bearbeiten",
+            "USERS": "Benutzer",
+            "LAST_LOGIN": "Letzter Besuch",
+            "REGISTRATION_DATE": "Registrierungsdatum"
         },
         "setting": {
             "SETTING": "Einstellung",
@@ -592,7 +601,9 @@ export default {
             "MERGE": "Zusammenführen",
             "DELETE": "Löschen",
             "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!",
-            "MORE_FILTER": "Mehr Filtern"
+            "MORE_FILTER": "Mehr Filtern",
+            "ENABLED": "Freigegeben",
+            "ACTIVATED": "Aktiviert"
         },
         "role": {
             "ROLES": "Gruppen",
@@ -737,7 +748,13 @@ export default {
             "PRIVATE_LANDLORDS": "Private Landlords",
             "CONTACT_DETAILS": "Contact details",
             "INVOICES": "Invoices",
-            "PRIVATE_HOUSEOWNER_NUM": "Private Houseowner Num"
+            "PRIVATE_HOUSEOWNER_NUM": "Private Houseowner Num",
+            "CONVERT_TO_ORGANIZATIONS": "Convert To Organizations",
+            "CITY": "City",
+            "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+            "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
+            "KANTON": "Kanton",
+            "CURRENT_POLICIES": "Current Policies"
         },
         "broker": {
             "BROKERS": "Brokers",
@@ -750,7 +767,10 @@ export default {
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "user": {
-            "EDIT_ACCOUNT": "Edit profile"
+            "EDIT_ACCOUNT": "Edit profile",
+            "USERS": "Users",
+            "LAST_LOGIN": "Last Visit Date",
+            "REGISTRATION_DATE": "Registered Date"
         },
         "setting": {
             "SETTING": "Setting",
@@ -1205,7 +1225,9 @@ export default {
             "MERGE": "Merge",
             "DELETE": "Delete",
             "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!",
-            "MORE_FILTER": "More Filter"
+            "MORE_FILTER": "More Filter",
+            "ENABLED": "Enabled",
+            "ACTIVATED": "Activated"
         },
         "role": {
             "ROLES": "Groups",
@@ -1350,7 +1372,13 @@ export default {
             "PRIVATE_LANDLORDS": "Propriétaires privés",
             "CONTACT_DETAILS": "Contact details",
             "INVOICES": "Factures",
-            "PRIVATE_HOUSEOWNER_NUM": "Private landlord num"
+            "PRIVATE_HOUSEOWNER_NUM": "Private landlord num",
+            "CONVERT_TO_ORGANIZATIONS": "Convertir en régie",
+            "CITY": "Ville",
+            "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+            "POLICY_NUMBER": "Par statut des polices",
+            "KANTON": "Canton",
+            "CURRENT_POLICIES": "Politiques actuelles"
         },
         "broker": {
             "BROKERS": "Courtiers",
@@ -1363,7 +1391,10 @@ export default {
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "user": {
-            "EDIT_ACCOUNT": "Modifier le profil"
+            "EDIT_ACCOUNT": "Modifier le profil",
+            "USERS": "Utilisateurs",
+            "LAST_LOGIN": "Dernière visite",
+            "REGISTRATION_DATE": "Enregistrement"
         },
         "setting": {
             "SETTING": "Réglage de",
@@ -1830,7 +1861,9 @@ export default {
             "MERGE": "Fusion de clients",
             "DELETE": "Supprimer",
             "LANGUAGE_CHANGE_SUCCESS": "La langue a changé avec succès.",
-            "MORE_FILTER": "Plus de filtre"
+            "MORE_FILTER": "Plus de filtre",
+            "ENABLED": "Actif",
+            "ACTIVATED": "Activé"
         },
         "role": {
             "ROLES": "Groupes",
@@ -1975,7 +2008,13 @@ export default {
             "PRIVATE_LANDLORDS": "Proprietari privati",
             "CONTACT_DETAILS": "Dati di contatto",
             "INVOICES": "Rechnungen",
-            "PRIVATE_HOUSEOWNER_NUM": "Proprietario privato Num"
+            "PRIVATE_HOUSEOWNER_NUM": "Proprietario privato Num",
+            "CONVERT_TO_ORGANIZATIONS": "Converti ad amministrazioni",
+            "CITY": "Città",
+            "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+            "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
+            "KANTON": "Kanton",
+            "CURRENT_POLICIES": "Politiche attuali"
         },
         "broker": {
             "BROKERS": "Intermediari",
@@ -1988,7 +2027,10 @@ export default {
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "user": {
-            "EDIT_ACCOUNT": "Modifica profilo"
+            "EDIT_ACCOUNT": "Modifica profilo",
+            "USERS": "Utenti",
+            "LAST_LOGIN": "Data ultima visita",
+            "REGISTRATION_DATE": "Data registrazione"
         },
         "setting": {
             "SETTING": "Impostazione",
@@ -2443,7 +2485,9 @@ export default {
             "MERGE": "Accorpamento",
             "DELETE": "Cancellare",
             "LANGUAGE_CHANGE_SUCCESS": "La lingua è cambiata con successo.",
-            "MORE_FILTER": "Più filtro"
+            "MORE_FILTER": "Più filtro",
+            "ENABLED": "Abilitato",
+            "ACTIVATED": "Attivato"
         },
         "role": {
             "ROLES": "Gruppi",

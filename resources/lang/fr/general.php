@@ -116,4 +116,6 @@ return [
     'LANGUAGE_CHANGE_SUCCESS' => 'La langue a changé avec succès.',
     'ROWS' => 'Rangées',
     'MORE_FILTER' => 'Plus de filtre',
+    'ENABLED' => 'Actif',
+    'ACTIVATED' => 'Activé',
 ];
