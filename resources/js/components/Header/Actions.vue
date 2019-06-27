@@ -11,6 +11,9 @@
     <div v-else-if="route.path == '/settings'">
         <setting-action></setting-action>
     </div>
+    <div v-else-if="route.path == '/templates'">
+        <template-list-action></template-list-action>
+    </div>
 </template>
 <script>
     import { mapState  } from "vuex";
@@ -18,7 +21,7 @@
     const BrokerListAction = () => import('Views/brokers/ListAction');
     const PrivatelandlordListAction = () => import('Views/privatelandlords/ListAction');
     const SettingAction = () => import('Views/settings/Action');
-
+    const TemplateListAction = () => import('Views/templates/ListAction');
     export default {
         props: {},
         data() {
@@ -33,7 +36,8 @@
             ContactListAction,
             BrokerListAction,
             PrivatelandlordListAction,
-            SettingAction
+            SettingAction,
+            TemplateListAction
         }
     }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <v-select :items="p_salutation"
+    <v-select :items="salutations"
               outline
               hide-details
               v-model="salutation"
@@ -10,7 +10,7 @@
 <script>
     export default{
         computed:{
-            p_salutation: function(){
+            salutations: function(){
                 let salutation = [];
                 let that = this;
                 if(this.$store.getters.serverHelpers.privatelandlord_salutation){

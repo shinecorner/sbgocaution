@@ -47,6 +47,15 @@ export const menus = {
             path: '/roles',
             items: null,
             exact: true
+        },
+        {
+            action: 'zmdi-format-list-bulleted',
+            title: 'template.TEMPLATES',
+            active: false,
+            label: 'templates',
+            path: '/templates',
+            items: null,
+            exact: true
         }
     ]
 }

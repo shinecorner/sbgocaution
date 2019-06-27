@@ -5,6 +5,7 @@ const ContactList = () => import('Views/contacts/List');
 const BrokerList = () => import('Views/brokers/List');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
+const TemplatePage = () => import('Views/templates/List')
 const RoleList = () => import('Views/roles/List');
 
 export default {
@@ -92,5 +93,21 @@ export default {
             ]
         }
       },
+       {
+           path: '/boxed-v2/templates',
+           component: TemplatePage,
+           meta: {
+               requiresAuth: true,
+               title: 'template.TEMPLATES',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'template.TEMPLATES'
+                   }
+               ]
+           }
+       }
    ]
 }
