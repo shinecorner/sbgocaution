@@ -74,6 +74,7 @@ class AuthController extends Controller
             $name = $user->name;
             $api_token =  $user->createToken('GoCaution CRM Token')-> accessToken; 
             $user->api_token = $api_token;
+            $user->last_login = date('Y-m-d H:i:s');
             $user->save();
             App::setLocale($request->lang);
             $data['api_status'] = 1;
@@ -83,6 +84,7 @@ class AuthController extends Controller
             $data['name'] = $user->name;
             $data['email'] = $user->email;
             $data['premium_amount'] = format(177.23);
+            $data['last_login'] = $user->last_login;
             $helpers = [
                 'statuses' => [
                     'contact',
