@@ -47,6 +47,15 @@ export const menus = {
             path: '/roles',
             items: null,
             exact: true
+        },
+        {
+            action: 'zmdi-accounts',
+            title: 'user.USERS',
+            active: false,
+            label: 'users',
+            path: '/users',
+            items: null,
+            exact: true
         }
     ]
 }

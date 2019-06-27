@@ -7,6 +7,7 @@ const SocketDemo = () => import('Views/contacts/ListSocket');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
 const RoleList = () => import('Views/roles/List');
+const UserList = () => import('Views/users/List');
 
 export default {
    path: '/',
@@ -105,6 +106,22 @@ export default {
               },
               {
                 breadcrumbActive: 'role.ROLES'
+              }
+            ]
+        }
+      },
+      {
+        path: '/users',
+        component: UserList,
+        meta: {
+            requiresAuth: true,
+            title: 'user.USERS',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'user.USERS'
               }
             ]
         }

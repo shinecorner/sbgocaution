@@ -6,6 +6,7 @@ const BrokerList = () => import('Views/brokers/List');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
 const RoleList = () => import('Views/roles/List');
+const UserList = () => import('Views/users/List');
 
 export default {
    path: '/mini',
@@ -91,6 +92,22 @@ export default {
               }
             ]
         }
-      }
+      },
+      {
+        path: '/mini/users',
+        component: UserList,
+        meta: {
+            requiresAuth: true,
+            title: 'user.USERS',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'user.USERS'
+              }
+            ]
+        }
+      },
    ]
 }
