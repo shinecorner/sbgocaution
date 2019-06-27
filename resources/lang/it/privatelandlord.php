@@ -6,9 +6,11 @@ return [
     'INVOICES' => 'Rechnungen',
     'PRIVATE_HOUSEOWNER_NUM' => 'Proprietario privato Num',
     'CONVERT_TO_ORGANIZATIONS' => 'Converti ad amministrazioni',
-    'CITY' => 'Città',
-    'POLICY_ACCEPTED_NUMBER' => 'PVT_FILTER_COUNT_ACCEPTED_QUOTES',
-    'POLICY_NUMBER' => 'QUOTE_STATUS_FILTER',
-    'KANTON' => 'Kanton',
-    'CURRENT_POLICIES' => 'Politiche attuali'
+    'filter' => [
+                                'CITY' => 'Città',
+                                'POLICY_ACCEPTED_NUMBER' => 'PVT_FILTER_COUNT_ACCEPTED_QUOTES',
+                                'POLICY_NUMBER' => 'QUOTE_STATUS_FILTER',
+                                'KANTON' => 'Kanton'
+                ]
+
  ];

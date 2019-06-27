@@ -6,6 +6,7 @@ const BrokerList = () => import('Views/brokers/List');
 const SocketDemo = () => import('Views/contacts/ListSocket');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
+const TemplatePage = () => import('Views/templates/List')
 const RoleList = () => import('Views/roles/List');
 const UserList = () => import('Views/users/List');
 
@@ -126,5 +127,21 @@ export default {
             ]
         }
       },
+       {
+           path: '/templates',
+           component: TemplatePage,
+           meta: {
+               requiresAuth: true,
+               title: 'template.TEMPLATES',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'template.TEMPLATES'
+                   }
+               ]
+           }
+       }
    ]
 }

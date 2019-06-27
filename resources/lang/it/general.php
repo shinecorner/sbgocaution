@@ -3,7 +3,7 @@ return [
     'CRM' => 'CRM',
     'NAME' => 'Name',
     'ADDRESS' => 'Adresse',
-    'STATUS' => 'Status',    
+    'STATUS' => 'Status',
     'MR' => 'Signor',
     'MRS' => 'Signora',
     'COMPANY' => 'Solido',
@@ -17,7 +17,7 @@ return [
     'POLICIES' => 'Policen',
     'SUCCESS' => 'riuscita',
     'ERROR' => 'sbaglio',
-    'SAVE_SUCCESSFULLY' => 'Dati salvati con successo',   
+    'SAVE_SUCCESSFULLY' => 'Dati salvati con successo',
     'INVOICES' => 'Rechnungen',
     'language' => [
         'DE' => 'Deutsch',
@@ -25,7 +25,7 @@ return [
         'IT' => 'Italienisch',
         'EN' => 'English'
     ],
-    'CONTACT_CW' => 'CW', 
+    'CONTACT_CW' => 'CW',
     'ANDERE' => "Andere",
     'CHF' => 'CHF',
     'DATA_LOADING' => 'Si prega di attendere mentre, stiamo caricando i dati...',
@@ -43,8 +43,9 @@ return [
         'LANGUAGE' => 'Lingua',
         'SEARCH' => 'Ricerca',
         'RESET' => 'Resettato',
-        'NOT_SELECTED_OPTION' => 'Non selezionato'
-    ], 
+        'NOT_SELECTED_OPTION' => 'Non selezionato',
+        'CURRENT_POLICIES' => 'Politiche attuali'
+    ],
     'ROWS' => 'Ranghi',
     'PDF_MR' => 'Caro signore {nachname}',
     'PDF_MRS' => 'Cara donna {nachname}',

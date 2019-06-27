@@ -3,7 +3,7 @@ return [
     'CRM' => 'CRM',
     'NAME' => 'Name',
     'ADDRESS' => 'Adresse',
-    'STATUS' => 'Status',    
+    'STATUS' => 'Status',
     'MR' => 'Herr',
     'MRS' => 'Frau',
     'COMPANY' => 'Firma',
@@ -42,8 +42,9 @@ return [
         'CREATE_TO' => 'Erstellt bis',
         'LANGUAGE' => 'Sprache',
         'SEARCH' => 'Suchen',
-        'RESET' => 'Leeren',        
-        'NOT_SELECTED_OPTION' => 'Nicht ausgewählt'
+        'RESET' => 'Leeren',
+        'NOT_SELECTED_OPTION' => 'Nicht ausgewählt',
+        'CURRENT_POLICIES' => 'Laufende Policen'
     ],
     'ROWS' => 'Einträge',
     'PDF_MR' => 'Sehr geehrter Herr {nachname}',
