@@ -4,7 +4,10 @@
             <v-layout row wrap>            
                 <v-flex xs12 sm6 md6 lg2 xl2>
                     <keyword-search></keyword-search>
-                </v-flex>                                    
+                </v-flex>
+                <v-flex xs12 sm6 md6 lg2 xl2>
+                    <city></city>
+                </v-flex>
             </v-layout>
         </v-form>
         <v-layout row wrap>
@@ -21,10 +24,14 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
-import {FilterMixins} from "Helpers/FilterMixins"
+import {TableFilter} from "Helpers/TableFilter"
+import City from "Components/Crm/Broker/City";
 
 export default{
-    mixins: [globalFunction, FilterMixins],
+    mixins: [globalFunction, TableFilter],
+    components: {
+        City
+    },
     
 }
 </script>

@@ -1,11 +1,11 @@
 <template>
-    <v-select :items="lead_source_option"        
+    <v-autocomplete :items="lead_sources"        
         outline                                                
         hide-details
         :label="$t('contact.filter.LEAD_SOURCES')"
         v-model="lead_source"
     >
-    </v-select>
+    </v-autocomplete>
 </template>
 <script>
 export default{
@@ -13,7 +13,7 @@ export default{
         return {}
     },
     computed: {
-        lead_source_option: function(){
+        lead_sources: function(){
             let ls_option = [];
             let that = this;
             if(this.$store.getters.serverHelpers.hasOwnProperty('lead_sources')){            

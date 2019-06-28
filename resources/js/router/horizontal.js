@@ -5,6 +5,9 @@ const ContactList = () => import('Views/contacts/List');
 const BrokerList = () => import('Views/brokers/List');
 const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
+const TemplatePage = () => import('Views/templates/List')
+const RoleList = () => import('Views/roles/List');
+const UserList = () => import('Views/users/List');
 
 export default {
    path: '/horizontal',
@@ -74,6 +77,54 @@ export default {
               }
             ]
         }
-      }
+      },
+      {
+        path: '/horizontal/roles',
+        component: RoleList,
+        meta: {
+            requiresAuth: true,
+            title: 'role.ROLES',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'role.ROLES'
+              }
+            ]
+        }
+      },
+      {
+        path: '/horizontal/users',
+        component: UserList,
+        meta: {
+            requiresAuth: true,
+            title: 'user.USERS',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'user.USERS'
+              }
+            ]
+        }
+      },
+          {
+              path: '/horizontal/templates',
+              component: TemplatePage,
+              meta: {
+                  requiresAuth: true,
+                  title: 'template.TEMPLATES',
+                  breadcrumb: [
+                      {
+                          breadcrumbInactive: 'general.CRM'
+                      },
+                      {
+                          breadcrumbActive: 'template.TEMPLATES'
+                      }
+                  ]
+              }
+          }
    ]
 }

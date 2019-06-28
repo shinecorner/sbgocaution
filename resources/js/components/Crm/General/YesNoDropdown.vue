@@ -5,7 +5,7 @@
         hide-details
         :label="label"
         :name="name"
-        v-model="selected_option"
+        v-model="yes_no_option"
     >
     </v-select>
 </template>
@@ -22,7 +22,7 @@ export default{
         }
     },
     computed:{        
-        selected_option: {
+        yes_no_option: {
             get () {
                 if(this.$store.getters.inputItems.hasOwnProperty(this.name)){
                     return this.$store.getters.inputItems[this.name];

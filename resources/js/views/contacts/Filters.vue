@@ -5,10 +5,10 @@
                 <v-flex xs12 sm6 md6 lg2 xl2>
                     <keyword-search></keyword-search>
                 </v-flex>                                    
-                <v-flex xs12 sm6 md6 lg3 xl3>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <status></status>
                 </v-flex>
-                <v-flex xs12 sm6 md6 lg3 xl3>                    
+                <v-flex xs12 sm6 md6 lg2 xl2>                    
                         <v-select :items="miscellaneous_filter_option"
                             v-model="diverse"                                                        
                             outline
@@ -16,44 +16,44 @@
                             :label="$t('contact.filter.MORE_THAN_ONE_POLICY')">
                         </v-select>                    
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <salutation></salutation>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <language></language>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <created-from :is_reset_form="isResetForm"></created-from>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <created-to :is_reset_form="isResetForm"></created-to>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <birth-date :is_reset_form="isResetForm"></birth-date>
                 </v-flex>                
-                <v-flex xs12 sm6 md6 lg3 xl3>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <lead-source></lead-source>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>                    
+                <v-flex xs12 sm6 md6 lg2 xl2>                    
                     <yes-no-dropdown name="rc_policy" :label="$t('contact.filter.RC_POLICY')"></yes-no-dropdown>
+                </v-flex>
+                <v-flex xs12 sm6 md6 lg2 xl2>
+                    <yes-no-dropdown name="promo_success" :label="$t('contact.filter.PROMO')"></yes-no-dropdown>                    
+                </v-flex>
+                <v-flex xs12 sm6 md6 lg2 xl2>
+                    <v-checkbox 
+                        color="success"
+                        v-model="duplicate"
+                        input-value="duplicate"
+                        class="filter_chkbox"
+                        true-value="1"
+                        false-value="0"
+                        :label="$t('contact.filter.DUPLICATE_CONTACT')">
+                    </v-checkbox>    
                 </v-flex>
                 <transition name="slide">
                     <v-flex v-show="showMoreFilter" class="more-filter">
-                        <v-layout row wrap>
-                            <v-flex xs12 sm6 md4 lg2 xl2>
-                                <yes-no-dropdown name="promo_success" :label="$t('contact.filter.PROMO')"></yes-no-dropdown>                    
-                            </v-flex>
-                            <v-flex shrink d-inline-block>
-                                <v-checkbox 
-                                    color="success"
-                                    v-model="duplicate"
-                                    input-value="duplicate"
-                                    class="filter_chkbox"
-                                    true-value="1"
-                                    false-value="0"
-                                    :label="$t('contact.filter.DUPLICATE_CONTACT')">
-                                </v-checkbox>    
-                            </v-flex>
+                        <v-layout row wrap>                                                        
                             <v-flex shrink d-inline-block>
                                 <v-checkbox  
                                     color="success"
@@ -96,7 +96,7 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
-import {FilterMixins} from "Helpers/FilterMixins"
+import {TableFilter} from "Helpers/TableFilter"
 
 import Language from "Components/Crm/General/Language";
 import CreatedFrom from "Components/Crm/General/CreatedFrom";
@@ -109,8 +109,7 @@ import BirthDate from "Components/Crm/Contact/BirthDate";
 import YesNoDropdown from "Components/Crm/General/YesNoDropdown";
 
 export default{
-    mixins: [globalFunction, FilterMixins],
-    props: ['recordCount'],
+    mixins: [globalFunction, TableFilter],    
     components: {        
         Status,
         Salutation,

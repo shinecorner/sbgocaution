@@ -34,7 +34,7 @@
 					</router-link>
 				</div>
                                 <v-divider class="mx-3" inset vertical></v-divider>
-				<top-actions></top-actions>
+				<actions></actions>
 				<!--<v-text-field flat solo prepend-icon="search" :placeholder="$t('message.search')" class="search-bar"></v-text-field>
 				<div class="mobile-search d-none">
 					<v-btn flat icon  small class="mobile-search-btn" @click="toggleSearchForm">
@@ -56,7 +56,7 @@
 <script>
 import Sidebar from "../Sidebar/Sidebar.vue";
 import LanguageProvider from "./LanguageProvider";
-import TopActions from "./TopActions";
+import Actions from "./Actions";
 import User from "./User";
 import MobileSearchForm from "./MobileSearchForm";
 import { getCurrentAppLayout } from "Helpers/helpers";
@@ -108,7 +108,7 @@ export default {
 		LanguageProvider,			
 		MobileSearchForm,
 		User,
-                TopActions
+                Actions
 	}
 };
 </script>
