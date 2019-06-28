@@ -705,3 +705,11 @@ if(!function_exists('getRoleNames')) {
     }
 
 }
+
+if(!function_exists('getTemplateSections')) {
+
+    function getTemplateSections() {
+        return App\Template::orderBy('section')->distinct('section')->pluck('section');
+    }
+
+}

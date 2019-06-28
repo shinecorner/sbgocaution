@@ -16,14 +16,28 @@ class TemplateController extends Controller
      */
     public function index(Request $request)
     {
+        $data = [];
+
+        $helpers = [
+            'other' => [
+                'sections'
+            ]
+        ];
+
+        $this->responseHelper($data, $helpers);
+
         $query = Template::latest();
+
+        if($request->has('filters')) {
+            $this->filters($request, $query, ['keyword_search', 'type', 'section']);
+        }
 
         if($request->has('limit')) {
             $templates = $query->paginate($request->limit);
         } else {
             $templates = $query->paginate($request->per_page);
         }
-        return TemplateResource::collection($templates);
+        return TemplateResource::collection($templates)->additional($data);
     }
 
     /**
@@ -102,4 +116,32 @@ class TemplateController extends Controller
     {
         //
     }
+
+    private function search($keyword, $query) 
+    {
+        $searchWildcard = '%' . request()->{'filters.'.$keyword} . '%';
+
+        $query->where(function($query) use($searchWildcard) {
+            $fields = ['name', 'template_key'];
+            foreach($fields as $field) {
+                $query->orWhere($field, 'LIKE', $searchWildcard);
+            }
+        });
+    }
+
+    private function filters($request, $query, $fields) 
+    {
+        foreach($request->filters as $key => $value) {
+            if($request->has('filters.'.$key) && in_array($key, $fields)) {
+                if($key == 'keyword_search') {
+                    $this->search($key, $query);
+                } elseif($key == 'type') {
+                    $query->where('type', '=', $value);
+                } else if($key == 'section') {
+                    $query->where('section', '=', $value);
+                }
+            }
+        }
+    }
+
 }
