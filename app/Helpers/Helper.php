@@ -697,3 +697,11 @@ if(!function_exists('checkDuplicateContact')) {
     }
 
 }
+
+if(!function_exists('getRoleNames')) {
+
+    function getRoleNames() {
+        return Spatie\Permission\Models\Role::all()->pluck('name','id');
+    }
+
+}
