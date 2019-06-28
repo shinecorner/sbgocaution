@@ -1,15 +1,15 @@
 import allmsg from './vue-i18n-locales.generated'
 allmsg.de['$vuetify'] = {
-    noDataText: "Keine passenden Ergebnisse gefunden!"
+    noDataText: allmsg.de.general.NO_RESULTS_TEXT_DROPDOWN
 };
 allmsg.en['$vuetify'] = {
-    noDataText: "No matching results found!"
+    noDataText: allmsg.en.general.NO_RESULTS_TEXT_DROPDOWN
 };
 allmsg.fr['$vuetify'] = {
-    noDataText: "Aucun résultat trouvé !"
+    noDataText: allmsg.fr.general.NO_RESULTS_TEXT_DROPDOWN
 };
 allmsg.it['$vuetify'] = {
-    noDataText: "Nessun risultato corrispondente trovato!"
+    noDataText: allmsg.it.general.NO_RESULTS_TEXT_DROPDOWN
 };
 export default {
     en: allmsg.en,

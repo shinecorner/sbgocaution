@@ -122,4 +122,5 @@ return [
     'ENABLED' => 'Enabled',
     'ACTIVATED' => 'Activated',
     'SELECT_STATUS' => 'Select status',
+    'NO_RESULTS_TEXT_DROPDOWN' => 'No matching results found!',
 ];
