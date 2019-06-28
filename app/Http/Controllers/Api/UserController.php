@@ -17,7 +17,21 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        $data = [];
+
+        $helpers = [
+            'other' => [
+                'users_roles'
+            ]
+        ];
+
+        $this->responseHelper($data, $helpers);
+
         $query = User::latest();
+
+        if($request->has('filters')) {
+            $this->filters($request, $query, ['keyword_search', 'status', 'roles']);
+        }
 
         if($request->has('limit')) {
             $users = $query->paginate($request->limit);
@@ -25,7 +39,7 @@ class UserController extends Controller
             $users = $query->paginate($request->per_page);
         }
 
-        return UserResource::collection($users);
+        return UserResource::collection($users)->additional($data);
     }
 
     /**
@@ -153,4 +167,34 @@ class UserController extends Controller
             "data" => new UserResource($user)
         ], 200);
     }
+
+    private function search($keyword, $query) 
+    {
+        $searchWildcard = '%' . request()->{'filters.'.$keyword} . '%';
+
+        $query->where(function($query) use($searchWildcard) {
+            $fields = ['name', 'email'];
+            foreach($fields as $field) {
+                $query->orWhere($field, 'LIKE', $searchWildcard);
+            }
+        });
+    }
+
+    private function filters($request, $query, $fields) 
+    {
+        foreach($request->filters as $key => $value) {
+            if($request->has('filters.'.$key) && in_array($key, $fields)) {
+                if($key == 'keyword_search') {
+                    $this->search($key, $query);
+                } elseif($key == 'status') {
+                    $query->where('status', '=', $value);
+                } else if($key == 'roles') {
+                    $query->whereHas('roles', function($query) use ($value) {
+                        $query->where('id', '=', $value);
+                    });
+                }
+            }
+        }
+    }
+
 }

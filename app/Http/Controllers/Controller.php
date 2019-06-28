@@ -46,6 +46,10 @@ class Controller extends BaseController
                             case 'brokers_cities':
                                 $data['helpers'][$helper] = brokersCities();
                                 break;
+
+                            case 'users_roles':
+                                $data['helpers'][$helper] = getRoleNames();
+                                break;
                         }
         			}
         			break;
