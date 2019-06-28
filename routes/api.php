@@ -39,6 +39,7 @@ Route::group([
     Route::resource('configs', 'ConfigController');
     Route::resource('roles', 'RoleController');
     Route::resource('permissions', 'PermissionController');
+    Route::put('users/change_status/{id}', 'UserController@change_status');
     Route::resource('users', 'UserController');
     Route::resource('templates', 'TemplateController');
 });
