@@ -1,11 +1,11 @@
 <template>
-    <v-select :items="lead_sources"        
+    <v-autocomplete :items="lead_sources"        
         outline                                                
         hide-details
         :label="$t('contact.filter.LEAD_SOURCES')"
         v-model="lead_source"
     >
-    </v-select>
+    </v-autocomplete>
 </template>
 <script>
 export default{
