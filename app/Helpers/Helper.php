@@ -493,7 +493,7 @@ if(!function_exists('getPrivatelandlordKantons')) {
             $whichname = 'german';
         }
 
-        $kantons = App\Canton::all()->pluck($whichname, 'shortcode');
+        $kantons = App\Canton::orderBy('shortcode')->pluck($whichname, 'shortcode');
 
         return $kantons;
     }
@@ -504,7 +504,7 @@ if(!function_exists('getPrivatelandlordCities')) {
 
     function getPrivatelandlordCities() {
 
-        $cities = App\PrivateLandlord::distinct('city')->pluck('city');
+        $cities = App\PrivateLandlord::orderBy('city')->distinct('city')->pluck('city');
 
         return $cities;
     }
@@ -540,7 +540,7 @@ if(!function_exists('privatelandlordSalutationPlain')) {
 if(!function_exists('brokersCities')) {
 
     function brokersCities() {
-        $cities = App\Broker::distinct('city')->pluck('city');
+        $cities = App\Broker::orderBy('city')->distinct('city')->pluck('city');
         return $cities;
     }
 
