@@ -138,4 +138,19 @@ class UserController extends Controller
     {
         //
     }
+
+    public function change_status($id)
+    {
+        $user = User::find($id);
+        $user->status = $user->status == 1 ? 0 : 1;
+        if($user->save()) {
+            $message = __('user.CHANGE_STATUS_SUCCESS');
+        } else {
+            $message = __('user.CHANGE_STATUS_FAILURE');
+        }
+        return response()->json([
+            "message" => $message,
+            "data" => new UserResource($user)
+        ], 200);
+    }
 }
