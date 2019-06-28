@@ -107,7 +107,7 @@
                     { title: () => this.$i18n.t('general.NAME'), name: "name" },
                     { title: () => this.$i18n.t('general.ADDRESS'), name: "address" },
                     { title: () => this.$i18n.t('general.POLICIES'), name: "policies" },
-                    { title: () => this.$i18n.t('Website'), name: "website" },
+                    { title: () => this.$i18n.t('broker.WEBSITE'), name: "website" },
                 ],
             }
         },
