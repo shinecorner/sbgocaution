@@ -27,16 +27,6 @@ class TemplateController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -70,7 +60,9 @@ class TemplateController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json([
+            "data" => new TemplateResource(Template::find($id))
+        ]);
     }
 
     /**
