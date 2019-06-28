@@ -298,9 +298,6 @@ button:focus{outline:none;}
     }
 }
 
-table.vuetable tbody.vuetable-body tr:not(:nth-child(1)) td{
-    border-top: 1px solid #ddd;
-}
 table.vuetable tbody.vuetable-body tr.row-personal, table.vuetable tbody.vuetable-body tr.row-general{
     background-color: #ffffff;
 }
