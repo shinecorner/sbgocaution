@@ -106,7 +106,10 @@ router.afterEach((to, from) => {
 
 // plugins
 Vue.use(Vuetify, {
-	theme: store.getters.selectedTheme.theme
+	theme: store.getters.selectedTheme.theme,
+        lang: {
+            t: (key, ...params) => i18n.t(key, params)
+        }
 });
 //Vue.use(InstantSearch);
 Vue.use(VueI18n)

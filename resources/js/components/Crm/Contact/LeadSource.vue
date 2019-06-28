@@ -3,7 +3,7 @@
         outline                                                
         hide-details
         :label="$t('contact.filter.LEAD_SOURCES')"
-        v-model="lead_source"
+        v-model="lead_source"        
     >
     </v-autocomplete>
 </template>

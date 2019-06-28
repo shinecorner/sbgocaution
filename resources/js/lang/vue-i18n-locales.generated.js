@@ -624,7 +624,8 @@ export default {
             "MORE_FILTER": "Mehr Filtern",
             "ENABLED": "Freigegeben",
             "ACTIVATED": "Aktiviert",
-            "SELECT_STATUS": "Status wählen"
+            "SELECT_STATUS": "Status wählen",
+            "NO_RESULTS_TEXT_DROPDOWN": "Keine passenden Ergebnisse gefunden!"
         },
         "role": {
             "ROLES": "Gruppen",
@@ -1269,7 +1270,8 @@ export default {
             "MORE_FILTER": "More Filter",
             "ENABLED": "Enabled",
             "ACTIVATED": "Activated",
-            "SELECT_STATUS": "Select status"
+            "SELECT_STATUS": "Select status",
+            "NO_RESULTS_TEXT_DROPDOWN": "No matching results found!"
         },
         "role": {
             "ROLES": "Groups",
@@ -1926,7 +1928,8 @@ export default {
             "MORE_FILTER": "Plus de filtre",
             "ENABLED": "Actif",
             "ACTIVATED": "Activé",
-            "SELECT_STATUS": "Choisir le statut"
+            "SELECT_STATUS": "Choisir le statut",
+            "NO_RESULTS_TEXT_DROPDOWN": "Aucun résultat trouvé !"
         },
         "role": {
             "ROLES": "Groupes",
@@ -2571,7 +2574,8 @@ export default {
             "MORE_FILTER": "Più filtro",
             "ENABLED": "Abilitato",
             "ACTIVATED": "Attivato",
-            "SELECT_STATUS": "Seleziona lo stato"
+            "SELECT_STATUS": "Seleziona lo stato",
+            "NO_RESULTS_TEXT_DROPDOWN": "Nessun risultato corrispondente trovato!"
         },
         "role": {
             "ROLES": "Gruppi",

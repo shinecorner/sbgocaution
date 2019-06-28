@@ -14,12 +14,13 @@
                     </v-select>
                 </v-flex>
                 <v-flex xs12 sm6 md6 lg3 xl3>
-                    <v-select :items="roles"        
+                    <v-autocomplete                        
+                        :items="roles"        
                         outline                                                
                         hide-details
                         v-model="role"
                         :label="$t('user.SELECT_ROLE')">
-                    </v-select>
+                    </v-autocomplete>
                 </v-flex>
             </v-layout>   
         </v-form>
@@ -54,8 +55,8 @@ export default{
         roles: function(){
             let TableFilterRoles = [];
             let that = this;        
-            if(this.$store.getters.serverHelpers.hasOwnProperty('roles')){            
-                _.forOwn(this.$store.getters.serverHelpers.roles, function(title, key) { 
+            if(this.$store.getters.serverHelpers.hasOwnProperty('users_roles')){            
+                _.forOwn(this.$store.getters.serverHelpers.users_roles, function(title, key) { 
                     TableFilterRoles.push({'value': key, 'text': title})
                 });            
             }        

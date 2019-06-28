@@ -122,4 +122,5 @@ return [
     'ENABLED' => 'Abilitato',
     'ACTIVATED' => 'Attivato',    
     'SELECT_STATUS' => 'Seleziona lo stato',
+    'NO_RESULTS_TEXT_DROPDOWN' => 'Nessun risultato corrispondente trovato!',
 ];
