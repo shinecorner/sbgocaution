@@ -1,10 +1,12 @@
 <template>
-    <v-select :items="statuses"         
+    <v-autocomplete
+        :no-data-text="$t('general.NORESULTS_TEXT')" 
+        :items="statuses"         
         outline                                                
         hide-details
         v-model="status"
         :label="$t('general.filter.SELECT_STATUS')">
-    </v-select>
+    </v-autocomplete>
 </template>
 
 <script>

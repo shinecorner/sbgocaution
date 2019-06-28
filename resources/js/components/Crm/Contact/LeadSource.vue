@@ -4,6 +4,7 @@
         hide-details
         :label="$t('contact.filter.LEAD_SOURCES')"
         v-model="lead_source"
+        :no-data-text="$t('general.NORESULTS_TEXT')"
     >
     </v-autocomplete>
 </template>
