@@ -14,6 +14,11 @@ class RoleResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $data = parent::toArray($request);
+
+        $data['count_active_users'] = $this->users()->where('status', 1)->count();
+        $data['count_inactive_users'] = $this->users()->where('status', 0)->count();
+
+        return $data;
     }
 }

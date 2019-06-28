@@ -14,19 +14,16 @@ class TemplateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return TemplateResource::collection(Template::all());
-    }
+        $query = Template::latest();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        if($request->has('limit')) {
+            $templates = $query->paginate($request->limit);
+        } else {
+            $templates = $query->paginate($request->per_page);
+        }
+        return TemplateResource::collection($templates);
     }
 
     /**
@@ -63,7 +60,9 @@ class TemplateController extends Controller
      */
     public function show($id)
     {
-        //
+        return response()->json([
+            "data" => new TemplateResource(Template::find($id))
+        ]);
     }
 
     /**

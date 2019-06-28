@@ -4,7 +4,10 @@
             <v-layout row wrap>            
                 <v-flex xs12 sm6 md6 lg2 xl2>
                     <keyword-search></keyword-search>
-                </v-flex>                                    
+                </v-flex>
+                <v-flex xs12 sm6 md6 lg2 xl2>
+                    <city></city>
+                </v-flex>
             </v-layout>
         </v-form>
         <v-layout row wrap>
@@ -21,36 +24,14 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
-import KeywordSearch from "Components/Crm/General/KeywordSearch";
+import {TableFilter} from "Helpers/TableFilter"
+import City from "Components/Crm/Broker/City";
 
 export default{
-    mixins: [globalFunction],
+    mixins: [globalFunction, TableFilter],
     components: {
-        KeywordSearch
+        City
     },
-    data() {
-        return {   
-            isResetForm: false,
-            perPageItems: process.env.MIX_PER_PAGE_OPTIONS.split(',').map(Number),
-            perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),            
-        }
-    },
-    watch:{        
-        perPage: function(newVal, oldVal){
-            this.changePerPageOption(newVal);
-        }
-    },
-    methods: {
-        changePerPageOption: function(val){
-            this.$emit('changePage', val);
-        },
-        resetData: function(event){  
-            this.$store.dispatch("clearInputItems");
-            this.$refs.filterForm.reset();
-            this.isResetForm = true;
-            //this.perPage = ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20);
-            this.$emit('resetData');
-        }
-    }
+    
 }
 </script>

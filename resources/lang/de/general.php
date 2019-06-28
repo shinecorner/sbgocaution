@@ -3,7 +3,7 @@ return [
     'CRM' => 'CRM',
     'NAME' => 'Name',
     'ADDRESS' => 'Adresse',
-    'STATUS' => 'Status',    
+    'STATUS' => 'Status',
     'MR' => 'Herr',
     'MRS' => 'Frau',
     'COMPANY' => 'Firma',
@@ -19,6 +19,8 @@ return [
     'ERROR' => 'Fehler',
     'SAVE_SUCCESSFULLY' => 'Daten erfolgreich gespeichert',
     'INVOICES' => 'Rechnungen',
+    'PUBLISHED' => 'Publiziert',
+    'UNPUBLISHED' => 'Unpubliziert',
     'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',
@@ -42,8 +44,9 @@ return [
         'CREATE_TO' => 'Erstellt bis',
         'LANGUAGE' => 'Sprache',
         'SEARCH' => 'Suchen',
-        'RESET' => 'Leeren',        
-        'NOT_SELECTED_OPTION' => 'Nicht ausgewählt'
+        'RESET' => 'Leeren',
+        'NOT_SELECTED_OPTION' => 'Nicht ausgewählt',
+        'CURRENT_POLICIES' => 'Laufende Policen'
     ],
     'ROWS' => 'Einträge',
     'PDF_MR' => 'Sehr geehrter Herr {nachname}',
@@ -114,5 +117,10 @@ return [
     'MERGE' => 'Zusammenführen',
     'DELETE' => 'Löschen',
     'LANGUAGE_CHANGE_SUCCESS' => 'Die Sprache wurde erfolgreich geändert!',
-    
+    'ROWS' => 'Einträge',
+    'MORE_FILTER' => 'Mehr Filtern',
+    'ENABLED' => 'Freigegeben',
+    'ACTIVATED' => 'Aktiviert',
+    'SELECT_STATUS' => 'Status wählen',
+    'NO_RESULTS_TEXT_DROPDOWN' => 'Keine passenden Ergebnisse gefunden!',
 ];

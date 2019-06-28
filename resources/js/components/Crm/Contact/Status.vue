@@ -1,24 +1,25 @@
 <template>
-    <v-select :items="contactstatus"         
+    <v-autocomplete        
+        :items="statuses"         
         outline                                                
         hide-details
         v-model="status"
         :label="$t('general.filter.SELECT_STATUS')">
-    </v-select>
+    </v-autocomplete>
 </template>
 
 <script>
 export default{
     computed:{
-         contactstatus: function(){
-            let c_status = [];
+         statuses: function(){
+            let TableFilterstatus = [];
             let that = this;        
             if(this.$store.getters.serverHelpers.statuses.hasOwnProperty('contact')){            
                 _.forOwn(this.$store.getters.serverHelpers.statuses.contact, function(title, key) { 
-                    c_status.push({'value': key, 'text': that.$i18n.t(title)})
+                    TableFilterstatus.push({'value': key, 'text': that.$i18n.t(title)})
                 });            
             }        
-            return c_status;
+            return TableFilterstatus;
         },
         status: {
             get () {

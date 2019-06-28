@@ -5,10 +5,10 @@
                 <v-flex xs12 sm6 md6 lg2 xl2>
                     <keyword-search></keyword-search>
                 </v-flex>                                    
-                <v-flex xs12 sm6 md6 lg3 xl3>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <status></status>
                 </v-flex>
-                <v-flex xs12 sm6 md6 lg3 xl3>                    
+                <v-flex xs12 sm6 md6 lg2 xl2>                    
                         <v-select :items="miscellaneous_filter_option"
                             v-model="diverse"                                                        
                             outline
@@ -16,31 +16,31 @@
                             :label="$t('contact.filter.MORE_THAN_ONE_POLICY')">
                         </v-select>                    
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <salutation></salutation>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <language></language>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <created-from :is_reset_form="isResetForm"></created-from>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <created-to :is_reset_form="isResetForm"></created-to>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <birth-date :is_reset_form="isResetForm"></birth-date>
                 </v-flex>                
-                <v-flex xs12 sm6 md6 lg3 xl3>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <lead-source></lead-source>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>                    
+                <v-flex xs12 sm6 md6 lg2 xl2>                    
                     <yes-no-dropdown name="rc_policy" :label="$t('contact.filter.RC_POLICY')"></yes-no-dropdown>
                 </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <yes-no-dropdown name="promo_success" :label="$t('contact.filter.PROMO')"></yes-no-dropdown>                    
                 </v-flex>
-                <v-flex shrink d-inline-block>
+                <v-flex xs12 sm6 md6 lg2 xl2>
                     <v-checkbox 
                         color="success"
                         v-model="duplicate"
@@ -51,33 +51,41 @@
                         :label="$t('contact.filter.DUPLICATE_CONTACT')">
                     </v-checkbox>    
                 </v-flex>
-                <v-flex shrink d-inline-block>
-                    <v-checkbox  
-                        color="success"
-                        v-model="duplicate_email" 
-                        class="filter_chkbox"
-                        true-value="1"
-                        false-value="0"
-                        :label="$t('contact.filter.DUPLICATE_CONTACT_EMAIL')">
-                    </v-checkbox>    
-                </v-flex>                                    
-                <v-flex shrink d-inline-block>
-                    <v-checkbox  
-                        color="success"
-                        v-model="incorrect_address" 
-                        class="filter_chkbox"
-                        true-value="1"
-                        false-value="0"
-                        :label="$t('contact.filter.NOT_CORRECT_ADDRESS')">
-                    </v-checkbox>    
-                </v-flex> 
+                <transition name="slide">
+                    <v-flex v-show="showMoreFilter" class="more-filter">
+                        <v-layout row wrap>                                                        
+                            <v-flex shrink d-inline-block>
+                                <v-checkbox  
+                                    color="success"
+                                    v-model="duplicate_email" 
+                                    class="filter_chkbox"
+                                    true-value="1"
+                                    false-value="0"
+                                    :label="$t('contact.filter.DUPLICATE_CONTACT_EMAIL')">
+                                </v-checkbox>    
+                            </v-flex>                                    
+                            <v-flex shrink d-inline-block>
+                                <v-checkbox  
+                                    color="success"
+                                    v-model="incorrect_address" 
+                                    class="filter_chkbox"
+                                    true-value="1"
+                                    false-value="0"
+                                    :label="$t('contact.filter.NOT_CORRECT_ADDRESS')">
+                                </v-checkbox>    
+                            </v-flex> 
+                        </v-layout> 
+                    </v-flex>
+                </transition>
             </v-layout>   
         </v-form>
         <v-layout row wrap>
-            <v-flex shrink d-inline-block> 
+            <v-flex shrink d-inline-block>                                                 
                 <v-btn type="submit" color="success left" @click.prevent="$emit('filterData')"><v-icon>search</v-icon>{{$t('general.filter.SEARCH')}}</v-btn>
-                <v-btn color="success left" @click="resetData">{{$t('general.filter.RESET')}}</v-btn>                                    
-                <v-btn color="download success left"><v-icon>mdi-download</v-icon></v-btn>                                        
+                <v-btn color="success left" @click="resetData">{{$t('general.filter.RESET')}}</v-btn>
+                <v-btn color="success left" @click.stop.prevent="showMoreFilter = !showMoreFilter">{{$t('general.MORE_FILTER')}}</v-btn>
+                <v-btn color="success left" @click.stop.prevent>{{recordCount}}&nbsp;{{$t('general.ROWS')}}</v-btn>
+                <v-btn color="download success left"><v-icon>mdi-download</v-icon></v-btn>
             </v-flex>                        
             <v-flex shrink d-inline-block>
                 <v-select class="perpage_selectbox left" v-bind:items="perPageItems"  v-model.number="perPage" menu-props="bottom" ></v-select>
@@ -88,8 +96,8 @@
 
 <script>
 import globalFunction from "Helpers/helpers";
+import {TableFilter} from "Helpers/TableFilter"
 
-import KeywordSearch from "Components/Crm/General/KeywordSearch";
 import Language from "Components/Crm/General/Language";
 import CreatedFrom from "Components/Crm/General/CreatedFrom";
 import CreatedTo from "Components/Crm/General/CreatedTo";
@@ -101,9 +109,8 @@ import BirthDate from "Components/Crm/Contact/BirthDate";
 import YesNoDropdown from "Components/Crm/General/YesNoDropdown";
 
 export default{
-    mixins: [globalFunction],
-    components: {
-        KeywordSearch,
+    mixins: [globalFunction, TableFilter],    
+    components: {        
         Status,
         Salutation,
         YesNoDropdown,
@@ -114,10 +121,8 @@ export default{
         BirthDate
     },
     data() {
-        return {   
-            isResetForm: false,
-            perPageItems: process.env.MIX_PER_PAGE_OPTIONS.split(',').map(Number),
-            perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),            
+        return {  
+            showMoreFilter: false,            
             miscellaneous_filter_option: [
                 {text: this.$t('contact.filter.CONTACT_POLICY_1'), value: 1},
                 {text: this.$t('contact.filter.CONTACT_POLICY_2'), value: 2},
@@ -127,12 +132,7 @@ export default{
                 {text: this.$t('contact.filter.ACCEPTED_CONTACTS_WITH_NO_LINKED_USER'), value: 5}
             ],            
         }
-    },
-    watch:{        
-        perPage: function(newVal, oldVal){
-            this.changePerPageOption(newVal);
-        }
-    },
+    },    
     computed:{        
         contactofferactions: function(){
             if(this.$store.getters.serverHelpers.hasOwnProperty('contactPDF_statuslist')){
@@ -209,18 +209,6 @@ export default{
                 }
             }
         },
-    },
-    methods: {
-        changePerPageOption: function(val){
-            this.$emit('changePage', val);
-        },
-        resetData: function(event){  
-            this.$store.dispatch("clearInputItems");
-            this.$refs.filterForm.reset();
-            this.isResetForm = true;
-            //this.perPage = ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20);
-            this.$emit('resetData');
-        }
-    }
+    }   
 }
 </script>

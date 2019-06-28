@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CantonsTableSeeder::class);
         $this->call(CantonsZipTableSeeder::class);
         $this->call(TemplatesTableSeeder::class);
-        // $this->call(BrokersTableSeeder::class);
-        // $this->call(HouseOwnersTableSeeder::class);
+        $this->call(BrokersTableSeeder::class);
+        $this->call(HouseOwnersTableSeeder::class);
     }
 }

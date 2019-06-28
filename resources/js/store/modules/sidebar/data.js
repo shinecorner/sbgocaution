@@ -20,7 +20,7 @@ export const menus = {
             exact: true
         },
         {
-            action: 'zmdi-accounts',
+            action: 'zmdi-account',
             title: 'privatelandlord.PRIVATE_LANDLORDS',
             active: false,
             label: 'privatelandlord',
@@ -36,6 +36,33 @@ export const menus = {
             active: false,
             label: 'option_item',
             path: '/settings',
+            items: null,
+            exact: true
+        },
+        {
+            action: 'zmdi-group',
+            title: 'role.ROLES',
+            active: false,
+            label: 'roles',
+            path: '/roles',
+            items: null,
+            exact: true
+        },
+        {
+            action: 'zmdi-accounts',
+            title: 'user.USERS',
+            active: false,
+            label: 'users',
+            path: '/users',
+            items: null,
+            exact: true
+        },
+        {
+            action: 'zmdi-format-list-bulleted',
+            title: 'template.TEMPLATES',
+            active: false,
+            label: 'templates',
+            path: '/templates',
             items: null,
             exact: true
         }

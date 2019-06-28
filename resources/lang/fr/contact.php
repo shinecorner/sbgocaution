@@ -95,6 +95,10 @@ return [
     ],
     'STATUS_CHANGE_SUCCESS' => 'Le statut du contact a été modifié avec succès.',
     'STATUS_CHANGE_FAIL' => 'Malheureusement, le statut du contact n\'a pas été modifié, réessayez.',
+    'DELETE_SUCCESS' => 'Client(s) supprimé(s) !',
+    'ERROR_DELETE_SELECTED_CONTACT' => "Ce contact a payé le(s) paiement(s) donc vous ne pouvez pas l'effacer",
+    'ERROR_DELETE_SELECTED_CONTACTS' => "Contacts :info_1 et :info_2 ne peuvent pas être supprimés parce que des paiements payés existent",
+    'ERROR_DELETE_SELECTED_CONTACTS_ONE' => "Les :info_1 de contact ne peuvent pas être supprimés car il a effectué le(s) paiement(s)",    
     'offer' => [
         'FILE_NAME' => 'proposition',
         'CREATE_SUCCESS' => 'Offre créée avec succès !',

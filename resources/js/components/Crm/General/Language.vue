@@ -1,5 +1,5 @@
 <template>
-    <v-select :items="language_filter_option"        
+    <v-select :items="languages"        
         outline                                                
         hide-details
         :label="$t('general.filter.LANGUAGE')"
@@ -16,7 +16,7 @@ export default{
         return {}
     },
     computed: {
-        language_filter_option:function(){
+        languages:function(){
             let that = this;
             let language_option = [];
             let mix_lang = process.env.MIX_LANGUAGE_OPTIONS.split(',');

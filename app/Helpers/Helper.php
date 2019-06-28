@@ -493,7 +493,7 @@ if(!function_exists('getPrivatelandlordKantons')) {
             $whichname = 'german';
         }
 
-        $kantons = App\Canton::all()->pluck($whichname, 'shortcode');
+        $kantons = App\Canton::orderBy('shortcode')->pluck($whichname, 'shortcode');
 
         return $kantons;
     }
@@ -504,7 +504,7 @@ if(!function_exists('getPrivatelandlordCities')) {
 
     function getPrivatelandlordCities() {
 
-        $cities = App\PrivateLandlord::distinct('city')->pluck('city');
+        $cities = App\PrivateLandlord::orderBy('city')->distinct('city')->pluck('city');
 
         return $cities;
     }
@@ -540,7 +540,7 @@ if(!function_exists('privatelandlordSalutationPlain')) {
 if(!function_exists('brokersCities')) {
 
     function brokersCities() {
-        $cities = App\Broker::distinct('city')->pluck('city');
+        $cities = App\Broker::orderBy('city')->distinct('city')->pluck('city');
         return $cities;
     }
 
@@ -558,6 +558,150 @@ if(!function_exists('__customer')) {
 
     function __customer($key) {
         __('customer/'.$key);
+    }
+
+}
+
+if(!function_exists('isPaidContactOrPaidInvoice')) {
+
+    function isPaidContactOrPaidInvoice($id, $type = 'invoice') {
+
+        if($type == "invoice") {
+            //@TODO
+        }
+
+        if($type == "contact") {
+            $contact = App\Contact::find($id);
+            $policies = $contact->policies;
+            foreach($policies as $policy) {
+                foreach($policy->invoices as $invoice) {
+                    if($invoice->payments()->where('status', 1)->count())
+                        return true;
+                }
+            }    
+        }
+
+        if($type == "policy") {
+            //@TODO
+        }
+
+        return false;
+
+    }
+
+}
+
+if(!function_exists('checkDuplicateContact')) {
+
+    function checkDuplicateContact($rtype = 1, $data = [])
+    {
+        $first_name = '';
+        $last_name = '';
+        $birthdate = '';
+        if (isset($data['id'])) {
+            $last_name = $data['last_name'];
+            $first_name = $data['first_name'];
+            $birthdate = empty($data['birthdate']) ? '' : $data['birthdate'];
+            $primary_address = [];
+
+            if($data['new_addresses'] == 1) {
+
+                foreach ($data['addresses']['id'] as $k => $val) {
+                    $is_primary = isset($data['addresses']['is_primary'][$k]) ? (int)$data['addresses']['is_primary'][$k] : 0;
+                    if($is_primary) {
+                        $primary_address['address'] = $data['addresses']['address'][$k];
+                        $primary_address['zip'] = $data['addresses']['zip'][$k];
+                        $primary_address['city'] = $data['addresses']['city'][$k];
+                        $primary_address['state'] = $data['addresses']['state'][$k];
+                        //co address
+                        $primary_address['co_address_name'] = $data['addresses']['co_address_name'][$k];
+                        $primary_address['type'] = $data['addresses']['type'][$k];
+                    }
+                }
+
+            } else {
+
+                $is_primary = isset($data['addresses']['is_primary']) ? (int)$data['addresses']['is_primary'] : 0;
+                if($is_primary){
+                    $primary_address['address'] = $data['addresses']['address'];
+                    $primary_address['zip'] = $data['addresses']['zip'];
+                    $primary_address['city'] = $data['addresses']['city'];
+                    $primary_address['state'] = $data['addresses']['state'];
+                    //co address
+                    $primary_address['co_address_name'] = $data['addresses']['co_address_name'];
+                    $primary_address['type'] = $data['addresses']['type'];
+                }
+
+            }
+
+            $id = $data['id'];
+
+        } else {
+            if(request()->has('first_name'))
+                $first_name = request()->first_name;
+            else
+                $first_name = '';
+
+            if(request()->has('last_name'))
+                $last_name  = request()->last_name;
+            else
+                $last_name = '';
+
+            if(request()->has('birthdate'))
+                $birthdate = request()->birthdate;
+            else
+                $birthdate = '';
+
+            if(request()->has('addresses'))
+                $data['addresses'] = request()->addresses;
+            else
+                $data['addresses'] = [];
+
+            $primary_address = [];
+            foreach ($data['addresses']['id'] as $k => $val) {
+                $is_primary = isset($data['addresses']['is_primary'][$k]) ? (int)$data['addresses']['is_primary'][$k] : 0;
+                if($is_primary) {
+                    $primary_address['address'] = $data['addresses']['address'][$k];
+                    $primary_address['zip'] = $data['addresses']['zip'][$k];
+                    $primary_address['city'] = $data['addresses']['city'][$k];
+                    $primary_address['state'] = $data['addresses']['state'][$k];
+                    //co address
+                    $primary_address['co_address_name'] = $data['addresses']['co_address_name'][$k];
+                    $primary_address['type'] = $data['addresses']['type'][$k];
+                }
+            }
+
+            if(request()->has('id'))
+                $id = request()->id;
+
+        }
+        // case 1: if name is not blank, firstname is not blank and birthdate is not blank(make lower case all before checking)  match
+
+        // case 2: if nachname is not blank, vorname is not blank and birthdate is blank and primary address (make lower case all before checking) match
+
+        $contacts = App\Contact::where([
+            ['first_name', '=', $first_name],
+            ['last_name', '=', $last_name],
+            ['birthdate', '=', $birthdate],
+            ['id', '!=', $data['id']]
+        ])->whereHas('addresses', function($query) use($primary_address) {
+            $query->where('is_primary', 1);
+            $query->where('address', 'LIKE', '%' . $primary_address['address'] . '%'); 
+            $query->where('zip', 'LIKE', '%' . $primary_address['zip'] . '%'); 
+            $query->where('city', 'LIKE', '%' . $primary_address['city'] . '%'); 
+            $query->where('state', 'LIKE', '%' . $primary_address['state'] . '%'); 
+        })->get();
+
+        return $contacts;
+
+    }
+
+}
+
+if(!function_exists('getRoleNames')) {
+
+    function getRoleNames() {
+        return Spatie\Permission\Models\Role::all()->pluck('name','id');
     }
 
 }

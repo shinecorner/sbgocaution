@@ -1,5 +1,15 @@
 export default {
     "de": {
+        "template": {
+            "TEMPLATES": "Vorlagen",
+            "TEMPLATE_KEY": "Vorlage-Schlüssel",
+            "SECTION": "Bereich",
+            "filter": {
+                "SELECT_TYPE": "Tynp auswähle",
+                "PDF": "PDF",
+                "EMAIL": "E-Mail"
+            }
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -118,21 +128,34 @@ export default {
         "privatelandlord": {
             "PRIVATE_LANDLORD": "Privater Vermieter",
             "PRIVATE_LANDLORDS": "Private Hauswirte",
-            "CUSTOMER_DETAILS": "Kundendaten",
-            "PRODUCTION": "Produktion",
-            "PRIVATE_HOUSEOWNER_NUM": "Private Hausbesitzer Nummer"
+            "CONTACT_DETAILS": "Kundendetails",
+            "INVOICES": "Rechnungen",
+            "PRIVATE_HOUSEOWNER_NUM": "Private Vermieter Nummer",
+            "CONVERT_TO_ORGANIZATIONS": "In Verwaltungen konvertieren",
+            "filter": {
+                "CITY": "City",
+                "POLICY_ACCEPTED_NUMBER": "Nach Anzahl Policen",
+                "POLICY_NUMBER": "Nach Policen Status",
+                "KANTON": "Kanton"
+            }
         },
         "broker": {
-            "BROKERS": "Makler",
+            "BROKERS": "Vermittler",
             "BROKER": "Vermittler",
-            "ID": "Vermittler ID"
+            "ID": "Vermittler ID",
+            "WEBSITE": "Website",
+            "CITY": "City"
         },
         "auth": {
             "failed": "Diese Anmeldeinformationen stimmen nicht mit unseren Aufzeichnungen überein.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "user": {
-            "EDIT_ACCOUNT": "Profil bearbeiten"
+            "EDIT_ACCOUNT": "Profil bearbeiten",
+            "USERS": "Benutzer",
+            "LAST_LOGIN": "Letzter Besuch",
+            "REGISTRATION_DATE": "Registrierungsdatum",
+            "SELECT_ROLE": "Gruppe wählen"
         },
         "setting": {
             "SETTING": "Einstellung",
@@ -257,6 +280,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Der Kontaktstatus wurde erfolgreich geändert.",
             "STATUS_CHANGE_FAIL": "Leider wurde der Kontaktstatus nicht geändert, versuchen Sie es erneut.",
+            "DELETE_SUCCESS": "Kunde(n) gelöscht!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Diese Kunde hat bezahlte Zahlung(en), so dass sie nicht gelöscht werden können.",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Die Kunden {info_1} und {info_2} können nicht gelöscht werden, da bezahlte Zahlung(en) existieren",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Kontakt {info_1} kann nicht gelöscht werden, da bezahlte Zahlung(en) existieren.",
             "offer": {
                 "FILE_NAME": "offerte",
                 "CREATE_SUCCESS": "Angebot erfolgreich erstellt!",
@@ -402,6 +429,7 @@ export default {
                     "EMAIL_VALID": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
                 },
                 "THANK_YOU": "Vielen Dank für Ihre Anfrage",
+                "THANK_YOU_TEXT": "Vielen Dank",
                 "ADMIN_EMAIL_SUBJECT": "Vermieter-Login | Zugangsdaten angefordert",
                 "REG_REQUEST_HEADLINE": "Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.",
                 "routes": {
@@ -495,6 +523,8 @@ export default {
             "ERROR": "Fehler",
             "SAVE_SUCCESSFULLY": "Daten erfolgreich gespeichert",
             "INVOICES": "Rechnungen",
+            "PUBLISHED": "Publiziert",
+            "UNPUBLISHED": "Unpubliziert",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -519,7 +549,8 @@ export default {
                 "LANGUAGE": "Sprache",
                 "SEARCH": "Suchen",
                 "RESET": "Leeren",
-                "NOT_SELECTED_OPTION": "Nicht ausgewählt"
+                "NOT_SELECTED_OPTION": "Nicht ausgewählt",
+                "CURRENT_POLICIES": "Laufende Policen"
             },
             "ROWS": "Einträge",
             "PDF_MR": "Sehr geehrter Herr {nachname}",
@@ -589,7 +620,18 @@ export default {
             "NEW": "Neu",
             "MERGE": "Zusammenführen",
             "DELETE": "Löschen",
-            "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!"
+            "LANGUAGE_CHANGE_SUCCESS": "Die Sprache wurde erfolgreich geändert!",
+            "MORE_FILTER": "Mehr Filtern",
+            "ENABLED": "Freigegeben",
+            "ACTIVATED": "Aktiviert",
+            "SELECT_STATUS": "Status wählen",
+            "NO_RESULTS_TEXT_DROPDOWN": "Keine passenden Ergebnisse gefunden!"
+        },
+        "role": {
+            "ROLES": "Gruppen",
+            "TITLE": "Gruppentitel",
+            "ACTIVE": "Aktiv",
+            "INACTIVE": "Inaktiv"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -608,6 +650,16 @@ export default {
         }
     },
     "en": {
+        "template": {
+            "TEMPLATES": "Templates",
+            "TEMPLATE_KEY": "Template key",
+            "SECTION": "Section",
+            "filter": {
+                "SELECT_TYPE": "Select Type",
+                "PDF": "PDF",
+                "EMAIL": "E-Mail"
+            }
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -726,21 +778,34 @@ export default {
         "privatelandlord": {
             "PRIVATE_LANDLORD": "Private Landlord",
             "PRIVATE_LANDLORDS": "Private Landlords",
-            "CUSTOMER_DETAILS": "Customer Details",
-            "PRODUCTION": "Production",
-            "PRIVATE_HOUSEOWNER_NUM": "Private Houseowner Num"
+            "CONTACT_DETAILS": "Contact details",
+            "INVOICES": "Invoices",
+            "PRIVATE_HOUSEOWNER_NUM": "Private Houseowner Num",
+            "CONVERT_TO_ORGANIZATIONS": "Convert To Organizations",
+            "filter": {
+                "CITY": "City",
+                "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+                "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
+                "KANTON": "Kanton"
+            }
         },
         "broker": {
             "BROKERS": "Brokers",
             "BROKER": "Broker",
-            "ID": "Broker ID"
+            "ID": "Broker ID",
+            "WEBSITE": "Website",
+            "CITY": "City"
         },
         "auth": {
             "failed": "These credentials do not match our records.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "user": {
-            "EDIT_ACCOUNT": "Edit profile"
+            "EDIT_ACCOUNT": "Edit profile",
+            "USERS": "Users",
+            "LAST_LOGIN": "Last Visit Date",
+            "REGISTRATION_DATE": "Registered Date",
+            "SELECT_ROLE": "Select Group"
         },
         "setting": {
             "SETTING": "Setting",
@@ -865,6 +930,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Contact status has been changed successfully.",
             "STATUS_CHANGE_FAIL": "Unfortunately, contact status has not been changed, try again.",
+            "DELETE_SUCCESS": "Customer(s) deleted!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Diese Kunde hat bezahlte Zahlung(en), so dass sie nicht gelöscht werden können.",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Die Kunden {info_1} und {info_2} können nicht gelöscht werden, da bezahlte Zahlung(en) existieren",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Kontakt {info_1} kann nicht gelöscht werden, da bezahlte Zahlung(en) existieren.",
             "offer": {
                 "FILE_NAME": "offer",
                 "CREATE_SUCCESS": "Offer created successfully!",
@@ -1006,9 +1075,11 @@ export default {
                     "ADDRESS": "Please enter your address",
                     "TELEPHONE": "Please fill in",
                     "EMAIL": "Please let us know your email address.",
+                    "EMAIL_UNIQUE": "This e-mail is already in use!",
                     "EMAIL_VALID": "Please enter a valid e-mail address."
                 },
                 "THANK_YOU": "Thank you very much for your inquiry.",
+                "THANK_YOU_TEXT": "Thank you",
                 "ADMIN_EMAIL_SUBJECT": "Landlord login | Access data requested",
                 "REG_REQUEST_HEADLINE": "A customer has requested a landlord to have access to the landlord-login.",
                 "routes": {
@@ -1098,6 +1169,8 @@ export default {
             "ERROR": "Error",
             "SAVE_SUCCESSFULLY": "Data saved successfully",
             "INVOICES": "Invoices",
+            "PUBLISHED": "Published",
+            "UNPUBLISHED": "Unpublished",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -1122,9 +1195,10 @@ export default {
                 "LANGUAGE": "Language",
                 "SEARCH": "Search",
                 "RESET": "Reset",
-                "NOT_SELECTED_OPTION": "Not selected"
+                "NOT_SELECTED_OPTION": "Not selected",
+                "CURRENT_POLICIES": "Current Policies"
             },
-            "ROWS": "Rows",
+            "ROWS": "Entries",
             "PDF_MR": "Dear Sir {nachname}",
             "PDF_MRS": "Dear Madam {nachname}",
             "PDF_COMPANY": "Dear Ladies and Gentlemen",
@@ -1192,7 +1266,18 @@ export default {
             "NEW": "New",
             "MERGE": "Merge",
             "DELETE": "Delete",
-            "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!"
+            "LANGUAGE_CHANGE_SUCCESS": "The language was changed successfully!",
+            "MORE_FILTER": "More Filter",
+            "ENABLED": "Enabled",
+            "ACTIVATED": "Activated",
+            "SELECT_STATUS": "Select status",
+            "NO_RESULTS_TEXT_DROPDOWN": "No matching results found!"
+        },
+        "role": {
+            "ROLES": "Groups",
+            "TITLE": "Group Title",
+            "ACTIVE": "Active",
+            "INACTIVE": "Inactive"
         },
         "login": {
             "LOGIN": "Log in",
@@ -1211,6 +1296,16 @@ export default {
         }
     },
     "fr": {
+        "template": {
+            "TEMPLATES": "Templates",
+            "TEMPLATE_KEY": "Clé de modèle",
+            "SECTION": "Section",
+            "filter": {
+                "SELECT_TYPE": "Sélectionner le type",
+                "PDF": "PDF",
+                "EMAIL": "E-Mail"
+            }
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -1329,21 +1424,34 @@ export default {
         "privatelandlord": {
             "PRIVATE_LANDLORD": "Seigneur privé du pays",
             "PRIVATE_LANDLORDS": "Propriétaires privés",
-            "CUSTOMER_DETAILS": "Détails du client",
-            "PRODUCTION": "Production",
-            "PRIVATE_HOUSEOWNER_NUM": "Numéro du propriétaire privé"
+            "CONTACT_DETAILS": "Contact details",
+            "INVOICES": "Factures",
+            "PRIVATE_HOUSEOWNER_NUM": "Private landlord num",
+            "CONVERT_TO_ORGANIZATIONS": "Convertir en régie",
+            "filter": {
+                "CITY": "Ville",
+                "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+                "POLICY_NUMBER": "Par statut des polices",
+                "KANTON": "Canton"
+            }
         },
         "broker": {
             "BROKERS": "Courtiers",
             "BROKER": "Courtier",
-            "ID": "Courtier ID"
+            "ID": "Courtier ID",
+            "WEBSITE": "Site ueb",
+            "CITY": "Ville"
         },
         "auth": {
             "failed": "Ces informations d'identification ne correspondent pas à nos enregistrements.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "user": {
-            "EDIT_ACCOUNT": "Modifier le profil"
+            "EDIT_ACCOUNT": "Modifier le profil",
+            "USERS": "Utilisateurs",
+            "LAST_LOGIN": "Dernière visite",
+            "REGISTRATION_DATE": "Enregistrement",
+            "SELECT_ROLE": "Sélectionner un groupe"
         },
         "setting": {
             "SETTING": "Réglage de",
@@ -1468,6 +1576,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Le statut du contact a été modifié avec succès.",
             "STATUS_CHANGE_FAIL": "Malheureusement, le statut du contact n'a pas été modifié, réessayez.",
+            "DELETE_SUCCESS": "Client(s) supprimé(s) !",
+            "ERROR_DELETE_SELECTED_CONTACT": "Ce contact a payé le(s) paiement(s) donc vous ne pouvez pas l'effacer",
+            "ERROR_DELETE_SELECTED_CONTACTS": "Contacts {info_1} et {info_2} ne peuvent pas être supprimés parce que des paiements payés existent",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Les {info_1} de contact ne peuvent pas être supprimés car il a effectué le(s) paiement(s)",
             "offer": {
                 "FILE_NAME": "proposition",
                 "CREATE_SUCCESS": "Offre créée avec succès !",
@@ -1613,6 +1725,7 @@ export default {
                     "EMAIL_VALID": "L'adresse électronique doit être une adresse électronique valide."
                 },
                 "THANK_YOU": "Vielen Dank für Ihre Anfrage.",
+                "THANK_YOU_TEXT": "Merci à vous",
                 "ADMIN_EMAIL_SUBJECT": "Connexion propriétaire | Données d'accès demandées",
                 "REG_REQUEST_HEADLINE": "Un client a demandé à un propriétaire d'avoir accès à son identifiant propriétaire.",
                 "routes": {
@@ -1714,6 +1827,8 @@ export default {
             "ERROR": "Erreur",
             "SAVE_SUCCESSFULLY": "Données sauvegardées avec succès",
             "INVOICES": "Factures",
+            "PUBLISHED": "Publié",
+            "UNPUBLISHED": "Non publié",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -1738,9 +1853,10 @@ export default {
                 "LANGUAGE": "Langue",
                 "SEARCH": "Chercher",
                 "RESET": "Vider",
-                "NOT_SELECTED_OPTION": "Non sélectionné"
+                "NOT_SELECTED_OPTION": "Non sélectionné",
+                "CURRENT_POLICIES": "Politiques actuelles"
             },
-            "ROWS": "Rangs",
+            "ROWS": "Rangées",
             "PDF_MR": "Cher Monsieur {nachname}",
             "PDF_MRS": "Chère femme {nachname}",
             "PDF_COMPANY": "Mesdames et Messieurs, Mesdames et Messieurs",
@@ -1808,7 +1924,18 @@ export default {
             "NEW": "Nouveau",
             "MERGE": "Fusion de clients",
             "DELETE": "Supprimer",
-            "LANGUAGE_CHANGE_SUCCESS": "La langue a changé avec succès."
+            "LANGUAGE_CHANGE_SUCCESS": "La langue a changé avec succès.",
+            "MORE_FILTER": "Plus de filtre",
+            "ENABLED": "Actif",
+            "ACTIVATED": "Activé",
+            "SELECT_STATUS": "Choisir le statut",
+            "NO_RESULTS_TEXT_DROPDOWN": "Aucun résultat trouvé !"
+        },
+        "role": {
+            "ROLES": "Groupes",
+            "TITLE": "Titre du groupe",
+            "ACTIVE": "Actif",
+            "INACTIVE": "Inactif"
         },
         "login": {
             "LOGIN": "Connexion",
@@ -1827,6 +1954,16 @@ export default {
         }
     },
     "it": {
+        "template": {
+            "TEMPLATES": "Vorlagen",
+            "TEMPLATE_KEY": "Template key",
+            "SECTION": "Sezione",
+            "filter": {
+                "SELECT_TYPE": "Selezionare il tipo",
+                "PDF": "PDF",
+                "EMAIL": "E-Mail"
+            }
+        },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
             "active_url": "The {attribute} is not a valid URL.",
@@ -1945,21 +2082,34 @@ export default {
         "privatelandlord": {
             "PRIVATE_LANDLORD": "Signore del paese privato",
             "PRIVATE_LANDLORDS": "Proprietari privati",
-            "CUSTOMER_DETAILS": "Dettagli cliente",
-            "PRODUCTION": "Produzione",
-            "PRIVATE_HOUSEOWNER_NUM": "Proprietario privato Num"
+            "CONTACT_DETAILS": "Dati di contatto",
+            "INVOICES": "Rechnungen",
+            "PRIVATE_HOUSEOWNER_NUM": "Proprietario privato Num",
+            "CONVERT_TO_ORGANIZATIONS": "Converti ad amministrazioni",
+            "filter": {
+                "CITY": "Città",
+                "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
+                "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
+                "KANTON": "Kanton"
+            }
         },
         "broker": {
             "BROKERS": "Intermediari",
             "BROKER": "Mediatore",
-            "ID": "Mediatore ID"
+            "ID": "Mediatore ID",
+            "WEBSITE": "Website",
+            "CITY": "Città"
         },
         "auth": {
             "failed": "Queste credenziali non corrispondono ai nostri record.",
             "throttle": "Too many login attempts. Please try again in {seconds} seconds."
         },
         "user": {
-            "EDIT_ACCOUNT": "Modifica profilo"
+            "EDIT_ACCOUNT": "Modifica profilo",
+            "USERS": "Utenti",
+            "LAST_LOGIN": "Data ultima visita",
+            "REGISTRATION_DATE": "Data registrazione",
+            "SELECT_ROLE": "Seleziona Gruppo"
         },
         "setting": {
             "SETTING": "Impostazione",
@@ -2084,6 +2234,10 @@ export default {
             },
             "STATUS_CHANGE_SUCCESS": "Lo stato dei contatti è stato modificato con successo.",
             "STATUS_CHANGE_FAIL": "Purtroppo, lo stato dei contatti non è stato modificato, riprovare.",
+            "DELETE_SUCCESS": "Cliente(i) cancellato(i)!",
+            "ERROR_DELETE_SELECTED_CONTACT": "Questo contatto ha pagato il pagamento(i) in modo da non poterlo cancellare",
+            "ERROR_DELETE_SELECTED_CONTACTS": "I contatti {info_1} e {info_2} non possono essere cancellati perché esistono pagamenti pagati",
+            "ERROR_DELETE_SELECTED_CONTACTS_ONE": "Il contatto {info_1} non può essere cancellato perché ha effettuato il pagamento(i)",
             "offer": {
                 "FILE_NAME": "offerta",
                 "CREATE_SUCCESS": "Offerta creata con successo!",
@@ -2229,6 +2383,7 @@ export default {
                     "EMAIL_VALID": "L'e-mail deve essere un indirizzo e-mail valido."
                 },
                 "THANK_YOU": "La ringrazio molto per la sua richiesta.",
+                "THANK_YOU_TEXT": "Grazie",
                 "ADMIN_EMAIL_SUBJECT": "Login del proprietario | Dati di accesso richiesti",
                 "REG_REQUEST_HEADLINE": "Un cliente ha chiesto al locatore di avere accesso al logo del proprietario.",
                 "routes": {
@@ -2318,6 +2473,8 @@ export default {
             "ERROR": "sbaglio",
             "SAVE_SUCCESSFULLY": "Dati salvati con successo",
             "INVOICES": "Rechnungen",
+            "PUBLISHED": "Pubblicato",
+            "UNPUBLISHED": "Inedito",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -2342,9 +2499,10 @@ export default {
                 "LANGUAGE": "Lingua",
                 "SEARCH": "Ricerca",
                 "RESET": "Resettato",
-                "NOT_SELECTED_OPTION": "Non selezionato"
+                "NOT_SELECTED_OPTION": "Non selezionato",
+                "CURRENT_POLICIES": "Politiche attuali"
             },
-            "ROWS": "Ranghi",
+            "ROWS": "Righe",
             "PDF_MR": "Caro signore {nachname}",
             "PDF_MRS": "Cara donna {nachname}",
             "PDF_COMPANY": "Cari signori e signore e signori",
@@ -2412,7 +2570,18 @@ export default {
             "NEW": "Nuova",
             "MERGE": "Accorpamento",
             "DELETE": "Cancellare",
-            "LANGUAGE_CHANGE_SUCCESS": "La lingua è cambiata con successo."
+            "LANGUAGE_CHANGE_SUCCESS": "La lingua è cambiata con successo.",
+            "MORE_FILTER": "Più filtro",
+            "ENABLED": "Abilitato",
+            "ACTIVATED": "Attivato",
+            "SELECT_STATUS": "Seleziona lo stato",
+            "NO_RESULTS_TEXT_DROPDOWN": "Nessun risultato corrispondente trovato!"
+        },
+        "role": {
+            "ROLES": "Gruppi",
+            "TITLE": "Titolo gruppo",
+            "ACTIVE": "Attivo",
+            "INACTIVE": "Inattivo"
         },
         "login": {
             "LOGIN": "Accedi",

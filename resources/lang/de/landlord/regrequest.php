@@ -26,6 +26,7 @@
 
       ],
       'THANK_YOU'=>'Vielen Dank für Ihre Anfrage',
+      'THANK_YOU_TEXT'=>'Vielen Dank',
       'ADMIN_EMAIL_SUBJECT'=>'Vermieter-Login | Zugangsdaten angefordert',
       'REG_REQUEST_HEADLINE'=>'Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.',
       'routes' => [
