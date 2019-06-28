@@ -1,6 +1,5 @@
 <template>
-    <v-autocomplete
-        :no-data-text="$t('general.NORESULTS_TEXT')" 
+    <v-autocomplete        
         :items="statuses"         
         outline                                                
         hide-details

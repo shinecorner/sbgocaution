@@ -14,8 +14,7 @@
                     </v-select>
                 </v-flex>
                 <v-flex xs12 sm6 md6 lg3 xl3>
-                    <v-autocomplete
-                        :no-data-text="$t('general.NORESULTS_TEXT')"
+                    <v-autocomplete                        
                         :items="roles"        
                         outline                                                
                         hide-details
