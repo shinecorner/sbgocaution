@@ -50,6 +50,10 @@ class Controller extends BaseController
                             case 'users_roles':
                                 $data['helpers'][$helper] = getRoleNames();
                                 break;
+
+                            case 'sections':
+                                $data['helpers'][$helper] = getTemplateSections();
+                                break;
                         }
         			}
         			break;
