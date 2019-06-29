@@ -155,7 +155,9 @@ export default {
             "USERS": "Benutzer",
             "LAST_LOGIN": "Letzter Besuch",
             "REGISTRATION_DATE": "Registrierungsdatum",
-            "SELECT_ROLE": "Gruppe wählen"
+            "SELECT_ROLE": "Gruppe wählen",
+            "CHANGE_STATUS_SUCCESS": "Status des Benutzers erfolgreich geändert",
+            "CHANGE_STATUS_FAILURE": "Statusänderung des Benutzers fehlgeschlagen"
         },
         "setting": {
             "SETTING": "Einstellung",
@@ -805,7 +807,9 @@ export default {
             "USERS": "Users",
             "LAST_LOGIN": "Last Visit Date",
             "REGISTRATION_DATE": "Registered Date",
-            "SELECT_ROLE": "Select Group"
+            "SELECT_ROLE": "Select Group",
+            "CHANGE_STATUS_SUCCESS": "User's status changed successfully",
+            "CHANGE_STATUS_FAILURE": "User's status changed failed"
         },
         "setting": {
             "SETTING": "Setting",
@@ -1451,7 +1455,9 @@ export default {
             "USERS": "Utilisateurs",
             "LAST_LOGIN": "Dernière visite",
             "REGISTRATION_DATE": "Enregistrement",
-            "SELECT_ROLE": "Sélectionner un groupe"
+            "SELECT_ROLE": "Sélectionner un groupe",
+            "CHANGE_STATUS_SUCCESS": "Le statut de l'utilisateur a changé avec succès",
+            "CHANGE_STATUS_FAILURE": "Échec du changement d'état de l'utilisateur"
         },
         "setting": {
             "SETTING": "Réglage de",
@@ -2109,7 +2115,9 @@ export default {
             "USERS": "Utenti",
             "LAST_LOGIN": "Data ultima visita",
             "REGISTRATION_DATE": "Data registrazione",
-            "SELECT_ROLE": "Seleziona Gruppo"
+            "SELECT_ROLE": "Seleziona Gruppo",
+            "CHANGE_STATUS_SUCCESS": "Lo stato dell'utente è cambiato con successo",
+            "CHANGE_STATUS_FAILURE": "Stato utente cambiato non riuscito"
         },
         "setting": {
             "SETTING": "Impostazione",
