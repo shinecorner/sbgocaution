@@ -213,6 +213,42 @@ if(!function_exists('getInvoiceStatusPlain')) {
 
 }
 
+if(!function_exists('getPolicyRealestateAgencyStatuses')) {
+
+    function getPolicyRealestateAgencyStatuses($plain = 0) {
+        $status = array();
+        $status["not_contacted"] = 'realestateagency.status.NOT_CONTACTED';
+        $status["in_contact"] = 'realestateagency.status.IN_CONTACT';
+        $status["accept_go_caution"] = 'realestateagency.status.ACCEPT_GO_CAUTION';
+        $status["accept_not_go_caution"] = 'realestateagency.status.ACCEPT_NOT_GO_CAUTION';
+        $status["partner_with_contract"] = 'realestateagency.status.PARTNER_WITH_CONTRACT';
+        $status["partner_without_contract"] = 'realestateagency.status.PARTNER_WITHOUT_CONTRACT';
+        $status["gocaution_visit"] = 'realestateagency.status.GOCAUTION_VISIT';
+        $status["cold_visit"] = 'realestateagency.status.COLD_VISIT';
+        $status["warm_visit"] = 'realestateagency.status.WARM_VISIT';
+        $status["meeting"] = 'realestateagency.status.MEETING';
+        $status["dont_accept_insurance_solution"] = 'realestateagency.status.DONT_ACCEPT_INSURANCE_SOLUTION';
+        $status["no_objects_for_rent"] = 'realestateagency.status.NO_OBJECTS_FOR_RENT';
+
+        if(!$plain) {
+            foreach($statuses as $key => $value) {
+                $statuses[$key] = __($value);
+            }
+        }
+
+        return $status;
+    }
+
+}
+
+if(!function_exists('getPolicyRealestateAgencyStatusesPlain')) {
+
+    function getPolicyRealestateAgencyStatusesPlain() {
+        return getPolicyRealestateAgencyStatuses(1);
+    }
+    
+}
+
 if(!function_exists('roundTo5')){
     /**
      * Returns decimal number which is round to 5.
@@ -712,4 +748,43 @@ if(!function_exists('getTemplateSections')) {
         return App\Template::orderBy('section')->distinct('section')->pluck('section');
     }
 
+}
+
+if(!function_exists('getRealestateAgencyKantons')) {
+
+    function getRealestateAgencyKantons() {
+
+        $lang = app()->getLocale();
+
+        $whichname = 'german';
+
+        if($lang=='de'){
+            $whichname = 'german';
+        }
+        if($lang=='fr'){
+            $whichname = 'french';
+        }
+        if($lang=='it'){
+            $whichname = 'italian';
+        }
+        if($lang=='en'){
+            $whichname = 'german';
+        }
+
+        $kantons = App\Canton::orderBy('shortcode')->pluck($whichname, 'shortcode');
+
+        return $kantons;
+    }
+
+}
+
+if(!function_exists('getRealestateAgencyCities')) {
+
+    function getRealestateAgencyCities() {
+
+        $cities = App\RealestateAgency::orderBy('city')->distinct('city')->pluck('city');
+
+        return $cities;
+    }
+    
 }
