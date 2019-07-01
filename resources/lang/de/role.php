@@ -3,5 +3,6 @@ return [
     'ROLES' => 'Gruppen',
     'TITLE' => 'Gruppentitel',
     'ACTIVE' => 'Aktiv',
-    'INACTIVE' => 'Inaktiv'
+    'INACTIVE' => 'Inaktiv',
+    'EDIT_ROLE' => 'Gruppe bearbeiten'
 ];

@@ -29,7 +29,7 @@ class TemplateController extends Controller
         $query = Template::latest();
 
         if($request->has('filters')) {
-            $this->filters($request, $query, ['keyword_search', 'type', 'section']);
+            $this->filters($request, $query, ['keyword_search', 'type', 'section', 'status']);
         }
 
         if($request->has('limit')) {
@@ -139,6 +139,8 @@ class TemplateController extends Controller
                     $query->where('type', '=', $value);
                 } else if($key == 'section') {
                     $query->where('section', '=', $value);
+                } else if($key == 'status') {
+                    $query->where('status', '=', $value);
                 }
             }
         }
