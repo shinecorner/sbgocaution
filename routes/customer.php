@@ -5,11 +5,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 {
     // echo LaravelLocalization::transRoute("routes.password_reset"); die();
     Route::get('/', 'AuthLoginController@loginForm')->name('login');
-    Route::get(LaravelLocalization::transRoute("customer.routes.FORGOT_PASSWORD_LINK"), 'AuthLoginController@showForgetPasswordForm');
-    Route::get(LaravelLocalization::transRoute("customer.routes.PASSWORD_RESET").'/{token}','AuthLoginController@showResetPasswordForm');
-    Route::post(LaravelLocalization::transRoute("customer.routes.LOGIN"),'AuthLoginController@login');
-    Route::post(LaravelLocalization::transRoute("customer.routes.PASSWORD_EMAIL"), 'AuthLoginController@sendResetPasswordLinkEmail');
-    Route::post(LaravelLocalization::transRoute("customer.routes.PASSWORD_UPDATE"), 'AuthLoginController@reset');
+    Route::get(LaravelLocalization::transRoute("customer/login.routes.FORGOT_PASSWORD_LINK"), 'AuthLoginController@showForgetPasswordForm');
+    Route::get(LaravelLocalization::transRoute("customer/login.routes.PASSWORD_RESET").'/{token}','AuthLoginController@showResetPasswordForm');
+    Route::post(LaravelLocalization::transRoute("customer/login.routes.LOGIN"),'AuthLoginController@login');
+    Route::post(LaravelLocalization::transRoute("customer/login.routes.PASSWORD_EMAIL"), 'AuthLoginController@sendResetPasswordLinkEmail');
+    Route::post(LaravelLocalization::transRoute("customer/login.routes.PASSWORD_UPDATE"), 'AuthLoginController@reset');
+    Route::post(LaravelLocalization::transRoute("customer/regrequest.routes.REGISTER_REQUEST"),'RegrequestController@store');
 
     Route::middleware(['auth'])->group(function () {
         Route::get('dashboard', function () { return view('customer.dashboard.dashboardv1'); })->name('dashboard');

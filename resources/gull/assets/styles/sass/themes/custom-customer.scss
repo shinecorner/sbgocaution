@@ -171,10 +171,10 @@ a:focus {
 .login-main .logo-image small {
   display: none;
 }
-
-.login-main .dropdown-toggle::after {
-  display: none;
-}
+//
+//.login-main .dropdown-toggle::after {
+//  display: none;
+//}
 
 .login-main h4,
 .login-main .h4 {
@@ -564,9 +564,25 @@ a:focus {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
-  font-weight: bold;
 }
-
+button.default-whbtn {
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 13px 16px 10px;
+  font-size: 11px;
+  line-height: normal;
+  border-radius: 3px;
+  color: #333;
+  transition: all 0.5s ease;
+}
+button.default-whbtn:hover {
+  color: #333333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
 .radio label,
 .checkbox label {
   display: inline;
@@ -623,8 +639,6 @@ a:focus {
 }
 
 .login-main .modal.fade .modal-dialog {
-  -webkit-transform: translate(0, -25%);
-  transform: translate(0, -25%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
@@ -1002,22 +1016,187 @@ h2 font{font-weight:600;position:relative;}
 .box_1 h2 {    font-size: 16px; font-weight: 600; margin-top: 16px;}
 .box_1 p{font-size: 14px; color:#707070;}
 .col-md-3.box_1 {padding: 0; text-align: center; }
-.box_1 .fa{background: #8dbf43;color: #fff;font-size: 36px;padding: 20px;height: 80px;width: 80px;border-radius: 80px; }
+.box_1 .fa{background: #8dbf43;color: #fff;font-size:34px;padding:0;height:60px;width:60px;border-radius:100px;
+  display: flex;flex-wrap: wrap;align-items:center;justify-content:center;margin:auto;}
 .box_2 .fa{color:#646566; font-size:14px;width:20px;margin-bottom:10px;}
 .main_box p {font-size: 13px;}
+.top-bar {
+  background: #8ebf43;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  .col-md-12{
+    justify-content: flex-end;
+    display: flex;
+  }
+}
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle{background-color:transparent;border:none;}
 
-.left_box {background: #fff;padding: 20px;}
-.right_box {background: #fff;padding: 20px;}
+.right_box {
+  background: #fff;
+  padding-bottom:20px;
+  .box_2{
+    padding:0 20px;
+  }
+}
 .column_box {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   padding: 30px 0 0;
 }
+.section-header{
+  padding:20px 20px 0;
+  h4{
+    margin:0;
+  }
+}
+.left_box {
+  background: #fff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 0px 0px #d4d5d6;
+  box-shadow: 0px 1px 0px 0px #d4d5d6;
+
+  .section-content{
+    padding:0 20px 10px;
+  }
+}
+.account-request{
+  .modal-header {
+    background: #056937;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    .close{
+      padding: 3px 7px;
+      border-radius: 20px;
+      background: #8DBF42;
+      position: absolute;
+      right: 10px;
+      margin:-2px 0 0;
+      @media screen and (max-width:767px){
+        margin:10px 0 0;
+      }
+    }
+    .modal-title{
+      color:#fff;
+      width:100%;
+      .fa{font-size:3em;margin-bottom:5px;}
+      .mb-1{
+        @media screen and (max-width:767px){
+          line-height:26px;
+        }
+      }
+    }
+  }
+  .modal-dialog{
+    max-width:600px;
+    .modal-body{
+      position: relative;
+      padding: 20px 20px 5px;
+      .card-header{
+        color:#03371d;
+        background-color:#cde1d7;
+        border-color: #b9d5c7;
+        position:relative;
+        padding:0.7rem;
+        margin-bottom:1rem;
+        border:1px solid transparent;
+        border-radius:10px;
+        p{
+          color:#333;
+          margin:0;
+          display:inline-block;
+          width:calc(100% - 20px);
+          vertical-align: top;
+        }
+        .fa{
+          display: inline-block;
+          margin-right: 5px;
+          color:#03371d;
+        }
+      }
+      .card-body{
+        padding:0;
+      }
+      .card{
+        box-shadow:none;
+        border-radius:0;
+      }
+    }
+    .form-group{
+      margin-bottom:15px;
+      .input-group-text{
+        width:40px;align-items:center;justify-align:center;
+      }
+      label{
+        color:#646464;
+        flex:0 0 100%;
+      }
+      .form-control{
+        border-radius:0!important;
+      }
+    }
+  }
+  .modal-content{
+    border:none;border-radius:5px;
+    box-shadow:0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  .modal-footer{
+    justify-content:flex-start;
+    padding:0 20px 20px;
+    border:none;
+  }
+  .alert-success{
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    display: none;
+  }
+  .was-validated {
+    .form-control:valid, .form-control, .is-valid{
+      background-image: none!important;
+    }
+    .form-control:invalid, .form-control, .is-invalid{
+      background-image: none!important;
+    }
+
+  }
+  .btn-success.disabled, .btn-success:disabled {
+    color: #fff;
+    background-color: #066938;
+    border-color: #066938;
+    position: relative;
+    padding-right: 35px!important;
+  }
+  span.ladda-spinner {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    right: 16px;
+    top: 18px;
+  }
+  @media screen and (max-width:767px){
+    padding:0!important;
+  }
+
+}
 
 @media (min-width: 1200px) {
   .container {
     width: 1160px;
+    padding:0 10px;
+    .row{
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+    .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+      padding:0 10px;
+    }
   }
 }
 @media (min-width: 1680px) {

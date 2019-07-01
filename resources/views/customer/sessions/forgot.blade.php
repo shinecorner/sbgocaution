@@ -15,6 +15,7 @@
             @csrf
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
                     {{ session('status') }}
                 </div>
             @endif
@@ -26,7 +27,7 @@
                       <label data-toggle="popover" data-content="{{ __('customer/login.POPOVER_DATA') }}" data-original-title="Adresse e-mail" for="validationCustom01">{{ __('customer/login.IDENTIFIER') }}<span class="star">&#160;*</span></label>
                       <input type="text" class="form-control" name="email" id="validationCustom01" value="" required>
                       <div class="invalid-feedback">
-                          {{ __('customer/login.USERNAME_REQUIRED') }}
+                          {{ __('customer/login.EMAIL_REQUIRED') }}
                       </div>
                   </div>
               </div>

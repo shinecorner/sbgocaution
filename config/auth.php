@@ -50,6 +50,10 @@ return [
             'driver' => 'session',
             'provider' => 'landlord',
         ],
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customer',
+        ],
     ],
 
     /*
@@ -78,6 +82,10 @@ return [
         'landlord' => [
             'driver' => 'eloquent',
             'model' => App\Landlord::class,
+        ],
+        'customer' => [
+            'driver' => 'eloquent',
+            'model' => App\Customer::class,
         ],
 
         // 'users' => [
@@ -109,6 +117,10 @@ return [
         ],
         'landlord' => [
             'provider' => 'landlord',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],'customer' => [
+            'provider' => 'customer',
             'table' => 'password_resets',
             'expire' => 60,
         ],

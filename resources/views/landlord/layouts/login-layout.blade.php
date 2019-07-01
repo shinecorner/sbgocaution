@@ -87,7 +87,7 @@
                                 <small class="site-slogan">{{ __('landlord/login.LOGIN_TITLE') }}</small>
                             </div>
                         </div>
-                        <div class="mb-shift">{{ __('landlordlogin.SUPPORT.SUPPORT_ADDRESS') }}</div>
+                        <div class="mb-shift">{{ __('landlord/login.SUPPORT.SUPPORT_ADDRESS') }}</div>
                     </div>
 
                       <!-- Modal -->
