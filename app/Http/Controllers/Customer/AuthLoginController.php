@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Auth\LoginController;
@@ -14,6 +15,7 @@ use Cookie;
 
 class AuthLoginController extends controller
 {
+    use SendsPasswordResetEmails;
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -117,7 +119,7 @@ class AuthLoginController extends controller
 
     public function sendResetPasswordLinkEmail(Request $request){
        // dd($request->all());
-      return $this->ForgotPasswordInstance->sendResetLinkEmail($request);
+      return $this->sendResetLinkEmail($request);
     }
 
     /**
@@ -132,4 +134,14 @@ class AuthLoginController extends controller
       return $this->ResetPasswordInstance->reset($request);
     }
 
+
+
+    protected function guard()
+    {
+        return \Auth::guard('customer');
+    }
+
+    protected function broker() {
+        return \Password::broker('customer');
+    }
 }
