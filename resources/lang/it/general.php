@@ -123,4 +123,5 @@ return [
     'ACTIVATED' => 'Attivato',    
     'SELECT_STATUS' => 'Seleziona lo stato',
     'NO_RESULTS_TEXT_DROPDOWN' => 'Nessun risultato corrispondente trovato!',
+    'SAVE_AND_CLOSE' => 'Salva & Schliessen'
 ];
