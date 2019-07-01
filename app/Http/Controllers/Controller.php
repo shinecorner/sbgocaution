@@ -62,6 +62,14 @@ class Controller extends BaseController
                             case 'realestate_agency_cities':
                                 $data['helpers'][$helper] = getRealestateAgencyCities();
                                 break;
+
+                            case 'houseowner_cities':
+                                $data['helpers'][$helper] = getHouseOwnerCities();
+                                break;
+
+                            case 'houseowner_realestate_agencies':
+                                $data['helpers'][$helper] = getRealestateAgencies();
+                                break;
                         }
         			}
         			break;

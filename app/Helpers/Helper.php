@@ -781,10 +781,29 @@ if(!function_exists('getRealestateAgencyKantons')) {
 if(!function_exists('getRealestateAgencyCities')) {
 
     function getRealestateAgencyCities() {
-
         $cities = App\RealestateAgency::orderBy('city')->distinct('city')->pluck('city');
-
         return $cities;
     }
     
+}
+
+if(!function_exists('getRealestateAgencies')) {
+
+    function getRealestateAgencies() {
+        $realestateagencies = App\RealestateAgency::whereHas('policies', function($query) {
+            $query->where('realestate_agency_id', '!=', 0);
+            $query->where('houseowner_id', '!=', 0);
+        })->pluck('name', 'id');
+        return $realestateagencies;
+    }
+
+}
+
+if(!function_exists('getHouseOwnerCities')) {
+
+    function getHouseOwnerCities() {
+        $cities = App\HouseOwner::orderBy('city')->distinct('city')->pluck('city');
+        return $cities;
+    }
+
 }

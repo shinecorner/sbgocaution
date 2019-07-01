@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesAndPermissionsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(ContactsTableSeeder::class);
-        $this->call(RealestateAgenciesTableSeeder::class);
+        //$this->call(RealestateAgenciesTableSeeder::class);
         $this->call(CountriesTableSeeder::class);
         $this->call(CantonsTableSeeder::class);
         $this->call(CantonsZipTableSeeder::class);
         $this->call(TemplatesTableSeeder::class);
         $this->call(BrokersTableSeeder::class);
-        $this->call(HouseOwnersTableSeeder::class);
+        //$this->call(HouseOwnersTableSeeder::class);
     }
 }

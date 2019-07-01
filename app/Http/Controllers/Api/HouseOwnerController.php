@@ -16,6 +16,18 @@ class HouseOwnerController extends Controller
      */
     public function index(Request $request)
     {
+
+        $data = [];
+
+        $helpers = [
+            'other' => [
+                'houseowner_cities',
+                'houseowner_realestate_agencies'
+            ]
+        ];
+
+        $this->responseHelper($data, $helpers);
+
         $query = HouseOwner::latest();
 
         if($request->has('limit')) {
@@ -24,7 +36,7 @@ class HouseOwnerController extends Controller
             $houseOwners = $query->paginate($request->per_page);
         }
 
-        return HouseOwnerResource::collection($houseOwners);
+        return HouseOwnerResource::collection($houseOwners)->additional($data);
     }
 
     /**
