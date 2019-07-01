@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\PrivateLandlord;
-use App\Http\Resources\PrivateLandlordResource;
+use App\RealestateAgency;
+use App\Http\Resources\RealestateAgencyResource;
 
-class PrivateLandlordController extends Controller
+class RealestateAgencyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,28 +19,41 @@ class PrivateLandlordController extends Controller
         $data = [];
 
         $helpers = [
+            'statuses' => [
+                'policy',
+                'realestateagency'
+            ],
             'other' => [
-                'privatelandlord_kantons',
-                'privatelandlord_cities',
-                'privatelandlord_salutation'
+                'realestate_agency_kantons',
+                'realestate_agency_cities'
             ]
         ];
 
         $this->responseHelper($data, $helpers);
 
-        $query = PrivateLandlord::latest();
+        $query = RealestateAgency::latest();
 
         if($request->has('filters')) {
-            $this->filters($request, $query, ['keyword_search', 'city', 'state', 'language', 'salutation', 'policy_count', 'accepted_policy_count']);
+            $this->filters($request, $query, ['keyword_search', 'status', 'city', 'state', 'language', 'salutation', 'policy_count', 'policy_status']);
         }
 
         if($request->has('limit')) {
-            $privateLandlords = $query->paginate($request->limit);
+            $realestateagencies = $query->paginate($request->limit);
         } else {
-            $privateLandlords = $query->paginate($request->per_page);
+            $realestateagencies = $query->paginate($request->per_page);
         }
 
-        return PrivateLandlordResource::collection($privateLandlords)->additional($data);
+        return RealestateAgencyResource::collection($realestateagencies)->additional($data);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -61,6 +74,17 @@ class PrivateLandlordController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }
@@ -93,7 +117,7 @@ class PrivateLandlordController extends Controller
         $searchWildcard = '%' . request()->{'filters.'.$keyword} . '%';
 
         $query->where(function($query) use($searchWildcard) {
-            $fields = ['first_name', 'email'];
+            $fields = ['name', 'email'];
             foreach($fields as $field) {
                 $query->orWhere($field, 'LIKE', $searchWildcard);
             }
@@ -110,14 +134,12 @@ class PrivateLandlordController extends Controller
                     $query->where('state', '=', $value);
                 } else if($key == 'language') {
                     $query->where('language', '=', $value);
-                } else if($key == 'salutation') {
-                    $query->where('salutation', '=', $value);
                 } else if($key == 'policy_count') {
                     $this->policy_count($query, $value);
-                } elseif ($key == 'accepted_policy_count') {
-                    $this->policy_count($query, $value, 1);
-                } else if($key == 'duplicate') {
-                    $query->where('is_duplicate', '=', 1);
+                } elseif ($key == 'policy_status') {
+                    $query->whereHas('policies', function($query) use ($value) {
+                        $query->where('status', '=', $value);
+                    });
                 } else if($key == 'keyword_search') {
                     $this->search($key, $query);
                 } else {

@@ -54,6 +54,14 @@ class Controller extends BaseController
                             case 'sections':
                                 $data['helpers'][$helper] = getTemplateSections();
                                 break;
+
+                            case 'realestate_agency_kantons':
+                                $data['helpers'][$helper] = getRealestateAgencyKantons();
+                                break;
+                                
+                            case 'realestate_agency_cities':
+                                $data['helpers'][$helper] = getRealestateAgencyCities();
+                                break;
                         }
         			}
         			break;
@@ -82,6 +90,9 @@ class Controller extends BaseController
                 break;
             case 'invoice':
                 $data['helpers']['statuses'][$status] = getInvoiceStatusPlain();
+                break;
+            case 'realestateagency':
+                $data['helpers']['statuses'][$status] = getPolicyRealestateAgencyStatusesPlain();
                 break;
         }
     }

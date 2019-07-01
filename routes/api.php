@@ -33,6 +33,7 @@ Route::group([
     Route::put('contacts/change_status/{id}', 'ContactController@change_status');
     Route::resource('contacts', 'ContactController');
     Route::resource('privatelandlords', 'PrivateLandlordController');
+    Route::resource('realestateagencies', 'RealestateAgencyController');
     Route::resource('houseowners', 'HouseOwnerController');
     Route::resource('brokers', 'BrokerController');
     Route::put('configs/all','ConfigController@updateAll');
