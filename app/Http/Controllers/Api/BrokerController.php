@@ -60,7 +60,10 @@ class BrokerController extends Controller
      */
     public function show($id)
     {
-        //
+        $broker = Broker::find($id);
+        return response()->json([
+            "data" => new BrokerResource($broker)
+        ], 200);
     }
 
     /**

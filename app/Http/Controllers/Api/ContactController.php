@@ -82,7 +82,9 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        return new ContactResource($contact);
+        return response()->json([
+            "data" => new ContactResource($contact)
+        ], 200);
     }
 
     /**

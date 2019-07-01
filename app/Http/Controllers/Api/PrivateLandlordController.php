@@ -62,7 +62,10 @@ class PrivateLandlordController extends Controller
      */
     public function show($id)
     {
-        //
+        $privateLandlord = PrivateLandlord::find($id);
+        return response()->json([
+            "data" => new PrivateLandlordResource($privateLandlord)
+        ], 200);
     }
 
     /**

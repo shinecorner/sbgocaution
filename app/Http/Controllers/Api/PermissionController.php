@@ -64,7 +64,9 @@ class PermissionController extends Controller
     public function show($id)
     {
         $permission = Permission::find($id);
-        return new PermissionResource($permission);
+        return response()->json([
+            "data" => new PermissionResource($permission)
+        ], 200);
     }
 
     /**
