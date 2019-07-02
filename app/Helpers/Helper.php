@@ -795,9 +795,9 @@ if(!function_exists('getRealestateAgencyCities')) {
     
 }
 
-if(!function_exists('getRealestateAgencies')) {
+if(!function_exists('getHouseownerRealestateAgencies')) {
 
-    function getRealestateAgencies() {
+    function getHouseownerRealestateAgencies() {
         $realestateagencies = App\RealestateAgency::whereHas('policies', function($query) {
             $query->where('realestate_agency_id', '!=', 0);
             $query->where('houseowner_id', '!=', 0);

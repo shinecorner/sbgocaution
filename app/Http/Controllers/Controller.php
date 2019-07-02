@@ -68,7 +68,7 @@ class Controller extends BaseController
                                 break;
 
                             case 'houseowner_realestate_agencies':
-                                $data['helpers'][$helper] = getRealestateAgencies();
+                                $data['helpers'][$helper] = getHouseownerRealestateAgencies();
                                 break;
 
                             case 'role_permissions':
