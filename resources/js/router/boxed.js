@@ -8,6 +8,7 @@ const PrivateLandLordList = () => import('Views/privatelandlords/List');
 const TemplatePage = () => import('Views/templates/List')
 const RoleList = () => import('Views/roles/List');
 const UserList = () => import('Views/users/List');
+const HouseOwnerList = () => import('Views/HouseOwner/List');
 
 export default {
    path: '/boxed',
@@ -122,6 +123,22 @@ export default {
                    },
                    {
                        breadcrumbActive: 'template.TEMPLATES'
+                   }
+               ]
+           }
+       },
+       {
+           path: '/boxed/houseowners',
+           component: HouseOwnerList,
+           meta: {
+               requiresAuth: true,
+               title: 'houseowner.HOUSEOWNERS',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'houseowner.HOUSEOWNERS'
                    }
                ]
            }

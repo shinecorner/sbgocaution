@@ -1,22 +1,32 @@
 <template>
-    <v-select :items="sections"
+    <v-autocomplete :items="sections"
               outline
               hide-details
               v-model="section"
-              :label="$t('template.SECTION')">
-    </v-select>
+              :label="$t('template.SECTION')"
+              :no-data-text="$t('general.NORESULTS_TEXT')">
+    </v-autocomplete>
 </template>
 <script>
     export default{
         data(){
             return {
-                sections:[
-                    {text: this.$t('template.filter.PDF'), value: 'Pdf'},
-                    {text: this.$t('template.filter.EMAIL'), value: 'E-mail'},
-                ]
+                // sections:[
+                //     {text: this.$t('template.filter.PDF'), value: 'Pdf'},
+                //     {text: this.$t('template.filter.EMAIL'), value: 'E-mail'},
+                // ]
             }
         },
         computed:{
+            sections: function(){
+                let section = [];
+                if(this.$store.getters.serverHelpers.sections){
+                    _.forOwn(this.$store.getters.serverHelpers.sections, function(title, key) {
+                        section.push({'value': title, 'text': title})
+                    });
+                }
+                return section;
+            },
             section: {
                 get () {
                     if(this.$store.getters.inputItems.hasOwnProperty('section')){

@@ -1,10 +1,12 @@
 <template>
-    <v-select :items="cities"
+    <v-autocomplete :items="cities"
               outline
               hide-details
               v-model="city"
-              :label="$t('privatelandlord.filter.CITY')">
-    </v-select>
+              :label="$t('privatelandlord.filter.CITY')"
+              :no-data-text="$t('general.NORESULTS_TEXT')"
+    >
+    </v-autocomplete>
 </template>
 
 <script>

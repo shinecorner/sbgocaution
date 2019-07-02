@@ -1,11 +1,12 @@
 <template>
-    <v-select :items="languages"        
-        outline                                                
+    <v-autocomplete :items="languages"
+        outline
         hide-details
         :label="$t('general.filter.LANGUAGE')"
         v-model="language"
+        :no-data-text="$t('general.NORESULTS_TEXT')"
     >
-    </v-select>
+    </v-autocomplete>
 </template>
 
 <script>
@@ -20,9 +21,9 @@ export default{
             let that = this;
             let language_option = [];
             let mix_lang = process.env.MIX_LANGUAGE_OPTIONS.split(',');
-            _.forEach(mix_lang, function(title, key) { 
+            _.forEach(mix_lang, function(title, key) {
                 language_option.push({'value': title, 'text': that.tConverted('general.language.'+title)})
-            }); 
+            });
             return language_option;
         },
         language: {
