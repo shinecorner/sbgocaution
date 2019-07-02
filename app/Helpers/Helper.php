@@ -737,7 +737,15 @@ if(!function_exists('checkDuplicateContact')) {
 if(!function_exists('getRoleNames')) {
 
     function getRoleNames() {
-        return Spatie\Permission\Models\Role::all()->pluck('name','id');
+        return Spatie\Permission\Models\Role::all()->pluck('name', 'id');
+    }
+
+}
+
+if(!function_exists('getPermissions')) {
+
+    function getPermissions() {
+        return Spatie\Permission\Models\Permission::all()->pluck('name', 'id');
     }
 
 }
@@ -781,10 +789,29 @@ if(!function_exists('getRealestateAgencyKantons')) {
 if(!function_exists('getRealestateAgencyCities')) {
 
     function getRealestateAgencyCities() {
-
         $cities = App\RealestateAgency::orderBy('city')->distinct('city')->pluck('city');
-
         return $cities;
     }
     
+}
+
+if(!function_exists('getHouseownerRealestateAgencies')) {
+
+    function getHouseownerRealestateAgencies() {
+        $realestateagencies = App\RealestateAgency::whereHas('policies', function($query) {
+            $query->where('realestate_agency_id', '!=', 0);
+            $query->where('houseowner_id', '!=', 0);
+        })->pluck('name', 'id');
+        return $realestateagencies;
+    }
+
+}
+
+if(!function_exists('getHouseOwnerCities')) {
+
+    function getHouseOwnerCities() {
+        $cities = App\HouseOwner::orderBy('city')->distinct('city')->pluck('city');
+        return $cities;
+    }
+
 }

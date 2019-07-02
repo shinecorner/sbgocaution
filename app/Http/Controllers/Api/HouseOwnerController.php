@@ -16,6 +16,18 @@ class HouseOwnerController extends Controller
      */
     public function index(Request $request)
     {
+
+        $data = [];
+
+        $helpers = [
+            'other' => [
+                'houseowner_cities',
+                'houseowner_realestate_agencies'
+            ]
+        ];
+
+        $this->responseHelper($data, $helpers);
+
         $query = HouseOwner::latest();
 
         if($request->has('limit')) {
@@ -24,17 +36,7 @@ class HouseOwnerController extends Controller
             $houseOwners = $query->paginate($request->per_page);
         }
 
-        return HouseOwnerResource::collection($houseOwners);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return HouseOwnerResource::collection($houseOwners)->additional($data);
     }
 
     /**
@@ -56,18 +58,10 @@ class HouseOwnerController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $houseOwner = HouseOwner::find($id);
+        return response()->json([
+            "data" => new HouseOwnerResource($houseOwner)
+        ], 200);
     }
 
     /**
