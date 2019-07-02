@@ -1,10 +1,12 @@
 <template>
-    <v-select :items="salutations"
+    <v-autocomplete :items="salutations"
               outline
               hide-details
               v-model="salutation"
-              :label="$t('contact.filter.SALUTATION')">
-    </v-select>
+              :label="$t('contact.filter.SALUTATION')"
+              :no-data-text="$t('general.NORESULTS_TEXT')"
+    >
+    </v-autocomplete>
 </template>
 
 <script>

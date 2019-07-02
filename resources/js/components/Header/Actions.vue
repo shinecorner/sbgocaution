@@ -11,7 +11,7 @@
     <div v-else-if="route.path == '/settings'">
         <setting-action></setting-action>
     </div>
-    <div v-else-if="route.path == '/templates'">
+    <div v-else-if="/^\/templates/.test(route.path)">
         <template-list-action></template-list-action>
     </div>
 </template>
@@ -21,7 +21,7 @@
     const BrokerListAction = () => import('Views/brokers/ListAction');
     const PrivatelandlordListAction = () => import('Views/privatelandlords/ListAction');
     const SettingAction = () => import('Views/settings/Action');
-    const TemplateListAction = () => import('Views/templates/ListAction');
+    const TemplateListAction = () => import('Views/templates/Action');
     export default {
         props: {},
         data() {

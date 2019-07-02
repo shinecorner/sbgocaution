@@ -11,6 +11,9 @@
                 <v-flex xs12 sm6 md6 lg2 xl2>
                     <select-type></select-type>
                 </v-flex>
+                <v-flex xs12 sm6 md6 lg2 xl2>
+                    <status></status>
+                </v-flex>
              </v-layout>
         </v-form>
         <v-layout row wrap>
@@ -30,12 +33,14 @@
     import {TableFilter} from "Helpers/TableFilter"
     import SelectType from "Components/Crm/Template/SelectType";
     import Sections from "Components/Crm/Template/Section";
+    import Status from "Components/Crm/Template/Status";
 
     export default{
         mixins: [globalFunction, TableFilter],
         components: {
            SelectType,
-           Sections
+           Sections,
+           Status
         }
      }
 </script>

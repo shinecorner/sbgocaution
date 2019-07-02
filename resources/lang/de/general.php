@@ -21,6 +21,8 @@ return [
     'INVOICES' => 'Rechnungen',
     'PUBLISHED' => 'Publiziert',
     'UNPUBLISHED' => 'Unpubliziert',
+    'SAVE' => 'Speichern',
+    'CLOSE' => 'Schliessen',
     'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',

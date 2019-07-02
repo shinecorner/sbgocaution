@@ -28,6 +28,15 @@ export const menus = {
             items: null,
             exact: true
         },
+        {
+            action: 'zmdi-account',
+            title: 'houseowner.HOUSEOWNERS',
+            active: false,
+            label: 'houseowners',
+            path: '/houseowners',
+            items: null,
+            exact: true
+        },
     ],
     'setting.OPTIONS':[
         {

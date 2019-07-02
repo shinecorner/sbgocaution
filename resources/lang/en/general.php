@@ -21,6 +21,8 @@ return [
     'INVOICES' => 'Invoices',
     'PUBLISHED' => 'Published',
     'UNPUBLISHED' => 'Unpublished',
+    'SAVE' => 'Save',
+    'CLOSE' => 'Close',
     'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',
