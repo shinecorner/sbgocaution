@@ -43,6 +43,7 @@ Route::group([
     Route::put('users/change_status/{id}', 'UserController@change_status');
     Route::resource('users', 'UserController');
     Route::resource('templates', 'TemplateController');
+    Route::resource('autosuggestions','AutosuggestionController');
 });
 
 
