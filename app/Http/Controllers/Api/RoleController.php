@@ -63,10 +63,20 @@ class RoleController extends Controller
      */
     public function show($id)
     {
+        $data = [];
+
         $role = Role::find($id);
-        return response()->json([
-            "data" => new RoleResource($role)
-        ], 200);
+        $data['data'] = new RoleResource($role); 
+
+        $helpers = [
+            'other' => [
+                'role_permissions'
+            ]
+        ];
+
+        $this->responseHelper($data, $helpers);
+
+        return response()->json($data, 200);
     }
 
     /**

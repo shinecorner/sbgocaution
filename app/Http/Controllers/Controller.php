@@ -70,6 +70,10 @@ class Controller extends BaseController
                             case 'houseowner_realestate_agencies':
                                 $data['helpers'][$helper] = getRealestateAgencies();
                                 break;
+
+                            case 'role_permissions':
+                                $data['helpers'][$helper] = getPermissions();
+                                break;
                         }
         			}
         			break;

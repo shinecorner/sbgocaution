@@ -737,7 +737,15 @@ if(!function_exists('checkDuplicateContact')) {
 if(!function_exists('getRoleNames')) {
 
     function getRoleNames() {
-        return Spatie\Permission\Models\Role::all()->pluck('name','id');
+        return Spatie\Permission\Models\Role::all()->pluck('name', 'id');
+    }
+
+}
+
+if(!function_exists('getPermissions')) {
+
+    function getPermissions() {
+        return Spatie\Permission\Models\Permission::all()->pluck('name', 'id');
     }
 
 }
