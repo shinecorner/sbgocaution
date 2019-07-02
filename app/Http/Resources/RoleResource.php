@@ -16,7 +16,7 @@ class RoleResource extends JsonResource
     {
         $data = parent::toArray($request);
 
-        $data['permissions'] = $this->permissions;
+        $data['permissions'] = $this->permissions->pluck('id');
         $data['count_active_users'] = $this->users()->where('status', 1)->count();
         $data['count_inactive_users'] = $this->users()->where('status', 0)->count();
 
