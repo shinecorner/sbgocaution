@@ -94,7 +94,11 @@ class RoleController extends Controller
 
         $role = Role::find($id);
 
-        if($role->update($request->all())) 
+        if($request->has('permissions')) {
+            $role->syncPermissions($request->permissions);
+        }
+
+        if($role->update($request->except('permissions'))) 
         {
             $message = __('general.role.UPDATE_SUCCESS');
         }
