@@ -7,6 +7,8 @@ const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
 const TemplatePage = () => import('Views/templates/List')
 const RoleList = () => import('Views/roles/List');
+const RoleAddEdit = () => import('Views/roles/AddEdit');
+const UserAddEdit = () => import('Views/users/AddEdit');
 const UserList = () => import('Views/users/List');
 
 export default {
@@ -80,6 +82,7 @@ export default {
       },
       {
         path: '/boxed/roles',
+        name: 'role_list',
         component: RoleList,
         meta: {
             requiresAuth: true,
@@ -95,8 +98,43 @@ export default {
         }
       },
       {
+        path: '/boxed/roles/:id/edit',
+        name: 'role_edit',
+        component: RoleAddEdit,
+        meta: {
+            requiresAuth: true,
+            title: 'role.ROLES',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'role.ROLES'
+              }
+            ]
+        }
+      },
+      {
         path: '/boxed/users',
+        name: 'user_list',
         component: UserList,
+        meta: {
+            requiresAuth: true,
+            title: 'user.USERS',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'user.USERS'
+              }
+            ]
+        }
+      },
+      {
+        path: '/boxed/users/:id/edit',
+        name: 'user_edit',
+        component: UserAddEdit,
         meta: {
             requiresAuth: true,
             title: 'user.USERS',

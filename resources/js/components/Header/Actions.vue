@@ -1,4 +1,4 @@
-<template>
+<template>        
     <div v-if="route.path == '/contacts'">
         <contact-list-action></contact-list-action>
     </div>
@@ -14,6 +14,12 @@
     <div v-else-if="route.path == '/templates'">
         <template-list-action></template-list-action>
     </div>
+    <div v-else-if="/^\/roles/.test(route.path)">
+        <role-action></role-action>
+    </div>
+    <div v-else-if="/^\/users/.test(route.path)">
+        <user-action></user-action>
+    </div>
 </template>
 <script>
     import { mapState  } from "vuex";
@@ -21,10 +27,12 @@
     const BrokerListAction = () => import('Views/brokers/ListAction');
     const PrivatelandlordListAction = () => import('Views/privatelandlords/ListAction');
     const SettingAction = () => import('Views/settings/Action');
+    const RoleAction = () => import('Views/roles/Action');
+    const UserAction = () => import('Views/users/Action');
     const TemplateListAction = () => import('Views/templates/ListAction');
     export default {
         props: {},
-        data() {
+        data() {            
             return {}
         },
         computed: mapState([
@@ -37,7 +45,9 @@
             BrokerListAction,
             PrivatelandlordListAction,
             SettingAction,
-            TemplateListAction
+            TemplateListAction,
+            RoleAction,
+            UserAction
         }
     }
 </script>
