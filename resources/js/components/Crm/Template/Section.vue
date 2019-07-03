@@ -3,8 +3,7 @@
               outline
               hide-details
               v-model="section"
-              :label="$t('template.SECTION')"
-              :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')">
+              :label="$t('template.SECTION')">
     </v-autocomplete>
 </template>
 <script>

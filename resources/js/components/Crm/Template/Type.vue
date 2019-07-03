@@ -3,8 +3,7 @@
               outline
               hide-details
               v-model="selecttype"
-              :label="$t('template.filter.SELECT_TYPE')"
-              :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')">
+              :label="$t('template.filter.SELECT_TYPE')">
     </v-autocomplete>
 </template>
 <script>

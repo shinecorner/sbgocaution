@@ -3,8 +3,7 @@
               outline
               hide-details
               v-model="policyacceptednumber"
-              :label="$i18n.t('privatelandlord.filter.POLICY_ACCEPTED_NUMBER')"
-              :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')">
+              :label="$i18n.t('privatelandlord.filter.POLICY_ACCEPTED_NUMBER')">
     </v-autocomplete>
 </template>
 <script>

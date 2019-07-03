@@ -13,8 +13,8 @@
                                         <v-flex sm4 md4 lg4>
                                             <v-text-field
                                                 outline
-                                                v-model="name"
-                                                label="Name"
+                                                v-model="templateData.name"
+                                                :label="$t('general.NAME')"
                                                 hide-details
                                                 :data-vv-as="$t('general.NAME')"
                                                 data-vv-name="name"
@@ -27,23 +27,20 @@
                                             <v-text-field
                                                 outline
                                                 :label="$t('template.TEMPLATE_KEY')"
-                                                v-model="template_key"
+                                                v-model="templateData.template_key"
                                                 hide-details
                                                 :readonly="$route.name == 'template_edit'"
-                                                :rules="[ checkTemplateKey ]"
                                                 :data-vv-as="$t('template.TEMPLATE_KEY')"
                                                 data-vv-name="template_key"
-                                                v-validate="'required'"
+                                                v-validate="'required|checkTemplateKey'"
                                                 :error="errors.has('template_key')"
                                                 ></v-text-field>
-                                            <span class="text-danger" v-if="tempkey_error">Template Key already exist!!!</span>
                                         </v-flex>
                                         <v-flex sm4 md4 lg4 >
                                             <v-text-field v-if="$route.name == 'template_create'"
                                                 outline
-                                                v-model="section"
+                                                v-model="templateData.section"
                                                 :label="$t('template.SECTION')"
-                                                :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')"
                                                 :data-vv-as="$t('template.SECTION')"
                                                 data-vv-name="section"
                                                 v-validate="'required'"
@@ -51,26 +48,24 @@
                                                 required
                                             ></v-text-field>
                                             <v-autocomplete v-else
-                                                            :items="sections"
-                                                            outline
-                                                            hide-details
-                                                            v-model="section"
-                                                            :label="$t('template.SECTION')"
-                                                            :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')"
-                                                            :data-vv-as="$t('template.SECTION')"
-                                                            data-vv-name="section"
-                                                            v-validate="'required'"
-                                                            :error="errors.has('section')"
+                                                :items="sections"
+                                                outline
+                                                hide-details
+                                                v-model="templateData.section"
+                                                :label="$t('template.SECTION')"
+                                                :data-vv-as="$t('template.SECTION')"
+                                                data-vv-name="section"
+                                                v-validate="'required'"
+                                                :error="errors.has('section')"
                                             >
                                             </v-autocomplete>
                                         </v-flex>
                                         <v-flex sm4 md4 lg4>
                                             <v-autocomplete :items="selecttypes"
                                                 outline
-                                                v-model="selecttype"
+                                                v-model="templateData.type"
                                                 hide-details
                                                 :label="$t('template.filter.SELECT_TYPE')"
-                                                :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')"
                                                 :data-vv-as="$t('template.filter.SELECT_TYPE')"
                                                 data-vv-name="selecttype"
                                                 v-validate="'required'"
@@ -81,7 +76,7 @@
                                         <v-flex sm4 md4 lg4>
                                             <v-switch
                                                 color="success"
-                                                v-model="status"
+                                                v-model="templateData.status"
                                                 :label="$t('general.STATUS')"
                                                >
                                             </v-switch>
@@ -90,7 +85,7 @@
                                 </v-flex>
                                 <v-flex md8>
                                     <quill-editor class="editor-content"
-                                        v-model="template_desc"
+                                        v-model="templateData.template_desc"
                                         ref="myQuillEditor"
                                         :data-vv-as="$t('template.TEMPLATE_DESC')"
                                         data-vv-name="template_desc"
@@ -120,13 +115,7 @@
             let that = this;
             if(this.$route.name == 'template_edit') {
                 api.get('/api/templates/' + this.$route.params.template_id).then(function (response) {
-                    var templateData = response.data.data;
-                    that.name = templateData.name
-                    that.template_key = templateData.template_key,
-                    that.section = templateData.section,
-                    that.status = templateData.status == 1 ? true : false,
-                    that.selecttype = templateData.type,
-                    that.template_desc = templateData.template_desc
+                    that.templateData = response.data.data;
                 });
             }
             else {
@@ -138,18 +127,36 @@
             }
             Vue.prototype.$eventHub.$on('saveTemplate', this.validateForm);
             Vue.prototype.$eventHub.$on('toggleEditDialogTemplate', this.deleteConfirm);
+            this.$validator.extend('checkTemplateKey', {
+                getMessage(field, val) {
+                    return 'Template Key already exist.'
+                },
+                validate(value, field) {
+                    that.temp_key = value ? value.toLowerCase().trim().replace(/\s+/g, " ").split(' ').join('_') : '';
+                    if(that.template_keys.includes(that.temp_key)) {
+                        that.tempkey_error = true;
+                        return false;
+                    }
+                    else {
+                        that.tempkey_error = false;
+                        return true;
+                    }
+                }
+            })
         },
         beforeDestroy() {
             Vue.prototype.$eventHub.$off('saveTemplate');
         },
         data: function() {
             return {
-                name:'',
-                template_key:'',
-                template_desc:'',
-                section: '',
-                status:false,
-                selecttype: '',
+                templateData:{
+                    name:'',
+                    template_key:'',
+                    template_desc:'',
+                    section: '',
+                    status: 0,
+                    type: '',
+                },
                 selecttypes:[
                     {text: this.$t('template.filter.PDF'), value: 'pdf'},
                     {text: this.$t('template.filter.EMAIL'), value: 'email'},
@@ -162,48 +169,33 @@
         },
         methods: {
             validateForm() {
-                if(this.$refs.form.validate()) {
-                    this.$validator.validateAll().then((result) => {
-                        if (!result) {
-                            Vue.prototype.$eventHub.$emit('fireError', this.$validator.errors.all());
-                            return;
+                this.$validator.validateAll().then((result) => {
+                    if (!result) {
+                        Vue.prototype.$eventHub.$emit('fireError', this.$validator.errors.all());
+                        return;
+                    }
+                    else{
+                        this.templateData.template_key = this.temp_key;
+                        if(this.$route.name == "template_edit") {
+                            api.put('/api/templates/' + this.$route.params.template_id, this.templateData).then(response => {
+                                Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                            })
                         }
-                        else{
-                            if(this.$route.name == "template_edit") {
-                                let formData = {
-                                    name: this.name,
-                                    section: this.section,
-                                    status: this.status == true ? 1 : 0,
-                                    template_desc: this.template_desc,
-                                    type: this.selecttype
-                                }
-                                api.put('/api/templates/' + this.$route.params.template_id, formData).then(response => {
-                                    Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
-                                })
-                            }
-                            else if(this.$route.name == "template_create"){
-                                let formData = {
-                                    name: this.name,
-                                    section: this.section,
-                                    status: this.status == true ? 1 : 0,
-                                    template_desc: this.template_desc,
-                                    template_key:this.temp_key,
-                                    type: this.selecttype
-                                }
-                                api.post('/api/templates', formData).then(response => {
-                                    Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
-                                })
-                            }
+                        else if(this.$route.name == "template_create"){
+                            api.post('/api/templates', this.templateData).then(response => {
+                                Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                            })
                         }
-                        Vue.prototype.$eventHub.$emit('checkError', result);
-                    });
-                }
+                    }
+                    Vue.prototype.$eventHub.$emit('checkError', result);
+                });
             },
             checkTemplateKey(){
-                this.temp_key = this.template_key ? this.template_key.toLowerCase().trim().replace(/\s+/g, " ").split(' ').join('_') : '';
+                this.temp_key = this.templateData.template_key ? this.templateData.template_key.toLowerCase().trim().replace(/\s+/g, " ").split(' ').join('_') : '';
                 if(this.template_keys.includes(this.temp_key)) {
                     this.tempkey_error = true;
-                    return 'Template key already Exist!!!';
+                    Vue.prototype.$eventHub.$emit('fireError', 'template key error');
+                    return false;
                 }
                 else {
                     this.tempkey_error = false;

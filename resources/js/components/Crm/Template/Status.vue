@@ -3,8 +3,7 @@
                     outline
                     hide-details
                     v-model="status"
-                    :label="$t('general.STATUS')"
-                    :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')">
+                    :label="$t('general.STATUS')">
     </v-autocomplete>
 </template>
 <script>

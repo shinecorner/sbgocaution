@@ -38,7 +38,6 @@
                             </template>
                             <template slot="template_key" slot-scope="props">
                                 <span class="primary-text left ml-1">{{ props.rowData.template_key}}</span><br/>
-
                             </template>
                             <template slot="edit" slot-scope="props">
                                 <v-tooltip top v-if="props.rowData.id">
@@ -93,10 +92,9 @@
     import api from "Api";
     import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
     import globalFunction from "Helpers/helpers";
-    import PolicyCount from "Components/Crm/General/PolicyCount";
     import {TableData} from "Helpers/TableData";
     import Filters from "./Filters";
-    import DeleteDialog from "Components/Crm/General/NoSelectList";
+    import DeleteDialog from "Components/Crm/General/NoItemSelectedDialog";
     import ConfirmDelete from "Components/Crm/Template/DeleteConfirmation";
 
     export default {
@@ -105,7 +103,6 @@
             Vuetable,
             VuetablePagination,
             VuetablePaginationInfo,
-            PolicyCount,
             Filters,
             DeleteDialog,
             ConfirmDelete
