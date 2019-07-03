@@ -4,7 +4,7 @@
               hide-details
               v-model="kanton"
               :label="$t('privatelandlord.filter.KANTON')"
-              :no-data-text="$t('general.NORESULTS_TEXT')"
+              :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')"
     >
     </v-autocomplete>
 </template>

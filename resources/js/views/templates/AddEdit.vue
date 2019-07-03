@@ -43,7 +43,7 @@
                                                 outline
                                                 v-model="section"
                                                 :label="$t('template.SECTION')"
-                                                :no-data-text="$t('general.NORESULTS_TEXT')"
+                                                :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')"
                                                 :data-vv-as="$t('template.SECTION')"
                                                 data-vv-name="section"
                                                 v-validate="'required'"
@@ -56,7 +56,7 @@
                                                             hide-details
                                                             v-model="section"
                                                             :label="$t('template.SECTION')"
-                                                            :no-data-text="$t('general.NORESULTS_TEXT')"
+                                                            :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')"
                                                             :data-vv-as="$t('template.SECTION')"
                                                             data-vv-name="section"
                                                             v-validate="'required'"
@@ -70,7 +70,7 @@
                                                 v-model="selecttype"
                                                 hide-details
                                                 :label="$t('template.filter.SELECT_TYPE')"
-                                                :no-data-text="$t('general.NORESULTS_TEXT')"
+                                                :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')"
                                                 :data-vv-as="$t('template.filter.SELECT_TYPE')"
                                                 data-vv-name="selecttype"
                                                 v-validate="'required'"
@@ -112,7 +112,6 @@
 </template>
 <script>
     import api from "Api";
-    import ConfirmDelete from "Components/Crm/Template/DeleteConfirmation";
     import DeleteConfirmation from "../../components/Crm/Template/DeleteConfirmation";
     export default {
         components: {DeleteConfirmation},
@@ -137,14 +136,11 @@
                     })
                 });
             }
-            Vue.prototype.$eventHub.$on('saveTemplate', that.validateForm);
+            Vue.prototype.$eventHub.$on('saveTemplate', this.validateForm);
             Vue.prototype.$eventHub.$on('toggleEditDialogTemplate', this.deleteConfirm);
         },
         beforeDestroy() {
             Vue.prototype.$eventHub.$off('saveTemplate');
-        },
-        component: {
-            ConfirmDelete
         },
         data: function() {
             return {

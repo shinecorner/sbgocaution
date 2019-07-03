@@ -4,18 +4,13 @@
               hide-details
               v-model="section"
               :label="$t('template.SECTION')"
-              :no-data-text="$t('general.NORESULTS_TEXT')">
+              :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')">
     </v-autocomplete>
 </template>
 <script>
     export default{
         data(){
-            return {
-                // sections:[
-                //     {text: this.$t('template.filter.PDF'), value: 'Pdf'},
-                //     {text: this.$t('template.filter.EMAIL'), value: 'E-mail'},
-                // ]
-            }
+            return {}
         },
         computed:{
             sections: function(){

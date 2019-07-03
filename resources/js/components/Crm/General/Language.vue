@@ -4,7 +4,7 @@
         hide-details
         :label="$t('general.filter.LANGUAGE')"
         v-model="language"
-        :no-data-text="$t('general.NORESULTS_TEXT')"
+        :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')"
     >
     </v-autocomplete>
 </template>

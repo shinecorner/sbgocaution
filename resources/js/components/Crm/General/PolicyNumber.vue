@@ -4,7 +4,7 @@
               hide-details
               v-model="policynumber"
               :label="$t('privatelandlord.filter.POLICY_NUMBER')"
-              :no-data-text="$t('general.NORESULTS_TEXT')">
+              :no-data-text="$t('general.NO_RESULTS_TEXT_DROPDOWN')">
     </v-autocomplete>
 </template>
 <script>
