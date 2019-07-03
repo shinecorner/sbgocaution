@@ -9,7 +9,8 @@ return [
                         'PDF' => 'PDF',
                         'EMAIL' => 'E-Mail',
                   ],
-     'DELETE_CONFIRM_MSG' => 'Sind Sie sicher, dass Sie die ausgewählte {name} löschen möchten?'
+     'DELETE_CONFIRM_MSG' => 'Sind Sie sicher, dass Sie die ausgewählte {name} löschen möchten?',
+     'TEMPLATE_DESC' => 'Vorlage Beschreibung'
     ];
 
 

@@ -4,7 +4,6 @@
               hide-details
               v-model="city"
               :label="$t('privatelandlord.filter.CITY')"
-              :no-data-text="$t('general.NORESULTS_TEXT')"
     >
     </v-autocomplete>
 </template>

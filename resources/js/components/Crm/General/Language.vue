@@ -1,12 +1,11 @@
 <template>
-    <v-autocomplete :items="languages"
+    <v-select :items="languages"
         outline
         hide-details
         :label="$t('general.filter.LANGUAGE')"
         v-model="language"
-        :no-data-text="$t('general.NORESULTS_TEXT')"
     >
-    </v-autocomplete>
+    </v-select>
 </template>
 
 <script>
