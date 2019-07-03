@@ -30,6 +30,10 @@ class HouseOwnerController extends Controller
 
         $query = HouseOwner::latest();
 
+        if($request->has('filters')) {
+            $this->filters($request, $query, ['keyword_search', 'city', 'realestate_agency', 'policy_count']);
+        }
+
         if($request->has('limit')) {
             $houseOwners = $query->paginate($request->limit);
         } else {
@@ -86,4 +90,34 @@ class HouseOwnerController extends Controller
     {
         //
     }
+
+    private function search($keyword, $query) 
+    {
+        $searchWildcard = '%' . request()->{'filters.'.$keyword} . '%';
+
+        $query->where(function($query) use($searchWildcard) {
+            $fields = ['name', 'city', 'address'];
+            foreach($fields as $field) {
+                $query->orWhere($field, 'LIKE', $searchWildcard);
+            }
+        });
+    }
+
+    private function filters($request, $query, $fields) 
+    {
+        foreach($request->filters as $key => $value) {
+            if($request->has('filters.'.$key) && in_array($key, $fields)) {
+                if($key == 'keyword_search') {
+                    $this->search($key, $query);
+                } elseif($key == 'city') {
+                    $query->where('city', '=', $value);
+                } else if($key == 'realestate_agency') {
+                    $query->where('realestate_agency_id', '=', $value);
+                } else if($key == 'policy_count') {
+                    $this->policy_count($query, $value);
+                }
+            }
+        }
+    }
+
 }
