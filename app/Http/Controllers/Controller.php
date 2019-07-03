@@ -51,6 +51,10 @@ class Controller extends BaseController
                                 $data['helpers'][$helper] = getRoleNames();
                                 break;
 
+                            case 'users_permissions':
+                                $data['helpers'][$helper] = getPermissions();
+                                break;
+
                             case 'sections':
                                 $data['helpers'][$helper] = getTemplateSections();
                                 break;
