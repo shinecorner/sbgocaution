@@ -63,11 +63,17 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'signature' => $request->signature,
-            'digital_signature' => $request->digital_signature
+            'digital_signature' => $request->digital_signature,
+            'crm_language' => $request->crm_language,
+            'frontend_language' => $request->frontend_language
         ]);
 
         if($request->has('roles')) {
             $user->syncRoles($request->roles);
+        }
+
+        if($request->has('permissions')) {
+            $user->syncPermissions($request->permissions);
         }
 
         if($user) 
@@ -94,10 +100,19 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $data = [];
         $user = User::find($id);
-        return response()->json([
-            'data' => new UserResource($user)
-        ], 200);
+        $data['data'] = new UserResource($user);
+        
+        $helpers = [
+            'other' => [
+                'users_roles',
+                'users_permissions'
+            ]
+        ];
+        $this->responseHelper($data, $helpers);
+        
+        return response()->json($data, 200);
     }
 
     /**
@@ -122,12 +137,18 @@ class UserController extends Controller
             $user->syncRoles($request->roles);
         }
 
+        if($request->has('permissions')) {
+            $user->syncPermissions($request->permissions);
+        }
+
         $status = $user->update([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
                 'signature' => $request->signature,
-                'digital_signature' => $request->digital_signature
+                'digital_signature' => $request->digital_signature,
+                'crm_language' => $request->crm_language,
+                'frontend_language' => $request->frontend_language
         ]);
 
         if($status) 
