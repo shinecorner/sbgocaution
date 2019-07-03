@@ -9,7 +9,6 @@ import settings from './modules/settings';
 //import mail from './modules/mail';
 import sidebar from './modules/sidebar';
 import crm from './modules/crm';
-import template from './modules/template';
 
 Vue.use(Vuex);
 
@@ -22,6 +21,5 @@ export const store = new Vuex.Store({
         //mail,
         sidebar,
         crm,
-        template
     }
 })

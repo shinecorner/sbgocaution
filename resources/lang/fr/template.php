@@ -9,6 +9,7 @@ return [
                                 'PDF' => 'PDF',
                                 'EMAIL' => 'E-Mail',
                          ],
-    'DELETE_CONFIRM_MSG' => 'Êtes-vous sûr de vouloir supprimer la {name} sélectionnée ?'
+    'DELETE_CONFIRM_MSG' => 'Êtes-vous sûr de vouloir supprimer la {name} sélectionnée ?',
+    'TEMPLATE_DESC' => 'Template Description'
     ];
 

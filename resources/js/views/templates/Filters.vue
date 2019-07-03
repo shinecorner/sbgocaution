@@ -9,7 +9,7 @@
                     <sections></sections>
                 </v-flex>
                 <v-flex xs12 sm6 md6 lg2 xl2>
-                    <select-type></select-type>
+                    <type></type>
                 </v-flex>
                 <v-flex xs12 sm6 md6 lg2 xl2>
                     <status></status>
@@ -31,14 +31,14 @@
 <script>
     import globalFunction from "Helpers/helpers";
     import {TableFilter} from "Helpers/TableFilter"
-    import SelectType from "Components/Crm/Template/SelectType";
+    import Type from "Components/Crm/Template/Type";
     import Sections from "Components/Crm/Template/Section";
     import Status from "Components/Crm/Template/Status";
 
     export default{
         mixins: [globalFunction, TableFilter],
         components: {
-           SelectType,
+           Type,
            Sections,
            Status
         }

@@ -29,7 +29,7 @@ class BrokerController extends Controller
         $query = Broker::latest();
 
         if($request->has('filters')) {
-            $this->filters($request, $query, ['keyword_search','city', 'policy_count', 'accepted_policy_count']);
+            $this->filters($request, $query, ['keyword_search', 'city', 'policy_count', 'accepted_policy_count']);
         }
 
         if($request->has('limit')) {
