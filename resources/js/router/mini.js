@@ -10,6 +10,7 @@ const RoleList = () => import('Views/roles/List');
 const RoleAddEdit = () => import('Views/roles/AddEdit');
 const UserAddEdit = () => import('Views/users/AddEdit');
 const UserList = () => import('Views/users/List');
+const HouseOwnerList = () => import('Views/HouseOwner/List');
 
 export default {
    path: '/mini',
@@ -160,6 +161,22 @@ export default {
                    },
                    {
                        breadcrumbActive: 'template.TEMPLATES'
+                   }
+               ]
+           }
+       },
+       {
+           path: '/mini/houseowners',
+           component: HouseOwnerList,
+           meta: {
+               requiresAuth: true,
+               title: 'houseowner.HOUSEOWNERS',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'houseowner.HOUSEOWNERS'
                    }
                ]
            }

@@ -21,6 +21,8 @@ return [
     'INVOICES' => 'Invoices',
     'PUBLISHED' => 'Published',
     'UNPUBLISHED' => 'Unpublished',
+    'SAVE' => 'Save',
+    'CLOSE' => 'Close',
     'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',
@@ -123,5 +125,6 @@ return [
     'ACTIVATED' => 'Activated',
     'SELECT_STATUS' => 'Select status',
     'NO_RESULTS_TEXT_DROPDOWN' => 'No matching results found!',
-    'SAVE_AND_CLOSE' => 'Save & Close'
+    'SAVE_AND_CLOSE' => 'Save & Close',
+    'NO_SELECT_ITEM' => 'Please first make a selection from the list'
 ];

@@ -11,7 +11,7 @@
     <div v-else-if="route.path == '/settings'">
         <setting-action></setting-action>
     </div>
-    <div v-else-if="route.path == '/templates'">
+    <div v-else-if="/^\/templates/.test(route.path)">
         <template-list-action></template-list-action>
     </div>
     <div v-else-if="/^\/roles/.test(route.path)">
@@ -29,7 +29,7 @@
     const SettingAction = () => import('Views/settings/Action');
     const RoleAction = () => import('Views/roles/Action');
     const UserAction = () => import('Views/users/Action');
-    const TemplateListAction = () => import('Views/templates/ListAction');
+    const TemplateListAction = () => import('Views/templates/Action');
     export default {
         props: {},
         data() {            

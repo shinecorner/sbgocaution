@@ -1,10 +1,12 @@
 <template>
-    <v-select :items="kantons"
+    <v-autocomplete :items="kantons"
               outline
               hide-details
               v-model="kanton"
-              :label="$t('privatelandlord.filter.KANTON')">
-    </v-select>
+              :label="$t('privatelandlord.filter.KANTON')"
+              :no-data-text="$t('general.NORESULTS_TEXT')"
+    >
+    </v-autocomplete>
 </template>
 
 <script>

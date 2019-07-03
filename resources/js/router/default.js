@@ -11,6 +11,8 @@ const RoleList = () => import('Views/roles/List');
 const RoleAddEdit = () => import('Views/roles/AddEdit');
 const UserAddEdit = () => import('Views/users/AddEdit');
 const UserList = () => import('Views/users/List');
+const TemplateAddEditPage = () => import('Views/templates/AddEdit')
+const HouseOwnerList = () => import('Views/HouseOwner/List');
 
 export default {
    path: '/',
@@ -184,6 +186,7 @@ export default {
       },
        {
            path: '/templates',
+           name: 'templates',
            component: TemplatePage,
            meta: {
                requiresAuth: true,
@@ -194,6 +197,56 @@ export default {
                    },
                    {
                        breadcrumbActive: 'template.TEMPLATES'
+                   }
+               ]
+           }
+       },
+       {
+           path: '/templates/:template_id/edit',
+           name:'template_edit',
+           component: TemplateAddEditPage,
+           meta: {
+               requiresAuth: true,
+               title: 'template.TEMPLATES',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'template.TEMPLATES'
+                   }
+               ]
+           }
+       },
+       {
+           path: '/templates/create',
+           name:'template_create',
+           component: TemplateAddEditPage,
+           meta: {
+               requiresAuth: true,
+               title: 'template.TEMPLATES',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'template.TEMPLATES'
+                   }
+               ]
+           }
+       },
+       {
+           path: '/houseowners',
+           component: HouseOwnerList,
+           meta: {
+               requiresAuth: true,
+               title: 'houseowner.HOUSEOWNERS',
+               breadcrumb: [
+                   {
+                       breadcrumbInactive: 'general.CRM'
+                   },
+                   {
+                       breadcrumbActive: 'houseowner.HOUSEOWNERS'
                    }
                ]
            }

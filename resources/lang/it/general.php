@@ -21,6 +21,8 @@ return [
     'INVOICES' => 'Rechnungen',
     'PUBLISHED' => 'Pubblicato',
     'UNPUBLISHED' => 'Inedito',
+    'SAVE' => 'Salva',
+    'CLOSE' => 'Schliessen',
     'language' => [
         'DE' => 'Deutsch',
         'FR' => 'Französisch',
@@ -120,8 +122,9 @@ return [
     'ROWS' => 'Righe',
     'MORE_FILTER' => 'Più filtro',
     'ENABLED' => 'Abilitato',
-    'ACTIVATED' => 'Attivato',    
+    'ACTIVATED' => 'Attivato',
     'SELECT_STATUS' => 'Seleziona lo stato',
     'NO_RESULTS_TEXT_DROPDOWN' => 'Nessun risultato corrispondente trovato!',
-    'SAVE_AND_CLOSE' => 'Salva & Schliessen'
+    'SAVE_AND_CLOSE' => 'Salva & Schliessen',
+    'NO_SELECT_ITEM' => 'Seleziona un elemento dalla lista'
 ];

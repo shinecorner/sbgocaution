@@ -42,7 +42,7 @@
                             </template>
                             <template slot="edit" slot-scope="props">
                                 <v-tooltip top v-if="props.rowData.id">
-                                    <a href="#" slot="activator">
+                                    <a v-on:click="editRedirect(props.rowData.id)" slot="activator">
                                         <v-avatar size="26" class="round-badge-success">
                                             <v-icon color="white" small>zmdi zmdi-edit</v-icon>
                                         </v-avatar>
@@ -84,6 +84,8 @@
                 </app-card>
             </v-layout>
         </v-container>
+        <confirm-delete v-if="confirmDeleteDialog" :toggleConfirm="deleteConfirm"></confirm-delete>
+        <delete-dialog v-if="deleteDialog" :toggle="deleteToggle"></delete-dialog>
     </div>
 </template>
 
@@ -94,6 +96,8 @@
     import PolicyCount from "Components/Crm/General/PolicyCount";
     import {TableData} from "Helpers/TableData";
     import Filters from "./Filters";
+    import DeleteDialog from "Components/Crm/General/NoSelectList";
+    import ConfirmDelete from "Components/Crm/Template/DeleteConfirmation";
 
     export default {
         mixins: [globalFunction, TableData],
@@ -102,7 +106,9 @@
             VuetablePagination,
             VuetablePaginationInfo,
             PolicyCount,
-            Filters
+            Filters,
+            DeleteDialog,
+            ConfirmDelete
         },
         data() {
             return {
@@ -114,6 +120,9 @@
                     {title: () => this.$i18n.t('template.SECTION'), name: "section"},
                     {title: () => this.$i18n.t('general.STATUS'), name: "status"}
                 ],
+                checkedRows: [],
+                deleteDialog: false,
+                confirmDeleteDialog: false
             }
         },
         computed:{
@@ -130,10 +139,33 @@
         methods: {
             templateFetch(apiUrl,httpOptions){
                return api.get(apiUrl, httpOptions);
+            },
+            editRedirect(template_id) {
+                this.$router.push({name:'template_edit', params: { template_id: template_id }})
+            },
+            toggleDialog(){
+                if(this.checkedRows.length >0) {
+                    this.deleteConfirm();
+                }else {
+                    this.deleteToggle();
+                }
+            },
+            deleteConfirm(){
+                this.confirmDeleteDialog = !this.confirmDeleteDialog;
+            },
+            deleteToggle(){
+                this.deleteDialog = !this.deleteDialog;
+            },
+            deleteTemplateById(){
+                // api.delete('/api/templates/' + this.checkedRows).then(response => {
+                //     console.log('delete')
+                // })
             }
         },
         created() {
            this.$store.dispatch("setHeaderTitle", 'template.TEMPLATES');
+           Vue.prototype.$eventHub.$on('toggleDialogTemplate', this.toggleDialog);
+           Vue.prototype.$eventHub.$on('deleteTemp', this.deleteTemplateById);
         }
     };
 </script>
@@ -146,17 +178,26 @@
         width: 40px;
     }
     .templatelist >>> .list-table-container table.v-table thead th:nth-child(2), .templatelist >>> .list-table-container table.v-table tbody td:nth-child(2){
-        width: 200px;
+        width: 220px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .templatelist >>> .list-table-container table.v-table thead th:nth-child(3), .templatelist >>> .list-table-container table.v-table tbody td:nth-child(3){
         width: 40px;
     }
     .templatelist >>> .list-table-container table.v-table thead th:nth-child(4), .templatelist >>> .list-table-container table.v-table tbody td:nth-child(4){
-        width: 25%;
+        width: 22%;
         padding-left: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .templatelist >>> .list-table-container table.v-table thead th:nth-child(5), .templatelist >>> .list-table-container table.v-table tbody td:nth-child(5){
         width: 350px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .templatelist >>> .list-table-container table.v-table thead th:nth-child(6), .templatelist >>> .list-table-container table.v-table tbody td:nth-child(6){
         width: 150px;
