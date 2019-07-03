@@ -2,5 +2,9 @@
 return [
     'HOUSEOWNER' => 'Propriétaire',
     'HOUSEOWNERS' => 'Propriétaires',
-    'CITY' => 'Ville'
-    ];
+    'CITY' => 'Ville',
+	'status' => [
+		'NOT_CONTACTED' => "Kontaktiert",
+		'IN_CONTACT' => "Nicht kontaktiert"
+	]
+];

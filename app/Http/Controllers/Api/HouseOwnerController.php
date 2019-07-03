@@ -20,6 +20,9 @@ class HouseOwnerController extends Controller
         $data = [];
 
         $helpers = [
+            'statuses' => [
+                'houseowner'
+            ],
             'other' => [
                 'houseowner_cities',
                 'houseowner_realestate_agencies'

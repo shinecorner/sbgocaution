@@ -249,6 +249,25 @@ if(!function_exists('getPolicyRealestateAgencyStatusesPlain')) {
     
 }
 
+if(!function_exists('getHouseownerStatuses')) {
+
+    function getHouseownerStatuses() {
+        $status = [];
+        $status["not_contacted"] = "houseowner.status.NOT_CONTACTED";
+        $status["in_contact"] = "houseowner.status.IN_CONTACT";    
+        return $status;
+    }
+
+}
+
+if(!function_exists('getHouseownerStatusesPlain')) {
+
+    function getHouseownerStatusesPlain() {
+        return getHouseownerStatuses(1);
+    }
+
+}
+
 if(!function_exists('roundTo5')){
     /**
      * Returns decimal number which is round to 5.
