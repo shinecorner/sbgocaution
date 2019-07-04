@@ -3,10 +3,10 @@ import Router from 'vue-router'
 
 //routes
 import defaultRoutes from './default';
-import horizontalRoutes from './horizontal';
+/*import horizontalRoutes from './horizontal';
 import boxedRoutes from './boxed';
 import mini from './mini';
-import boxedV2 from './boxed-v2';
+import boxedV2 from './boxed-v2';*/
 import Full from 'Container/Full';
 
 // session components
@@ -24,10 +24,10 @@ export default new Router({
 	mode: 'history',
 	routes: [
 		defaultRoutes,
-		horizontalRoutes,
+		/*horizontalRoutes,
 		boxedRoutes,
 		mini,
-		boxedV2,
+		boxedV2,*/
 		{
 			path: '/callback',
 			component: Auth0CallBack

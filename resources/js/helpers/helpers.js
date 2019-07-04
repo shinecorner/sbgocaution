@@ -66,7 +66,13 @@ let globalFunction = {
 		        return this.$t(_.replace(caption_key, '.'+_.last(k_array), '.'+_.toUpper(_.last(k_array))));
 	        }
 	        return this.$t(caption_key);
-        }
+        },
+        /*fireSuccess: function(message){
+            return Vue.prototype.$eventHub.$emit('fireSuccess', message);
+        },
+        fireError: function(message){
+            return Vue.prototype.$eventHub.$emit('fireError', message);
+        }*/
     }    
  }
  export default globalFunction;

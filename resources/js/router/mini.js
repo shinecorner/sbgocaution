@@ -7,6 +7,8 @@ const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
 const TemplatePage = () => import('Views/templates/List')
 const RoleList = () => import('Views/roles/List');
+const RoleAddEdit = () => import('Views/roles/AddEdit');
+const UserAddEdit = () => import('Views/users/AddEdit');
 const UserList = () => import('Views/users/List');
 const HouseOwnerList = () => import('Views/HouseOwner/List');
 
@@ -81,6 +83,7 @@ export default {
       },
       {
         path: '/mini/roles',
+        name: 'role_list',
         component: RoleList,
         meta: {
             requiresAuth: true,
@@ -95,9 +98,44 @@ export default {
             ]
         }
       },
+       {
+        path: '/mini/roles/:id/edit',
+        name: 'role_edit',
+        component: RoleAddEdit,
+        meta: {
+            requiresAuth: true,
+            title: 'role.ROLES',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'role.ROLES'
+              }
+            ]
+        }
+      },      
       {
         path: '/mini/users',
-        component: UserList,
+        name: 'user_list',
+        component: UserList,        
+        meta: {
+            requiresAuth: true,
+            title: 'user.USERS',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'user.USERS'
+              }
+            ]
+        }
+      },
+      {
+        path: '/mini/users/:id/edit',
+        name: 'user_edit',
+        component: UserAddEdit,
         meta: {
             requiresAuth: true,
             title: 'user.USERS',

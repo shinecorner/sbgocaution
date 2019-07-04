@@ -40,36 +40,17 @@
                                   >                                
                                 <template slot="prettycheck" slot-scope="props">
                                     <v-checkbox color="success" v-model="checkedRows" :key="'check_'+props.rowData.id" :value="props.rowData.id"></v-checkbox>
-                                </template>                                  
-                                <template slot="r_title" slot-scope="props">
-                                    <div v-if="props.rowData.is_edit == '0'" >
-                                        <span class="primary-text left ml-1">{{ props.rowData.name}}</span>
-                                    </div>
-                                    <div v-else>
-                                            <v-layout row wrap>
-                                                <v-flex xs12 sm12 lg4>
-                                                    <v-text-field 
-                                                        v-model="props.rowData.name"
-                                                        outline                                                
-                                                        hide-details
-                                                        :label="$t('role.TITLE')"
-                                                        :height="20"
-                                                    >
-                                                    </v-text-field>
-                                                </v-flex>
-                                                <v-flex xs4 sm4 md4 lg2 xl2>
-                                                    <v-btn color="success left" @click.prevent="saveRole(props.rowData)">{{$t('general.SUBMIT')}}</v-btn>
-                                                </v-flex>    
-                                            </v-layout>
-                                    </div>
+                                </template>  
+                                <template slot="r_title" slot-scope="props">                                                                        
+                                    <span class="primary-text left ml-1">{{ props.rowData.name}}</span>
                                 </template>
                                 <template slot="r_edit" slot-scope="props">
                                     <v-tooltip top v-if="props.rowData.id">
-                                            <a href="#" @click="editRole(props.rowData)" slot="activator">
+                                            <router-link slot="activator" :to="{ name: 'role_edit', params: { id:  props.rowData.id}}">
                                                 <v-avatar size="26" class="round-badge-success">
                                                     <v-icon color="white" small>zmdi zmdi-edit</v-icon>
                                                 </v-avatar>
-                                            </a>    
+                                            </router-link>
                                         <span>{{ $t('general.EDIT') }}</span>
                                     </v-tooltip>
                                 </template>
@@ -92,7 +73,9 @@
                         </div>
                     </app-card>
                 </v-layout>
-            </v-container>            
+            </v-container>      
+            <confirm-delete v-if="confirmDeleteDialog" :toggleConfirm="deleteConfirm"></confirm-delete>
+            <delete-dialog v-if="deleteDialog" :toggle="deleteToggle"></delete-dialog>
 	</div>
 </template>
 
@@ -102,6 +85,8 @@ import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginatio
 import globalFunction from "Helpers/helpers";
 import Filters from "./Filters";
 import {TableData} from "Helpers/TableData";
+import DeleteDialog from "Components/Crm/General/NoItemSelectedDialog";
+import ConfirmDelete from "Components/Crm/General/DeleteConfirmation";
 
 export default {
     mixins: [globalFunction, TableData],
@@ -109,7 +94,9 @@ export default {
         Vuetable,
         VuetablePagination,        
         VuetablePaginationInfo,
-        Filters
+        Filters,
+        DeleteDialog,
+        ConfirmDelete
     },    
      data() {        
         return {   
@@ -123,66 +110,33 @@ export default {
                 {title: "", name: "r_edit", dataClass: 'edit_data'},
                 {title: () => this.$i18n.t('role.ACTIVE'), name: 'cnt_active_users', dataClass: 'edit_data', titleClass: 'edit_column'},
                 {title: () => this.$i18n.t('role.INACTIVE'), name: "cnt_inactive_users",dataClass: 'edit_data', titleClass: 'edit_column'},
-            ],                                           
+            ],
+            deleteDialog: false,
+            confirmDeleteDialog: false
         }
      },     
     computed:{},   
     methods: {               
         roleFetch(apiUrl,httpOptions){
             return api.get(apiUrl, httpOptions);
-        },       
-        editRole(rowDataObj){
-            //let that = this;            
-            //this.loading = true;
-            rowDataObj.is_edit = '1';
-            
         },
-        saveRole(rowDataObj){
-            let that = this;
-            that.loading = true;
-            api.put('/api/roles/'+rowDataObj.id,{'name': rowDataObj.name}).then(function (response) {
-                if((typeof response.data.data !== "undefined") && (response.data.data.hasOwnProperty('name'))){
-                    rowDataObj.name = response.data.data.name;
-                    that.loading = false;
-                    rowDataObj.is_edit = '0';
-                    Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message); 
-                }
-            }).catch(function (error) {
-                that.loading = false;
-                console.log(error);
-            });
-        },
-        transform: function(data) {
-            if(data.data.length == 0){
-                this.noDataMessage = this.$i18n.t('general.NO_MORE_ENTRIES');
+        toggleDialog(){
+            if(this.checkedRows.length >0) {
+                this.deleteConfirm();
+            }else {
+                this.deleteToggle();
             }
-            let transformed = {}
-            let pg_meta = data.meta
-            let pg_links = data.links
-            transformed.pagination = {}
-            if(pg_meta && pg_links){
-                transformed.pagination = {
-                    total: pg_meta.total,
-                    per_page: pg_meta.per_page,
-                    current_page: pg_meta.current_page,
-                    last_page: pg_meta.last_page,
-                    next_page_url: pg_links.next ? pg_links.next : null,
-                    prev_page_url: pg_links.prev ? pg_links.prev : null,
-                    from: pg_meta.from,
-                    to: pg_meta.to,
-                }
-                this.recordCount = pg_meta.total;
-            }            
-            transformed.mydata = [];
-            transformed.mydata = data.data
-            _.forEach(transformed.mydata, function(value, key) { 
-                transformed.mydata[key]['is_edit'] = '0';
-            });             
-            return transformed
+        },
+        deleteConfirm(){
+            this.confirmDeleteDialog = !this.confirmDeleteDialog;
+        },
+        deleteToggle(){
+            this.deleteDialog = !this.deleteDialog;
         },
     },
     created() {        
         this.$store.dispatch("setHeaderTitle", 'role.ROLES');
+        Vue.prototype.$eventHub.$on('toggleDialogRole', this.toggleDialog);
     }
 };
 </script>

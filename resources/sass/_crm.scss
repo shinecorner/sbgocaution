@@ -370,3 +370,19 @@ table.vuetable tbody.vuetable-body tr.row-business,table.vuetable tbody.vuetable
    -o-transition-timing-function: ease-out;
    transition-timing-function: ease-out;
 }
+.deleteDialog-headline {
+        font-size: 17px !important;
+        font-weight: bolder;
+        background-color: #8dbf43;
+        color: white;
+        justify-content: space-between;
+        height: 65px;
+        align-content: center;
+}
+.deleteDialog-headerfixed {
+        width:85%;
+        line-height: normal;
+}
+.deleteDialog-card {
+        border-radius: 7px;
+}
