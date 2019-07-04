@@ -1,6 +1,7 @@
 export default {
     "de": {
         "template": {
+            "TEMPLATE": "Vorlage",
             "TEMPLATES": "Vorlagen",
             "TEMPLATE_KEY": "Vorlage-Schlüssel",
             "SECTION": "Bereich",
@@ -8,7 +9,9 @@ export default {
                 "SELECT_TYPE": "Tynp auswähle",
                 "PDF": "PDF",
                 "EMAIL": "E-Mail"
-            }
+            },
+            "DELETE_CONFIRM_MSG": "Sind Sie sicher, dass Sie die ausgewählte {name} löschen möchten?",
+            "TEMPLATE_DESC": "Vorlage Beschreibung"
         },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
@@ -118,6 +121,15 @@ export default {
             },
             "attributes": []
         },
+        "houseowner": {
+            "HOUSEOWNER": "Hausbesitzer",
+            "HOUSEOWNERS": "Hausbesitzer",
+            "CITY": "City",
+            "status": {
+                "NOT_CONTACTED": "Kontaktiert",
+                "IN_CONTACT": "Nicht kontaktiert"
+            }
+        },
         "passwords": {
             "PASSWORD": "Passwords must be at least six characters and match the confirmation.",
             "RESET": "Your password has been reset!",
@@ -137,6 +149,22 @@ export default {
                 "POLICY_ACCEPTED_NUMBER": "Nach Anzahl Policen",
                 "POLICY_NUMBER": "Nach Policen Status",
                 "KANTON": "Kanton"
+            }
+        },
+        "realestateagency": {
+            "status": {
+                "NOT_CONTACTED": "Kontaktiert",
+                "IN_CONTACT": "Nicht kontaktiert",
+                "ACCEPT_GO_CAUTION": "Akzeptiert uns",
+                "ACCEPT_NOT_GO_CAUTION": "Akzeptiert uns nicht",
+                "PARTNER_WITH_CONTRACT": "Partner mit Vertrag",
+                "PARTNER_WITHOUT_CONTRACT": "Partner ohne Vertrag",
+                "GOCAUTION_VISIT": "Besucht",
+                "COLD_VISIT": "Kalter Besuch",
+                "WARM_VISIT": "Warmer Besuch",
+                "MEETING": "Meeting",
+                "DONT_ACCEPT_INSURANCE_SOLUTION": "Akzeptieren keine Versicherungslösung",
+                "NO_OBJECTS_FOR_RENT": "Keine Objekte zu vermieten"
             }
         },
         "broker": {
@@ -299,15 +327,45 @@ export default {
             "next": "Next »"
         },
         "customer": {
+            "regrequest": {
+                "TITLE": "Fordern Sie Ihren Zugang an und verwalten Sie die Mieter-Policen online.",
+                "HEADLINE": "Wenn Sie Kunde von uns sind und noch keine Zugangsdaten zu Ihrem Kunden-Login erhalten haben, können Sie uns das untenstehende Formular einsenden. Sie erhalten anschliessend Ihre Zugangsdaten per E-Mail zugestellt.",
+                "FORM_FIELDS": {
+                    "NAME": "Name",
+                    "FIRSTNAME": "Vorname",
+                    "DOB": "Geburtsdatum",
+                    "MOBILE": "Mobile",
+                    "EMAIL": "E-Mail",
+                    "TO_SEND": "Senden",
+                    "DAY": "Tag",
+                    "MONTH": "Monat",
+                    "YEAR": "Jahr"
+                },
+                "VALIDATION": {
+                    "NAME": "Bitte ausfüllen.",
+                    "FIRSTNAME": "Bitte ausfüllen.",
+                    "DAY": "Bitte ausfüllen.",
+                    "MONTH": "Bitte ausfüllen.",
+                    "YEAR": "Bitte ausfüllen.",
+                    "MOBILE": "Bitte ausfüllen.",
+                    "EMAIL": "Bitte geben Sie eine gültige E-Mail Adresse ein.",
+                    "EMAIL_UNIQUE": "Diese E-Mail wird bereits verwendet!",
+                    "EMAIL_VALID": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+                },
+                "THANK_YOU": "Vielen Dank für Ihre Anfrage",
+                "THANK_YOU_TEXT": "Vielen Dank",
+                "ADMIN_EMAIL_SUBJECT": "Vermieter-Login | Zugangsdaten angefordert",
+                "REG_REQUEST_HEADLINE": "Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.",
+                "routes": {
+                    "REGISTER_REQUEST": "registre-demande"
+                }
+            },
             "login": {
                 "LOGIN": "Anmelden",
+                "EMAIL": "Benutzername",
                 "USERNAME": "Benutzername",
                 "PASSWORD": "Passwort",
                 "LANGUAGE": "Sprache",
-                "DE": "Deutsch",
-                "FR": "Français",
-                "IT": "Italienisch",
-                "EN": "English",
                 "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
                 "TITLE": "goCaution® Vermieter-Login",
                 "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "IHRE MIETKAUTION IMMER IN REICHWEITE",
@@ -326,43 +384,34 @@ export default {
                 "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
                 "SUPPORT": "SUPPORT",
                 "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
-                "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
-                "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-                "LOGIN_PAGE_DESCRIPTION_LINE_TWO": " und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
-                "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
-                "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
-                "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
                 "REQUEST_ACCESS": "Zugang anfordern",
-                "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
-                "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
                 "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
                 "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
                 "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
                 "USED_LINK": "Link bereits verwendet",
-                "INVALID_USER_ID": "Ungültige Benutzer-Id",
                 "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
                 "NEW_PASSWORD": "Neues Kennwort",
                 "CONFIRM_PASSWORD": "Passwort bestätigen",
                 "RESET": "zurücksetzen",
-                "USERNAME_REQUIRED": "Bitte geben Sie einen gültigen Benutzernamen an.",
+                "EMAIL_REQUIRED": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
                 "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
                 "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
                 "CONTACT": "0800 461 461",
                 "LOGO_IMG": "logo_de.png",
                 "LOGIN_IMG": "vermieter-login-app.png",
                 "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
+                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben. Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
                 "IDENTIFIER": "E-Mail-Adresse",
                 "BACK": "Zurück",
                 "SEND_FORGOT_MAIL": "Senden",
                 "RESPONSIVE_LOGO": "logo-w-de.png",
                 "routes": {
-                    "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
+                    "FORGOT_PASSWORD_LINK": "passwort-zuruecksetzen",
                     "LOGIN": "anmelden",
                     "DASHBOARD": "instrumentenbord",
                     "PASSWORD_RESET": "passwortRucksetzen",
-                    "PASSWORD_EMAIL": "passwort_email",
-                    "PASSWORD_UPDATE": "passwort_aktualisierung",
+                    "PASSWORD_EMAIL": "passwort-email",
+                    "PASSWORD_UPDATE": "passwort-aktualisierung",
                     "LOGOUT": "abmeldung"
                 }
             }
@@ -527,6 +576,8 @@ export default {
             "INVOICES": "Rechnungen",
             "PUBLISHED": "Publiziert",
             "UNPUBLISHED": "Unpubliziert",
+            "SAVE": "Speichern",
+            "CLOSE": "Schliessen",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -627,13 +678,16 @@ export default {
             "ENABLED": "Freigegeben",
             "ACTIVATED": "Aktiviert",
             "SELECT_STATUS": "Status wählen",
-            "NO_RESULTS_TEXT_DROPDOWN": "Keine passenden Ergebnisse gefunden!"
+            "NO_RESULTS_TEXT_DROPDOWN": "Keine passenden Ergebnisse gefunden!",
+            "SAVE_AND_CLOSE": "Speichern & Schliessen",
+            "NO_SELECT_ITEM": "Bitte zuerst eine Auswahl in der Liste vornehmen!"
         },
         "role": {
             "ROLES": "Gruppen",
             "TITLE": "Gruppentitel",
             "ACTIVE": "Aktiv",
-            "INACTIVE": "Inaktiv"
+            "INACTIVE": "Inaktiv",
+            "EDIT_ROLE": "Gruppe bearbeiten"
         },
         "login": {
             "LOGIN": "Anmelden",
@@ -653,6 +707,7 @@ export default {
     },
     "en": {
         "template": {
+            "TEMPLATE": "Template",
             "TEMPLATES": "Templates",
             "TEMPLATE_KEY": "Template key",
             "SECTION": "Section",
@@ -660,7 +715,9 @@ export default {
                 "SELECT_TYPE": "Select Type",
                 "PDF": "PDF",
                 "EMAIL": "E-Mail"
-            }
+            },
+            "DELETE_CONFIRM_MSG": "Are you sure you want to delete the selected {name}?",
+            "TEMPLATE_DESC": "Template Description"
         },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
@@ -770,6 +827,15 @@ export default {
             },
             "attributes": []
         },
+        "houseowner": {
+            "HOUSEOWNER": "Houseowner",
+            "HOUSEOWNERS": "Houseowners",
+            "CITY": "City",
+            "status": {
+                "NOT_CONTACTED": "No contacted",
+                "IN_CONTACT": "In contact"
+            }
+        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
@@ -789,6 +855,22 @@ export default {
                 "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
                 "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
                 "KANTON": "Kanton"
+            }
+        },
+        "realestateagency": {
+            "status": {
+                "NOT_CONTACTED": "No contacted",
+                "IN_CONTACT": "In contact",
+                "ACCEPT_GO_CAUTION": "Accept go caution",
+                "ACCEPT_NOT_GO_CAUTION": "Accept not go caution",
+                "PARTNER_WITH_CONTRACT": "Partner mit Vertrag",
+                "PARTNER_WITHOUT_CONTRACT": "Partner ohne Vertrag",
+                "GOCAUTION_VISIT": "Besucht",
+                "COLD_VISIT": "Kalter Besuch",
+                "WARM_VISIT": "Warmer Besuch",
+                "MEETING": "Meeting",
+                "DONT_ACCEPT_INSURANCE_SOLUTION": "Akzeptieren keine Versicherungslösung",
+                "NO_OBJECTS_FOR_RENT": "Keine Objekte zu vermieten"
             }
         },
         "broker": {
@@ -951,71 +1033,96 @@ export default {
             "next": "Next »"
         },
         "customer": {
+            "regrequest": {
+                "TITLE": "Request your access and manage your tenant policies online.",
+                "HEADLINE": "We will be happy to arrange an appointment with you by telephone and guide you through the application via screen transmission, regardless of whether or not tenants of yours have already concluded a deposit policy with us.",
+                "FORM_FIELDS": {
+                    "NAME": "Name",
+                    "FIRSTNAME": "First Name",
+                    "DOB": "Date Of Birth",
+                    "MOBILE": "Mobile",
+                    "EMAIL": "E-Mail",
+                    "TO_SEND": "Send",
+                    "DAY": "Day",
+                    "MONTH": "Month",
+                    "YEAR": "Year"
+                },
+                "VALIDATION": {
+                    "NAME": "Veuillez compléter.",
+                    "FIRSTNAME": "Veuillez compléter.",
+                    "DAY": "Veuillez compléter.",
+                    "MONTH": "Veuillez compléter.",
+                    "YEAR": "Veuillez compléter.",
+                    "MOBILE": "Veuillez compléter.",
+                    "EMAIL": "Bitte geben Sie eine gültige E-Mail Adresse ein.",
+                    "EMAIL_UNIQUE": "Diese E-Mail wird bereits verwendet!",
+                    "EMAIL_VALID": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+                },
+                "THANK_YOU": "Vielen Dank für Ihre Anfrage",
+                "THANK_YOU_TEXT": "Vielen Dank",
+                "ADMIN_EMAIL_SUBJECT": "Vermieter-Login | Zugangsdaten angefordert",
+                "REG_REQUEST_HEADLINE": "Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.",
+                "routes": {
+                    "REGISTER_REQUEST": "registre-demande"
+                }
+            },
             "login": {
-                "LOGIN": "Anmelden",
-                "USERNAME": "Benutzername",
-                "PASSWORD": "Passwort",
-                "LANGUAGE": "Sprache",
-                "DE": "Deutsch",
-                "FR": "Français",
-                "IT": "Italienisch",
+                "LOGIN": "Log in",
+                "EMAIL": "Email",
+                "USERNAME": "User Name",
+                "PASSWORD": "Password",
+                "LANGUAGE": "Language",
+                "DE": "German",
+                "FR": "French",
+                "IT": "Italian",
                 "EN": "English",
-                "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
-                "TITLE": "goCaution® Vermieter-Login",
-                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "IHRE MIETKAUTION IMMER IN REICHWEITE",
-                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH_DESCRIPTION": "Die Mietkaution bequem und sicher online verwalten – mit dem goCaution® Kunden-Login behalten Sie den Überblick. Der geschützte Bereich ermöglicht Ihnen einfachen, sofortigen und absolut sicheren Zugang zu allen Daten und Dokumenten in Verbindung mit Ihrer Mietkautionspolice.",
-                "AT_A_GLANCE": "Auf einen Blick",
-                "AT_A_GLANCE_DESCRIPTION": "Behalten Sie den Überblick über Ihre Prämienrechnungen, Policen und Kautionszertifikate.",
-                "REPORT_MOVE": "Umzug melden",
-                "REPORT_MOVE_DESCRIPTION": "Planen Sie einen Umzug? Eröffnen Sie die Mietkaution Ihrer neuen Wohnung in wenigen Schritten bequem online.",
-                "FAST_SUPPORT": "Schneller Support",
-                "FAST_SUPPORT_DESCRIPTION": "Übermitteln Sie uns Ihre Anfragen schnell und einfach über das Kunden-Login mit und Sie erhalten rasch eine Antwort.",
-                "DO_YOU_NEED_HELP": "BRAUCHEN SIE HILFE?",
-                "DO_YOU_NEED_HELP_DESCRIPTION": "Haben Sie Fragen zum goCaution Kunden-Login oder benötigen Sie Unterstützung bei der Anmeldung beziehungsweise Registrierung?",
-                "LOGIN_TITLE": "goCaution® Vermieter-Login",
-                "FORGET_PASSWORD": "Passwort vergessen?",
-                "GET_RESET_LINK": "Link zurücksetzen",
-                "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
+                "LOGIN_REMEMBER_ME": "Stay logged in",
+                "TITLE": "goCaution® Customer Login",
+                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "YOUR RENT DEPOSIT IS ALWAYS WITHIN RANGE.",
+                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH_DESCRIPTION": "Manage the rental deposit conveniently and securely online - with the goCaution® customer login you keep track of everything. The protected area allows you simple, immediate and absolutely secure access to all data and documents in connection with your rental deposit policy.",
+                "AT_A_GLANCE": "At a glance",
+                "AT_A_GLANCE_DESCRIPTION": "Keep track of your premium invoices, policies and deposit certificates.",
+                "REPORT_MOVE": "Report move",
+                "REPORT_MOVE_DESCRIPTION": "Are you planning a move? Open the rental deposit for your new apartment conveniently online in just a few steps.",
+                "FAST_SUPPORT": "Fast support",
+                "FAST_SUPPORT_DESCRIPTION": "Send us your enquiries quickly and easily via the customer login and you will receive an answer quickly.",
+                "DO_YOU_NEED_HELP": "DO YOU NEED HELP?",
+                "DO_YOU_NEED_HELP_DESCRIPTION": "Do you have questions about goCaution customer login or do you need assistance with registration?",
+                "LOGIN_TITLE": "goCaution® Customer-Login",
+                "FORGET_PASSWORD": "Forgot your password?",
+                "GET_RESET_LINK": "Reset link",
+                "BACK_TO_LOGIN": "Back to registration?",
                 "SUPPORT": "SUPPORT",
-                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
-                "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
-                "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-                "LOGIN_PAGE_DESCRIPTION_LINE_TWO": " und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
-                "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
-                "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
-                "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
-                "REQUEST_ACCESS": "Zugang anfordern",
-                "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
-                "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
-                "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
-                "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
-                "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
-                "USED_LINK": "Link bereits verwendet",
-                "INVALID_USER_ID": "Ungültige Benutzer-Id",
-                "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
-                "NEW_PASSWORD": "Neues Kennwort",
-                "CONFIRM_PASSWORD": "Passwort bestätigen",
-                "RESET": "zurücksetzen",
-                "USERNAME_REQUIRED": "Bitte geben Sie einen gültigen Benutzernamen an.",
-                "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
-                "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
+                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen, Germany",
+                "REQUEST_ACCESS": "Request access",
+                "RESET_LINK_SENT": "Reset password The link was sent by e-mail. Please check",
+                "UNREGISTERED_EMAIL": "E-mail is not registered with us",
+                "RESET_TOKEN_MISSMATCH": "Password reset token not assigned correctly",
+                "USED_LINK": "Link already used",
+                "PASSWORD_RESET_SUCCESS": "Password updated, please login to continue",
+                "NEW_PASSWORD": "New password",
+                "CONFIRM_PASSWORD": "Confirm password",
+                "RESET": "Reset",
+                "EMAIL_REQUIRED": "Please enter a valid e-mail address.",
+                "PASSWORD_REQUIRED": "Please enter a valid password.",
+                "CONFIRM_PASSWORD_REQUIRED": "Please enter a valid confirmation password.",
                 "CONTACT": "0800 461 461",
                 "LOGO_IMG": "logo_de.png",
                 "LOGIN_IMG": "vermieter-login-app.png",
-                "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
-                "IDENTIFIER": "E-Mail-Adresse",
-                "BACK": "Zurück",
-                "SEND_FORGOT_MAIL": "Senden",
+                "FORGOT_TEXT": "Please enter an e-mail address for the user account. A confirmation code will then be sent to you. As soon as the code is available, a new password for the user account can be set.",
+                "POPOVER_DATA": "Please enter the e-mail address you used when registering your user account. A confirmation code will then be sent to this address. As soon as this code is available, a new password for the user account can be entered.",
+                "IDENTIFIER": "Email address",
+                "BACK": "Back",
+                "SEND_FORGOT_MAIL": "Send",
                 "RESPONSIVE_LOGO": "logo-w-de.png",
                 "routes": {
-                    "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
-                    "LOGIN": "anmelden",
-                    "DASHBOARD": "instrumentenbord",
-                    "PASSWORD_RESET": "passwortRucksetzen",
-                    "PASSWORD_EMAIL": "passwort_email",
-                    "PASSWORD_UPDATE": "passwort_aktualisierung",
-                    "LOGOUT": "abmeldung"
+                    "FORGOT_PASSWORD_LINK": "registration/password-forgotten",
+                    "LOGIN": "login",
+                    "DASHBOARD": "dashboard",
+                    "PASSWORD_RESET": "passwordReset",
+                    "PASSWORD_EMAIL": "password_email",
+                    "PASSWORD_UPDATE": "password_update",
+                    "LOGOUT": "logout"
                 }
             }
         },
@@ -1175,6 +1282,8 @@ export default {
             "INVOICES": "Invoices",
             "PUBLISHED": "Published",
             "UNPUBLISHED": "Unpublished",
+            "SAVE": "Save",
+            "CLOSE": "Close",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -1275,13 +1384,16 @@ export default {
             "ENABLED": "Enabled",
             "ACTIVATED": "Activated",
             "SELECT_STATUS": "Select status",
-            "NO_RESULTS_TEXT_DROPDOWN": "No matching results found!"
+            "NO_RESULTS_TEXT_DROPDOWN": "No matching results found!",
+            "SAVE_AND_CLOSE": "Save & Close",
+            "NO_SELECT_ITEM": "Please first make a selection from the list"
         },
         "role": {
             "ROLES": "Groups",
             "TITLE": "Group Title",
             "ACTIVE": "Active",
-            "INACTIVE": "Inactive"
+            "INACTIVE": "Inactive",
+            "EDIT_ROLE": "Edit Group"
         },
         "login": {
             "LOGIN": "Log in",
@@ -1301,6 +1413,7 @@ export default {
     },
     "fr": {
         "template": {
+            "TEMPLATE": "Template",
             "TEMPLATES": "Templates",
             "TEMPLATE_KEY": "Clé de modèle",
             "SECTION": "Section",
@@ -1308,7 +1421,9 @@ export default {
                 "SELECT_TYPE": "Sélectionner le type",
                 "PDF": "PDF",
                 "EMAIL": "E-Mail"
-            }
+            },
+            "DELETE_CONFIRM_MSG": "Êtes-vous sûr de vouloir supprimer la {name} sélectionnée ?",
+            "TEMPLATE_DESC": "Template Description"
         },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
@@ -1418,6 +1533,15 @@ export default {
             },
             "attributes": []
         },
+        "houseowner": {
+            "HOUSEOWNER": "Propriétaire",
+            "HOUSEOWNERS": "Propriétaires",
+            "CITY": "Ville",
+            "status": {
+                "NOT_CONTACTED": "Kontaktiert",
+                "IN_CONTACT": "Nicht kontaktiert"
+            }
+        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
@@ -1437,6 +1561,22 @@ export default {
                 "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
                 "POLICY_NUMBER": "Par statut des polices",
                 "KANTON": "Canton"
+            }
+        },
+        "realestateagency": {
+            "status": {
+                "NOT_CONTACTED": "Kontaktiert",
+                "IN_CONTACT": "Nicht kontaktiert",
+                "ACCEPT_GO_CAUTION": "Akzeptiert uns",
+                "ACCEPT_NOT_GO_CAUTION": "Akzeptiert uns nicht",
+                "PARTNER_WITH_CONTRACT": "Partner mit Vertrag",
+                "PARTNER_WITHOUT_CONTRACT": "Partner ohne Vertrag",
+                "GOCAUTION_VISIT": "Besucht",
+                "COLD_VISIT": "Kalter Besuch",
+                "WARM_VISIT": "Warmer Besuch",
+                "MEETING": "Meeting",
+                "DONT_ACCEPT_INSURANCE_SOLUTION": "Akzeptieren keine Versicherungslösung",
+                "NO_OBJECTS_FOR_RENT": "Keine Objekte zu vermieten"
             }
         },
         "broker": {
@@ -1599,40 +1739,64 @@ export default {
             "next": "Next »"
         },
         "customer": {
+            "regrequest": {
+                "TITLE": "Demandez votre accès et gérez vos politiques de location en ligne.",
+                "HEADLINE": "Si vous êtes client chez nous et que vous souhaitez obtenir votre accès à votre espace client, il vous suffit de remplir dûment le formulaire ci-dessous et de nous le renvoyer.",
+                "FORM_FIELDS": {
+                    "NAME": "Nom",
+                    "FIRSTNAME": "Prénom",
+                    "DOB": "Date de naissance",
+                    "MOBILE": "Mobile",
+                    "EMAIL": "E-Mail",
+                    "TO_SEND": "Senden",
+                    "DAY": "Jour",
+                    "MONTH": "Mois",
+                    "YEAR": "Année"
+                },
+                "VALIDATION": {
+                    "NAME": "Veuillez compléter.",
+                    "FIRSTNAME": "Veuillez compléter.",
+                    "DAY": "Veuillez compléter.",
+                    "MONTH": "Veuillez compléter.",
+                    "YEAR": "Veuillez compléter..",
+                    "MOBILE": "Veuillez compléter.",
+                    "EMAIL": "Veuillez compléter.",
+                    "EMAIL_UNIQUE": "Diese E-Mail wird bereits verwendet!",
+                    "EMAIL_VALID": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+                },
+                "THANK_YOU": "Merci pour votre demande",
+                "THANK_YOU_TEXT": "Je vous remercie beaucoup.",
+                "ADMIN_EMAIL_SUBJECT": "Vermieter-Login | Zugangsdaten angefordert",
+                "REG_REQUEST_HEADLINE": "Ein Kunde hat ein Vermieter einen Zugang zum Vermieter-Login angefordert.",
+                "routes": {
+                    "REGISTER_REQUEST": "registre-demande"
+                }
+            },
             "login": {
-                "LOGIN": "Anmelden",
-                "USERNAME": "Benutzername",
-                "PASSWORD": "Passwort",
+                "LOGIN": "Connexion",
+                "EMAIL": "Identifiant",
+                "USERNAME": "Identifiant",
+                "PASSWORD": "Mot de passe",
                 "LANGUAGE": "Sprache",
-                "DE": "Deutsch",
-                "FR": "Français",
-                "IT": "Italienisch",
-                "EN": "English",
-                "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
+                "LOGIN_REMEMBER_ME": "Se rappeler de moi",
                 "TITLE": "goCaution® Vermieter-Login",
-                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "IHRE MIETKAUTION IMMER IN REICHWEITE",
-                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH_DESCRIPTION": "Die Mietkaution bequem und sicher online verwalten – mit dem goCaution® Kunden-Login behalten Sie den Überblick. Der geschützte Bereich ermöglicht Ihnen einfachen, sofortigen und absolut sicheren Zugang zu allen Daten und Dokumenten in Verbindung mit Ihrer Mietkautionspolice.",
-                "AT_A_GLANCE": "Auf einen Blick",
-                "AT_A_GLANCE_DESCRIPTION": "Behalten Sie den Überblick über Ihre Prämienrechnungen, Policen und Kautionszertifikate.",
-                "REPORT_MOVE": "Umzug melden",
-                "REPORT_MOVE_DESCRIPTION": "Planen Sie einen Umzug? Eröffnen Sie die Mietkaution Ihrer neuen Wohnung in wenigen Schritten bequem online.",
-                "FAST_SUPPORT": "Schneller Support",
-                "FAST_SUPPORT_DESCRIPTION": "Übermitteln Sie uns Ihre Anfragen schnell und einfach über das Kunden-Login mit und Sie erhalten rasch eine Antwort.",
-                "DO_YOU_NEED_HELP": "BRAUCHEN SIE HILFE?",
-                "DO_YOU_NEED_HELP_DESCRIPTION": "Haben Sie Fragen zum goCaution Kunden-Login oder benötigen Sie Unterstützung bei der Anmeldung beziehungsweise Registrierung?",
+                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "VOTRE CAUTION DE LOYER TOUJOURS À PORTÉE DE MAIN",
+                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH_DESCRIPTION": "Gérez votre caution de loyer en ligne de manière pratique et sécurisée - avec le login client goCaution, vous pouvez tout gérer. L'espace protégé vous permet un accès facile, immédiat et entièrement sécurisé à toutes les données et documents en rapport avec votre contrat de caution.",
+                "AT_A_GLANCE": "D'un coup d'œil",
+                "AT_A_GLANCE_DESCRIPTION": "Gardez une vue d'ensemble de vos factures de primes, polices et certificats.",
+                "REPORT_MOVE": "Déménagement du rapport",
+                "REPORT_MOVE_DESCRIPTION": "Comptez-vous déménager ? Ouvrez la caution de loyer de votre appartement en ligne en quelques étapes simples.",
+                "FAST_SUPPORT": "Support simplement",
+                "FAST_SUPPORT_DESCRIPTION": "Communiquez vos préoccupations rapidement et facilement via le login client.",
+                "DO_YOU_NEED_HELP": "AVEZ-VOUS BESOIN D'AIDE ?",
+                "DO_YOU_NEED_HELP_DESCRIPTION": "Avez-vous des questions au sujet du login client ou avez-vous besoin d'aide pour vous inscrire?",
                 "LOGIN_TITLE": "goCaution® Vermieter-Login",
-                "FORGET_PASSWORD": "Passwort vergessen?",
+                "FORGET_PASSWORD": "Mot de passe oublié ?",
                 "GET_RESET_LINK": "Link zurücksetzen",
                 "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
                 "SUPPORT": "SUPPORT",
                 "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
-                "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
-                "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-                "LOGIN_PAGE_DESCRIPTION_LINE_TWO": " und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
-                "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
-                "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
-                "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
-                "REQUEST_ACCESS": "Zugang anfordern",
+                "REQUEST_ACCESS": "Demande d'accès",
                 "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
                 "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
                 "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
@@ -1644,17 +1808,17 @@ export default {
                 "NEW_PASSWORD": "Neues Kennwort",
                 "CONFIRM_PASSWORD": "Passwort bestätigen",
                 "RESET": "zurücksetzen",
-                "USERNAME_REQUIRED": "Bitte geben Sie einen gültigen Benutzernamen an.",
-                "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
+                "EMAIL_REQUIRED": "Veuillez entrer une adresse e-mail valide.",
+                "PASSWORD_REQUIRED": "Veuillez entrer un mot de passe valide.",
                 "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
                 "CONTACT": "0800 461 461",
                 "LOGO_IMG": "logo_de.png",
                 "LOGIN_IMG": "vermieter-login-app.png",
-                "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
-                "IDENTIFIER": "E-Mail-Adresse",
+                "FORGOT_TEXT": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe.",
+                "POPOVER_DATA": "Veuillez saisir l'adresse e-mail associée à votre compte d'utilisateur. Un code de vérification vous sera adressé. Lorsque vous le recevrez, vous pourrez choisir un nouveau mot de passe.",
+                "IDENTIFIER": "Adresse e-mail",
                 "BACK": "Zurück",
-                "SEND_FORGOT_MAIL": "Senden",
+                "SEND_FORGOT_MAIL": "Envoyer",
                 "RESPONSIVE_LOGO": "logo-w-de.png",
                 "routes": {
                     "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
@@ -1835,6 +1999,8 @@ export default {
             "INVOICES": "Factures",
             "PUBLISHED": "Publié",
             "UNPUBLISHED": "Non publié",
+            "SAVE": "Enregistrer",
+            "CLOSE": "Fermer",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -1935,13 +2101,16 @@ export default {
             "ENABLED": "Actif",
             "ACTIVATED": "Activé",
             "SELECT_STATUS": "Choisir le statut",
-            "NO_RESULTS_TEXT_DROPDOWN": "Aucun résultat trouvé !"
+            "NO_RESULTS_TEXT_DROPDOWN": "Aucun résultat trouvé !",
+            "SAVE_AND_CLOSE": "Enregistrer & Fermer",
+            "NO_SELECT_ITEM": "Veuillez d'abord effectuer une sélection dans la liste"
         },
         "role": {
             "ROLES": "Groupes",
             "TITLE": "Titre du groupe",
             "ACTIVE": "Actif",
-            "INACTIVE": "Inactif"
+            "INACTIVE": "Inactif",
+            "EDIT_ROLE": "Modifier le groupe"
         },
         "login": {
             "LOGIN": "Connexion",
@@ -1961,6 +2130,7 @@ export default {
     },
     "it": {
         "template": {
+            "TEMPLATE": "Vorlage",
             "TEMPLATES": "Vorlagen",
             "TEMPLATE_KEY": "Template key",
             "SECTION": "Sezione",
@@ -1968,7 +2138,9 @@ export default {
                 "SELECT_TYPE": "Selezionare il tipo",
                 "PDF": "PDF",
                 "EMAIL": "E-Mail"
-            }
+            },
+            "DELETE_CONFIRM_MSG": "Sei sicuro di voler eliminare il {name} selezionato?",
+            "TEMPLATE_DESC": "Modello Descrizione"
         },
         "validation": {
             "accepted": "The {attribute} must be accepted.",
@@ -2078,6 +2250,15 @@ export default {
             },
             "attributes": []
         },
+        "houseowner": {
+            "HOUSEOWNER": "Proprietario",
+            "HOUSEOWNERS": "Proprietari",
+            "CITY": "Città",
+            "status": {
+                "NOT_CONTACTED": "Nicht kontaktiert",
+                "IN_CONTACT": "Kontaktiert"
+            }
+        },
         "passwords": {
             "password": "Passwords must be at least six characters and match the confirmation.",
             "reset": "Your password has been reset!",
@@ -2097,6 +2278,22 @@ export default {
                 "POLICY_ACCEPTED_NUMBER": "PVT_FILTER_COUNT_ACCEPTED_QUOTES",
                 "POLICY_NUMBER": "QUOTE_STATUS_FILTER",
                 "KANTON": "Kanton"
+            }
+        },
+        "realestateagency": {
+            "status": {
+                "NOT_CONTACTED": "Nicht kontaktiert",
+                "IN_CONTACT": "Kontaktiert",
+                "ACCEPT_GO_CAUTION": "Akzeptiert uns",
+                "ACCEPT_NOT_GO_CAUTION": "Akzeptiert uns nicht",
+                "PARTNER_WITH_CONTRACT": "Partner mit Vertrag",
+                "PARTNER_WITHOUT_CONTRACT": "Partner ohne Vertrag",
+                "GOCAUTION_VISIT": "Besucht",
+                "COLD_VISIT": "Kalter Besuch",
+                "WARM_VISIT": "Warmer Besuch",
+                "MEETING": "Meeting",
+                "DONT_ACCEPT_INSURANCE_SOLUTION": "Akzeptieren keine Versicherungslösung",
+                "NO_OBJECTS_FOR_RENT": "Keine Objekte zu vermieten"
             }
         },
         "broker": {
@@ -2259,71 +2456,92 @@ export default {
             "next": "Next »"
         },
         "customer": {
+            "regrequest": {
+                "TITLE": "Richiedi il tuo accesso e gestisci online le tue politiche per gli inquilini.",
+                "HEADLINE": "Saremo lieti di fissare un appuntamento telefonico con voi e guidarvi attraverso l'applicazione tramite trasmissione a video, indipendentemente dal fatto che i vostri inquilini abbiano già stipulato con noi una polizza di deposito.",
+                "FORM_FIELDS": {
+                    "NAME": "Nominativo",
+                    "FIRSTNAME": "Nome",
+                    "DOB": "Data di nascita",
+                    "MOBILE": "Mobile",
+                    "EMAIL": "E-Mail",
+                    "TO_SEND": "Trasmissione",
+                    "DAY": "Giorno",
+                    "MONTH": "Mese",
+                    "YEAR": "Anno"
+                },
+                "VALIDATION": {
+                    "NAME": "Veuillez compléter.",
+                    "FIRSTNAME": "Veuillez compléter.",
+                    "DAY": "Veuillez compléter.",
+                    "MONTH": "Veuillez compléter.",
+                    "YEAR": "Veuillez compléter.",
+                    "MOBILE": "Veuillez compléter.",
+                    "EMAIL": "Inserisci un indirizzo e-mail valido.",
+                    "EMAIL_UNIQUE": "Questa e-mail è già in uso!",
+                    "EMAIL_VALID": "Inserisci un indirizzo e-mail valido."
+                },
+                "THANK_YOU": "La ringrazio molto per la sua richiesta.",
+                "THANK_YOU_TEXT": "Grazie mille.",
+                "ADMIN_EMAIL_SUBJECT": "Login del proprietario | Dati di accesso richiesti",
+                "REG_REQUEST_HEADLINE": "Un cliente ha richiesto l'accesso al login del proprietario da parte del proprietario.",
+                "routes": {
+                    "REGISTER_REQUEST": "iscritto-domanda"
+                }
+            },
             "login": {
-                "LOGIN": "Anmelden",
-                "USERNAME": "Benutzername",
-                "PASSWORD": "Passwort",
-                "LANGUAGE": "Sprache",
-                "DE": "Deutsch",
-                "FR": "Français",
-                "IT": "Italienisch",
-                "EN": "English",
-                "LOGIN_REMEMBER_ME": "Angemeldet bleiben",
-                "TITLE": "goCaution® Vermieter-Login",
-                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "IHRE MIETKAUTION IMMER IN REICHWEITE",
-                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH_DESCRIPTION": "Die Mietkaution bequem und sicher online verwalten – mit dem goCaution® Kunden-Login behalten Sie den Überblick. Der geschützte Bereich ermöglicht Ihnen einfachen, sofortigen und absolut sicheren Zugang zu allen Daten und Dokumenten in Verbindung mit Ihrer Mietkautionspolice.",
-                "AT_A_GLANCE": "Auf einen Blick",
-                "AT_A_GLANCE_DESCRIPTION": "Behalten Sie den Überblick über Ihre Prämienrechnungen, Policen und Kautionszertifikate.",
-                "REPORT_MOVE": "Umzug melden",
-                "REPORT_MOVE_DESCRIPTION": "Planen Sie einen Umzug? Eröffnen Sie die Mietkaution Ihrer neuen Wohnung in wenigen Schritten bequem online.",
-                "FAST_SUPPORT": "Schneller Support",
-                "FAST_SUPPORT_DESCRIPTION": "Übermitteln Sie uns Ihre Anfragen schnell und einfach über das Kunden-Login mit und Sie erhalten rasch eine Antwort.",
-                "DO_YOU_NEED_HELP": "BRAUCHEN SIE HILFE?",
-                "DO_YOU_NEED_HELP_DESCRIPTION": "Haben Sie Fragen zum goCaution Kunden-Login oder benötigen Sie Unterstützung bei der Anmeldung beziehungsweise Registrierung?",
-                "LOGIN_TITLE": "goCaution® Vermieter-Login",
-                "FORGET_PASSWORD": "Passwort vergessen?",
-                "GET_RESET_LINK": "Link zurücksetzen",
-                "BACK_TO_LOGIN": "Zurück zur Anmeldung?",
+                "LOGIN": "Accedi",
+                "EMAIL": "Identificatore",
+                "USERNAME": "Username",
+                "PASSWORD": "Password",
+                "LANGUAGE": "Lingua",
+                "LOGIN_REMEMBER_ME": "Rimani connesso",
+                "TITLE": "goCaution® Cliente-Login",
+                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH": "IL TUO DEPOSITO PER L'AFFITTO È SEMPRE NEL RAGGIO D'AZIONE.",
+                "YOUR_RENTAL_DEPOSIT_ALWAYS_IN_REACH_DESCRIPTION": "Gestire il deposito cauzionale online in modo comodo e sicuro - con il login cliente goCaution® è possibile tenere traccia di tutto. L'area protetta consente un accesso semplice, immediato e assolutamente sicuro a tutti i dati e documenti relativi alla vostra politica di deposito cauzionale.",
+                "AT_A_GLANCE": "In sintesi",
+                "AT_A_GLANCE_DESCRIPTION": "Tieni traccia delle tue fatture premio, delle polizze e dei certificati di deposito.",
+                "REPORT_MOVE": "Segnala mossa",
+                "REPORT_MOVE_DESCRIPTION": "Stai pianificando una mossa? Aprite il deposito cauzionale per il vostro nuovo appartamento comodamente online in pochi passi.",
+                "FAST_SUPPORT": "Supporto rapido",
+                "FAST_SUPPORT_DESCRIPTION": "Inviateci le vostre richieste in modo semplice e veloce tramite il login cliente e riceverete una risposta rapida.",
+                "DO_YOU_NEED_HELP": "HAI BISOGNO DI AIUTO?",
+                "DO_YOU_NEED_HELP_DESCRIPTION": "Avete domande sul login cliente goCaution o avete bisogno di assistenza per la registrazione?",
+                "LOGIN_TITLE": "goCaution® Cliente-Login",
+                "FORGET_PASSWORD": "Hai dimenticato la password?",
+                "GET_RESET_LINK": "Reset link",
+                "BACK_TO_LOGIN": "Tornare alla registrazione?",
                 "SUPPORT": "SUPPORT",
-                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen",
-                "LOGIN_PAGE_DESCRIPTION_TITLE": "Mietkautionen online verwalten",
-                "LOGIN_PAGE_DESCRIPTION_LINE_ONE": "Mit unserem Vermieter-Login haben Sie stets den Überblick über die Mietkautionsbürgschaften Ihrer Mieter",
-                "LOGIN_PAGE_DESCRIPTION_LINE_TWO": " und können alle notwenigen Schritte – von der Eröffnung über Mutationen bis hin zur Auflösung – digital erledigen.",
-                "LOGIN_PAGE_DESCRIPTION_LINE_THREE": "Die web-basierte Applikation ist sofort einsetzbar, intuitiv verständlich",
-                "LOGIN_PAGE_DESCRIPTION_LINE_FOUR": "und am Lebenszyklus einer Kaution orientiert.",
-                "LOGIN_PAGE_REQUEST_POLICY": "Fordern Sie Ihren Zugriff an und verwalten Sie die Mandantenrichtlinien online.",
-                "REQUEST_ACCESS": "Zugang anfordern",
-                "ERROR_USER_DOESNOT_EXISTS": "Benutzer existiert nicht",
-                "ERROR_INVALID_PASSWORD": "Ungültiges Passwort",
-                "RESET_LINK_SENT": "Passwort zurücksetzen Der Link wurde per E-Mail gesendet. Bitte überprüfen",
-                "UNREGISTERED_EMAIL": "E-Mail ist bei uns nicht registriert",
-                "RESET_TOKEN_MISSMATCH": "Token zum Zurücksetzen des Kennworts nicht richtig zugeordnet",
-                "USED_LINK": "Link bereits verwendet",
-                "INVALID_USER_ID": "Ungültige Benutzer-Id",
+                "SUPPORT_ADDRESS": "goCaution AG - Freiburgstrasse 574 - 3172 Niederwangen, Germania",
+                "REQUEST_ACCESS": "Richiedi accesso",
+                "RESET_LINK_SENT": "Reset password Il link è stato inviato via e-mail. Si prega di controllare",
+                "UNREGISTERED_EMAIL": "L'e-mail non è registrata presso di noi",
+                "RESET_TOKEN_MISSMATCH": "Il token di reset della password non è stato assegnato correttamente",
+                "USED_LINK": "Link già utilizzato",
                 "PASSWORD_RESET_SUCCESS": "Passwort aktualisiert, zum Fortfahren bitte anmelden",
-                "NEW_PASSWORD": "Neues Kennwort",
-                "CONFIRM_PASSWORD": "Passwort bestätigen",
-                "RESET": "zurücksetzen",
-                "USERNAME_REQUIRED": "Bitte geben Sie einen gültigen Benutzernamen an.",
-                "PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Passwort an.",
-                "CONFIRM_PASSWORD_REQUIRED": "Bitte geben Sie ein gültiges Bestätigungspasswort an.",
+                "NEW_PASSWORD": "Nuova password",
+                "CONFIRM_PASSWORD": "Conferma la password",
+                "RESET": "reinizializzazione",
+                "EMAIL_REQUIRED": "Inserisci un indirizzo e-mail valido.",
+                "PASSWORD_REQUIRED": "Inserisci una password valida.",
+                "CONFIRM_PASSWORD_REQUIRED": "Inserisci una password di conferma valida.",
                 "CONTACT": "0800 461 461",
                 "LOGO_IMG": "logo_de.png",
                 "LOGIN_IMG": "vermieter-login-app.png",
-                "FORGOT_TEXT": "Bitte eine E-Mail-Adresse für das Benutzerkonto eingeben. Ein Bestätigungscode wird dann an diese verschickt. Sobald der Code vorliegt, kann ein neues Passwort für das Benutzerkonto festgelegt werden.",
-                "POPOVER_DATA": "Bitte die bei der Registrierung des Benutzerkontos verwendete E-Mail-Adresse eingeben.&lt;br /&gt;Ein Bestätigungscode wird dann an diese Adresse geschickt. Sobald dieser Code vorliegt, kann ein neues Passwort für das Benutzerkonto eingegeben werden.",
-                "IDENTIFIER": "E-Mail-Adresse",
-                "BACK": "Zurück",
-                "SEND_FORGOT_MAIL": "Senden",
+                "FORGOT_TEXT": "Inserisci un indirizzo e-mail per l'account utente. Ti verrà quindi inviato un codice di conferma. Non appena il codice è disponibile, è possibile impostare una nuova password per l'account utente.",
+                "POPOVER_DATA": "Inserisci l'indirizzo e-mail utilizzato al momento della registrazione del tuo account utente. A questo indirizzo verrà quindi inviato un codice di conferma. Non appena questo codice è disponibile, è possibile inserire una nuova password per l'account utente.",
+                "IDENTIFIER": "Indirizzo e-mail",
+                "BACK": "Indietro",
+                "SEND_FORGOT_MAIL": "Trasmissione",
                 "RESPONSIVE_LOGO": "logo-w-de.png",
                 "routes": {
-                    "FORGOT_PASSWORD_LINK": "anmeldung/passwort-vergessen",
-                    "LOGIN": "anmelden",
-                    "DASHBOARD": "instrumentenbord",
-                    "PASSWORD_RESET": "passwortRucksetzen",
-                    "PASSWORD_EMAIL": "passwort_email",
-                    "PASSWORD_UPDATE": "passwort_aktualisierung",
-                    "LOGOUT": "abmeldung"
+                    "FORGOT_PASSWORD_LINK": "immatricolazione/password-dimenticata",
+                    "LOGIN": "registro",
+                    "DASHBOARD": "cruscotto",
+                    "PASSWORD_RESET": "passwordReset",
+                    "PASSWORD_EMAIL": "password_email",
+                    "PASSWORD_UPDATE": "aggiornamento_password",
+                    "LOGOUT": "disconnessione"
                 }
             }
         },
@@ -2483,6 +2701,8 @@ export default {
             "INVOICES": "Rechnungen",
             "PUBLISHED": "Pubblicato",
             "UNPUBLISHED": "Inedito",
+            "SAVE": "Salva",
+            "CLOSE": "Schliessen",
             "language": {
                 "DE": "Deutsch",
                 "FR": "Französisch",
@@ -2583,13 +2803,16 @@ export default {
             "ENABLED": "Abilitato",
             "ACTIVATED": "Attivato",
             "SELECT_STATUS": "Seleziona lo stato",
-            "NO_RESULTS_TEXT_DROPDOWN": "Nessun risultato corrispondente trovato!"
+            "NO_RESULTS_TEXT_DROPDOWN": "Nessun risultato corrispondente trovato!",
+            "SAVE_AND_CLOSE": "Salva & Schliessen",
+            "NO_SELECT_ITEM": "Seleziona un elemento dalla lista"
         },
         "role": {
             "ROLES": "Gruppi",
             "TITLE": "Titolo gruppo",
             "ACTIVE": "Attivo",
-            "INACTIVE": "Inattivo"
+            "INACTIVE": "Inattivo",
+            "EDIT_ROLE": "Modifica gruppo"
         },
         "login": {
             "LOGIN": "Accedi",

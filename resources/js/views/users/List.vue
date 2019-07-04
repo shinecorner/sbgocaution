@@ -47,11 +47,11 @@
                                 </template> 
                                 <template slot="edit" slot-scope="props">
                                     <v-tooltip top v-if="props.rowData.id">
-                                            <a href="#" slot="activator">
+                                            <router-link slot="activator" :to="{ name: 'user_edit', params: { id:  props.rowData.id}}">
                                                 <v-avatar size="26" class="round-badge-success">
                                                     <v-icon color="white" small>zmdi zmdi-edit</v-icon>
                                                 </v-avatar>
-                                            </a>    
+                                            </router-link>
                                         <span>{{ $t('general.EDIT') }}</span>
                                     </v-tooltip>
                                 </template>  

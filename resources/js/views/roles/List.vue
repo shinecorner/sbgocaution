@@ -46,11 +46,11 @@
                                 </template>
                                 <template slot="r_edit" slot-scope="props">
                                     <v-tooltip top v-if="props.rowData.id">
-                                            <a href="#" slot="activator">
+                                            <router-link slot="activator" :to="{ name: 'role_edit', params: { id:  props.rowData.id}}">
                                                 <v-avatar size="26" class="round-badge-success">
                                                     <v-icon color="white" small>zmdi zmdi-edit</v-icon>
                                                 </v-avatar>
-                                            </a>    
+                                            </router-link>
                                         <span>{{ $t('general.EDIT') }}</span>
                                     </v-tooltip>
                                 </template>
@@ -73,7 +73,9 @@
                         </div>
                     </app-card>
                 </v-layout>
-            </v-container>            
+            </v-container>      
+            <confirm-delete v-if="confirmDeleteDialog" :toggleConfirm="deleteConfirm"></confirm-delete>
+            <delete-dialog v-if="deleteDialog" :toggle="deleteToggle"></delete-dialog>
 	</div>
 </template>
 
@@ -83,6 +85,8 @@ import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginatio
 import globalFunction from "Helpers/helpers";
 import Filters from "./Filters";
 import {TableData} from "Helpers/TableData";
+import DeleteDialog from "Components/Crm/General/NoItemSelectedDialog";
+import ConfirmDelete from "Components/Crm/General/DeleteConfirmation";
 
 export default {
     mixins: [globalFunction, TableData],
@@ -90,7 +94,9 @@ export default {
         Vuetable,
         VuetablePagination,        
         VuetablePaginationInfo,
-        Filters
+        Filters,
+        DeleteDialog,
+        ConfirmDelete
     },    
      data() {        
         return {   
@@ -104,17 +110,33 @@ export default {
                 {title: "", name: "r_edit", dataClass: 'edit_data'},
                 {title: () => this.$i18n.t('role.ACTIVE'), name: 'cnt_active_users', dataClass: 'edit_data', titleClass: 'edit_column'},
                 {title: () => this.$i18n.t('role.INACTIVE'), name: "cnt_inactive_users",dataClass: 'edit_data', titleClass: 'edit_column'},
-            ],                                           
+            ],
+            deleteDialog: false,
+            confirmDeleteDialog: false
         }
      },     
     computed:{},   
     methods: {               
         roleFetch(apiUrl,httpOptions){
             return api.get(apiUrl, httpOptions);
-        }        
+        },
+        toggleDialog(){
+            if(this.checkedRows.length >0) {
+                this.deleteConfirm();
+            }else {
+                this.deleteToggle();
+            }
+        },
+        deleteConfirm(){
+            this.confirmDeleteDialog = !this.confirmDeleteDialog;
+        },
+        deleteToggle(){
+            this.deleteDialog = !this.deleteDialog;
+        },
     },
     created() {        
         this.$store.dispatch("setHeaderTitle", 'role.ROLES');
+        Vue.prototype.$eventHub.$on('toggleDialogRole', this.toggleDialog);
     }
 };
 </script>

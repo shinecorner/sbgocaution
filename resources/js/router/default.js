@@ -168,6 +168,23 @@ export default {
         }
       },
       {
+        path: '/users/create',
+        name: 'user_create',
+        component: UserAddEdit,
+        meta: {
+            requiresAuth: true,
+            title: 'user.USERS',
+            breadcrumb: [
+              {
+                breadcrumbInactive: 'general.CRM'
+              },
+              {
+                breadcrumbActive: 'user.USERS'
+              }
+            ]
+        }
+      },
+      {
         path: '/users/:id/edit',
         name: 'user_edit',
         component: UserAddEdit,
