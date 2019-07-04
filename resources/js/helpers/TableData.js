@@ -113,6 +113,13 @@ export const TableData = {
         deleteConfirm(){
             this.show_confirm_delete = true;
         },
+        toggleDialog(){
+            if(this.checkedRows.length >0) {
+                this.show_confirm_delete = true;
+            }else {
+                this.show_no_item_dialog = true;
+            }
+        },
     },
     created() {
         this.currentPerPage = this.perPage;        

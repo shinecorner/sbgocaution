@@ -122,14 +122,7 @@ export default {
     methods: {               
         roleFetch(apiUrl,httpOptions){
             return api.get(apiUrl, httpOptions);
-        },
-        toggleDialog(){
-            if(this.checkedRows.length >0) {
-                this.show_confirm_delete = true;
-            }else {
-                this.show_no_item_dialog = true;
-            }
-        },        
+        },                
         deleteEntityHandler(){
             let that = this;
             that.loading = true;
