@@ -9,19 +9,13 @@
                     <city></city>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
-                    <kanton></kanton>
+                    <realestate-agency></realestate-agency>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
-                    <salutation></salutation>
+                    <status></status>
                 </v-flex>
                 <v-flex xs12 sm6 md4 lg2 xl2>
-                    <language></language>
-                </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
-                    <policy-number></policy-number>
-                </v-flex>
-                <v-flex xs12 sm6 md4 lg2 xl2>
-                    <policy-accepted-number></policy-accepted-number>
+                    <policy-count></policy-count>
                 </v-flex>
             </v-layout>
         </v-form>
@@ -40,22 +34,18 @@
 <script>
 import globalFunction from "Helpers/helpers";
 import {TableFilter} from "Helpers/TableFilter"
-import Language from "Components/Crm/General/Language";
-import Salutation from "Components/Crm/PrivateLandlord/Salutation";
-import City from "Components/Crm/PrivateLandlord/City";
-import Kanton from "Components/Crm/PrivateLandlord/Kanton";
-import PolicyNumber from "Components/Crm/General/PolicyNumber";
-import PolicyAcceptedNumber from "Components/Crm/General/PolicyAcceptedNumber";
+import City from "Components/Crm/HouseOwner/City";
+import PolicyCount from "Components/Crm/General/PolicyNumber";
+import RealestateAgency from "Components/Crm/HouseOwner/RealestateAgency";
+import Status from "Components/Crm/HouseOwner/Status";
 
 export default{
     mixins: [globalFunction, TableFilter],
     components: {
-        Salutation,
-        Language,
         City,
-        Kanton,
-        PolicyNumber,
-        PolicyAcceptedNumber
+        Status,
+        RealestateAgency,
+        PolicyCount
     }
 }
 </script>

@@ -1,6 +1,5 @@
 <template>
     <div class="houseownerlist">
-        <!--<page-title-bar></page-title-bar>-->
         <app-section-loader :status="loading"></app-section-loader>
         <v-container fluid grid-list-xl py-0>
             <v-layout row wrap>
@@ -8,7 +7,7 @@
                     :fullBlock="true"
                     colClasses="xl12 lg12 md12 sm12 xs12"
                 >
-                    <!--<filters @filterData="onFilterData" @resetData="onResetFilter" @changePage="changePageHandler"></filters>-->
+                    <filters @filterData="onFilterData" @resetData="onResetFilter" @changePage="changePageHandler"></filters>
                 </app-card>
             </v-layout>
             <v-layout row wrap>
@@ -56,7 +55,10 @@
                                 <span class="primary-text" v-if="props.rowData.city">{{ props.rowData.city }}</span>
                             </template>
                             <template slot="cip" slot-scope="props">
-                                <span class="primary-text" v-if="props.rowData.city">{{ props.rowData.zip }}</span>
+                                <span class="primary-text" v-if="props.rowData.zip">{{ props.rowData.zip }}</span>
+                            </template>
+                            <template slot="status" slot-scope="props">
+                                <span class="primary-text" v-if="props.rowData.status">{{ props.rowData.status }}</span>
                             </template>
                         </vuetable>
                     </div>
@@ -80,6 +82,7 @@
     import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginationDropdown} from 'vuetable-2';
     import globalFunction from "Helpers/helpers";
     import {TableData} from "Helpers/TableData";
+    import Filters from "./Filters";
 
     export default {
         mixins: [globalFunction, TableData],
@@ -87,6 +90,7 @@
             Vuetable,
             VuetablePagination,
             VuetablePaginationInfo,
+            Filters
         },
         data() {
             return {
@@ -94,10 +98,10 @@
                     {name: "prettycheck",   title: '', titleClass: "chkbox_column", dataClass: "chkbox_column"},
                     { title: () => this.$i18n.t('general.NAME'), name: "name" },
                     { title: "", name: "edit", dataClass: 'edit_data', titleClass:'edit_column' },
-                    { title: () => this.$i18n.t('general.STATUS'), name: "status"},
                     { title: () => this.$i18n.t('general.ADDRESS'), name: "address" },
                     { title: () => this.$i18n.t('houseowner.CITY'), name: "city" },
-                    { title: () => this.$i18n.t('general.CIP'), name: "cip" }
+                    { title: () => this.$i18n.t('general.CIP'), name: "cip" },
+                    { title: () => this.$i18n.t('general.STATUS'), name: "status"}
                 ],
             }
         },
@@ -131,7 +135,7 @@
         width: 40px;
     }
     .houseownerlist >>> .list-table-container table.v-table thead th:nth-child(2), .houseownerlist >>> .list-table-container table.v-table tbody td:nth-child(2){
-        width: 150px;
+        width: 200px;
     }
     .houseownerlist >>> .list-table-container table.v-table thead th:nth-child(3), .houseownerlist >>> .list-table-container table.v-table tbody td:nth-child(3){
         width: 40px;
@@ -141,10 +145,10 @@
         padding-left: 25px;
     }
     .houseownerlist >>> .list-table-container table.v-table thead th:nth-child(5), .houseownerlist >>> .list-table-container table.v-table tbody td:nth-child(5){
-        width: 20%;
+        width: 18%;
     }
     .houseownerlist >>> .list-table-container table.v-table thead th:nth-child(6), .houseownerlist >>> .list-table-container table.v-table tbody td:nth-child(6){
-        width: 150px;
+        width: 100px;
     }
     .houseownerlist >>> .list-table-container table.v-table thead th:nth-child(7), .houseownerlist >>> .list-table-container table.v-table tbody td:nth-child(7){
         width: 200px;
