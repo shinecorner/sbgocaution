@@ -83,8 +83,19 @@
                 </app-card>
             </v-layout>
         </v-container>
-        <confirm-delete v-if="confirmDeleteDialog" :toggleConfirm="deleteConfirm"></confirm-delete>
-        <delete-dialog v-if="deleteDialog" :toggle="deleteToggle"></delete-dialog>
+        <delete-confirmation
+            :show_confirm_delete="show_confirm_delete"
+            :headerText="$t('general.DELETE_CONFIRM_MSG',{'name': $t('role.ROLES')})"
+            :bodyText="$t('general.DELETE_CONFIRM_MSG',{'name': $t('role.ROLES')})"
+            @deleteEntity="deleteEntityHandler"
+            @closeConfirm="show_confirm_delete = false"
+        >
+        </delete-confirmation>
+        <no-item-selected-dialog
+            :show_no_item_dialog="show_no_item_dialog"
+            @closeDialog="show_no_item_dialog = false">
+        </no-item-selected-dialog>
+        <!--<delete-dialog v-if="deleteDialog" :toggle="deleteToggle"></delete-dialog>-->
     </div>
 </template>
 
@@ -94,18 +105,17 @@
     import globalFunction from "Helpers/helpers";
     import {TableData} from "Helpers/TableData";
     import Filters from "./Filters";
-    import DeleteDialog from "Components/Crm/General/NoItemSelectedDialog";
-    import ConfirmDelete from "Components/Crm/Template/DeleteConfirmation";
+    import {AddEdit} from "Helpers/AddEdit";
 
     export default {
-        mixins: [globalFunction, TableData],
+        mixins: [globalFunction, TableData, AddEdit],
         components: {
+            // NoItemSelectedDialog,
             Vuetable,
             VuetablePagination,
             VuetablePaginationInfo,
             Filters,
-            DeleteDialog,
-            ConfirmDelete
+            // DeleteDialog
         },
         data() {
             return {
@@ -117,9 +127,7 @@
                     {title: () => this.$i18n.t('template.SECTION'), name: "section"},
                     {title: () => this.$i18n.t('general.STATUS'), name: "status"}
                 ],
-                checkedRows: [],
                 deleteDialog: false,
-                confirmDeleteDialog: false
             }
         },
         computed:{
@@ -140,29 +148,20 @@
             editRedirect(template_id) {
                 this.$router.push({name:'template_edit', params: { template_id: template_id }})
             },
-            toggleDialog(){
-                if(this.checkedRows.length >0) {
-                    this.deleteConfirm();
-                }else {
-                    this.deleteToggle();
-                }
-            },
-            deleteConfirm(){
-                this.confirmDeleteDialog = !this.confirmDeleteDialog;
-            },
-            deleteToggle(){
-                this.deleteDialog = !this.deleteDialog;
-            },
-            deleteTemplateById(){
-                // api.delete('/api/templates/' + this.checkedRows).then(response => {
-                //     console.log('delete')
+            deleteEntityHandler(){
+                // let that = this;
+                // that.loading = true;
+                // api.delete('/api/templates/'+this.$route.params.template_id).then(response => {
+                //     Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                //     that.show_confirm_delete = false;
+                //     that.loading = false;
+                //     that.$router.push('/templates');
                 // })
-            }
+            },
         },
         created() {
            this.$store.dispatch("setHeaderTitle", 'template.TEMPLATES');
            Vue.prototype.$eventHub.$on('toggleDialogTemplate', this.toggleDialog);
-           Vue.prototype.$eventHub.$on('deleteTemp', this.deleteTemplateById);
         }
     };
 </script>

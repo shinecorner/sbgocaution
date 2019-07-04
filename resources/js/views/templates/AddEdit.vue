@@ -102,14 +102,21 @@
         </app-card>
     </v-layout>
 </v-container>
-<delete-confirmation v-if="confirmDeleteDialog" :toggleConfirm="deleteConfirm"></delete-confirmation>
+    <delete-confirmation
+        :show_confirm_delete="show_confirm_delete"
+        :headerText="$t('general.DELETE_CONFIRM_MSG',{'name': $t('template.TEMPLATE')})"
+        :bodyText="$t('general.DELETE_CONFIRM_MSG',{'name': $t('template.TEMPLATE')})"
+        @deleteEntity="deleteEntityHandler"
+        @closeConfirm="show_confirm_delete = false"
+    >
+    </delete-confirmation>
 </div>
 </template>
 <script>
     import api from "Api";
-    import DeleteConfirmation from "../../components/Crm/Template/DeleteConfirmation";
+    import {AddEdit} from "Helpers/AddEdit";
     export default {
-        components: {DeleteConfirmation},
+        mixins: [AddEdit],
         created() {
             this.$store.dispatch("setHeaderTitle", 'template.TEMPLATE');
             let that = this;
@@ -125,7 +132,8 @@
                     })
                 });
             }
-            Vue.prototype.$eventHub.$on('saveTemplate', this.validateForm);
+            Vue.prototype.$eventHub.$on('saveTemplate', (payload) => {that.validateForm(payload)});
+            Vue.prototype.$eventHub.$on('saveAndCloseTemplate', (payload) => {that.validateForm(payload)});
             Vue.prototype.$eventHub.$on('toggleEditDialogTemplate', this.deleteConfirm);
             this.$validator.extend('checkTemplateKey', {
                 getMessage(field, val) {
@@ -134,11 +142,9 @@
                 validate(value, field) {
                     that.temp_key = value ? value.toLowerCase().trim().replace(/\s+/g, " ").split(' ').join('_') : '';
                     if(that.template_keys.includes(that.temp_key)) {
-                        that.tempkey_error = true;
                         return false;
                     }
                     else {
-                        that.tempkey_error = false;
                         return true;
                     }
                 }
@@ -146,6 +152,7 @@
         },
         beforeDestroy() {
             Vue.prototype.$eventHub.$off('saveTemplate');
+            Vue.prototype.$eventHub.$off('saveAndCloseTemplate');
         },
         data: function() {
             return {
@@ -163,12 +170,11 @@
                 ],
                 template_keys: [],
                 temp_key: '',
-                tempkey_error: false,
                 confirmDeleteDialog: false
             };
         },
         methods: {
-            validateForm() {
+            validateForm(event_type='save') {
                 this.$validator.validateAll().then((result) => {
                     if (!result) {
                         Vue.prototype.$eventHub.$emit('fireError', this.$validator.errors.all());
@@ -179,32 +185,32 @@
                         if(this.$route.name == "template_edit") {
                             api.put('/api/templates/' + this.$route.params.template_id, this.templateData).then(response => {
                                 Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                                if(event_type == 'save_and_close'){
+                                    this.$router.push('/templates');
+                                }
                             })
                         }
                         else if(this.$route.name == "template_create"){
                             api.post('/api/templates', this.templateData).then(response => {
                                 Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                                if(event_type == 'save_and_close'){
+                                    this.$router.push('/templates');
+                                }
                             })
                         }
                     }
-                    Vue.prototype.$eventHub.$emit('checkError', result);
                 });
             },
-            checkTemplateKey(){
-                this.temp_key = this.templateData.template_key ? this.templateData.template_key.toLowerCase().trim().replace(/\s+/g, " ").split(' ').join('_') : '';
-                if(this.template_keys.includes(this.temp_key)) {
-                    this.tempkey_error = true;
-                    Vue.prototype.$eventHub.$emit('fireError', 'template key error');
-                    return false;
-                }
-                else {
-                    this.tempkey_error = false;
-                    return true;
-                }
-            },
-            deleteConfirm(){
-                this.confirmDeleteDialog = !this.confirmDeleteDialog;
-            },
+            deleteEntityHandler(){
+                // let that = this;
+                // that.loading = true;
+                // api.delete('/api/templates/'+this.$route.params.template_id).then(response => {
+                //     Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                //     that.show_confirm_delete = false;
+                //     that.loading = false;
+                //     that.$router.push('/templates');
+                // })
+            }
         },
         computed: {
             editor() {

@@ -6,5 +6,9 @@ return [
 	'status' => [
 		'NOT_CONTACTED' => "Kontaktiert",
 		'IN_CONTACT' => "Nicht kontaktiert"
+	],
+	'filter' => [
+	    'REALESTATE_COMPANY' => 'Verwaltungen'
 	]
+
 ];
