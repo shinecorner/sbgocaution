@@ -79,68 +79,63 @@ class ContactController extends Controller
         $real_contact_num = $real_contact_num == null ? 1 : $real_contact_num->id + 1; 
         $contact->real_contact_num = $real_contact_num;
         $contact->contact_num = getUniqueNum($real_contact_num, 3);
-        $contact->contact_type = $request->contact_type;
-        $contact->salutation = $request->salutation;
-        $contact->last_name = $request->last_name;
-        $contact->first_name = $request->first_name;
-        $contact->language = $request->language;
-        $contact->email = $request->email;
-        
-        if($request->has('phone')) {
-            $contact->phone = $request->phone;
+
+        $contact_fields = [
+            'contact_type',
+            'salutation',
+            'last_name',
+            'first_name',
+            'language',
+            'email',
+            'phone',
+            'mobile',
+            'birthdate',
+            'nation',
+            'indebted',
+            'status',
+            'lead_source',
+            'pay_options',
+            'co_options',
+            'rc_active',
+            'rc_policy',
+            'rc_company',
+            'ip_user',
+            'iban',
+            'promo_code',
+            'client_notice',
+            'promo_success',
+            'promo_review',
+            'promo_review_facebook',
+            'promo_review_google',
+            'promo_review_local'
+        ];
+        foreach($contact_fields as $contact_field) {
+            if($request->has($contact_field)) {
+                $contact->{$contact_field} = $request->{$contact_field};
+            }
         }
-
-        if($request->has('mobile')) {
-            $contact->mobile = $request->mobile;
-        }
-
-        if($request->has('birthdate')) {
-            $contact->birthdate = $request->birthdate;
-        }
-
-        if($request->has('nation')) {
-            $contact->nation = $request->nation;
-        }
-
-        $contact->indebted = $request->indebted;
-
-        if($request->has('status')) {
-            $contact->status = $request->status;
-        }
-
-        if($request->has('lead_source')) {
-            $contact->lead_source = $request->lead_source;
-        }
-
-        $contact->pay_options = $request->pay_options;
-        $contact->co_options = $request->co_options;
-        $contact->rc_active = $request->rc_active;
-        $contact->rc_policy = $request->rc_policy;
-        $contact->rc_company = $request->rc_company;
-        $contact->ip_user = $request->ip_user;
-        $contact->iban = $request->iban;
-        $contact->promo_code = $request->promo_code;
-        $contact->client_notice = $request->client_notice;
-        $contact->promo_success = $request->promo_success;
-        $contact->promo_review = $request->promo_review;
-        $contact->promo_review_facebook = $request->promo_review_facebook;
-        $contact->promo_review_google = $request->promo_review_google;
-        $contact->promo_review_local = $request->promo_review_local;
         $contact->save();
 
         // Contact Additionals
-
         $contact_additional = new ContactAdditional();
-        $contact_additional->property_address = $request->property_address;
-        $contact_additional->property_zip = $request->property_zip;
-        $contact_additional->property_city = $request->property_city;
-        $contact_additional->lessor_name = $request->lessor_name;
-        $contact_additional->lessor_contact = $request->lessor_contact;
-        $contact_additional->lessor_address = $request->lessor_address;
-        $contact_additional->lessor_zip = $request->lessor_zip;
-        $contact_additional->lessor_city = $request->lessor_city;
-        $contact_additional->rent_begin = $request->rent_begin;
-        $contact_additional->rent_amount = $request->rent_amount;
+
+        $contact_additional_fields = [
+            'property_address',
+            'property_zip',
+            'property_city',
+            'lessor_name',
+            'lessor_contact',
+            'lessor_address',
+            'lessor_zip',
+            'lessor_city',
+            'rent_begin',
+            'rent_amount'
+        ];
+        foreach($contact_additional_fields as $contact_additional_field) {
+            if($request->has($contact_additional_field)) {
+                $contact_additional->{$contact_additional_field} = $request->{$contact_additional_field};
+            }   
+        }
         $contact_additional->contact_id = $contact->id;
         $contact_additional->save();
 
