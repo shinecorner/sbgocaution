@@ -126,5 +126,6 @@ return [
     'SELECT_STATUS' => 'Select status',
     'NO_RESULTS_TEXT_DROPDOWN' => 'No matching results found!',
     'SAVE_AND_CLOSE' => 'Save & Close',
-    'NO_SELECT_ITEM' => 'Please first make a selection from the list'
+    'NO_SELECT_ITEM' => 'Please first make a selection from the list',
+    'DELETE_CONFIRM_MSG' => 'Are you sure you want to delete the selected {name}?'
 ];

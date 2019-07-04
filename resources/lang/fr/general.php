@@ -126,5 +126,6 @@ return [
     'SELECT_STATUS' => 'Choisir le statut',
     'NO_RESULTS_TEXT_DROPDOWN' => 'Aucun résultat trouvé !',
     'SAVE_AND_CLOSE' => 'Enregistrer & Fermer',
-    'NO_SELECT_ITEM' => 'Veuillez d\'abord effectuer une sélection dans la liste'
+    'NO_SELECT_ITEM' => 'Veuillez d\'abord effectuer une sélection dans la liste',
+    'DELETE_CONFIRM_MSG' => 'Êtes-vous sûr de vouloir supprimer la {name} sélectionnée ?'
 ];
