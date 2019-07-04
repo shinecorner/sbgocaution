@@ -1,16 +1,16 @@
 <template>
     <div class="top-actions">
-        <div v-if="route.path == '/templates'">
-            <v-btn small color="success left" @click="addtemplateRoute"><v-icon>zmdi-plus-circle</v-icon>&nbsp;{{$t('general.NEW')}}</v-btn>
+        <div v-if="route.name == 'templates'">
+            <v-btn small color="success left" @click="addTemplate"><v-icon>zmdi-plus-circle</v-icon>&nbsp;{{$t('general.NEW')}}</v-btn>
             <v-btn small @click="toggleDeleteDialog"><v-icon>zmdi-close-circle</v-icon>&nbsp;{{$t('general.DELETE')}}</v-btn>
         </div>
-        <div v-else-if="route.path == '/templates/create'">
+        <div v-else-if="route.name == 'template_create'">
             <v-btn small  @click="saveCloseTemplate" color="success left"><v-icon>zmdi-check</v-icon>&nbsp;{{$t('general.SAVE_AND_CLOSE')}}</v-btn>
             <v-btn small  @click="close"><v-icon>zmdi-close-circle</v-icon>&nbsp;{{$t('general.CLOSE')}}</v-btn>
         </div>
-        <div v-else>
+        <div v-else-if="route.name == 'template_edit'">
             <v-btn small color="success left" @click="saveCloseTemplate"><v-icon>zmdi-check</v-icon>&nbsp;{{$t('general.SAVE_AND_CLOSE')}}</v-btn>
-            <v-btn small @click="addTemplate"><v-icon>zmdi-edit</v-icon>&nbsp;{{$t('general.SAVE')}}</v-btn>
+            <v-btn small @click="saveTemplate"><v-icon>zmdi-edit</v-icon>&nbsp;{{$t('general.SAVE')}}</v-btn>
             <v-btn small @click="toggleDeleteDialog"><v-icon>zmdi-close-circle</v-icon>&nbsp;{{$t('general.DELETE')}}</v-btn>
             <v-btn small @click="close"><v-icon>zmdi-close-circle</v-icon>&nbsp;{{$t('general.CLOSE')}}</v-btn>
         </div>
@@ -22,40 +22,27 @@ export default {
         props: {},
         data() {
             return {
-                routeRedirect: null
             };
         },
         computed: mapState([
-            // map this.count to store.state.route
             'route'
         ]),
         beforeDestroy() {
-            this.routeRedirect = null;
-            Vue.prototype.$eventHub.$off('errorCheck');
             Vue.prototype.$eventHub.$off('toggleDialogTemplate');
             Vue.prototype.$eventHub.$off('toggleEditDialogTemplate');
         },
         methods: {
-            addtemplateRoute(){
+            addTemplate: function(){
                 this.$router.push({name: 'template_create'})
+            },
+            saveTemplate: function(){
+                Vue.prototype.$eventHub.$emit('saveTemplate', 'save');
+            },
+            saveCloseTemplate: function(){
+                Vue.prototype.$eventHub.$emit('saveAndCloseTemplate', 'save_and_close');
             },
             close(){
                 this.$router.push('/templates');
-            },
-            addTemplate(){
-               this.routeRedirect = "save"
-               Vue.prototype.$eventHub.$emit('saveTemplate');
-            },
-            errorCheck(result){
-                if(result == true) {
-                    if(this.routeRedirect == null){
-                      this.$router.push('/templates');}
-                }
-             },
-            saveCloseTemplate(){
-                this.routeRedirect = null;
-                Vue.prototype.$eventHub.$emit('saveTemplate');
-                Vue.prototype.$eventHub.$on('checkError', this.errorCheck);
             },
             toggleDeleteDialog() {
                 if (this.route.name == 'templates'){
