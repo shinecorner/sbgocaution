@@ -110,6 +110,9 @@ class Controller extends BaseController
             case 'realestateagency':
                 $data['helpers']['statuses'][$status] = getPolicyRealestateAgencyStatusesPlain();
                 break;
+            case 'houseowner':
+                $data['helpers']['statuses'][$status] = getHouseownerStatusesPlain();
+                break;
         }
     }
 
