@@ -14,7 +14,8 @@ class UsersTableSeeder extends Seeder
     {
     	DB::table('users')->truncate();
         factory(App\User::class, 8)->create()->each(function ($user) {
-            $user->assignRole('super-users');
+            $role = Role::findByName('super-users', 'api');
+            $user->assignRole($role);
         });
     }
 }

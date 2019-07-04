@@ -38,7 +38,11 @@ class RoleController extends Controller
             'name' => 'required|alpha_dash|unique:roles,name',
         ]);
 
-        $role = Role::create($request->all());
+        $role = Role::create($request->except('permissions'));
+
+        if($request->has('permissions')) {
+            $role->syncPermissions($request->permissions);
+        }
 
         if($role) 
         {

@@ -21,45 +21,45 @@ class RolesAndPermissionsTableSeeder extends Seeder
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
         // create permissions
-        Permission::create(['name' => 'dashboard']);
-        Permission::create(['name' => 'contacts']);
-        Permission::create(['name' => 'contacts_delete']);
-        Permission::create(['name' => 'policies']);
-        Permission::create(['name' => 'policies_delete']);
-        Permission::create(['name' => 'invoices']);
-        Permission::create(['name' => 'invoices_generali']);
-        Permission::create(['name' => 'payments']);
-        Permission::create(['name' => 'payments_delete']);
-        Permission::create(['name' => 'refunds']);
-        Permission::create(['name' => 'refunds_delete']);
-        Permission::create(['name' => 'damages']);
-        Permission::create(['name' => 'damages_delete']);
-        Permission::create(['name' => 'additional_businesses']);
-        Permission::create(['name' => 'additional_businesses_delete']);
-        Permission::create(['name' => 'real_estate_companies']);
-        Permission::create(['name' => 'real_estate_companies_delete']);
-        Permission::create(['name' => 'employees']);
-        Permission::create(['name' => 'employees_delete']);
-        Permission::create(['name' => 'private_houseowners']);
-        Permission::create(['name' => 'private_houseowners_delete']);
-        Permission::create(['name' => 'business_houseowners']);
-        Permission::create(['name' => 'business_houseowners_delete']);
-        Permission::create(['name' => 'insurance_brokers']);
-        Permission::create(['name' => 'insurance_brokers_delete']);
-        Permission::create(['name' => 'call_center_contacts']);
-        Permission::create(['name' => 'call_center_contacts_delete']);
-        Permission::create(['name' => 'templates']);
-        Permission::create(['name' => 'templates_delete']);
-        Permission::create(['name' => 'customer']);
-        Permission::create(['name' => 'landlord']);
+        Permission::create(['guard_name' => 'api', 'name' => 'dashboard']);
+        Permission::create(['guard_name' => 'api', 'name' => 'contacts']);
+        Permission::create(['guard_name' => 'api', 'name' => 'contacts_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'policies']);
+        Permission::create(['guard_name' => 'api', 'name' => 'policies_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'invoices']);
+        Permission::create(['guard_name' => 'api', 'name' => 'invoices_generali']);
+        Permission::create(['guard_name' => 'api', 'name' => 'payments']);
+        Permission::create(['guard_name' => 'api', 'name' => 'payments_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'refunds']);
+        Permission::create(['guard_name' => 'api', 'name' => 'refunds_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'damages']);
+        Permission::create(['guard_name' => 'api', 'name' => 'damages_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'additional_businesses']);
+        Permission::create(['guard_name' => 'api', 'name' => 'additional_businesses_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'real_estate_companies']);
+        Permission::create(['guard_name' => 'api', 'name' => 'real_estate_companies_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'employees']);
+        Permission::create(['guard_name' => 'api', 'name' => 'employees_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'private_houseowners']);
+        Permission::create(['guard_name' => 'api', 'name' => 'private_houseowners_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'business_houseowners']);
+        Permission::create(['guard_name' => 'api', 'name' => 'business_houseowners_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'insurance_brokers']);
+        Permission::create(['guard_name' => 'api', 'name' => 'insurance_brokers_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'call_center_contacts']);
+        Permission::create(['guard_name' => 'api', 'name' => 'call_center_contacts_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'templates']);
+        Permission::create(['guard_name' => 'api', 'name' => 'templates_delete']);
+        Permission::create(['guard_name' => 'api', 'name' => 'customer']);
+        Permission::create(['guard_name' => 'api', 'name' => 'landlord']);
 
         // create roles and assign created permissions
-		Role::create(['name' => 'super-users']);
-        Role::create(['name' => 'squad']);
-        Role::create(['name' => 'collection-department']);
-        Role::create(['name' => 'back-office-staff']);
-        Role::create(['name' => 'landlords']);
-        Role::create(['name' => 'customers']);
+		Role::create(['guard_name' => 'api', 'name' => 'super-users']);
+        Role::create(['guard_name' => 'api', 'name' => 'squad']);
+        Role::create(['guard_name' => 'api', 'name' => 'collection-department']);
+        Role::create(['guard_name' => 'api', 'name' => 'back-office-staff']);
+        Role::create(['guard_name' => 'api', 'name' => 'landlords']);
+        Role::create(['guard_name' => 'api', 'name' => 'customers']);
 
     }
 }
