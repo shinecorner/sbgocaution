@@ -1,10 +1,10 @@
 <template>
-    <v-dialog v-model="show_confirm_delete" max-width="500" persistent>
+    <v-dialog v-model="show_confirm_delete" max-width="500" @keydown.esc="$emit('closeConfirm')" persistent>
         <v-card class="deleteDialog-card">
             <v-card-title class="deleteDialog-headline">
                 <span class="deleteDialog-headerfixed">{{headerText}}</span>
                 <v-menu bottom left>
-                    <v-btn icon slot="activator" @click.native="toggleConfirm">
+                    <v-btn icon slot="activator" @click="$emit('closeConfirm')">
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-menu>

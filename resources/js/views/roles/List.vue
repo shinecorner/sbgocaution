@@ -74,8 +74,17 @@
                     </app-card>
                 </v-layout>
             </v-container>      
-            <confirm-delete v-if="confirmDeleteDialog" :toggleConfirm="deleteConfirm"></confirm-delete>
-            <delete-dialog v-if="deleteDialog" :toggle="deleteToggle"></delete-dialog>
+            <delete-confirmation  
+                :show_confirm_delete="show_confirm_delete"
+                :headerText="$t('general.DELETE_CONFIRM_MSG',{'name': $t('role.ROLES')})"
+                :bodyText="$t('general.DELETE_CONFIRM_MSG',{'name': $t('role.ROLES')})"
+                @deleteEntity="deleteEntityHandler"
+                @closeConfirm="show_confirm_delete = false">
+            </delete-confirmation>
+            <no-item-selected-dialog 
+                :show_no_item_dialog="show_no_item_dialog" 
+                @closeDialog="show_no_item_dialog = false">
+            </no-item-selected-dialog>
 	</div>
 </template>
 
@@ -85,8 +94,6 @@ import { Vuetable, VuetablePagination, VuetablePaginationInfo, VuetablePaginatio
 import globalFunction from "Helpers/helpers";
 import Filters from "./Filters";
 import {TableData} from "Helpers/TableData";
-import DeleteDialog from "Components/Crm/General/NoItemSelectedDialog";
-import ConfirmDelete from "Components/Crm/General/DeleteConfirmation";
 
 export default {
     mixins: [globalFunction, TableData],
@@ -94,9 +101,7 @@ export default {
         Vuetable,
         VuetablePagination,        
         VuetablePaginationInfo,
-        Filters,
-        DeleteDialog,
-        ConfirmDelete
+        Filters        
     },    
      data() {        
         return {   
@@ -110,9 +115,7 @@ export default {
                 {title: "", name: "r_edit", dataClass: 'edit_data'},
                 {title: () => this.$i18n.t('role.ACTIVE'), name: 'cnt_active_users', dataClass: 'edit_data', titleClass: 'edit_column'},
                 {title: () => this.$i18n.t('role.INACTIVE'), name: "cnt_inactive_users",dataClass: 'edit_data', titleClass: 'edit_column'},
-            ],
-            deleteDialog: false,
-            confirmDeleteDialog: false
+            ],            
         }
      },     
     computed:{},   
@@ -122,17 +125,22 @@ export default {
         },
         toggleDialog(){
             if(this.checkedRows.length >0) {
-                this.deleteConfirm();
+                this.show_confirm_delete = true;
             }else {
-                this.deleteToggle();
+                this.show_no_item_dialog = true;
             }
-        },
-        deleteConfirm(){
-            this.confirmDeleteDialog = !this.confirmDeleteDialog;
-        },
-        deleteToggle(){
-            this.deleteDialog = !this.deleteDialog;
-        },
+        },        
+        deleteEntityHandler(){
+            let that = this;
+            that.loading = true;
+            console.log(this.checkedRows);
+            /*api.delete('/api/roles/'+this.$route.params.id).then(response => {
+                Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                that.show_confirm_delete = false;
+                that.loading = false;
+                that.$router.push('/roles');
+            })*/            
+        }
     },
     created() {        
         this.$store.dispatch("setHeaderTitle", 'role.ROLES');

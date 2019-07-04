@@ -1,10 +1,10 @@
 <template>
-<v-dialog v-model="dialog" max-width="500" class="delDialog" persistent>
+<v-dialog v-model="show_no_item_dialog" max-width="500" @keydown.esc="$emit('closeDialog')" class="delDialog" persistent>
     <v-card class="deleteDialog-card">
         <v-card-title class="deleteDialog-headline">
             {{ $t('general.NO_SELECT_ITEM') }}
             <v-menu bottom left>
-                <v-btn icon slot="activator" @click.native="toggle">
+                <v-btn icon slot="activator" @click="$emit('closeDialog')">
                     <v-icon>close</v-icon>
                 </v-btn>
             </v-menu>
@@ -15,11 +15,6 @@
 </template>
 <script>
     export default{
-        props: ['toggle'],
-        data() {
-            return {
-                dialog: true,
-            }
-        }
+        props: ['show_no_item_dialog']        
     }
 </script>
