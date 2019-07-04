@@ -1,9 +1,14 @@
 import { mapGetters } from "vuex";
+import NoItemSelectedDialog from "Components/Crm/General/NoItemSelectedDialog";
+import DeleteConfirmation from "Components/Crm/General/DeleteConfirmation";
 export const TableData = {
+    components: {NoItemSelectedDialog, DeleteConfirmation},
     data(){        
         return {
             noDataMessage: this.$i18n.t('general.DATA_LOADING'),
             loading: true,
+            show_no_item_dialog: false,
+            show_confirm_delete: false,
             currentPerPage: '',                        
             perPage: ((this.$store.getters.serverHelpers.hasOwnProperty('configs') && this.$store.getters.serverHelpers.configs['crm.items_per_page'])? parseInt(this.$store.getters.serverHelpers.configs['crm.items_per_page']) : 20),
             moreParams: {},
@@ -104,6 +109,9 @@ export const TableData = {
             this.$store.dispatch("clearInputItems");
             this.moreParams = {};        
             Vue.nextTick(() => this.$refs.vuetable.refresh());
+        },
+        deleteConfirm(){
+            this.show_confirm_delete = true;
         },
     },
     created() {
