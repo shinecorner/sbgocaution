@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Contact;
+use App\ContactAdditional;
 use App\Config;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContactResource;
@@ -66,12 +67,79 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'date' => 'required',
-            'real_contact_num' => 'required',
-            'user_id' => 'required'
+            'contact_type' => 'required',
+            'salutation' => 'required',
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'language' => 'required',
+            'email' => 'required'
         ]);
+        $contact = new Contact();
+        $real_contact_num = Contact::latest()->first();
+        $real_contact_num = $real_contact_num == null ? 1 : $real_contact_num->id + 1; 
+        $contact->real_contact_num = $real_contact_num;
+        $contact->contact_num = getUniqueNum($real_contact_num, 3);
 
-        return new ContactResource(Contact::create($request->all()));
+        $contact_fields = [
+            'contact_type',
+            'salutation',
+            'last_name',
+            'first_name',
+            'language',
+            'email',
+            'phone',
+            'mobile',
+            'birthdate',
+            'nation',
+            'indebted',
+            'status',
+            'lead_source',
+            'pay_options',
+            'co_options',
+            'rc_active',
+            'rc_policy',
+            'rc_company',
+            'ip_user',
+            'iban',
+            'promo_code',
+            'client_notice',
+            'promo_success',
+            'promo_review',
+            'promo_review_facebook',
+            'promo_review_google',
+            'promo_review_local'
+        ];
+        foreach($contact_fields as $contact_field) {
+            if($request->has($contact_field)) {
+                $contact->{$contact_field} = $request->{$contact_field};
+            }
+        }
+        $contact->save();
+
+        // Contact Additionals
+        $contact_additional = new ContactAdditional();
+
+        $contact_additional_fields = [
+            'property_address',
+            'property_zip',
+            'property_city',
+            'lessor_name',
+            'lessor_contact',
+            'lessor_address',
+            'lessor_zip',
+            'lessor_city',
+            'rent_begin',
+            'rent_amount'
+        ];
+        foreach($contact_additional_fields as $contact_additional_field) {
+            if($request->has($contact_additional_field)) {
+                $contact_additional->{$contact_additional_field} = $request->{$contact_additional_field};
+            }   
+        }
+        $contact_additional->contact_id = $contact->id;
+        $contact_additional->save();
+
+        return new ContactResource($contact);
     }
 
     /**
