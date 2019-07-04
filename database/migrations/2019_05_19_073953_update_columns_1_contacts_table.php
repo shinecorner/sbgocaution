@@ -32,7 +32,7 @@ class UpdateColumns1ContactsTable extends Migration
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY promo_review_facebook TINYINT(1) NOT NULL DEFAULT 1');
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY promo_review_google TINYINT(1) NOT NULL DEFAULT 1');
             DB::statement('ALTER TABLE ' . DB::getTablePrefix() . 'contacts MODIFY promo_review_local TINYINT(1) NOT NULL DEFAULT 1');
-            $table->boolean('preconfirmation_type')->default(1);
+            $table->boolean('preconfirmation_type')->default(1)->after('promo_review_local');
         });
         Schema::enableForeignKeyConstraints();
     }

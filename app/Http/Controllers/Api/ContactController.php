@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Contact;
+use App\ContactAdditional;
 use App\Config;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContactResource;
@@ -66,12 +67,84 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'date' => 'required',
-            'real_contact_num' => 'required',
-            'user_id' => 'required'
+            'contact_type' => 'required',
+            'salutation' => 'required',
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'language' => 'required',
+            'email' => 'required'
         ]);
+        $contact = new Contact();
+        $real_contact_num = Contact::latest()->first();
+        $real_contact_num = $real_contact_num == null ? 1 : $real_contact_num->id + 1; 
+        $contact->real_contact_num = $real_contact_num;
+        $contact->contact_num = getUniqueNum($real_contact_num, 3);
+        $contact->contact_type = $request->contact_type;
+        $contact->salutation = $request->salutation;
+        $contact->last_name = $request->last_name;
+        $contact->first_name = $request->first_name;
+        $contact->language = $request->language;
+        $contact->email = $request->email;
+        
+        if($request->has('phone')) {
+            $contact->phone = $request->phone;
+        }
 
-        return new ContactResource(Contact::create($request->all()));
+        if($request->has('mobile')) {
+            $contact->mobile = $request->mobile;
+        }
+
+        if($request->has('birthdate')) {
+            $contact->birthdate = $request->birthdate;
+        }
+
+        if($request->has('nation')) {
+            $contact->nation = $request->nation;
+        }
+
+        $contact->indebted = $request->indebted;
+
+        if($request->has('status')) {
+            $contact->status = $request->status;
+        }
+
+        if($request->has('lead_source')) {
+            $contact->lead_source = $request->lead_source;
+        }
+
+        $contact->pay_options = $request->pay_options;
+        $contact->co_options = $request->co_options;
+        $contact->rc_active = $request->rc_active;
+        $contact->rc_policy = $request->rc_policy;
+        $contact->rc_company = $request->rc_company;
+        $contact->ip_user = $request->ip_user;
+        $contact->iban = $request->iban;
+        $contact->promo_code = $request->promo_code;
+        $contact->client_notice = $request->client_notice;
+        $contact->promo_success = $request->promo_success;
+        $contact->promo_review = $request->promo_review;
+        $contact->promo_review_facebook = $request->promo_review_facebook;
+        $contact->promo_review_google = $request->promo_review_google;
+        $contact->promo_review_local = $request->promo_review_local;
+        $contact->save();
+
+        // Contact Additionals
+
+        $contact_additional = new ContactAdditional();
+        $contact_additional->property_address = $request->property_address;
+        $contact_additional->property_zip = $request->property_zip;
+        $contact_additional->property_city = $request->property_city;
+        $contact_additional->lessor_name = $request->lessor_name;
+        $contact_additional->lessor_contact = $request->lessor_contact;
+        $contact_additional->lessor_address = $request->lessor_address;
+        $contact_additional->lessor_zip = $request->lessor_zip;
+        $contact_additional->lessor_city = $request->lessor_city;
+        $contact_additional->rent_begin = $request->rent_begin;
+        $contact_additional->rent_amount = $request->rent_amount;
+        $contact_additional->contact_id = $contact->id;
+        $contact_additional->save();
+
+        return new ContactResource($contact);
     }
 
     /**
