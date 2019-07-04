@@ -10,7 +10,7 @@ $factory->define(HouseOwner::class, function (Faker $faker) {
         'address' => $faker->streetAddress,
         'zip' => $faker->numberBetween($min = 1000, $max = 9000),
         'city' => $faker->city,
-        'status' => $faker->randomElement(['contacted, not_contacted']),
+        'status' => $faker->randomElement(array_keys(getHouseownerStatuses())),
         'email' => $faker->email,
         'website' => $faker->domainName,
         'phone' => $faker->phoneNumber,
