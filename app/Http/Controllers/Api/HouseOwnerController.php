@@ -34,7 +34,7 @@ class HouseOwnerController extends Controller
         $query = HouseOwner::latest();
 
         if($request->has('filters')) {
-            $this->filters($request, $query, ['keyword_search', 'city', 'realestate_agency', 'policy_count']);
+            $this->filters($request, $query, ['keyword_search', 'city', 'realestate_agency', 'policy_count', 'status']);
         }
 
         if($request->has('limit')) {
@@ -116,6 +116,8 @@ class HouseOwnerController extends Controller
                     $query->where('city', '=', $value);
                 } else if($key == 'realestate_agency') {
                     $query->where('realestate_agency_id', '=', $value);
+                } else if($key == 'status') {
+                    $query->where('status', '=', $value);
                 } else if($key == 'policy_count') {
                     $this->policy_count($query, $value);
                 }
