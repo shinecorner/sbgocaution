@@ -103,7 +103,18 @@
                         </div>
                     </app-card>
                 </v-layout>
-            </v-container>            
+            </v-container>
+            <delete-confirmation  
+                :show_confirm_delete="show_confirm_delete"
+                :headerText="$t('general.DELETE_CONFIRM_MSG',{'name': $t('role.ROLES')})"
+                :bodyText="$t('general.DELETE_CONFIRM_MSG',{'name': $t('role.ROLES')})"
+                @deleteEntity="deleteEntityHandler"
+                @closeConfirm="show_confirm_delete = false">
+            </delete-confirmation>
+            <no-item-selected-dialog 
+                :show_no_item_dialog="show_no_item_dialog" 
+                @closeDialog="show_no_item_dialog = false">
+            </no-item-selected-dialog>
 	</div>
 </template>
 
@@ -158,10 +169,22 @@ export default {
                 that.loading = false;
                 console.log(error);
             });
+        },
+        deleteEntityHandler(){
+            let that = this;
+            that.loading = true;
+            console.log(this.checkedRows);
+            /*api.delete('/api/roles/'+this.$route.params.id).then(response => {
+                Vue.prototype.$eventHub.$emit('fireSuccess', response.data.message);
+                that.show_confirm_delete = false;
+                that.loading = false;
+                that.$router.push('/roles');
+            })*/            
         }
   },
     created() {        
-        this.$store.dispatch("setHeaderTitle", 'user.USERS');    
+        this.$store.dispatch("setHeaderTitle", 'user.USERS');   
+        Vue.prototype.$eventHub.$on('toggleDialogUser', this.toggleDialog);
     }
 };
 </script>
