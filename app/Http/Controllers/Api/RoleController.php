@@ -125,9 +125,17 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        $role = Role::find($id);
+        $ids = explode(",", $id);
+        $success = 0;
+        foreach($ids as $role_id) {
+            $role = Role::find($role_id);
+            if($role) {
+                $role->delete();
+                $success++;
+            }
+        }
 
-        if($role->delete()) 
+        if($success > 0) 
         {
             $message = __('general.role.DELETE_SUCCESS');
         }
