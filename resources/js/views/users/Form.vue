@@ -3,8 +3,26 @@
         <app-section-loader :status="loading"></app-section-loader>
             <v-container fluid grid-list-xl pt-0>
                 <v-layout row wrap>                                                
-                    <app-card colClasses="xs12 md12">                    
-                        <v-card flat>
+                    <app-card colClasses="xs12 md12">  
+                        <v-tabs
+                        left
+                        color="cyan"
+                        dark
+                        icons-and-text>                                    
+                        
+                        <v-tabs-slider color="yellow"></v-tabs-slider>
+                        
+                        <v-tab v-for="(icon, index) in tabItems" :href="'#tab-'+index" :key="index">
+                            {{icon.text}}
+                            <v-icon>{{icon.icon}}</v-icon>
+                        </v-tab>
+
+                        <v-tab-item
+                          v-for="(icon,index) in tabItems"
+                          :value="'tab-' + index"
+                          :key="index"
+                        >
+                        <v-card flat v-if="index=='email'">
                             <v-card-text> 
                                 <v-form @submit.stop.prevent="validateForm">                                
                                     <v-layout row wrap>
@@ -23,7 +41,9 @@
                                         </v-layout>                                                                                                                                                                                                                   
                                 </v-form>
                             </v-card-text>
-                        </v-card>                                             
+                        </v-card> 
+                        </v-tab-item>
+                    </v-tabs>
                 </app-card>
             </v-layout>			
         </v-container>
@@ -47,6 +67,16 @@ export default {
         mixins: [AddEdit],
 	data() {
             return {
+                tabItems: {
+                    "crm": {
+                            icon: "zmdi zmdi-group",
+                            text: "CRM"
+                    },
+                    "email": {
+                            icon: "zmdi zmdi-email",
+                            text: "Email"
+                    }
+                },  
                 user: {
                     roles: [],
                     permissions: []

@@ -8,8 +8,8 @@ const SettingPage = () => import('Views/settings/SettingPage');
 const PrivateLandLordList = () => import('Views/privatelandlords/List');
 const TemplatePage = () => import('Views/templates/List')
 const RoleList = () => import('Views/roles/List');
-const RoleAddEdit = () => import('Views/roles/AddEdit');
-const UserAddEdit = () => import('Views/users/AddEdit');
+const RoleForm = () => import('Views/roles/Form');
+const UserForm = () => import('Views/users/Form');
 const UserList = () => import('Views/users/List');
 const TemplateAddEditPage = () => import('Views/templates/AddEdit')
 const HouseOwnerList = () => import('Views/HouseOwner/List');
@@ -119,7 +119,7 @@ export default {
       {
         path: '/roles/:id/edit',
         name: 'role_edit',
-        component: RoleAddEdit,
+        component: RoleForm,
         meta: {
             requiresAuth: true,
             title: 'role.ROLES',
@@ -136,7 +136,7 @@ export default {
       {
         path: '/roles/create',
         name: 'role_create',
-        component: RoleAddEdit,
+        component: RoleForm,
         meta: {
             requiresAuth: true,
             title: 'role.ROLES',
@@ -170,7 +170,7 @@ export default {
       {
         path: '/users/create',
         name: 'user_create',
-        component: UserAddEdit,
+        component: UserForm,
         meta: {
             requiresAuth: true,
             title: 'user.USERS',
@@ -187,7 +187,7 @@ export default {
       {
         path: '/users/:id/edit',
         name: 'user_edit',
-        component: UserAddEdit,
+        component: UserForm,
         meta: {
             requiresAuth: true,
             title: 'user.USERS',

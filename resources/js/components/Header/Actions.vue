@@ -1,6 +1,6 @@
 <template>        
-    <div v-if="route.path == '/contacts'">
-        <contact-list-action></contact-list-action>
+    <div v-if="/^\/contacts/.test(route.path)">
+        <contact-top-action></contact-top-action>
     </div>
     <div v-else-if="route.path == '/brokers'">
         <broker-list-action></broker-list-action>
@@ -15,20 +15,20 @@
         <template-list-action></template-list-action>
     </div>
     <div v-else-if="/^\/roles/.test(route.path)">
-        <role-action></role-action>
+        <role-top-action></role-top-action>
     </div>
     <div v-else-if="/^\/users/.test(route.path)">
-        <user-action></user-action>
+        <user-top-action></user-top-action>
     </div>
 </template>
 <script>
     import { mapState  } from "vuex";
-    const ContactListAction = () => import('Views/contacts/ListAction');
+    const ContactTopAction = () => import('Views/contacts/TopActions');
     const BrokerListAction = () => import('Views/brokers/ListAction');
     const PrivatelandlordListAction = () => import('Views/privatelandlords/ListAction');
     const SettingAction = () => import('Views/settings/Action');
-    const RoleAction = () => import('Views/roles/Action');
-    const UserAction = () => import('Views/users/Action');
+    const RoleTopAction = () => import('Views/roles/TopActions');
+    const UserTopAction = () => import('Views/users/TopActions');
     const TemplateListAction = () => import('Views/templates/Action');
     export default {
         props: {},
@@ -41,13 +41,13 @@
         ]),
         methods: {},
         components: {
-            ContactListAction,
+            ContactTopAction,
             BrokerListAction,
             PrivatelandlordListAction,
             SettingAction,
             TemplateListAction,
-            RoleAction,
-            UserAction
+            RoleTopAction,
+            UserTopAction
         }
     }
 </script>
